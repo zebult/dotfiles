@@ -45,9 +45,24 @@ endif
  NeoBundle 'flazz/vim-colorschemes'
   " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
  NeoBundle 'ujihisa/unite-colorscheme'
+  " 入力補完
+  if has('lua')
+    " luaインタプリタがある場合はNeoCompleteがインストールされるよ
+    " NeoCompleteはNeoComplcacheの新しいバージョンだよ
+    " NeoComplcacheと比較して高速化等がなされてるらしいよ
+    NeoBundle 'Shougo/neocomplete.vim', {
+      \ 'depends' : 'Shougo/vimproc.vim',
+      \ 'autoload' : { 'insert' : 1,}
+    \ }
+  else
+    " luaインタプリタが無い場合はNeoComplcacheがインストールされるよ
+    " NeoComplcacheはNeoCompleteの古いバージョンだよ
+    NeoBundle 'Shougo/neocomplcache.vim'
+  endif
   " VimScriptで作ってあるshell
- NeoBundle 'Shougo/vimshell.vim'
+  " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheがないと、一部の拡張機能が使えない。
  NeoBundle 'Shougo/vimproc'
+ NeoBundle 'Shougo/vimshell.vim'
   " VimShellでssh
  NeoBundle 'ujihisa/vimshell-ssh'
  " My Bundles here:
@@ -101,3 +116,9 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+
+nnoremap <Space>v :VimShell<CR>
+nnoremap <Space>u :Unite source<CR>
+nnoremap <Space>f :VimFiler<CR>
+cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
+cnoreabbrev w!! w !sudo tee > /dev/null %
