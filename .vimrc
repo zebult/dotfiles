@@ -65,6 +65,8 @@ endif
  NeoBundle 'Shougo/vimshell.vim'
   " VimShellでssh
  NeoBundle 'ujihisa/vimshell-ssh'
+ NeoBundle 'Shougo/vimfiler.vim'
+ NeoBundle 'kana/vim-submode'
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
@@ -85,10 +87,29 @@ endif
  noremap k gk
  syntax on
  inoremap jj <ESC><ESC><ESC> 
- set clipboard+=unnamed
+ set clipboard=unnamed,autoselect
  set autoindent
  set tabstop=3
  set expandtab
+ set hlsearch
+ nnoremap<ESC><ESC> :nohlsearch<CR>
+ set cursorline
+ hi clear CursorLine
+"大文字小文字を区別しない
+ set ignorecase
+"buffer切り替え時ファイルを保存しなくてもよい
+ set hidden
+" Insertモードのときカーソルの形状を変更
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+inoremap <Esc> <Esc>
+"検索語が画面の真ん中に来るようにする
+nmap n nzz 
+"nmap N Nzz 
+nmap * *zz 
+nmap # #zz 
+nmap g* g*zz 
+nmap g# g#zz
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -104,7 +125,8 @@ nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
+"nnoremap so <C-w>_<C-w>|
+nnoremap so <C-w>o
 nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
@@ -122,3 +144,12 @@ nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler<CR>
 cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
+
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
