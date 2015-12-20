@@ -258,6 +258,7 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 "
+au BufRead,BufNewFile *.md set filetype=markdown
 " view
 colorscheme zenburn
 set nu
@@ -359,6 +360,7 @@ nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler -split -simple -winwidth=45 -no-quit<CR>
 nnoremap <Space>m :PrevimOpen<CR>
 nnoremap <Space>r :QuickRun<CR>
+autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
 
