@@ -31,8 +31,8 @@ if has('vim_starting')
   NeoBundle 'thinca/vim-quickrun'
   let g:quickrun_config = {
         \   "_" : {
-        \       "outputter/buffer/split" : ":botright",
-        \       "outputter/buffer/close_on_empty" :1 
+        \       "outputter/buffer/close_on_empty" : 1,
+        \       "outputter/buffer/split" : ":botright 8sp"
         \   },
         \   'tex':{
         \     'command' : 'latexmk',
@@ -40,6 +40,8 @@ if has('vim_starting')
         \     'exec': ['%c %o %s']
         \   },
         \ }
+  " 横分割をするようにする
+  " let g:quickrun_config={'*': {'vsplit': ''}}
   " <C-c> で実行を強制終了させる
   " quickrun.vim が実行していない場合には <C-c> を呼び出す
   nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
@@ -67,6 +69,7 @@ if has('vim_starting')
           \ 'exec': '%c %o %s',
           \}
   endif
+  let mapleader = "\<Space>"
   " VimScriptで作ってあるshell
   " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheがないと、一部の拡張機能が使えない。
   " vimprocはmakeしないとダメ
@@ -87,10 +90,11 @@ if has('vim_starting')
   NeoBundle 'davidhalter/jedi-vim'
   " Git
   NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'rhysd/committia.vim'
+  " 選択範囲拡大
+  NeoBundle "terryma/vim-expand-region"
   " コメントアウト
   NeoBundle 'tomtom/tcomment_vim'
-  " ctags
+  " ctags (brew install ctagsしておく必要がある)
   NeoBundle 'soramugi/auto-ctags.vim'
   " 構文チェック
   NeoBundle 'scrooloose/syntastic.git'
@@ -104,6 +108,17 @@ if has('vim_starting')
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
   let g:indent_guides_color_change_percent = 30
   let g:indent_guides_guide_size = 1
+  " ctagsのタグリスト一覧
+  NeoBundleLazy "majutsushi/tagbar", {
+           \ "autoload": { "commands": ["TagbarToggle"] }}
+  if ! empty(neobundle#get("tagbar"))
+     " Width (default 40)
+     let g:tagbar_width = 20
+     " Map for toggle
+     nnoremap <silent> <leader>t :TagbarToggle<CR>
+  endif
+
+
   " My Bundles here:
   " Refer to |:NeoBundle-examples|.
   " Note: You don't set neobundle setting in .gvimrc!
@@ -182,17 +197,15 @@ elseif neobundle#is_installed('neocomplcache')
   let g:neocomplcache#lock_iminsert = 1
 endif
 
-" いわゆるタグジャンプについての設定(auto-ctagsの設定なわけだが)
-" 読み込むタグファイルを設定
-set tags+=tags;./**/tags
-" ファイルの保存時にtagsファイルを作り直すよ(もともとtagsファイルが合った場合のみ）
-if filereadable(expand('./tags'))
-  let g:auto_ctags = 1
-else
-  let g:auto_ctags = 0
-endif
-" ctagsのオプションを設定してるよ
+" タグジャンプについての設定
+" " 保存時tags生成
+let g:auto_ctags = 1
+" " 保存場所指定
+let g:auto_ctags_directory_list = ['.git', '.svn']
+" " ctagsのオプションを設定してるよ
 let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
+" " 拡張子毎に作成
+let g:auto_ctags_filetype_mode = 1
 
 if executable('ctags')
   " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
@@ -308,11 +321,16 @@ nmap * *zz
 nmap # #zz 
 nmap g* g*zz 
 nmap g# g#zz
-" save and close
-nnoremap gw :w<Cr>
-nnoremap gq :q<Cr>
-nnoremap g2 :wq<Cr>
-nnoremap g! :q!<Cr>
+" Visual line やりやすく
+" nmap vv V
+" nmap vb viw
+" v押す度拡大
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+" 貼り付けたらテキストの末尾へ
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -343,24 +361,36 @@ nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 " Git
-nnoremap <Space>st :Gstatus<Cr>
-nnoremap <Space>ad :Gwrite<Cr>
-nnoremap <Space>cm :Gcommit<Cr>
-nnoremap <Space>co :Gread<Cr>
-nnoremap <Space>bl :Gblame<Cr>
-nnoremap <Space>lg :Glog<Cr>
-nnoremap <Space>df :Gdiff<Cr>
-nnoremap <Space>fc :Gfetch<Cr>
-nnoremap <Space>ps :Gpush<Cr>
-nnoremap <Space>gr :Ggrep
+nnoremap <leader>gst :Gstatus<Cr>
+nnoremap <leader>ga :Gwrite<Cr>
+nnoremap <leader>gcm :Gcommit<Cr>
+nnoremap <leader>gco :Gread<Cr>
+nnoremap <leader>gbl :Gblame<Cr>
+nnoremap <leader>gl :Glog<Cr>
+nnoremap <leader>gdf :Gdiff<Cr>
+nnoremap <leader>gfc :Gfetch<Cr>
+nnoremap <leader>gp :Gpush<Cr>
+nnoremap <leader>gr :Ggrep 
 
-nnoremap <Space>v :VimShell<CR>
-nnoremap <Space>d :vertical diffsplit 
-nnoremap <Space>u :Unite source<CR>
-nnoremap <Space>f :VimFiler -split -simple -winwidth=45 -no-quit<CR>
-nnoremap <Space>m :PrevimOpen<CR>
-nnoremap <Space>r :QuickRun<CR>
+nnoremap <leader>v :VimShell<CR>
+nnoremap <leader>d :vertical diffsplit 
+nnoremap <leader>u :Unite source<CR>
+nnoremap <leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+nnoremap <leader>m :PrevimOpen<CR>
+nnoremap <leader>r :QuickRun<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
+nnoremap <Leader>o :Unite file<CR>
+nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+
+" save and close
+" nnoremap gw :w<Cr>
+" nnoremap gq :q<Cr>
+" nnoremap g2 :wq<Cr>
+" nnoremap g! :q!<Cr>
+nnoremap <leader>w :w<Cr>
+nnoremap <leader>q :q<Cr>
+nnoremap <leader>2 :wq<Cr>
+nnoremap <leader>! :q!<Cr>
 cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
 
@@ -391,3 +421,5 @@ if has("autocmd")
    \ endif
 endif
 """""""""""""""""""""""""""""
+" 選択してもそのまま貼り付けられるようにする
+vnoremap <silent> p "0p<CR>
