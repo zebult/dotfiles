@@ -85,7 +85,7 @@ if has('vim_starting')
    NeoBundle 'Shougo/vimfiler.vim'
    NeoBundle 'kana/vim-submode'
    " markdown preview
-   NeoBundle 'plasticboy/vim-markdown'
+   NeoBundle 'plasticboy/vim-markdown' " シンタックスハイライト,自動折り畳み
    NeoBundle 'kannokanno/previm'
    NeoBundle 'tyru/open-browser.vim'
    au BufRead,BufNewFile *.md set filetype=markdown
@@ -109,6 +109,8 @@ if has('vim_starting')
    " NeoBundle 'vim-scripts/ShowMarks'
    " インデントに色を付けて見やすくする
    NeoBundle 'nathanaelkane/vim-indent-guides'
+   " html爆速
+   NeoBundle 'mattn/emmet-vim'
    " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
    let g:indent_guides_enable_on_vim_startup=1
    let g:indent_guides_start_level=2
@@ -303,6 +305,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " サーチ色変更
 autocmd ColorScheme * highlight Search ctermfg=9 guifg=#008800
 autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
+" 選択した範囲文字色
+autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 colorscheme zenburn
 " 256に制限をかける
 set t_Co=256
@@ -340,7 +344,7 @@ set statusline=%F%r%h%=
 " 大文字小文字を区別しない
 set ignorecase
 " カーソルを行頭、行末で止まらないようにする
-set whichwrap=b,s,h,l,<,>,[,]
+" set whichwrap=b,s,h,l,<,>,[,]
 " buffer切り替え時ファイルを保存しなくてもよい
 set hidden
 set noswapfile
@@ -351,6 +355,10 @@ imap <ESC>OA <Up>
 imap <ESC>OB <Down>
 imap <ESC>OC <Right>
 imap <ESC>OD <Left>
+" 挿入モードで文字消せない問題解決
+set backspace=indent,eol,start
+" オリジナルヤンク
+noremap yu 0wv$hy
 " Insertモードのときカーソルの形状を変更
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -380,6 +388,10 @@ vmap <C-v> <Plug>(expand_region_shrink)
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" メモ取りやすくする
+inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
+inoremap g<Tab> <Left><Left><tab><Right><Right>
+inoremap <Tab> <tab>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
@@ -398,7 +410,6 @@ nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
-"nnoremap so <C-w>_<C-w>|
 nnoremap so <C-w>o
 nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
@@ -411,18 +422,30 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap s% :%s ///g
 
 " Git(もっと単純化したいが待ち時間が発生するため一文字多い)
-nnoremap <leader>gst :Gstatus<Cr>
-nnoremap <leader>gad :Gwrite<Cr>
-nnoremap <leader>gcm :Gcommit<Cr>
-nnoremap <leader>gco :Gread<Cr>
-nnoremap <leader>gbl :Gblame<Cr>
-nnoremap <leader>glg :Glog<Cr>
-nnoremap <leader>gdf :Gdiff<Cr>
-nnoremap <leader>gfc :Gfetch<Cr>
-nnoremap <leader>gpu :Gpush<Cr>
-nnoremap <leader>gr :Ggrep 
+" nnoremap <leader>gst :Gstatus<Cr>
+" nnoremap <leader>gad :Gwrite<Cr>
+" nnoremap <leader>gcm :Gcommit<Cr>
+" nnoremap <leader>gco :Gread<Cr>
+" nnoremap <leader>gbl :Gblame<Cr>
+" nnoremap <leader>glg :Glog<Cr>
+" nnoremap <leader>gdf :Gdiff<Cr>
+" nnoremap <leader>gfc :Gfetch<Cr>
+" nnoremap <leader>gpu :Gpush<Cr>
+" nnoremap <leader>gr :Ggrep 
+
+nnoremap gst :Gstatus<Cr>
+nnoremap gad :Gwrite<Cr>
+nnoremap gcm :Gcommit<Cr>
+nnoremap gco :Gread<Cr>
+nnoremap gbl :Gblame<Cr>
+nnoremap glg :Glog<Cr>
+nnoremap gdf :Gdiff<Cr>
+nnoremap gfc :Gfetch<Cr>
+nnoremap gpu :Gpush<Cr>
+nnoremap gr :Ggrep 
 
 nnoremap <leader>ma :marks<CR>
 nnoremap <leader>v :VimShell<CR>
@@ -434,6 +457,7 @@ nnoremap <leader>md :NoShowMarks!<CR>
 nnoremap <leader>r :QuickRun<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
+autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 
@@ -465,6 +489,12 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 " imap [ []<LEFT>
 " imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
+" 2度押しで囲む
+noremap {{ wbi{<Esc>f<Space>i}<Esc><Cr>
+noremap g[[ wbi[<Esc>f<Space>i]<Esc><Cr>
+noremap (( wbi(<Esc>f<Space>i)<Esc><Cr>
+noremap g<< wbi<<Esc>f<Space>i><Esc><Cr>
+noremap ~~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
 
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
