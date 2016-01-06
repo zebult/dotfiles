@@ -80,6 +80,8 @@ if has('vim_starting')
    " ~/.vim/bundle/vimproc/make
    NeoBundle 'Shougo/vimproc'
    NeoBundle 'Shougo/vimshell.vim'
+   " ヘルプ日本語化:h
+   NeoBundle 'vim-jp/vimdoc-ja'
    " VimShellでssh
    NeoBundle 'ujihisa/vimshell-ssh'
    NeoBundle 'Shougo/vimfiler.vim'
