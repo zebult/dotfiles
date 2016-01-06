@@ -30,6 +30,7 @@ export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
 export EDITOR=/usr/bin/vim
+export VISUAL=vim
 
 # alias
 alias ll='ls -la'
