@@ -26,26 +26,52 @@ if has('vim_starting')
    " Vim上でデータを操作するためのインターフェース
    NeoBundle 'Shougo/unite.vim'
    NeoBundle 'flazz/vim-colorschemes'
+   " 非同期コンパイル
+   NeoBundle 'tpope/vim-dispatch'
    " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
    NeoBundle 'ujihisa/unite-colorscheme'
+   NeoBundle 'lervag/vimtex' " Vim上でtexの部分コンパイルをする
    NeoBundle 'thinca/vim-quickrun'
-   let g:quickrun_config = {
-            \   "_" : {
-            \       "outputter/buffer/close_on_empty" : 1,
-            \       "outputter/buffer/split" : ":botright 8sp"
-            \   },
-            \   'tex':{
-            \     'command' : 'latexmk',
-            \     'cmdopt': '-pv',
-            \     'exec': ['%c %o %s']
-            \   },
-            \ 'java' : {
-            \ 'hook/output_encode/enable' : 1,
-            \ 'hook/output_encode/encoding' : 'sjis',
-            \ }
-            \ }
    " 横分割をするようにする
    " let g:quickrun_config={'*': {'vsplit': ''}}
+   let g:quickrun_config = {
+     \ "_" : {
+       \ "hook/unite_quickfix/enable_failure" : 1,
+       \ "hook/close_unite_quickfix/enable_hook_loaded" : 1,
+       \ "hook/close_quickfix/enable_exit" : 1,
+       \ "hook/close_buffer/enable_failure" : 1,
+       \ "hook/close_buffer/enable_empty_data" : 1,
+       \ "hook/inu/enable" : 1,
+       \ "hook/inu/wait" : 20,
+       \ "outputter" : "multi:buffer:quickfix",
+       \ "outputter/buffer/split" : ":botright 5sp",
+       \ }
+       \ }
+
+       " \ "runner" : "vimproc",
+       " \ "runner/vimproc/updatetime" : 60
+ " texファイルをQuickRunでコンパイルする際の設定
+  let g:quickrun_config['tex'] = {
+    \ 'command' : 'latexmk',
+    \ 'outputter' : 'error',
+    \ 'outputter/error/success' : 'buffer',
+    \ 'outputter/error/error' : 'quickfix',
+    \ 'srcfile' : expand("%"),
+    \ 'cmdopt': '-pdfdvi',
+    \ 'hook/sweep/files' : [
+      \ '%S:p:r.aux',
+      \ '%S:p:r.bbl',
+      \ '%S:p:r.blg',
+      \ '%S:p:r.dvi',
+      \ '%S:p:r.fdb_latexmk',
+      \ '%S:p:r.fls',
+      \ '%S:p:r.log',
+      \ '%S:p:r.out',
+      \ '%S:p:r.synctex.gz',
+    \ ],
+    \ 'exec': ['%c %o %a %s']
+  \ }
+
    " <C-c> で実行を強制終了させる
    " quickrun.vim が実行していない場合には <C-c> を呼び出す
    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
@@ -66,7 +92,6 @@ if has('vim_starting')
    " swift
    if has("mac")
       NeoBundle 'toyamarinyon/vim-swift'
-
       let g:quickrun_config['swift'] = {
                \ 'command': 'xcrun',
                \ 'cmdopt': 'swift',
@@ -78,7 +103,6 @@ if has('vim_starting')
    " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheがないと、一部の拡張機能が使えない。
    " vimprocはmakeしないとダメ
    " ~/.vim/bundle/vimproc/make
-   NeoBundle 'Shougo/vimproc'
    NeoBundle 'Shougo/vimshell.vim'
    " ヘルプ日本語化:h
    NeoBundle 'vim-jp/vimdoc-ja'
@@ -86,6 +110,16 @@ if has('vim_starting')
    NeoBundle 'ujihisa/vimshell-ssh'
    NeoBundle 'Shougo/vimfiler.vim'
    NeoBundle 'kana/vim-submode'
+   " Vimproc（非同期処理を実現するプラグイン：重たい処理実施時にVimがフリーズしない様にします）
+   NeoBundle 'Shougo/vimproc.vim', {
+               \ 'build' : {
+               \ 'windows' : 'tools\\update-dll-mingw',
+               \ 'cygwin' : 'make -f make_cygwin.mak',
+               \ 'mac' : 'make -f make_mac.mak',
+               \ 'linux' : 'make',
+               \ 'unix' : 'gmake',
+               \ },
+               \ }
    " markdown preview
    NeoBundle 'plasticboy/vim-markdown' " シンタックスハイライト,自動折り畳み
    NeoBundle 'kannokanno/previm'
@@ -343,7 +377,7 @@ set wildmenu wildmode=list:full
 nnoremap<ESC><ESC> :nohlsearch<CR>:args<CR>
 set laststatus=2
 set statusline=%F%r%h%=
-" 大文字小文字を区別しない
+" 検索時大文字小文字を区別しない
 set ignorecase
 " カーソルを行頭、行末で止まらないようにする
 " set whichwrap=b,s,h,l,<,>,[,]
@@ -462,6 +496,8 @@ autocmd FileType html nnoremap <Space>r :!open %<CR>
 autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+nnoremap <Leader>l <Space>
+nnoremap <Leader>go :!open .<CR><CR>
 
 " save and close
 " nnoremap gw :w<Cr>
