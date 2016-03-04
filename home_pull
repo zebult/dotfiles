@@ -1,0 +1,7 @@
+#!/bin/sh
+# pull した後叩く
+\cp -f ~/home/.vimrc ~/
+\cp -f ~/home/.gvimrc ~/
+\cp -f ~/home/.xvimrc ~/
+\cp -f ~/home/.vrapperrc ~/
+\cp -f ~/home/.zshrc ~/
