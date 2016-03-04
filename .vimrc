@@ -1,376 +1,16 @@
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
-" NeoBundle が無ければインストール
-if !isdirectory(expand('$HOME/.vim/bundle'))
-   call system('mkdir -p $HOME/.vim/bundle')
-   call system('git clone https://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim')
-   source $HOME/.vimrc
-   NeoBundleInstall
-   q
-endif
+let mapleader = "\<Space>"
 
-" Vim 起動時のみ実行
-if has('vim_starting')
-   if &compatible
-      set nocompatible               " Be iMproved
-   endif
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-   call neobundle#begin(expand('~/.vim/bundle/'))
-
-   "--------------------------------------------"
-   " Let NeoBundle manage NeoBundle
-   "--------------------------------------------"
-   " NeoBundle 自体を NeoBundle で管理
-   NeoBundleFetch 'Shougo/neobundle.vim'
-   " Vim上でデータを操作するためのインターフェース
-   NeoBundle 'Shougo/unite.vim'
-   NeoBundle 'flazz/vim-colorschemes'
-   " 非同期コンパイル
-   NeoBundle 'tpope/vim-dispatch'
-   " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
-   NeoBundle 'ujihisa/unite-colorscheme'
-   NeoBundle 'lervag/vimtex' " Vim上でtexの部分コンパイルをする
-   NeoBundle 'thinca/vim-quickrun'
-   " 横分割をするようにする
-   " let g:quickrun_config={'*': {'vsplit': ''}}
-   let g:quickrun_config = {
-     \ "_" : {
-       \ "hook/unite_quickfix/enable_failure" : 1,
-       \ "hook/close_unite_quickfix/enable_hook_loaded" : 1,
-       \ "hook/close_quickfix/enable_exit" : 1,
-       \ "hook/close_buffer/enable_failure" : 1,
-       \ "hook/close_buffer/enable_empty_data" : 1,
-       \ "hook/inu/enable" : 1,
-       \ "hook/inu/wait" : 20,
-       \ "outputter" : "multi:buffer:quickfix",
-       \ "outputter/buffer/split" : ":botright 5sp",
-       \ }
-       \ }
-
-       " \ "runner" : "vimproc",
-       " \ "runner/vimproc/updatetime" : 60
- " texファイルをQuickRunでコンパイルする際の設定
-  let g:quickrun_config['tex'] = {
-    \ 'command' : 'latexmk',
-    \ 'outputter' : 'error',
-    \ 'outputter/error/success' : 'buffer',
-    \ 'outputter/error/error' : 'quickfix',
-    \ 'srcfile' : expand("%"),
-    \ 'cmdopt': '-pdfdvi',
-    \ 'hook/sweep/files' : [
-      \ '%S:p:r.aux',
-      \ '%S:p:r.bbl',
-      \ '%S:p:r.blg',
-      \ '%S:p:r.dvi',
-      \ '%S:p:r.fdb_latexmk',
-      \ '%S:p:r.fls',
-      \ '%S:p:r.log',
-      \ '%S:p:r.out',
-      \ '%S:p:r.synctex.gz',
-    \ ],
-    \ 'exec': ['%c %o %a %s']
-  \ }
-
-   " <C-c> で実行を強制終了させる
-   " quickrun.vim が実行していない場合には <C-c> を呼び出す
-   nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-   " 入力補完
-   if has('lua')
-      " luaインタプリタがある場合はNeoCompleteがインストールされるよ
-      " NeoCompleteはNeoComplcacheの新しいバージョンだよ
-      " NeoComplcacheと比較して高速化等がなされてるらしいよ
-      NeoBundle 'Shougo/neocomplete.vim', {
-               \ 'depends' : 'Shougo/vimproc.vim',
-               \ 'autoload' : { 'insert' : 1,}
-               \ }
-   else
-      " luaインタプリタが無い場合はNeoComplcacheがインストールされるよ
-      " NeoComplcacheはNeoCompleteの古いバージョンだよ
-      NeoBundle 'Shougo/neocomplcache.vim'
-   endif
-   " swift
-   if has("mac")
-      NeoBundle 'toyamarinyon/vim-swift'
-      let g:quickrun_config['swift'] = {
-               \ 'command': 'xcrun',
-               \ 'cmdopt': 'swift',
-               \ 'exec': '%c %o %s',
-               \}
-   endif
-   let mapleader = "\<Space>"
-   " VimScriptで作ってあるshell
-   " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheがないと、一部の拡張機能が使えない。
-   " vimprocはmakeしないとダメ
-   " ~/.vim/bundle/vimproc/make
-   NeoBundle 'Shougo/vimshell.vim'
-   " ヘルプ日本語化:h
-   NeoBundle 'vim-jp/vimdoc-ja'
-   " VimShellでssh
-   NeoBundle 'ujihisa/vimshell-ssh'
-   NeoBundle 'Shougo/vimfiler.vim'
-   NeoBundle 'kana/vim-submode'
-   " Vimproc（非同期処理を実現するプラグイン：重たい処理実施時にVimがフリーズしない様にします）
-   NeoBundle 'Shougo/vimproc.vim', {
-               \ 'build' : {
-               \ 'windows' : 'tools\\update-dll-mingw',
-               \ 'cygwin' : 'make -f make_cygwin.mak',
-               \ 'mac' : 'make -f make_mac.mak',
-               \ 'linux' : 'make',
-               \ 'unix' : 'gmake',
-               \ },
-               \ }
-   " markdown preview
-   NeoBundle 'plasticboy/vim-markdown' " シンタックスハイライト,自動折り畳み
-   NeoBundle 'kannokanno/previm'
-   NeoBundle 'tyru/open-browser.vim'
-   au BufRead,BufNewFile *.md set filetype=markdown
-   let g:previm_open_cmd = 'open -a Safari'
-   " Python用入力補完
-   NeoBundle 'davidhalter/jedi-vim'
-   " Git
-   NeoBundle 'tpope/vim-fugitive'
-   " 選択範囲拡大
-   NeoBundle "terryma/vim-expand-region"
-   " コメントアウト
-   NeoBundle 'tomtom/tcomment_vim'
-   " 検索爆速
-   NeoBundle 'haya14busa/vim-easymotion'
-   " ctags (brew install ctagsしておく必要がある)
-   NeoBundle 'soramugi/auto-ctags.vim'
-   " 構文チェック
-   NeoBundle 'scrooloose/syntastic.git'
-   " マークを可視化
-   NeoBundle 'jacquesbh/vim-showmarks'
-   " NeoBundle 'vim-scripts/ShowMarks'
-   " インデントに色を付けて見やすくする
-   NeoBundle 'nathanaelkane/vim-indent-guides'
-   " html爆速
-   NeoBundle 'mattn/emmet-vim'
-   " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-   let g:indent_guides_enable_on_vim_startup=1
-   let g:indent_guides_start_level=2
-   let g:indent_guides_auto_colors=0
-   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=240
-   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
-   let g:indent_guides_color_change_percent = 30
-   let g:indent_guides_guide_size = 1
-   " ctagsのタグリスト一覧
-   NeoBundleLazy "majutsushi/tagbar", {
-            \ "autoload": { "commands": ["TagbarToggle"] }}
-   if ! empty(neobundle#get("tagbar"))
-      " Width (default 40)
-      let g:tagbar_width = 20
-      " Map for toggle
-      nnoremap <silent> <leader>t :TagbarToggle<CR>
-   endif
-
-
-   " My Bundles here:
-   " Refer to |:NeoBundle-examples|.
-   " Note: You don't set neobundle setting in .gvimrc!
-
-   call neobundle#end()
-endif
-
-"--------
-"TNaky 補完,ctags
-"--------
-" 入力補完設定
-if neobundle#is_installed('neocomplete.vim')
-   " NeoComplete用設定
-   " Neocompleteを有効化
-   let g:neocomplete#enable_at_startup = 1
-   " 補完が自動で開始される文字数
-   let g:neocomplete#auto_completion_start_length = 1
-   " Smart caseを有効化（大文字が入力されるまで，大文字小文字の区別を考慮しない）
-   let g:neocomplete#enable_smart_case = 1
-   " camle caseを有効化（大文字を区切りとしたワイルドカードのように振る舞う）
-   let g:neocomplete#enable_camel_case_completion = 1
-   " アンダーバー区切りの補完を有効化
-   let g:neocomplete#enable_underbar_completion = 1
-   " シンタックスをキャッシュするときの最大文字長を25に設定
-   let g:neocomplete#min_syntax_length = 25
-   " neocomplete を自動的にロックするバッファ名のパターン
-   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-   " 日本語入力時、無効化
-   let g:neocomplete#lock_iminsert = 1
-   " ハイフンの入力による候補番号の標示
-   let g:neocomplete#enable_quick_match = 1
-   " 提示される候補の最大数（初期値：100）
-   let g:neocomplete#max_list = 5
-   " 補完候補提示の際に先頭を選択状態へ
-   let g:neocomplete#enable_auto_select = 1
-   " 補完（小文字を無視して検索）
-   let g:neocomplete#enable_refresh_always = 1
-   " 辞書ファイルの定義
-   let g:neocomplete#sources#dictionary#dictionaries = {
-            \ 'default' : '',
-            \ }
-   " キーワードの定義
-   if !exists('g:neocomplete#keyword_patterns')
-      let g:neocomplete#keyword_patterns = {}
-   endif
-   let g:neocomplete#keyword_patterns._ = '\h\w*'
-
-   " jedi-vimの設定
-   autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
-   let g:jedi#completions_enabled = 0
-   let g:jedi#auto_vim_configuration = 0
-   if !exists('g:neocomplete#force_omni_input_patterns')
-      let g:neocomplete#force_omni_input_patterns = {}
-   endif
-
-   " オムニ補完設定
-   " c用
-   let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-   " cpp用
-   let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-   " Python用
-   let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
-elseif neobundle#is_installed('neocomplcache')
-   " NeoComplcache用設定
-   let g:neocomplcache_enable_at_startup = 1
-   let g:neocomplcache_enable_ignore_case = 1
-   let g:neocomplcache_enable_smart_case = 1
-   if !exists('g:neocomplcache_keyword_patterns')
-      let g:neocomplcache_keyword_patterns = {}e*
-   endif
-   let g:neocomplcache_keyword_patterns._ = '\h\w*'
-   let g:neocomplcache_enable_camel_case_completion = 1
-   let g:neocomplcache_enable_underbar_completion = 1
-   " 日本語入力時、無効化
-   let g:neocomplcache#lock_iminsert = 1
-endif
-
-" タグジャンプについての設定
-" " 保存時tags生成
-let g:auto_ctags = 1
-" " 保存場所指定
-let g:auto_ctags_directory_list = ['.git', '.svn']
-" " ctagsのオプションを設定してるよ
-let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
-" " 拡張子毎に作成
-let g:auto_ctags_filetype_mode = 1
-
-if executable('ctags')
-   " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
-   if !filereadable(expand('$HOME/.ctags'))
-      " 設定ファイルが無い場合生成して，設定内容を書込
-      :let outputfile = '$HOME/.ctags'
-      :execute ':redir! > ' . outputfile
-      :silent! echon "--sort=yes" . "\n"
-      :silent! echon "--append=yes" . "\n"
-      :silent! echon "--recurse=yes" . "\n"
-      :redir END
-   endif
-endif
-
-"--------
-" lightline Settings
-let g:lightline = {
-         \'colorscheme': 'hybrid',
-         \ 'mode_map': {'c': 'NORMAL'},
-         \ 'active': {
-         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename'] ],
-         \   'right': [ [ 'syntastic', 'lineinfo' ],
-         \              [ 'percent' ],
-         \              [ 'filetype', 'fileencoding', 'pyenv' ] ]
-         \ },
-         \ 'component_expand':{
-         \   'syntastic': 'SyntasticStatuslineFlag'
-         \ },
-         \ 'component_type':{
-         \   'syntastic': 'error'
-         \ },
-         \ 'component_function': {
-         \   'modified': 'MyModified',
-         \   'readonly': 'MyReadonly',
-         \   'fugitive': 'MyFugitive',
-         \   'filename': 'MyFilename',
-         \   'fileformat': 'MyFileformat',
-         \   'filetype': 'MyFiletype',
-         \   'fileencoding': 'MyFileencoding',
-         \   'mode': 'MyMode',
-         \   'pyenv': 'pyenv#statusline#component'
-         \ }
-         \}
-
-" vim-easymotion {{{
-" nmap <Leader>s <Plug>(easymotion-s2)
-" xmap <Leader>s <Plug>(easymotion-s2)
-" nmap g/ <Plug>(easymotion-sn)
-" xmap g/ <Plug>(easymotion-sn)
-" omap g/ <Plug>(easymotion-tn)
-" let g:EasyMotion_smartcase = 1
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
-" let g:EasyMotion_startofline = 0
-" let g:EasyMotion_use_upper = 1
-" let g:EasyMotion_enter_jump_first = 1
-" let g:EasyMotion_space_jump_first = 1
-" hi EasyMotionTarget guifg=#80a0ff ctermfg=81
-" }}}
-
-function! MyFugitive()
-   try
-      if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-         let _ = fugitive#head()
-         return strlen(_) ? '⭠ '._ : ''
-      endif
-   catch
-   endtry
-   return ''
-endfunction
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+" 分割したファイルの読み込み(view)
 "-------------------------
-" End Neobundle Settings.
+" set runtimepath+=~/.vim/
+" runtime! userautoload/*.vim
+source ~/.vim/userautoload/neobundle.vim
+source ~/.vim/userautoload/view.vim
+source ~/.vim/userautoload/cpp.vim
+source ~/.vim/userautoload/swift.vim
 "-------------------------
-"
+
 au BufRead,BufNewFile *.md set filetype=markdown
-"-------------------------
-" view
-"-------------------------
-" サーチ色変更
-autocmd ColorScheme * highlight Search ctermfg=9 guifg=#008800
-autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
-" 選択した範囲文字色
-autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
-" colorscheme zenburn
-source ~/test.vim
-" 256に制限をかける
-set t_Co=256
-set nu
-set list
-set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
-set guifont=Ricty-Regular-for-Powerline:h14 
-syntax on
-" 現在行ハイライト
-set cursorline
-hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=239
-" 現在列ハイライト
-set cursorcolumn
-hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
-" 行数色
-hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
-" hi clear CursorLine
-set clipboard=unnamed,autoselect
-" インデントをスペース(4つ)だけにする "
-set ts=4 sw=4 sts=0
-" set tabstop=4 "タブ,画面上の見た目
-" set shiftwidth=4
-" set softtabstop=0 "タブ一回のスペース量(0はtsで指定して量)
-set expandtab "タブをスペースに
-set autoindent
-" 検索をハイライトする
-set hlsearch
 " 入力完了を待たずに検索
 set incsearch
 " コマンドラインモードでtab保管
@@ -385,6 +25,9 @@ set ignorecase
 " buffer切り替え時ファイルを保存しなくてもよい
 set hidden
 set noswapfile
+" macでクリップボード使用
+set clipboard=unnamed,autoselect
+" set clipboard+=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 " 挿入モードで移動できない問題解決
@@ -396,6 +39,12 @@ imap <ESC>OD <Left>
 set backspace=indent,eol,start
 " オリジナルヤンク
 noremap yu 0wv$hy
+" 単語をヤンクレジスタで置換
+nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+" ペースト直後に選択
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Insertモードのときカーソルの形状を変更
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -421,6 +70,8 @@ nmap g# g#zz
 " v押す度拡大
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+" 矩形をブロックにする
+set virtualedit=block
 " 履歴数増量
 set history=200
 " ディレクトリを手早く展開
@@ -433,6 +84,10 @@ nnoremap <silent> p p`]
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
+" diffすぐ出す
+nnoremap diff :vertical diffsplit f
+" 全選択
+nnoremap g0 ggVG
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
@@ -465,18 +120,6 @@ nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g
 
-" Git(もっと単純化したいが待ち時間が発生するため一文字多い)
-" nnoremap <leader>gst :Gstatus<Cr>
-" nnoremap <leader>gad :Gwrite<Cr>
-" nnoremap <leader>gcm :Gcommit<Cr>
-" nnoremap <leader>gco :Gread<Cr>
-" nnoremap <leader>gbl :Gblame<Cr>
-" nnoremap <leader>glg :Glog<Cr>
-" nnoremap <leader>gdf :Gdiff<Cr>
-" nnoremap <leader>gfc :Gfetch<Cr>
-" nnoremap <leader>gpu :Gpush<Cr>
-" nnoremap <leader>gr :Ggrep 
-
 nnoremap gst :Gstatus<Cr>
 nnoremap gad :Gwrite<Cr>
 nnoremap gcm :Gcommit<Cr>
@@ -489,13 +132,15 @@ nnoremap gpu :Gpush<Cr>
 nnoremap gr :Ggrep 
 
 nnoremap <leader>ma :marks<CR>
-nnoremap <leader>v :VimShell<CR>
 nnoremap <leader>d :vertical diffsplit 
 nnoremap <leader>u :Unite source<CR>
 nnoremap <leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <leader>ml :DoShowMarks!<CR>
 nnoremap <leader>md :NoShowMarks!<CR>
 nnoremap <leader>r :QuickRun<CR>
+nnoremap <leader>v :VimShell<CR>
+nnoremap <leader>c :Calendar<CR>
+nnoremap t :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
 autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
@@ -509,6 +154,7 @@ nnoremap <Leader>go :!open .<CR><CR>
 " nnoremap gq :q<Cr>
 " nnoremap g2 :wq<Cr>
 " nnoremap g! :q!<Cr>
+rv! " 履歴共有
 nnoremap <leader>w :w<Cr>
 nnoremap <leader>q :q<Cr>
 nnoremap <leader>2 :wq<Cr>
@@ -525,7 +171,6 @@ call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
-""""""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
 """"""""""""""""""""""""""""""
 " imap { {}<LEFT>
@@ -533,13 +178,13 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 " imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 " 2度押しで囲む
+""""""""""""""""""""""""""""""
 noremap {{ wbi{<Esc>f<Space>i}<Esc><Cr>
 noremap g[[ wbi[<Esc>f<Space>i]<Esc><Cr>
 noremap (( wbi(<Esc>f<Space>i)<Esc><Cr>
 noremap g<< wbi<<Esc>f<Space>i><Esc><Cr>
 noremap ~~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
 noremap "" wbi"<Esc>f<Space>i"<Esc><Cr>
-
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
@@ -549,6 +194,21 @@ if has("autocmd")
             \   exe "normal! g'\"" |
             \ endif
 endif
+""""""""""""""""""""""""""""""
+" カレントディレクトリをファイルに合わせる(shell,filerが動かなくなる)
+""""""""""""""""""""""""""""""
+" if exists('+autochdir')
+"     set autochdir
+" endif
+"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+" grepをQuickFixで開く
+""""""""""""""""""""""""""""""
+augroup grepopen
+    " autocmd!
+    " autocmd QuickfixCmdPost vimprep cw
+    autocmd QuickFixCmdPost *grep* cwindow
+augroup END
 """""""""""""""""""""""""""""
 
 "==============================================
