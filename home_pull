@@ -5,3 +5,4 @@
 \cp -f ~/home/.xvimrc ~/
 \cp -f ~/home/.vrapperrc ~/
 \cp -f ~/home/.zshrc ~/
+\cp -rf ~/home/userautoload ~/.vim/
