@@ -1,5 +1,7 @@
 #!/bin/sh
 # pull した後叩く
+# chmod 755 home_pull
+# ./home_pull
 \cp -f ~/home/.vimrc ~/
 \cp -f ~/home/.gvimrc ~/
 \cp -f ~/home/.xvimrc ~/
