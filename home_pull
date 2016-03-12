@@ -1,10 +1,17 @@
 #!/bin/sh
 # pull した後叩く
 # chmod 755 home_pull
+
 # ./home_pull
+
+## zsh
+\cp -f ~/home/.zshrc ~/
+## vim
 \cp -f ~/home/.vimrc ~/
 \cp -f ~/home/.gvimrc ~/
 \cp -f ~/home/.xvimrc ~/
 \cp -f ~/home/.vrapperrc ~/
-\cp -f ~/home/.zshrc ~/
 \cp -rf ~/home/userautoload ~/.vim/
+## vim
+\cp -f ~/home/.tmux.conf ~/
+\cp -rf ~/home/.tmux ~/
