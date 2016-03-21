@@ -84,6 +84,9 @@ nnoremap <silent> p p`]
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
+" カレンダー
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 " diffすぐ出す
 nnoremap diff :vertical diffsplit f
 " 全選択
