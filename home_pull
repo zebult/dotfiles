@@ -12,6 +12,6 @@
 \cp -f ~/home/.xvimrc ~/
 \cp -f ~/home/.vrapperrc ~/
 \cp -rf ~/home/userautoload ~/.vim/
-## vim
+## tmux
 \cp -f ~/home/.tmux.conf ~/
 \cp -rf ~/home/.tmux ~/

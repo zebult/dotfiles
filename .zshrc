@@ -43,7 +43,7 @@ alias gst="git status"
 alias ga="git add ."
 alias gcm="git commit -m"
 # alias gacm="git commit -am"
-alias gacm="git add . | git commit -m"
+alias gacm='git add .;  git commit -m "$1"'
 alias gd="git diff"
 alias gb="git branch"
 alias gps="git push"
@@ -60,7 +60,15 @@ alias gvim='open -a macvim'
 alias ouch='say -v Alex "ouch"'
 
 functions zipr() {
-    zip -r $1 $1
+    zip -r $1 $1;
+}
+functions tmp() {
+    mkdir tmp;
+    cd tmp;
+}
+functions mc() {
+    mkdir $1;
+    cd $1
 }
 
 # Add environment variable NDK_ROOT for cocos2d-x
