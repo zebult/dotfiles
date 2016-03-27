@@ -6,7 +6,6 @@
 
 ## zsh
 \cp -f ~/home/.zshrc ~/
-source ~/.zshrc
 ## vim
 \cp -f ~/home/.vimrc ~/
 \cp -f ~/home/.gvimrc ~/
