@@ -143,7 +143,7 @@ nnoremap <leader>md :NoShowMarks!<CR>
 nnoremap <leader>r :QuickRun<CR>
 nnoremap <leader>v :VimShell<CR>
 nnoremap <leader>c :Calendar<CR>
-nnoremap t :Calendar -view=clock<CR>
+nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
 autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
