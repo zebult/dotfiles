@@ -104,6 +104,8 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 # %F{yellow}[%~]%f `vcs_echo`
 # %(?.$.%F{red}$%f) '
 
+# tmux起動
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # nvm設定
 [[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
