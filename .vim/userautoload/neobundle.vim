@@ -111,6 +111,7 @@ if has('vim_starting')
                \ 'cmdopt': 'swift',
                \ 'exec': '%c %o %s',
                \}
+      NeoBundle 'keith/sourcekittendaemon.vim'
    endif
    " VimScriptで作ってあるshell
    " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheまたはneocompleteがないと、一部の拡張機能が使えない。

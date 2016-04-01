@@ -57,6 +57,7 @@ alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias gvim='open -a macvim'
 
 alias ouch='say -v Alex "ouch"'
+alias find='find . -name'
 
 functions zipr() {
     zip -r $1 $1;
