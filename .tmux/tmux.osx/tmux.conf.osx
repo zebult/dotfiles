@@ -1,0 +1,1 @@
+set-option -g status-right "#(sh ~/.tmux/tmux.osx/getWiFiStat.sh) #(sh ~/.tmux/tmux.osx/getPower.sh) #[fg=white][%Y-%m-%d(%a) %H:%M:%S]"
