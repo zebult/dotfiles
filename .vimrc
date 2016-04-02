@@ -91,6 +91,8 @@ let g:calendar_google_task = 1
 nnoremap diff :vertical diffsplit f
 " 全選択
 nnoremap g0 ggVG
+" 全インデント揃える
+nnoremap gi ggVG=''zz
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
