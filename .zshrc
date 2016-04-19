@@ -37,8 +37,9 @@ export EDITOR=/usr/bin/vim
 export VISUAL=vim
 
 # alias
-alias ll='ls -la'
 alias gch="git checkout"
+alias ll='ls -lah'
+alias gst="git status -s"
 alias ga="git add ."
 alias gcm="git commit -m"
 alias gacm='git add .;  git commit -m'
@@ -53,7 +54,7 @@ alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias gvim='open -a macvim'
 
 alias ouch='say -v Alex "ouch"'
-alias find='find . -name'
+# alias find='find . -name'
 
 functions zipr() {
 zip -r $1 $1;
