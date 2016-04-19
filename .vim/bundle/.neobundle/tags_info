@@ -8,6 +8,7 @@ neobundle.vim
 neocomplcache.vim
 open-browser.vim
 previm
+sourcekittendaemon.vim
 syntastic
 tagbar
 tcomment_vim
@@ -26,6 +27,7 @@ vim-quickrun
 vim-showmarks
 vim-submode
 vim-surround
+vim-swift
 vim-visualstar
 vimfiler.vim
 vimproc.vim
