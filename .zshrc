@@ -7,7 +7,7 @@
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
@@ -37,21 +37,18 @@ export EDITOR=/usr/bin/vim
 export VISUAL=vim
 
 # alias
+alias gch="git checkout"
 alias ll='ls -lah'
-alias gco="git checkout"
 alias gst="git status -s"
 alias ga="git add ."
 alias gcm="git commit -m"
 alias gacm='git add .;  git commit -m'
-alias gd="git diff"
-alias gb="git branch"
+alias gdt="git difftool"
+alias gmt="git mergetool"
+alias gbr="git branch"
 alias gps="git push"
-alias gpsu="git push -u origin master"
 alias gpl="git pull"
-alias gl="git log"
 alias glo="git log --oneline"
-alias gm="git merge"
-alias gr="git reset"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias gvim='open -a macvim'
@@ -60,15 +57,15 @@ alias ouch='say -v Alex "ouch"'
 # alias find='find . -name'
 
 functions zipr() {
-    zip -r $1 $1;
+zip -r $1 $1;
 }
 functions tmp() {
-    mkdir tmp;
-    cd tmp;
+mkdir tmp;
+cd tmp;
 }
 functions mc() {
-    mkdir $1;
-    cd $1
+mkdir $1;
+cd $1
 }
 
 # Add environment variable NDK_ROOT for cocos2d-x
@@ -109,11 +106,13 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # nvm設定
-[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-nvm use default
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
-# 毎回実行しなくていいように設定を反映させるコマンドも書いておく
-source ~/.nvm/nvm.sh
-export NVM_DIR="/Users/zebra/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if [ -e ~/.nvm ]; then
+    [[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+    nvm use default
+    npm_dir=${NVM_PATH}_modules
+    export NODE_PATH=$npm_dir
+    # 毎回実行しなくていいように設定を反映させるコマンドも書いておく
+    source ~/.nvm/nvm.sh
+    export NVM_DIR="/Users/zebra/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi

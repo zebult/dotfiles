@@ -211,5 +211,5 @@ aug show-marks-sync
 aug END
 nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
 
-" 選択してもそのまま貼り付けられるようにする
+" 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
