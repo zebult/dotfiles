@@ -1,4 +1,5 @@
 " GVimの設定ファイルです
+colorscheme seoul256
 " タブを表示
 set showtabline=4
 " GUIツールバーを非表示
