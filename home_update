@@ -1,7 +1,7 @@
 #!/bin/sh
 # dotfileをアップデートするシェル
 
-cd dotfiles
+cd ~/dotfiles
 
 # .vimrcを他ファイルに適応
 \cp .vimrc .xvimrc
