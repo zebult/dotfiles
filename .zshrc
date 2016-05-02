@@ -42,12 +42,14 @@ alias ll='ls -lah'
 alias gst="git status -s"
 alias ga="git add ."
 alias gcm="git commit -m"
-alias gacm='git add .;  git commit -m'
+alias gacm='gst; ga;  git commit -m'
 alias gdt="git difftool"
 alias gmt="git mergetool"
+alias gmg="git merge"
 alias gbr="git branch"
 alias gps="git push"
 alias gpl="git pull"
+alias gfc="git fetch"
 alias glo="git log --oneline"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
@@ -116,3 +118,6 @@ if [ -e ~/.nvm ]; then
     export NVM_DIR="/Users/zebra/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
+
+# 天気
+curl -4 wttr.in/Tokyo

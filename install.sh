@@ -45,6 +45,7 @@ case "${os}" in
             brew install nmap
             brew tig
             brew install wget
+            brew install tree
             brew install source-highlight
             source ${HOME}/.zshrc
             ./setupPrezto.sh
