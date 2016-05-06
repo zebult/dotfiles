@@ -18,6 +18,9 @@ export PATH=$PATH:~/Plugins/android-sdk-macosx/platform-tools
 export PATH="/usr/local/bin:${PATH}"
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # port command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH

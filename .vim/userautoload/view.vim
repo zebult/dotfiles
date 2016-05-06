@@ -5,8 +5,8 @@ autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
 autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 " 背景色をターミナルと同じにする
 autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-colorscheme zenburn
+autocmd ColorScheme * highlight LineNr ctermfg=241
+colorscheme Tomorrow-Night
 " 256に制限をかける
 set t_Co=256
 set nu

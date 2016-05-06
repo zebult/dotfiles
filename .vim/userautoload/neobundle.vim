@@ -194,6 +194,14 @@ if has('vim_starting')
 endif
 
 "--------
+    "go
+    NeoBundleLazy 'fatih/vim-go', {
+                \ 'autoload' : { 'filetypes' : 'go'  }
+                \ }
+"--------
+
+
+"--------
 "TNaky 補完,ctags
 "--------
 " 入力補完設定

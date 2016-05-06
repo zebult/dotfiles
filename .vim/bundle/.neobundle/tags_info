@@ -20,6 +20,7 @@ vim-dispatch
 vim-easymotion
 vim-expand-region
 vim-fugitive
+vim-go
 vim-indent-guides
 vim-markdown
 vim-migemo
