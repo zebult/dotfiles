@@ -139,7 +139,7 @@ if has('vim_starting')
    au BufRead,BufNewFile *.md set filetype=markdown
    let g:previm_open_cmd = 'open -a Safari'
    " Python用入力補完
-   NeoBundle 'davidhalter/jedi-vim'
+   " NeoBundle 'davidhalter/jedi-vim'
    " Git
    NeoBundle 'tpope/vim-fugitive'
    " 選択範囲拡大
@@ -234,20 +234,20 @@ if neobundle#is_installed('neocomplete.vim')
    let g:neocomplete#keyword_patterns._ = '\h\w*'
 
    " jedi-vimの設定
-   autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
-   let g:jedi#completions_enabled = 0
-   let g:jedi#auto_vim_configuration = 0
-   if !exists('g:neocomplete#force_omni_input_patterns')
-      let g:neocomplete#force_omni_input_patterns = {}
-   endif
+   " autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
+   " let g:jedi#completions_enabled = 0
+   " let g:jedi#auto_vim_configuration = 0
+   " if !exists('g:neocomplete#force_omni_input_patterns')
+   "     let g:neocomplete#force_omni_input_patterns = {}
+   " endif
 
    " オムニ補完設定
    " c用
-   let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+   " let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
    " cpp用
-   let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+   " let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
    " Python用
-   let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+   " let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
    " 補完メニューの色
    highlight Pmenu     ctermbg=8
@@ -326,15 +326,15 @@ let g:lightline = {
          \}
 
 " vim-easymotion {{{
-" nmap <Leader>s <Plug>(easymotion-s2)
-" xmap <Leader>s <Plug>(easymotion-s2)
+nmap g/ <Plug>(easymotion-s)
+xmap g/ <Plug>(easymotion-s)
 " nmap g/ <Plug>(easymotion-sn)
 " xmap g/ <Plug>(easymotion-sn)
 " omap g/ <Plug>(easymotion-tn)
 " let g:EasyMotion_smartcase = 1
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
-" let g:EasyMotion_startofline = 0
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+let g:EasyMotion_startofline = 0
 " let g:EasyMotion_use_upper = 1
 " let g:EasyMotion_enter_jump_first = 1
 " let g:EasyMotion_space_jump_first = 1
