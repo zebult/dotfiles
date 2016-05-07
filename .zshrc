@@ -49,6 +49,7 @@ alias gbr="git branch"
 alias gps="git push"
 alias gpl="git pull"
 alias glo="git log --oneline"
+alias gfc="git fetch"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias gvim='open -a macvim'
