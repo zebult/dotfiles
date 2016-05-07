@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# 0 22 * * * ~/dotfiles/auto_back_up.sh
+
 cd /0cheatseat
 git add .
 git commit -m "Auto update "`date +%Y_%m_%d_%H` 
