@@ -1,23 +1,20 @@
 #!/bin/bash
 
-# 1.dotfileのシンボリックリンクを$HOMEに張る
+# 1.dotfileのシンボリックリンクを$HOMEに張る(.file限定)
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
-    # [[ "$f" == ".vim" ]] && \cp -rf "$HOME"/"dotfiles"/".vim"/"userautoload" "$HOME"/"tmp" && continue
 
     echo "$f"
     ln -snfv "$HOME"/"dotfiles"/"$f" "$HOME"/"$f"
 done
-
-# userautoloadを.vimにいれたい
-# \cp -rf "$HOME"/"dotfiles"/"userautoload" "$HOME"/"tmp"
-
+## userautoloadのシンボリックリンクを.vimに作る
+ln -snfv "$HOME"/"dotfiles"/"userautoload" "$HOME"/".vim"/"userautoload"
 
 # 2.必要なものインストール
 
-# OS別の処理
+## OS別の処理
 os=''
 if [[ "$(uname)" == 'Darwin' ]]; then
     os='mac'
@@ -54,4 +51,3 @@ case "${os}" in
 esac
 
 echo finish🍺
-

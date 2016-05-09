@@ -31,6 +31,8 @@ set clipboard=unnamed,autoselect
 " set clipboard+=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
+" セッションを超えたバックアップファイル作成しない(.un~)
+set noundofile
 " 挿入モードで移動できない問題解決
 imap <ESC>OA <Up>
 imap <ESC>OB <Down>

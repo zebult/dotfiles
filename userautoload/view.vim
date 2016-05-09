@@ -1,12 +1,11 @@
 " サーチ色変更
-autocmd ColorScheme * highlight Search ctermfg=9 guifg=#008800
-autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
+" autocmd ColorScheme * highlight Search ctermfg=9 guifg=#008800
+" autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
 " 選択した範囲文字色
 autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 " 背景色をターミナルと同じにする
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
-colorscheme Tomorrow-Night
 colorscheme Tomorrow
 " 256に制限をかける
 set t_Co=256
@@ -20,8 +19,8 @@ set cursorline
 hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=239
 " 現在列ハイライト
 set cursorcolumn
-hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
-" 行数色
+hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=239 "238datta
+" 行数色(現在のみ)
 hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
 " 背景と同化するため
 hi Normal ctermfg=253 ctermbg=NONE cterm=None
