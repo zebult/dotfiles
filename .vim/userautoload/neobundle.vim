@@ -140,6 +140,8 @@ if has('vim_starting')
    let g:previm_open_cmd = 'open -a Safari'
    " Python用入力補完
    NeoBundle 'davidhalter/jedi-vim'
+   " Goのなにか
+   NeoBundle 'fatih/vim-go'
    " Git
    NeoBundle 'tpope/vim-fugitive'
    " 選択範囲拡大

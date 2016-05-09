@@ -18,8 +18,8 @@ export PATH=$PATH:~/Plugins/android-sdk-macosx/platform-tools
 export PATH="/usr/local/bin:${PATH}"
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
-# go
-export GOPATH=$HOME/go
+# go (go get glide)
+export GOPATH=$HOME/go:~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # port command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -38,6 +38,9 @@ export PATH=$GEM_HOME/bin:$PATH
 
 export EDITOR=/usr/bin/vim
 export VISUAL=vim
+
+export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
+export PATH=$PATH:$ELASTICPATH
 
 # alias
 alias gch="git checkout"

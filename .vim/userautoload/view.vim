@@ -7,6 +7,7 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 colorscheme Tomorrow-Night
+colorscheme Tomorrow
 " 256に制限をかける
 set t_Co=256
 set nu
@@ -22,7 +23,9 @@ set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
 " 行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
-" hi clear CursorLine
+" 背景と同化するため
+hi Normal ctermfg=253 ctermbg=NONE cterm=None
+hi Special ctermfg=196 ctermbg=None cterm=None
 " インデントをスペース(4つ)だけにする "
 set ts=4 sw=4 sts=0
 " set tabstop=4 "タブ,画面上の見た目

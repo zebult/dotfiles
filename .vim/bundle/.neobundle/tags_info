@@ -5,7 +5,7 @@ gundo.vim
 jedi-vim
 kotlin-vim
 neobundle.vim
-neocomplcache.vim
+neocomplete.vim
 open-browser.vim
 previm
 sourcekittendaemon.vim

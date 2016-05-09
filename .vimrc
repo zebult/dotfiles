@@ -8,6 +8,7 @@ source ~/.vim/userautoload/neobundle.vim
 source ~/.vim/userautoload/view.vim
 source ~/.vim/userautoload/cpp.vim
 source ~/.vim/userautoload/swift.vim
+source ~/.vim/userautoload/go.vim
 "-------------------------
 
 au BufRead,BufNewFile *.md set filetype=markdown
