@@ -75,6 +75,8 @@ endif
 vmap <C-v> <Plug>(expand_region_shrink)
 " 矩形をブロックにする
 set virtualedit=block
+" 折りたたみしやすく
+noremap \ zA
 " 履歴数増量
 set history=200
 " ディレクトリを手早く展開
