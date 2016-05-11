@@ -1,13 +1,16 @@
 " サーチ色変更
 " autocmd ColorScheme * highlight Search ctermfg=9 guifg=#008800
 " autocmd ColorScheme * highlight IncSearch ctermfg=9 guifg=#008800
+autocmd ColorScheme * highlight Search ctermfg=226 guifg=#000000
+autocmd ColorScheme * highlight IncSearch ctermfg=226 guifg=#000000
 " 選択した範囲文字色
 autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 " 背景色をターミナルと同じにする
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme Tomorrow
-colorscheme xterm16
+" colorscheme xterm16
+colorscheme one-dark
 " 256に制限をかける
 set t_Co=256
 set nu

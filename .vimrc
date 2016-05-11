@@ -25,12 +25,19 @@ set ignorecase
 " set whichwrap=b,s,h,l,<,>,[,]
 " buffer切り替え時ファイルを保存しなくてもよい
 set hidden
-set noswapfile
+" '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
+set shiftround
+" 補完時に大文字小文字を区別しない
+set infercase
+" 対応括弧に'<'と'>'のペアを追加
+set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
 set clipboard=unnamed,autoselect
 " set clipboard+=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
+set noswapfile
+set nowritebackup
 " セッションを超えたバックアップファイル作成しない(.un~)
 set noundofile
 " 挿入モードで移動できない問題解決
@@ -101,6 +108,9 @@ nnoremap gi ggVG=''zz
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j

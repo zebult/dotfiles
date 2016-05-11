@@ -139,7 +139,7 @@ if has('vim_starting')
    au BufRead,BufNewFile *.md set filetype=markdown
    let g:previm_open_cmd = 'open -a Safari'
    " Python用入力補完
-   NeoBundle 'davidhalter/jedi-vim'
+   " NeoBundle 'davidhalter/jedi-vim'
    " Goのなにか
    NeoBundle 'fatih/vim-go'
    " Git
@@ -307,33 +307,33 @@ endif
 
 "--------
 " lightline Settings
-let g:lightline = {
-         \'colorscheme': 'hybrid',
-         \ 'mode_map': {'c': 'NORMAL'},
-         \ 'active': {
-         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename'] ],
-         \   'right': [ [ 'syntastic', 'lineinfo' ],
-         \              [ 'percent' ],
-         \              [ 'filetype', 'fileencoding', 'pyenv' ] ]
-         \ },
-         \ 'component_expand':{
-         \   'syntastic': 'SyntasticStatuslineFlag'
-         \ },
-         \ 'component_type':{
-         \   'syntastic': 'error'
-         \ },
-         \ 'component_function': {
-         \   'modified': 'MyModified',
-         \   'readonly': 'MyReadonly',
-         \   'fugitive': 'MyFugitive',
-         \   'filename': 'MyFilename',
-         \   'fileformat': 'MyFileformat',
-         \   'filetype': 'MyFiletype',
-         \   'fileencoding': 'MyFileencoding',
-         \   'mode': 'MyMode',
-         \   'pyenv': 'pyenv#statusline#component'
-         \ }
-         \}
+" let g:lightline = {
+"          \'colorscheme': 'hybrid',
+"          \ 'mode_map': {'c': 'NORMAL'},
+"          \ 'active': {
+"          \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename'] ],
+"          \   'right': [ [ 'syntastic', 'lineinfo' ],
+"          \              [ 'percent' ],
+"          \              [ 'filetype', 'fileencoding', 'pyenv' ] ]
+"          \ },
+"          \ 'component_expand':{
+"          \   'syntastic': 'SyntasticStatuslineFlag'
+"          \ },
+"          \ 'component_type':{
+"          \   'syntastic': 'error'
+"          \ },
+"          \ 'component_function': {
+"          \   'modified': 'MyModified',
+"          \   'readonly': 'MyReadonly',
+"          \   'fugitive': 'MyFugitive',
+"          \   'filename': 'MyFilename',
+"          \   'fileformat': 'MyFileformat',
+"          \   'filetype': 'MyFiletype',
+"          \   'fileencoding': 'MyFileencoding',
+"          \   'mode': 'MyMode',
+"          \   'pyenv': 'pyenv#statusline#component'
+"          \ }
+"          \}
 
 " vim-easymotion {{{
 nmap g/ <Plug>(easymotion-s)
