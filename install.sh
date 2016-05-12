@@ -9,8 +9,6 @@ do
     echo "$f"
     ln -snfv "$HOME"/"dotfiles"/"$f" "$HOME"/"$f"
 done
-## userautoloadのシンボリックリンクを.vimに作る
-ln -snfv "$HOME"/"dotfiles"/"userautoload" "$HOME"/".vim"/"userautoload"
 
 # 2.必要なものインストール
 
