@@ -101,6 +101,9 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 " diffすぐ出す
 nnoremap diff :vertical diffsplit f
+" 指定範囲インデント調節の連続化
+vnoremap > >gv
+vnoremap < <gv
 " 全選択
 nnoremap g0 ggVG
 " 全インデント揃える
