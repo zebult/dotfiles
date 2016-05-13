@@ -15,7 +15,8 @@ colorscheme one-dark
 set t_Co=256
 set nu
 set list
-set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
+" set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
+set listchars=tab:»-,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
 set guifont=Ricty-Regular-for-Powerline:h14 
 syntax on
 " 現在行ハイライト
