@@ -13,8 +13,7 @@ colorscheme one-dark
 set t_Co=256
 set nu
 set list
-" set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
-set listchars=tab:»-,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
+set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
 set guifont=Ricty-Regular-for-Powerline:h14 
 syntax on
 " 現在行ハイライト
@@ -30,7 +29,7 @@ hi Normal ctermfg=253 ctermbg=NONE cterm=None
 hi Special ctermfg=196 ctermbg=None cterm=None
 hi Special ctermfg=166 ctermbg=None cterm=None
 " インデントをスペース(4つ)だけにする "
-set ts=2 sw=2 sts=0
+set ts=4 sw=4 sts=0
 " set tabstop=4 "タブ,画面上の見た目
 " set shiftwidth=4
 " set softtabstop=0 "タブ一回のスペース量(0はtsで指定して量)

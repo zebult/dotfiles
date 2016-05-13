@@ -179,7 +179,7 @@ if has('vim_starting')
    let g:indent_guides_start_level=2
    let g:indent_guides_auto_colors=0
    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=240
-   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=239
    let g:indent_guides_color_change_percent = 30
    let g:indent_guides_guide_size = 1
    " ctagsのタグリスト一覧
