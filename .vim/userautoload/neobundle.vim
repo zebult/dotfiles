@@ -228,7 +228,7 @@ if neobundle#is_installed('neocomplete.vim')
    " ハイフンの入力による候補番号の標示
    let g:neocomplete#enable_quick_match = 1
    " 提示される候補の最大数（初期値：100）
-   " let g:neocomplete#max_list = 5
+   let g:neocomplete#max_list = 30
    " 補完候補提示の際に先頭を選択状態へ
    let g:neocomplete#enable_auto_select = 1
    " 補完（小文字を無視して検索）
@@ -260,9 +260,9 @@ if neobundle#is_installed('neocomplete.vim')
    " let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
    " 補完メニューの色
-   highlight Pmenu     ctermbg=8
-   highlight PmenuSel  ctermbg=1
-   highlight PmenuSbar ctermbg=0
+   " highlight Pmenu     ctermbg=80
+   " highlight PmenuSel  ctermbg=10
+   " highlight PmenuSbar ctermbg=10
 
 elseif neobundle#is_installed('neocomplcache')
    " NeoComplcache用設定
