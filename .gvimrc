@@ -12,6 +12,7 @@ set guioptions-=l
 set guioptions-=
 "下スクロールバーなし
 set guioptions-=b
+let g:neocomplete#lock_iminsert = 1
 " mac os x環境固有の設定
 if has('mac')
    " フォントサイズを14ポイントに設定

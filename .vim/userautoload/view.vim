@@ -1,6 +1,6 @@
 " サーチ色変更
-autocmd ColorScheme * highlight Search ctermbg=226
-autocmd ColorScheme * highlight IncSearch ctermbg=226
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight IncSearch ctermfg=160 ctermbg=252
 " 選択した範囲文字色
 autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 " 背景色をターミナルと同じにする
