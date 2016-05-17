@@ -18,10 +18,10 @@ set guifont=Ricty-Regular-for-Powerline:h16
 syntax on
 " 現在行ハイライト
 set cursorline
-hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=239
+hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=237
 " 現在列ハイライト
 set cursorcolumn
-hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=239
+hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=237
 " 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
 " 背景と同化するため

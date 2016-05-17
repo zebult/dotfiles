@@ -93,6 +93,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" タグジャンプやりやすく
+nnoremap tt gD
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
