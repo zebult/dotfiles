@@ -22,11 +22,8 @@ hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=237
 " 現在列ハイライト
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=237
-<<<<<<< HEAD
-=======
 " 行数色(現在のみ)
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=239
->>>>>>> 057e203f3a01c9a8629c7779c3928403007060ee
 " 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
 " 背景と同化するため
