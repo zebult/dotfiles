@@ -170,6 +170,7 @@ nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
 autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
+autocmd FileType go nnoremap <Space>r :QuickRun<CR> <C-w>H
 nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Leader>l <Space>

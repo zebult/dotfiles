@@ -58,7 +58,7 @@ if has('vim_starting')
        \ "hook/inu/enable" : 1,
        \ "hook/inu/wait" : 20,
        \ "outputter" : "multi:buffer:quickfix",
-       \ "outputter/buffer/split" : ":botright 5sp",
+       \ "outputter/buffer/split" : ":botright 3sp",
        \ }
        \ }
 
