@@ -14,22 +14,22 @@ set t_Co=256
 set nu
 set list
 set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
-set guifont=Ricty-Regular-for-Powerline:h14 
+set guifont=Ricty-Regular-for-Powerline:h16
 syntax on
 " 現在行ハイライト
 set cursorline
-" hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=239
 hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=237
 " 現在列ハイライト
 set cursorcolumn
-" hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=239 "238datta
-hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=237 "238datta
+hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=237
 " 行数色(現在のみ)
+hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=239
+" 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
 " 背景と同化するため
-hi Normal ctermfg=253 ctermbg=NONE cterm=None
-hi Special ctermfg=196 ctermbg=None cterm=None
-hi Special ctermfg=166 ctermbg=None cterm=None
+" hi Normal ctermfg=253 ctermbg=NONE cterm=None
+" hi Special ctermfg=196 ctermbg=None cterm=None
+" hi Special ctermfg=166 ctermbg=None cterm=None
 " インデントをスペース(4つ)だけにする "
 set ts=4 sw=4 sts=0
 " set tabstop=4 "タブ,画面上の見た目
