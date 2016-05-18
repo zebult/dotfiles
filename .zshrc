@@ -33,6 +33,9 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 #export COCOS_TEMPLATES_ROOT=/Users/zebra/Documents/workspace/cocos2d-x/cocos2d-x-3.6/templates
 #export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
+# docker
+eval $(docker-machine env default)
+
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
@@ -58,7 +61,6 @@ alias gpl="git pull"
 alias gplo="git pull origin"
 alias gfc="git fetch"
 alias glo="git log --oneline"
-alias gfc="git fetch"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vi='open -a MacVim'
