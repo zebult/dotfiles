@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd /0cheatseat
+git add .
+git commit -m "data update"
+
+cd ~/dotfiles
+git add .
+git commit -m "data update"
