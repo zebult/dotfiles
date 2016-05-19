@@ -99,6 +99,9 @@ nnoremap tt gD
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
+" 自動補完on/off
+inoremap jn <ESC>:NeoCompleteToggle<CR>a
+nnoremap gn :NeoCompleteToggle<CR>
 " カレンダー
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
@@ -117,6 +120,10 @@ vmap <Tab> %
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+" json整形
+nnoremap gjq :%!jq '.'<CR>
+" ファイル更新
+nnoremap <leader>L :e!<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j

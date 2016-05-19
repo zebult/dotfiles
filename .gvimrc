@@ -15,7 +15,8 @@ let g:neocomplete#lock_iminsert = 1
 " mac os x環境固有の設定
 if has('mac')
    " フォントサイズを15ポイントに設定
-   set guifont=Ricty-RegularForPowerline:h16
+   " set guifont=Ricty-RegularForPowerline:h16
+   set guifont=Ricty\ Regular:h16
    " 半透明化
    set transparency=4
    " 暗い背景色用の配色を使う?
