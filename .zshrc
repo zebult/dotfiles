@@ -50,7 +50,6 @@ alias gch="git checkout"
 alias ll='ls -lah'
 alias gst="git status -s"
 alias ga="git add ."
-alias gcm="git commit -m"
 alias gacm='gst; ga;  git commit -m'
 alias gdt="git difftool"
 alias gmt="git mergetool"

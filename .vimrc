@@ -48,6 +48,10 @@ imap <ESC>OC <Right>
 imap <ESC>OD <Left>
 " 挿入モードで文字消せない問題解決
 set backspace=indent,eol,start
+" デフォルトを相対行数にする
+" set relativenumber
+" 相対行数トグル
+" nnoremap N :<C-u>setlocal relativenumber!<CR>
 " オリジナルヤンク
 noremap yu 0wv$hy
 " 単語をヤンクレジスタで置換
@@ -124,6 +128,8 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 nnoremap gjq :%!jq '.'<CR>
 " ファイル更新
 nnoremap <leader>L :e!<CR>
+" 文字数カウント
+nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -170,14 +176,13 @@ nnoremap <leader>u :Unite source<CR>
 nnoremap <leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <leader>ml :DoShowMarks!<CR>
 nnoremap <leader>md :NoShowMarks!<CR>
-nnoremap <leader>r :QuickRun<CR>
+nnoremap <leader>r :QuickRun<CR> <C-w>H
 nnoremap <leader>v :VimShell<CR>
 nnoremap <leader>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
-autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
-autocmd FileType html nnoremap <Space>r :!open %<CR>
-autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
-autocmd FileType go nnoremap <Space>r :QuickRun<CR> <C-w>H
+autocmd FileType markdown nnoremap <leader>r :PrevimOpen<CR>
+autocmd FileType html nnoremap <leader>r :!open %<CR>
+autocmd FileType tex nnoremap <leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Leader>l <Space>

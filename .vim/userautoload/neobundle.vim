@@ -181,8 +181,8 @@ if has('vim_starting')
    " タブ色
    " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=240
    " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=239
-   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
-   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
+   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
+   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
    let g:indent_guides_color_change_percent = 30
    let g:indent_guides_guide_size = 1
    " ctagsのタグリスト一覧
@@ -345,8 +345,10 @@ xmap g/ <Plug>(easymotion-s)
 " xmap g/ <Plug>(easymotion-sn)
 " omap g/ <Plug>(easymotion-tn)
 " let g:EasyMotion_smartcase = 1
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+map gw <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
 let g:EasyMotion_startofline = 0
 " let g:EasyMotion_use_upper = 1
 " let g:EasyMotion_enter_jump_first = 1
