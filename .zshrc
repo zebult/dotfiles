@@ -47,7 +47,7 @@ export PATH=$PATH:$ELASTICPATH
 
 # alias
 alias gch="git checkout"
-alias ll='ls -lah'
+alias ll='ls -alh'
 alias gst="git status -s"
 alias ga="git add ."
 alias gacm='gst; ga;  git commit -m'

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /0cheatseat
+cd /0CheatSheet
 git pull origin master
 
 cd ~/dotfiles

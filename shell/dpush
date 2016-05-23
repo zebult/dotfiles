@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /0cheatseat
+cd /0CheatSheet
 git add .
 git commit -m "data update"
 git push origin master
