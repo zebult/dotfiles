@@ -193,6 +193,7 @@ rv! " 履歴共有
 nnoremap <leader>w :w<Cr>
 nnoremap <leader>q :q<Cr>
 nnoremap <leader>2 :wq<Cr>
+nnoremap <leader>x :xa<Cr>
 nnoremap <leader>! :q!<Cr>
 cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
