@@ -67,6 +67,8 @@ inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC> 
 noremap j gj
 noremap k gk
+noremap gj j
+noremap gk k
 " Insertモードで日本語の時色変更
 if has('multi_byte_ime') || has('xim') 
    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
@@ -125,7 +127,7 @@ vmap <Tab> %
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 " json整形
-nnoremap gjq :%!jq '.'<CR>
+nnoremap Gjq :%!jq '.'<CR>
 " ファイル更新
 nnoremap <leader>L :e!<CR>
 " 文字数カウント
