@@ -62,7 +62,7 @@ alias gfc="git fetch"
 alias glo="git log --oneline"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-alias vi='open -a MacVim'
+alias vm='open -a MacVim'
 
 alias ouch='say -v Alex "ouch"'
 # alias find='find . -name'
@@ -74,7 +74,7 @@ functions tmp() {
 mkdir tmp;
 cd tmp;
 }
-functions mc() {
+functions mkcd() {
 mkdir $1;
 cd $1
 }
@@ -129,4 +129,5 @@ if [ -e ~/.nvm ]; then
 fi
 
 # 天気
-curl -4 wttr.in/Tokyo
+curl wttr.in/Moon
+curl wttr.in/Tokyo
