@@ -127,7 +127,7 @@ vmap <Tab> %
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 " json整形
-nnoremap Gjq :%!jq '.'<CR>
+nnoremap ;jq :%!jq '.'<CR>
 " ファイル更新
 nnoremap <leader>L :e!<CR>
 " 文字数カウント
@@ -160,6 +160,7 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g
+nnoremap ;wc :%s /<C-r><C-w>//gn<CR>
 
 nnoremap gst :Gstatus<Cr>
 nnoremap gad :Gwrite<Cr>
