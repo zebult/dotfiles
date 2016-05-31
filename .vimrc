@@ -11,7 +11,7 @@ source ~/.vim/userautoload/swift.vim
 source ~/.vim/userautoload/go.vim
 source ~/.vim/userautoload/md.vim
 "-------------------------
-
+"
 au BufRead,BufNewFile *.md set filetype=markdown
 " 入力完了を待たずに検索
 set incsearch
