@@ -36,6 +36,7 @@ if has('vim_starting')
    NeoBundle 'lervag/vimtex' " Vim上でtexの部分コンパイルをする
    " 単語の前後に入力
    NeoBundle 'tpope/vim-surround'
+   NeoBundle 'fuenor/vim-wordcount'
    " putした後履歴選択
    " NeoBundle 'LeafCage/yankround.vim'
    " let g:yankround_max_history = 35
