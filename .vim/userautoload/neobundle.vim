@@ -29,7 +29,7 @@ if has('vim_starting')
    " カレンダー
    NeoBundle 'itchyny/calendar.vim'
    NeoBundle 'flazz/vim-colorschemes'
-   " 非同期コンパイル
+   " 非同期コンパイル (補完用ローカルサーバ自動起動?)
    NeoBundle 'tpope/vim-dispatch'
    " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
    NeoBundle 'ujihisa/unite-colorscheme'
@@ -277,8 +277,6 @@ if neobundle#is_installed('neocomplete.vim')
       \     'unix': 'xbuild server/OmniSharp.sln',
       \   },
       \ }
-    " 補完用ローカルサーバ自動起動
-    NeoBundle tpope/vim-dispatch
 
 elseif neobundle#is_installed('neocomplcache')
    " NeoComplcache用設定
