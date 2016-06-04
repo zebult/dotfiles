@@ -10,6 +10,7 @@ source ~/.vim/userautoload/cpp.vim
 source ~/.vim/userautoload/swift.vim
 source ~/.vim/userautoload/go.vim
 source ~/.vim/userautoload/md.vim
+source ~/.vim/userautoload/cs.vim
 "-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown

@@ -267,6 +267,18 @@ if neobundle#is_installed('neocomplete.vim')
    " highlight Pmenu     ctermbg=80
    " highlight PmenuSel  ctermbg=10
    " highlight PmenuSbar ctermbg=10
+   "
+" ローカルサーバ?と通信してC#の補完をしてくれる
+    NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+      \   'build': {
+      \     'windows' : 'msbuild server/OmniSharp.sln',
+      \     'mac': 'xbuild server/OmniSharp.sln',
+      \     'unix': 'xbuild server/OmniSharp.sln',
+      \   },
+      \ }
+    " 補完用ローカルサーバ自動起動
+    NeoBundle tpope/vim-dispatch
 
 elseif neobundle#is_installed('neocomplcache')
    " NeoComplcache用設定
