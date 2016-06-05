@@ -1,0 +1,64 @@
+snippet find
+    GameObject.Find("${1}")${2}
+snippet gc
+    GetComponent()
+snippet ac
+    AddComponent()
+snippet sar
+    SetActiveRecursively(${1:true})
+snippet rc
+    [RequireComponent (typeof(${1:AudioSource}))]
+snippet ee
+    [ExecuteInEditMode]
+snippet log
+    Debug.Log("${1:msg}");
+snippet warn
+    Debug.LogWarning("${1:msg}");
+snippet err
+    Debug.LogError("${1:msg}");
+snippet inst
+    (${2:GameObject}) GameObject.Instantiate(${1:thing}, Vector3.zero, Quaternion.identity);
+snippet go
+    GameObject ${1:go} = new GameObject(${2:name});
+snippet s2i
+    Convert.ToInt32(${1:string})
+snippet s2f
+    float.Parse(${1:string}, CultureInfo.InvariantCulture.NumberFormat)
+snippet load
+    (${2:GameObject}) Resources.Load("${1:path}")
+snippet wait
+    yield return new WaitForSeconds(${1:time})
+snippet sm
+    SendMessage("${1:message}", ${2:null}, ${3:SendMessageOptions.DontRequireReceiver})
+snippet forl
+    foreach (${1:int} ${2:var} in ${3:list}) {
+        ${4}
+    }
+snippet ford
+    foreach (KeyValuePair pair in ${3:dict}) {
+        ${4}
+    }
+snippet list
+    List ${2:var} = new List();
+snippet dict
+    Dictionary ${3:var} = new Dictionary();
+snippet sort
+    filtered.Sort(
+        delegate(${1:int} a, $1 b) {
+            return a.CompareTo(b);
+        }
+    );
+snippet tryget
+    ${1:int} ${2:value};
+    if (${3:dict}.TryGetValue("${4:key}", out $2)) {
+        ${5}
+    }
+snippet main
+    using System;
+    class ${0} 
+    {
+        static void Main() 
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }

@@ -12,6 +12,10 @@ source ~/.vim/userautoload/go.vim
 source ~/.vim/userautoload/md.vim
 source ~/.vim/userautoload/cs.vim
 "-------------------------
+" テンプレート用意
+autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
+autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txt
+"-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown
 " 入力完了を待たずに検索
@@ -86,7 +90,7 @@ endif
 " nmap vv V
 " nmap vb viw
 " v押す度拡大
-" vmap v <Plug>(expand_region_expand)
+vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 " 矩形をブロックにする
 set virtualedit=block
@@ -124,6 +128,8 @@ nnoremap gi ggVG=''zz
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
+" オムニ補完
+" inoremap oo <C-x><C-o>
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
@@ -163,34 +169,34 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g
 nnoremap ;wc :%s /<C-r><C-w>//gn<CR>
 
-nnoremap gst :Gstatus<Cr>
-nnoremap gad :Gwrite<Cr>
-nnoremap gcm :Gcommit<Cr>
-nnoremap gco :Gread<Cr>
-nnoremap gbl :Gblame<Cr>
-nnoremap glg :Glog<Cr>
-nnoremap gdf :Gdiff<Cr>
-nnoremap gfc :Gfetch<Cr>
-nnoremap gpu :Gpush<Cr>
-nnoremap gr :Ggrep 
+" nnoremap gst :Gstatus<Cr>
+" nnoremap gad :Gwrite<Cr>
+" nnoremap gcm :Gcommit<Cr>
+" nnoremap gco :Gread<Cr>
+" nnoremap gbl :Gblame<Cr>
+" nnoremap glg :Glog<Cr>
+" nnoremap gdf :Gdiff<Cr>
+" nnoremap gfc :Gfetch<Cr>
+" nnoremap gpu :Gpush<Cr>
+" nnoremap gr :Ggrep 
 
-nnoremap <leader>ma :marks<CR>
+" マーク情報再描画
+nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
+nnoremap ml :marks<CR>
 nnoremap <leader>d :vertical diffsplit 
 nnoremap <leader>u :Unite source<CR>
 nnoremap <leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <leader>ml :DoShowMarks!<CR>
-nnoremap <leader>md :NoShowMarks!<CR>
-nnoremap <leader>r :QuickRun<CR> <C-w>H
+" nnoremap <leader>r :QuickRun<CR> <C-w>H
+nnoremap <leader>r :QuickRun<CR>
 nnoremap <leader>v :VimShell<CR>
 nnoremap <leader>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <leader>r :!open %<CR>
 autocmd FileType tex nnoremap <leader>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Leader>o :Unite file<CR>
+" nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
-nnoremap <Leader>l <Space>
-nnoremap <Leader>go :!open .<CR><CR>
+nnoremap <Leader>o :!open .<CR><CR>
 
 rv! " 履歴共有
 " save and close
@@ -212,14 +218,18 @@ call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 """"""""""""""""""""""""""""""
-" 2度押しで囲む
+" 空白まで囲む
 """"""""""""""""""""""""""""""
-noremap {{ wbi{<Esc>f<Space>i}<Esc><Cr>
-noremap g[[ wbi[<Esc>f<Space>i]<Esc><Cr>
-noremap (( wbi(<Esc>f<Space>i)<Esc><Cr>
-noremap g<< wbi<<Esc>f<Space>i><Esc><Cr>
-noremap ~~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
-noremap "" wbi"<Esc>f<Space>i"<Esc><Cr>
+noremap <leader>{ wbi{<Esc>f<Space>i}<Esc><Cr>
+noremap <leader>[ wbi[<Esc>f<Space>i]<Esc><Cr>
+noremap <leader>( wbi(<Esc>f<Space>i)<Esc><Cr>
+noremap <leader>< wbi<<Esc>f<Space>i><Esc><Cr>
+noremap <leader>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
+noremap <leader>" wbi"<Esc>f<Space>i"<Esc><Cr>
+
+set completeopt=menuone
+inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
+let MyAutoComplete_StartLength = 3
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
@@ -248,7 +258,11 @@ aug show-marks-sync
    au!
    au BufReadPost * sil! DoShowMarks
 aug END
-nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
 
+" オムニ補完
+inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>

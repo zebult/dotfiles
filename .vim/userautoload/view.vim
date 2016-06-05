@@ -37,3 +37,6 @@ set expandtab "タブをスペースに
 set autoindent "インデントを自動でつける
 " 検索をハイライトする
 set hlsearch
+
+" 補完色
+highlight PmenuSel  ctermbg=33

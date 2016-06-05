@@ -29,7 +29,7 @@ if has('vim_starting')
    " カレンダー
    NeoBundle 'itchyny/calendar.vim'
    NeoBundle 'flazz/vim-colorschemes'
-   " 非同期コンパイル (補完用ローカルサーバ自動起動?)
+   " 非同期コンパイル (OmniSharpのローカルサーバの起動管理を自動化するのに必要)
    NeoBundle 'tpope/vim-dispatch'
    " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
    NeoBundle 'ujihisa/unite-colorscheme'
@@ -49,22 +49,16 @@ if has('vim_starting')
    " Vim上でtexの部分コンパイルをする
    " vimから実行する
    NeoBundle 'thinca/vim-quickrun'
-   let g:quickrun_config = {
-     \ "_" : {
-       \ "hook/unite_quickfix/enable_failure" : 1,
-       \ "hook/close_unite_quickfix/enable_hook_loaded" : 1,
-       \ "hook/close_quickfix/enable_exit" : 1,
-       \ "hook/close_buffer/enable_failure" : 1,
-       \ "hook/close_buffer/enable_empty_data" : 1,
-       \ "hook/inu/enable" : 1,
-       \ "hook/inu/wait" : 20,
-       \ "outputter" : "multi:buffer:quickfix",
-       \ "outputter/buffer/split" : ":botright 3sp",
-       \ }
-       \ }
-
-       " \ "runner" : "vimproc",
-       " \ "runner/vimproc/updatetime" : 60
+    let g:quickrun_config = get(g:, 'quickrun_config', {})
+    let g:quickrun_config._ = {
+      \ 'runner'    : 'vimproc',
+      \ 'runner/vimproc/updatetime' : 60,
+      \ 'outputter' : 'error',
+      \ 'outputter/error/success' : 'buffer',
+      \ 'outputter/error/error'   : 'quickfix',
+      \ 'outputter/buffer/split'  : ':rightbelow 5sp',
+      \ 'outputter/buffer/close_on_empty' : 1,
+      \ }
  " texファイルをQuickRunでコンパイルする際の設定
   let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',
@@ -137,6 +131,11 @@ if has('vim_starting')
    NeoBundle 'plasticboy/vim-markdown' " シンタックスハイライト,自動折り畳み
    NeoBundle 'kannokanno/previm'
    NeoBundle 'tyru/open-browser.vim'
+   " snippet
+   NeoBundle 'Shougo/neosnippet'
+   NeoBundle "Shougo/neosnippet-snippets"
+   NeoBundle "honza/vim-snippets"
+   let g:neosnippet#snippets_directory='~/.vim/snippets/'
    au BufRead,BufNewFile *.md set filetype=markdown
    let g:previm_open_cmd = 'open -a Safari'
    " Python用入力補完
@@ -246,28 +245,16 @@ if neobundle#is_installed('neocomplete.vim')
       let g:neocomplete#keyword_patterns = {}
    endif
    let g:neocomplete#keyword_patterns._ = '\h\w*'
+   " jedi-vimの設定(omni補完の自動補完に必要)
+   autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
+   let g:jedi#completions_enabled = 0
+   let g:jedi#auto_vim_configuration = 0
 
-   " jedi-vimの設定
-   " autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
-   " let g:jedi#completions_enabled = 0
-   " let g:jedi#auto_vim_configuration = 0
-   " if !exists('g:neocomplete#force_omni_input_patterns')
-   "     let g:neocomplete#force_omni_input_patterns = {}
-   " endif
+   if !exists('g:neocomplete#sources#omni#input_patterns')
+       let g:neocomplete#sources#omni#input_patterns = {}
+   endif
+   let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
 
-   " オムニ補完設定
-   " c用
-   " let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-   " cpp用
-   " let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-   " Python用
-   " let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
-   " 補完メニューの色
-   " highlight Pmenu     ctermbg=80
-   " highlight PmenuSel  ctermbg=10
-   " highlight PmenuSbar ctermbg=10
-   "
 " ローカルサーバ?と通信してC#の補完をしてくれる
     NeoBundleLazy 'OmniSharp/omnisharp-vim', {
       \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
@@ -358,8 +345,8 @@ xmap g/ <Plug>(easymotion-s)
 " let g:EasyMotion_smartcase = 1
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
-map gl <Plug>(easymotion-w)
-map gh <Plug>(easymotion-b)
+map <leader>l <Plug>(easymotion-w)
+map <leader>h <Plug>(easymotion-b)
 let g:EasyMotion_startofline = 0
 " let g:EasyMotion_use_upper = 1
 " let g:EasyMotion_enter_jump_first = 1
