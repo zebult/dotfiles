@@ -233,7 +233,7 @@ if neobundle#is_installed('neocomplete.vim')
    " 提示される候補の最大数（初期値：100）
    let g:neocomplete#max_list = 30
    " 補完候補提示の際に先頭を選択状態へ
-   let g:neocomplete#enable_auto_select = 0
+   let g:neocomplete#enable_auto_select = 1
    " let g:neocomplete#enable_complete_select = 1
    " 補完（小文字を無視して検索）
    let g:neocomplete#enable_refresh_always = 1
