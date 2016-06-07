@@ -125,6 +125,8 @@ vnoremap < <gv
 nnoremap g0 ggVG
 " 全インデント揃える
 nnoremap gi ggVG=''zz
+" 選択範囲文字数カウント
+vnoremap gwc :s/./&/gn<CR>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
