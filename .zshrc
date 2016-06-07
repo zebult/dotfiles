@@ -34,7 +34,7 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 #export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 # docker
-eval $(docker-machine env default)
+# eval $(docker-machine env default)
 
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
@@ -129,5 +129,5 @@ if [ -e ~/.nvm ]; then
 fi
 
 # 天気
-curl wttr.in/Moon
-curl wttr.in/Tokyo
+# curl wttr.in/Moon
+# curl wttr.in/Tokyo

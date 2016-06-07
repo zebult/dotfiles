@@ -265,8 +265,8 @@ if neobundle#is_installed('neocomplete.vim')
       \     'unix': 'xbuild server/OmniSharp.sln',
       \   },
       \ }
-    inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    " inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
+    " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 
 elseif neobundle#is_installed('neocomplcache')
    " NeoComplcache用設定
