@@ -259,5 +259,10 @@ aug show-marks-sync
    au BufReadPost * sil! DoShowMarks
 aug END
 
+" オムニ補完
+inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>

@@ -64,6 +64,7 @@ alias glo="git log --oneline"
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vm='open -a MacVim'
 
+alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 # alias find='find . -name'
 
