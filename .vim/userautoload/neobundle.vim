@@ -267,6 +267,10 @@ if neobundle#is_installed('neocomplete.vim')
       \ }
     inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
     inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    " ポップアップ削除
+    inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+
+
 
 elseif neobundle#is_installed('neocomplcache')
    " NeoComplcache用設定
