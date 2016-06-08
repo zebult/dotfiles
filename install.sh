@@ -30,7 +30,7 @@ case "${os}" in
         export PATH=$PATH:/usr/local/bin/
         if ! type brew > /dev/null 2>&1; then
             brew install lua
-            brew install vim --with-lua
+            brew install vim --with-lua --with-client-server
             brew tap sanemat/font
             brew install --powerline --vim-powerline ricty
             cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
