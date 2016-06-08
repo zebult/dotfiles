@@ -215,7 +215,7 @@ if neobundle#is_installed('neocomplete.vim')
    " Neocompleteを有効化
    let g:neocomplete#enable_at_startup = 1
    " 補完が自動で開始される文字数
-   let g:neocomplete#auto_completion_start_length = 1
+   let g:neocomplete#auto_completion_start_length = 2
    " Smart caseを有効化（大文字が入力されるまで，大文字小文字の区別を考慮しない）
    let g:neocomplete#enable_smart_case = 1
    " camle caseを有効化（大文字を区切りとしたワイルドカードのように振る舞う）
@@ -234,7 +234,6 @@ if neobundle#is_installed('neocomplete.vim')
    let g:neocomplete#max_list = 30
    " 補完候補提示の際に先頭を選択状態へ
    let g:neocomplete#enable_auto_select = 1
-   " let g:neocomplete#enable_complete_select = 1
    " 補完（小文字を無視して検索）
    let g:neocomplete#enable_refresh_always = 1
    " 辞書ファイルの定義
