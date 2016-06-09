@@ -68,6 +68,8 @@ alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 # alias find='find . -name'
 
+set -o vi
+
 functions zipr() {
 zip -r $1 $1;
 }
@@ -118,16 +120,16 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # nvm設定
-if [ -e ~/.nvm ]; then
-    [[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-    nvm use default
-    npm_dir=${NVM_PATH}_modules
-    export NODE_PATH=$npm_dir
-    # 毎回実行しなくていいように設定を反映させるコマンドも書いておく
-    source ~/.nvm/nvm.sh
-    export NVM_DIR="/Users/zebra/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
+# if [ -e ~/.nvm ]; then
+#     [[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+#     nvm use default
+#     npm_dir=${NVM_PATH}_modules
+#     export NODE_PATH=$npm_dir
+#     # 毎回実行しなくていいように設定を反映させるコマンドも書いておく
+#     source ~/.nvm/nvm.sh
+#     export NVM_DIR="/Users/zebra/.nvm"
+#     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# fi
 
 # 天気
 # curl wttr.in/Moon
