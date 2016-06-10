@@ -15,6 +15,7 @@ source ~/.vim/userautoload/cs.vim
 " テンプレート用意
 autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
 autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txt
+autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
 "-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -94,6 +95,8 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 " 矩形をブロックにする
 set virtualedit=block
+" ビープ音ならさない
+set vb t_vb=
 " 折りたたみしやすく
 noremap \ zA
 " 履歴数増量
