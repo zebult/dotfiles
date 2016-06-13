@@ -113,6 +113,8 @@ nnoremap tt gD
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
+" トグル(プラギン使用)"
+nnoremap si :Switch<CR>
 " 自動補完on/off
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
