@@ -68,7 +68,7 @@ alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 # alias find='find . -name'
 
-set -o vi
+# set -o vi
 
 functions zipr() {
 zip -r $1 $1;

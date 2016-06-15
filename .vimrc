@@ -132,6 +132,8 @@ nnoremap g0 ggVG
 nnoremap gi ggVG=''zz
 " 選択範囲文字数カウント
 vnoremap gwc :s/./&/gn<CR>
+" 文字出現数カウント
+nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
@@ -144,8 +146,6 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 nnoremap g<Space>jq :%!jq '.'<CR>
 " ファイル更新
 nnoremap <leader>L :e!<CR>
-" 文字数カウント
-nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
