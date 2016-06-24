@@ -37,7 +37,7 @@ if has('vim_starting')
     " 単語の前後に入力
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'fuenor/vim-wordcount'
-    NeoBundle 'AndrewRadev/switch.vim'
+    NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
     NeoBundle 'osyo-manga/vim-over'
     "" over.vim {{{
     " over.vimの起動
