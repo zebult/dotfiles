@@ -23,7 +23,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 set incsearch
 " コマンドラインモードでtab保管
 set wildmenu wildmode=list:full
-nnoremap<ESC><ESC> :nohlsearch<CR>:args<CR>
+
+nnoremap <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>
 set laststatus=2
 set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
@@ -101,8 +102,6 @@ set vb t_vb=
 noremap \ zA
 " 履歴数増量
 set history=200
-" ディレクトリを手早く展開
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -137,11 +136,6 @@ nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
-" オムニ補完
-" inoremap oo <C-x><C-o>
-" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 " json整形
 nnoremap g<Space>jq :%!jq '.'<CR>
 " ファイル更新
@@ -176,6 +170,9 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g
 nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 
+""""""""""""""""""""""""""""""
+"  git
+""""""""""""""""""""""""""""""
 " nnoremap gst :Gstatus<Cr>
 " nnoremap gad :Gwrite<Cr>
 " nnoremap gcm :Gcommit<Cr>
@@ -186,6 +183,28 @@ nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 " nnoremap gfc :Gfetch<Cr>
 " nnoremap gpu :Gpush<Cr>
 " nnoremap gr :Ggrep 
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+"  ex mode
+""""""""""""""""""""""""""""""
+" ディレクトリを手早く展開
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+" 強制保存
+cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
+cnoreabbrev w!! w !sudo tee > /dev/null %
+" emacs
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+""""""""""""""""""""""""""""""
 
 " マーク情報再描画
 nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
@@ -201,9 +220,10 @@ nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <leader>r :!open %<CR>
 autocmd FileType tex nnoremap <leader>r :QuickRun<CR>:!latexmk -c<CR>
-" nnoremap <Leader>o :Unite file<CR>
 nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Leader>o :!open .<CR><CR>
+" タグジャンプを別タブで開く
+nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 rv! " 履歴共有
 " save and close
@@ -212,8 +232,6 @@ nnoremap <leader>q :q<Cr>
 nnoremap <leader>2 :wq<Cr>
 nnoremap <leader>A :qa!<Cr>
 nnoremap <leader>! :q!<Cr>
-cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
-cnoreabbrev w!! w !sudo tee > /dev/null %
 
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')

@@ -177,6 +177,15 @@ if has('vim_starting')
     NeoBundle 'haya14busa/vim-easymotion'
     " ctags (brew install ctagsしておく必要がある)
     NeoBundle 'soramugi/auto-ctags.vim'
+    " ctagsのタグリスト一覧
+    NeoBundleLazy "majutsushi/tagbar", {
+                \ "autoload": { "commands": ["TagbarToggle"] }}
+    if ! empty(neobundle#get("tagbar"))
+        " Width (default 40)
+        let g:tagbar_width = 20
+        " Map for toggle
+        nnoremap <silent> <leader>t :TagbarToggle<CR>
+    endif
     " 構文チェック
     NeoBundle 'scrooloose/syntastic.git'
     " マークを可視化
@@ -210,16 +219,6 @@ if has('vim_starting')
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
     let g:indent_guides_color_change_percent = 30
     let g:indent_guides_guide_size = 1
-    " ctagsのタグリスト一覧
-    NeoBundleLazy "majutsushi/tagbar", {
-                \ "autoload": { "commands": ["TagbarToggle"] }}
-    if ! empty(neobundle#get("tagbar"))
-        " Width (default 40)
-        let g:tagbar_width = 20
-        " Map for toggle
-        nnoremap <silent> <leader>t :TagbarToggle<CR>
-    endif
-
     call neobundle#end()
 endif
 
@@ -310,30 +309,30 @@ elseif neobundle#is_installed('neocomplcache')
 
 endif
 
-
-
 " タグジャンプについての設定
-" " 保存時tags生成
+" 保存時tags生成
 let g:auto_ctags = 1
-" " 保存場所指定
+" 保存場所指定
 let g:auto_ctags_directory_list = ['.git', '.svn']
-" " ctagsのオプションを設定してるよ
+" ctagsのオプションを設定してるよ
 let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
-" " 拡張子毎に作成
+" 拡張子毎に作成
 let g:auto_ctags_filetype_mode = 1
+" タグファイルの場所
+set tags+=.git/tags
 
-if executable('ctags')
-    " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
-    if !filereadable(expand('$HOME/.ctags'))
-        " 設定ファイルが無い場合生成して，設定内容を書込
-        :let outputfile = '$HOME/.ctags'
-        :execute ':redir! > ' . outputfile
-        :silent! echon "--sort=yes" . "\n"
-        :silent! echon "--append=yes" . "\n"
-        :silent! echon "--recurse=yes" . "\n"
-        :redir END
-    endif
-endif
+" if executable('ctags')
+"     " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
+"     if !filereadable(expand('$HOME/.ctags'))
+"         " 設定ファイルが無い場合生成して，設定内容を書込
+"         :let outputfile = '$HOME/.ctags'
+"         :execute ':redir! > ' . outputfile
+"         :silent! echon "--sort=yes" . "\n"
+"         :silent! echon "--append=yes" . "\n"
+"         :silent! echon "--recurse=yes" . "\n"
+"         :redir END
+"     endif
+" endif
 
 "--------
 " lightline Settings
