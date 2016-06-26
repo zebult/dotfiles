@@ -70,7 +70,7 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 inoremap <Esc> <Esc>
-inoremap jj <ESC><ESC><ESC> 
+inoremap jj <ESC><ESC><ESC>
 noremap j gj
 noremap k gk
 noremap gj j
@@ -113,6 +113,8 @@ nnoremap tt gD
 inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
+" トグル(プラギン使用) < >ペア追加したい
+nnoremap si :Switch<CR>
 " 自動補完on/off
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
@@ -130,6 +132,8 @@ nnoremap g0 ggVG
 nnoremap gi ggVG=''zz
 " 選択範囲文字数カウント
 vnoremap gwc :s/./&/gn<CR>
+" 文字出現数カウント
+nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
@@ -142,8 +146,6 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 nnoremap g<Space>jq :%!jq '.'<CR>
 " ファイル更新
 nnoremap <leader>L :e!<CR>
-" 文字数カウント
-nnoremap <leader>C :%s /<C-r><C-w>//gn<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j

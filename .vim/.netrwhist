@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/zebra/Documents/workspace/unity/UniRxTest/Assets'
 let g:netrw_dirhist_2='/Users/zebra/dotfiles/.vim/template'
 let g:netrw_dirhist_3='/Users/a14198/dotfiles/.vim/snippets'
 let g:netrw_dirhist_4='/Users/a14198/Documents/workspace/Unity/zebra/Assets/Scripts/Matching'
+let g:netrw_dirhist_5='/Users/a14198/Documents/workspace/Unity/zebra/Assets/Scripts/UI'
