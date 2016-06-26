@@ -2,10 +2,17 @@
 
 cd /0CheatSheet
 git add .
-git commit -m "data update"
+git commit -m "data update"`date +%Y_%m_%d_%H`
 git push origin master
 
+
 cd ~/dotfiles
+# .vimrcを他ファイルに適応
+\cp .vimrc .xvimrc
+sed -i -e 's/noremap\ j\ gj/"\ noremap\ j\ gj/g' .xvimrc
+sed -i -e 's/noremap\ k\ gk/"\ noremap\ k\ gk/g' .xvimrc
+rm -f .xvimrc-e
+
 git add .
-git commit -m "data update"
+git commit -m "data update"`date +%Y_%m_%d_%H`
 git push origin master
