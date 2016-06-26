@@ -133,14 +133,14 @@ nnoremap gi ggVG=''zz
 " 選択範囲文字数カウント
 vnoremap gwc :s/./&/gn<CR>
 " 文字出現数カウント
-nnoremap <Space>C :%s /<C-r><C-w>//gn<CR>
+nnoremap <Leader>C :%s /<C-r><C-w>//gn<CR>
 " 対応する括弧へ移動しやすく
 nmap <Tab> %
 vmap <Tab> %
 " json整形
 nnoremap g<Space>jq :%!jq '.'<CR>
 " ファイル更新
-nnoremap <Space>L :e!<CR>
+nnoremap <Leader>L :e!<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -210,29 +210,29 @@ cnoremap <C-d> <Del>
 " マーク情報再描画
 nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
 nnoremap ml :marks<CR>
-nnoremap <Space>d :vertical diffsplit 
-nnoremap <Space>u :Unite source<CR>
-nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-" nnoremap <Space>r :QuickRun<CR> <C-w>H
-nnoremap <Space>r :QuickRun<CR>
-nnoremap <Space>v :VimShell<CR>
-nnoremap <Space>c :Calendar<CR>
+nnoremap <Leader>d :vertical diffsplit 
+nnoremap <Leader>u :Unite source<CR>
+nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+" nnoremap <Leader>r :QuickRun<CR> <C-w>H
+nnoremap <Leader>r :QuickRun<CR>
+nnoremap <Leader>v :VimShell<CR>
+nnoremap <Leader>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
-autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
-autocmd FileType html nnoremap <Space>r :!open %<CR>
-autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Space>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
-nnoremap <Space>o :!open .<CR><CR>
+autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
+autocmd FileType html nnoremap <Leader>r :!open %<CR>
+autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
+nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+nnoremap <Leader>o :!open .<CR><CR>
 " タグジャンプを別タブで開く
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 rv! " 履歴共有
 " save and close
-nnoremap <Space>w :w<Cr>
-nnoremap <Space>q :q<Cr>
-nnoremap <Space>2 :wq<Cr>
-nnoremap <Space>A :qa!<Cr>
-nnoremap <Space>! :q!<Cr>
+nnoremap <Leader>w :w<Cr>
+nnoremap <Leader>q :q<Cr>
+nnoremap <Leader>2 :wq<Cr>
+nnoremap <Leader>A :qa!<Cr>
+nnoremap <Leader>! :q!<Cr>
 
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
@@ -246,12 +246,12 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 """"""""""""""""""""""""""""""
 " 空白まで囲む
 """"""""""""""""""""""""""""""
-noremap <Space>{ wbi{<Esc>f<Space>i}<Esc><Cr>
-noremap <Space>[ wbi[<Esc>f<Space>i]<Esc><Cr>
-noremap <Space>( wbi(<Esc>f<Space>i)<Esc><Cr>
-noremap <Space>< wbi<<Esc>f<Space>i><Esc><Cr>
-noremap <Space>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
-noremap <Space>" wbi"<Esc>f<Space>i"<Esc><Cr>
+noremap <Leader>{ wbi{<Esc>f<Space>i}<Esc><Cr>
+noremap <Leader>[ wbi[<Esc>f<Space>i]<Esc><Cr>
+noremap <Leader>( wbi(<Esc>f<Space>i)<Esc><Cr>
+noremap <Leader>< wbi<<Esc>f<Space>i><Esc><Cr>
+noremap <Leader>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
+noremap <Leader>" wbi"<Esc>f<Space>i"<Esc><Cr>
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
