@@ -1,4 +1,4 @@
-let mapleader = "\<Space>"
+let mapLeader = "\<Space>"
 
 " 分割したファイルの読み込み(view)
 "-------------------------
@@ -136,15 +136,15 @@ nnoremap gfc :Gfetch<Cr>
 nnoremap gpu :Gpush<Cr>
 nnoremap gr :Ggrep 
 
-nnoremap <leader>ma :marks<CR>
-nnoremap <leader>d :vertical diffsplit 
-nnoremap <leader>u :Unite source<CR>
-nnoremap <leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <leader>ml :DoShowMarks!<CR>
-nnoremap <leader>md :NoShowMarks!<CR>
-nnoremap <leader>r :QuickRun<CR>
-nnoremap <leader>v :VimShell<CR>
-nnoremap <leader>c :Calendar<CR>
+nnoremap <Leader>ma :marks<CR>
+nnoremap <Leader>d :vertical diffsplit 
+nnoremap <Leader>u :Unite source<CR>
+nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+nnoremap <Leader>ml :DoShowMarks!<CR>
+nnoremap <Leader>md :NoShowMarks!<CR>
+nnoremap <Leader>r :QuickRun<CR>
+nnoremap <Leader>v :VimShell<CR>
+nnoremap <Leader>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
@@ -156,10 +156,11 @@ nnoremap <Leader>go :!open .<CR><CR>
 
 rv! " 履歴共有
 " save and close
-nnoremap <leader>w :w<Cr>
-nnoremap <leader>q :q<Cr>
-nnoremap <leader>2 :wq<Cr>
-nnoremap <leader>! :q!<Cr>
+nnoremap <Leader>w :w<Cr>
+nnoremap <Leader>w :w<Cr>
+nnoremap <Leader>q :q<Cr>
+nnoremap <Leader>2 :wq<Cr>
+nnoremap <Leader>! :q!<Cr>
 cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
 
