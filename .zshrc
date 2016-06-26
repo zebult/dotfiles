@@ -62,25 +62,30 @@ alias gfc="git fetch"
 alias glo="git log --oneline"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-alias vm='open -a MacVim'
+alias vim="reattach-to-user-namespace vim"
+# alias vim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
+alias tinit='~/dotfiles/shell/tmuxInit.sh'
 # alias find='find . -name'
 
 # set -o vi
 
 functions zipr() {
-zip -r $1 $1;
+    zip -r $1 $1;
 }
+
 functions tmp() {
-mkdir tmp;
-cd tmp;
+    mkdir tmp;
+    cd tmp;
 }
+
 functions mkcd() {
-mkdir $1;
-cd $1
+    mkdir $1;
+    cd $1
 }
+
 
 # Add environment variable NDK_ROOT for cocos2d-x
 export NDK_ROOT=/Users/zebra/Plugins/android-ndk-r9d

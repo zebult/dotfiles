@@ -314,55 +314,12 @@ endif
 let g:auto_ctags = 1
 " 保存場所指定
 let g:auto_ctags_directory_list = ['.git', '.svn']
-" ctagsのオプションを設定してるよ
-let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
-" 拡張子毎に作成
-let g:auto_ctags_filetype_mode = 1
 " タグファイルの場所
 set tags+=.git/tags
-
-" if executable('ctags')
-"     " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
-"     if !filereadable(expand('$HOME/.ctags'))
-"         " 設定ファイルが無い場合生成して，設定内容を書込
-"         :let outputfile = '$HOME/.ctags'
-"         :execute ':redir! > ' . outputfile
-"         :silent! echon "--sort=yes" . "\n"
-"         :silent! echon "--append=yes" . "\n"
-"         :silent! echon "--recurse=yes" . "\n"
-"         :redir END
-"     endif
-" endif
-
-"--------
-" lightline Settings
-" let g:lightline = {
-"          \'colorscheme': 'hybrid',
-"          \ 'mode_map': {'c': 'NORMAL'},
-"          \ 'active': {
-"          \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename'] ],
-"          \   'right': [ [ 'syntastic', 'lineinfo' ],
-"          \              [ 'percent' ],
-"          \              [ 'filetype', 'fileencoding', 'pyenv' ] ]
-"          \ },
-"          \ 'component_expand':{
-"          \   'syntastic': 'SyntasticStatuslineFlag'
-"          \ },
-"          \ 'component_type':{
-"          \   'syntastic': 'error'
-"          \ },
-"          \ 'component_function': {
-"          \   'modified': 'MyModified',
-"          \   'readonly': 'MyReadonly',
-"          \   'fugitive': 'MyFugitive',
-"          \   'filename': 'MyFilename',
-"          \   'fileformat': 'MyFileformat',
-"          \   'filetype': 'MyFiletype',
-"          \   'fileencoding': 'MyFileencoding',
-"          \   'mode': 'MyMode',
-"          \   'pyenv': 'pyenv#statusline#component'
-"          \ }
-"          \}
+" ctagsのオプションを設定してるよ(これやると生成されない)
+" let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
+" 拡張子毎に作成(これやると生成されない)
+" let g:auto_ctags_filetype_mode = 1
 
 " vim-easymotion {{{
 nmap g/ <Plug>(easymotion-s)

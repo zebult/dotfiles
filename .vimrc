@@ -40,8 +40,9 @@ set infercase
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
-set clipboard=unnamed,autoselect
+" set clipboard=unnamed,autoselect
 " set clipboard+=unnamed
+set clipboard=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
@@ -167,7 +168,7 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-nnoremap s% :%s ///g
+nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 
 """"""""""""""""""""""""""""""
