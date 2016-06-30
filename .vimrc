@@ -16,6 +16,9 @@ source ~/.vim/userautoload/cs.vim
 autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
 autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txt
 autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txt
+autocmd BufNewFile *.py 0r $HOME/.vim/template/py.txt
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.txt
 "-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -78,16 +81,16 @@ noremap k gk
 noremap gj j
 noremap gk k
 " Insertモードで日本語の時色変更
-if has('multi_byte_ime') || has('xim') 
+if has('multi_byte_ime') || has('xim')
    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
    highlight CursorIM guifg=NONE guibg=#ecbcbc
 endif
 "検索語が画面の真ん中に来るようにする
-" nmap n nzz 
-"nmap N Nzz 
-" nmap * *zz 
-" nmap # #zz 
-" nmap g* g*zz 
+" nmap n nzz
+"nmap N Nzz
+" nmap * *zz
+" nmap # #zz
+" nmap g* g*zz
 " nmap g# g#zz
 " Visual line やりやすく
 " nmap vv V
@@ -103,6 +106,8 @@ set vb t_vb=
 noremap \ zA
 " 履歴数増量
 set history=200
+" 保存時行末の余分なスペースを取り除く
+autocmd BufWritePre * :%s/\s\+$//ge
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -183,7 +188,7 @@ nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 " nnoremap gdf :Gdiff<Cr>
 " nnoremap gfc :Gfetch<Cr>
 " nnoremap gpu :Gpush<Cr>
-" nnoremap gr :Ggrep 
+" nnoremap gr :Ggrep
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -210,7 +215,7 @@ cnoremap <C-d> <Del>
 " マーク情報再描画
 nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
 nnoremap ml :marks<CR>
-nnoremap <Leader>d :vertical diffsplit 
+nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 " nnoremap <Leader>r :QuickRun<CR> <C-w>H
@@ -221,7 +226,7 @@ nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Leader>a :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+nnoremap <Leader>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Leader>o :!open .<CR><CR>
 " タグジャンプを別タブで開く
 nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
@@ -231,7 +236,6 @@ rv! " 履歴共有
 nnoremap <Leader>w :w<Cr>
 nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>2 :wq<Cr>
-nnoremap <Leader>A :qa!<Cr>
 nnoremap <Leader>! :q!<Cr>
 
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')

@@ -184,10 +184,10 @@ if has('vim_starting')
         " Width (default 40)
         let g:tagbar_width = 20
         " Map for toggle
-        nnoremap <silent> <leader>t :TagbarToggle<CR>
+        nnoremap <silent> <Leader>t :TagbarToggle<CR>
     endif
     " 構文チェック
-    NeoBundle 'scrooloose/syntastic.git'
+    NeoBundle 'scrooloose/sYntastic.git'
     " マークを可視化
     NeoBundle 'jacquesbh/vim-showmarks'
     " NeoBundle 'vim-scripts/ShowMarks'
@@ -206,6 +206,8 @@ if has('vim_starting')
     NeoBundle 'udalov/kotlin-vim'
     " c++
     NeoBundle 'justmao945/vim-clang'
+    " include系?
+    NeoBundle 'Shougo/neoinclude.vim'
     let g:clang_c_options = '-std=c11'
     let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
     " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
@@ -219,6 +221,31 @@ if has('vim_starting')
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
     let g:indent_guides_color_change_percent = 30
     let g:indent_guides_guide_size = 1
+    " Cppシンタックスハイライト
+    NeoBundleLazy 'vim-jp/cpp-vim', {
+                \ 'autoload' : {'filetypes' : 'cpp'}
+                \ }
+    " ヘッダファイルとソースファイル切り替え
+    NeoBundle 'kana/vim-altr'
+    nmap <Leader>a <Plug>(altr-forward)
+    " includeファイルのパス
+    augroup cpp-path
+        autocmd!
+        autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/lib/c++/v1
+    augroup END
+    " 文脈を考慮した補完
+    if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+    endif
+    let g:neocomplete#force_omni_input_patterns.cpp =
+                \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+    " 補完候補生成
+    NeoBundleLazy 'osyo-manga/vim-marching', {
+                \ 'depends' : ['Shougo/vimproc.vim', 'osyo-manga/vim-reunions'],
+                \ 'autoload' : {'filetypes' : ['c', 'cpp']}
+                \ }
+    let g:marching_enable_neocomplete = 1
+
     call neobundle#end()
 endif
 
@@ -328,10 +355,10 @@ xmap g/ <Plug>(easymotion-s)
 " xmap g/ <Plug>(easymotion-sn)
 " omap g/ <Plug>(easymotion-tn)
 " let g:EasyMotion_smartcase = 1
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
-map <leader>l <Plug>(easymotion-w)
-map <leader>h <Plug>(easymotion-b)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-w)
+map <Leader>h <Plug>(easymotion-b)
 let g:EasyMotion_startofline = 0
 " let g:EasyMotion_use_upper = 1
 " let g:EasyMotion_enter_jump_first = 1

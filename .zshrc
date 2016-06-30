@@ -60,6 +60,7 @@ alias gpl="git pull"
 alias gplo="git pull origin"
 alias gfc="git fetch"
 alias glo="git log --oneline"
+alias gdn="git diff @~ --name-only"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vim="reattach-to-user-namespace vim"
@@ -68,6 +69,7 @@ alias vim="reattach-to-user-namespace vim"
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 alias tinit='~/dotfiles/shell/tmuxInit.sh'
+alias winit='~/dotfiles/shell/workInit.sh'
 # alias find='find . -name'
 
 # set -o vi
