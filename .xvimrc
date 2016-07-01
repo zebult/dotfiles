@@ -75,19 +75,19 @@ inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC>
 " noremap j gj
 " noremap k gk
-noremap gj j
-noremap gk k
+noremap gj i<Down><Right><Esc>
+noremap gk i<Up><Right><Esc>
 " Insertモードで日本語の時色変更
-if has('multi_byte_ime') || has('xim') 
+if has('multi_byte_ime') || has('xim')
    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
    highlight CursorIM guifg=NONE guibg=#ecbcbc
 endif
 "検索語が画面の真ん中に来るようにする
-" nmap n nzz 
-"nmap N Nzz 
-" nmap * *zz 
-" nmap # #zz 
-" nmap g* g*zz 
+" nmap n nzz
+"nmap N Nzz
+" nmap * *zz
+" nmap # #zz
+" nmap g* g*zz
 " nmap g# g#zz
 " Visual line やりやすく
 " nmap vv V
@@ -183,7 +183,7 @@ nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 " nnoremap gdf :Gdiff<Cr>
 " nnoremap gfc :Gfetch<Cr>
 " nnoremap gpu :Gpush<Cr>
-" nnoremap gr :Ggrep 
+" nnoremap gr :Ggrep
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -210,7 +210,7 @@ cnoremap <C-d> <Del>
 " マーク情報再描画
 nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
 nnoremap ml :marks<CR>
-nnoremap <Space>d :vertical diffsplit 
+nnoremap <Space>d :vertical diffsplit
 nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 " nnoremap <Space>r :QuickRun<CR> <C-w>H
