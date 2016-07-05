@@ -55,12 +55,9 @@ alias gdt="git difftool"
 alias gmt="git mergetool"
 alias gmg="git merge"
 alias gbr="git branch"
-alias gps="git push"
-alias gpl="git pull"
-alias gplo="git pull origin"
 alias gfc="git fetch"
 alias glo="git log --oneline"
-alias gdn="git diff @~ --name-only"
+alias gdn="git diff --name-only"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vim="reattach-to-user-namespace vim"
@@ -70,6 +67,7 @@ alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 alias tinit='~/dotfiles/shell/tmuxInit.sh'
 alias winit='~/dotfiles/shell/workInit.sh'
+alias tokyo='curl wttr.in/Tokyo'
 # alias find='find . -name'
 
 # set -o vi
@@ -88,7 +86,15 @@ functions mkcd() {
     cd $1
 }
 
+functions gps() {
+    echo "git push origin `git rev-parse --abbrev-ref HEAD`"
+    git push origin `git rev-parse --abbrev-ref HEAD`
+}
 
+functions gpl() {
+    echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
+    git pull origin `git rev-parse --abbrev-ref HEAD`
+}
 # Add environment variable NDK_ROOT for cocos2d-x
 export NDK_ROOT=/Users/zebra/Plugins/android-ndk-r9d
 export PATH=$NDK_ROOT:$PATH

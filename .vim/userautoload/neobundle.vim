@@ -38,6 +38,7 @@ if has('vim_starting')
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'fuenor/vim-wordcount'
     NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
+    " 一括置換(まだ使いこなせてない)
     NeoBundle 'osyo-manga/vim-over'
     "" over.vim {{{
     " over.vimの起動
@@ -349,8 +350,8 @@ set tags+=.git/tags
 " let g:auto_ctags_filetype_mode = 1
 
 " vim-easymotion {{{
-nmap g/ <Plug>(easymotion-s)
-xmap g/ <Plug>(easymotion-s)
+" nmap g/ <Plug>(easymotion-s)
+" xmap g/ <Plug>(easymotion-s)
 " nmap g/ <Plug>(easymotion-sn)
 " xmap g/ <Plug>(easymotion-sn)
 " omap g/ <Plug>(easymotion-tn)
