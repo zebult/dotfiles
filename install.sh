@@ -38,6 +38,7 @@ case "${os}" in
         brew install --powerline --vim-powerline ricty
         cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
         brew install tmux
+        brew install reattach-to-user-namespace
         brew install macvim
         brew install htop-osx
         brew install nmap
