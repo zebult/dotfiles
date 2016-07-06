@@ -31,6 +31,7 @@ case "${os}" in
         fi
         export PATH=$PATH:/usr/local/bin/
         # if ! type brew > /dev/null 2>&1; then
+        brew cask install xquartz
         brew install lua
         brew install vim --with-lua --with-client-server # XQuartzないとダメ
         brew install ctags
