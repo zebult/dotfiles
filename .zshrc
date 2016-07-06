@@ -46,15 +46,15 @@ export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
 export PATH=$PATH:$ELASTICPATH
 
 # alias
-alias gch="git checkout"
 alias ll='ls -alh'
+alias gacm='gst; git add .; git commit -m'
 alias gst="git status -s"
-alias ga="git add ."
-alias gacm='gst; ga;  git commit -m'
+alias gdf="git diff"
+alias gmg="git merge"
 alias gdt="git difftool"
 alias gmt="git mergetool"
-alias gmg="git merge"
 alias gbr="git branch"
+alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
 alias gdn="git diff --name-only"
