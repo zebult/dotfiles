@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # zsh起動
-zsh
+# zsh
 
 # リポジトリをclone
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -13,6 +13,6 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # Shellのデフォルトに設定
-chsh -s /bin/zsh
+# chsh -s /bin/zsh
 
 echo "finish!!! try logout after in"

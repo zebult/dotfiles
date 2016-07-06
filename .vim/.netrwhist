@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/a14198/Documents/workspace/Cpp/popolo_client/projects/Popolo/Classes/scene/gacha/controller'
 let g:netrw_dirhist_2='/Users/a14198/Documents/Memo/grenge/kensyu'
 let g:netrw_dirhist_3='/Users/a14198/Documents/workspace/Cpp/Popolo/popolo_client/projects/Popolo/Classes/scene/multiquestdeparture/controller'
 let g:netrw_dirhist_4='/Users/a14198/Library/QuickLook/qlImageSize'
 let g:netrw_dirhist_5='/usr/include'
 let g:netrw_dirhist_6='/usr/local/include'
+let g:netrw_dirhist_7='/Users/a14198/.tmux'
