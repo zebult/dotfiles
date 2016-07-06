@@ -32,7 +32,7 @@ case "${os}" in
         export PATH=$PATH:/usr/local/bin/
         # if ! type brew > /dev/null 2>&1; then
         brew install lua
-        brew install vim --with-lua --with-client-server
+        brew install vim --with-lua --with-client-server # XQuartzないとダメ
         brew install ctags
         brew tap sanemat/font
         brew install --powerline --vim-powerline ricty
