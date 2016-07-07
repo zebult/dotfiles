@@ -54,3 +54,7 @@ case "${os}" in
 esac
 
 echo finish🍺
+
+# branch 表示
+# vim .zpreztorc
+# zstyle ':prezto:load' pmodule \ に'git' 追加

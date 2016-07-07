@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =2
 let g:netrw_dirhist_1='/Users/a14198/.vim'
+<<<<<<< HEAD
 let g:netrw_dirhist_2='/Users/a14198/.zprezto'
+=======
+let g:netrw_dirhist_2='/Users/a14198/Dropbox/Saichi/Memo/grenge/kensyu'
+>>>>>>> d083c938fbdf066ce3c39df4f206f7d2290830b0
