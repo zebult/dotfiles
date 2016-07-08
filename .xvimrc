@@ -44,8 +44,8 @@ set infercase
 set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
 " set clipboard=unnamed,autoselect
-set clipboard+=unnamed
-" set clipboard=unnamed
+" set clipboard+=unnamed
+set clipboard=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
@@ -107,7 +107,7 @@ noremap \ zA
 " 履歴数増量
 set history=200
 " 保存時行末の余分なスペースを取り除く
-autocmd BufWritePre * :%s/\s\+$//ge
+" autocmd BufWritePre * :%s/\s\+$//ge
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]

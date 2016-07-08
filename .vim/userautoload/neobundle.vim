@@ -34,8 +34,10 @@ if has('vim_starting')
     " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
     NeoBundle 'ujihisa/unite-colorscheme'
     NeoBundle 'lervag/vimtex' " Vim上でtexの部分コンパイルをする
-    " 単語の前後に入力
-    NeoBundle 'tpope/vim-surround'
+    " 単語の前後に入力(Clipboardコピーできなくなる?)
+    " NeoBundle 'tpope/vim-surround'
+    " macのClipboardと連携(嘘)
+    " NeoBundle 'kana/vim-fakeclip'
     NeoBundle 'fuenor/vim-wordcount'
     NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
     " 一括置換(まだ使いこなせてない)
