@@ -1,2 +1,10 @@
 map j 3j
 map k 3k
+
+map h H
+map l L
+
+map H <C-p>
+map L <C-n>
+
+map q D
