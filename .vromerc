@@ -1,0 +1,7 @@
+map h H
+map l L
+
+map H <C-p>
+map L <C-n>
+
+map q D
