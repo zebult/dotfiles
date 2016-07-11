@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[merge]
+	tool = vimdiff
+[user]
+	name = saichi_suzuki
+	email = xxx@gmail.com
+[mergetool]
+	keepBackup = false
+[alias]
+    tree = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
