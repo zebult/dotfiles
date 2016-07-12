@@ -76,8 +76,8 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC>
-noremap j i<Up><Esc><Right>
-noremap k i<Down><Esc><Right>
+noremap j i<Down><Esc><Right>
+noremap k i<Up><Esc><Right>
 noremap gj j
 noremap gk k
 " Insertモードで日本語の時色変更
