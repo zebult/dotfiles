@@ -48,7 +48,7 @@ export PATH=$PATH:$ELASTICPATH
 # alias
 alias ll='ls -alh'
 alias gacm='gst; git add .; git commit -m'
-alias gst="git status -s"
+alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
 alias gdt="git difftool"
