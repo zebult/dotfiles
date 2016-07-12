@@ -48,7 +48,7 @@ export PATH=$PATH:$ELASTICPATH
 # alias
 alias ll='ls -alh'
 alias gacm='gst; git add .; git commit -m'
-alias gst="git status -s"
+alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
 alias gdt="git difftool"
@@ -62,6 +62,7 @@ alias gdn="git diff --name-only"
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vim="reattach-to-user-namespace vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
+alias gvim='open /Applications/MacVim.app'
 
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'

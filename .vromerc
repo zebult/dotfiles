@@ -5,3 +5,5 @@ map H <C-p>
 map L <C-n>
 
 map q D
+
+set disablesites=kcw.kddi.ne.jp, mail.google.com, redmine, gitlab

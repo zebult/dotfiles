@@ -1,9 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/a14198/.vim'
-let g:netrw_dirhist_2='/Users/a14198/.zprezto'
 let g:netrw_dirhist_2='/Users/a14198/Dropbox/Saichi/Memo/grenge/kensyu'
 let g:netrw_dirhist_3='/Users/a14198/Documents/workspace/Cpp/Popolo/popolo_client/projects/Popolo/Classes'
 let g:netrw_dirhist_4='/Users/a14198/Documents/workspace/Cpp/Popolo/popolo_client/projects/Popolo/Classes/scene/download/controller'
 let g:netrw_dirhist_5='/.git'
->>>>>>> 6cbae0e1984d4574cb6b78569f62b97453b361ee
+let g:netrw_dirhist_6='/Users/a14198/.tmux'
+let g:netrw_dirhist_7='/Users/a14198/.vim'
+let g:netrw_dirhist_8='/usr/local/Cellar/vim/7.4.1993/share/vim/vim74'
