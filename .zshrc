@@ -61,7 +61,6 @@ alias gdn="git diff --name-only"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 alias vim="reattach-to-user-namespace vim"
-# alias vim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='open /Applications/MacVim.app'
 
 alias pwdcp='pwd | pbcopy'

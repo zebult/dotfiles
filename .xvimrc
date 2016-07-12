@@ -44,8 +44,8 @@ set infercase
 set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
 " set clipboard=unnamed,autoselect
-set clipboard+=unnamed
-" set clipboard=unnamed
+" set clipboard+=unnamed
+set clipboard=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
