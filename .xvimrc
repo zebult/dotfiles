@@ -79,8 +79,8 @@ inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC>
 "noremap j gj
 "noremap k gk
-noremap j i<Down><Esc><Right>
-noremap k i<Up><Esc><Right>
+noremap gj i<Down><Esc><Right>
+noremap gk i<Up><Esc><Right>
 " Insertモードで日本語の時色変更
 if has('multi_byte_ime') || has('xim')
    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
