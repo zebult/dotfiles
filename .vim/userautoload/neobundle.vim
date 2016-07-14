@@ -42,6 +42,11 @@ if has('vim_starting')
     NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
     " 一括置換(まだ使いこなせてない)
     NeoBundle 'osyo-manga/vim-over'
+    " URL開く
+    NeoBundle 'tyru/open-browser.vim'
+    let g:netrw_nogx = 1 " disable netrw's gx mapping.
+    nmap gx <Plug>(openbrowser-smart-search)
+    vmap gx <Plug>(openbrowser-smart-search)
     "" over.vim {{{
     " over.vimの起動
     nnoremap <silent> <Leader>m :OverCommandLine<CR>
