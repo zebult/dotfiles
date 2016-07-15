@@ -1,8 +1,5 @@
-map h H
-map l L
-
-map H <C-p>
-map L <C-n>
+map h <C-p>
+map l <C-n>
 
 map q D
 
