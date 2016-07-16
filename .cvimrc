@@ -17,6 +17,7 @@ let completionengines = ["google"]
 " defaultengine
 let defaultengine = "google.co.jp"
 
+set cncpcompletion
 " qmarks
 " google mail/task/calendar                                               
 " let qmark m = ["https://mail.google.com"]                                           
