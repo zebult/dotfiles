@@ -4,7 +4,7 @@ let fullpagescrollpercent = 100
 " set nohud
 set autohidecursor
 " set noinsertmappings
-set smoothscroll
+set nosmoothscroll
 " let blacklists = ["https://mail.google.com/*"]
 let mapleader = "<Space>"
 let locale = "jp"
@@ -17,7 +17,6 @@ let completionengines = ["google"]
 " defaultengine
 let defaultengine = "google.co.jp"
 
-set cncpcompletion
 " qmarks
 " google mail/task/calendar                                               
 " let qmark m = ["https://mail.google.com"]                                           
