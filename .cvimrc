@@ -4,7 +4,7 @@ let fullpagescrollpercent = 100
 " set nohud
 set autohidecursor
 " set noinsertmappings
-" set nosmoothscroll
+set smoothscroll
 let blacklists = ["https://mail.google.com/*"]
 let mapleader = "<Space>"
 " let locale = "jp"
