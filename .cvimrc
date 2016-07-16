@@ -1,0 +1,13 @@
+"Settings 
+let scrolltep = 30
+let fullpagescrollpercent = 100
+"set nohud
+set autohidecursor
+"set noinsertmappings
+set nosmoothscroll
+let blacklists = ["https://mail.google.com/*"]
+let mapleader = ","
+"let locale = "jp"
+let hintcharacters = "hjklasdfgyuiopqwertnmzxcvb"
+let barposition = "bottom"
+set autoupdategist
