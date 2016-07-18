@@ -45,8 +45,8 @@ set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
 " set clipboard=unnamed,autoselect
 " set clipboard+=unnamed
-" set clipboard=unnamed
-set clipboard+=unnamedplus,unnamed
+set clipboard=unnamed
+" set clipboard+=unnamedplus,unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
