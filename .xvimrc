@@ -1,299 +1,299 @@
-let mapleader = "\<Space>"
-
-" 分割したファイルの読み込み(view)
-"-------------------------
-" set runtimepath+=~/.vim/
-" runtime! userautoload/*.vim
-source ~/.vim/userautoload/neobundle.vim
-source ~/.vim/userautoload/view.vim
-source ~/.vim/userautoload/cpp.vim
-source ~/.vim/userautoload/swift.vim
-source ~/.vim/userautoload/go.vim
-source ~/.vim/userautoload/md.vim
-source ~/.vim/userautoload/cs.vim
-"-------------------------
-" テンプレート用意
-autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
-autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txt
-autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
-autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txt
-autocmd BufNewFile *.py 0r $HOME/.vim/template/py.txt
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.txt
-"-------------------------
-"
-au BufRead,BufNewFile *.md set filetype=markdown
-" 入力完了を待たずに検索
-set incsearch
-" コマンドラインモードでtab保管
-set wildmenu wildmode=list:full
-
-nnoremap <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>
-set laststatus=2
-set statusline=%F%r%h%=
-" 検索時大文字小文字を区別しない
-set ignorecase
-" カーソルを行頭、行末で止まらないようにする
-" set whichwrap=b,s,h,l,<,>,[,]
-" buffer切り替え時ファイルを保存しなくてもよい
-set hidden
-" '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
-set shiftround
-" 補完時に大文字小文字を区別しない
-set infercase
-" 対応括弧に'<'と'>'のペアを追加
-set matchpairs& matchpairs+=<:>
-" macでクリップボード使用
-" set clipboard=unnamed,autoselect
-" set clipboard+=unnamed
-set clipboard=unnamed
-" set clipboard+=unnamedplus,unnamed
-" ~(バックアップ)ファイル作成しない
-set nobackup
-set noswapfile
-set nowritebackup
-" セッションを超えたバックアップファイル作成しない(.un~)
-set noundofile
-" 挿入モードで移動できない問題解決
-imap <ESC>OA <Up>
-imap <ESC>OB <Down>
-imap <ESC>OC <Right>
-imap <ESC>OD <Left>
-" 挿入モードで文字消せない問題解決
-set backspace=indent,eol,start
-" デフォルトを相対行数にする
-" set relativenumber
-" 相対行数トグル
-" nnoremap N :<C-u>setlocal relativenumber!<CR>
-" オリジナルヤンク
-noremap yu 0wv$hy
-" 単語をヤンクレジスタで置換
-nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
-vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
-nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
-" ペースト直後に選択
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-" Insertモードのときカーソルの形状を変更
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-inoremap <Esc> <Esc>
-inoremap jj <ESC><ESC><ESC>
-"noremap j gj
-"noremap k gk
-noremap gj i<Down><Esc><Right>
-noremap gk i<Up><Esc><Right>
-" Insertモードで日本語の時色変更
-if has('multi_byte_ime') || has('xim')
-   highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
-   highlight CursorIM guifg=NONE guibg=#ecbcbc
-endif
-"検索語が画面の真ん中に来るようにする
-" nmap n nzz
-"nmap N Nzz
-" nmap * *zz
-" nmap # #zz
-" nmap g* g*zz
-" nmap g# g#zz
-" Visual line やりやすく
-" nmap vv V
-" nmap vb viw
-" v押す度拡大
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-" 矩形をブロックにする
-set virtualedit=block
-" ビープ音ならさない
-set vb t_vb=
-" 折りたたみしやすく
-noremap \ zA
-" 履歴数増量
-set history=200
-" 保存時行末の余分なスペースを取り除く
-" autocmd BufWritePre * :%s/\s\+$//ge
-" 貼り付けたらテキストの末尾へ
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-" タグジャンプやりやすく
-nnoremap tt gD
-" メモ取りやすくする
-inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
-inoremap g<Tab> <Left><Left><tab><Right><Right>
-inoremap <Tab> <tab>
-" トグル(プラギン使用) < >ペア追加したい
-nnoremap si :Switch<CR>
-" 自動補完on/off
-inoremap jn <ESC>:NeoCompleteToggle<CR>a
-nnoremap gn :NeoCompleteToggle<CR>
-" カレンダー
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-" diffすぐ出す
-nnoremap diff :vertical diffsplit f
-" 指定範囲インデント調節の連続化
-vnoremap > >gv
-vnoremap < <gv
-" 全選択
-nnoremap g0 ggVG
-" 全インデント揃える
-nnoremap gi ggVG=''zz
-" 選択範囲文字数カウント
-vnoremap gwc :s/./&/gn<CR>
-" 文字出現数カウント
-nnoremap <Space>C :%s /<C-r><C-w>//gn<CR>
-" 対応する括弧へ移動しやすく
-nmap <Tab> %
-vmap <Tab> %
-" json整形
-nnoremap g<Space>jq :%!jq '.'<CR>
-" ファイル更新
-nnoremap <Space>L :e!<CR>
-" Screen split key mappings
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap sn gt
-nnoremap sp gT
-nnoremap sr <C-w>r
-nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>o
-nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
-nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
-
-""""""""""""""""""""""""""""""
-"  git
-""""""""""""""""""""""""""""""
-" nnoremap gst :Gstatus<Cr>
-" nnoremap gad :Gwrite<Cr>
-" nnoremap gcm :Gcommit<Cr>
-" nnoremap gco :Gread<Cr>
-" nnoremap gbl :Gblame<Cr>
-" nnoremap glg :Glog<Cr>
-" nnoremap gdf :Gdiff<Cr>
-" nnoremap gfc :Gfetch<Cr>
-" nnoremap gpu :Gpush<Cr>
-" nnoremap gr :Ggrep
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-"  ex mode
-""""""""""""""""""""""""""""""
-" ディレクトリを手早く展開
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
-" 強制保存
-cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
-cnoreabbrev w!! w !sudo tee > /dev/null %
-" emacs
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-cnoremap <C-b> <Left>
-cnoremap <C-f> <Right>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-d> <Del>
-""""""""""""""""""""""""""""""
-
-" マーク情報再描画
-nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
-nnoremap ml :marks<CR>
-nnoremap <Space>d :vertical diffsplit
-nnoremap <Space>u :Unite source<CR>
-nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-" nnoremap <Space>r :QuickRun<CR> <C-w>H
-nnoremap <Space>r :QuickRun<CR>
-nnoremap <Space>v :VimShell<CR>
-nnoremap <Space>c :Calendar<CR>
-nnoremap gt :Calendar -view=clock<CR>
-autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
-autocmd FileType html nnoremap <Space>r :!open %<CR>
-autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Space>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
-nnoremap <Space>o :!open .<CR><CR>
-" タグジャンプを別タブで開く
-nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
-
-rv! " 履歴共有
-" save and close
-nnoremap <Space>w :w<Cr>
-nnoremap <Space>q :q<Cr>
-nnoremap <Space>2 :wq<Cr>
-nnoremap <Space>! :q!<Cr>
-
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-
-""""""""""""""""""""""""""""""
-" 空白まで囲む
-""""""""""""""""""""""""""""""
-noremap <Space>{ wbi{<Esc>f<Space>i}<Esc><Cr>
-noremap <Space>[ wbi[<Esc>f<Space>i]<Esc><Cr>
-noremap <Space>( wbi(<Esc>f<Space>i)<Esc><Cr>
-noremap <Space>< wbi<<Esc>f<Space>i><Esc><Cr>
-noremap <Space>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
-noremap <Space>" wbi"<Esc>f<Space>i"<Esc><Cr>
-
-set completeopt=menuone
-inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
-let MyAutoComplete_StartLength = 3
-""""""""""""""""""""""""""""""
-" 最後のカーソル位置を復元する
-""""""""""""""""""""""""""""""
-if has("autocmd")
-   autocmd BufReadPost *
-            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
-endif
-""""""""""""""""""""""""""""""
-" grepをQuickFixで開く
-""""""""""""""""""""""""""""""
-augroup grepopen
-    " autocmd!
-    " autocmd QuickfixCmdPost vimprep cw
-    autocmd QuickFixCmdPost *grep* cwindow
-augroup END
-"""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" マーク周りの改善
-""""""""""""""""""""""""""""""
-noremap ' `
-" 最初からマークを表示する
-aug show-marks-sync
-   au!
-   au BufReadPost * sil! DoShowMarks
-aug END
-
-" オムニ補完
-inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
-" Plugin key-mappings.  " <C-k>でsnippetの展開
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-" 選択してもそのまま貼り付けられるようにする----------
-vnoremap <silent> p "0p<CR>
+let mapleader = "\<Space>"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 分割したファイルの読み込み(view)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"-------------------------autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set runtimepath+=~/.vim/autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" runtime! userautoload/*.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/neobundle.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/view.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/cpp.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/swift.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/go.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/md.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+source ~/.vim/userautoload/cs.vimautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"-------------------------autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" テンプレート用意autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.py 0r $HOME/.vim/template/py.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.txtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"-------------------------autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+au BufRead,BufNewFile *.md set filetype=markdownautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 入力完了を待たずに検索autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set incsearchautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" コマンドラインモードでtab保管autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set wildmenu wildmode=list:fullautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set laststatus=2autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set statusline=%F%r%h%=autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 検索時大文字小文字を区別しないautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set ignorecaseautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" カーソルを行頭、行末で止まらないようにするautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set whichwrap=b,s,h,l,<,>,[,]autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" buffer切り替え時ファイルを保存しなくてもよいautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set hiddenautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" '<'や'>'でインデントする際に'shiftwidth'の倍数に丸めるautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set shiftroundautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 補完時に大文字小文字を区別しないautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set infercaseautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 対応括弧に'<'と'>'のペアを追加autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set matchpairs& matchpairs+=<:>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" macでクリップボード使用autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set clipboard=unnamed,autoselectautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set clipboard+=unnamedautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set clipboard=unnamedautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set clipboard+=unnamedplus,unnamedautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" ~(バックアップ)ファイル作成しないautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set nobackupautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set noswapfileautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set nowritebackupautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" セッションを超えたバックアップファイル作成しない(.un~)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set noundofileautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 挿入モードで移動できない問題解決autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+imap <ESC>OA <Up>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+imap <ESC>OB <Down>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+imap <ESC>OC <Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+imap <ESC>OD <Left>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 挿入モードで文字消せない問題解決autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set backspace=indent,eol,startautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" デフォルトを相対行数にするautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" set relativenumberautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 相対行数トグルautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap N :<C-u>setlocal relativenumber!<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" オリジナルヤンクautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap yu 0wv$hyautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 単語をヤンクレジスタで置換autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" ペースト直後に選択autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" Insertモードのときカーソルの形状を変更autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap <Esc> <Esc>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap jj <ESC><ESC><ESC>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"noremap j gjautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"noremap k gkautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap gj i<Down><Esc><Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap gk i<Up><Esc><Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" Insertモードで日本語の時色変更autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+if has('multi_byte_ime') || has('xim')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+   highlight Cursor guifg=#000d18 guibg=#8faf9f gui=boldautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+   highlight CursorIM guifg=NONE guibg=#ecbcbcautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+endifautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"検索語が画面の真ん中に来るようにするautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap n nzzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"nmap N Nzzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap * *zzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap # #zzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap g* g*zzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap g# g#zzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" Visual line やりやすくautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap vv Vautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nmap vb viwautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" v押す度拡大autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vmap v <Plug>(expand_region_expand)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vmap <C-v> <Plug>(expand_region_shrink)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 矩形をブロックにするautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set virtualedit=blockautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" ビープ音ならさないautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set vb t_vb=autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 折りたたみしやすくautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap \ zAautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 履歴数増量autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set history=200autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 保存時行末の余分なスペースを取り除くautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" autocmd BufWritePre * :%s/\s\+$//geautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 貼り付けたらテキストの末尾へautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap <silent> y y`]autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap <silent> p p`]autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <silent> p p`]autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" タグジャンプやりやすくautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap tt gDautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" メモ取りやすくするautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap g<Tab> <Left><Left><tab><Right><Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap <Tab> <tab>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" トグル(プラギン使用) < >ペア追加したいautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap si :Switch<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 自動補完on/offautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap jn <ESC>:NeoCompleteToggle<CR>aautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap gn :NeoCompleteToggle<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" カレンダーautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+let g:calendar_google_calendar = 1autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+let g:calendar_google_task = 1autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" diffすぐ出すautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap diff :vertical diffsplit fautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 指定範囲インデント調節の連続化autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap > >gvautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap < <gvautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 全選択autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap g0 ggVGautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 全インデント揃えるautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap gi ggVG=''zzautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 選択範囲文字数カウントautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap gwc :s/./&/gn<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 文字出現数カウントautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>C :%s /<C-r><C-w>//gn<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 対応する括弧へ移動しやすくautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nmap <Tab> %autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vmap <Tab> %autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" json整形autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap g<Space>jq :%!jq '.'<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" ファイル更新autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>L :e!<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" Screen split key mappingsautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap s <Nop>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sj <C-w>jautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sk <C-w>kautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sl <C-w>lautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sh <C-w>hautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sJ <C-w>Jautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sK <C-w>Kautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sL <C-w>Lautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sH <C-w>Hautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sn gtautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sp gTautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sr <C-w>rautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap s= <C-w>=autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sw <C-w>wautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap so <C-w>oautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sO <C-w>=autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sN :<C-u>bn<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sP :<C-u>bp<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap st :<C-u>tabnew<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sT :<C-u>Unite tab<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap ss :<C-u>sp<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sv :<C-u>vs<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sq :<C-u>q<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sQ :<C-u>bd<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"  gitautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gst :Gstatus<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gad :Gwrite<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gcm :Gcommit<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gco :Gread<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gbl :Gblame<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap glg :Glog<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gdf :Gdiff<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gfc :Gfetch<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gpu :Gpush<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap gr :Ggrepautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"  ex modeautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" ディレクトリを手早く展開autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 強制保存autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoreabbrev w!! w !sudo tee > /dev/null %autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" emacsautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-p> <Up>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-n> <Down>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-b> <Left>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-f> <Right>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-a> <Home>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-e> <End>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+cnoremap <C-d> <Del>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" マーク情報再描画autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap ml :marks<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>d :vertical diffsplitautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>u :Unite source<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" nnoremap <Space>r :QuickRun<CR> <C-w>Hautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>r :QuickRun<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>v :VimShell<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>c :Calendar<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap gt :Calendar -view=clock<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd FileType html nnoremap <Space>r :!open %<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>o :!open .<CR><CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" タグジャンプを別タブで開くautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+rv! " 履歴共有autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" save and closeautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>w :w<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>q :q<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>2 :wq<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+nnoremap <Space>! :q!<Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#map('bufmove', 'n', '', '<', '<C-w><')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 空白まで囲むautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>{ wbi{<Esc>f<Space>i}<Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>[ wbi[<Esc>f<Space>i]<Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>( wbi(<Esc>f<Space>i)<Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>< wbi<<Esc>f<Space>i><Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap <Space>" wbi"<Esc>f<Space>i"<Esc><Cr>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+set completeopt=menuoneautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+let MyAutoComplete_StartLength = 3autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 最後のカーソル位置を復元するautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+if has("autocmd")autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+   autocmd BufReadPost *autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+            \ if line("'\"") > 0 && line ("'\"") <= line("$") |autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+            \   exe "normal! g'\"" |autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+            \ endifautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+endifautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" grepをQuickFixで開くautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+augroup grepopenautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+    " autocmd!autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+    " autocmd QuickfixCmdPost vimprep cwautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+    autocmd QuickFixCmdPost *grep* cwindowautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+augroup ENDautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+"""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" マーク周りの改善autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+""""""""""""""""""""""""""""""autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+noremap ' `autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 最初からマークを表示するautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+aug show-marks-syncautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+   au!autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+   au BufReadPost * sil! DoShowMarksautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+aug ENDautocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" オムニ補完autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" Plugin key-mappings.  " <C-k>でsnippetの展開autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+imap <C-k> <Plug>(neosnippet_expand_or_jump)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+smap <C-k> <Plug>(neosnippet_expand_or_jump)autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+" 選択してもそのまま貼り付けられるようにする----------autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
+vnoremap <silent> p "0p<CR>autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
