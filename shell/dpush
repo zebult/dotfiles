@@ -14,7 +14,7 @@ sed -i -e 's/noremap\ k\ gk/\"noremap\ k\ gk/g' .xvimrc
 sed -i -e 's/noremap\ gj\ j/noremap\ gj\ i\<Down\>\<Esc\>\<Right\>/g' .xvimrc
 sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' .xvimrc
 sed -i -e 's/Leader/Space/' .xvimrc
-echo 'autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252/' >> .xvimrc
+echo 'set hlsearch' >> .xvimrc
 
 rm -f .xvimrc-e
 
