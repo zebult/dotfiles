@@ -46,7 +46,8 @@ set matchpairs& matchpairs+=<:>
 " set clipboard=unnamed,autoselect
 " set clipboard+=unnamed
 " set clipboard=unnamed
-set clipboard+=unnamedplus,unnamed
+" set clipboard+=unnamedplus,unnamed
+set clipboard=unnamed,autoselect
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile

@@ -54,6 +54,8 @@ if has('vim_starting')
     nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
     " コピーした文字列をハイライト付きで置換
     nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+    " 対応括弧を自動入力
+    NeoBundle 'jiangmiao/auto-pairs'
     " }}}
     " ヤンク履歴をペーストの後変更できる
     " NeoBundle 'YankRing.vim'
