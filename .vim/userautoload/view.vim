@@ -38,3 +38,4 @@ set hlsearch
 
 " 補完色
 highlight PmenuSel  ctermbg=33
+

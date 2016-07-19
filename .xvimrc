@@ -47,7 +47,7 @@ set matchpairs& matchpairs+=<:>
 " set clipboard+=unnamed
 " set clipboard=unnamed
 " set clipboard+=unnamedplus,unnamed
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
@@ -298,3 +298,4 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
+set hlsearch
