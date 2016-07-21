@@ -47,10 +47,10 @@ if has('vim_starting')
     let g:netrw_nogx = 1 " disable netrw's gx mapping.
     nmap gx <Plug>(openbrowser-smart-search)
     vmap gx <Plug>(openbrowser-smart-search)
-    " 対応括弧自動作成
-    NeoBundle 'jiangmiao/auto-pairs'
-    " 色自動付け
-    NeoBundle 'lilydjwg/colorizer'
+    " 対応括弧自動作成(いらないと思う)
+    " NeoBundle 'jiangmiao/auto-pairs'
+    " 色自動付け(いらないと思う)
+    " NeoBundle 'lilydjwg/colorizer'
     "" over.vim {{{
     " over.vimの起動
     nnoremap <silent> <Leader>m :OverCommandLine<CR>

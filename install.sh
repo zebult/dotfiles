@@ -40,6 +40,7 @@ case "${os}" in
         cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
         brew install tmux
         brew install reattach-to-user-namespace
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         brew install macvim
         brew install htop-osx
         brew install nmap
