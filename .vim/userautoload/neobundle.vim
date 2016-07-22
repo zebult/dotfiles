@@ -372,6 +372,7 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>l <Plug>(easymotion-w)
 map <Leader>h <Plug>(easymotion-b)
 let g:EasyMotion_startofline = 0
+let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvb'
 " let g:EasyMotion_use_upper = 1
 " let g:EasyMotion_enter_jump_first = 1
 " let g:EasyMotion_space_jump_first = 1
