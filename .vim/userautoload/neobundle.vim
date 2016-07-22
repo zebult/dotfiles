@@ -36,7 +36,7 @@ if has('vim_starting')
     NeoBundle 'lervag/vimtex' " Vim上でtexの部分コンパイルをする
     " 単語の前後に入力(Clipboardコピーできなくなる?)
     " NeoBundle 'tpope/vim-surround'
-    " macのClipboardと連携(嘘)
+    " macのClipboardと連携(Clipboardコピーできなくなる?)
     " NeoBundle 'kana/vim-fakeclip'
     NeoBundle 'fuenor/vim-wordcount'
     NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
@@ -47,7 +47,7 @@ if has('vim_starting')
     let g:netrw_nogx = 1 " disable netrw's gx mapping.
     nmap gx <Plug>(openbrowser-smart-search)
     vmap gx <Plug>(openbrowser-smart-search)
-    " 対応括弧自動作成(いらないと思う)
+    " 対応括弧自動作成(gvimで日本語使えなくなる)
     " NeoBundle 'jiangmiao/auto-pairs'
     " 色自動付け(いらないと思う)
     " NeoBundle 'lilydjwg/colorizer'
@@ -58,8 +58,6 @@ if has('vim_starting')
     nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
     " コピーした文字列をハイライト付きで置換
     nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
-    " 対応括弧を自動入力
-    NeoBundle 'jiangmiao/auto-pairs'
     " }}}
     " ヤンク履歴をペーストの後変更できる
     " NeoBundle 'YankRing.vim'

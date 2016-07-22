@@ -1,0 +1,16 @@
+pane	0	1	:zsh	0	:	1	:/Users/a14198/Documents/workspace/Cpp/Popolo/popolo_client	0	zsh	:
+pane	0	1	:zsh	0	:	2	:/Users/a14198/Documents/workspace/Cpp/Popolo/popolo_material	0	zsh	:
+pane	0	1	:zsh	0	:	3	:/Users/a14198/Dropbox/Saichi/Memo/grenge	1	vim	:vim branch.md
+pane	0	2	:zsh	0	:-	1	:/Users/a14198/Dropbox/Saichi/Memo/grenge	0	vim	:vim popolo.md
+pane	0	2	:zsh	0	:-	2	:/Users/a14198/Dropbox/Saichi/Memo/grenge	1	vim	:vim nippo.md
+pane	0	3	:zsh	1	:*	1	:/Users/a14198/Documents/CheatSheet	1	zsh	:
+pane	1	1	:zsh	1	:*	1	:/Users/a14198	1	zsh	:
+pane	2	1	:zsh	1	:*	1	:/Users/a14198	1	zsh	:
+pane	3	1	:zsh	1	:*	1	:/Users/a14198/Dropbox/Saichi/Memo/grenge	1	zsh	:
+window	0	1	0	:	4e6e,318x80,0,0{159x80,0,0,15,158x80,160,0[158x40,160,0,16,158x39,160,41,17]}
+window	0	2	0	:-	3108,318x80,0,0[318x40,0,0,18,318x39,0,41,19]
+window	0	3	1	:*	dbaf,318x80,0,0,20
+window	1	1	1	:*	b705,318x80,0,0,8
+window	2	1	1	:*	b706,318x80,0,0,9
+window	3	1	1	:*	5bb3,318x80,0,0,14
+state	0	3
