@@ -38,5 +38,9 @@ set hlsearch
 
 " 補完色
 hi PmenuSel  ctermbg=33
-hi EasyMotionTarget ctermfg=196
+" EasyMotion色
+hi EasyMotionTarget ctermbg=none ctermfg=82
+hi EasyMotionTarget2First ctermbg=none ctermfg=196
+hi EasyMotionTarget2Second ctermbg=none ctermfg=196
 hi EasyMotionShade ctermfg=8
+

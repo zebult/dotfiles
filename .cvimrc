@@ -32,6 +32,7 @@ let defaultengine = "google.co.jp"
 " let qmark f = ["http://cloud.feedly.com/#latest"]                                   
 " let qmark p = ["http://getpocket.com/a/queue/"]                                     
 " let qmark g = ["http://github.com/rcmdnk"]       
+let qmark t = ["http://cvim.ipsj.or.jp/"]
 
 " Move
 map <C-h> scrollLeft
