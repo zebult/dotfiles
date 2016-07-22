@@ -37,5 +37,6 @@ set autoindent "インデントを自動でつける
 set hlsearch
 
 " 補完色
-highlight PmenuSel  ctermbg=33
-
+hi PmenuSel  ctermbg=33
+hi EasyMotionTarget ctermfg=196
+hi EasyMotionShade ctermfg=8
