@@ -44,7 +44,7 @@ case "${os}" in
         brew install macvim
         brew install htop-osx
         brew install nmap
-        brew tig
+        brew install tig
         brew install wget
         brew install tree
         brew install source-highlight
