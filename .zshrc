@@ -60,7 +60,7 @@ alias glo="git log --oneline"
 alias gdn="git diff --name-only"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-alias vim="reattach-to-user-namespace vim"
+# alias vim="reattach-to-user-namespace vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='open /Applications/MacVim.app'
 
@@ -88,11 +88,13 @@ functions mkcd() {
 }
 
 functions gps() {
+    gst
     echo "git push origin `git rev-parse --abbrev-ref HEAD`"
     git push origin `git rev-parse --abbrev-ref HEAD`
 }
 
 functions gpl() {
+    gst
     echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
     git pull origin `git rev-parse --abbrev-ref HEAD`
 }
