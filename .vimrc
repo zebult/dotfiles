@@ -32,6 +32,10 @@ set laststatus=2
 set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
 set ignorecase
+" 大文字混在時は大文字小文字区別する
+set smartcase
+" 検索最後尾で先頭に戻る
+" set wrapscan
 " カーソルを行頭、行末で止まらないようにする
 " set whichwrap=b,s,h,l,<,>,[,]
 " buffer切り替え時ファイルを保存しなくてもよい
@@ -62,7 +66,8 @@ imap <ESC>OD <Left>
 " 挿入モードで文字消せない問題解決
 set backspace=indent,eol,start
 " デフォルトを相対行数にする
-" set relativenumber
+set relativenumber
+set number
 " 相対行数トグル
 " nnoremap N :<C-u>setlocal relativenumber!<CR>
 " オリジナルヤンク
@@ -220,7 +225,6 @@ nnoremap ml :marks<CR>
 nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-" nnoremap <Leader>r :QuickRun<CR> <C-w>H
 nnoremap <Leader>r :QuickRun<CR>
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>

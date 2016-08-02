@@ -32,6 +32,10 @@ set laststatus=2
 set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
 set ignorecase
+" 大文字混在時は大文字小文字区別する
+set smartcase
+" 検索最後尾で先頭に戻る
+" set wrapscan
 " カーソルを行頭、行末で止まらないようにする
 " set whichwrap=b,s,h,l,<,>,[,]
 " buffer切り替え時ファイルを保存しなくてもよい
@@ -62,7 +66,8 @@ imap <ESC>OD <Left>
 " 挿入モードで文字消せない問題解決
 set backspace=indent,eol,start
 " デフォルトを相対行数にする
-" set relativenumber
+set relativenumber
+set number
 " 相対行数トグル
 " nnoremap N :<C-u>setlocal relativenumber!<CR>
 " オリジナルヤンク
@@ -220,14 +225,13 @@ nnoremap ml :marks<CR>
 nnoremap <Space>d :vertical diffsplit
 nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-" nnoremap <Space>r :QuickRun<CR> <C-w>H
-nnoremap <Space>r :QuickRun<CR>
+nnoremap <Space>r :run<CR>
 nnoremap <Space>v :VimShell<CR>
 nnoremap <Space>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
-autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
+autocmd FileType tex nnoremap <Space>r :run<CR>:!latexmk -c<CR>
 nnoremap <Space>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Space>o :!open .<CR><CR>
 " タグジャンプを別タブで開く
@@ -299,3 +303,22 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
 set hlsearch
+nnoremap <Space>h :xhelp<Cr>
+nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>
+nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>
+nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>
+nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>
+nnoremap <Space>a :ncounterpart<Cr>
+nnoremap <Space>B :xccmd toggleBreakpointAtCurrentLine<Cr>
+nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
+nnoremap sn :xccmd selectNextTab<Cr>
+nnoremap sp :xccmd selectPreviousTab<Cr>
+nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>
+nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <Space>u :xccmd toggleToolbarShown<Cr>
+nnoremap <Space>t :xccmd toggleUtilitiesVisibility<Cr>
+nnoremap <Space>a :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
+nnoremap <Space>b :xcmenucmd Build<Cr>
+nnoremap <Space>c :xcmenucmd Clean<Cr>
+nnoremap <Space>e :xccmd openQuickly<Cr>

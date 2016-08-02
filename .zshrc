@@ -58,6 +58,7 @@ alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
 alias gdn="git diff --name-only"
+alias grh="git reset --hard"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 # alias vim="reattach-to-user-namespace vim"
@@ -88,11 +89,13 @@ functions mkcd() {
 }
 
 functions gps() {
+    gst
     echo "git push origin `git rev-parse --abbrev-ref HEAD`"
     git push origin `git rev-parse --abbrev-ref HEAD`
 }
 
 functions gpl() {
+    gst
     echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
     git pull origin `git rev-parse --abbrev-ref HEAD`
 }
