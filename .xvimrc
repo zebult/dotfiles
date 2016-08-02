@@ -298,7 +298,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
 set hlsearch
-nnoremap <Space>b :make<Cr>
 nnoremap <Space>h :xhelp<Cr>
 nnoremap <C-n> :nissue<Cr>
 nnoremap <C-p> :pissue<Cr>
