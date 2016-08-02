@@ -220,13 +220,13 @@ nnoremap ml :marks<CR>
 nnoremap <Space>d :vertical diffsplit
 nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <Space>r :QuickRun<CR>
+nnoremap <Space>r :run<CR>
 nnoremap <Space>v :VimShell<CR>
 nnoremap <Space>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Space>r :!open %<CR>
-autocmd FileType tex nnoremap <Space>r :QuickRun<CR>:!latexmk -c<CR>
+autocmd FileType tex nnoremap <Space>r :run<CR>:!latexmk -c<CR>
 nnoremap <Space>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
 nnoremap <Space>o :!open .<CR><CR>
 " タグジャンプを別タブで開く
@@ -298,3 +298,8 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
 set hlsearch
+nnoremap <Space>b :make<Cr>
+nnoremap <Space>h :xhelp<Cr>
+nnoremap <C-n> :nissue<Cr>
+nnoremap <C-p> :pissue<Cr>
+nnoremap <Space>a :ncounterpart<Cr>
