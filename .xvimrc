@@ -66,7 +66,8 @@ imap <ESC>OD <Left>
 " 挿入モードで文字消せない問題解決
 set backspace=indent,eol,start
 " デフォルトを相対行数にする
-" set relativenumber
+set relativenumber
+set number
 " 相対行数トグル
 " nnoremap N :<C-u>setlocal relativenumber!<CR>
 " オリジナルヤンク
@@ -302,7 +303,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " 選択してもそのまま貼り付けられるようにする----------
 vnoremap <silent> p "0p<CR>
 set hlsearch
-set relativenumber
 nnoremap <Space>h :xhelp<Cr>
 nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>
 nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>
@@ -313,12 +313,12 @@ nnoremap <Space>B :xccmd toggleBreakpointAtCurrentLine<Cr>
 nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
 nnoremap sn :xccmd selectNextTab<Cr>
 nnoremap sp :xccmd selectPreviousTab<Cr>
-nnoremap <Space>f viw:xccmd findSelectedTextInWorkspace<Cr>
-nnoremap <M-h> :xccmd toggleNavigatorsVisibility<Cr>
-nnoremap <M-j> :xccmd toggleDebuggerVisibility<Cr>
-nnoremap <M-k> :xccmd toggleToolbarShown<Cr>
-nnoremap <M-l> :xccmd toggleUtilitiesVisibility<Cr>
-nnoremap <M-a> :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
+nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>
+nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <Space>u :xccmd toggleToolbarShown<Cr>
+nnoremap <Space>t :xccmd toggleUtilitiesVisibility<Cr>
+nnoremap <Space>a :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
 nnoremap <Space>b :xcmenucmd Build<Cr>
 nnoremap <Space>c :xcmenucmd Clean<Cr>
 nnoremap <Space>e :xccmd openQuickly<Cr>

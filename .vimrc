@@ -66,7 +66,8 @@ imap <ESC>OD <Left>
 " 挿入モードで文字消せない問題解決
 set backspace=indent,eol,start
 " デフォルトを相対行数にする
-" set relativenumber
+set relativenumber
+set number
 " 相対行数トグル
 " nnoremap N :<C-u>setlocal relativenumber!<CR>
 " オリジナルヤンク
