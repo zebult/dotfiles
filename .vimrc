@@ -220,7 +220,6 @@ nnoremap ml :marks<CR>
 nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-" nnoremap <Leader>r :QuickRun<CR> <C-w>H
 nnoremap <Leader>r :QuickRun<CR>
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>
