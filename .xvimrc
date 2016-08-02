@@ -308,8 +308,12 @@ nnoremap <C-n> :nissue<Cr>
 nnoremap <C-p> :pissue<Cr>
 nnoremap <Space>a :ncounterpart<Cr>
 nnoremap <Space>b :xccmd toggleBreakpointAtCurrentLine<Cr>
-nnoremap <C-_><C-_> :xccmd commentAndUncommentCurrentLines<Cr>
+nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
 nnoremap <Space>s :xccmd showInFinder<Cr>
-nnoremap sn :xccmd selectNextTab
-nnoremap sp :xccmd selectPreviousTab
+nnoremap sn :xccmd selectNextTab<Cr>
+nnoremap sp :xccmd selectPreviousTab<Cr>
 nnoremap <Space>f viw:xccmd findSelectedTextInWorkspace<Cr>
+nnoremap <C-h> :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <C-j> :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <C-k> :xccmd toggleToolbarShown
+nnoremap <C-l> :xccmd toggleUtilitiesVisibility<CR>
