@@ -18,19 +18,25 @@ sed -i -e 's/Leader/Space/' .xvimrc
 echo 'set hlsearch' >> .xvimrc
 echo 'set relativenumber' >> .xvimrc
 echo 'nnoremap <Space>h :xhelp<Cr>' >> .xvimrc
-echo 'nnoremap <C-n> :nissue<Cr>' >> .xvimrc
-echo 'nnoremap <C-p> :pissue<Cr>' >> .xvimrc
+echo 'nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>' >> .xvimrc
+echo 'nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>' >> .xvimrc
+# echo 'nnoremap <C-p> :pissue<Cr>' >> .xvimrc
+echo 'nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>' >> .xvimrc
+echo 'nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>' >> .xvimrc
 echo 'nnoremap <Space>a :ncounterpart<Cr>' >> .xvimrc
-echo 'nnoremap <Space>b :xccmd toggleBreakpointAtCurrentLine<Cr>' >> .xvimrc
+echo 'nnoremap <Space>B :xccmd toggleBreakpointAtCurrentLine<Cr>' >> .xvimrc
 echo 'nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>' >> .xvimrc
-echo 'nnoremap <Space>s :xccmd showInFinder<Cr>' >> .xvimrc
 echo 'nnoremap sn :xccmd selectNextTab<Cr>' >> .xvimrc
 echo 'nnoremap sp :xccmd selectPreviousTab<Cr>' >> .xvimrc
 echo 'nnoremap <Space>f viw:xccmd findSelectedTextInWorkspace<Cr>' >> .xvimrc
-echo 'nnoremap <C-h> :xccmd toggleNavigatorsVisibility<Cr>' >> .xvimrc
-echo 'nnoremap <C-j> :xccmd toggleDebuggerVisibility<Cr>' >> .xvimrc
-echo 'nnoremap <C-k> :xccmd toggleToolbarShown' >> .xvimrc
-echo 'nnoremap <C-l> :xccmd toggleUtilitiesVisibility<CR>' >> .xvimrc
+echo 'nnoremap <M-h> :xccmd toggleNavigatorsVisibility<Cr>' >> .xvimrc
+echo 'nnoremap <M-j> :xccmd toggleDebuggerVisibility<Cr>' >> .xvimrc
+echo 'nnoremap <M-k> :xccmd toggleToolbarShown<Cr>' >> .xvimrc
+echo 'nnoremap <M-l> :xccmd toggleUtilitiesVisibility<Cr>' >> .xvimrc
+echo 'nnoremap <M-a> :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>' >> .xvimrc
+echo 'nnoremap <Space>b :xcmenucmd Build<Cr>' >> .xvimrc
+echo 'nnoremap <Space>c :xcmenucmd Clean<Cr>' >> .xvimrc
+echo 'nnoremap <Space>e :xccmd openQuickly<Cr>' >> .xvimrc
 
 # echo 'nnoremap <Space>y :xctabctrl hideUtilitiesArea:<Cr>' >> .xvimrc
 # echo 'nnoremap <Space>t :xctabctrl showUtilitiesArea:<Cr>' >> .xvimrc

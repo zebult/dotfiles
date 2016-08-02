@@ -304,16 +304,21 @@ vnoremap <silent> p "0p<CR>
 set hlsearch
 set relativenumber
 nnoremap <Space>h :xhelp<Cr>
-nnoremap <C-n> :nissue<Cr>
-nnoremap <C-p> :pissue<Cr>
+nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>
+nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>
+nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>
+nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>
 nnoremap <Space>a :ncounterpart<Cr>
-nnoremap <Space>b :xccmd toggleBreakpointAtCurrentLine<Cr>
+nnoremap <Space>B :xccmd toggleBreakpointAtCurrentLine<Cr>
 nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
-nnoremap <Space>s :xccmd showInFinder<Cr>
 nnoremap sn :xccmd selectNextTab<Cr>
 nnoremap sp :xccmd selectPreviousTab<Cr>
 nnoremap <Space>f viw:xccmd findSelectedTextInWorkspace<Cr>
-nnoremap <C-h> :xccmd toggleNavigatorsVisibility<Cr>
-nnoremap <C-j> :xccmd toggleDebuggerVisibility<Cr>
-nnoremap <C-k> :xccmd toggleToolbarShown
-nnoremap <C-l> :xccmd toggleUtilitiesVisibility<CR>
+nnoremap <M-h> :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <M-j> :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <M-k> :xccmd toggleToolbarShown<Cr>
+nnoremap <M-l> :xccmd toggleUtilitiesVisibility<Cr>
+nnoremap <M-a> :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
+nnoremap <Space>b :xcmenucmd Build<Cr>
+nnoremap <Space>c :xcmenucmd Clean<Cr>
+nnoremap <Space>e :xccmd openQuickly<Cr>
