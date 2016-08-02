@@ -22,12 +22,15 @@ echo 'nnoremap <C-n> :nissue<Cr>' >> .xvimrc
 echo 'nnoremap <C-p> :pissue<Cr>' >> .xvimrc
 echo 'nnoremap <Space>a :ncounterpart<Cr>' >> .xvimrc
 echo 'nnoremap <Space>b :xccmd toggleBreakpointAtCurrentLine<Cr>' >> .xvimrc
-echo 'nnoremap <C-_><C-_> :xccmd commentAndUncommentCurrentLines<Cr>' >> .xvimrc
+echo 'nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>' >> .xvimrc
 echo 'nnoremap <Space>s :xccmd showInFinder<Cr>' >> .xvimrc
-echo 'nnoremap sn :xccmd selectNextTab' >> .xvimrc
-echo 'nnoremap sp :xccmd selectPreviousTab' >> .xvimrc
+echo 'nnoremap sn :xccmd selectNextTab<Cr>' >> .xvimrc
+echo 'nnoremap sp :xccmd selectPreviousTab<Cr>' >> .xvimrc
 echo 'nnoremap <Space>f viw:xccmd findSelectedTextInWorkspace<Cr>' >> .xvimrc
-
+echo 'nnoremap <C-h> :xccmd toggleNavigatorsVisibility<Cr>' >> .xvimrc
+echo 'nnoremap <C-j> :xccmd toggleDebuggerVisibility<Cr>' >> .xvimrc
+echo 'nnoremap <C-k> :xccmd toggleToolbarShown' >> .xvimrc
+echo 'nnoremap <C-l> :xccmd toggleUtilitiesVisibility<CR>' >> .xvimrc
 
 # echo 'nnoremap <Space>y :xctabctrl hideUtilitiesArea:<Cr>' >> .xvimrc
 # echo 'nnoremap <Space>t :xctabctrl showUtilitiesArea:<Cr>' >> .xvimrc
