@@ -22,8 +22,10 @@ hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
 " 現在列ハイライト
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
+" 行数色
+hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE
 " 現在行数色
-hi CursorLineNr term=bold cterm=NONE ctermfg=15 ctermbg=NONE
+hi CursorLineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE
 " コメント色
 hi Comment ctermfg=8
 " インデントをスペース(4つ)だけにする "

@@ -119,6 +119,8 @@ set history=200
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" 現在行を画面トップに持ってくる
+nnoremap zh zzLzzHk
 " タグジャンプやりやすく
 nnoremap tt gD
 " メモ取りやすくする
