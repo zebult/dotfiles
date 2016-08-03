@@ -16,11 +16,9 @@ sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' .xvimrc
 sed -i -e 's/QuickRun/run/g' .xvimrc
 sed -i -e 's/Leader/Space/' .xvimrc
 echo 'set hlsearch' >> .xvimrc
-# echo 'set relativenumber' >> .xvimrc
 echo 'nnoremap <Space>h :xhelp<Cr>' >> .xvimrc
 echo 'nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>' >> .xvimrc
 echo 'nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>' >> .xvimrc
-# echo 'nnoremap <C-p> :pissue<Cr>' >> .xvimrc
 echo 'nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>' >> .xvimrc
 echo 'nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>' >> .xvimrc
 echo 'nnoremap <Space>a :ncounterpart<Cr>' >> .xvimrc
@@ -37,9 +35,6 @@ echo 'nnoremap <Space>a :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibi
 echo 'nnoremap <Space>b :xcmenucmd Build<Cr>' >> .xvimrc
 echo 'nnoremap <Space>c :xcmenucmd Clean<Cr>' >> .xvimrc
 echo 'nnoremap <Space>e :xccmd openQuickly<Cr>' >> .xvimrc
-
-# echo 'nnoremap <Space>y :xctabctrl hideUtilitiesArea:<Cr>' >> .xvimrc
-# echo 'nnoremap <Space>t :xctabctrl showUtilitiesArea:<Cr>' >> .xvimrc
 
 rm -f .xvimrc-e
 
