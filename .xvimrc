@@ -119,6 +119,8 @@ set history=200
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" 現在行を画面トップに持ってくる
+nnoremap zh zzLzzHk
 " タグジャンプやりやすく
 nnoremap tt gD
 " メモ取りやすくする
@@ -318,7 +320,7 @@ nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>
 nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>
 nnoremap <Space>u :xccmd toggleToolbarShown<Cr>
 nnoremap <Space>t :xccmd toggleUtilitiesVisibility<Cr>
-nnoremap <Space>a :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
+nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
 nnoremap <Space>b :xcmenucmd Build<Cr>
 nnoremap <Space>c :xcmenucmd Clean<Cr>
 nnoremap <Space>e :xccmd openQuickly<Cr>

@@ -31,7 +31,7 @@ echo 'nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>' >> .xvimrc
 echo 'nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>' >> .xvimrc
 echo 'nnoremap <Space>u :xccmd toggleToolbarShown<Cr>' >> .xvimrc
 echo 'nnoremap <Space>t :xccmd toggleUtilitiesVisibility<Cr>' >> .xvimrc
-echo 'nnoremap <Space>a :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>' >> .xvimrc
+echo 'nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>' >> .xvimrc
 echo 'nnoremap <Space>b :xcmenucmd Build<Cr>' >> .xvimrc
 echo 'nnoremap <Space>c :xcmenucmd Clean<Cr>' >> .xvimrc
 echo 'nnoremap <Space>e :xccmd openQuickly<Cr>' >> .xvimrc
