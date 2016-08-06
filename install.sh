@@ -1,5 +1,13 @@
 #!/bin/bash
 
+git clone https://github.com/zebult/dotfiles.git
+cd dotfiles
+
+DIR=${PWD##*/}
+if [ $DIR != "dotfiles" ]; then
+    exit
+fi
+
 # 1.dotfileのシンボリックリンクを$HOMEに張る(.file限定)
 for f in .??*
 do
