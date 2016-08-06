@@ -1,10 +1,8 @@
 if expand("%:t") =~ ".*\.md"
     " タブをスペース2にする
     set ts=2 sw=2 sts=0
-
     " todoリストを簡単に入力する
     abbreviate tl - [ ]
-    " abbreviate tl - [  <Left><C-BS>
     " todoリストのon/offを切り替える
     nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
 

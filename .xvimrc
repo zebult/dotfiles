@@ -119,8 +119,6 @@ set history=200
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-" 現在行を画面トップに持ってくる
-nnoremap zh zzLzzHk
 " タグジャンプやりやすく
 nnoremap tt gD
 " メモ取りやすくする
@@ -183,6 +181,11 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+" タグジャンプで画面分割
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-i> :tp<CR>
+
 nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 
 """"""""""""""""""""""""""""""
