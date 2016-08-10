@@ -83,6 +83,10 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC>
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 " Insertモードで日本語の時色変更
 if has('multi_byte_ime') || has('xim')
    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
