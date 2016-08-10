@@ -83,8 +83,8 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 inoremap <Esc> <Esc>
 inoremap jj <ESC><ESC><ESC>
-"noremap j gj
-"noremap k gk
+noremap j gj
+noremap k gk
 noremap gj i<Down><Esc><Right>
 noremap gk i<Up><Esc><Right>
 " Insertモードで日本語の時色変更
@@ -122,7 +122,7 @@ nnoremap <silent> p p`]
 " タグジャンプやりやすく
 nnoremap tt gD
 " メモ取りやすくする
-inoremap <S-Tab> <Left><Left><backspace><backspace><backspace><backspace><Right><Right>
+inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap <Tab> <tab>
 " トグル(プラギン使用) < >ペア追加したい
@@ -320,10 +320,10 @@ nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
 nnoremap sn :xccmd selectNextTab<Cr>
 nnoremap sp :xccmd selectPreviousTab<Cr>
 nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>
-nnoremap <Space>h :xccmd toggleNavigatorsVisibility<Cr>
-nnoremap <Space>j :xccmd toggleDebuggerVisibility<Cr>
-nnoremap <Space>k :xccmd toggleToolbarShown<Cr>
-nnoremap <Space>l :xccmd toggleUtilitiesVisibility<Cr>
+nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <Space>t :xccmd toggleToolbarShown<Cr>
+nnoremap <Space>u :xccmd toggleUtilitiesVisibility<Cr>
 nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
 nnoremap <Space>b :xcmenucmd Build<Cr>
 nnoremap <Space>c :xcmenucmd Clean<Cr>

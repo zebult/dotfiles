@@ -6,5 +6,5 @@ git pull origin master
 cd ~/dotfiles
 git pull origin master
 
-\cp ~/dotfiles/shell/dpush ~/.bin/sh/
-\cp ~/dotfiles/shell/dpull ~/.bin/sh/
+\cp ~/dotfiles/shell/dpush ~/.bin/sh/dpush
+\cp ~/dotfiles/shell/dpull ~/.bin/sh/dpull
