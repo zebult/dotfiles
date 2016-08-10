@@ -9,10 +9,10 @@ git push origin master
 cd ~/dotfiles
 # .vimrcを他ファイルに適応
 \cp -f .vimrc .xvimrc
-sed -i -e 's/noremap\ j\ gj/\"noremap\ j\ gj/g' .xvimrc
-sed -i -e 's/noremap\ k\ gk/\"noremap\ k\ gk/g' .xvimrc
-sed -i -e 's/noremap\ gj\ j/noremap\ gj\ i\<Down\>\<Esc\>\<Right\>/g' .xvimrc
-sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' .xvimrc
+echo 'noremap gj i<Down><Esc><Right>' >> .xvimrc
+echo 'noremap gk i<Up><Esc><Right>' >> .xvimrc
+# sed -i -e 's/noremap\ gj\ j/noremap\ gj\ i\<Down\>\<Esc\>\<Right\>/g' .xvimrc
+# sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' .xvimrc
 sed -i -e 's/QuickRun/run/g' .xvimrc
 sed -i -e 's/Leader/Space/' .xvimrc
 echo 'set hlsearch' >> .xvimrc
