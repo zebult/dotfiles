@@ -146,9 +146,6 @@ nnoremap gi ggVG=''zz
 vnoremap gwc :s/./&/gn<CR>
 " 文字出現数カウント
 nnoremap <Space>C :%s /<C-r><C-w>//gn<CR>
-" 対応する括弧へ移動しやすく
-nmap <Tab> %
-vmap <Tab> %
 " json整形
 nnoremap g<Space>jq :%!jq '.'<CR>
 " ファイル更新
@@ -271,6 +268,10 @@ noremap <Space>" wbi"<Esc>f<Space>i"<Esc><Cr>
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
+
+" 対応する括弧へ移動しやすく
+nnoremap <Tab> %
+vnoremap <Tab> %
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
