@@ -89,8 +89,8 @@ noremap gj i<Down><Esc><Right>
 noremap gk i<Up><Esc><Right>
 " Insertモードで日本語の時色変更
 if has('multi_byte_ime') || has('xim')
-   highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
-   highlight CursorIM guifg=NONE guibg=#ecbcbc
+    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
+    highlight CursorIM guifg=NONE guibg=#ecbcbc
 endif
 "検索語が画面の真ん中に来るようにする
 " nmap n nzz
@@ -141,7 +141,7 @@ vnoremap < <gv
 " 全選択
 nnoremap g0 ggVG
 " 全インデント揃える
-nnoremap gi ggVG=''zz
+nnoremap gi miggVG='izz
 " 選択範囲文字数カウント
 vnoremap gwc :s/./&/gn<CR>
 " 文字出現数カウント
@@ -276,10 +276,10 @@ vnoremap <Tab> %
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
 if has("autocmd")
-   autocmd BufReadPost *
-            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \   exe "normal! g'\"" |
+                \ endif
 endif
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く
@@ -297,8 +297,8 @@ augroup END
 noremap ' `
 " 最初からマークを表示する
 aug show-marks-sync
-   au!
-   au BufReadPost * sil! DoShowMarks
+    au!
+    au BufReadPost * sil! DoShowMarks
 aug END
 
 " オムニ補完
@@ -310,21 +310,21 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 vnoremap <silent> p "0p<CR>
 
 set hlsearch
-nnoremap <Space>h :xhelp<Cr>
+nnoremap <C-h> :xhelp<Cr>
 nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>
 nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>
 nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>
 nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>
 nnoremap <Space>a :ncounterpart<Cr>
-nnoremap <Space>B :xccmd toggleBreakpointAtCurrentLine<Cr>
+nnoremap <Space><Space> :xccmd toggleBreakpointAtCurrentLine<Cr>
 nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>
 nnoremap sn :xccmd selectNextTab<Cr>
 nnoremap sp :xccmd selectPreviousTab<Cr>
 nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>
-nnoremap <Space>f :xccmd toggleNavigatorsVisibility<Cr>
-nnoremap <Space>d :xccmd toggleDebuggerVisibility<Cr>
-nnoremap <Space>t :xccmd toggleToolbarShown<Cr>
-nnoremap <Space>u :xccmd toggleUtilitiesVisibility<Cr>
+nnoremap <Space>h :xccmd toggleNavigatorsVisibility<Cr>
+nnoremap <Space>j :xccmd toggleDebuggerVisibility<Cr>
+nnoremap <Space>l :xccmd toggleToolbarShown<Cr>
+nnoremap <Space>k :xccmd toggleUtilitiesVisibility<Cr>
 nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>
 nnoremap <Space>b :xcmenucmd Build<Cr>
 nnoremap <Space>c :xcmenucmd Clean<Cr>

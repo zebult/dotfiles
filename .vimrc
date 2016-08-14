@@ -89,8 +89,8 @@ noremap gj j
 noremap gk k
 " Insertモードで日本語の時色変更
 if has('multi_byte_ime') || has('xim')
-   highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
-   highlight CursorIM guifg=NONE guibg=#ecbcbc
+    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
+    highlight CursorIM guifg=NONE guibg=#ecbcbc
 endif
 "検索語が画面の真ん中に来るようにする
 " nmap n nzz
@@ -141,7 +141,7 @@ vnoremap < <gv
 " 全選択
 nnoremap g0 ggVG
 " 全インデント揃える
-nnoremap gi ggVG=''zz
+nnoremap gi miggVG='izz
 " 選択範囲文字数カウント
 vnoremap gwc :s/./&/gn<CR>
 " 文字出現数カウント
@@ -276,10 +276,10 @@ vnoremap <Tab> %
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
 if has("autocmd")
-   autocmd BufReadPost *
-            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \   exe "normal! g'\"" |
+                \ endif
 endif
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く
@@ -297,8 +297,8 @@ augroup END
 noremap ' `
 " 最初からマークを表示する
 aug show-marks-sync
-   au!
-   au BufReadPost * sil! DoShowMarks
+    au!
+    au BufReadPost * sil! DoShowMarks
 aug END
 
 " オムニ補完
