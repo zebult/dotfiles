@@ -310,6 +310,8 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 vnoremap <silent> p "0p<CR>
 
 set hlsearch
+nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>
+nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>
 nnoremap <C-h> :xhelp<Cr>
 nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>
 nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>

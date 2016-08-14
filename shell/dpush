@@ -16,6 +16,8 @@ sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' .xvimrc
 sed -i -e 's/QuickRun/run/g' .xvimrc
 sed -i -e 's/Leader/Space/' .xvimrc
 echo 'set hlsearch' >> .xvimrc
+echo 'nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>' >> .xvimrc
+echo 'nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>' >> .xvimrc
 echo 'nnoremap <C-h> :xhelp<Cr>' >> .xvimrc
 echo 'nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>' >> .xvimrc
 echo 'nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>' >> .xvimrc
