@@ -58,6 +58,8 @@ set noswapfile
 set nowritebackup
 " セッションを超えたバックアップファイル作成しない(.un~)
 set noundofile
+" ファイル名クリップボードにコピー
+nnoremap <Leader>F i<C-r>%<ESC>vbbbyu
 " 挿入モードで移動できない問題解決
 imap <ESC>OA <Up>
 imap <ESC>OB <Down>
