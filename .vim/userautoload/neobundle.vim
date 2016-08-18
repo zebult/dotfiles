@@ -45,8 +45,8 @@ if has('vim_starting')
     " URL開く
     NeoBundle 'tyru/open-browser.vim'
     let g:netrw_nogx = 1 " disable netrw's gx mapping.
-    nmap gx <Plug>(openbrowser-smart-search)
-    vmap gx <Plug>(openbrowser-smart-search)
+    nmap go <Plug>(openbrowser-smart-search)
+    vmap go <Plug>(openbrowser-smart-search)
     " 対応括弧自動作成(gvimで日本語使えなくなる)
     " NeoBundle 'jiangmiao/auto-pairs'
     " 色自動付け(いらないと思う)

@@ -312,6 +312,10 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 vnoremap <silent> p "0p<CR>
 
 set hlsearch
+nnoremap gd :xccmd changeToVersionEditorComparisonView<Cr>
+nnoremap gl :xccmd changeToVersionEditorLogView<Cr>
+nnoremap gb :xccmd changeToVersionEditorBlameView<Cr>
+nnoremap gr :xccmd changeToStandardEditor<Cr>
 nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>
 nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>
 nnoremap <C-h> :xhelp<Cr>
