@@ -61,7 +61,7 @@ alias gdn="git diff --name-only"
 alias grh="git reset --hard"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
+# alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
 # alias vim="reattach-to-user-namespace vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='open /Applications/MacVim.app'
