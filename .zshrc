@@ -59,6 +59,7 @@ alias gfc="git fetch"
 alias glo="git log --oneline"
 alias gdn="git diff --name-only"
 alias grh="git reset --hard"
+alias gcl="git clean -df"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 # alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
