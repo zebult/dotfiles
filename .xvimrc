@@ -13,12 +13,13 @@ source ~/.vim/userautoload/md.vim
 source ~/.vim/userautoload/cs.vim
 "-------------------------
 " テンプレート用意
-autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
-autocmd BufNewFile *.cs 0r $HOME/.vim/template/cs.txt
-autocmd BufNewFile *.php 0r $HOME/.vim/template/php.txt
-autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txt
-autocmd BufNewFile *.py 0r $HOME/.vim/template/py.txt
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.txt
+autocmd BufNewFile *.html 0r $HOME/.vim/template/template.html
+autocmd BufNewFile *.cs 0r $HOME/.vim/template/template.cs
+autocmd BufNewFile *.php 0r $HOME/.vim/template/template.php
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/template.sh
+autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/template.cpp
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/templete.c
 "-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown
