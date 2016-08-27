@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/a14198/Applications'
-let g:netrw_dirhist_2='/Users/zebra/Documents/workspace/cpp/test/popolo_client/projects/Popolo/Classes'
-let g:netrw_dirhist_3='/Users/a14198/.tmux'
-let g:netrw_dirhist_4='/Users/zebra/dotfiles/.vim/userautoload'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/zebra/Documents/workspace/C'
+let g:netrw_dirhist_2='/Users/zebra/Documents/workspace'
+let g:netrw_dirhist_3='/Users/zebra/dotfiles/.vim/template'

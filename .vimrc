@@ -19,7 +19,7 @@ autocmd BufNewFile *.php 0r $HOME/.vim/template/template.php
 autocmd BufNewFile *.sh 0r $HOME/.vim/template/template.sh
 autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 autocmd BufNewFile *.cpp 0r $HOME/.vim/template/template.cpp
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/templete.c
+autocmd BufNewFile *.c 0r $HOME/.vim/template/template.c
 "-------------------------
 "
 au BufRead,BufNewFile *.md set filetype=markdown
