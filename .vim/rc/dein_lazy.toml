@@ -18,8 +18,10 @@ repo = 'Shougo/vimfiler.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
+on_i = 1
 hook_add = '''
     " <C-k>でsnippetの展開
+    let g:neosnippet#snippets_directory='~/.vim/snippets/'
     imap <C-k> <Plug>(neosnippet_expand_or_jump)
     smap <C-k> <Plug>(neosnippet_expand_or_jump)
 '''
@@ -35,6 +37,7 @@ repo = 'tpope/vim-dispatch'
 
 [[plugins]]
 repo = 'honza/vim-snippets'
+on_i = 1
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
