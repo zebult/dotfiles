@@ -37,6 +37,11 @@ if dein#check_install()
   call dein#install()
 endif
  
+" アップデート
+" if dein#check_update()
+"   call dein#update()
+" endif
+
 " なんかエラー出たから追加した
 if dein#clear_state()
   dein#clear_state()

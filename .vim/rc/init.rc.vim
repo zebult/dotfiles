@@ -17,6 +17,8 @@ set laststatus=2
 set history=200
 " ???
 set statusline=%F%r%h%=
+" 検索時大文字小文字を区別しない
+set ignorecase
 " 大文字混在時は大文字小文字区別する
 set smartcase
 " buffer切り替え時ファイルを保存しなくてもよい
@@ -67,7 +69,11 @@ let g:indent_guides_start_level=2
 let g:indent_guides_auto_colors=0
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
-" タブ色
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+" 最後のカーソル位置を復元する
+if has("autocmd")
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \   exe "normal! g'\"" |
+                \ endif
+endif
 

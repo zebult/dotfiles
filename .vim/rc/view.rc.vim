@@ -26,6 +26,9 @@ hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
 hi CursorLineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE
 " コメント色
 hi Comment ctermfg=white
+" タブ色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 " インデントをスペース(4つ)だけにする "
 set ts=4 sw=4 sts=0
 " set tabstop=4 "タブ,画面上の見た目
@@ -37,3 +40,4 @@ set autoindent "インデントを自動でつける
 set hlsearch
 " 補完色
 hi PmenuSel  ctermbg=33
+

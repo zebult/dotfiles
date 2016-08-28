@@ -34,19 +34,6 @@ call s:source_rc('mappings.rc.vim')
 call s:source_rc('view.rc.vim')
 call s:source_rc('skeleton.rc.vim')
 
-" カレンダー
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-
-""""""""""""""""""""""""""""""
-" 最後のカーソル位置を復元する
-""""""""""""""""""""""""""""""
-if has("autocmd")
-    autocmd BufReadPost *
-                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-                \   exe "normal! g'\"" |
-                \ endif
-endif
 
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く
