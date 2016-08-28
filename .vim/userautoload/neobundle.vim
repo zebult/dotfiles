@@ -40,7 +40,7 @@ if has('vim_starting')
     " NeoBundle 'kana/vim-fakeclip'
     NeoBundle 'fuenor/vim-wordcount'
     NeoBundle 'AndrewRadev/switch.vim' " true/false toggleするやつ, 自分で定義もできるっぽい
-    " 一括置換(まだ使いこなせてない)
+    " 一括置換(まだ使いこなせてない) TODO: 使いたい
     NeoBundle 'osyo-manga/vim-over'
     " URL開く
     NeoBundle 'tyru/open-browser.vim'
@@ -145,6 +145,8 @@ if has('vim_starting')
                     \}
         NeoBundle 'keith/sourcekittendaemon.vim'
     endif
+    " TOML
+    NeoBundle 'cespare/vim-toml'
     " VimScriptで作ってあるshell
     " 導入にはvimprocが必要で、加えてunite.vimとneocomplcacheまたはneocompleteがないと、一部の拡張機能が使えない。
     " vimprocはmakeしないとダメ
@@ -167,7 +169,6 @@ if has('vim_starting')
     " markdown preview
     NeoBundle 'plasticboy/vim-markdown' " シンタックスハイライト,自動折り畳み
     NeoBundle 'kannokanno/previm'
-    NeoBundle 'tyru/open-browser.vim'
     " snippet
     NeoBundle 'Shougo/neosnippet'
     NeoBundle "Shougo/neosnippet-snippets"

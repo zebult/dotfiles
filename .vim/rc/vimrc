@@ -1,0 +1,66 @@
+" zebult vimrc
+
+" rc読み込み TODO: 関数の内容理解する
+function! s:source_rc(path, ...) abort "{{{
+  let use_global = get(a:000, 0, !has('vim_starting'))
+  let abspath = resolve(expand('~/.vim/rc/' . a:path))
+  if !use_global
+    execute 'source' fnameescape(abspath)
+    return
+  endif
+
+  " substitute all 'set' to 'setglobal'
+  let content = map(readfile(abspath),
+        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+  " create tempfile and source the tempfile
+  let tempfile = tempname()
+  try
+    call writefile(content, tempfile)
+    execute printf('source %s', fnameescape(tempfile))
+  finally
+    if filereadable(tempfile)
+      call delete(tempfile)
+    endif
+  endtry
+endfunction"}}}
+
+if has('vim_starting')
+  call s:source_rc('init.rc.vim')
+endif
+
+call s:source_rc('dein.rc.vim')
+call s:source_rc('mappings.rc.vim')
+call s:source_rc('view.rc.vim')
+
+" カレンダー
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+""""""""""""""""""""""""""""""
+" 最後のカーソル位置を復元する
+""""""""""""""""""""""""""""""
+if has("autocmd")
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \   exe "normal! g'\"" |
+                \ endif
+endif
+
+""""""""""""""""""""""""""""""
+" grepをQuickFixで開く
+""""""""""""""""""""""""""""""
+augroup grepopen
+    " autocmd!
+    " autocmd QuickfixCmdPost vimprep cw
+    autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+"""""""""""""""""""""""""""""
+" 最初からマークを表示する " TODO: プラグインに書きたい
+aug show-marks-sync
+    au!
+    au BufReadPost * sil! DoShowMarks
+aug END
+
+" オムニ補完
+inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>" " TODO: プラグインに書きたい
+

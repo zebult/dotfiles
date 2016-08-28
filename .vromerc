@@ -1,6 +1,0 @@
-map h <C-p>
-map l <C-n>
-
-map q D
-
-set disablesites=kcw.kddi.ne.jp, mail.google.com

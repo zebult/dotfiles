@@ -1,0 +1,51 @@
+# Color: ---------------------------
+[[plugins]]
+# 様々なcolorscheme使えるようにする
+repo = 'flazz/vim-colorschemes'
+
+# Shougo ---------------------------
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo   = 'Shougo/neosnippet-snippets'
+
+# Convenience Tools: ---------------------------
+[[plugins]]
+# シンタックスハイライト,自動折り畳み
+repo = 'plasticboy/vim-markdown'
+
+# s>>でサイズ変更できるようにする
+[[plugins]]
+repo = 'kana/vim-submode'
+hook_source = 'source ~/.vim/rc/plugins/vim-submode.rc.vim'
+
+# Swift ---------------------------
+[[plugins]]
+repo = 'toyamarinyon/vim-swift'
+on_ft = 'swift'
+
+# C++ ---------------------------
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = 'cpp'
+
+[[plugins]]
+# シンタックスハイライト
+repo = 'vim-jp/cpp-vim'
+on_ft = 'cpp'
+
+# Kotlin ---------------------------
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+on_ft = 'kotlin'
+
+# Tex ---------------------------
+[[plugins]]
+# Vim上でtexの部分コンパイルをする
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+

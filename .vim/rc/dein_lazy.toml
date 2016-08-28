@@ -1,0 +1,112 @@
+# hook_addでいいのか
+
+# Shougo: ---------------------------
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = "has('lua')"
+on_event = 'InsertEnter'
+hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add = '''
+    " <C-k>でsnippetの展開
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+# Base Tools: ---------------------------
+[[plugins]]
+# 非同期コンパイル (OmniSharpのローカルサーバの起動管理を自動化するのに必要)
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_map = {n = '<Plug>'}
+hook_source = 'source ~/.vim/rc/plugins/vim-quickrun.rc.vim'
+
+[[plugins]]
+# Need to `brew install ctags`
+repo = 'soramugi/auto-ctags.vim'
+on_i = 1
+
+[[plugins]]
+# 構文チェック
+repo = 'scrooloose/sYntastic.git'
+on_i = 1
+
+# Convenience Tools: ---------------------------
+[[plugins]]
+repo = 'AndrewRadev/switch.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+on_map = '<C-_>'
+
+[[plugins]]
+# markdown preview
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+  let g:netrw_nogx = 1
+  nmap go <Plug>(openbrowser-smart-search)
+  vmap go <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'jacquesbh/vim-showmarks'
+on_map = 'l'
+
+[[plugins]]
+repo = 'haya14busa/vim-easymotion'
+on_map = '<Space>'
+hook_source = 'source ~/.vim/rc/plugins/vim-easymotion.rc.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'sjl/gundo.vim'
+hook_add = 'nmap U :<C-u>GundoToggle<CR>'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+# Need 'brew install cmigemo' (gvim限定)
+repo = 'haya14busa/vim-migemo'
+
+[[plugins]]
+repo = 'kana/vim-altr'
+hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
+
+# Play Tools: ---------------------------
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+
+# Go ---------------------------
+[[plugins]]
+repo = 'fatih/vim-go'
+
+# Html ---------------------------
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
