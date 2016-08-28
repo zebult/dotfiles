@@ -1,5 +1,3 @@
-# hook_addでいいのか
-
 # Shougo: ---------------------------
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -120,6 +118,7 @@ repo = 'haya14busa/vim-migemo'
 [[plugins]]
 repo = 'kana/vim-altr'
 hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
+on_map = '<Plug>(altr-'
 
 # Play Tools: ---------------------------
 [[plugins]]
