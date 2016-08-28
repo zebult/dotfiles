@@ -28,9 +28,11 @@ if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
 
+call s:source_rc('filetype.rc.vim')
 call s:source_rc('dein.rc.vim')
 call s:source_rc('mappings.rc.vim')
 call s:source_rc('view.rc.vim')
+call s:source_rc('skeleton.rc.vim')
 
 " カレンダー
 let g:calendar_google_calendar = 1
