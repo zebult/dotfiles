@@ -21,11 +21,13 @@ hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
 " 行数色
-hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
+" hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
+hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE
 " 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE
 " コメント色
-hi Comment ctermfg=white
+" hi Comment ctermfg=white
+hi Comment ctermfg=8
 " タブ色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238

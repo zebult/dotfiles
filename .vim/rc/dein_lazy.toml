@@ -76,6 +76,7 @@ repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+on_map = 'l'
 hook_add = '''
   let g:netrw_nogx = 1
   nmap go <Plug>(openbrowser-smart-search)
