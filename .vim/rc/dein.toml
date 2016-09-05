@@ -24,18 +24,36 @@ repo = 'plasticboy/vim-markdown'
 repo = 'kana/vim-submode'
 hook_source = 'source ~/.vim/rc/plugins/vim-submode.rc.vim'
 
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    let g:indent_guides_enable_on_vim_startup=1
+    let g:indent_guides_auto_colors=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+    let g:indent_guides_color_change_percent = 30
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_start_level = 1
+'''
+
 # Swift ---------------------------
 [[plugins]]
+# syntax and indent and more
+repo = 'keith/swift.vim'
+on_ft = 'swift'
+
+[[plugins]]
+# syntax and indent
 repo = 'toyamarinyon/vim-swift'
+on_ft = 'swift'
+
+[[plugins]]
+repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 
 # C++ ---------------------------
 [[plugins]]
-repo = 'justmao945/vim-clang'
-on_ft = 'cpp'
-
-[[plugins]]
-# シンタックスハイライト
+# syntax
 repo = 'vim-jp/cpp-vim'
 on_ft = 'cpp'
 

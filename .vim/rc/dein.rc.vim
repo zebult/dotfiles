@@ -55,5 +55,5 @@ function! s:check_lazy_plugins() abort
   endif
 endfunction
 
-call s:check_lazy_plugins()
+" call s:check_lazy_plugins()
 

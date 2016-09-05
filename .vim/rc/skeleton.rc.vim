@@ -7,4 +7,5 @@ augroup template
   autocmd BufNewFile *.php 0r $HOME/.vim/template/skeleton.php
   autocmd BufNewFile *.py 0r $HOME/.vim/template/skeleton.py
   autocmd BufNewFile *.sh 0r $HOME/.vim/template/skeleton.sh
+  autocmd BufNewFile *.swift 0r $HOME/.vim/template/skeleton.swift
 augroup END

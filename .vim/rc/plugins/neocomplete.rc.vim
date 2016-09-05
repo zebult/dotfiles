@@ -23,10 +23,16 @@ let g:neocomplete#enable_auto_select = 1
 " 補完（小文字を無視して検索）
 let g:neocomplete#enable_refresh_always = 1
 let g:marching_enable_neocomplete = 1
+" 辞書(C-x-k)も自動補完対象にする
+let g:neosnippet#enable_snipmate_compatibility = 1
 " 辞書ファイルの定義
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
+    \ 'vimshell' : $CACHE.'/vimshell/command-history',
+    \ 'cpp' : '~/.vim/dict/cpp.dict',
     \ }
+" 'tokorom/swift-dict.vim'を補完対象にする
+let g:swift_dict_with_neocomplete = 1
 " キーワードの定義
 if !exists('g:neocomplete#keyword_patterns')
 let g:neocomplete#keyword_patterns = {}
