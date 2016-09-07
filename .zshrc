@@ -60,6 +60,7 @@ alias glo="git log --oneline"
 alias gdn="git diff --name-only"
 alias grh="git reset --hard"
 alias gcl="git clean -df"
+alias gsw="git show"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 # alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
@@ -72,7 +73,6 @@ alias ouch='say -v Alex "ouch"'
 alias tinit='~/dotfiles/shell/tmuxInit.sh'
 alias winit='~/dotfiles/shell/workInit.sh'
 alias tokyo='curl wttr.in/Tokyo'
-# alias find='find . -name'
 
 # set -o vi
 

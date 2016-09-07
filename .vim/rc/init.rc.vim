@@ -19,6 +19,8 @@ set history=200
 set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
 set ignorecase
+" 検索をファイルの先頭へループしない   
+set nowrapscan
 " 大文字混在時は大文字小文字区別する
 set smartcase
 " buffer切り替え時ファイルを保存しなくてもよい

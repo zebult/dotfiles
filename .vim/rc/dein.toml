@@ -48,6 +48,12 @@ repo = 'toyamarinyon/vim-swift'
 on_ft = 'swift'
 
 [[plugins]]
+# syntax
+repo = 'kballard/vim-swift'
+on_ft = 'swift'
+
+[[plugins]]
+# 辞書補完
 repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 
