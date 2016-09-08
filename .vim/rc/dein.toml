@@ -19,7 +19,7 @@ repo   = 'Shougo/neosnippet-snippets'
 # シンタックスハイライト,自動折り畳み
 repo = 'plasticboy/vim-markdown'
 
-# s>>でサイズ変更できるようにする
+# >> can
 [[plugins]]
 repo = 'kana/vim-submode'
 hook_source = 'source ~/.vim/rc/plugins/vim-submode.rc.vim'

@@ -65,12 +65,20 @@ augroup cpp-path
     autocmd!
     autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/lib/c++/v1
 augroup END
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_auto_colors=0
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_guide_size = 1
+
+" Search hit number
+nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
+
+function! s:move_cursor_pos_mapping(str, ...)
+    let left = get(a:, 1, "<Left>")
+    let lefts = join(map(split(matchstr(a:str, '.*<Cursor>\zs.*\ze'), '.\zs'), 'left'), "")
+    return substitute(a:str, '<Cursor>', '', '') . lefts
+endfunction
+
+function! _(str)
+    return s:move_cursor_pos_mapping(a:str, "\<Left>")
+endfunction
+
 " 最後のカーソル位置を復元する
 if has("autocmd")
     autocmd BufReadPost *
