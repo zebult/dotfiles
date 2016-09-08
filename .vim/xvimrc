@@ -2,9 +2,9 @@ if 1
   execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vimrc'
 endif
 set hlsearch
-nnoremap gd :xccmd changeToVersionEditorComparisonView<Cr>
-nnoremap gl :xccmd changeToVersionEditorLogView<Cr>
-nnoremap gb :xccmd changeToVersionEditorBlameView<Cr>
+nnoremap gdf :xccmd changeToVersionEditorComparisonView<Cr>
+nnoremap glo :xccmd changeToVersionEditorLogView<Cr>
+nnoremap gbl :xccmd changeToVersionEditorBlameView<Cr>
 nnoremap gr :xccmd changeToStandardEditor<Cr>
 nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>
 nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>

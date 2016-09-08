@@ -7,6 +7,10 @@ nnoremap <Leader>F i<C-r>%<ESC>vbbbyu
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+" and検索
+nnoremap <Leader>& /\(A.*B\)
+" or検索
+nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
