@@ -2,6 +2,8 @@
 set ts=2 sw=2 sts=0
 " todoリストを簡単に入力する
 abbreviate tl - [ ]
+" 矢印たまに使うので
+abbreviate l <Space>→ 
 " todoリストのon/offを切り替える
 nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
 

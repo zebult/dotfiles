@@ -19,7 +19,7 @@ repo   = 'Shougo/neosnippet-snippets'
 # シンタックスハイライト,自動折り畳み
 repo = 'plasticboy/vim-markdown'
 
-# s>>でサイズ変更できるようにする
+# >> can
 [[plugins]]
 repo = 'kana/vim-submode'
 hook_source = 'source ~/.vim/rc/plugins/vim-submode.rc.vim'
@@ -48,6 +48,12 @@ repo = 'toyamarinyon/vim-swift'
 on_ft = 'swift'
 
 [[plugins]]
+# syntax
+repo = 'kballard/vim-swift'
+on_ft = 'swift'
+
+[[plugins]]
+# 辞書補完
 repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 

@@ -7,6 +7,10 @@ nnoremap <Leader>F i<C-r>%<ESC>vbbbyu
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+" and検索
+nnoremap <Leader>& /\(A.*B\)
+" or検索
+nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
@@ -120,7 +124,7 @@ nnoremap ml :marks<CR>
 nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <Leader>r :QuickRun<CR>:HierUpdate<CR> " TODO: 数秒後にしたい
+nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>
