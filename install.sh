@@ -51,11 +51,14 @@ case "${os}" in
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         brew install macvim
         brew install htop-osx
+        brew install percol
         brew install nmap
         brew install tig
         brew install wget
         brew install tree
         brew install source-highlight
+        brew install zplug
+        # curl -L git.io/enhancd | sh
         source ${HOME}/.zshrc
         ./setupPrezto.sh
         # fi

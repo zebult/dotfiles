@@ -3,7 +3,20 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+
+# Source zplug
+source ~/.zplug/init.zsh
+
+zplug 'b4b4r07/enhancd'
+
+if ! zplug check --verbose; then
+  printf 'Install? [y/N]: '
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load --verbose
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -117,3 +130,4 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 # 天気
 # curl wttr.in/Moon
 # curl wttr.in/Tokyo
+
