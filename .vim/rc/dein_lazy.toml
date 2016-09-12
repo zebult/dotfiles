@@ -71,10 +71,6 @@ hook_post_source = '''
 '''
 
 [[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-on_source = 'vim-quickrun.vim'
-
-[[plugins]]
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'
 
@@ -173,11 +169,13 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'kana/vim-smartchr'
+repo = 't9md/vim-quickhl' # TODO: 使いこなす
+on_map = '<Space>'
 hook_add = '''
-    inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
-    inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-    inoremap <buffer> <expr> { smartchr#loop('{', '{<CR>}')
+    nmap <Space>m <Plug>(quickhl-manual-this)
+    xmap <Space>m <Plug>(quickhl-manual-this)
+    nmap <Space>M <Plug>(quickhl-manual-reset)
+    xmap <Space>M <Plug>(quickhl-manual-reset)
 '''
 
 # Go ---------------------------

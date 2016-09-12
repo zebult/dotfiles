@@ -14,6 +14,12 @@ build = 'make'
 [[plugins]]
 repo   = 'Shougo/neosnippet-snippets'
 
+# Base Tools: ---------------------------
+
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+on_source = 'vim-quickrun.vim'
+
 # Convenience Tools: ---------------------------
 [[plugins]]
 # シンタックスハイライト,自動折り畳み
@@ -34,6 +40,15 @@ hook_add = '''
     let g:indent_guides_color_change_percent = 30
     let g:indent_guides_guide_size = 1
     let g:indent_guides_start_level = 1
+'''
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+hook_add = '''
+    inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
+    inoremap <buffer> <expr> , smartchr#loop(', ', ',')
+    inoremap <buffer> <expr> - smartchr#loop('- ', '-')
+    inoremap <buffer> <expr> { smartchr#loop('{', '{<CR>}')
 '''
 
 # Swift ---------------------------

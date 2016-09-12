@@ -14,6 +14,8 @@ nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+nnoremap ; :
+nnoremap : ;
 inoremap jj <ESC><ESC><ESC>
 noremap j gj
 noremap k gk

@@ -79,6 +79,9 @@ function! _(str)
     return s:move_cursor_pos_mapping(a:str, "\<Left>")
 endfunction
 
+" abbreviate
+abbreviate TT // TODO:
+
 " 最後のカーソル位置を復元する
 if has("autocmd")
     autocmd BufReadPost *
