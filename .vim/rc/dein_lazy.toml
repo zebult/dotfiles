@@ -169,7 +169,18 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 't9md/vim-quickhl' # TODO: 使いこなす
+# No lazy but use lazy
+repo = 'kana/vim-smartchr'
+hook_add = '''
+    inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
+    inoremap <buffer> <expr> , smartchr#loop(', ', ',')
+    inoremap <buffer> <expr> - smartchr#loop('- ', '-')
+    inoremap <buffer> <expr> ? smartchr#loop('? ', '?')
+    inoremap <buffer> <expr> { smartchr#loop('{', '{<CR>}')
+'''
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
 on_map = '<Space>'
 hook_add = '''
     nmap <Space>m <Plug>(quickhl-manual-this)
@@ -177,6 +188,10 @@ hook_add = '''
     nmap <Space>M <Plug>(quickhl-manual-reset)
     xmap <Space>M <Plug>(quickhl-manual-reset)
 '''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_map = 'S'
 
 # Go ---------------------------
 [[plugins]]

@@ -42,15 +42,6 @@ hook_add = '''
     let g:indent_guides_start_level = 1
 '''
 
-[[plugins]]
-repo = 'kana/vim-smartchr'
-hook_add = '''
-    inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
-    inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-    inoremap <buffer> <expr> - smartchr#loop('- ', '-')
-    inoremap <buffer> <expr> { smartchr#loop('{', '{<CR>}')
-'''
-
 # Swift ---------------------------
 [[plugins]]
 # syntax and indent and more
