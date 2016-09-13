@@ -1,22 +1,17 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-
-# Source zplug
+compinit -u
 source ~/.zplug/init.zsh
-
+# source ~/.zplug/zplug
+# zplug "sorin-ionescu/prezto"
 zplug 'b4b4r07/enhancd'
 
-if ! zplug check --verbose; then
-  printf 'Install? [y/N]: '
-  if read -q; then
-    echo; zplug install
-  fi
-fi
+# if ! zplug check --verbose; then
+#   printf 'Install? [y/N]: '
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
 
-zplug load --verbose
+# zplug load --verbose
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

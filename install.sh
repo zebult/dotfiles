@@ -57,8 +57,8 @@ case "${os}" in
         brew install wget
         brew install tree
         brew install source-highlight
-        brew install zplug
-        # curl -L git.io/enhancd | sh
+        curl -sL zplug.sh/installer | zsh
+        curl -L git.io/enhancd | sh
         source ${HOME}/.zshrc
         ./setupPrezto.sh
         # fi
