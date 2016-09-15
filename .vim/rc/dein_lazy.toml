@@ -43,7 +43,7 @@ filetypes  =  ['m', 'swift', 'cpp']
 
 # Base Tools: ---------------------------
 [[plugins]]
-# 非同期コンパイル
+# 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
 repo = 'tpope/vim-dispatch'
 
 [[plugins]]
@@ -110,9 +110,14 @@ hook_add = '''
     inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 '''
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_i = 1
+
 # Convenience Tools: ---------------------------
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
+hook_add = 'nnoremap <Leader>s :Switch<CR>'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -128,14 +133,17 @@ on_ft = 'md'
 repo = 'tyru/open-browser.vim'
 on_map = 'l'
 hook_add = '''
-  let g:netrw_nogx = 1
-  nmap go <Plug>(openbrowser-smart-search)
-  vmap go <Plug>(openbrowser-smart-search)
+    let g:netrw_nogx = 1
+    nmap go <Plug>(openbrowser-smart-search)
+    vmap go <Plug>(openbrowser-smart-search)
 '''
 
 [[plugins]]
 repo = 'jacquesbh/vim-showmarks'
 on_map = 'm'
+hook_add = '''
+    nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
+'''
 
 [[plugins]]
 repo = 'haya14busa/vim-easymotion'
@@ -176,6 +184,7 @@ hook_add = '''
     inoremap <buffer> <expr> , smartchr#loop(', ', ',')
     inoremap <buffer> <expr> - smartchr#loop('- ', '-')
     inoremap <buffer> <expr> : smartchr#loop(': ', ':')
+    inoremap <buffer> <expr> ! smartchr#loop('! ', '!')
     inoremap <buffer> <expr> * smartchr#loop('* ', '*')
     inoremap <buffer> <expr> + smartchr#loop('+ ', '+')
     inoremap <buffer> <expr> ? smartchr#loop('? ', '?')

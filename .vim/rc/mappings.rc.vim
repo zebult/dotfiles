@@ -24,8 +24,6 @@ nnoremap tt gD
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
-" トグル(プラギン使用) < >ペア追加したい TODO: これはswitchに書きたいそしてLeader s でもいいかも
-nnoremap si :Switch<CR>
 " 自動補完on/off
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
@@ -51,6 +49,8 @@ nnoremap <Leader>L :e!<CR>
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+
+nnoremap ml :marks<CR>
 
 " Screen split key mappings
 nnoremap s <Nop>
@@ -82,18 +82,19 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 noremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 
 """"""""""""""""""""""""""""""
-"  git TODO: ちゃんとつかいたい
+"  git
 """"""""""""""""""""""""""""""
-" nnoremap gst :Gstatus<Cr>
-" nnoremap gad :Gwrite<Cr>
-" nnoremap gcm :Gcommit<Cr>
-" nnoremap gco :Gread<Cr>
-" nnoremap gbl :Gblame<Cr>
-" nnoremap glg :Glog<Cr>
-" nnoremap gdf :Gdiff<Cr>
-" nnoremap gfc :Gfetch<Cr>
-" nnoremap gpu :Gpush<Cr>
-" nnoremap gr :Ggrep
+nnoremap gst :Gstatus<Cr>
+nnoremap gad :Gwrite<Cr>
+nnoremap gcm :Gcommit<Cr>
+nnoremap gacm :Gwrite<Cr>:Gcommit<Cr>
+nnoremap gco :Gread<Cr>
+nnoremap gbl :Gblame<Cr>
+nnoremap glo :Glog<Cr>
+nnoremap gdf :Gdiff<Cr>
+nnoremap gfc :Gfetch<Cr>
+nnoremap gpu :Gpush<Cr>
+nnoremap gr :Ggrep
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -117,9 +118,6 @@ cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 """"""""""""""""""""""""""""""
 
-" マーク情報再描画
-nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR> " TODO: pluginに書きたい
-nnoremap ml :marks<CR>
 " Power tools
 nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>u :Unite source<CR>
