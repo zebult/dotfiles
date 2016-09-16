@@ -182,12 +182,12 @@ repo = 'kana/vim-smartchr'
 hook_add = '''
     inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
     inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-    inoremap <buffer> <expr> - smartchr#loop('- ', '-')
-    inoremap <buffer> <expr> : smartchr#loop(': ', ':')
-    inoremap <buffer> <expr> ! smartchr#loop('! ', '!')
+    inoremap <buffer> <expr> - smartchr#loop('- ', '--')
+    inoremap <buffer> <expr> : smartchr#loop(': ', '::')
+    inoremap <buffer> <expr> ! smartchr#loop('! ', '!!')
     inoremap <buffer> <expr> * smartchr#loop('* ', '*')
-    inoremap <buffer> <expr> + smartchr#loop('+ ', '+')
-    inoremap <buffer> <expr> ? smartchr#loop('? ', '?')
+    inoremap <buffer> <expr> + smartchr#loop('+ ', '++')
+    inoremap <buffer> <expr> ? smartchr#loop('? ', '??')
     inoremap <buffer> <expr> { smartchr#loop('{', '{<CR>}')
 '''
 
