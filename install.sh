@@ -38,7 +38,7 @@ case "${os}" in
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         fi
         export PATH=$PATH:/usr/local/bin/
-        # if ! type brew > /dev/null 2>&1; then
+        brew install caskroom/cask/brew- cask
         brew cask install xquartz
         brew install lua
         brew install vim --with-lua --with-client-server # XQuartzないとダメ
@@ -61,7 +61,46 @@ case "${os}" in
         curl -L git.io/enhancd | sh
         source ${HOME}/.zshrc
         ./setupPrezto.sh
-        # fi
+
+        # Web download app
+        brew cask install audacity
+        brew cask install android-studio
+        brew cask install accessmenubarapps
+        brew cask install appcleaner
+        brew cask install bettertouchtool
+        brew cask install caffeine
+        brew cask install dropbox
+        brew cask install flux
+        brew cask install hyperswitch
+        brew cask install genymotion
+        brew cask install google-chrome
+        brew cask install google-japanese-ime
+        brew cask install macvim
+        brew cask install mamp
+        brew cask install nosleep
+        brew cask install shady
+        brew cask install karabiner
+        brew cask install unity
+        brew cask install xtrafinder
+
+        # App store
+        brew install argon/mas/mas
+        mas install 421358730 # MenuTab for Facebook
+        mas install 439277582 # iCleanMemory
+        mas install 409183694 # Keynote
+        mas install 408981434 # iMovie
+        mas install 430173763 # Degrees
+        mas install 406056744 # Evernote
+        mas install 425955336 # Skitch
+        mas install 472226235 # LanScan
+        mas install 411246225 # Caffeine
+        mas install 803453959 # Slack
+        mas install 585829637 # Todoist
+        mas install 409201541 # Pages
+        mas install 539883307 # LINE
+        mas install 682658836 # GarageBand
+        mas install 896624060 # Kobito
+        mas install 409203825 # Numbers
         ;;
 esac
 
@@ -70,3 +109,4 @@ echo finish🍺
 # branch 表示
 # vim .zpreztorc
 # zstyle ':prezto:load' pmodule \ に'git' 追加
+
