@@ -1,22 +1,12 @@
-compinit -u
-source ~/.zplug/init.zsh
-# source ~/.zplug/zplug
-# zplug "sorin-ionescu/prezto"
-zplug 'b4b4r07/enhancd'
-
-# if ! zplug check --verbose; then
-#   printf 'Install? [y/N]: '
-#   if read -q; then
-#     echo; zplug install
-#   fi
-# fi
-
-# zplug load --verbose
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+ENHANCD_HYPHEN_ARG="-ls"
+ENHANCD_DOT_ARG="-up"
+. $HOME/.enhancd/init.sh
+# bind -x '"\C-ur": cd -ls'
 
 # Customize to your needs...
 export PATH=$PATH:$HOME/.bin/sh
@@ -52,6 +42,8 @@ export VISUAL=vim
 
 export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
 export PATH=$PATH:$ELASTICPATH
+
+export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'

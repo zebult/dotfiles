@@ -51,14 +51,18 @@ case "${os}" in
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         brew install macvim
         brew install htop-osx
-        brew install percol
+        brew install percol # // TODO: delete
+        brew install peco
         brew install nmap
         brew install tig
         brew install wget
         brew install tree
         brew install source-highlight
-        curl -sL zplug.sh/installer | zsh
+        brew install argon/mas/mas
         curl -L git.io/enhancd | sh
+        git clone https: //github.com/b4b4r07/enhancd ~/.enhancd
+        mkdir -p ~/.config
+        ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
         source ${HOME}/.zshrc
         ./setupPrezto.sh
 
@@ -84,7 +88,6 @@ case "${os}" in
         brew cask install xtrafinder
 
         # App store
-        brew install argon/mas/mas
         mas install 421358730 # MenuTab for Facebook
         mas install 439277582 # iCleanMemory
         mas install 409183694 # Keynote
