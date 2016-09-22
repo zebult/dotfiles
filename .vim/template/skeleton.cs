@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class <`0`> : MonoBehaviour {
+public class : MonoBehaviour {
 
 	void Start () {
 	}
@@ -9,4 +9,3 @@ public class <`0`> : MonoBehaviour {
 	void Update () {
 	}
 }
-

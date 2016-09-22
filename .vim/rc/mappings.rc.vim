@@ -44,6 +44,8 @@ nnoremap <Leader>W :%s /<C-r><C-w>//gn<CR>
 nnoremap <Leader>J :%!jq '.'<CR>
 " ファイル更新
 nnoremap <Leader>L :e!<CR>
+" フルパス挿入
+nnoremap <Leader>p i<C-R>=expand('%:p')<CR>
 
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]

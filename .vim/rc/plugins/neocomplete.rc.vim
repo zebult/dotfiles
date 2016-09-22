@@ -59,6 +59,7 @@ let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
 inoremap <expr><C-e> neocomplete#cancel_popup()
 " 補完候補確定
 inoremap <expr><C-y> neocomplete#close_popup()
-inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>"  : "\<CR>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>"  : "\<Tab>"
+inoremap <expr> <C-j>   pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
 
