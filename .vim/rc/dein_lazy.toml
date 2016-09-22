@@ -33,13 +33,7 @@ on_source = ['unite.vim']
 # include周りの補完, c, c++は必須
 repo = 'Shougo/neoinclude.vim'
 on_i = 1
-filetypes  =  ['c', 'cpp']
-
-[[plugins]]
-# Xcode化
-repo = 'msanders/cocoa.vim'
-on_i = 1
-filetypes  =  ['m', 'swift', 'cpp']
+filetypes = ['c', 'cpp']
 
 # Base Tools: ---------------------------
 [[plugins]]
@@ -182,7 +176,6 @@ repo = 'kana/vim-smartchr'
 hook_add = '''
     inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
     inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-    inoremap <buffer> <expr> - smartchr#loop('- ', '--')
     inoremap <buffer> <expr> : smartchr#loop(': ', '::')
     inoremap <buffer> <expr> ! smartchr#loop('! ', '!!')
     inoremap <buffer> <expr> * smartchr#loop('* ', '*')
@@ -204,6 +197,26 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-surround'
 on_map = 'S'
+
+# Swift ---------------------------
+# [[plugins]]
+# Xcode化
+# repo = 'msanders/cocoa.vim'
+# on_i = 1
+# filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
+
+[[plugins]]
+# brew install sourcekitten
+repo = 'mitsuse/autocomplete-swift' # // TODO: 使えない
+on_i = 1
+on_ft = 'swift'
+# hook_source = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)'
+
+[[plugins]]
+# iOSシミュレータ使える??
+repo = 'kballard/vim-swift'
+on_i = 1
+filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
 
 # Go ---------------------------
 [[plugins]]

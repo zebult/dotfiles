@@ -57,6 +57,7 @@ case "${os}" in
         brew install tig
         brew install wget
         brew install tree
+        brew install sourcekitten
         brew install source-highlight
         brew install argon/mas/mas
         curl -L git.io/enhancd | sh
