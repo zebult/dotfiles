@@ -49,6 +49,5 @@ aug show-marks-sync
     au BufReadPost * sil! DoShowMarks
 aug END
 
-" オムニ補完
-inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>" " TODO: プラグインに書きたい
+autocmd BufNewFile * norm 3j2wi%3dh 
 

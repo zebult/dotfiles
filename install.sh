@@ -38,6 +38,8 @@ case "${os}" in
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         fi
         export PATH=$PATH:/usr/local/bin/
+        brew update
+        brew upgrade
         brew install caskroom/cask/brew- cask
         brew cask install xquartz
         brew install lua
@@ -61,7 +63,7 @@ case "${os}" in
         brew install source-highlight
         brew install argon/mas/mas
         curl -L git.io/enhancd | sh
-        git clone https: //github.com/b4b4r07/enhancd ~/.enhancd
+        git clone https://github.com/b4b4r07/enhancd ~/.enhancd
         mkdir -p ~/.config
         ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
         source ${HOME}/.zshrc
