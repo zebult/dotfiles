@@ -39,6 +39,7 @@ filetypes = ['c', 'cpp']
 [[plugins]]
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
 repo = 'tpope/vim-dispatch'
+on_i = 1
 
 [[plugins]]
 repo = 'honza/vim-snippets'
