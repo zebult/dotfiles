@@ -6,7 +6,6 @@ fi
 ENHANCD_HYPHEN_ARG="-ls"
 ENHANCD_DOT_ARG="-up"
 . $HOME/.enhancd/init.sh
-# bind -x '"\C-ur": cd -ls'
 
 # Customize to your needs...
 export PATH=$PATH:$HOME/.bin/sh
@@ -47,7 +46,7 @@ export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'
-alias gacm='gst; git add .; git commit -m'
+alias gacm="gst; git add .; git commit -m"
 alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
@@ -63,7 +62,7 @@ alias gcl="git clean -df"
 alias gsw="git show"
 alias gbl="git blame"
 
-alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 # alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
 # alias vim="reattach-to-user-namespace vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
@@ -101,6 +100,28 @@ functions gpl() {
     gst
     echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
     git pull origin `git rev-parse --abbrev-ref HEAD`
+}
+
+functions gamd() {
+    gst
+    checkRecentLog
+    if [ -n "$2" ]; then
+        echo 'ERROR: You need surround ""'
+    else
+        git add .
+        if [ -n "$1" ]; then
+            git commit --amend -m $1
+        else
+            git commit --amend
+        fi
+        checkRecentLog
+    fi
+}
+
+checkRecentLog() {
+    echo "======="
+    glo -2
+    echo "======="
 }
 
 # Add environment variable NDK_ROOT for cocos2d-x
