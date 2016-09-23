@@ -68,6 +68,12 @@ on_ft = 'swift'
 # syntax
 repo = 'vim-jp/cpp-vim'
 on_ft = 'cpp'
+ 
+# C++ ---------------------------
+[[plugins]]
+# syntax
+repo = 'OrangeT/vim-csharp'
+on_ft = ['cs', 'csi', 'csx']
 
 # Kotlin ---------------------------
 [[plugins]]

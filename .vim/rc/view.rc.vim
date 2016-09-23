@@ -20,6 +20,15 @@ hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
 " 現在列ハイライト
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
+" 挿入中は行列ハイライトしない
+autocmd WinEnter    * set cursorline
+autocmd WinEnter    * set cursorcolumn
+autocmd WinLeave    * set nocursorline
+autocmd WinLeave    * set nocursorcolumn
+autocmd InsertEnter * set nocursorline
+autocmd InsertEnter * set nocursorcolumn
+autocmd InsertLeave * set cursorline
+autocmd InsertLeave * set cursorcolumn
 " 行数色
 " hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
 hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE

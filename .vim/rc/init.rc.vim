@@ -1,16 +1,7 @@
 " Initialize:
 
 let mapleader = "\<Space>"
-" Insertモードのときカーソルの形状を変更
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 rv! " 履歴共有
-" Insertモードで日本語の時色変更
-if has('multi_byte_ime') || has('xim')
-    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
-    highlight CursorIM guifg=NONE guibg=#ecbcbc
-endif
-
 set incsearch
 " ???
 set laststatus=2
@@ -35,7 +26,7 @@ set autoindent
 set shiftround
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
-set clipboard+=unnamed,autoselect
+" set clipboard+=unnamed,autoselect
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
@@ -66,6 +57,15 @@ augroup cpp-path
     autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/lib/c++/v1
 augroup END
 
+" clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+
 " Search hit number
 nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
@@ -81,6 +81,23 @@ endfunction
 
 " abbreviate
 abbreviate TT // TODO:
+
+" カーソルの形状変更
+if empty($TMUX)
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+else
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+endif
+
+" Insertモードで日本語の時色変更
+if has('multi_byte_ime') || has('xim')
+    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
+    highlight CursorIM guifg=NONE guibg=#ecbcbc
+endif
 
 " 最後のカーソル位置を復元する
 if has("autocmd")

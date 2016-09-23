@@ -217,7 +217,7 @@ on_ft = 'swift'
 # iOSシミュレータ使える??
 repo = 'kballard/vim-swift'
 on_i = 1
-filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
+on_ft = ['m', 'swift', 'cpp', 'h', 'hpp']
 
 # Go ---------------------------
 [[plugins]]
