@@ -95,9 +95,10 @@ filetypes  =  ['c', 'cpp']
 repo = 'OmniSharp/omnisharp-vim'
 on_i = 1
 filetypes  =  ['cs', 'csi', 'csx']
+# 自動でserverセットアップしてくれる(してくれない場合手動: plugin下のserverへ行き, xbuild)
 windows = 'msbuild server/OmniSharp.sln'
-mac = 'xbuild server/OmniSharp.sln'
-unix = 'xbuild server/OmniSharp.sln'
+mac     = 'xbuild server/OmniSharp.sln'
+unix    = 'xbuild server/OmniSharp.sln'
 hook_add = '''
     inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
     inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

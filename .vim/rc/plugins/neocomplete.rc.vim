@@ -32,6 +32,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $CACHE.'/vimshell/command-history',
     \ 'cpp' : '~/.vim/dict/cpp.dict',
+    \ 'cs' : '~/.vim/dict/cs.dict',
     \ }
 " 'tokorom/swift-dict.vim'を補完対象にする
 let g:swift_dict_with_neocomplete = 1
