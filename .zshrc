@@ -36,7 +36,7 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 export VISUAL=vim
 
 export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
@@ -63,7 +63,7 @@ alias gsw="git show"
 alias gbl="git blame"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
-# alias vim="/usr/local/Cellar/macvim/HEAD/bin/vim"
+alias vim="/usr/local/bin/vim"
 # alias vim="reattach-to-user-namespace vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='open /Applications/MacVim.app'
