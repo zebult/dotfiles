@@ -201,6 +201,19 @@ hook_add = '''
 repo = 'tpope/vim-surround'
 on_map = 'S'
 
+[[plugins]]
+# camel need
+repo = 'kana/vim-operator-user'
+on_i = 1
+
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+on_source = ['vim-operator-user.vim']
+hook_add = '''
+    map <Leader>c <plug>(operator-camelize)
+    map <Leader>C <plug>(operator-decamelize)
+'''
+
 # Swift ---------------------------
 # [[plugins]]
 # Xcode化
