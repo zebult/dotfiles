@@ -214,6 +214,10 @@ hook_add = '''
     map <Leader>C <plug>(operator-decamelize)
 '''
 
+[[plugins]]
+repo = 'vim-scripts/Align'
+on_v = 1
+
 # Swift ---------------------------
 # [[plugins]]
 # Xcode化
