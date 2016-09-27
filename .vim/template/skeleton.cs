@@ -3,9 +3,9 @@ using System.Collections;
 
 public class : MonoBehaviour {
 
-	void Start () {
+	void Start() {
 	}
 	
-	void Update () {
+	void Update() {
 	}
 }
