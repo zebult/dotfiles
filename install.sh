@@ -40,7 +40,7 @@ case "${os}" in
         export PATH=$PATH:/usr/local/bin/
         brew update
         brew upgrade
-        brew install caskroom/cask/brew- cask
+        brew install caskroom/cask/brew-cask
         brew cask install xquartz
         brew install lua
         brew install vim --with-lua # XQuartzないとダメ
@@ -54,7 +54,6 @@ case "${os}" in
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         brew install macvim
         brew install htop-osx
-        brew install percol # // TODO: delete
         brew install peco
         brew install nmap
         brew install tig
@@ -90,6 +89,11 @@ case "${os}" in
         brew cask install karabiner
         brew cask install unity
         brew cask install xtrafinder
+        brew cask install java
+        # Android
+        # brew cask install eclipse-ide
+        # brew install android-ndk
+        # brew install android-sdk
 
         # App store
         mas install 421358730 # MenuTab for Facebook

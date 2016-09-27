@@ -23,7 +23,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/zebra/Documents/workspace/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=$HOME/Documents/workspace/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
