@@ -1,0 +1,1 @@
+vimrc:32:call s:source_rc('dein.rc.vim')
