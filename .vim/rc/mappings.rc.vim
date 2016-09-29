@@ -57,7 +57,7 @@ nnoremap ml :marks<CR>
 " メンバ変数アクセサ生成(m_付き限定)
 nnoremap KK w"tyiww"myiwf_lve"vyopublic <Esc>"tpa <Esc>"vpb~higet<Esc>$a() {return <Esc>"mpa;}<Esc>opublic void <Esc>"vpb~hiset<Esc>$a(<Esc>"tpa <Esc>"vpa) {<Esc>"mpa=<Esc>"vpa;}<Esc>kk0w
 " ファイル名クリップボードにコピー
-nnoremap <Leader>F mfi<C-r>%<ESC>v'fx
+nnoremap <Leader>F mfi<C-r>%<ESC>v'fyu
 
 " Screen split key mappings
 nnoremap s <Nop>
