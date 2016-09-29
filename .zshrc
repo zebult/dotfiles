@@ -123,6 +123,10 @@ checkRecentLog() {
     echo "======="
 }
 
+functions gsb()  {
+    git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
+}
+
 # Add environment variable NDK_ROOT for cocos2d-x
 export NDK_ROOT=/Users/zebra/Plugins/android-ndk-r9d
 export PATH=$NDK_ROOT:$PATH

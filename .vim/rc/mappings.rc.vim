@@ -131,7 +131,7 @@ nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>v :VimShell<CR>
-nnoremap <Leader>G :Calendar<CR>
+nnoremap <Leader>c :Calendar<CR>
 nnoremap <Leader>g :vim %<Left><Left> 
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
