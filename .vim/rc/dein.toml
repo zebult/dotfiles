@@ -1,6 +1,6 @@
 # Color: ---------------------------
-[[plugins]]
 # 様々なcolorscheme使えるようにする
+[[plugins]]
 repo = 'flazz/vim-colorschemes'
 
 # Shougo ---------------------------
@@ -21,8 +21,8 @@ repo = 'osyo-manga/shabadou.vim'
 on_source = 'vim-quickrun.vim'
 
 # Convenience Tools: ---------------------------
-[[plugins]]
 # シンタックスハイライト,自動折り畳み
+[[plugins]]
 repo = 'plasticboy/vim-markdown'
 
 # >> can
@@ -43,35 +43,35 @@ hook_add = '''
 '''
 
 # Swift ---------------------------
-[[plugins]]
 # syntax and indent and more
+[[plugins]]
 repo = 'keith/swift.vim'
 on_ft = 'swift'
 
-[[plugins]]
 # syntax and indent
+[[plugins]]
 repo = 'toyamarinyon/vim-swift'
 on_ft = 'swift'
 
-[[plugins]]
 # syntax
+[[plugins]]
 repo = 'kballard/vim-swift'
 on_ft = 'swift'
 
-[[plugins]]
 # 辞書補完
+[[plugins]]
 repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 
 # C++ ---------------------------
-[[plugins]]
 # syntax
+[[plugins]]
 repo = 'vim-jp/cpp-vim'
 on_ft = 'cpp'
  
 # C# ---------------------------
-[[plugins]]
 # syntax
+[[plugins]]
 repo = 'OrangeT/vim-csharp'
 on_ft = ['cs', 'csi', 'csx']
 

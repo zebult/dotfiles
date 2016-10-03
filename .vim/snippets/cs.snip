@@ -62,5 +62,15 @@ snippet main
             Console.WriteLine("Hello World!");
         }
     }
-snippet serializeField
+snippet SerializeField
     [SerializeField]
+snippet ismaster
+    if (PhotonNetwork.isMasterClient) {
+        ${1}
+    }
+snippet yield
+    yield return new WaitForSeconds(${1});
+snippet IEnumerator
+	IEnumerator ${1}() {
+        yield return new WaitForSeconds(${2});
+    }

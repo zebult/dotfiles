@@ -36,8 +36,8 @@ on_i = 1
 filetypes = ['c', 'cpp']
 
 # Base Tools: ---------------------------
-[[plugins]]
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
+[[plugins]]
 repo = 'tpope/vim-dispatch'
 on_i = 1
 
@@ -69,8 +69,8 @@ hook_post_source = '''
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'
 
-[[plugins]]
 # Need to `brew install ctags`
+[[plugins]]
 repo = 'soramugi/auto-ctags.vim'
 on_i = 1
 commands = 'TagbarToggle'
@@ -79,19 +79,19 @@ hook_add = '''
     nmap <Leader>t :TagbarToggle<CR>
 '''
 
-[[plugins]]
 # 構文チェック
+[[plugins]]
 repo = 'scrooloose/sYntastic.git'
 on_i = 1
 
-[[plugins]]
 # c, cpp complement
+[[plugins]]
 repo = 'justmao945/vim-clang'
 on_i = 1
 filetypes  =  ['c', 'cpp']
 
-[[plugins]]
 # cs complement
+[[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 on_i = 1
 filetypes  =  ['cs', 'csi', 'csx']
@@ -119,15 +119,14 @@ hook_add = 'nnoremap <Leader>s :Switch<CR>'
 repo = 'tomtom/tcomment_vim'
 on_map = '<C-_>'
 
-[[plugins]]
 # markdown preview
+[[plugins]]
 repo = 'kannokanno/previm' # TODO: 使えない
 on_map = '<Space>'
 on_ft = 'md'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-on_map = 'l'
 hook_add = '''
     let g:netrw_nogx = 1
     nmap go <Plug>(openbrowser-smart-search)
@@ -153,8 +152,8 @@ hook_add = 'nmap U :<C-u>GundoToggle<CR>'
 [[plugins]]
 repo = 'thinca/vim-visualstar'
 
-[[plugins]]
 # Need 'brew install cmigemo' (gvim限定)
+[[plugins]]
 repo = 'haya14busa/vim-migemo'
 
 [[plugins]]
@@ -172,8 +171,8 @@ hook_add = '''
     let g:calendar_google_task = 1
 '''
 
-[[plugins]]
 # No lazy but use lazy
+[[plugins]]
 repo = 'kana/vim-smartchr'
 hook_add = '''
     inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
@@ -201,17 +200,16 @@ hook_add = '''
 repo = 'tpope/vim-surround'
 on_map = 'S'
 
-[[plugins]]
 # camel need
+[[plugins]]
 repo = 'kana/vim-operator-user'
 on_i = 1
 
 [[plugins]]
-repo = 'tyru/operator-camelize.vim'
+repo = 'tyru/operator-camelize.vim' # // TODO: 使えない
 on_source = ['vim-operator-user.vim']
 hook_add = '''
-    map <Leader>c <plug>(operator-camelize)
-    map <Leader>C <plug>(operator-decamelize)
+    map <Leader>C <plug>(operator-camelize-toggle)
 '''
 
 [[plugins]]
@@ -225,15 +223,15 @@ on_v = 1
 # on_i = 1
 # filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
 
-[[plugins]]
 # brew install sourcekitten
+[[plugins]]
 repo = 'mitsuse/autocomplete-swift' # // TODO: 使えない
 on_i = 1
 on_ft = 'swift'
 # hook_source = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)'
 
-[[plugins]]
 # iOSシミュレータ使える??
+[[plugins]]
 repo = 'kballard/vim-swift'
 on_i = 1
 on_ft = ['m', 'swift', 'cpp', 'h', 'hpp']
