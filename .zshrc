@@ -91,8 +91,16 @@ functions mkcd() {
 
 functions gps() {
     gst
-    echo "git push origin `git rev-parse --abbrev-ref HEAD`"
-    git push origin `git rev-parse --abbrev-ref HEAD`
+    if [ -n "$1" ]; then
+        # force push
+        if [ $1 = "-f" ]; then
+            echo "git push -f origin `git rev-parse --abbrev-ref HEAD`"
+            git push -f origin `git rev-parse --abbrev-ref HEAD`
+        fi
+    else
+        echo "git push origin `git rev-parse --abbrev-ref HEAD`"
+        git push origin `git rev-parse --abbrev-ref HEAD`
+    fi
 }
 
 functions gpl() {
@@ -126,6 +134,13 @@ checkRecentLog() {
 functions gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
 }
+
+function peco-tree-vim(){
+  local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
+  BUFFER="vim $SELECTED_FILE"
+  zle accept-line
+}
+bindkey "^t" peco_tree_vim
 
 # Add environment variable NDK_ROOT for cocos2d-x
 export NDK_ROOT=/Users/zebra/Plugins/android-ndk-r9d

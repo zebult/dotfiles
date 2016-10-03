@@ -209,7 +209,8 @@ on_i = 1
 repo = 'tyru/operator-camelize.vim' # // TODO: 使えない
 on_source = ['vim-operator-user.vim']
 hook_add = '''
-    map <Leader>C <plug>(operator-camelize-toggle)
+    " map <Leader>C <plug>(operator-camelize-toggle)
+    " map C <plug>(operator-camelize-toggle)
 '''
 
 [[plugins]]
