@@ -67,10 +67,9 @@ alias vim="/usr/local/bin/vim"
 # alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='open /Applications/MacVim.app'
 
+alias ag='ag -u'
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
-alias tinit='~/dotfiles/shell/tmuxInit.sh'
-alias winit='~/dotfiles/shell/workInit.sh'
 alias tokyo='curl wttr.in/Tokyo'
 
 # set -o vi

@@ -19,6 +19,9 @@ noremap gj j
 noremap gk k
 " タグジャンプやりやすく
 nnoremap tt gD
+" ctagsジャンプを新規画面で開く
+nnoremap s<C-]> :<C-u>vs<CR><C-w>l<C-]>
+nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
@@ -132,7 +135,8 @@ nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>
-nnoremap <Leader>g :vim %<Left><Left> 
+" nnoremap <Leader>g :vim %<Left><Left> 
+nnoremap <Leader>g :Ag<Space>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>

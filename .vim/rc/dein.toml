@@ -20,6 +20,10 @@ repo   = 'Shougo/neosnippet-snippets'
 repo = 'osyo-manga/shabadou.vim'
 on_source = 'vim-quickrun.vim'
 
+# camel need
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
 # Convenience Tools: ---------------------------
 # シンタックスハイライト,自動折り畳み
 [[plugins]]
@@ -41,6 +45,9 @@ hook_add = '''
     let g:indent_guides_guide_size = 1
     let g:indent_guides_start_level = 1
 '''
+
+[[plugins]]
+repo = 'rking/ag.vim'
 
 # Swift ---------------------------
 # syntax and indent and more

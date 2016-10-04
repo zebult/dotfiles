@@ -7,6 +7,7 @@ hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
@@ -174,17 +175,8 @@ hook_add = '''
 # No lazy but use lazy
 [[plugins]]
 repo = 'kana/vim-smartchr'
-hook_add = '''
-    inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
-    inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-    inoremap <buffer> <expr> : smartchr#loop(': ', '::')
-    inoremap <buffer> <expr> ! smartchr#loop('! ', '!!')
-    inoremap <buffer> <expr> * smartchr#loop('* ', '**')
-    inoremap <buffer> <expr> + smartchr#loop('+ ', '++')
-    inoremap <buffer> <expr> - smartchr#loop('- ', '--')
-    inoremap <buffer> <expr> ? smartchr#loop('? ', '??')
-    inoremap <buffer> <expr> { smartchr#loop('{', ' {<CR>}')
-'''
+on_event = 'InsertCharPre'
+hook_source = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
@@ -200,11 +192,6 @@ hook_add = '''
 repo = 'tpope/vim-surround'
 on_map = 'S'
 
-# camel need
-[[plugins]]
-repo = 'kana/vim-operator-user'
-on_i = 1
-
 [[plugins]]
 repo = 'tyru/operator-camelize.vim' # // TODO: 使えない
 on_source = ['vim-operator-user.vim']
@@ -216,6 +203,10 @@ hook_add = '''
 [[plugins]]
 repo = 'vim-scripts/Align'
 on_v = 1
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+on_event = 'InsertCharPre'
 
 # Swift ---------------------------
 # [[plugins]]
