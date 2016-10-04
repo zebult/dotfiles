@@ -42,10 +42,15 @@ endif
 "   call dein#update()
 " endif
 
-" なんかエラー出たから追加した
-if dein#clear_state()
-  dein#clear_state()
-endif
+" dein調子悪いときclearする
+" if dein#clear_state()
+"   dein#clear_state()
+" endif
+
+" recache
+" if dein#recache_runtime_path()
+"   dein#recache_runtime_path()
+" endif
 
 " lazyにしても意味ないプラギン洗い出し
 function! s:check_lazy_plugins() abort
