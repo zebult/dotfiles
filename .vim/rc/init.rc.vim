@@ -3,11 +3,10 @@
 let mapleader = "\<Space>"
 rv! " 履歴共有
 set incsearch
-" ???
+" ランチブ名をステータスラインに表示する
 set laststatus=2
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P 
 set history=200
-" ???
-set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
 set ignorecase
 " 検索をファイルの先頭へループしない   
