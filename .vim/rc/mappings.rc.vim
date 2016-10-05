@@ -103,6 +103,7 @@ nnoremap gbl :Gblame<Cr>
 nnoremap glo :Glog<Cr>
 nnoremap gdf :Gdiff<Cr>
 nnoremap gbo :Gbrowse<Cr>
+vnoremap gbo :Gbrowse<Cr>
 nnoremap gfc :Gfetch<Cr>
 nnoremap gpu :Gpush<Cr>
 nnoremap gr :Ggrep
