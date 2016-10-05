@@ -49,7 +49,7 @@ on_i = 1
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 on_map = '<Plug>'
-hook_source = 'source ~/.vim/rc/plugins/vim-quickrun.rc.vim'
+hook_source = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
@@ -107,10 +107,6 @@ hook_add = '''
     inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 '''
 
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-on_i = 1
-
 # Convenience Tools: ---------------------------
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
@@ -121,10 +117,10 @@ repo = 'tomtom/tcomment_vim'
 on_map = '<C-_>'
 
 # markdown preview
-[[plugins]]
-repo = 'kannokanno/previm' # TODO: 使えない
-on_map = '<Space>'
-on_ft = 'md'
+# [[plugins]]
+# repo = 'kannokanno/previm' # TODO: 使えない(dein.rc.vimで書いてる)
+# on_map = '<Space>'
+# on_ft = 'md'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
@@ -144,8 +140,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'haya14busa/vim-easymotion'
-on_map = '<Plug>(easymotion-'
 hook_source = 'source ~/.vim/rc/plugins/vim-easymotion.rc.vim'
+on_map = '<Plug>(easymotion-'
 
 [[plugins]]
 repo = 'sjl/gundo.vim'
@@ -193,20 +189,17 @@ hook_add = '''
 repo = 'tpope/vim-surround'
 on_map = 'S'
 
-[[plugins]]
-repo = 'tyru/operator-camelize.vim' # // TODO: 使えない
-on_source = ['vim-operator-user.vim']
-hook_add = '''
-    " map <Leader>C <plug>(operator-camelize-toggle)
-    " map C <plug>(operator-camelize-toggle)
-'''
+# [[plugins]]
+# repo = 'tyru/operator-camelize.vim' # // TODO: 使えない(dein.rc.vimで書いてる)
+# on_source = ['vim-operator-user.vim']
+# hook_add = '''
+#     " map <Leader>C <plug>(operator-camelize-toggle)
+#     " map C <plug>(operator-camelize-toggle)
+# '''
 
 [[plugins]]
 repo = 'vim-scripts/Align'
 on_v = 1
-
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
 
 # Swift ---------------------------
 # [[plugins]]

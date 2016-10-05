@@ -32,7 +32,7 @@ repo = 'plasticboy/vim-markdown'
 # >> can
 [[plugins]]
 repo = 'kana/vim-submode'
-hook_source = 'source ~/.vim/rc/plugins/vim-submode.rc.vim'
+hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -86,6 +86,11 @@ on_ft = ['cs', 'csi', 'csx']
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
+
+# Tex ---------------------------
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
 
 # Tex ---------------------------
 [[plugins]]

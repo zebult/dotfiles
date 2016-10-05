@@ -163,3 +163,12 @@ noremap ' `
 " 選択してもそのまま貼り付けられるようにする
 vnoremap <silent> p "0p<CR>
 
+" lazyで読めないため一旦ここでmapping書く
+" tyru/operator-camelize.vim ----------
+map <Leader>C <plug>(operator-camelize-toggle)
+map C <plug>(operator-camelize-toggle)
+" ctrlpvim/ctrlp.vim ----------
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l'
+endif
+
