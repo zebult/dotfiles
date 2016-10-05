@@ -29,7 +29,7 @@ inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
 " diffすぐ出す
-nnoremap diff :vertical diffsplit f
+" nnoremap diff :vertical diffsplit
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv
@@ -131,7 +131,8 @@ cnoremap <C-d> <Del>
 """"""""""""""""""""""""""""""
 
 " Power tools
-nnoremap <Leader>d :vertical diffsplit
+" nnoremap <Leader>d :vertical diffsplit
+nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )

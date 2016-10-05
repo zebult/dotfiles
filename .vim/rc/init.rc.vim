@@ -78,8 +78,21 @@ function! _(str)
     return s:move_cursor_pos_mapping(a:str, "\<Left>")
 endfunction
 
+" vimdiff
+function Diff()
+    :tabne
+    :edit OLD
+    :setlocal scrollbind
+    :rightbelow vnew NEW
+    :setlocal scrollbind
+endfunction
+
 " abbreviate
 abbreviate TT // TODO:
+abbreviate yh <Space>←
+abbreviate yj <Space>↓
+abbreviate yk <Space>↑
+abbreviate yl <Space>→
 
 " カーソルの形状変更
 if empty($TMUX)

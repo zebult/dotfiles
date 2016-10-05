@@ -74,6 +74,9 @@ alias tokyo='curl wttr.in/Tokyo'
 
 # set -o vi
 
+function vag() {
+    vim <(ag -u $1)
+}
 functions zipr() {
     zip -r $1 $1;
 }
