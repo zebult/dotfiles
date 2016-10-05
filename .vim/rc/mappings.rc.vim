@@ -145,7 +145,7 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
-nnoremap <Leader>o :!open .<CR><CR>
+nnoremap <Leader>O :!open .<CR><CR>
 
 " save and close
 nnoremap <Leader>w :w<Cr>
@@ -171,8 +171,19 @@ vnoremap <silent> p "0p<CR>
 map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
+let g:ctrlp_map = '<Leader>o'
 if executable('ag')
     let g:ctrlp_use_caching=0
     let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
+" ~/.vim/rc/plugins/submode.rc.vimの内容を一時的に
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+" 
 

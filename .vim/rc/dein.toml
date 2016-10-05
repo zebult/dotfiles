@@ -29,11 +29,6 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 
-# >> can
-[[plugins]]
-repo = 'kana/vim-submode'
-hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
-
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''

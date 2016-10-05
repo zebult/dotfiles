@@ -32,6 +32,7 @@ if dein#load_state(s:dein_dir)
     call dein#add('kannokanno/previm')
     call dein#add('tyru/operator-camelize.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
+    call dein#add('kana/vim-submode')
 
     " 設定終了
     call dein#end()
@@ -43,12 +44,10 @@ if dein#check_install()
     call dein#install()
 endif
 
-" アップデート
 " if dein#check_update()
 "   call dein#update()
 " endif
 
-" dein調子悪いときclearする
 " if dein#clear_state()
 "   dein#clear_state()
 " endif
