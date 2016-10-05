@@ -47,11 +47,6 @@ augroup grepopen
     autocmd QuickFixCmdPost *grep* cwindow
 augroup END
 """""""""""""""""""""""""""""
-" 最初からマークを表示する " TODO: プラグインに書きたい
-aug show-marks-sync
-    au!
-    au BufReadPost * sil! DoShowMarks
-aug END
 
 autocmd BufNewFile * norm 3j2wi%3dh 
 

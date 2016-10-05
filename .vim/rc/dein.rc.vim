@@ -33,6 +33,7 @@ if dein#load_state(s:dein_dir)
     call dein#add('tyru/operator-camelize.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('kana/vim-submode')
+    call dein#add('jacquesbh/vim-showmarks')
 
     " 設定終了
     call dein#end()
@@ -52,7 +53,6 @@ endif
 "   dein#clear_state()
 " endif
 
-" recache
 " if dein#recache_runtimepath()
 "   dein#recache_runtimepath()
 " endif

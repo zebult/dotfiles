@@ -185,5 +185,11 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-" 
+" jacquesbh/vim-showmarks
+nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
+" 最初からマークを表示する
+aug show-marks-sync
+    au!
+    au BufReadPost * sil! DoShowMarks
+aug END
 

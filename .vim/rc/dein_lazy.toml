@@ -159,13 +159,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'jacquesbh/vim-showmarks'
-on_map = 'm'
-hook_add = '''
-    nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
-'''
-
-[[plugins]]
 repo = 'haya14busa/vim-easymotion'
 hook_source = 'source ~/.vim/rc/plugins/vim-easymotion.rc.vim'
 on_map = '<Plug>(easymotion-'
