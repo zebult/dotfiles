@@ -102,6 +102,7 @@ nnoremap gco :Gread<Cr>
 nnoremap gbl :Gblame<Cr>
 nnoremap glo :Glog<Cr>
 nnoremap gdf :Gdiff<Cr>
+nnoremap gbo :Gbrowse<Cr>
 nnoremap gfc :Gfetch<Cr>
 nnoremap gpu :Gpush<Cr>
 nnoremap gr :Ggrep
@@ -169,6 +170,7 @@ map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l'
+    let g:ctrlp_use_caching=0
+    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
 
