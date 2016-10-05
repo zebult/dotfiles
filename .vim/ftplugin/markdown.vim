@@ -4,8 +4,6 @@ set ts=2 sw=2 sts=0
 abbreviate tl - [ ]
 " todoリストのon/offを切り替える
 nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
-" 矢印たまに使うので
-abbreviate l <Space>→ 
 
 function! ToggleCheckbox()
     let l:line = getline('.')

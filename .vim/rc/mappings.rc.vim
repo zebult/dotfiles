@@ -29,7 +29,7 @@ inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
 " diffすぐ出す
-nnoremap diff :vertical diffsplit f
+" nnoremap diff :vertical diffsplit
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv
@@ -102,6 +102,8 @@ nnoremap gco :Gread<Cr>
 nnoremap gbl :Gblame<Cr>
 nnoremap glo :Glog<Cr>
 nnoremap gdf :Gdiff<Cr>
+nnoremap gbo :Gbrowse<Cr>
+vnoremap gbo :Gbrowse<Cr>
 nnoremap gfc :Gfetch<Cr>
 nnoremap gpu :Gpush<Cr>
 nnoremap gr :Ggrep
@@ -129,7 +131,8 @@ cnoremap <C-d> <Del>
 """"""""""""""""""""""""""""""
 
 " Power tools
-nnoremap <Leader>d :vertical diffsplit
+" nnoremap <Leader>d :vertical diffsplit
+nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
@@ -169,7 +172,7 @@ map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
 if executable('ag')
-  let g:ctrlp_use_caching=0
-  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+    let g:ctrlp_use_caching=0
+    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
 endif
 
