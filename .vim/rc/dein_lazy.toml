@@ -77,7 +77,7 @@ on_i = 1
 commands = 'TagbarToggle'
 hook_add = '''
     let g:tagbar_width = 20
-    nmap <Leader>t :TagbarToggle<CR>
+    nmap <Leader>T :TagbarToggle<CR>
 '''
 
 [[plugins]]
@@ -220,6 +220,12 @@ on_map = 'S'
 # file shaping(:Align =)
 [[plugins]]
 repo = 'vim-scripts/Align'
+
+[[plugins]]
+repo = 'vim-scripts/TaskList.vim'
+hook_add = '''
+    nnoremap <Leader>T :TaskList<CR>
+'''
 
 # Swift ---------------------------
 # [[plugins]]
