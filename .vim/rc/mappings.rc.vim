@@ -172,6 +172,9 @@ map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
 let g:ctrlp_map = '<Leader>o'
+" vim終了時にキャッシュクリアしない(default:1)
+let g:ctrlp_clear_cache_on_exit = 0
+" TODO: <C-p> 上にしたい
 if executable('ag')
     let g:ctrlp_use_caching=0
     let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
