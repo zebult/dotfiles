@@ -68,6 +68,7 @@ alias vim="/usr/local/bin/vim"
 alias gvim='open /Applications/MacVim.app'
 
 alias ag='ag -u'
+alias f='vim .'
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
@@ -145,7 +146,7 @@ function peco-tree-vim(){
 bindkey "^t" peco_tree_vim
 
 # Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/Users/zebra/Plugins/android-ndk-r9d
+export NDK_ROOT=$HOME/Plugins/android-ndk-r9d
 export PATH=$NDK_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
