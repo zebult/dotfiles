@@ -11,6 +11,8 @@ nnoremap <Leader>& /\(A.*B\)
 nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+" 行数切り替え
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
 inoremap jj <ESC><ESC><ESC>
 noremap j gj
