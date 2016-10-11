@@ -78,7 +78,7 @@ nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
-nnoremap sw <C-w>w
+" nnoremap sw <C-w>w
 nnoremap so <C-w>o
 nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
@@ -170,6 +170,8 @@ vnoremap <silent> p "0p<CR>
 
 " lazyで読めないため一旦ここでmapping書く
 " tyru/operator-camelize.vim ----------
+let g:operator_camelize_all_uppercase_action = "lowercase"
+let g:operator_decamelize_all_uppercase_action = "lowercase"
 map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
