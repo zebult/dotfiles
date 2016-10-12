@@ -29,6 +29,12 @@ repo   = 'Shougo/neosnippet-snippets'
 # Base Tools: ---------------------------
 
 [[plugins]]
+repo = 'thinca/vim-splash'
+hook_add = '''
+    let g:splash#path = $HOME . '/.vim/rc/splash.txt'
+'''
+
+[[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 on_source = 'vim-quickrun.vim'
 
