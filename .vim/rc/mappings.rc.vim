@@ -91,7 +91,8 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-noremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 """"""""""""""""""""""""""""""
 "  git
