@@ -3,6 +3,8 @@
 let mapleader = "\<Space>"
 rv! " 履歴共有
 set incsearch
+" 最後改行勝手にいれないはず
+set nofixeol
 " ランチブ名をステータスラインに表示する
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P 

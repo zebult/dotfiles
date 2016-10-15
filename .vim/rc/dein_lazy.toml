@@ -97,6 +97,11 @@ hook_add = '''
 repo = 'scrooloose/sYntastic.git'
 on_i = 1
 
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_i = 1
+filetypes  =  ['*']
+
 # c, cpp complement
 [[plugins]]
 repo = 'justmao945/vim-clang'
@@ -129,7 +134,7 @@ repo = 'mopp/layoutplugin.vim'
 # Convenience Tools: ---------------------------
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
-hook_add = 'nnoremap <Leader>s :Switch<CR>'
+hook_add = 'nnoremap sw :Switch<CR>'
 
 # >> can
 # [[plugins]]

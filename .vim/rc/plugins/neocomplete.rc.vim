@@ -17,7 +17,7 @@ let g:neocomplete#lock_iminsert = 1
 " ハイフンの入力による候補番号の標示
 let g:neocomplete#enable_quick_match = 1
 " 提示される候補の最大数（初期値：100）
-let g:neocomplete#max_list = 30
+let g:neocomplete#max_list = 50
 " 補完候補提示の際に先頭を選択状態へ
 let g:neocomplete#enable_auto_select = 1
 " 補完（小文字を無視して検索）

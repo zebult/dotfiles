@@ -11,6 +11,8 @@ nnoremap <Leader>& /\(A.*B\)
 nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+" 行数切り替え
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
 inoremap jj <ESC><ESC><ESC>
 noremap j gj
@@ -76,7 +78,7 @@ nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
-nnoremap sw <C-w>w
+" nnoremap sw <C-w>w
 nnoremap so <C-w>o
 nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
@@ -89,7 +91,8 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-noremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 """"""""""""""""""""""""""""""
 "  git
@@ -168,6 +171,8 @@ vnoremap <silent> p "0p<CR>
 
 " lazyで読めないため一旦ここでmapping書く
 " tyru/operator-camelize.vim ----------
+let g:operator_camelize_all_uppercase_action = "lowercase"
+let g:operator_decamelize_all_uppercase_action = "lowercase"
 map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
