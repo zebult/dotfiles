@@ -1,8 +1,9 @@
-" TODO: 言語によってはにしたい
+" autocmd FileType markdown inoremap <buffer> <expr> - smartchr#loop('- ', '-')
 inoremap <buffer> <expr> = smartchr#loop('=', ' = ', ' == ')
+inoremap <buffer> <expr> + smartchr#loop('+', ' + ', ' += ')
+inoremap <buffer> <expr> - smartchr#loop('-', ' - ', ' -= ')
 inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-inoremap <buffer> <expr> : smartchr#loop(': ', '::')
-inoremap <buffer> <expr> ! smartchr#loop('!', '!=')
-inoremap <buffer> <expr> - smartchr#loop('- ', '-')
+inoremap <buffer> <expr> : smartchr#loop(':', ': ', '::')
+inoremap <buffer> <expr> ! smartchr#loop('!', ' != ')
 inoremap <buffer> <expr> { smartchr#loop('{', ' {<CR>}')
 

@@ -156,6 +156,9 @@ nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 
+" help
+nnoremap <C-h> :h<Space><C-r><C-w><CR>
+
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3

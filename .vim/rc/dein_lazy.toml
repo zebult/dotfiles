@@ -30,6 +30,9 @@ on_i = 1
 filetypes = ['c', 'cpp']
 
 # Base Tools: ---------------------------
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
 [[plugins]]
 repo = 'tpope/vim-dispatch'

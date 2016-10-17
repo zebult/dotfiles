@@ -49,24 +49,52 @@ augroup grepopen
 augroup END
 """""""""""""""""""""""""""""
 
-" source sample.vim
-
-function! g:Test() abort
-    " echo "ouch"
-    " !find . -name \*.xcworkspace
-    " execute "!open ."
-    " echo system(find . -name *.xcworkspace)
-    " let a = system(ls)
-    " echo a
-    " let g:loaded_nerdtree_callex_keymap = system("ls")
-    " let s:files = system("find ./ -name \*.xcworkspace")
-    let s:files = system("find ./ -name a*")
-    " cgetexpr s:files
-    " copen
-    echo s:files
-    " :echo g:loaded_nerdtree_callex_keymap
-    " :!open `find . -name *.xcworkspace`
+function! g:Open_xcode(...) abort
+    let a:count = get(a:, 1)
+    " file open
+    if filereadable(a:count)
+        call system('open -a Xcode '.expand('%:p'))
+        echo "xcode file open."
+        return
+    endif
+    " nest limit
+    if a:count == 10
+        echo "Not git project."
+        return
+    endif
+    " find git
+    let s:search_path = "**/.git"
+    for i in range(a:count)
+        let s:search_path = "../" . s:search_path
+    endfor
+    let s:git_path = expand(s:search_path)
+    if s:git_path == ""
+        call g:Open_xcode(a:count + 1)
+        return
+    endif
+    " find xcode project
+    let s:search_path = "**/*.xcworkspace"
+    for i in range(a:count)
+        let s:search_path = "../" . s:search_path
+    endfor
+    let s:files = expand(s:search_path)
+    if s:files == ""
+        echo "Not xcode project."
+    else
+        echo "xcode project open."
+        call system('open -a Xcode '.expand(s:files))
+    endif
 endfunction
 
-nnoremap <silent> ;s :call g:Test()<CR>
+" Open Xcode(dot is file only)
+command! -nargs=* XcodeProjectOpen call g:Open_xcode(<f-args>)
+command! XcodeFileOpen execute ":call g:Open_xcode(expand('%:p'))"
+" Close Xcode
+command! -nargs=0 XcodeClose call system("osascript -e 'tell application \"Xcode\" to quit'")
+" Focus Xcode
+command! -nargs=0 XcodeFocus call system("osascript -e 'tell application \"Xcode\" to activate'")
 
+nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
+nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
+nnoremap <silent> <Leader>Q :XcodeClose<CR>
+nnoremap <silent> <Leader>e :XcodeFocus<CR>

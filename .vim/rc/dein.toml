@@ -46,6 +46,7 @@ repo = 'kana/vim-operator-user'
 # シンタックスハイライト,自動折り畳み
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
+hook_add = 'let g:vim_markdown_folding_disabled = 0'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
