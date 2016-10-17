@@ -60,7 +60,7 @@ case "${os}" in
         brew install wget
         brew install tree
         brew install ag
-        brew install global
+        brew install global # gtags
         brew install sourcekitten
         brew install source-highlight
         brew install argon/mas/mas
