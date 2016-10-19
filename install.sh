@@ -44,7 +44,7 @@ case "${os}" in
         brew cask install xquartz
         brew install lua
         brew install vim --with-lua # XQuartzないとダメ
-        " brew install vim --with-lua --with-client-server # XQuartzないとダメ
+        # brew install vim --with-lua --with-client-server # XQuartzないとダメ
         brew install ctags
         brew tap sanemat/font
         brew install --powerline --vim-powerline ricty
