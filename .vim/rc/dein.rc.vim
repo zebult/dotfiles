@@ -28,7 +28,6 @@ if dein#load_state(s:dein_dir)
     call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
     " tomlから読み込めなかったためここで書く
-    call dein#add('tpope/vim-fugitive')
     call dein#add('kannokanno/previm')
     call dein#add('tyru/operator-camelize.vim')
     call dein#add('ctrlpvim/ctrlp.vim')

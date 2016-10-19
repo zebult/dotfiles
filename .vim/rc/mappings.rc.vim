@@ -95,24 +95,6 @@ nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 """"""""""""""""""""""""""""""
-"  git
-""""""""""""""""""""""""""""""
-nnoremap gst  :Gstatus<Cr>
-nnoremap gad  :Gwrite<Cr>
-nnoremap gcm  :Gcommit<Cr>
-nnoremap gacm :Gwrite<Cr>  : Gcommit<Cr>
-nnoremap gco  :Gread<Cr>
-nnoremap gbl  :Gblame<Cr>
-nnoremap glo  :Glog<Cr>
-nnoremap gdf  :Gdiff<Cr>
-nnoremap gbo  :Gbrowse<Cr>
-vnoremap gbo  :Gbrowse<Cr>
-nnoremap gfc  :Gfetch<Cr>
-nnoremap gps  :Gpush<Cr>
-nnoremap gr   :Ggrep
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
 "  ex mode
 """"""""""""""""""""""""""""""
 " ディレクトリを手早く展開
