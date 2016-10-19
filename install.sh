@@ -109,6 +109,7 @@ case "${os}" in
         mas install 411246225 # Caffeine
         mas install 803453959 # Slack
         mas install 585829637 # Todoist
+        mas install 449589707 # Dash
         mas install 409201541 # Pages
         mas install 539883307 # LINE
         mas install 682658836 # GarageBand
