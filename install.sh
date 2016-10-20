@@ -149,6 +149,11 @@ cd .ssh
 ssh-keygen
 
 cd $HOME
+mkdir -p .bin/sh
+ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
+ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
+
+cd $HOME
 echo finish🍺
 
 # branch 表示
