@@ -73,7 +73,7 @@ on_i = 1
 commands = 'TagbarToggle'
 hook_add = '''
     let g:tagbar_width = 20
-    nmap <Leader>T :TagbarToggle<CR>
+    nmap <Leader>t :TagbarToggle<CR>
 '''
 
 [[plugins]]
@@ -135,6 +135,24 @@ hook_add = '''
 repo = 'mopp/layoutplugin.vim'
 
 # Convenience Tools: ---------------------------
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    nnoremap gst  :Gstatus<Cr>
+    nnoremap gad  :Gwrite<Cr>
+    nnoremap gcm  :Gcommit<Cr>
+    nnoremap gacm :Gwrite<Cr>  : Gcommit<Cr>
+    nnoremap gco  :Gread<Cr>
+    nnoremap gbl  :Gblame<Cr>
+    nnoremap glo  :Glog<Cr>
+    nnoremap gdf  :Gdiff<Cr>
+    nnoremap gbo  :Gbrowse<Cr>
+    vnoremap gbo  :Gbrowse<Cr>
+    nnoremap gfc  :Gfetch<Cr>
+    nnoremap gps  :Gpush<Cr>
+    nnoremap gr   :Ggrep
+'''
+
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
 hook_add = 'nnoremap sw :Switch<CR>'

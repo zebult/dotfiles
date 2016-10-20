@@ -5,45 +5,44 @@ git add .
 git commit -m "data update: "`date +%Y_%m_%d_%H`
 git push origin master
 
-cd ~/dotfiles/.vim
-# .vimrcを他ファイルに適応
-\cp -f vimrc xvimrc
-sed -i -e 's/noremap\ j\ gj/\"noremap\ j\ gj/g' xvimrc
-sed -i -e 's/noremap\ k\ gk/\"noremap\ k\ gk/g' xvimrc
-sed -i -e 's/noremap\ gj\ j/noremap\ gj\ i\<Down\>\<Esc\>\<Right\>/g' xvimrc
-sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' xvimrc
-sed -i -e 's/QuickRun/run/g' xvimrc
-sed -i -e 's/Leader/Space/' xvimrc
-echo 'set hlsearch' >> xvimrc
-echo 'nnoremap gdf :xccmd changeToVersionEditorComparisonView<Cr>' >> xvimrc
-echo 'nnoremap glo :xccmd changeToVersionEditorLogView<Cr>' >> xvimrc
-echo 'nnoremap gbl :xccmd changeToVersionEditorBlameView<Cr>' >> xvimrc
-echo 'nnoremap gr :xccmd changeToStandardEditor<Cr>' >> xvimrc
-echo 'nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>' >> xvimrc
-echo 'nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>' >> xvimrc
-echo 'nnoremap <C-h> :xhelp<Cr>' >> xvimrc
-echo 'nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>' >> xvimrc
-echo 'nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>' >> xvimrc
-echo 'nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>' >> xvimrc
-echo 'nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>' >> xvimrc
-echo 'nnoremap <Space>a :ncounterpart<Cr>' >> xvimrc
-echo 'nnoremap <Space><Space> :xccmd toggleBreakpointAtCurrentLine<Cr>' >> xvimrc
-echo 'nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>' >> xvimrc
-echo 'nnoremap sn :xccmd selectNextTab<Cr>' >> xvimrc
-echo 'nnoremap sp :xccmd selectPreviousTab<Cr>' >> xvimrc
-echo 'nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>' >> xvimrc
-echo 'nnoremap <Space>h :xccmd toggleNavigatorsVisibility<Cr>' >> xvimrc
-echo 'nnoremap <Space>j :xccmd toggleDebuggerVisibility<Cr>' >> xvimrc
-echo 'nnoremap <Space>k :xccmd toggleToolbarShown<Cr>' >> xvimrc
-echo 'nnoremap <Space>l :xccmd toggleUtilitiesVisibility<Cr>' >> xvimrc
-echo 'nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>' >> xvimrc
-echo 'nnoremap <Space>b :xcmenucmd Build<Cr>' >> xvimrc
-echo 'nnoremap <Space>c :xcmenucmd Clean<Cr>' >> xvimrc
-echo 'nnoremap <Space>e :xccmd openQuickly<Cr>' >> xvimrc
-
-rm -f xvimrc-e
-
-cd ../
+cd ~/dotfiles
 git add .
 git commit -m "data update: "`date +%Y_%m_%d_%H`
 git push origin master
+# cd ~/dotfiles/.vim
+# # .vimrcを他ファイルに適応
+# \cp -f vimrc xvimrc
+# sed -i -e 's/noremap\ j\ gj/\"noremap\ j\ gj/g' xvimrc
+# sed -i -e 's/noremap\ k\ gk/\"noremap\ k\ gk/g' xvimrc
+# sed -i -e 's/noremap\ gj\ j/noremap\ gj\ i\<Down\>\<Esc\>\<Right\>/g' xvimrc
+# sed -i -e 's/noremap\ gk\ k/noremap\ gk\ i\<Up\>\<Esc\>\<Right\>/g' xvimrc
+# sed -i -e 's/QuickRun/run/g' xvimrc
+# sed -i -e 's/Leader/Space/' xvimrc
+# echo 'set hlsearch' >> xvimrc
+# echo 'nnoremap gdf :xccmd changeToVersionEditorComparisonView<Cr>' >> xvimrc
+# echo 'nnoremap glo :xccmd changeToVersionEditorLogView<Cr>' >> xvimrc
+# echo 'nnoremap gbl :xccmd changeToVersionEditorBlameView<Cr>' >> xvimrc
+# echo 'nnoremap gr :xccmd changeToStandardEditor<Cr>' >> xvimrc
+# echo 'nnoremap <C-o> :xccmd goBackInHistoryByCommand<Cr>' >> xvimrc
+# echo 'nnoremap <C-i> :xccmd goForwardInHistoryByCommand<Cr>' >> xvimrc
+# echo 'nnoremap <C-h> :xhelp<Cr>' >> xvimrc
+# echo 'nnoremap <C-n> :xcmenucmd Jump to Next Issue<Cr>' >> xvimrc
+# echo 'nnoremap <C-p> :xcmenucmd Jump to Previous Issue<Cr>' >> xvimrc
+# echo 'nnoremap <C-N> :xcmenucmd Fix Next Issue<Cr>' >> xvimrc
+# echo 'nnoremap <C-P> :xcmenucmd Fix Previous Issue<Cr>' >> xvimrc
+# echo 'nnoremap <Space>a :ncounterpart<Cr>' >> xvimrc
+# echo 'nnoremap <Space><Space> :xccmd toggleBreakpointAtCurrentLine<Cr>' >> xvimrc
+# echo 'nnoremap <C--><C--> :xccmd commentAndUncommentCurrentLines<Cr>' >> xvimrc
+# echo 'nnoremap sn :xccmd selectNextTab<Cr>' >> xvimrc
+# echo 'nnoremap sp :xccmd selectPreviousTab<Cr>' >> xvimrc
+# echo 'nnoremap <Space>F viw:xccmd findSelectedTextInWorkspace<Cr>' >> xvimrc
+# echo 'nnoremap <Space>h :xccmd toggleNavigatorsVisibility<Cr>' >> xvimrc
+# echo 'nnoremap <Space>j :xccmd toggleDebuggerVisibility<Cr>' >> xvimrc
+# echo 'nnoremap <Space>k :xccmd toggleToolbarShown<Cr>' >> xvimrc
+# echo 'nnoremap <Space>l :xccmd toggleUtilitiesVisibility<Cr>' >> xvimrc
+# echo 'nnoremap <Space>A :xccmd toggleToolbarShown<Cr>:xccmd toggleDebuggerVisibility<Cr>:xccmd toggleNavigatorsVisibility<Cr>:xccmd toggleUtilitiesVisibility<CR>' >> xvimrc
+# echo 'nnoremap <Space>b :xcmenucmd Build<Cr>' >> xvimrc
+# echo 'nnoremap <Space>c :xcmenucmd Clean<Cr>' >> xvimrc
+# echo 'nnoremap <Space>e :xccmd openQuickly<Cr>' >> xvimrc
+#
+# rm -f xvimrc-e

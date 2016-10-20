@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd $HOME
 git clone https://github.com/zebult/dotfiles.git
 cd dotfiles
 
@@ -42,9 +43,9 @@ case "${os}" in
         brew upgrade
         brew install caskroom/cask/brew-cask
         brew cask install xquartz
+        brew install zsh
         brew install lua
-        brew install vim --with-lua # XQuartzないとダメ
-        " brew install vim --with-lua --with-client-server # XQuartzないとダメ
+        brew install vim --with-lua
         brew install ctags
         brew tap sanemat/font
         brew install --powerline --vim-powerline ricty
@@ -65,11 +66,16 @@ case "${os}" in
         brew install source-highlight
         brew install argon/mas/mas
         curl -L git.io/enhancd | sh
-        git clone https://github.com/b4b4r07/enhancd ~/.enhancd
-        mkdir -p ~/.config
+        git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
+        mkdir -p $HOME/.config
         ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
+        sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+        chsh -s /usr/local/bin/zsh
+        zsh
         source ${HOME}/.zshrc
-        ./setupPrezto.sh
+        chmod 755 $HOME/dotfiles/setupPrezto.sh
+        $HOME/dotfiles/setupPrezto.sh
+        source ${HOME}/.zshrc
 
         # Web download app
         brew cask install audacity
@@ -78,12 +84,14 @@ case "${os}" in
         brew cask install appcleaner
         brew cask install bettertouchtool
         brew cask install caffeine
+        brew cask install dash
         brew cask install dropbox
         brew cask install flux
         brew cask install hyperswitch
         brew cask install genymotion
         brew cask install google-chrome
         brew cask install google-japanese-ime
+        brew cask install iterm2
         brew cask install macvim
         brew cask install mamp
         brew cask install nosleep
@@ -113,10 +121,40 @@ case "${os}" in
         mas install 539883307 # LINE
         mas install 682658836 # GarageBand
         mas install 896624060 # Kobito
+        mas install 585829637 # Todoist
         mas install 409203825 # Numbers
         ;;
 esac
 
+# 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
+cd $HOME/Documents
+git clone https://gist.github.com/d5ee659c9d2bc1575cbc93aaca6988a4.git
+mv d5ee659c9d2bc1575cbc93aaca6988a4 CheatSheet
+sudo ln -snfv $HOME/Documents/CheatSheet /0CheatSheet
+
+# 4. Karabiner setting
+cd $HOME/Library/Application\ Support/Karabiner
+DIR=${PWD##*/}
+if [ $DIR != "Karabiner" ]; then
+    echo ERROR: Karabiner clone.
+    exit
+fi
+cd ..
+rm -rf Karabiner
+git clone https://github.com/zebult/Karabiner.git
+
+# 5. keygen
+cd $HOME
+mkdir .ssh
+cd .ssh
+ssh-keygen
+
+cd $HOME
+mkdir -p .bin/sh
+ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
+ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
+
+cd $HOME
 echo finish🍺
 
 # branch 表示
