@@ -73,7 +73,7 @@ on_i = 1
 commands = 'TagbarToggle'
 hook_add = '''
     let g:tagbar_width = 20
-    nmap <Leader>T :TagbarToggle<CR>
+    nmap <Leader>t :TagbarToggle<CR>
 '''
 
 [[plugins]]

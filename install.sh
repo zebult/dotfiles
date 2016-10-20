@@ -121,6 +121,7 @@ case "${os}" in
         mas install 539883307 # LINE
         mas install 682658836 # GarageBand
         mas install 896624060 # Kobito
+        mas install 585829637 # Todoist
         mas install 409203825 # Numbers
         ;;
 esac
