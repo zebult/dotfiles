@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd $HOME
 git clone https://github.com/zebult/dotfiles.git
 cd dotfiles
 
@@ -42,6 +43,7 @@ case "${os}" in
         brew upgrade
         brew install caskroom/cask/brew-cask
         brew cask install xquartz
+        brew install zsh
         brew install lua
         brew install vim --with-lua
         brew install ctags
@@ -64,11 +66,16 @@ case "${os}" in
         brew install source-highlight
         brew install argon/mas/mas
         curl -L git.io/enhancd | sh
-        git clone https://github.com/b4b4r07/enhancd ~/.enhancd
-        mkdir -p ~/.config
+        git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
+        mkdir -p $HOME/.config
         ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
+        sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+        chsh -s /usr/local/bin/zsh
+        zsh
         source ${HOME}/.zshrc
-        ./setupPrezto.sh
+        chmod 755 $HOME/dotfiles/setupPrezto.sh
+        $HOME/dotfiles/setupPrezto.sh
+        source ${HOME}/.zshrc
 
         # Web download app
         brew cask install audacity
@@ -118,6 +125,30 @@ case "${os}" in
         ;;
 esac
 
+# 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
+cd $HOME/Documents
+git clone https://gist.github.com/d5ee659c9d2bc1575cbc93aaca6988a4.git
+mv d5ee659c9d2bc1575cbc93aaca6988a4 CheatSheet
+sudo ln -snfv $HOME/Documents/CheatSheet /0CheatSheet
+
+# 4. Karabiner setting
+cd $HOME/Library/Application\ Support/Karabiner
+DIR=${PWD##*/}
+if [ $DIR != "Karabiner" ]; then
+    echo ERROR: Karabiner clone.
+    exit
+fi
+cd ..
+rm -rf Karabiner
+git clone https://github.com/zebult/Karabiner.git
+
+# 5. keygen
+cd $HOME
+mkdir .ssh
+cd .ssh
+ssh-keygen
+
+cd $HOME
 echo finish🍺
 
 # branch 表示
