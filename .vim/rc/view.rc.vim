@@ -8,6 +8,8 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 colorscheme one-dark
+" colorscheme solarized
+
 " 256に制限をかける
 set t_Co=256
 set list
@@ -31,12 +33,14 @@ autocmd InsertLeave * set cursorline
 autocmd InsertLeave * set cursorcolumn
 " 行数色
 " hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
-hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE
+" hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE
+hi LineNr term=bold cterm=NONE ctermfg=12 ctermbg=NONE
 " 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE
 " コメント色
 " hi Comment ctermfg=white
-hi Comment ctermfg=8
+" hi Comment ctermfg=8
+hi Comment ctermfg=12
 " タブ色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
