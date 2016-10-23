@@ -154,6 +154,16 @@ mkdir -p .bin/sh
 ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
 ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
 
+cd $HOME/Library/Application\ Support/Alfred\ 2/Alfred.alfredpreferences/preferences/features/websearch
+DIR=${PWD##*/}
+if [ $DIR != "websearch" ]; then
+    echo "Please set alfred plist. $ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist"
+    exit
+else
+    ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
+fi
+
+
 cd $HOME
 echo finish🍺
 

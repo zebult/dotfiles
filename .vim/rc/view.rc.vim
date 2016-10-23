@@ -7,8 +7,10 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 " 背景色をターミナルと同じにする
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
-colorscheme one-dark
+" colorscheme one-dark
 " colorscheme solarized
+" colorscheme spacegray
+colorscheme tomorrow-night
 
 " 256に制限をかける
 set t_Co=256
@@ -32,15 +34,12 @@ autocmd InsertEnter * set nocursorcolumn
 autocmd InsertLeave * set cursorline
 autocmd InsertLeave * set cursorcolumn
 " 行数色
-" hi LineNr term=bold cterm=NONE ctermfg=white ctermbg=NONE
-" hi LineNr term=bold cterm=NONE ctermfg=8 ctermbg=NONE
-hi LineNr term=bold cterm=NONE ctermfg=12 ctermbg=NONE
+hi LineNr term=bold cterm=NONE ctermfg=241 ctermbg=NONE
 " 現在行数色
-hi CursorLineNr term=bold cterm=NONE ctermfg=7 ctermbg=NONE
+hi CursorLineNr term=bold cterm=NONE ctermfg=9 ctermbg=NONE
 " コメント色
-" hi Comment ctermfg=white
-" hi Comment ctermfg=8
-hi Comment ctermfg=12
+" hi Comment ctermfg=12
+hi Comment ctermfg=241
 " タブ色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
@@ -54,5 +53,26 @@ set autoindent "インデントを自動でつける
 " 検索をハイライトする
 set hlsearch
 " 補完色
-hi PmenuSel  ctermbg=33
-
+" hi PmenuSel ctermbg=33
+hi PmenuSel ctermfg=72
+" 微調整
+hi Type ctermfg=67
+hi Function ctermfg=67
+" hi	Comment ctermbg=33
+" hi	Todo ctermbg=33
+" hi	Title ctermbg=33
+" hi	Identifier ctermbg=33
+" hi	Statement ctermbg=33
+" hi	Conditional ctermbg=33
+" hi	Repeat ctermbg=33
+" hi	Structure ctermbg=33
+" hi	Constant ctermbg=33
+" hi	Keyword ctermbg=33
+" hi	String ctermbg=33
+" hi	Special ctermbg=33
+" hi	PreProc ctermbg=33
+" hi	Operator ctermbg=33
+" hi	Type ctermbg=33
+" hi	Define ctermbg=33
+" hi	Include ctermbg=33
+" hi	Ignore ctermbg=33
