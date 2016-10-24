@@ -33,6 +33,7 @@ if dein#load_state(s:dein_dir)
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('kana/vim-submode')
     call dein#add('jacquesbh/vim-showmarks')
+    call dein#add('tpope/vim-fugitive')
 
     " 設定終了
     call dein#end()

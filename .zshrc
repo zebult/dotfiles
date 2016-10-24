@@ -60,6 +60,7 @@ alias grh="git reset --hard"
 alias gcl="git clean -df"
 alias gsw="git show"
 alias gbl="git blame"
+alias glp="git log -p -1"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim="/usr/local/bin/vim"

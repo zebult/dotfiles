@@ -49,6 +49,12 @@ repo = 'plasticboy/vim-markdown'
 hook_add = 'let g:vim_markdown_folding_disabled = 0'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
+'''
+
+[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
     let g:indent_guides_enable_on_vim_startup=1

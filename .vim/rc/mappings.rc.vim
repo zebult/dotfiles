@@ -154,6 +154,21 @@ noremap ' `
 " 選択してもそのまま貼り付けられるようにする
 vnoremap <silent> p "0p<CR>
 
+" git
+nnoremap gst  :Gstatus<Cr>
+nnoremap gad  :Gwrite<Cr>
+nnoremap gcm  :Gcommit<Cr>
+nnoremap gacm :Gwrite<Cr>  : Gcommit<Cr>
+nnoremap gco  :Gread<Cr>
+nnoremap gbl  :Gblame<Cr>
+nnoremap glo  :Glog<Cr>
+nnoremap gdf  :Gdiff<Cr>
+nnoremap gbo  :Gbrowse<Cr>
+vnoremap gbo  :Gbrowse<Cr>
+nnoremap gfc  :Gfetch<Cr>
+nnoremap gps  :Gpush<Cr>
+nnoremap gr   :Ggrep
+
 " lazyで読めないため一旦ここでmapping書く
 " tyru/operator-camelize.vim ----------
 let g:operator_camelize_all_uppercase_action = "lowercase"
