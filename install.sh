@@ -84,6 +84,7 @@ case "${os}" in
         brew cask install appcleaner
         brew cask install bettertouchtool
         brew cask install caffeine
+        brew cask install cheatsheet
         brew cask install dash
         brew cask install dropbox
         brew cask install flux
