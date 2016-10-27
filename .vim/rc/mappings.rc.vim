@@ -49,7 +49,8 @@ nnoremap <Leader>J :%!jq '.'<CR>
 nnoremap <Leader>L :e!<CR>
 " フルパス挿入
 nnoremap <Leader>p i<C-R>=expand('%:p')<CR>
-
+" 履歴から開く
+nnoremap <Leader><C-r> :CtrlPMixed<CR>
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -62,7 +63,7 @@ nnoremap ml :marks<CR>
 " メンバ変数アクセサ生成(m_付き限定)
 nnoremap KK w"tyiww"myiwf_lve"vyopublic <Esc>"tpa <Esc>"vpb~higet<Esc>$a() {return <Esc>"mpa;}<Esc>opublic void <Esc>"vpb~hiset<Esc>$a(<Esc>"tpa <Esc>"vpa) {<Esc>"mpa=<Esc>"vpa;}<Esc>kk0w
 " ファイル名クリップボードにコピー
-nnoremap <Leader>F mfi<C-r>%<ESC>v'fyu
+nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
 " Screen split key mappings
 nnoremap s <Nop>
@@ -119,11 +120,12 @@ cnoremap <C-d> <Del>
 " nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
-nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+nnoremap <Leader>T :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>
-" nnoremap <Leader>g :vim %<Left><Left> 
+nnoremap <Leader>f :vim %<Left><Left>
+nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap <Leader>g :Ag<Space>
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
@@ -190,10 +192,9 @@ endfunction
 " tyru/operator-camelize.vim ----------
 let g:operator_camelize_all_uppercase_action = "lowercase"
 let g:operator_decamelize_all_uppercase_action = "lowercase"
-map <Leader>C <plug>(operator-camelize-toggle)
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
-let g:ctrlp_map = '<Leader>o'
+let g:ctrlp_map = '<C-j>'
 " vim終了時にキャッシュクリアしない(default:1)
 let g:ctrlp_clear_cache_on_exit = 0
 " TODO: <C-p> 上にしたい
