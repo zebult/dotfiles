@@ -88,6 +88,19 @@ functions tmp() {
     cd tmp;
 }
 
+function img() {
+    imageNames=()
+    imageCount=0
+    for i in `seq 1 ${#}`
+    do
+        imageNames+=(${1})
+        imageCount=`expr $imageCount + 1`
+        shift
+    done
+    percentage=`expr 100 / $imageCount`
+    convert -geometry $percentage% +append $imageNames out.png
+}
+
 functions mkcd() {
     mkdir $1;
     cd $1
