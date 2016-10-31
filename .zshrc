@@ -69,6 +69,7 @@ alias vim="/usr/local/bin/vim"
 alias gvim='open /Applications/MacVim.app'
 
 alias ag='ag -u'
+alias findn='find . -name'
 alias F='vim .'
 alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'

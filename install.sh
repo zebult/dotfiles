@@ -57,6 +57,7 @@ case "${os}" in
         brew install htop-osx
         brew install peco
         brew install nmap
+        brew install imagemagick
         brew install tig
         brew install wget
         brew install tree
