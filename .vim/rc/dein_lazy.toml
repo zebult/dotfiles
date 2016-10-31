@@ -154,6 +154,10 @@ repo = 'mopp/layoutplugin.vim'
 # '''
 
 [[plugins]]
+repo = 'junegunn/vim-emoji'
+hook_add = 'set completefunc=emoji#complete'
+
+[[plugins]]
 repo = 'AndrewRadev/switch.vim'
 hook_add = 'nnoremap sw :Switch<CR>'
 
