@@ -155,6 +155,7 @@ cd $HOME
 mkdir -p .bin/sh
 ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
 ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
+ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
 
 cd $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/preferences/features/
 DIR=${PWD##*/}
