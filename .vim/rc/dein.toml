@@ -51,6 +51,7 @@ hook_add = 'let g:vim_markdown_folding_disabled = 0'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
+    let g:gitgutter_highlight_lines = 1
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 '''
 

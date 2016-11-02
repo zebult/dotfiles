@@ -157,6 +157,7 @@ ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
 ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
 ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
 
+# Alfred
 cd $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/preferences/features/
 DIR=${PWD##*/}
 if [ $DIR != "features" ]; then
@@ -166,6 +167,9 @@ else
     cd websearch
     ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
 fi
+
+# Dash(TODO: add guard) 共有すると使えない
+# ln -snfv ~/Dropbox/Saichi/Dash/library.dash ~/Library/Application\ Support/Dash/library.dash
 
 cd $HOME
 echo finish🍺
