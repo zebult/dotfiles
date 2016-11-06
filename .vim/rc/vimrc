@@ -1,9 +1,8 @@
 " zebult vimrc
 
-" dein must setting
+" deoplete must setting
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
 
 if &compatible
   set nocompatible
@@ -43,6 +42,16 @@ call s:source_rc('mappings.rc.vim')
 call s:source_rc('view.rc.vim')
 call s:source_rc('skeleton.rc.vim')
 autocmd BufNewFile *.cs norm 3j2wi%3dh 
+
+" tomlから呼べない為ここで呼ぶ
+call s:source_rc('plugins/deoplete.rc.vim')
+" call s:source_rc('plugins/neocomplete.rc.vim')
+call s:source_rc('plugins/denite.rc.vim')
+call s:source_rc('plugins/fugitive.rc.vim')
+call s:source_rc('plugins/quickrun.rc.vim')
+call s:source_rc('plugins/gtags.rc.vim')
+call s:source_rc('plugins/submode.rc.vim')
+call s:source_rc('plugins/smartchr.rc.vim')
 
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く

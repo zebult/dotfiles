@@ -11,6 +11,7 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+hook_source = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -40,6 +41,9 @@ repo   = 'Shougo/neosnippet-snippets'
 # Base Tools: ---------------------------
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
 repo = 'thinca/vim-splash'
 hook_add = '''
     let g:splash#path = $HOME . '/.vim/rc/splash.txt'
@@ -54,14 +58,33 @@ on_source = 'vim-quickrun.vim'
 repo = 'kana/vim-operator-user'
 
 # vim-textobj-indent need
+# map <Leader>I <plug>(textobj-indent-i)
 [[plugins]]
 repo = 'kana/vim-textobj-user'
-hook_add = '''
-    map <Leader>I <plug>(textobj-indent-i)
-    map I <plug>(textobj-indent-i)
-'''
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+hook_source = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
+
+[[plugins]]
+repo = 'junegunn/vim-emoji'
+hook_add = 'set completefunc=emoji#complete'
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+hook_add = '''
+    nmap <Space>m <Plug>(quickhl-manual-this)
+    xmap <Space>m <Plug>(quickhl-manual-this)
+    nmap <Space>M <Plug>(quickhl-manual-reset)
+    xmap <Space>M <Plug>(quickhl-manual-reset)
+'''
+
+# >> can
+[[plugins]]
+repo = 'kana/vim-submode'
+hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'jacquesbh/vim-showmarks'
@@ -89,11 +112,6 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_source = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
-
-# syntax hilight, foldmethod
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-hook_add = 'let g:vim_markdown_folding_disabled = 0'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
@@ -153,6 +171,9 @@ on_ft = 'cpp'
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
  
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+
 
 # C# ---------------------------
 
@@ -168,6 +189,14 @@ on_ft = ['cs', 'csi', 'csx']
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
 
+
+# Markdown ---------------------------
+
+# syntax hilight, foldmethod
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = 'md'
+hook_add = 'let g:vim_markdown_folding_disabled = 0'
 
 # Toml ---------------------------
 

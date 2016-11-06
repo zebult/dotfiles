@@ -95,13 +95,6 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
-inoremap [] []<Left>
-inoremap () ()<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap $$ $$<Left>
-inoremap <> <><Left>
-inoremap `` ``<Left>
 """"""""""""""""""""""""""""""
 "  ex mode
 """"""""""""""""""""""""""""""

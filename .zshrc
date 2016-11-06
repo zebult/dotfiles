@@ -68,7 +68,7 @@ alias gbl="git blame"
 alias glp="git log -p -1"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
-# alias vim="/usr/local/bin/vim" # brew vim
+alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias gvim='open /Applications/MacVim.app'
 

@@ -27,9 +27,6 @@ filetypes = ['c', 'cpp']
 
 # Base Tools: ---------------------------
 
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
 [[plugins]]
 repo = 'tpope/vim-dispatch'
@@ -123,17 +120,8 @@ repo = 'mopp/layoutplugin.vim'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
-repo = 'junegunn/vim-emoji'
-hook_add = 'set completefunc=emoji#complete'
-
-[[plugins]]
 repo = 'AndrewRadev/switch.vim'
 hook_add = 'nnoremap sw :Switch<CR>'
-
-# >> can
-[[plugins]]
-repo = 'kana/vim-submode'
-hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -147,11 +135,6 @@ hook_add = '''
     nmap go <Plug>(openbrowser-smart-search)
     vmap go <Plug>(openbrowser-smart-search)
 '''
-
-[[plugins]]
-repo = 'haya14busa/vim-easymotion'
-hook_source = 'source ~/.vim/rc/plugins/vim-easymotion.rc.vim'
-on_map = '<Plug>(easymotion-'
 
 [[plugins]]
 repo = 'sjl/gundo.vim'
@@ -179,22 +162,6 @@ hook_add = '''
     let g:calendar_google_task = 1
 '''
 
-# No lazy but use lazy
-[[plugins]]
-repo = 'kana/vim-smartchr'
-on_i = 1
-hook_source = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
-
-[[plugins]]
-repo = 't9md/vim-quickhl'
-on_map = '<Space>'
-hook_add = '''
-    nmap <Space>m <Plug>(quickhl-manual-this)
-    xmap <Space>m <Plug>(quickhl-manual-this)
-    nmap <Space>M <Plug>(quickhl-manual-reset)
-    xmap <Space>M <Plug>(quickhl-manual-reset)
-'''
-
 [[plugins]]
 repo = 'tpope/vim-surround'
 
@@ -210,11 +177,6 @@ hook_add = '''
 
 
 # Markdown ---------------------------
-
-# syntax hilight
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = 'md'
 
 # preview
 [[plugins]]

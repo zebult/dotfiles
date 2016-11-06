@@ -51,6 +51,7 @@ case "${os}" in
         brew upgrade
         brew install caskroom/cask/brew-cask
         brew cask install xquartz
+        brew install llvm --with-clang
         brew install zsh
         brew install lua
         brew instal pyenv

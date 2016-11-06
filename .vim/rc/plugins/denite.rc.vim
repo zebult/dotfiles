@@ -1,5 +1,4 @@
 nnoremap <C-j> :Denite file-rec<CR>
-
 " カーソル位置の単語をgrep検索
 " nnoremap <silent> <Leader>* :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
