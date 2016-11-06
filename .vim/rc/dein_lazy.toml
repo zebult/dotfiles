@@ -1,9 +1,4 @@
 # Shougo: ---------------------------
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = "has('lua')"
-on_event = 'InsertEnter'
-hook_source = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
@@ -23,13 +18,15 @@ hook_add = '''
 repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
-[[plugins]]
 # include周りの補完, c, c++は必須
+[[plugins]]
 repo = 'Shougo/neoinclude.vim'
 on_i = 1
 filetypes = ['c', 'cpp']
 
+
 # Base Tools: ---------------------------
+
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
@@ -86,7 +83,7 @@ hook_source = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 repo = 'scrooloose/sYntastic.git'
 on_i = 1
 
-# 英単語辞書補完(重い?)
+# 英単語辞書補完(重いのでoff)
 # [[plugins]]
 # repo = 'ujihisa/neco-look'
 # on_i = 1
@@ -99,11 +96,11 @@ on_i = 1
 filetypes  =  ['c', 'cpp']
 
 # cs complement
+# 自動でserverセットアップしてくれる(してくれない場合手動: plugin下のserverへ行き, xbuild)
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 on_i = 1
 filetypes  =  ['cs', 'csi', 'csx']
-# 自動でserverセットアップしてくれる(してくれない場合手動: plugin下のserverへ行き, xbuild)
 windows = 'msbuild server/OmniSharp.sln'
 mac     = 'xbuild server/OmniSharp.sln'
 unix    = 'xbuild server/OmniSharp.sln'
@@ -114,6 +111,7 @@ hook_add = '''
     inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 '''
 
+# TODO: 使いたい
 # [[plugins]]
 # repo = 'hewes/unite-gtags'
 
@@ -121,27 +119,8 @@ hook_add = '''
 [[plugins]]
 repo = 'mopp/layoutplugin.vim'
 
-# Convenience Tools: ---------------------------
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-# hook_add = '''
-#     nnoremap gst  :Gstatus<Cr>
-#     nnoremap gad  :Gwrite<Cr>
-#     nnoremap gcm  :Gcommit<Cr>
-#     nnoremap gacm :Gwrite<Cr>  : Gcommit<Cr>
-#     nnoremap gco  :Gread<Cr>
-#     nnoremap gbl  :Gblame<Cr>
-#     nnoremap glo  :Glog<Cr>
-#     nnoremap gdf  :Gdiff<Cr>
-#     nnoremap gbo  :Gbrowse<Cr>
-#     vnoremap gbo  :Gbrowse<Cr>
-#     nnoremap gfc  :Gfetch<Cr>
-#     nnoremap gps  :Gpush<Cr>
-#     nnoremap gr   :Ggrep
-# '''
 
-[[plugins]]
-repo = 'kana/vim-textobj-indent'
+# Convenience Tools: ---------------------------
 
 [[plugins]]
 repo = 'junegunn/vim-emoji'
@@ -152,19 +131,13 @@ repo = 'AndrewRadev/switch.vim'
 hook_add = 'nnoremap sw :Switch<CR>'
 
 # >> can
-# [[plugins]]
-# repo = 'kana/vim-submode'
-# hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
+[[plugins]]
+repo = 'kana/vim-submode'
+hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 on_map = '<C-_>'
-
-# markdown preview
-# [[plugins]]
-# repo = 'kannokanno/previm' # TODO: 使えない(dein.rc.vimで書いてる)
-# on_map = '<Space>'
-# on_ft = 'md'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
@@ -224,15 +197,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-on_map = 'S'
-
-# [[plugins]]
-# repo = 'tyru/operator-camelize.vim' # // TODO: 使えない(dein.rc.vimで書いてる)
-# on_source = ['vim-operator-user.vim']
-# hook_add = '''
-#     " map <Leader>C <plug>(operator-camelize-toggle)
-#     " map C <plug>(operator-camelize-toggle)
-# '''
 
 # file shaping(:Align =)
 [[plugins]]
@@ -244,9 +208,27 @@ hook_add = '''
     nnoremap <Leader>T :TaskList<CR>
 '''
 
+
+# Markdown ---------------------------
+
+# syntax hilight
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = 'md'
+
+# preview
+[[plugins]]
+repo = 'kannokanno/previm'
+on_map = '<Space>'
+on_ft = 'md'
+hook_add = '''
+    let g:previm_open_cmd = 'open -a Safari'
+'''
+
+
 # Swift ---------------------------
 
-# [[plugins]]
+[[plugins]]
 repo = 'zebult/xcode.vim'
 filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
 hook_add = '''
@@ -257,11 +239,17 @@ hook_add = '''
     nnoremap <silent> <Leader>e :XcodeFocus<CR>
 '''
 
-# [[plugins]]
 # Xcode化
+# [[plugins]]
 # repo = 'msanders/cocoa.vim'
 # on_i = 1
 # filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
+
+# iOSシミュレータ使える??
+# [[plugins]]
+# repo = 'kballard/vim-swift'
+# on_i = 1
+# on_ft = ['m', 'swift', 'cpp', 'h', 'hpp']
 
 # brew install sourcekitten
 [[plugins]]
@@ -270,17 +258,15 @@ on_i = 1
 on_ft = 'swift'
 # hook_source = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)' not use snip
 
-# iOSシミュレータ使える??
-[[plugins]]
-repo = 'kballard/vim-swift'
-# on_i = 1
-# on_ft = ['m', 'swift', 'cpp', 'h', 'hpp']
 
 # Go ---------------------------
+
 [[plugins]]
 repo = 'fatih/vim-go'
 
+
 # Html ---------------------------
+
 [[plugins]]
 repo = 'mattn/emmet-vim'
 

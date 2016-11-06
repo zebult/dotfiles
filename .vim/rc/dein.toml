@@ -1,11 +1,21 @@
 # Color: ---------------------------
-# 様々なcolorscheme使えるようにする
+
+# use some colorscheme
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 
 # Shougo ---------------------------
+
 [[plugins]]
 repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = "has('lua')"
+hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -26,6 +36,7 @@ build = 'make'
 [[plugins]]
 repo   = 'Shougo/neosnippet-snippets'
 
+
 # Base Tools: ---------------------------
 
 [[plugins]]
@@ -42,8 +53,44 @@ on_source = 'vim-quickrun.vim'
 [[plugins]]
 repo = 'kana/vim-operator-user'
 
+# vim-textobj-indent need
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+hook_add = '''
+    map <Leader>I <plug>(textobj-indent-i)
+    map I <plug>(textobj-indent-i)
+'''
+
 # Convenience Tools: ---------------------------
-# シンタックスハイライト,自動折り畳み
+
+[[plugins]]
+repo = 'jacquesbh/vim-showmarks'
+hook_add = '''
+    nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
+    " 最初からマークを表示する
+    aug show-marks-sync
+        au!
+        au BufReadPost * sil! DoShowMarks
+    aug END
+'''
+
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+hook_add = '''
+    let g:operator_camelize_all_uppercase_action = "lowercase"
+    let g:operator_decamelize_all_uppercase_action = "lowercase"
+    map <Leader>C <plug>(operator-camelize-toggle)
+    map C <plug>(operator-camelize-toggle)
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_source = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
+
+# syntax hilight, foldmethod
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 hook_add = 'let g:vim_markdown_folding_disabled = 0'
@@ -51,7 +98,7 @@ hook_add = 'let g:vim_markdown_folding_disabled = 0'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
-    let g:gitgutter_highlight_lines = 1
+    let g:gitgutter_highlight_lines = 0
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 '''
 
@@ -70,7 +117,9 @@ hook_add = '''
 [[plugins]]
 repo = 'rking/ag.vim'
 
+
 # Swift ---------------------------
+
 # syntax and indent and more
 [[plugins]]
 repo = 'keith/swift.vim'
@@ -91,7 +140,9 @@ on_ft = 'swift'
 repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 
+
 # C++ ---------------------------
+
 # syntax
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
@@ -102,25 +153,34 @@ on_ft = 'cpp'
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
  
+
 # C# ---------------------------
+
 # syntax
 [[plugins]]
 repo = 'OrangeT/vim-csharp'
 on_ft = ['cs', 'csi', 'csx']
 
+
 # Kotlin ---------------------------
+
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
 
-# Tex ---------------------------
+
+# Toml ---------------------------
+
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+
 # Tex ---------------------------
-[[plugins]]
+
 # Vim上でtexの部分コンパイルをする
+[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
+
 
