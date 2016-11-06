@@ -1,16 +1,19 @@
-[merge]
-	tool = vimdiff
-[user]
-	name = zebult
-	email = saichi.suzuki@gmail.com
-[mergetool]
-	keepBackup = false
-[alias]
-    tree = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+[include]
+    path = ~/.gitconfig.local
 [core]
-	excludesfile = /Users/a14198/.gitignore_global
-	attributesfile = /Users/a14198/HOME/.gitattributes
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+[diff]
+	tool = vimdiff
 [diff "image"]
 	command = ~/.bin/sh/git-imgdiff
+[merge]
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+[color]
+	ui = true
+[alias]
+    tree = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 [http]
 	postBuffer = 524288000

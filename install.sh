@@ -19,6 +19,14 @@ do
     ln -snfv "$HOME"/"dotfiles"/"$f" "$HOME"/"$f"
 done
 
+# .gitconfig.local settings
+cp gitconfig.local $HOME/.gitconfig.local
+# input
+echo 'Input your email... (use gitconfig)'
+read MAIL
+sed -i -e 's/xxx/'$MAIL'/g' $HOME/.gitconfig.local
+rm -rf $HOME/.gitconfig.local-e
+
 # 2.必要なものインストール
 
 ## OS別の処理
@@ -167,9 +175,6 @@ else
     cd websearch
     ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
 fi
-
-# Dash(TODO: add guard) 共有すると使えない
-# ln -snfv ~/Dropbox/Saichi/Dash/library.dash ~/Library/Application\ Support/Dash/library.dash
 
 cd $HOME
 echo finish🍺
