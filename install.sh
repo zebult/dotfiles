@@ -53,7 +53,9 @@ case "${os}" in
         brew cask install xquartz
         brew install zsh
         brew install lua
+        brew instal pyenv
         brew install vim --with-lua
+        brew install neovim/neovim/neovim
         brew install ctags
         brew tap sanemat/font
         brew install --powerline --vim-powerline ricty
@@ -78,6 +80,8 @@ case "${os}" in
         git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
         mkdir -p $HOME/.config
         ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
+        ln -snfv $HOME/.vim $HOME/.config/nvim
+        ln -snfv $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
         sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
         chsh -s /usr/local/bin/zsh
         zsh
@@ -85,6 +89,17 @@ case "${os}" in
         chmod 755 $HOME/dotfiles/setupPrezto.sh
         $HOME/dotfiles/setupPrezto.sh
         source ${HOME}/.zshrc
+        pyenv install —list
+        echo 'Input python new version...'
+        read PYTHON_VERSION
+        pyenv install $PYTHON_VERSION
+        echo 'python old version->'
+        python --version
+        pyenv global $PYTHON_VERSION
+        pyenv rehash
+        echo 'python new version->'
+        python --version
+        pip3 install neovim
 
         # Web download app
         brew cask install audacity
@@ -159,11 +174,13 @@ mkdir .ssh
 cd .ssh
 ssh-keygen
 
+# util shell link
 cd $HOME
 mkdir -p .bin/sh
 ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
 ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
 ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
+chmod 755 $HOME/.bin/sh/*
 
 # Alfred
 cd $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/preferences/features/

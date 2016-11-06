@@ -38,6 +38,11 @@ export PATH=$GEM_HOME/bin:$PATH
 
 export EDITOR=/usr/local/bin/vim
 export VISUAL=vim
+# nvim
+export XDG_CONFIG_HOME=~/.config
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
 export PATH=$PATH:$ELASTICPATH
@@ -63,9 +68,8 @@ alias gbl="git blame"
 alias glp="git log -p -1"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
-alias vim="/usr/local/bin/vim"
-# alias vim="reattach-to-user-namespace vim"
-# alias gvim='reattach-to-user-namespace /Applications/MacVim.app/Contents/MacOS/Vim'
+# alias vim="/usr/local/bin/vim" # brew vim
+alias vim=nvim
 alias gvim='open /Applications/MacVim.app'
 
 alias ag='ag -u'
@@ -166,7 +170,7 @@ export NDK_ROOT=$HOME/Plugins/android-ndk-r9d
 export PATH=$NDK_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/Users/zebra/Plugins/android-sdk-macosx
+export ANDROID_SDK_ROOT=$HOME/Plugins/android-sdk-macosx
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 

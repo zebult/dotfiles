@@ -8,12 +8,12 @@ repo = 'flazz/vim-colorschemes'
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+repo = 'Shougo/denite.nvim'
+hook_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
-on_source = ['unite.vim']
+on_source = ['deunite.vim']
 hook_add = '''
     let g:vimfiler_as_default_explorer  = 1
     let g:vimfiler_safe_mode_by_default = 0

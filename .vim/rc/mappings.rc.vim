@@ -201,7 +201,7 @@ let g:operator_camelize_all_uppercase_action = "lowercase"
 let g:operator_decamelize_all_uppercase_action = "lowercase"
 map C <plug>(operator-camelize-toggle)
 " ctrlpvim/ctrlp.vim ----------
-let g:ctrlp_map = '<C-j>'
+" let g:ctrlp_map = '<C-j>' " deniteに変更
 " vim終了時にキャッシュクリアしない(default:1)
 let g:ctrlp_clear_cache_on_exit = 0
 " TODO: <C-p> 上にしたい

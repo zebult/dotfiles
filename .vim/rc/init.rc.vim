@@ -9,6 +9,7 @@ set nofixeol
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P 
 set history=200
+set whichwrap=h,l
 " 検索時大文字小文字を区別しない
 set ignorecase
 " 検索をファイルの先頭へループしない   
@@ -95,23 +96,6 @@ abbreviate yh <Space>←
 abbreviate yj <Space>↓
 abbreviate yk <Space>↑
 abbreviate yl <Space>→
-
-" カーソルの形状変更
-if empty($TMUX)
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-else
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-endif
-
-" Insertモードで日本語の時色変更
-if has('multi_byte_ime') || has('xim')
-    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
-    highlight CursorIM guifg=NONE guibg=#ecbcbc
-endif
 
 " 最後のカーソル位置を復元する
 if has("autocmd")
