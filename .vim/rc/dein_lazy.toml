@@ -162,9 +162,6 @@ hook_add = '''
     let g:calendar_google_task = 1
 '''
 
-[[plugins]]
-repo = 'tpope/vim-surround'
-
 # file shaping(:Align =)
 [[plugins]]
 repo = 'vim-scripts/Align'

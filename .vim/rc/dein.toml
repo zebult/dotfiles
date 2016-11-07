@@ -65,6 +65,9 @@ repo = 'kana/vim-textobj-user'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
 repo = 'kana/vim-smartchr'
 hook_source = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
 

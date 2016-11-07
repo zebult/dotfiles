@@ -92,10 +92,6 @@ endfunction
 
 " abbreviate
 abbreviate TT // TODO:
-abbreviate yh <Space>←
-abbreviate yj <Space>↓
-abbreviate yk <Space>↑
-abbreviate yl <Space>→
 
 " 最後のカーソル位置を復元する
 if has("autocmd")
