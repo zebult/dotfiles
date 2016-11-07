@@ -90,10 +90,11 @@ case "${os}" in
         chmod 755 $HOME/dotfiles/setupPrezto.sh
         $HOME/dotfiles/setupPrezto.sh
         source ${HOME}/.zshrc
-        pyenv install —list
+        pyenv install -list
         echo 'Input python new version...'
         read PYTHON_VERSION
         pyenv install $PYTHON_VERSION
+        # Error: zlib not available($xcode-select --install)
         echo 'python old version->'
         python --version
         pyenv global $PYTHON_VERSION
