@@ -1,1 +1,1 @@
-/Users/a14198/.vim/vimrc
+/Users/zebra/.vim/vimrc
