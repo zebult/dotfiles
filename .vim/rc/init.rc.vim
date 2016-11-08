@@ -93,6 +93,9 @@ endfunction
 " abbreviate
 abbreviate TT // TODO:
 
+" 保存時Git差分ハイライト
+autocmd BufWritePre * :GitGutterLineHighlightsEnable
+
 " 最後のカーソル位置を復元する
 if has("autocmd")
     autocmd BufReadPost *

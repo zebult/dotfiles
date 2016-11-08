@@ -65,6 +65,9 @@ repo = 'kana/vim-textobj-user'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'thinca/vim-visualstar'
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]

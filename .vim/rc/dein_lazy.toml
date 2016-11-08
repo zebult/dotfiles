@@ -140,9 +140,6 @@ hook_add = '''
 repo = 'sjl/gundo.vim'
 hook_add = 'nmap U :<C-u>GundoToggle<CR>'
 
-[[plugins]]
-repo = 'thinca/vim-visualstar'
-
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
