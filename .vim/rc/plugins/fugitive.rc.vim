@@ -9,6 +9,7 @@ ca gdf Gdiff
 ca gbo Gbrowse
 ca gfc Gfetch
 ca gps Gpush
+ca gpl Gpull
 ca gr Ggrep
 command! -nargs=0 Gacm call Gacm()
 function! Gacm() abort
