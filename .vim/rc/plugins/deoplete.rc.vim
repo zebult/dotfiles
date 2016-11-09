@@ -1,7 +1,7 @@
 " deopleteを有効化
 let g:deoplete#enable_at_startup = 1
 " 補完が自動で開始される文字数
-let g:deoplete#auto_completion_start_length = 1
+let g:deoplete#auto_completion_start_length = 3
 " Smart caseを有効化（大文字が入力されるまで，大文字小文字の区別を考慮しない）
 let g:deoplete#enable_smart_case = 1
 " camle caseを有効化（大文字を区切りとしたワイルドカードのように振る舞う）

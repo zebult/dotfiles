@@ -122,6 +122,7 @@ nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>T :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
+nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>c :Calendar<CR>
 nnoremap <Leader>f :vim %<Left><Left>

@@ -6,7 +6,7 @@ ca gco Gread
 ca gbl Gblame
 ca glo Glog
 ca gdf Gdiff
-ca gbo Gbrowse
+ca gop Gbrowse
 ca gfc Gfetch
 ca gps Gpush
 ca gpl Gpull

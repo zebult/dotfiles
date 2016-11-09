@@ -53,7 +53,12 @@ case "${os}" in
         brew cask install xquartz
         brew install llvm --with-clang
         brew install zsh
+        brew install cscope
+        brew install python
+        brew install python3
         brew install lua
+        brew install cmigemo
+        brew install Caskroom/versions/macvim-kaoriya --with-lua --with-cscope --with-python --with-python3
         brew instal pyenv
         brew install vim --with-lua
         brew install neovim/neovim/neovim

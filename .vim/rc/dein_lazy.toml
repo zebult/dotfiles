@@ -134,6 +134,7 @@ hook_add = '''
     let g:netrw_nogx = 1
     nmap go <Plug>(openbrowser-smart-search)
     vmap go <Plug>(openbrowser-smart-search)
+    command! OpenRedMineTicket execute "OpenBrowser" expand("aaa")
 '''
 
 [[plugins]]

@@ -10,8 +10,14 @@ set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P 
 set history=200
 set whichwrap=h,l
+" インデントをスペース(4つ)だけにする "
+set ts=4 sw=4 sts=0
 " 検索時大文字小文字を区別しない
 set ignorecase
+"タブをスペースに
+set expandtab
+"インデントを自動でつける
+set autoindent
 " 検索をファイルの先頭へループしない   
 " set nowrapscan
 " 大文字混在時は大文字小文字区別する
