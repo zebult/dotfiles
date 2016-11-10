@@ -16,7 +16,8 @@ export PATH="/usr/local/bin:${PATH}"
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
 # go (go get glide)
-export GOPATH=$HOME/.go:~/Documents/workspace/Go
+# export GOPATH=$HOME/.go:~/Documents/workspace/Go
+export GOPATH=~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # port command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
