@@ -1,1 +1,0 @@
-/Users/zebra/.vim/vimrc
