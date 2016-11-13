@@ -1,3 +1,4 @@
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 " インクルードパスを設定する(gfなどでヘッダーファイルを開ける)
 " setlocal path+=/Applications/cocos2d-x/cocos2d-x3.6/cocos2d/cocos/*
 setlocal path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
