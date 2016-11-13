@@ -63,6 +63,7 @@ case "${os}" in
         brew install vim --with-lua
         brew install neovim/neovim/neovim
         brew install ctags
+        brew install boost
         brew tap sanemat/font
         brew install --powerline --vim-powerline ricty
         cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
@@ -96,7 +97,7 @@ case "${os}" in
         $HOME/dotfiles/setupPrezto.sh
         source ${HOME}/.zshrc
         pyenv install -list
-        echo 'Input python new version...'
+        echo 'Input python 3.x version...'
         read PYTHON_VERSION
         pyenv install $PYTHON_VERSION
         # Error: zlib not available($xcode-select --install)
@@ -107,6 +108,7 @@ case "${os}" in
         echo 'python new version->'
         python --version
         pip3 install neovim
+        # TODO: 2系を標準にするべき?  pyenv global 2.7.9 3.4.3 #手前から優先
 
         # Web download app
         brew cask install audacity
@@ -134,8 +136,9 @@ case "${os}" in
         brew cask install java
         # Android
         # brew cask install eclipse-ide
-        # brew install android-ndk
-        # brew install android-sdk
+        brew install ant
+        brew install android-ndk
+        brew install android-sdk
 
         # App store
         mas install 421358730 # MenuTab for Facebook
@@ -201,6 +204,13 @@ else
 fi
 
 cd $HOME
+
+# cocos2d-x
+mkdir -p /Applications/Cocos/Cocos2d-x
+wget http://www.cocos2d-x.org/filedown/cocos2d-x-3.6.zip -P /Applications/Cocos/Cocos2d-x
+/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/setup.py
+echo "you call don't python3->pyenv global 2.7.9 3.4.3"
+
 echo finish🍺
 
 # branch 表示

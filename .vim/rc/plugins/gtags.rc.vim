@@ -1,5 +1,5 @@
 " Grep(very slow)
-nnoremap <C-g> :Gtags -g %<CR><CR>
+" nnoremap <C-g> :Gtags -g %<CR><CR>
 " このファイルの関数一覧
 nnoremap <C-m> :Gtags -f %<CR><CR>
 " カーソル以下の定義元を探す

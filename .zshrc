@@ -7,32 +7,38 @@ ENHANCD_HYPHEN_ARG="-ls"
 ENHANCD_DOT_ARG="-up"
 . $HOME/.enhancd/init.sh
 
-# Customize to your needs...
+# shell path
 export PATH=$PATH:$HOME/.bin/sh
-export PATH=$PATH:~/Plugins/android-sdk-macosx
-export PATH=$PATH:~/Plugins/android-sdk-macosx/platform-tools
 # vim path
 export PATH="/usr/local/bin:${PATH}"
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
-# go (go get glide)
-# export GOPATH=$HOME/.go:~/Documents/workspace/Go
-export GOPATH=$HOME/Documents/workspace/Go
+# go path(go get glide)
+export GOPATH=$HOME/.go:~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
-# port command
+# MacPorts command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=$HOME/Documents/workspace/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
+# cocos2d-x
+## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-#export COCOS_TEMPLATES_ROOT=/Users/zebra/Documents/workspace/cocos2d-x/cocos2d-x-3.6/templates
-#export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# docker
-# eval $(docker-machine env default)
+## Add environment variable COCOS_X_ROOT for cocos2d-x
+export COCOS_X_ROOT=/Applications/Cocos/Cocos2d-x
+export PATH=$COCOS_X_ROOT:$PATH
+## Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+# Add environment variable NDK_ROOT for cocos2d-x
+export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk
+export PATH=$ANDROID_NDK_ROOT:$PATH
+# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk
+export PATH=$ANDROID_SDK_ROOT:$PATH
+# ant
+export ANT_ROOT=/usr/local/Cellar/ant
+export PATH=$ANT_ROOT:$PATH
 
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
@@ -166,59 +172,13 @@ function peco-tree-vim(){
 zle -N peco-tree-vim
 bindkey '^j' peco-tree-vim
 
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=$HOME/Plugins/android-ndk-r9d
-export PATH=$NDK_ROOT:$PATH
-
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=$HOME/Plugins/android-sdk-macosx
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-# ant(cocos terminal)
-ANT_ROOT=$HOME/Plugins/apache-ant-1.9.7/bin
-export ANT_ROOT
-
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
-# 天気
-# curl wttr.in/Moon
-# curl wttr.in/Tokyo
-
-
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/Applications/Cocos/Cocos2d-x
-export PATH=$COCOS_X_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/a14198/Documents/workspace/Goodroid/live/cocos2d-x-3.5/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/a14198/Documents/workspace/Goodroid/live/cocos2d-x-3.5/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/a14198/Documents/workspace/Goodroid/live/cocos2d-x-3.5/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/a14198/Documents/workspace/Goodroid/live/cocos2d-x-3.5/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.5/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.5/templates
+export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH

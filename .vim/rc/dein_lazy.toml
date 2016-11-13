@@ -14,10 +14,6 @@ hook_add = '''
     xmap <C-k> <Plug>(neosnippet_expand_target)
 '''
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['unite.vim']
-
 # include周りの補完, c, c++は必須
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'

@@ -1,7 +1,7 @@
 " deopleteを有効化
 let g:deoplete#enable_at_startup = 1
 " 補完が自動で開始される文字数
-let g:deoplete#auto_completion_start_length = 3
+let g:deoplete#auto_completion_start_length = 1
 " Smart caseを有効化（大文字が入力されるまで，大文字小文字の区別を考慮しない）
 let g:deoplete#enable_smart_case = 1
 " camle caseを有効化（大文字を区切りとしたワイルドカードのように振る舞う）
@@ -17,7 +17,7 @@ let g:deoplete#lock_iminsert = 1
 " ハイフンの入力による候補番号の標示
 let g:deoplete#enable_quick_match = 1
 " 提示される候補の最大数（初期値：100）
-let g:deoplete#max_list = 300
+let g:deoplete#max_list = 100
 " 補完候補提示の際に先頭を選択状態へ
 let g:deoplete#enable_auto_select = 1
 set completeopt+=noinsert
@@ -30,24 +30,26 @@ let g:eskk#enable_completion = 1
 " " 辞書(C-x-k)も自動補完対象にする
 let g:neosnippet#enable_snipmate_compatibility = 1
 " " 辞書ファイルの定義
-let g:deoplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $CACHE.'/vimshell/command-history',
-    \ 'cpp' : '~/.vim/dict/cpp.dict',
-    \ 'cs' : '~/.vim/dict/cs.dict',
-    \ }
+" let g:deoplete#sources#dictionary#dictionaries = {
+" deopleteには辞書ない?
+" let g:deoplete#keyword_patterns = {
+"     \ 'default' : '',
+"     \ 'vimshell' : $CACHE.'/vimshell/command-history',
+"     \ 'cpp' : '~/.vim/dict/cpp.dict',
+"     \ 'cs' : '~/.vim/dict/cs.dict',
+"     \ }
 " 'tokorom/swift-dict.vim'を補完対象にする
-let g:swift_dict_with_deoplete = 1
+" let g:swift_dict_with_deoplete = 1
 " " キーワードの定義
-if !exists('g:deoplete#keyword_patterns')
-    let g:deoplete#keyword_patterns = {}
-endif
+" if !exists('g:deoplete#keyword_patterns')
+"     let g:deoplete#keyword_patterns = {}
+" endif
 " let g:deoplete#keyword_patterns._ = '\h\w*'
 " jedi-vimの設定(omni補完の自動補完に必要)
 autocm FileType python setlocal omnifunc=jedi#completions pleteopt-=preview
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-" 文脈を考慮した補完(これがないとEnterで決まらない)
+" 文脈を考慮した補完(.や::の後に補完してくれる)(これがないとEnterで決まらない?)
 if !exists('g:deoplete#force_omni_input_patterns')
     let g:deoplete#force_omni_input_patterns = {}
 endif
@@ -58,6 +60,9 @@ if !exists('g:deoplete#sources#omni#input_patterns')
     let g:deoplete#sources#omni#input_patterns = {}
 endif
 let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+" use zchee/deoplete-clang
+let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
 "インクルード先のファイル名の解析パターン(ファイル名だからc++は違うか)
 " let g:neocomplete#include_exprs = {
 "   \ 'cpp' : substitute(v:fname,'::','/','g')

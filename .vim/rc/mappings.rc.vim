@@ -46,8 +46,6 @@ nnoremap <Leader>J :%!jq '.'<CR>
 nnoremap <Leader>L :e!<CR>
 " フルパス挿入
 nnoremap <Leader>p i<C-R>=expand('%:p')<CR>
-" 履歴から開く
-nnoremap <Leader><C-r> :CtrlPMixed<CR>
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -129,13 +127,16 @@ nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>f :vim %<Left><Left>
 nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap <Leader>g :Ag<Space>
-inoremap <Leader>. ->
+" includeへ移動
+nnoremap <buffer><silent> <Space>ii :execute "?".&include<CR> :noh<CR> o
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Leader>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
+nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
+nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcExplToggle<Cr>:TagbarToggle<CR>
 
 " save and close
 nnoremap <Leader>w :w<Cr>
@@ -144,7 +145,7 @@ nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 
 " help
-nnoremap <C-h> :h<Space><C-r><C-w><CR>
+" nnoremap <C-h> :h<Space><C-r><C-w><CR>
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
