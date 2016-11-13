@@ -142,6 +142,13 @@ hook_add = '''
 [[plugins]]
 repo = 'rking/ag.vim'
 
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = '''
+    let g:rooter_use_lcd = 1
+    let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
+'''
+
 
 # Swift ---------------------------
 
@@ -178,9 +185,12 @@ on_ft = 'cpp'
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
  
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_add = '''
+    let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+    let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+'''
 
 # C# ---------------------------
 

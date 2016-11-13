@@ -9,7 +9,11 @@ let g:quickrun_config._ = {
     \ 'outputter/buffer/split'  : ':rightbelow 5sp',
     \ 'outputter/buffer/close_on_empty' : 1,
     \ }
-
+" c++11使 c++
+let g:quickrun_config.cpp = {
+\   'command': 'g++',
+\   'cmdopt': '-std=c++11'
+\ }
 " texファイルをQuickRunでコンパイルする際の設定
 let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',

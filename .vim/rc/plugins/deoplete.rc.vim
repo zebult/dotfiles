@@ -23,11 +23,12 @@ let g:deoplete#enable_auto_select = 1
 set completeopt+=noinsert
 " 補完（小文字を無視して検索）
 let g:deoplete#enable_refresh_always = 1
-let g:marching_enable_deoplete = 1
+" marching.vimをauto complete
+" let g:marching_enable_deoplete = 1
 " SKK使えるように(日本語入力の補完)
 let g:eskk#enable_completion = 1
 " " 辞書(C-x-k)も自動補完対象にする
-let g:deosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
 " " 辞書ファイルの定義
 let g:deoplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
@@ -50,12 +51,21 @@ let g:jedi#auto_vim_configuration = 0
 if !exists('g:deoplete#force_omni_input_patterns')
     let g:deoplete#force_omni_input_patterns = {}
 endif
-let g:deoplete#force_omni_input_patterns.cpp =
-            \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:deoplete#force_overwrite_completefunc = 1
+let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 if !exists('g:deoplete#sources#omni#input_patterns')
     let g:deoplete#sources#omni#input_patterns = {}
 endif
 let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+"インクルード先のファイル名の解析パターン(ファイル名だからc++は違うか)
+" let g:neocomplete#include_exprs = {
+"   \ 'cpp' : substitute(v:fname,'::','/','g')
+"   \ }
+" cocos2d-x include
+" let g:deoplete#include_paths = {
+"   \ 'cpp'  : '/Applications/cocos2d-x/cocos2d-x3.6/cocos2d/cocos*',
+"   \ }
 
 " 補完候補閉じる
 inoremap <expr><C-e> deoplete#cancel_popup()

@@ -56,6 +56,11 @@ hook_post_source = '''
   call watchdogs#setup(g:quickrun_config)
 '''
 
+# clang complete(need vimproc)
+# [[plugins]]
+# repo = 'osyo-manga/vim-marching'
+# filetypes  =  ['c', 'cpp']
+
 [[plugins]]
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'
@@ -87,10 +92,10 @@ on_i = 1
 # filetypes  =  ['*']
 
 # c, cpp complement
-[[plugins]]
-repo = 'justmao945/vim-clang'
-on_i = 1
-filetypes  =  ['c', 'cpp']
+# [[plugins]]
+# repo = 'justmao945/vim-clang'
+# on_i = 1
+# filetypes  =  ['c', 'cpp']
 
 # cs complement
 # 自動でserverセットアップしてくれる(してくれない場合手動: plugin下のserverへ行き, xbuild)
@@ -119,9 +124,9 @@ repo = 'mopp/layoutplugin.vim'
 
 # Convenience Tools: ---------------------------
 
+# default key is 'gs'
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
-hook_add = 'nnoremap sw :Switch<CR>'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -158,6 +163,7 @@ repo = 'itchyny/calendar.vim'
 hook_add = '''
     let g:calendar_google_calendar = 1
     let g:calendar_google_task = 1
+    nnoremap <Leader>cl :Calendar<Cr>
 '''
 
 # file shaping(:Align =)
@@ -169,6 +175,9 @@ repo = 'vim-scripts/TaskList.vim'
 hook_add = '''
     nnoremap <Leader>T :TaskList<CR>
 '''
+
+
+# C++ ---------------------------
 
 
 # Markdown ---------------------------

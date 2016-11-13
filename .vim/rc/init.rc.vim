@@ -59,11 +59,6 @@ set tags+=.git/tags
 " include周りの設定
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
-" includeファイルのパス
-augroup cpp-path
-    autocmd!
-    autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/usr/lib/c++/v1
-augroup END
 
 " clipboard
 if has("clipboard")

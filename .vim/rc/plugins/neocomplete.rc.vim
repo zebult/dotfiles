@@ -22,6 +22,7 @@ let g:neocomplete#max_list = 50
 let g:neocomplete#enable_auto_select = 1
 " 補完（小文字を無視して検索）
 let g:neocomplete#enable_refresh_always = 1
+" marching.vimをauto complete
 let g:marching_enable_neocomplete = 1
 " SKK使えるように
 let g:eskk#enable_completion = 1

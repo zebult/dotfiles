@@ -21,9 +21,6 @@ noremap gj j
 noremap gk k
 " タグジャンプやりやすく
 nnoremap tt gD
-" ctagsジャンプを新規画面で開く
-nnoremap s<C-]> :<C-u>vs<CR><C-w>l<C-]>
-nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>
@@ -79,7 +76,12 @@ nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
-" nnoremap sw <C-w>w
+" tagsジャンプを新規タブで開く
+nnoremap sgf <C-w>gf
+" tagsジャンプを画面分割で開く
+nnoremap g<C-]> :<C-u>vs<CR><C-w>l<C-]>
+" nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
+nnoremap sw <C-w>w
 nnoremap so <C-w>o
 nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
@@ -124,10 +126,10 @@ nnoremap <Leader>T :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
-nnoremap <Leader>c :Calendar<CR>
 nnoremap <Leader>f :vim %<Left><Left>
 nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap <Leader>g :Ag<Space>
+inoremap <Leader>. ->
 nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>

@@ -51,7 +51,7 @@ case "${os}" in
         brew upgrade
         brew install caskroom/cask/brew-cask
         brew cask install xquartz
-        brew install llvm --with-clang
+        brew install llvm --with-clang #c++ auto complete
         brew install zsh
         brew install cscope
         brew install python
