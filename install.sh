@@ -203,13 +203,16 @@ else
     ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
 fi
 
-cd $HOME
-
 # cocos2d-x
 mkdir -p /Applications/Cocos/Cocos2d-x
 wget http://www.cocos2d-x.org/filedown/cocos2d-x-3.6.zip -P /Applications/Cocos/Cocos2d-x
+cd /Applications/Cocos/Cocos2d-x
+unzip -o /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6.zip
+rm -rf cocos2d-x-3.6.zip
 /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/setup.py
 echo "you call don't python3->pyenv global 2.7.9 3.4.3"
+
+cd $HOME
 
 echo finish🍺
 
