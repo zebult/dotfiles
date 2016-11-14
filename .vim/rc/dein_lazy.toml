@@ -19,6 +19,9 @@ hook_add = '''
 repo = 'Shougo/neoinclude.vim'
 on_i = 1
 filetypes = ['c', 'cpp']
+# hook_add = '''
+#     let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos/'
+# '''
 
 
 # Base Tools: ---------------------------
@@ -51,11 +54,6 @@ hook_add = '''
 hook_post_source = '''
   call watchdogs#setup(g:quickrun_config)
 '''
-
-# clang complete(need vimproc)
-# [[plugins]]
-# repo = 'osyo-manga/vim-marching'
-# filetypes  =  ['c', 'cpp']
 
 [[plugins]]
 repo = 'cohama/vim-hier'
@@ -232,3 +230,16 @@ repo = 'fatih/vim-go'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
+
+# Game ---------------------------
+[[plugins]]
+repo = 'rbtnn/game_engine.vim'
+
+[[plugins]]
+repo = 'rbtnn/puyo.vim'
+
+[[plugins]]
+repo = 'rbtnn/mario.vim'
+
+[[plugins]]
+repo = 'rbtnn/reversi.vim'

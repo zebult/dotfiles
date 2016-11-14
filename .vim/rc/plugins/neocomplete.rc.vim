@@ -24,6 +24,11 @@ let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_refresh_always = 1
 " marching.vimをauto complete
 let g:marching_enable_neocomplete = 1
+"インクルードパスの指定
+let g:neocomplete#include_paths = {
+  \ 'cpp'  : '.,/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos',
+  \ 'c'    : '.,/usr/include',
+  \ }
 " SKK使えるように
 let g:eskk#enable_completion = 1
 " 辞書(C-x-k)も自動補完対象にする

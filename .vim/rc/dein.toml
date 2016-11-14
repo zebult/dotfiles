@@ -205,6 +205,23 @@ on_ft = 'cpp'
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 
+# clang complete(need vimproc)
+[[plugins]]
+repo = 'osyo-manga/vim-marching'
+filetypes  =  ['c', 'cpp']
+hook_add = '''
+    " clang コマンドの設定
+    let g:marching_clang_command = "/usr/bin/clang"
+    " インクルードディレクトリのパスを設定
+    let g:marching_include_paths = [
+    \   "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos",
+    \   "/usr/local/Cellar/boost"
+    \]" neocomplete.vim と併用して使用する場合は以下の設定を行う
+    let g:marching_enable_neocomplete = 1
+    let g:marching_enable_deoplete = 1
+'''
+
+
 # C# ---------------------------
 
 # syntax
@@ -241,5 +258,3 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
-
-

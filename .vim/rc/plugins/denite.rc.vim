@@ -18,4 +18,4 @@ nnoremap <C-g> :Denite grep<Cr>
 nnoremap <BS> :Denite file_mru<Cr>
 nnoremap <C-y> :Denite neoyank<Cr>
 " カーソル位置の単語をgrep検索
-nnoremap <silent> <Leader>* :<C-u>Denite grep:. -buffer-name=search-buffer<Cr><C-r><C-w><Cr>
+nnoremap <silent> <Leader>* :<C-u>Denite grep<Cr><C-r><C-w><Cr>

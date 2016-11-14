@@ -24,7 +24,7 @@ set completeopt+=noinsert
 " 補完（小文字を無視して検索）
 let g:deoplete#enable_refresh_always = 1
 " marching.vimをauto complete
-" let g:marching_enable_deoplete = 1
+let g:marching_enable_deoplete = 1
 " SKK使えるように(日本語入力の補完)
 let g:eskk#enable_completion = 1
 " " 辞書(C-x-k)も自動補完対象にする
@@ -63,15 +63,6 @@ let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
 " use zchee/deoplete-clang
 let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
-"インクルード先のファイル名の解析パターン(ファイル名だからc++は違うか)
-" let g:neocomplete#include_exprs = {
-"   \ 'cpp' : substitute(v:fname,'::','/','g')
-"   \ }
-" cocos2d-x include
-" let g:deoplete#include_paths = {
-"   \ 'cpp'  : '/Applications/cocos2d-x/cocos2d-x3.6/cocos2d/cocos*',
-"   \ }
-
 " 補完候補閉じる
 inoremap <expr><C-e> deoplete#cancel_popup()
 " 補完候補確定
