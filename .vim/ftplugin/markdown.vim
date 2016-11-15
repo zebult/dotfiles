@@ -1,3 +1,4 @@
+set expandtab
 " タブをスペース2にする
 set ts=2 sw=2 sts=0
 " todoリストを簡単に入力する

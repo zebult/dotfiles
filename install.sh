@@ -211,6 +211,7 @@ unzip -o /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6.zip
 rm -rf cocos2d-x-3.6.zip
 /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/setup.py
 echo "you call don't python3->pyenv global 2.7.9 3.4.3"
+# ln -snfv /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos /usr/local/include/
 
 cd $HOME
 

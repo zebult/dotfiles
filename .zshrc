@@ -164,6 +164,23 @@ functions gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
 }
 
+functions guu()
+{
+    if [ -n "$1" ]; then
+        echo "update"$1
+        git checkout $1
+        git fetch upstream
+        git pull upstream $1
+        git submodule update
+    else
+        echo "update develop"
+        git checkout develop
+        git fetch upstream
+        git pull upstream develop
+        git submodule update
+    fi
+}
+
 function peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
   BUFFER="vim $SELECTED_FILE"

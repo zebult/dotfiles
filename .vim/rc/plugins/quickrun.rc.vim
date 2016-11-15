@@ -9,7 +9,7 @@ let g:quickrun_config._ = {
     \ 'outputter/buffer/split'  : ':rightbelow 5sp',
     \ 'outputter/buffer/close_on_empty' : 1,
     \ }
-" c++11使 c++
+"use c++11
 let g:quickrun_config.cpp = {
 \   'command': 'g++',
 \   'cmdopt': '-std=c++11'

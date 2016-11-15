@@ -4,25 +4,10 @@ let mapleader = "\<Space>"
 "-------------------------
 " set runtimepath+=~/.vim/
 " runtime! userautoload/*.vim
-source ~/.vim/userautoload/neobundle.vim
 source ~/.vim/userautoload/view.vim
 source ~/.vim/userautoload/cpp.vim
 source ~/.vim/userautoload/swift.vim
-source ~/.vim/userautoload/go.vim
-source ~/.vim/userautoload/md.vim
-source ~/.vim/userautoload/cs.vim
-"-------------------------
-" テンプレート用意
-autocmd BufNewFile *.html 0r $HOME/.vim/template/template.html
-autocmd BufNewFile *.cs 0r $HOME/.vim/template/template.cs
-autocmd BufNewFile *.php 0r $HOME/.vim/template/template.php
-autocmd BufNewFile *.sh 0r $HOME/.vim/template/template.sh
-autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/template.cpp
-autocmd BufNewFile *.c 0r $HOME/.vim/template/template.c
-"-------------------------
 "
-au BufRead,BufNewFile *.md set filetype=markdown
 " 入力完了を待たずに検索
 set incsearch
 " コマンドラインモードでtab保管
@@ -35,10 +20,8 @@ set statusline=%F%r%h%=
 set ignorecase
 " 大文字混在時は大文字小文字区別する
 set smartcase
-" 検索最後尾で先頭に戻る
-" set wrapscan
 " カーソルを行頭、行末で止まらないようにする
-" set whichwrap=b,s,h,l,<,>,[,]
+set whichwrap=h,l
 " buffer切り替え時ファイルを保存しなくてもよい
 set hidden
 " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
@@ -48,10 +31,6 @@ set infercase
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 " macでクリップボード使用
-" set clipboard=unnamed,autoselect
-" set clipboard+=unnamed
-" set clipboard=unnamed
-" set clipboard+=unnamedplus,unnamed
 set clipboard=unnamed
 " ~(バックアップ)ファイル作成しない
 set nobackup
@@ -95,19 +74,6 @@ if has('multi_byte_ime') || has('xim')
     highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
     highlight CursorIM guifg=NONE guibg=#ecbcbc
 endif
-"検索語が画面の真ん中に来るようにする
-" nmap n nzz
-"nmap N Nzz
-" nmap * *zz
-" nmap # #zz
-" nmap g* g*zz
-" nmap g# g#zz
-" Visual line やりやすく
-" nmap vv V
-" nmap vb viw
-" v押す度拡大
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 " 矩形をブロックにする
 set virtualedit=block
 " ビープ音ならさない
@@ -187,21 +153,6 @@ nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-i> :tp<CR>
 
 nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
-
-""""""""""""""""""""""""""""""
-"  git
-""""""""""""""""""""""""""""""
-" nnoremap gst :Gstatus<Cr>
-" nnoremap gad :Gwrite<Cr>
-" nnoremap gcm :Gcommit<Cr>
-" nnoremap gco :Gread<Cr>
-" nnoremap gbl :Gblame<Cr>
-" nnoremap glg :Glog<Cr>
-" nnoremap gdf :Gdiff<Cr>
-" nnoremap gfc :Gfetch<Cr>
-" nnoremap gpu :Gpush<Cr>
-" nnoremap gr :Ggrep
-""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 "  ex mode

@@ -195,7 +195,10 @@ on_ft = 'swift'
 # syntax
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
-on_ft = 'cpp'
+
+# cocos2d-x color
+[[plugins]]
+repo = 'Xuyuanp/vim-cc2dx'
 
 # color
 [[plugins]]

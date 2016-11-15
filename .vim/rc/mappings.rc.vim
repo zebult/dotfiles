@@ -28,7 +28,7 @@ inoremap g<Tab> <Left><Left><tab><Right><Right>
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
 " diffすぐ出す
-" nnoremap diff :vertical diffsplit
+ca diff vertical diffsplit
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv
