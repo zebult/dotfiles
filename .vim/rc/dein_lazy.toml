@@ -20,7 +20,7 @@ repo = 'Shougo/neoinclude.vim'
 on_i = 1
 filetypes = ['c', 'cpp']
 hook_add = '''
-    let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos/**'
+    let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
     let g:neoinclude#_paths = '/usr/local/Cellar/boost'
 '''
 
