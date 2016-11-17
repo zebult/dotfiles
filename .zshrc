@@ -189,6 +189,13 @@ function peco-tree-vim(){
 zle -N peco-tree-vim
 bindkey '^j' peco-tree-vim
 
+function quickVimOpen() {
+    BUFFER="vim"
+    zle accept-line
+}
+zle -N quickVimOpen
+bindkey '^h' quickVimOpen
+
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 

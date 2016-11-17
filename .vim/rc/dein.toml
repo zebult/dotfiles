@@ -144,6 +144,10 @@ hook_add = '''
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 '''
 
+# [[plugins]]
+# repo = 'haya14busa/easy-motion'
+# hook_source = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''

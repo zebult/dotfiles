@@ -1,7 +1,9 @@
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-w)
-map <Leader>h <Plug>(easymotion-b)
+map gl <Plug>(easymotion-w)
+map gh <Plug>(easymotion-b)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>l <Plug>(easymotion-w)
+" map <Leader>h <Plug>(easymotion-b)
 let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvb'
 " 以下機能しない処理
 " let g:EasyMotion_smartcase = 1

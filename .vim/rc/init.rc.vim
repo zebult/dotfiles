@@ -94,6 +94,9 @@ endfunction
 " abbreviate
 abbreviate TT // TODO:
 
+" original function
+source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
+
 " 保存時Git差分ハイライト
 autocmd BufWritePre * :GitGutterLineHighlightsEnable
 
