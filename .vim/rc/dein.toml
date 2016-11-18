@@ -11,7 +11,7 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-if = "has('python3')"
+if = "has('nvim')"
 hook_source = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]

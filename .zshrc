@@ -30,13 +30,16 @@ export PATH=$COCOS_X_ROOT:$PATH
 ## Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-# Add environment variable NDK_ROOT for cocos2d-x
-export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk
+## Add environment variable NDK_ROOT for cocos2d-x
+export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r13 #TODO make sln
+# export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r9d/build #最新すぎて動かないため手動で持ってくる
+# export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10b/build #最新すぎて動かないため手動で持ってくる
+export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10c/build #最新すぎて動かないため手動で持ってくる
 export PATH=$ANDROID_NDK_ROOT:$PATH
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk
+## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.4.1_1 # TODO: make sln
 export PATH=$ANDROID_SDK_ROOT:$PATH
-# ant
+## ant
 export ANT_ROOT=/usr/local/Cellar/ant
 export PATH=$ANT_ROOT:$PATH
 
@@ -88,9 +91,10 @@ alias tokyo='curl wttr.in/Tokyo'
 
 # set -o vi
 
-function vag() {
-    vim <(ag -u $1)
+function V() {
+    vim <($1)
 }
+
 functions zipr() {
     zip -r $1 $1;
 }
@@ -167,7 +171,7 @@ functions gbo()  {
 functions guu()
 {
     if [ -n "$1" ]; then
-        echo "update"$1
+        echo "update "$1
         git checkout $1
         git fetch upstream
         git pull upstream $1
@@ -198,11 +202,3 @@ bindkey '^h' quickVimOpen
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH

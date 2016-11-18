@@ -6,7 +6,7 @@
 [diff]
 	tool = vimdiff
 [diff "image"]
-	command = ~/.bin/sh/git-imgdiff
+	# command = ~/.bin/sh/git-imgdiff
 [merge]
 	tool = vimdiff
 [mergetool]
