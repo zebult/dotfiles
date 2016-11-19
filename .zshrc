@@ -34,13 +34,13 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r13 #TODO make sln
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r9d/build #最新すぎて動かないため手動で持ってくる
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10b/build #最新すぎて動かないため手動で持ってくる
-export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10c/build #最新すぎて動かないため手動で持ってくる
+# export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10c/build #最新すぎて動かないため手動で持ってくる
 export PATH=$ANDROID_NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.4.1_1 # TODO: make sln
 export PATH=$ANDROID_SDK_ROOT:$PATH
 ## ant
-export ANT_ROOT=/usr/local/Cellar/ant
+export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
 
 export GEM_HOME=$HOME/.gem
