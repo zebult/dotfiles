@@ -39,7 +39,7 @@ export PATH=$NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/$SDK_VERSION
 export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH=${PATH}:/usr/local/Cellar/android-sdk/$SDK_VERSION/platform-tools:$HOME/Library/Android/sdk/tools
 ## ant
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
