@@ -32,11 +32,11 @@ export PATH=$COCOS_X_ROOT:$PATH
 export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 ## Add environment variable NDK_ROOT for cocos2d-x
-export ANDROID_NDK_ROOT=/usr/local/Cellar/android-ndk/r13 #TODO make sln
+export NDK_ROOT=/usr/local/Cellar/android-ndk/r13 #TODO make sln
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r9d/build #最新すぎて動かないため手動で持ってくる
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10b/build #最新すぎて動かないため手動で持ってくる
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10c/build #最新すぎて動かないため手動で持ってくる
-export PATH=$ANDROID_NDK_ROOT:$PATH
+export PATH=$NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.4.1_1 # TODO: make sln
 export PATH=$ANDROID_SDK_ROOT:$PATH
@@ -86,7 +86,6 @@ alias gvim='open /Applications/MacVim.app'
 alias ag='ag -u'
 alias findn='find . -name'
 alias F='vim .'
-alias pwdcp='pwd | pbcopy'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 
@@ -201,5 +200,22 @@ function quickVimOpen() {
 zle -N quickVimOpen
 bindkey '^h' quickVimOpen
 
+function pwdcp() {
+    pwd | pbcopy
+    echo `pwd`
+    zle accept-line
+}
+zle -N pwdcp
+bindkey '^p' pwdcp
+
+function currentopen() {
+    echo "open "`pwd`
+    open .
+    zle accept-line
+}
+zle -N currentopen
+bindkey '^o' currentopen
+
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
