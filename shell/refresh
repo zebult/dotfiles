@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Shift起動のセーフブートでざっくりキャッシュクリア
+# Chrome > 環境設定 > 詳細設定を表示... > 閲覧履歴データの消去(すべて)
+
+sudo rm -rf ~/Library/Developer/Xcode/DerivedData/
+sudo rm -rf ~/Library/Caches
