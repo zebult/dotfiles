@@ -22,7 +22,6 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
 COCOS_VERSION="3.11.1"
-# COCOS_VERSION="3.6"
 NDK_VERSION="android-ndk-r10e"
 SDK_VERSION="22"
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
@@ -44,6 +43,7 @@ export PATH=$NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/$SDK_VERSION
 export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=${PATH}:/usr/local/Cellar/android-sdk/$SDK_VERSION/platform-tools:$HOME/Library/Android/sdk/tools
 ## ant
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
