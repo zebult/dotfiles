@@ -22,9 +22,13 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
 COCOS_VERSION="3.11.1"
+# COCOS_VERSION="3.6"
+NDK_VERSION="android-ndk-r10e"
+SDK_VERSION="22"
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
 ## Add environment variable COCOS_X_ROOT for cocos2d-x
 export COCOS_X_ROOT=/Applications/Cocos/Cocos2d-x
 export PATH=$COCOS_X_ROOT:$PATH
@@ -32,13 +36,13 @@ export PATH=$COCOS_X_ROOT:$PATH
 export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 ## Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/usr/local/Cellar/android-ndk/r13 #TODO make sln
+export NDK_ROOT=/usr/local/Cellar/android-ndk/$NDK_VERSION
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r9d/build #最新すぎて動かないため手動で持ってくる
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10b/build #最新すぎて動かないため手動で持ってくる
 # export ANDROID_NDK_ROOT=/Applications/Cocos/Cocos2d-x/android-ndk-r10c/build #最新すぎて動かないため手動で持ってくる
 export PATH=$NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/24.4.1_1 # TODO: make sln
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/$SDK_VERSION
 export PATH=$ANDROID_SDK_ROOT:$PATH
 ## ant
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
