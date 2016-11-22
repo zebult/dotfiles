@@ -185,6 +185,11 @@ functions guu()
     fi
 }
 
+dush()
+{
+    du -sh * | grep G
+}
+
 function peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
   BUFFER="vim $SELECTED_FILE"

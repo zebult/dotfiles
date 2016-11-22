@@ -3,5 +3,14 @@
 # Shift起動のセーフブートでざっくりキャッシュクリア
 # Chrome > 環境設定 > 詳細設定を表示... > 閲覧履歴データの消去(すべて)
 
-sudo rm -rf ~/Library/Developer/Xcode/DerivedData/
-sudo rm -rf ~/Library/Caches
+sudo rm -rf ~/Library/Developer/Xcode/DerivedData/*
+sudo rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/*
+# Cache全般
+sudo rm -rf ~/Library/Caches/*
+# Archiveする度溜まる
+sudo rm -rf ~/Library/Developer/Xcode/Archives/*
+# iOSデバイスの機種, OS毎に作成される
+xcrun simctl erase ~/Library/Developer/CoreSimulator/Devices/*
+
+sudo rm -rf ~/.gradle
+gem cleanup
