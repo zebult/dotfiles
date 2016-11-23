@@ -29,15 +29,15 @@ let g:marching_enable_deoplete = 1
 let g:eskk#enable_completion = 1
 " " 辞書(C-x-k)も自動補完対象にする
 let g:neosnippet#enable_snipmate_compatibility = 1
-" " 辞書ファイルの定義
-" let g:deoplete#sources#dictionary#dictionaries = {
-" deopleteには辞書ない?
+" " 辞書ファイルの定義 deopleteには辞書ない?
 " let g:deoplete#keyword_patterns = {
-"     \ 'default' : '',
-"     \ 'vimshell' : $CACHE.'/vimshell/command-history',
-"     \ 'cpp' : '~/.vim/dict/cpp.dict',
-"     \ 'cs' : '~/.vim/dict/cs.dict',
-"     \ }
+let g:deoplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $CACHE.'/vimshell/command-history',
+    \ 'cpp' : '~/.vim/dict/cpp.dict',
+    \ 'cs' : '~/.vim/dict/cs.dict',
+    \ 'html' : '~/.vim/dict/html.dict',
+    \ }
 " 'tokorom/swift-dict.vim'を補完対象にする
 " let g:swift_dict_with_deoplete = 1
 " " キーワードの定義
@@ -53,16 +53,22 @@ let g:jedi#auto_vim_configuration = 0
 if !exists('g:deoplete#force_omni_input_patterns')
     let g:deoplete#force_omni_input_patterns = {}
 endif
-let g:deoplete#force_overwrite_completefunc = 1
-let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 if !exists('g:deoplete#sources#omni#input_patterns')
     let g:deoplete#sources#omni#input_patterns = {}
 endif
+let g:deoplete#force_overwrite_completefunc = 1
+let g:deoplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:deoplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 let g:deoplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+let g:deoplete#sources#omni#input_patterns.java = '\h\w*\.\w*'
+let g:deoplete#sources#omni#input_patterns.m = '\h\w*\.\w*'
 " use zchee/deoplete-clang
 let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+
+" FileType毎のOmni補完を設定
+autocmd FileType java       setlocal omnifunc=javacomplete#Complete
+
 " 補完候補閉じる
 inoremap <expr><C-e> deoplete#cancel_popup()
 " 補完候補確定

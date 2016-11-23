@@ -124,8 +124,8 @@ nnoremap <Leader>T :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
-nnoremap <Leader>f :vim %<Left><Left>
-nnoremap <Leader>F :vim <C-r><C-w> %<CR>
+" nnoremap <Leader>f :vim %<Left><Left>
+" nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap <Leader>g :Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>ii :execute "?".&include<CR> :noh<CR> o
@@ -134,6 +134,7 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+nnoremap <Leader>F :VimFiler -split -simple -winwidth=35 -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
 nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
 nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcExplToggle<Cr>:TagbarToggle<CR>
@@ -141,6 +142,7 @@ nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcEx
 " save and close
 nnoremap <Leader>w :w<Cr>
 nnoremap <Leader>q :q<Cr>
+nnoremap <Leader>Q :qa<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 

@@ -8,4 +8,5 @@ augroup template
   autocmd BufNewFile *.py 0r $HOME/.vim/template/skeleton.py
   autocmd BufNewFile *.sh 0r $HOME/.vim/template/skeleton.sh
   autocmd BufNewFile *.swift 0r $HOME/.vim/template/skeleton.swift
+  autocmd BufNewFile *.java 0r $HOME/.vim/template/skeleton.java
 augroup END

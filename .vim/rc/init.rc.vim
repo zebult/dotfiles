@@ -1,5 +1,6 @@
 " Initialize:
 
+let $DOTVIM = expand('~/.vim')
 let mapleader = "\<Space>"
 rv! " 履歴共有
 set incsearch

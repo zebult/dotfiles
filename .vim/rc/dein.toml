@@ -80,7 +80,27 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'kana/vim-textobj-user'
 
+# Need API
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
 # Convenience Tools: ---------------------------
+
+# [[plugins]]
+# repo = 'mattn/vim-metarw-redmine'
+# hook_add = '''
+#     let g:metarw_redmine_server = ''
+#     let g:metarw_redmine_apikey = ''
+# '''
+
+# [[plugins]]
+# repo = 'toritori0318/vim-redmine'
+# hook_add = '''
+#     let g:redmine_auth_site = ''
+#     let g:redmine_auth_user = ''
+#     let g:redmine_auth_pass = ''
+#     let g:redmine_auth_key  = ''
+# '''
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
@@ -121,8 +141,13 @@ hook_add = '''
     aug END
 '''
 
+# i: ex(cii)
 [[plugins]]
 repo = 'kana/vim-textobj-indent'
+
+# DEFAULT KEY MAPPINGS, ,w ex(ci,w)
+[[plugins]]
+repo = 'h1mesuke/textobj-wiw'
 
 [[plugins]]
 repo = 'tyru/operator-camelize.vim'
@@ -215,7 +240,7 @@ repo = 'zchee/deoplete-clang'
 # clang complete(need vimproc)
 [[plugins]]
 repo = 'osyo-manga/vim-marching'
-filetypes  =  ['c', 'cpp']
+filetypes  =  ['c', 'cpp', 'm', 'mm']
 hook_add = '''
     " clang コマンドの設定
     let g:marching_clang_command = "/usr/bin/clang"

@@ -87,7 +87,6 @@ alias gvim='open /Applications/MacVim.app'
 
 alias ag='ag -u'
 alias findn='find . -name'
-alias F='vim .'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 
@@ -214,6 +213,21 @@ function pwdcp() {
 }
 zle -N pwdcp
 bindkey '^p' pwdcp
+
+function vimfiler() {
+    BUFFER="vim ."
+    zle accept-line
+}
+zle -N vimfiler
+bindkey '^f' vimfiler
+
+function sourcezshrc() {
+    echo 'source ~/.zshrc'
+    source ~/.zshrc
+    zle accept-line
+}
+zle -N sourcezshrc
+bindkey '^t' sourcezshrc
 
 function currentopen() {
     echo "open "`pwd`

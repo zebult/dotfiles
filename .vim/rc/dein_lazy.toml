@@ -18,7 +18,7 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'
 on_i = 1
-filetypes = ['c', 'cpp']
+filetypes = ['c', 'cpp', 'm', 'mm']
 hook_add = '''
     let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
     let g:neoinclude#_paths = '/usr/local/Cellar/boost'
@@ -116,8 +116,17 @@ hook_add = '''
 [[plugins]]
 repo = 'mopp/layoutplugin.vim'
 
+# Need redmine
+# [[plugins]]
+# repo = 'kana/vim-metarw'
 
 # Convenience Tools: ---------------------------
+
+# [[plugins]]
+# repo = 'simeji/vim-chatworker.git'
+# hook_add = '''
+#     let g:chatwork_token = ''
+# '''
 
 # default key is 'gs'
 [[plugins]]
@@ -191,7 +200,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'zebult/xcode.vim'
-filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
+filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = '''
     let g:application_name = "Xcode7.2.1"
     nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
@@ -231,6 +240,12 @@ repo = 'fatih/vim-go'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
+# Java ---------------------------
+
+# [[plugins]]
+# repo     = 'ervandew/eclim'
+# mac      = 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.0/eclipse -Dvim.files='
+# hook_add = .escape(expand('~/.bundle/eclim'), '')
 
 # Game ---------------------------
 [[plugins]]

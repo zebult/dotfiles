@@ -15,7 +15,6 @@ nnoremap <buffer><silent> <Space>ii :execute "?".&include<CR> :noh<CR> o
 syntax match boost_pp /BOOST_PP_[A-z0-9_]*/
 highlight link boost_pp cppStatement
 
-set dictionary=~/.vim/dict/cpp.dict
 " 以下cocos pluginにする
 " cppでディレクリ内にcocos2dがあったら
 " setlocal path+=~/cocos2d/cocos/cocos2d.h
