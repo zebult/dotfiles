@@ -31,13 +31,13 @@ let g:eskk#enable_completion = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 " " 辞書ファイルの定義 deopleteには辞書ない?
 " let g:deoplete#keyword_patterns = {
-let g:deoplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $CACHE.'/vimshell/command-history',
-    \ 'cpp' : '~/.vim/dict/cpp.dict',
-    \ 'cs' : '~/.vim/dict/cs.dict',
-    \ 'html' : '~/.vim/dict/html.dict',
-    \ }
+" let g:deoplete#sources#dictionary#dictionaries = {
+"     \ 'default' : '',
+"     \ 'vimshell' : $CACHE.'/vimshell/command-history',
+"     \ 'cpp' : '~/.vim/dict/cpp.dict',
+"     \ 'cs' : '~/.vim/dict/cs.dict',
+"     \ 'html' : '~/.vim/dict/html.dict',
+"     \ }
 " 'tokorom/swift-dict.vim'を補完対象にする
 " let g:swift_dict_with_deoplete = 1
 " " キーワードの定義
