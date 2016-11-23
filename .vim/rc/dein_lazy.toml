@@ -240,13 +240,6 @@ repo = 'fatih/vim-go'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
-# Java ---------------------------
-
-# [[plugins]]
-# repo     = 'ervandew/eclim'
-# mac      = 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.0/eclipse -Dvim.files='
-# hook_add = .escape(expand('~/.bundle/eclim'), '')
-
 # Game ---------------------------
 [[plugins]]
 repo = 'rbtnn/game_engine.vim'

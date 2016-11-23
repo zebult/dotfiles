@@ -135,7 +135,8 @@ case "${os}" in
         brew cask install xtrafinder
         brew cask install java
         # Android
-        brew cask install eclipse-ide
+        # brew cask install eclipse-ide
+        brew cask install eclipse-java
         brew install ant
         brew install android-ndk
         brew install android-sdk

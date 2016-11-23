@@ -253,6 +253,14 @@ hook_add = '''
     let g:marching_enable_deoplete = 1
 '''
 
+# Java ---------------------------
+
+[[plugins]]
+repo = 'ervandew/eclim'
+filetypes  =  ['java']
+mac = '''
+    ant -Declipse.home=/Applications/Eclipse.app/Contents/MacOS/eclipse -Dvim.files=.escape(expand('~/.bundle/eclim'), '')
+'''
 
 # C# ---------------------------
 
