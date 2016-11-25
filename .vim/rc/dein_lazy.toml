@@ -122,6 +122,12 @@ repo = 'mopp/layoutplugin.vim'
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'yuratomo/w3m.vim'
+hook_add = '''
+    let g:w3m#external_browser = 'google-chrome'
+'''
+
 # [[plugins]]
 # repo = 'simeji/vim-chatworker.git'
 # hook_add = '''

@@ -13,8 +13,6 @@ export PATH=$PATH:$HOME/.bin/sh
 export PATH="/usr/local/bin:${PATH}"
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
-# eclipse path
-export PATH=$PATH:/Applications/Eclipse.app/Contents/MacOS
 # go path(go get glide)
 export GOPATH=$HOME/.go:~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
@@ -24,7 +22,6 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
 COCOS_VERSION="3.11.1"
-# COCOS_VERSION="3.6"
 NDK_VERSION="android-ndk-r10e"
 SDK_VERSION="22"
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x

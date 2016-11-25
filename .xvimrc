@@ -1,13 +1,5 @@
 let mapleader = "\<Space>"
 
-" 分割したファイルの読み込み(view)
-"-------------------------
-" set runtimepath+=~/.vim/
-" runtime! userautoload/*.vim
-source ~/.vim/userautoload/view.vim
-source ~/.vim/userautoload/cpp.vim
-source ~/.vim/userautoload/swift.vim
-"
 " 入力完了を待たずに検索
 set incsearch
 " コマンドラインモードでtab保管
@@ -38,8 +30,6 @@ set noswapfile
 set nowritebackup
 " セッションを超えたバックアップファイル作成しない(.un~)
 set noundofile
-" ファイル名クリップボードにコピー
-nnoremap <Space>F i<C-r>%<ESC>vbbbyu
 " 挿入モードで移動できない問題解決
 imap <ESC>OA <Up>
 imap <ESC>OB <Down>
@@ -99,11 +89,6 @@ nnoremap si :Switch<CR>
 " 自動補完on/off
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
-" カレンダー
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-" diffすぐ出す
-nnoremap diff :vertical diffsplit f
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv
@@ -111,14 +96,6 @@ vnoremap < <gv
 nnoremap g0 ggVG
 " 全インデント揃える
 nnoremap gi miggVG='izz
-" 選択範囲文字数カウント
-vnoremap gwc :s/./&/gn<CR>
-" 文字出現数カウント
-nnoremap <Space>C :%s /<C-r><C-w>//gn<CR>
-" json整形
-nnoremap g<Space>jq :%!jq '.'<CR>
-" ファイル更新
-nnoremap <Space>L :e!<CR>
 " Screen split key mappings
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -151,8 +128,6 @@ nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-i> :tp<CR>
-
-nnoremap g<Space>wc :%s /<C-r><C-w>//gn<CR>
 
 """"""""""""""""""""""""""""""
 "  ex mode

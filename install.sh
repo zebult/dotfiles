@@ -78,6 +78,7 @@ case "${os}" in
         brew install tig
         brew install wget
         brew install tree
+        brew install w3m
         brew install ag
         brew install global # gtags
         brew install sourcekitten
