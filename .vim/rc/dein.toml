@@ -255,12 +255,9 @@ hook_add = '''
 
 # Java ---------------------------
 
-[[plugins]]
-repo = 'ervandew/eclim'
-filetypes  =  ['java']
-# mac = '''
-#     ant -Declipse.home=/Applications/Eclipse.app/Contents/MacOS/eclipse -Dvim.files=.escape(expand('~/.bundle/eclim'), '')
-# '''
+# [[plugins]]
+# repo = 'ervandew/eclim'
+# filetypes  =  ['java']
 
 # C# ---------------------------
 
