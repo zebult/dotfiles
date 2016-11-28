@@ -20,7 +20,7 @@ colorscheme tomorrow-night
 set t_Co=256
 set list
 if !has('gui_running')
-    set listchars=tab:\ \ ,eol:¶,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».
+    set listchars=tab:\ \ ,eol:$,extends:»,precedes:« " 可視化する文字の設定．お好みで tab:».¶
 endif
 set guifont=Ricty-Regular-for-Powerline:h16
 syntax on
