@@ -147,19 +147,18 @@ case "${os}" in
         mas install 439277582 # iCleanMemory
         mas install 409183694 # Keynote
         mas install 408981434 # iMovie
-        mas install 430173763 # Degrees
-        mas install 406056744 # Evernote
+        # mas install 406056744 # Evernote
         mas install 425955336 # Skitch
-        mas install 472226235 # LanScan
+        # mas install 472226235 # LanScan
         mas install 411246225 # Caffeine
         mas install 803453959 # Slack
         mas install 585829637 # Todoist
-        mas install 409201541 # Pages
+        # mas install 409201541 # Pages
         mas install 539883307 # LINE
-        mas install 682658836 # GarageBand
+        # mas install 682658836 # GarageBand
         mas install 896624060 # Kobito
         mas install 585829637 # Todoist
-        mas install 409203825 # Numbers
+        # mas install 409203825 # Numbers
         ;;
 esac
 
