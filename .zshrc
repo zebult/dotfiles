@@ -155,6 +155,31 @@ functions gpl() {
     git pull origin `git rev-parse --abbrev-ref HEAD`
 }
 
+# git rebase origin
+functions gro() {
+    # gst
+    branch=`git rev-parse --abbrev-ref HEAD`
+    echo $branch
+    echo 'Clean "temporary" branch? y/n'
+    read answer
+    if [ $answer = "n" ]; then
+        echo 'see you🍣'
+    fi
+        if [ $answer = "y" ]; then
+        git branch -D temporary
+        git checkout -b temporary
+        git checkout $branch
+        git reset --hard @~
+        git pull origin $branch
+        git checkout temporary
+        git rebase $branch
+        git checkout $branch
+        git merge temporary
+        gst
+        echo 'success year🍣'
+    fi
+}
+
 functions gamd() {
     gst
     checkRecentLog
