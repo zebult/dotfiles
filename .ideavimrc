@@ -1,0 +1,241 @@
+let mapleader = "\<Space>"
+
+" 入力完了を待たずに検索
+set incsearch
+" コマンドラインモードでtab保管
+set wildmenu wildmode=list:full
+
+nnoremap <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>
+set laststatus=2
+set statusline=%F%r%h%=
+" 検索時大文字小文字を区別しない
+set ignorecase
+" 大文字混在時は大文字小文字区別する
+set smartcase
+" カーソルを行頭、行末で止まらないようにする
+set whichwrap=h,l
+" buffer切り替え時ファイルを保存しなくてもよい
+set hidden
+" '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
+set shiftround
+" 補完時に大文字小文字を区別しない
+set infercase
+" 対応括弧に'<'と'>'のペアを追加
+set matchpairs& matchpairs+=<:>
+" macでクリップボード使用
+set clipboard=unnamed
+" ~(バックアップ)ファイル作成しない
+set nobackup
+set noswapfile
+set nowritebackup
+" セッションを超えたバックアップファイル作成しない(.un~)
+set noundofile
+" 挿入モードで移動できない問題解決
+imap <ESC>OA <Up>
+imap <ESC>OB <Down>
+imap <ESC>OC <Right>
+imap <ESC>OD <Left>
+" 挿入モードで文字消せない問題解決
+set backspace=indent,eol,start
+" デフォルトを相対行数にする
+set relativenumber
+set number
+" 相対行数トグル
+" nnoremap N :<C-u>setlocal relativenumber!<CR>
+" オリジナルヤンク
+noremap yu 0wv$hy
+" 単語をヤンクレジスタで置換
+nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+" ペースト直後に選択
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+" Insertモードのときカーソルの形状を変更
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+inoremap <Esc> <Esc>
+inoremap jj <ESC><ESC><ESC>
+"noremap j gj
+"noremap k gk
+noremap gj i<Down><Esc><Right>
+noremap gk i<Up><Esc><Right>
+" Insertモードで日本語の時色変更
+if has('multi_byte_ime') || has('xim')
+    highlight Cursor guifg=#000d18 guibg=#8faf9f gui=bold
+    highlight CursorIM guifg=NONE guibg=#ecbcbc
+endif
+" 矩形をブロックにする
+set virtualedit=block
+" ビープ音ならさない
+set vb t_vb=
+" 折りたたみしやすく
+noremap \ zA
+" 履歴数増量
+set history=200
+" 保存時行末の余分なスペースを取り除く
+" autocmd BufWritePre * :%s/\s\+$//ge
+" 貼り付けたらテキストの末尾へ
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+" タグジャンプやりやすく
+nnoremap tt gD
+" メモ取りやすくする
+inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
+inoremap g<Tab> <Left><Left><tab><Right><Right>
+inoremap <Tab> <tab>
+" トグル(プラギン使用) < >ペア追加したい
+nnoremap si :Switch<CR>
+" 自動補完on/off
+inoremap jn <ESC>:NeoCompleteToggle<CR>a
+nnoremap gn :NeoCompleteToggle<CR>
+" 指定範囲インデント調節の連続化
+vnoremap > >gv
+vnoremap < <gv
+" 全選択
+nnoremap g0 ggVG
+" 全インデント揃える
+nnoremap gi miggVG='izz
+" Screen split key mappings
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sn gt
+nnoremap sp gT
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>o
+nnoremap sO <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
+nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
+nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+" タグジャンプで画面分割
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-i> :tp<CR>
+
+""""""""""""""""""""""""""""""
+"  ex mode
+""""""""""""""""""""""""""""""
+" ディレクトリを手早く展開
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+" 強制保存
+cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
+cnoreabbrev w!! w !sudo tee > /dev/null %
+" emacs
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+""""""""""""""""""""""""""""""
+
+" マーク情報再描画
+nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
+nnoremap ml :marks<CR>
+nnoremap <Space>d :vertical diffsplit
+nnoremap <Space>u :Unite source<CR>
+nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
+nnoremap <Space>r :run<CR>
+nnoremap <Space>v :VimShell<CR>
+nnoremap <Space>c :Calendar<CR>
+nnoremap gt :Calendar -view=clock<CR>
+autocmd FileType markdown nnoremap <Space>r :PrevimOpen<CR>
+autocmd FileType html nnoremap <Space>r :!open %<CR>
+autocmd FileType tex nnoremap <Space>r :run<CR>:!latexmk -c<CR>
+nnoremap <Space>I :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR>
+nnoremap <Space>o :!open .<CR><CR>
+" タグジャンプを別タブで開く
+nnoremap <F3> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+
+rv! " 履歴共有
+" save and close
+nnoremap <Space>w :w<Cr>
+nnoremap <Space>q :q<Cr>
+nnoremap <Space>2 :wq<Cr>
+nnoremap <Space>! :q!<Cr>
+
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+""""""""""""""""""""""""""""""
+" 空白まで囲む
+""""""""""""""""""""""""""""""
+noremap <Space>{ wbi{<Esc>f<Space>i}<Esc><Cr>
+noremap <Space>[ wbi[<Esc>f<Space>i]<Esc><Cr>
+noremap <Space>( wbi(<Esc>f<Space>i)<Esc><Cr>
+noremap <Space>< wbi<<Esc>f<Space>i><Esc><Cr>
+noremap <Space>~ wbi~~<Esc>f<Space>i~~<Esc><Cr>
+noremap <Space>" wbi"<Esc>f<Space>i"<Esc><Cr>
+
+set completeopt=menuone
+inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
+let MyAutoComplete_StartLength = 3
+
+" 対応する括弧へ移動しやすく
+nnoremap <Tab> %
+vnoremap <Tab> %
+""""""""""""""""""""""""""""""
+" 最後のカーソル位置を復元する
+""""""""""""""""""""""""""""""
+if has("autocmd")
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+                \   exe "normal! g'\"" |
+                \ endif
+endif
+""""""""""""""""""""""""""""""
+" grepをQuickFixで開く
+""""""""""""""""""""""""""""""
+augroup grepopen
+    " autocmd!
+    " autocmd QuickfixCmdPost vimprep cw
+    autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+"""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" マーク周りの改善
+""""""""""""""""""""""""""""""
+noremap ' `
+" 最初からマークを表示する
+aug show-marks-sync
+    au!
+    au BufReadPost * sil! DoShowMarks
+aug END
+
+" オムニ補完
+inoremap <expr> <C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+" imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" 選択してもそのまま貼り付けられるようにする----------
+vnoremap <silent> p "0p<CR>
+
+set hlsearch
