@@ -148,6 +148,20 @@ functions gps() {
     fi
 }
 
+functions gpsu() {
+    gst
+    if [ -n "$1" ]; then
+        # force push
+        if [ $1 = "-f" ]; then
+            echo "git push -f upstream `git rev-parse --abbrev-ref HEAD`"
+            git push -f upstream `git rev-parse --abbrev-ref HEAD`
+        fi
+    else
+        echo "git push upstream `git rev-parse --abbrev-ref HEAD`"
+        git push upstream `git rev-parse --abbrev-ref HEAD`
+    fi
+}
+
 # don't use submodule
 functions gpl() {
     gst
