@@ -2,6 +2,7 @@
 
 let $DOTVIM = expand('~/.vim')
 let mapleader = "\<Space>"
+set ambiwidth=double
 rv! " 履歴共有
 set incsearch
 " 最後改行勝手にいれないはず

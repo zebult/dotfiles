@@ -106,6 +106,14 @@ repo = 'mattn/googlesuggest-complete-vim'
 # '''
 
 [[plugins]]
+repo = 'simeji/vim-chatworker.git'
+rev  = 'get-messages'
+hook_add = '''
+    let g:chatwork_token = '7115ebd43a89d1bb9ea462f454642d5f'
+    nnoremap <Leader>H :Unite chatworker<CR>x
+'''
+
+[[plugins]]
 repo = 'thinca/vim-visualstar'
 
 [[plugins]]

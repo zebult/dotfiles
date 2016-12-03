@@ -125,13 +125,8 @@ repo = 'mopp/layoutplugin.vim'
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
     let g:w3m#external_browser = 'google-chrome'
+    nnoremap <Leader>b :W3mTab google<CR>
 '''
-
-# [[plugins]]
-# repo = 'simeji/vim-chatworker.git'
-# hook_add = '''
-#     let g:chatwork_token = ''
-# '''
 
 # default key is 'gs'
 [[plugins]]
@@ -172,7 +167,7 @@ repo = 'itchyny/calendar.vim'
 hook_add = '''
     let g:calendar_google_calendar = 1
     let g:calendar_google_task = 1
-    nnoremap <Leader>cl :Calendar<Cr>
+    nnoremap <Leader>c :Calendar<Cr>
 '''
 
 # file shaping(:Align =)

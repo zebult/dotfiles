@@ -105,16 +105,28 @@ functions tmp() {
 }
 
 function img() {
-    imageNames=()
-    imageCount=0
-    for i in `seq 1 ${#}`
-    do
-        imageNames+=(${1})
-        imageCount=`expr $imageCount + 1`
-        shift
-    done
-    percentage=`expr 100 / $imageCount`
-    convert -geometry $percentage% +append $imageNames out.png
+    # if [ -n "$1" ]; then
+        # force push
+        # if [ $1 = "-m" -o $1 = "--merge"]; then
+        # if [ $1 = "-m"]; then
+            imageNames=()
+            imageCount=0
+            for i in `seq 1 ${#}`
+            do
+                imageNames+=(${1})
+                imageCount=`expr $imageCount + 1`
+                shift
+            done
+            percentage=`expr 100 / $imageCount`
+            convert -geometry $percentage% +append $imageNames out_m.png
+        # fi
+        # if [ $1 = "-r" -o $1 = "--resize"]; then
+    #     if [ $1 = "-r"]; then
+    #         convert -filter box -resize $2 $3 out_r.png
+    #     fi
+    # else
+    #     echo "Plese set option.\n -m, --merge\n -p, -plus\n -d --decrease"
+    # fi
 }
 
 functions mkcd() {
@@ -136,10 +148,36 @@ functions gps() {
     fi
 }
 
+# don't use submodule
 functions gpl() {
     gst
     echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
     git pull origin `git rev-parse --abbrev-ref HEAD`
+}
+
+# git rebase origin
+functions gro() {
+    # gst
+    branch=`git rev-parse --abbrev-ref HEAD`
+    echo $branch
+    echo 'Clean "temporary" branch? y/n'
+    read answer
+    if [ $answer = "n" ]; then
+        echo 'see you🍣'
+    fi
+        if [ $answer = "y" ]; then
+        git branch -D temporary
+        git checkout -b temporary
+        git checkout $branch
+        git reset --hard @~
+        git pull origin $branch
+        git checkout temporary
+        git rebase $branch
+        git checkout $branch
+        git merge temporary
+        gst
+        echo 'success year🍣'
+    fi
 }
 
 functions gamd() {
