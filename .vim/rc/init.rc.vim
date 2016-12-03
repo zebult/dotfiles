@@ -8,7 +8,7 @@ set incsearch
 set nofixeol
 " ブランチ名をステータスラインに表示する
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P 
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
 set history=200
 set whichwrap=h,l
 " インデントをスペース(4つ)だけにする "
@@ -19,7 +19,7 @@ set ignorecase
 set expandtab
 "インデントを自動でつける
 set autoindent
-" 検索をファイルの先頭へループしない   
+" 検索をファイルの先頭へループしない
 " set nowrapscan
 " 大文字混在時は大文字小文字区別する
 set smartcase
@@ -101,6 +101,13 @@ source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
 
 " 保存時Git差分ハイライト
 autocmd BufWritePre * :GitGutterLineHighlightsEnable
+
+" 行末空白ハイライト
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
 
 " 最後のカーソル位置を復元する
 if has("autocmd")

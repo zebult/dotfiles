@@ -160,4 +160,4 @@ vnoremap <Tab> %
 noremap ' `
 
 " 選択してもそのまま貼り付けられるようにする
-vnoremap <silent> p "0p<CR>
+vnoremap <silent> p "0p
