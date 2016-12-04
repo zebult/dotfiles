@@ -86,6 +86,9 @@ repo = 'mattn/webapi-vim'
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'mattn/googlesuggest-complete-vim'
+
 # [[plugins]]
 # repo = 'mattn/vim-metarw-redmine'
 # hook_add = '''
@@ -164,6 +167,12 @@ hook_add = '''
     let g:operator_decamelize_all_uppercase_action = "lowercase"
     map <Leader>C <plug>(operator-camelize-toggle)
     map C <plug>(operator-camelize-toggle)
+'''
+
+[[plugins]]
+repo = 'kana/vim-operator-replace.git'
+hook_add = '''
+    map R  <Plug>(operator-replace)
 '''
 
 [[plugins]]

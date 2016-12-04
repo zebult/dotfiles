@@ -121,7 +121,6 @@ repo = 'mopp/layoutplugin.vim'
 # repo = 'kana/vim-metarw'
 
 # Convenience Tools: ---------------------------
-
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
