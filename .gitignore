@@ -1,5 +1,4 @@
 .vim/bundle
 .tmux/resurrect
-.tmux/plugins
 .vim/init.vim
 .vim/eclim
