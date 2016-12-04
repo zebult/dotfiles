@@ -1,6 +1,6 @@
 " Mappings
 
-nnoremap <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:args<CR>:redraw!<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:ClearHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>

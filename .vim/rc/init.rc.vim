@@ -100,21 +100,19 @@ abbreviate TT // TODO:
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
 
-" 保存時Git差分ハイライト
-autocmd BufWritePre * :GitGutterLineHighlightsEnable
-
-" 行末空白ハイライト
-augroup HighlightTrailingSpaces
-  autocmd!
-  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup SaveGroup
+    " 保存時Git差分ハイライト
+    autocmd BufWritePre * :GitGutterLineHighlightsEnable
+    " 保存時空白ハイライト
+    autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+    autocmd BufWritePre * highlight TrailingSpaces term=underline guibg= ctermbg=
+    autocmd BufWritePre * match TrailingSpaces /\s\+$/
 augroup END
 
+augroup UtilitiesGroup
 " 最後のカーソル位置を復元する
-if has("autocmd")
-    autocmd BufReadPost *
-                \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-                \   exe "normal! g'\"" |
-                \ endif
-endif
-
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \   exe "normal! g'\"" |
+            \ endif
+augroup END
