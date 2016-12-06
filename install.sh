@@ -75,6 +75,7 @@ case "${os}" in
         brew install peco
         brew install nmap
         brew install imagemagick
+        brew install jq
         brew install tig
         brew install wget
         brew install tree

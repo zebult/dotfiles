@@ -31,7 +31,7 @@ endfunction
 
 function! Action_o() abort
     if IsBullet()
-        execute "normal! $aax"
+        execute "normal! $aa\"ox"
     else
         execute "normal! o"
     end
@@ -40,7 +40,7 @@ endfunction
 
 function! Action_O() abort
     if IsBullet()
-        execute "normal! 0ylOpa "
+        execute "normal! 0\"oylO\"opa "
     else
         execute "normal! O"
     end

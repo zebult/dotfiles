@@ -97,6 +97,15 @@ repo = 'mattn/googlesuggest-complete-vim'
 # '''
 
 # [[plugins]]
+# repo = 'basyura/unite-yarm'
+# hook_add = '''
+#     let g:unite_yarm_server_url = ''
+#     let g:unite_yarm_access_key = ''
+#     let g:unite_yarm_limit = 25
+#     let g:unite_yarm_backup_dir = '/tmp/yarm'
+# '''
+
+# [[plugins]]
 # repo = 'toritori0318/vim-redmine'
 # hook_add = '''
 #     let g:redmine_auth_site = ''
@@ -110,7 +119,8 @@ repo = 'simeji/vim-chatworker.git'
 rev  = 'get-messages'
 hook_add = '''
     let g:chatwork_token = '7115ebd43a89d1bb9ea462f454642d5f'
-    nnoremap <Leader>H :Unite chatworker<CR>x
+    nnoremap <Leader>c :Unite chatworker<CR>x
+    nnoremap <Leader>p :Unite chatwork_post_message<CR>x
 '''
 
 [[plugins]]
@@ -165,7 +175,6 @@ repo = 'tyru/operator-camelize.vim'
 hook_add = '''
     let g:operator_camelize_all_uppercase_action = "lowercase"
     let g:operator_decamelize_all_uppercase_action = "lowercase"
-    map <Leader>C <plug>(operator-camelize-toggle)
     map C <plug>(operator-camelize-toggle)
 '''
 

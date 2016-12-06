@@ -11,6 +11,7 @@ set guioptions-=r
 set guioptions-=R
 " 左スクロールバーなし
 set guioptions-=l
+set guioptions-=L
 " 下スクロールバーなし
 set guioptions-=b
 let g:neocomplete#lock_iminsert = 1
@@ -20,8 +21,10 @@ if has('mac')
    " set guifont=Ricty-RegularForPowerline:h16
    set guifont=Ricty\ Regular:h16
    " フォーカス時以外透明度上げる
-   autocmd FocusGained * set transparency=5
-   autocmd FocusLost * set transparency=10
+   " autocmd FocusGained * set transparency=5
+   " autocmd FocusLost * set transparency=10
+   autocmd FocusGained * set transparency=8
+   autocmd FocusLost * set transparency=30
    " 暗い背景色用の配色を使う?
    set background=dark
 endif

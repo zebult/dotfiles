@@ -36,16 +36,6 @@ vnoremap < <gv
 nnoremap g0 ggVG
 " 全インデント揃える
 nnoremap gi miggVG='izz
-" 選択範囲文字数カウント
-vnoremap gwc :s/./&/gn<CR>
-" 文字出現数カウント
-nnoremap <Leader>W :%s /<C-r><C-w>//gn<CR>
-" json整形
-nnoremap <Leader>J :%!jq '.'<CR>
-" ファイル更新
-nnoremap <Leader>L :e!<CR>
-" フルパス挿入
-nnoremap <Leader>p i<C-R>=expand('%:p')<CR>
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
