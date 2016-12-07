@@ -22,7 +22,8 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
 COCOS_VERSION="3.11.1"
-NDK_VERSION="android-ndk-r10e"
+NDK_VERSION="android-ndk-r10d"
+# NDK_VERSION="android-ndk-r10e"
 SDK_VERSION="22"
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/tools/cocos2d-console/bin

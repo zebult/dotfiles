@@ -10,6 +10,7 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.py set filetype=python
     au BufRead,BufNewFile *.cs set filetype=cs
     au BufRead,BufNewFile *.go set filetype=go
+    au BufRead,BufNewFile *.strace set filetype=strace
     " c++標準ライブラリへのパスを設定
     let $CPP_STDLIB = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
     " $CPP_STDLIB よりも下の階層のファイルが開かれて
