@@ -79,6 +79,8 @@ alias gsw="git show"
 alias gbl="git blame"
 alias glp="git log -p -1"
 alias gsu="git submodule update"
+alias gsv="git stash save"
+alias glist="git stash list"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
