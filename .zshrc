@@ -172,6 +172,12 @@ functions gpl() {
     git pull origin `git rev-parse --abbrev-ref HEAD`
 }
 
+functions gplu() {
+    gst
+    echo "git pull upstream `git rev-parse --abbrev-ref HEAD`"
+    git pull upstream `git rev-parse --abbrev-ref HEAD`
+}
+
 # git rebase origin
 functions gro() {
     # gst
