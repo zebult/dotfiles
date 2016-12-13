@@ -5,6 +5,9 @@ set ts=2 sw=2 sts=0
 nnoremap o :call Action_o()<CR>
 nnoremap O :call Action_O()<CR>
 
+nnoremap go o
+nnoremap gO O
+
 " todoリストを簡単に入力する
 abbreviate tl - [ ]
 " todoリストのon/offを切り替える

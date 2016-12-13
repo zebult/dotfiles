@@ -155,8 +155,8 @@ repo = 'tyru/open-browser.vim'
 on_map = ['<Plug>(openbrowser-smart-search)']
 hook_add = '''
     let g:netrw_nogx = 1
-    nmap go <Plug>(openbrowser-smart-search)
-    vmap go <Plug>(openbrowser-smart-search)
+    nmap <Leader>o <Plug>(openbrowser-smart-search)
+    vmap <Leader>o <Plug>(openbrowser-smart-search)
     command! OpenRedMineTicket execute "OpenBrowser" expand("aaa")
 '''
 
