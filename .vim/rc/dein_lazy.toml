@@ -120,18 +120,17 @@ repo = 'mopp/layoutplugin.vim'
 # [[plugins]]
 # repo = 'kana/vim-metarw'
 
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-    nmap n <Plug>(anzu-n-with-echo)
-    nmap N <Plug>(anzu-N-with-echo)
-    nmap * <Plug>(anzu-star-with-echo)
-    nmap # <Plug>(anzu-sharp-with-echo)
-    set statusline=%{anzu#search_status()}
-'''
+# [[plugins]]
+# repo = 'osyo-manga/vim-anzu'
 # set statusline=%{anzu#search_status()}
+# ex上に表示
+# nmap n <Plug>(anzu-n-with-echo)
+# nmap N <Plug>(anzu-N-with-echo)
+# 画面上に表示
 # nmap n <Plug>(anzu-mode-n)
 # nmap N <Plug>(anzu-mode-N)
+# nmap * <Plug>(anzu-star-with-echo)
+# nmap # <Plug>(anzu-sharp-with-echo)
 # nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
 # Convenience Tools: ---------------------------
