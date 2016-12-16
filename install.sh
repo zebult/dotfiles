@@ -9,7 +9,7 @@ if [ $DIR != "dotfiles" ]; then
     exit
 fi
 
-# 1.dotfileのシンボリックリンクを$HOMEに張る(.file限定)
+# 1.dotfileのシンボリックリンクを$HOMEに張る(ドット限定)
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
@@ -82,6 +82,7 @@ case "${os}" in
         brew install w3m
         brew install ag
         brew install global # gtags
+        brew install sshrc
         brew install sourcekitten
         brew install source-highlight
         brew install argon/mas/mas

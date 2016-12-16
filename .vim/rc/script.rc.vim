@@ -10,17 +10,22 @@ function! ClearHighlightTrailingSpaces() abort
 endfunction
 command -bar ClearHighlightTrailingSpaces  call ClearHighlightTrailingSpaces()
 
+function! JsonPretty() abort
+    silent! %!jq '.'
+endfunction
+command -bar JsonPretty  call JsonPretty()
+
+function! AutoMethodMake() abort
+    normal 0wms"my$?classw"cyiwGo"mpxa {}kk0w"cPa::'sj
+endfunction
+command -bar AutoMethodMake  call AutoMethodMake()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn
 " endfunction
 " command -bar WordCount  call WordCount()
 "
-function! JsonPretty() abort
-    silent! %!jq '.'
-endfunction
-command -bar JsonPretty  call JsonPretty()
-
 " フルパス挿入
 " function! EchoPath() abort
     " silent! i<C-R>=expand('%:p')

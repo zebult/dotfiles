@@ -84,3 +84,4 @@ hi PmenuSel ctermfg=72
 hi Type ctermfg=67
 hi Function ctermfg=67
 hi diffAdded ctermfg=2
+hi SpecialKey ctermfg=2

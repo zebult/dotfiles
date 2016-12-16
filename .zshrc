@@ -81,12 +81,15 @@ alias glp="git log -p -1"
 alias gsu="git submodule update"
 alias gsv="git stash save"
 alias glist="git stash list"
+alias gfu="git ls-files -u"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias gvim='open /Applications/MacVim.app'
 
+alias ssh='sshrc'
+alias c7='chmod 777'
 alias ag='ag -u'
 alias findn='find . -name'
 alias ouch='say -v Alex "ouch"'
