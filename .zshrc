@@ -89,9 +89,9 @@ alias vim=nvim
 alias gvim='open /Applications/MacVim.app'
 
 alias ssh='sshrc'
-alias c7='chmod 777'
+alias c7='chmod 755'
 alias ag='ag -u'
-alias findn='find . -name'
+alias fn='find . -name'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 

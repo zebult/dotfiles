@@ -1,6 +1,6 @@
 " Mappings
 
-nnoremap <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:ClearHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:NoHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -43,6 +43,7 @@ nnoremap <silent> p p`]
 
 nnoremap ml :marks<CR>
 
+nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 " setter, getter自動生成
 " map Kk mawv/ <CR>"ty/ <CR>wve"ny/getters<CR>$a<CR><CR><Esc>xxa<Tab>public <Esc>"tpa<Esc>"npbiget<Esc>l~hea() {<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxa<Tab>public void <Esc>"npbiset<Esc>l~hea (<Esc>"tpa<Esc>"npa) {<CR><Tab>this.<Esc>"npa = <Esc>"npa;<CR>}<Esc>=<CR>`ak
 " メンバ変数アクセサ生成(m_付き限定)

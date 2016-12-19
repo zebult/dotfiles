@@ -4,11 +4,24 @@ function! ClearEnd() abort
 endfunction
 command -bar ClearEnd  call ClearEnd()
 
+" スペース全削除
+function! ClearSpace() range
+    for linenum in range(a:firstline, a:lastline)
+        let curr_line = getline(linenum)
+        let repl = substitute(curr_line,' ','','g')
+        call setline(".", repl)
+        let curr_line = getline(linenum)
+        let repl = substitute(curr_line,'　','','g')
+        call setline(".", repl)
+    endfor
+endfunction
+command! -range ClearSpace <line1>,<line2>call ClearSpace()
+
 " 行末空白ハイライト消去
-function! ClearHighlightTrailingSpaces() abort
+function! NoHighlightTrailingSpaces() abort
     highlight clear TrailingSpaces
 endfunction
-command -bar ClearHighlightTrailingSpaces  call ClearHighlightTrailingSpaces()
+command -bar NoHighlightTrailingSpaces  call NoHighlightTrailingSpaces()
 
 function! JsonPretty() abort
     silent! %!jq '.'
