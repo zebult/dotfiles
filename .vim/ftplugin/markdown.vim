@@ -25,8 +25,29 @@ function! ToggleCheckbox() abort
 endfunction
 
 function! IsBullet() abort
+    let l:firstWord = getline('.')[0]
+    let l:secondWord = getline('.')[2]
+    let l:thirdWord = getline('.')[4]
+    let l:isFirstBullet = CheckBullet(firstWord)
+    let l:isSecondBullet = CheckBullet(secondWord)
+    let l:isThirdBullet = CheckBullet(thirdWord)
+    if l:isFirstBullet == 1 || l:isSecondBullet == 1 || l:isThirdBullet == 1
+        return 1
+    end
+endfunction
+
+function! CheckBullet(word) abort
+    if a:word =~ '[\*\-\>]'
+        return 1
+    end
+    return 0
+endfunction
+
+function! IsTodo() abort
     let l:headWord = getline('.')[0]
-    if l:headWord =~ '[\*\-\>]'
+    " let l:secondWord = getline('.')[2]
+    " if l:headWord == '-' && l:secondWord == '['
+    if l:headWord == '-'
         return 1
     end
     return 0
@@ -38,6 +59,9 @@ function! Action_o() abort
     else
         execute "normal! o"
     end
+    if IsTodo()
+        execute "normal! i [ ]"
+    end
     startinsert!
 endfunction
 
@@ -46,6 +70,9 @@ function! Action_O() abort
         execute "normal! 0\"oylO\"opa "
     else
         execute "normal! O"
+    end
+    if IsTodo()
+        execute "normal! i [ ]"
     end
     startinsert!
 endfunction
