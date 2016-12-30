@@ -107,7 +107,6 @@ augroup SaveGroup
     autocmd BufWritePre * :GitGutterLineHighlightsEnable
     " 保存時空白ハイライト
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-    autocmd BufWritePre * highlight TrailingSpaces term=underline guibg= ctermbg=
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
 augroup END
 

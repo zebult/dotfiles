@@ -44,7 +44,7 @@ call s:source_rc('skeleton.rc.vim')
 call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
 autocmd BufNewFile *.cs norm! 3j2wi%3dh 
-autocmd BufNewFile *.md norm! i# %xxxo
+autocmd BufNewFile *.md norm! i# %"zx"zx"zxo
 autocmd BufNewFile *.java norm! 2wi%5dh 
 
 " tomlから呼べない為ここで呼ぶ

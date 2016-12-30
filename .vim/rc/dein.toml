@@ -45,11 +45,13 @@ build = 'make'
 [[plugins]]
 repo   = 'Shougo/neosnippet-snippets'
 
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
+# [[plugins]]
+# repo = 'Shougo/neomru.vim'
+# if = "has('nvim')"
+#
+# [[plugins]]
+# repo = 'Shougo/neoyank.vim'
+# if = "has('nvim')"
 
 [[plugins]]
 repo = 'nixprime/cpsm'
@@ -310,6 +312,18 @@ on_ft = ['cs', 'csi', 'csx']
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
+
+# Markdown ---------------------------
+
+# syntax hilight, foldmethod
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = 'md'
+hook_add = 'let g:vim_markdown_folding_disabled=0'
+
+[[plugins]]
+repo = 'joker1007/vim-markdown-quote-syntax'
+on_ft = 'md'
 
 
 # Toml ---------------------------
