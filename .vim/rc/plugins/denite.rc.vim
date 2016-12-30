@@ -16,6 +16,6 @@ call denite#custom#map('insert', "<C-p>", 'move_to_prev_line')
 nnoremap <C-j> :Denite file_rec<Cr>
 nnoremap <C-g> :Denite grep<Cr>
 nnoremap <BS> :Denite file_mru<Cr>
-nnoremap <C-y> :Denite neoyank<Cr>
+" nnoremap <C-y> :Denite neoyank<Cr>
 " カーソル位置の単語をgrep検索
 nnoremap <silent> <Leader>* :<C-u>Denite grep<Cr><C-r><C-w><Cr>

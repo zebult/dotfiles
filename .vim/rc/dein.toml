@@ -273,6 +273,7 @@ on_ft = 'cpp'
  
 [[plugins]]
 repo = 'zchee/deoplete-clang'
+if = "has('nvim')"
 
 # clang complete(need vimproc)
 [[plugins]]
@@ -310,14 +311,6 @@ on_ft = ['cs', 'csi', 'csx']
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
 
-
-# Markdown ---------------------------
-
-# syntax hilight, foldmethod
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = 'md'
-hook_add = 'let g:vim_markdown_folding_disabled = 0'
 
 # Toml ---------------------------
 

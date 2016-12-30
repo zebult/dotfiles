@@ -19,6 +19,9 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+
+noremap <C-e> 2<C-e>
+noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tt gD
 " メモ取りやすくする

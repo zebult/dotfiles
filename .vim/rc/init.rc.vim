@@ -58,6 +58,7 @@ let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git', '.svn']
 " タグファイルの場所
 set tags+=.git/tags
+
 " include周りの設定
 " let g:clang_c_options = '-std=c11'
 " let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
@@ -101,6 +102,7 @@ source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
 
 augroup SaveGroup
+    autocmd!
     " 保存時Git差分ハイライト
     autocmd BufWritePre * :GitGutterLineHighlightsEnable
     " 保存時空白ハイライト

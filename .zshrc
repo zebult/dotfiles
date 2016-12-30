@@ -86,7 +86,7 @@ alias gfu="git ls-files -u"
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
-alias gvim='open /Applications/MacVim.app'
+alias im='macvim'
 
 alias ssh='sshrc'
 alias c7='chmod 755'
@@ -97,8 +97,14 @@ alias tokyo='curl wttr.in/Tokyo'
 
 # set -o vi
 
-function V() {
-    vim <($1)
+functions macvim () {
+    if [ -d /Applications/MacVim.app ]
+    then
+        [ ! -f $1 ] && touch $1
+        open -a MacVim $1
+    else
+        im $1
+    fi
 }
 
 functions zipr() {
@@ -108,31 +114,6 @@ functions zipr() {
 functions tmp() {
     mkdir tmp;
     cd tmp;
-}
-
-function img() {
-    # if [ -n "$1" ]; then
-        # force push
-        # if [ $1 = "-m" -o $1 = "--merge"]; then
-        # if [ $1 = "-m"]; then
-            imageNames=()
-            imageCount=0
-            for i in `seq 1 ${#}`
-            do
-                imageNames+=(${1})
-                imageCount=`expr $imageCount + 1`
-                shift
-            done
-            percentage=`expr 100 / $imageCount`
-            convert -geometry $percentage% +append $imageNames out_m.png
-        # fi
-        # if [ $1 = "-r" -o $1 = "--resize"]; then
-    #     if [ $1 = "-r"]; then
-    #         convert -filter box -resize $2 $3 out_r.png
-    #     fi
-    # else
-    #     echo "Plese set option.\n -m, --merge\n -p, -plus\n -d --decrease"
-    # fi
 }
 
 functions mkcd() {
