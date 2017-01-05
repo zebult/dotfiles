@@ -104,7 +104,7 @@ source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
 augroup SaveGroup
     autocmd!
     " 保存時Git差分ハイライト
-    autocmd BufWritePre * :GitGutterLineHighlightsEnable
+    " autocmd BufWritePre * :GitGutterLineHighlightsEnable
     " 保存時空白ハイライト
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
