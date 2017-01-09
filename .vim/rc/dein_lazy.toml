@@ -39,7 +39,7 @@ on_i = 1
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 on_map = '<Plug>'
-hook_source = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
@@ -73,7 +73,7 @@ nmap <Leader>t :TagbarToggle<CR>
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
 on_i = 1
-hook_source = 'source ~/.vim/rc/plugins/gtags.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 
 # 構文チェック
 [[plugins]]
@@ -114,12 +114,8 @@ repo = 'mopp/layoutplugin.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-    nmap n <Plug>(anzu-mode-n)
-    nmap N <Plug>(anzu-mode-N)
-'''
-
-# hook_source = 'source ~/.vim/rc/plugins/anzu.rc.vim'
+on_map = {n = '<Plug>'}
+hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Need redmine
 # [[plugins]]
