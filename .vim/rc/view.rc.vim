@@ -15,6 +15,7 @@ autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme solarized
 " colorscheme spacegray
 colorscheme tomorrow-night
+" colorscheme twilight
 
 " 256に制限をかける
 set t_Co=256

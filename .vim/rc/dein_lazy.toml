@@ -7,11 +7,11 @@ repo = 'Shougo/vimshell.vim'
 repo = 'Shougo/neosnippet'
 on_i = 1
 hook_add = '''
-    " <C-k>でsnippetの展開
-    let g:neosnippet#snippets_directory='~/.vim/snippets/'
-    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-    smap <C-k> <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k> <Plug>(neosnippet_expand_target)
+" <C-k>でsnippetの展開
+let g:neosnippet#snippets_directory='~/.vim/snippets/'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 '''
 
 # include周りの補完, c, c++は必須
@@ -20,8 +20,8 @@ repo = 'Shougo/neoinclude.vim'
 on_i = 1
 filetypes = ['c', 'cpp', 'm', 'mm']
 hook_add = '''
-    let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
-    let g:neoinclude#_paths = '/usr/local/Cellar/boost'
+let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
+let g:neoinclude#_paths = '/usr/local/Cellar/boost'
 '''
 
 
@@ -46,14 +46,14 @@ repo = 'osyo-manga/vim-watchdogs'
 on_source = 'vim-quickrun.vim'
 on_event = ['FocusLost', 'CursorHold']
 hook_add = '''
-  let g:quickrun_config = get(g:, 'quickrun_config', {})
-  let g:quickrun_config['watchdogs_checker/_'] = {'outputter/quickfix/open_cmd': ''}
-  let g:quickrun_config['watchdogs_checker/jshint'] = {'cmdopt': '--config `/.jshintrc'}
-  " ファイルの保存時にチェックを行う
-  let g:watchdogs_check_BufWritePost_enable = 1
+let g:quickrun_config = get(g:, 'quickrun_config', {})
+let g:quickrun_config['watchdogs_checker/_'] = {'outputter/quickfix/open_cmd': ''}
+let g:quickrun_config['watchdogs_checker/jshint'] = {'cmdopt': '--config `/.jshintrc'}
+" ファイルの保存時にチェックを行う
+let g:watchdogs_check_BufWritePost_enable = 1
 '''
 hook_post_source = '''
-  call watchdogs#setup(g:quickrun_config)
+call watchdogs#setup(g:quickrun_config)
 '''
 
 [[plugins]]
@@ -66,8 +66,8 @@ repo = 'soramugi/auto-ctags.vim'
 on_i = 1
 commands = 'TagbarToggle'
 hook_add = '''
-    let g:tagbar_width = 20
-    nmap <Leader>t :TagbarToggle<CR>
+let g:tagbar_width = 20
+nmap <Leader>t :TagbarToggle<CR>
 '''
 
 [[plugins]]
@@ -102,43 +102,39 @@ windows = 'msbuild server/OmniSharp.sln'
 mac     = 'xbuild server/OmniSharp.sln'
 unix    = 'xbuild server/OmniSharp.sln'
 hook_add = '''
-    inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-    " ポップアップ削除
-    inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" ポップアップ削除
+inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 '''
-
-# TODO: 使いたい
-# [[plugins]]
-# repo = 'hewes/unite-gtags'
 
 # make plugin(:LayoutPlugin xxx.vim)
 [[plugins]]
 repo = 'mopp/layoutplugin.vim'
 
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+    nmap n <Plug>(anzu-mode-n)
+    nmap N <Plug>(anzu-mode-N)
+'''
+
+# hook_source = 'source ~/.vim/rc/plugins/anzu.rc.vim'
+
 # Need redmine
 # [[plugins]]
 # repo = 'kana/vim-metarw'
 
+# TODO: 使いたい
 # [[plugins]]
-# repo = 'osyo-manga/vim-anzu'
-# set statusline=%{anzu#search_status()}
-# ex上に表示
-# nmap n <Plug>(anzu-n-with-echo)
-# nmap N <Plug>(anzu-N-with-echo)
-# 画面上に表示
-# nmap n <Plug>(anzu-mode-n)
-# nmap N <Plug>(anzu-mode-N)
-# nmap * <Plug>(anzu-star-with-echo)
-# nmap # <Plug>(anzu-sharp-with-echo)
-# nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+# repo = 'hewes/unite-gtags'
 
 # Convenience Tools: ---------------------------
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
-    let g:w3m#external_browser = 'google-chrome'
-    nnoremap <Leader>b :W3mTab google<CR>
+let g:w3m#external_browser = 'google-chrome'
+nnoremap <Leader>b :W3mTab google<CR>
 '''
 
 # default key is 'gs'
@@ -153,10 +149,10 @@ on_map = '<C-_>'
 repo = 'tyru/open-browser.vim'
 on_map = ['<Plug>(openbrowser-smart-search)']
 hook_add = '''
-    let g:netrw_nogx = 1
-    nmap <Leader>o <Plug>(openbrowser-smart-search)
-    vmap <Leader>o <Plug>(openbrowser-smart-search)
-    command! OpenRedMineTicket execute "OpenBrowser" expand("aaa")
+let g:netrw_nogx = 1
+nmap <Leader>o <Plug>(openbrowser-smart-search)
+vmap <Leader>o <Plug>(openbrowser-smart-search)
+command! OpenRedMineTicket execute "OpenBrowser" expand("aaa")
 '''
 
 [[plugins]]
@@ -178,9 +174,9 @@ repo = 'majutsushi/tagbar'
 [[plugins]]
 repo = 'itchyny/calendar.vim'
 hook_add = '''
-    let g:calendar_google_calendar = 1
-    let g:calendar_google_task = 1
-    nnoremap <Leader>C :Calendar<Cr>
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+nnoremap <Leader>C :Calendar<Cr>
 '''
 
 # file shaping(:Align =)
@@ -190,7 +186,7 @@ repo = 'vim-scripts/Align'
 [[plugins]]
 repo = 'vim-scripts/TaskList.vim'
 hook_add = '''
-    nnoremap <Leader>T :TaskList<CR>
+nnoremap <Leader>T :TaskList<CR>
 '''
 
 
@@ -205,7 +201,7 @@ repo = 'kannokanno/previm'
 on_map = '<Space>'
 on_ft = 'md'
 hook_add = '''
-    let g:previm_open_cmd = 'open -a Safari'
+let g:previm_open_cmd = 'open -a Safari'
 '''
 
 
@@ -215,11 +211,11 @@ hook_add = '''
 repo = 'zebult/xcode.vim'
 filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = '''
-    let g:application_name = "Xcode7.2.1"
-    nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
-    nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
-    nnoremap <silent> <Leader>Q :XcodeClose<CR>
-    nnoremap <silent> <Leader>e :XcodeFocus<CR>
+let g:application_name = "Xcode7.2.1"
+nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
+nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
+nnoremap <silent> <Leader>Q :XcodeClose<CR>
+nnoremap <silent> <Leader>e :XcodeFocus<CR>
 '''
 
 # Xcode化
@@ -235,11 +231,11 @@ hook_add = '''
 # on_ft = ['m', 'swift', 'cpp', 'h', 'hpp']
 
 # brew install sourcekitten
-[[plugins]]
-repo = 'mitsuse/autocomplete-swift'
-on_i = 1
-on_ft = 'swift'
-# hook_source = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)' not use snip
+# [[plugins]]
+# repo = 'mitsuse/autocomplete-swift'
+# on_i = 1
+# on_ft = 'swift'
+# hook_add = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)' not use snip
 
 
 # Go ---------------------------

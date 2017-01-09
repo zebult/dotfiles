@@ -91,6 +91,10 @@ repo = 'mattn/webapi-vim'
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_source = 'source ~/.vim/rc/plugins/lightline.rc.vim'
+
 # [[plugins]]
 # repo = 'haya14busa/incsearch.vim'
 # hook_add = '''
