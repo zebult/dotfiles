@@ -13,9 +13,21 @@ call denite#custom#map('insert', "<Up>", 'move_to_prev_line')
 call denite#custom#map('insert', "<C-n>", 'move_to_next_line')
 call denite#custom#map('insert', "<C-p>", 'move_to_prev_line')
 
-nnoremap <C-j> :Denite file_rec<Cr>
+nnoremap <C-j> :DeniteCursorLineChange<Cr>:Denite file_rec<Cr>
 nnoremap <C-g> :Denite grep<Cr>
 nnoremap <BS> :Denite file_mru<Cr>
 " nnoremap <C-y> :Denite neoyank<Cr>
 " カーソル位置の単語をgrep検索
 nnoremap <silent> <Leader>* :<C-u>Denite grep<Cr><C-r><C-w><Cr>
+
+" Denite抜ける際、カーソルラインをデフォルトに戻す
+autocmd BufWinLeave * hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
+
+function! DeniteCursorLineChange() abort
+    hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=28
+endfunction
+command -bar DeniteCursorLineChange  call DeniteCursorLineChange()
+
+" autocmd CmdwinEnter * hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=28
+" autocmd CmdwinLeave * hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
+
