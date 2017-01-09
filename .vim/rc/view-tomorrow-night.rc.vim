@@ -49,6 +49,7 @@ endif
 " 現在行ハイライト
 set cursorline
 hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
+" hi CursorLine cterm=underline
 " 現在列ハイライト
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238

@@ -4,6 +4,9 @@
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 
+# [[plugins]]
+# repo = 'jeetsukumaran/vim-nefertiti'
+
 [[plugins]]
 repo = 'dzeban/vim-log-syntax'
 
