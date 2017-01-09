@@ -270,8 +270,8 @@ on_ft = 'swift'
 # C++ ---------------------------
 
 # syntax
-[[plugins]]
-repo = 'vim-jp/cpp-vim'
+# [[plugins]]
+# repo = 'vim-jp/cpp-vim'
 
 # cocos2d-x color
 [[plugins]]
@@ -281,7 +281,7 @@ repo = 'Xuyuanp/vim-cc2dx'
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
- 
+
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 if = "has('nvim')"

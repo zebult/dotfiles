@@ -23,10 +23,10 @@ nnoremap <BS> :Denite file_mru<Cr>
 nnoremap <silent> <Leader>* :<C-u>Denite grep<Cr><C-r><C-w><Cr>
 
 " Denite抜ける際、カーソルラインをデフォルトに戻す
-autocmd BufWinLeave * hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
+autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE
 
 function! DeniteCursorLineColorChange() abort
-    hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=28
+    hi CursorLine ctermfg=black ctermbg=yellow
 endfunction
 command! -bar DeniteCursorLineColorChange  call DeniteCursorLineColorChange()
 

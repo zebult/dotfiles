@@ -50,9 +50,11 @@ hi Comment ctermfg=darkgray guifg=#595959
 " 補完色
 hi PmenuSel ctermbg=yellow
 " 微調整
+hi SpecialKey ctermfg=blue
 " lightblue
 hi PreProc ctermfg=yellow
 " lightgreen
 hi MoreMsg ctermfg=red
 hi Question ctermfg=red
 hi Type ctermfg=red
+
