@@ -1,16 +1,5 @@
 " GUI
-" サーチ色変更
-autocmd ColorScheme * highlight Search ctermbg=yellow guibg=#A99275
-autocmd ColorScheme * highlight IncSearch ctermfg=yellow guibg=#A99275
-" 選択した範囲文字色
-autocmd ColorScheme * highlight Visual ctermfg=red guifg=#A97775
-" 行番号
-autocmd ColorScheme * highlight LineNr ctermfg=darkgray guifg=#595959
-
 colorscheme nefertiti
-
-" 検索をハイライトする
-set hlsearch
 
 " 256に制限をかける
 set t_Co=256
@@ -38,16 +27,26 @@ if has('multi_byte_ime') || has('xim')
     highlight CursorIM guifg=NONE guibg=#ecbcbc
     highlight Cursor guifg=#ff0000 guibg=#ff0000 gui=bold
     highlight CursorIM guifg=NONE guibg=#ff0000
-    highlight Cursor       term=NONE cterm=NONE ctermbg=241 ctermfg=fg
+    highlight Cursor term=NONE cterm=NONE ctermbg=241 ctermfg=fg
     highlight Cursor guifg=NONE guibg=Green
     highlight CursorIM guifg=NONE guibg=Purple
 endif
 
+" サーチ色変更
+hi Search ctermbg=yellow guibg=#A99275
+hi IncSearch ctermfg=yellow guifg=#A99275
+" 検索をハイライトする
+set hlsearch
+" 選択した範囲文字色
+hi Visual ctermfg=red guifg=#A97775
+" 行番号
+hi LineNr ctermfg=darkgray guifg=#595959
+" 現在行番号
 hi CursorLineNr ctermfg=yellow guifg=#A99275
 " キャリッジリターン(CR)
 hi NonText ctermfg=darkgray
 " コメント色
-hi Comment ctermfg=darkgray
+hi Comment ctermfg=darkgray guifg=#595959
 " 補完色
 hi PmenuSel ctermbg=yellow
 " 微調整
@@ -57,4 +56,3 @@ hi PreProc ctermfg=yellow
 hi MoreMsg ctermfg=red
 hi Question ctermfg=red
 hi Type ctermfg=red
-
