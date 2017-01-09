@@ -1,10 +1,11 @@
 " GUI
 " サーチ色変更
-autocmd ColorScheme * highlight IncSearch ctermfg=yellow
+autocmd ColorScheme * highlight Search ctermbg=yellow guibg=#A99275
+autocmd ColorScheme * highlight IncSearch ctermfg=yellow guibg=#A99275
 " 選択した範囲文字色
-autocmd ColorScheme * highlight Visual ctermfg=red guifg=#008800
+autocmd ColorScheme * highlight Visual ctermfg=red guifg=#A97775
 " 行番号
-autocmd ColorScheme * highlight LineNr ctermfg=darkgray
+autocmd ColorScheme * highlight LineNr ctermfg=darkgray guifg=#595959
 
 colorscheme nefertiti
 
@@ -42,6 +43,7 @@ if has('multi_byte_ime') || has('xim')
     highlight CursorIM guifg=NONE guibg=Purple
 endif
 
+hi CursorLineNr ctermfg=yellow guifg=#A99275
 " キャリッジリターン(CR)
 hi NonText ctermfg=darkgray
 " コメント色
