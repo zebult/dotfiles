@@ -40,7 +40,7 @@ set hlsearch
 " 選択した範囲文字色
 hi Visual ctermfg=red guifg=#A97775
 " 行番号
-hi LineNr ctermfg=darkgray guifg=#595959
+hi LineNr ctermfg=darkgray ctermbg=none guifg=#595959
 " 現在行番号
 hi CursorLineNr ctermfg=yellow guifg=#A99275
 " キャリッジリターン(CR)
