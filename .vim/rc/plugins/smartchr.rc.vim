@@ -9,7 +9,7 @@ autocmd FileType * inoremap <buffer> <expr> ) smartchr#loop(')', ')<Left>')
 autocmd FileType * inoremap <buffer> <expr> ] smartchr#loop(']', ']<Left>')
 autocmd FileType * inoremap <buffer> <expr> > smartchr#loop('>', '><Left>')
 autocmd FileType * inoremap <buffer> <expr> " smartchr#loop('"', '""', '""<Left>')
-autocmd FileType * inoremap <buffer> <expr> ' smartchr#loop("'", "''", "''<Left>")
+" autocmd FileType * inoremap <buffer> <expr> ' smartchr#loop("'", "''", "''<Left>")
 autocmd FileType * inoremap <buffer> <expr> { smartchr#loop('{', ' {<Cr>}<Left><Cr><Up><Tab>')
 autocmd FileType * inoremap <buffer> <expr> ; smartchr#loop(';', ';<Left><Left>')
 autocmd FileType * inoremap <buffer> <expr> @ search('^\(#.\+\)\?\%#','bcn')? smartchr#loop('#define', '#include', '#ifdef', '#endif', '@'): '@'

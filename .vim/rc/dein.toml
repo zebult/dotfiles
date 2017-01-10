@@ -4,6 +4,9 @@
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 
+# [[plugins]]
+# repo = 'jeetsukumaran/vim-nefertiti'
+
 [[plugins]]
 repo = 'dzeban/vim-log-syntax'
 
@@ -15,16 +18,16 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
-hook_source = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 if = "has('lua')"
-hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-hook_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # vimfier need
 [[plugins]]
@@ -47,8 +50,8 @@ repo   = 'Shougo/neosnippet-snippets'
 
 # [[plugins]]
 # repo = 'Shougo/neomru.vim'
-# if = "has('nvim')"
-#
+# if = "!has('gui_running')"
+
 # [[plugins]]
 # repo = 'Shougo/neoyank.vim'
 # if = "has('nvim')"
@@ -59,7 +62,7 @@ build = 'env PY3=ON ./install.sh'
 
 [[plugins]]
 repo = 'wesleyche/SrcExpl'
-hook_source = 'source ~/.vim/rc/plugins/srcexpl.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/srcexpl.rc.vim'
 
 # Base Tools: ---------------------------
 
@@ -90,6 +93,12 @@ repo = 'kana/vim-textobj-user'
 repo = 'mattn/webapi-vim'
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
+# hook_add = '''
+# '''
 
 # [[plugins]]
 # repo = 'haya14busa/incsearch.vim'
@@ -144,7 +153,7 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'kana/vim-smartchr'
-hook_source = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
 
 [[plugins]]
 repo = 'junegunn/vim-emoji'
@@ -162,7 +171,7 @@ hook_add = '''
 # >> can
 [[plugins]]
 repo = 'kana/vim-submode'
-hook_source = 'source ~/.vim/rc/plugins/submode.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'jacquesbh/vim-showmarks'
@@ -199,7 +208,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_source = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
@@ -210,7 +219,7 @@ hook_add = '''
 
 # [[plugins]]
 # repo = 'haya14busa/easy-motion'
-# hook_source = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+# hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -261,8 +270,8 @@ on_ft = 'swift'
 # C++ ---------------------------
 
 # syntax
-[[plugins]]
-repo = 'vim-jp/cpp-vim'
+# [[plugins]]
+# repo = 'vim-jp/cpp-vim'
 
 # cocos2d-x color
 [[plugins]]
@@ -272,7 +281,7 @@ repo = 'Xuyuanp/vim-cc2dx'
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
- 
+
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 if = "has('nvim')"

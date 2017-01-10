@@ -33,6 +33,10 @@ function! AutoMethodMake() abort
 endfunction
 command -bar AutoMethodMake  call AutoMethodMake()
 
+function! DeniteClassesDir() abort
+    echo "ouch"
+endfunction
+command -bar DeniteClassesDir  call DeniteClassesDir()
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

@@ -114,7 +114,6 @@ cnoremap <C-d> <Del>
 " nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
-nnoremap <Leader>T :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
@@ -128,7 +127,7 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <Leader>F :VimFiler -split -simple -winwidth=35 -no-quit<CR>
+nnoremap <Leader>F :VimFiler -simple -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
 nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
 nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcExplToggle<Cr>:TagbarToggle<CR>

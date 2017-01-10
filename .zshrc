@@ -88,7 +88,7 @@ alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias im='macvim'
 
-alias ssh='sshrc'
+alias sssh='sshrc'
 alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'

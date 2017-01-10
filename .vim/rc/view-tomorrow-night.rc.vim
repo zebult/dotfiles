@@ -1,9 +1,5 @@
 " GUI
 " サーチ色変更
-" autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=252
-" autocmd ColorScheme * highlight IncSearch ctermfg=160 ctermbg=252
-" autocmd ColorScheme * highlight Search ctermfg=160 ctermbg=108
-" autocmd ColorScheme * highlight IncSearch ctermfg=160 ctermbg=108
 autocmd ColorScheme * highlight Search ctermbg=108
 autocmd ColorScheme * highlight IncSearch ctermbg=108
 " 選択した範囲文字色
@@ -15,6 +11,9 @@ autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme solarized
 " colorscheme spacegray
 colorscheme tomorrow-night
+" colorscheme twilight
+" colorscheme jellybeans
+" colorscheme nefertiti
 
 " 256に制限をかける
 set t_Co=256
@@ -50,6 +49,7 @@ endif
 " 現在行ハイライト
 set cursorline
 hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=238
+" hi CursorLine cterm=underline
 " 現在列ハイライト
 set cursorcolumn
 hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=238
@@ -67,18 +67,13 @@ hi LineNr term=bold cterm=NONE ctermfg=241 ctermbg=NONE
 " 現在行数色
 hi CursorLineNr term=bold cterm=NONE ctermfg=9 ctermbg=NONE
 " コメント色
-" hi Comment ctermfg=12
 hi Comment ctermfg=241
 " タブ色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
-" set tabstop=4 "タブ,画面上の見た目
-" set shiftwidth=4
-" set softtabstop=0 "タブ一回のスペース量(0はtsで指定して量)
 " 検索をハイライトする
 set hlsearch
 " 補完色
-" hi PmenuSel ctermbg=33
 hi PmenuSel ctermfg=72
 " 微調整
 hi Type ctermfg=67
