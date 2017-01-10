@@ -110,8 +110,8 @@ augroup SaveGroup
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
 augroup END
 
-augroup UtilitiesGroup
 " 最後のカーソル位置を復元する
+augroup UtilitiesGroup
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line ("'\"") <= line("$") |
             \   exe "normal! g'\"" |
