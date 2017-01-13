@@ -308,6 +308,15 @@ hook_add = '''
 # repo = 'ervandew/eclim'
 # filetypes  =  ['java']
 
+# Android ---------------------------
+[[plugins]]
+repo = 'thinca/vim-logcat'
+
+# [[plugins]]
+# repo = 'naseer/logcat'
+# [[plugins]]
+# repo = 'vim-scripts/Logcat-syntax-highlighter'
+
 # C# ---------------------------
 
 # syntax

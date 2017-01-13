@@ -37,6 +37,12 @@ function! DeniteClassesDir() abort
     echo "ouch"
 endfunction
 command -bar DeniteClassesDir  call DeniteClassesDir()
+
+function! Logcat() abort
+    :r! adb logcat -v time -d
+endfunction
+command -bar Logcat  call Logcat()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn
