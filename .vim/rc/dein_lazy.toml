@@ -118,8 +118,8 @@ on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Need redmine
-# [[plugins]]
-# repo = 'kana/vim-metarw'
+[[plugins]]
+repo = 'kana/vim-metarw'
 
 # TODO: 使いたい
 # [[plugins]]
