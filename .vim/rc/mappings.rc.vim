@@ -90,8 +90,9 @@ nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 " Memo日付移動
-nnoremap g, i
-nnoremap g. i
+" nnoremap g, i
+" nnoremap g. i
+
 """"""""""""""""""""""""""""""
 "  ex mode
 """"""""""""""""""""""""""""""
@@ -125,7 +126,7 @@ nnoremap <Leader>v :VimShell<CR>
 nnoremap <Leader>g :Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>ii :execute "?".&include<CR> :noh<CR> o
-nnoremap gt :Calendar -view=clock<CR>
+" nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>

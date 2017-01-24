@@ -140,9 +140,9 @@ hook_add = '''
 repo = 'simeji/vim-chatworker.git'
 rev  = 'get-messages'
 hook_add = '''
-    let g:chatwork_token = '7115ebd43a89d1bb9ea462f454642d5f'
-    nnoremap <Leader>c :Unite chatworker<CR>x
-    nnoremap <Leader>p :Unite chatwork_post_message<CR>x
+    " let g:chatwork_token = ''
+    " nnoremap <Leader>c :Unite chatworker<CR>x
+    " nnoremap <Leader>p :Unite chatwork_post_message<CR>x
 '''
 
 [[plugins]]
