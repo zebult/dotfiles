@@ -14,12 +14,11 @@ set guioptions-=L
 set guioptions-=b
 " mac os x環境固有の設定
 if has('mac')
-   set guifont=Ricty\ Regular:h14
+   set guifont=Ricty\ Regular:h18
    " フォーカス時以外透明度上げる
-   " autocmd FocusGained * set transparency=5
-   " autocmd FocusLost * set transparency=10
-   autocmd FocusGained * set transparency=8
-   autocmd FocusLost * set transparency=20
+   " autocmd FocusGained * set transparency=8
+   " autocmd FocusLost * set transparency=20
+   autocmd FocusGained * set transparency=0
    " 暗い背景色用の配色を使う?
    set background=dark
 endif

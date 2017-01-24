@@ -111,12 +111,12 @@ hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 [[plugins]]
 repo = 'mattn/googlesuggest-complete-vim'
 
-# [[plugins]]
-# repo = 'mattn/vim-metarw-redmine'
-# hook_add = '''
-#     let g:metarw_redmine_server = ''
-#     let g:metarw_redmine_apikey = ''
-# '''
+[[plugins]]
+repo = 'mattn/vim-metarw-redmine'
+hook_add = '''
+    let g:metarw_redmine_server = ''
+    let g:metarw_redmine_apikey = ''
+'''
 
 # [[plugins]]
 # repo = 'basyura/unite-yarm'
@@ -307,6 +307,15 @@ hook_add = '''
 # [[plugins]]
 # repo = 'ervandew/eclim'
 # filetypes  =  ['java']
+
+# Android ---------------------------
+[[plugins]]
+repo = 'thinca/vim-logcat'
+
+# [[plugins]]
+# repo = 'naseer/logcat'
+# [[plugins]]
+# repo = 'vim-scripts/Logcat-syntax-highlighter'
 
 # C# ---------------------------
 

@@ -281,6 +281,20 @@ function currentopen() {
 zle -N currentopen
 bindkey '^o' currentopen
 
+function memodiary() {
+    BUFFER="vim ~/Dropbox/Saichi/Diary/$(date "+%Y/%m/%d.md")"
+    zle accept-line
+}
+zle -N memodiary
+bindkey '^n' memodiary
+
+function vimlogcat() {
+    BUFFER="vim ~/Dropbox/Saichi/Tmp/tmp.logcat"
+    zle accept-line
+}
+zle -N vimlogcat
+bindkey '^g' vimlogcat
+
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
