@@ -33,11 +33,6 @@ function! AutoMethodMake() abort
 endfunction
 command -bar AutoMethodMake  call AutoMethodMake()
 
-function! DeniteClassesDir() abort
-    echo "ouch"
-endfunction
-command -bar DeniteClassesDir  call DeniteClassesDir()
-
 function! Logcat() abort
     r! adb logcat -v time -d
     1d
@@ -48,7 +43,7 @@ command -bar Logcat  call Logcat()
 function! LogcatCocosDubug() abort
     r! adb logcat -v time -d | grep 'debug info'
 endfunction
-command -bar LogcatCocosDubug  call LogcatCocosDubug()
+command -bar LogcatCocosDubug call LogcatCocosDubug()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

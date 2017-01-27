@@ -23,7 +23,7 @@ noremap gk k
 noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
-nnoremap tt gD
+nnoremap tj gD
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>

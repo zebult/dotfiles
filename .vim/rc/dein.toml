@@ -92,7 +92,15 @@ repo = 'kana/vim-textobj-user'
 [[plugins]]
 repo = 'mattn/webapi-vim'
 
+# Library
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'zebult/toggl.vim'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -118,14 +126,15 @@ hook_add = '''
     let g:metarw_redmine_apikey = ''
 '''
 
-# [[plugins]]
-# repo = 'basyura/unite-yarm'
-# hook_add = '''
-#     let g:unite_yarm_server_url = ''
-#     let g:unite_yarm_access_key = ''
-#     let g:unite_yarm_limit = 25
-#     let g:unite_yarm_backup_dir = '/tmp/yarm'
-# '''
+[[plugins]]
+repo = 'basyura/unite-yarm'
+hook_add = '''
+'''
+
+[[plugins]]
+repo = 'toritori0318/vim-redmine'
+hook_add = '''
+'''
 
 # [[plugins]]
 # repo = 'toritori0318/vim-redmine'
@@ -216,10 +225,6 @@ hook_add = '''
     let g:gitgutter_highlight_lines = 0
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 '''
-
-# [[plugins]]
-# repo = 'haya14busa/easy-motion'
-# hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

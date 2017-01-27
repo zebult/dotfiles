@@ -112,7 +112,8 @@ case "${os}" in
         python --version
         pip3 install neovim
         # TODO: 2系を標準にするべき?  pyenv global 2.7.9 3.4.3 #手前から優先
-
+        brew install go
+        go get github.com/sachaos/todoist
         # Web download app
         brew cask install audacity
         brew cask install android-studio

@@ -1,5 +1,5 @@
-map gl <Plug>(easymotion-w)
-map gh <Plug>(easymotion-b)
+map <Leader>l <Plug>(easymotion-w)
+map <Leader>h <Plug>(easymotion-b)
 " map <Leader>j <Plug>(easymotion-j)
 " map <Leader>k <Plug>(easymotion-k)
 " map <Leader>l <Plug>(easymotion-w)

@@ -126,6 +126,11 @@ repo = 'kana/vim-metarw'
 # repo = 'hewes/unite-gtags'
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'haya14busa/vim-easymotion'
+hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
