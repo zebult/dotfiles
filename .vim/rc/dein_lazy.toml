@@ -117,10 +117,6 @@ repo = 'osyo-manga/vim-anzu'
 on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
-# Need redmine
-[[plugins]]
-repo = 'kana/vim-metarw'
-
 # TODO: 使いたい
 # [[plugins]]
 # repo = 'hewes/unite-gtags'
@@ -153,7 +149,6 @@ hook_add = '''
 let g:netrw_nogx = 1
 nmap <Leader>o <Plug>(openbrowser-smart-search)
 vmap <Leader>o <Plug>(openbrowser-smart-search)
-command! OpenRedMineTicket execute "OpenBrowser" expand("aaa")
 '''
 
 [[plugins]]

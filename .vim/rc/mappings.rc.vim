@@ -19,6 +19,8 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+noremap ;  :
+noremap :  ;
 
 noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
@@ -35,6 +37,8 @@ ca difff vertical diffsplit
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv
+" 前回編集した箇所選択
+nnoremap gc  `[v`]
 " 全選択
 nnoremap g0 ggVG
 " 全インデント揃える
@@ -145,7 +149,10 @@ nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 
 " help
-" nnoremap <C-h> :h<Space><C-r><C-w><CR>
+nnoremap g<BS> :help<Space>
+nnoremap <BS> :help<Space><C-r><C-w><CR>
+
+vnoremap v 0o$
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"

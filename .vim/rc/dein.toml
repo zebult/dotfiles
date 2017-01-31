@@ -48,6 +48,9 @@ build = 'make'
 [[plugins]]
 repo   = 'Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
 # [[plugins]]
 # repo = 'Shougo/neomru.vim'
 # if = "!has('gui_running')"
@@ -105,8 +108,6 @@ hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
-# hook_add = '''
-# '''
 
 # [[plugins]]
 # repo = 'haya14busa/incsearch.vim'
@@ -120,22 +121,22 @@ hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 repo = 'mattn/googlesuggest-complete-vim'
 
 [[plugins]]
+repo = 'kana/vim-metarw'
+
+[[plugins]]
 repo = 'mattn/vim-metarw-redmine'
-hook_add = '''
-    let g:metarw_redmine_server = ''
-    let g:metarw_redmine_apikey = ''
-'''
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
 
 [[plugins]]
 repo = 'basyura/unite-yarm'
 hook_add = '''
+  let g:unite_yarm_server_url = ''
+  let g:unite_yarm_access_key = ''
+  let g:unite_yarm_limit = 100
+  let g:unite_yarm_backup_dir = '/tmp/yarm'
 '''
 
-[[plugins]]
-repo = 'toritori0318/vim-redmine'
-hook_add = '''
-'''
-
+# ok~
 # [[plugins]]
 # repo = 'toritori0318/vim-redmine'
 # hook_add = '''
@@ -144,6 +145,21 @@ hook_add = '''
 #     let g:redmine_auth_pass = ''
 #     let g:redmine_auth_key  = ''
 # '''
+
+[[plugins]]
+repo = 'emonkak/vim-metarw-gist'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-gist.rc.vim'
+
+[[plugins]]
+repo = 'joker1007/vim-metarw-qiita'
+hook_add = '''
+let g:qiita_user='zebult'
+let g:qiita_token='xxxxxx'
+'''
+
+[[plugins]]
+repo = 'mattn/vim-metarw-gdrive'
+
 
 [[plugins]]
 repo = 'simeji/vim-chatworker.git'
