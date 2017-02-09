@@ -159,8 +159,8 @@ inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
 " 対応する括弧へ移動しやすく
-" nnoremap <Tab> %
-" vnoremap <Tab> %
+nnoremap <Tab> %
+vnoremap <Tab> %
 " マーク周りの改善
 noremap ' `
 
