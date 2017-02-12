@@ -159,6 +159,7 @@ nnoremap <Space>d :vertical diffsplit
 nnoremap <Space>u :Unite source<CR>
 nnoremap <Space>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Space>r :run<CR>
+nnoremap ;r<CR> :run<CR>
 nnoremap <Space>v :VimShell<CR>
 nnoremap <Space>c :Calendar<CR>
 nnoremap gt :Calendar -view=clock<CR>

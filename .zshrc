@@ -287,13 +287,6 @@ function memodiary() {
 zle -N memodiary
 bindkey '^n' memodiary
 
-function vimlogcat() {
-    BUFFER="vim ~/Dropbox/Saichi/Tmp/tmp.logcat"
-    zle accept-line
-}
-zle -N vimlogcat
-bindkey '^g' vimlogcat
-
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
