@@ -143,6 +143,8 @@ case "${os}" in
         brew cask install eclipse-java
         brew install ant
         brew install android-ndk
+        # http://dl.google.com/android/ndk/android-ndk-r10d-darwin-x86_64.bin # 権限与えて実行
+        # mv android-ndk-r10d /usr/local/Cellar/android-ndk/
         brew install android-sdk
 
         # App store

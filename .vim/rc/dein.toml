@@ -160,6 +160,8 @@ let g:qiita_token='xxxxxx'
 [[plugins]]
 repo = 'mattn/vim-metarw-gdrive'
 
+[[plugins]]
+repo = 'mattn/vim-metarw-simplenote'
 
 [[plugins]]
 repo = 'simeji/vim-chatworker.git'

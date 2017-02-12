@@ -40,7 +40,7 @@ endif
 " if dein#check_update()
 "   call dein#update()
 " endif
-
+"
 " if dein#clear_state()
 "     call dein#clear_state()
 " endif

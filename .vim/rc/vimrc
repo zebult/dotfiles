@@ -37,6 +37,7 @@ if has('vim_starting')
 endif
 
 call s:source_rc('filetype.rc.vim')
+call s:source_rc('path.rc.vim')
 call s:source_rc('dein.rc.vim')
 call s:source_rc('mappings.rc.vim')
 " call s:source_rc('view-tomorrow-night.rc.vim')
