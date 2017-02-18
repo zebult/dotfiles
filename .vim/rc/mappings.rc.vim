@@ -137,7 +137,6 @@ autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>F :VimFiler -simple -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
-nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
 nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcExplToggle<Cr>:TagbarToggle<CR>
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 

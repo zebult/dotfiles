@@ -102,6 +102,10 @@ repo = 'vim-jp/vital.vim'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'haya14busa/vim-easymotion'
+hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+
+[[plugins]]
 repo = 'mrtazz/simplenote.vim'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 

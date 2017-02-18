@@ -13,7 +13,7 @@ endfunction
 " Source Explorer Window Height
 let g:SrcExpl_winHeight = 14
 " Mappings
-nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
+" nnoremap <Leader>h :<C-u>SrcExplToggle<Cr>
 " nm <Leader>E [srce]
 " nmap <Space>h :SrcExplToggle<CR>
 " nmap [srcexpl]s :SrcExplToggle<CR>
