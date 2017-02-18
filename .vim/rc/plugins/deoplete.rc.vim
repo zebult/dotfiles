@@ -46,7 +46,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " endif
 " let g:deoplete#keyword_patterns._ = '\h\w*'
 " jedi-vimの設定(omni補完の自動補完に必要)
-autocm FileType python setlocal omnifunc=jedi#completions pleteopt-=preview
+autocm FileType python setlocal omnifunc=jedi#completions
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 " 文脈を考慮した補完(.や::の後に補完してくれる)(これがないとEnterで決まらない?)

@@ -35,8 +35,11 @@ set autoindent
 " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
 set shiftround
 " 対応括弧に'<'と'>'のペアを追加
-set matchpairs& matchpairs+=<:>
-" set clipboard+=unnamed,autoselect
+set matchpairs+=<:>
+set matchpairs+=｛:｝
+set matchpairs+=「:」
+set matchpairs+=【:】
+set matchpairs+=（:）
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile

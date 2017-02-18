@@ -55,9 +55,9 @@ repo = 'Shougo/unite-outline'
 # repo = 'Shougo/neomru.vim'
 # if = "!has('gui_running')"
 
-# [[plugins]]
-# repo = 'Shougo/neoyank.vim'
-# if = "has('nvim')"
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+if = "has('nvim')"
 
 [[plugins]]
 repo = 'nixprime/cpsm'
@@ -100,6 +100,10 @@ repo = 'mattn/webapi-vim'
 repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'mrtazz/simplenote.vim'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 
 [[plugins]]
 repo = 'zebult/toggl.vim'

@@ -48,7 +48,7 @@ let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 " jedi-vimの設定(omni補完の自動補完に必要)
-autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
+autocm FileType python setlocal omnifunc=jedi#completions
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 " 文脈を考慮した補完(これがないとEnterで決まらない)
