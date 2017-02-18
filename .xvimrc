@@ -5,7 +5,7 @@ set incsearch
 " コマンドラインモードでtab保管
 set wildmenu wildmode=list:full
 
-nnoremap <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:args<CR>:redraw!<CR>
 set laststatus=2
 set statusline=%F%r%h%=
 " 検索時大文字小文字を区別しない
