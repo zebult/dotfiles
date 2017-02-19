@@ -60,16 +60,6 @@ call watchdogs#setup(g:quickrun_config)
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'
 
-# Need to `brew install ctags`
-[[plugins]]
-repo = 'soramugi/auto-ctags.vim'
-on_i = 1
-commands = 'TagbarToggle'
-hook_add = '''
-let g:tagbar_width = 20
-nmap <Leader>t :TagbarToggle<CR>
-'''
-
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
 on_i = 1
@@ -159,9 +149,6 @@ repo = 'haya14busa/vim-migemo'
 repo = 'kana/vim-altr'
 hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
 on_map = '<Plug>(altr-'
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'itchyny/calendar.vim'

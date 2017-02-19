@@ -52,6 +52,8 @@ let g:metarw_alias = {
 autocmd BufNewFile *.cs norm! 3j2wi%3dh 
 autocmd BufNewFile *.md norm! i# %"zx"zx"zxo
 autocmd BufNewFile *.java norm! 2wi%5dh 
+autocmd BufNewFile *.h norm! i% bbb:%s/CLASS_NAME//gggveeelx
+autocmd BufNewFile *.hpp norm! i% bbb:%s/CLASS_NAME//gggveeelx
 
 " tomlから呼べない為ここで呼ぶ
 call s:source_rc('plugins/deoplete.rc.vim')
@@ -59,7 +61,7 @@ call s:source_rc('plugins/deoplete.rc.vim')
 call s:source_rc('plugins/denite.rc.vim')
 call s:source_rc('plugins/fugitive.rc.vim')
 call s:source_rc('plugins/quickrun.rc.vim')
-call s:source_rc('plugins/gtags.rc.vim')
+" call s:source_rc('plugins/gtags.rc.vim')
 call s:source_rc('plugins/submode.rc.vim')
 call s:source_rc('plugins/smartchr.rc.vim')
 

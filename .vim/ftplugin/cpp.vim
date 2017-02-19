@@ -1,7 +1,8 @@
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 let $VIM_CPP_STDLIB = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
-let $VIM_CPP_INCLUDE_DIR = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos,/usr/local/Cellar/boost/1.62.0"
+" let $VIM_CPP_INCLUDE_DIR = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos,/usr/local/Cellar/boost/1.62.0"
+let $VIM_CPP_INCLUDE_DIR = "$COCOS_LIBRARY,/usr/local/Cellar/boost/1.62.0"
 " インクルードパスを設定する(gfなどでヘッダーファイルを開ける)
 " setlocal path+=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos/**
 " setlocal path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1

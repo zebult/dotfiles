@@ -101,6 +101,16 @@ repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
 
+# Need to `brew install global`
+[[plugins]]
+repo = 'zebult/auto-gtags.vim'
+hook_add = 'source ~/.vim/rc/plugins/auto-gtags.rc.vim'
+
+# Need to `brew install ctags`
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
+hook_add = 'source ~/.vim/rc/plugins/auto-ctags.rc.vim'
+
 [[plugins]]
 repo = 'haya14busa/vim-easymotion'
 hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
@@ -304,7 +314,7 @@ on_ft = 'swift'
 # [[plugins]]
 # repo = 'vim-jp/cpp-vim'
 
-# cocos2d-x color
+# cocos2d-x syntax color
 [[plugins]]
 repo = 'Xuyuanp/vim-cc2dx'
 
@@ -326,12 +336,16 @@ hook_add = '''
     let g:marching_clang_command = "/usr/bin/clang"
     " インクルードディレクトリのパスを設定
     let g:marching_include_paths = [
-    \   "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos",
+    \   "$COCOS_LIBRARY",
     \   "/usr/local/Cellar/boost"
     \]" neocomplete.vim と併用して使用する場合は以下の設定を行う
     let g:marching_enable_neocomplete = 1
     let g:marching_enable_deoplete = 1
 '''
+
+# JavaScript ---------------------------
+[[plugins]]
+repo = 'othree/yajs.vim'
 
 # Java ---------------------------
 

@@ -45,6 +45,11 @@ function! LogcatCocosDubug() abort
 endfunction
 command -bar LogcatCocosDubug call LogcatCocosDubug()
 
+function! Pwd() abort
+  echo expand("%:p")
+endfunction
+command -bar Pwd call Pwd()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

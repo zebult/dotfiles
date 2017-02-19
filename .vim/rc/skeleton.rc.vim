@@ -2,6 +2,8 @@ augroup template
   autocmd!
   autocmd BufNewFile *.c 0r $HOME/.vim/template/skeleton.c
   autocmd BufNewFile *.cpp 0r $HOME/.vim/template/skeleton.cpp
+  autocmd BufNewFile *.h 0r $HOME/.vim/template/skeleton.h
+  autocmd BufNewFile *.hpp 0r $HOME/.vim/template/skeleton.h
   autocmd BufNewFile *.cs 0r $HOME/.vim/template/skeleton.cs
   autocmd BufNewFile *.html 0r $HOME/.vim/template/skeleton.html
   autocmd BufNewFile *.php 0r $HOME/.vim/template/skeleton.php
