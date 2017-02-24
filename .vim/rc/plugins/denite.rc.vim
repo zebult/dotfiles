@@ -14,23 +14,33 @@ call denite#custom#map('insert' , "<C-n>"  , '<denite:move_to_next_line>')
 call denite#custom#map('insert' , "<C-p>"  , '<denite:move_to_previous_line>')
 
 nnoremap [denite] <Nop>
-nmap <C-m> [denite]
+nmap <Bslash> [denite]
 
-nnoremap [denite]l :Denite 
-nnoremap <Bar> :Denite 
-" nnoremap [denite]j :Denite file_rec<CR>
-" nnoremap [denite]k :Denite file_old<CR>
-" nnoremap [denite]g :Denite -auto_preview grep<CR>
-" nnoremap [denite]G :DeniteCursorWord -auto_preview grep<CR>
-" nnoremap <silent> [denite]g :<C-u>Denite grep -auto_preview<CR>
-nnoremap <silent> [denite]r :<C-u>Denite -resume<CR>
-nnoremap <silent> [denite]n :<C-u>Denite -resume -select=+1 -immediately<CR>
-nnoremap <silent> [denite]p :<C-u>Denite -resume -select=-1 -immediately<CR>
-nnoremap <C-j> :Denite file_rec<CR>
-nnoremap <C-k> :Denite file_old<CR>
-nnoremap Y :Denite neoyank<CR>
-nnoremap <C-g> :Denite -auto_preview grep<CR>
-nnoremap g<C-g> :DeniteCursorWord -auto_preview grep<CR>
+nnoremap <silent> [denite]j  : <C-u>DeniteBufferDir file_rec<CR>
+nnoremap <silent> [denite]tj : <C-u>DeniteBufferDir -default-action=tabopen file_rec<CR>
+nnoremap <silent> [denite]vj : <C-u>DeniteBufferDir -default-action=vsplit file_rec<CR>
+nnoremap <silent> [denite]sj : <C-u>DeniteBufferDir -default-action=split file_rec<CR>
+nnoremap <silent> [denite]J  : <C-u>Denite file_rec<CR>
+nnoremap <silent> [denite]k  : <C-u>Denite file_old<CR>
+nnoremap <silent> [denite]K  : <C-u>Denite buffer<CR>: Denite -immediately file_old<CR><C-c>
+nnoremap <silent> [denite]g  : <C-u>Denite -auto_preview grep<CR>
+nnoremap <silent> [denite]G  : <C-u>DeniteCursorWord -auto_preview grep<CR>
+nnoremap <silent> [denite]h  : <C-u>Denite help<CR>
+nnoremap <silent> [denite]H  : <C-u>DeniteCursorWord help<CR>
+
+nnoremap <silent> [denite]r  : <C-u>Denite -resume<CR>
+nnoremap <silent> [denite]n  : <C-u>Denite -resume -select=+1 -immediately<CR>
+nnoremap <silent> <M-n>      : <C-u>Denite -resume -select=+1 -immediately<CR><C-c>
+nnoremap <silent> [denite]p  : <C-u>Denite -resume -select=-1 -immediately<CR>
+nnoremap <silent> <M-p>      : <C-u>Denite -resume -select=-1 -immediately<CR><C-c>
+nnoremap <silent> [denite]T  : <C-u>Denite filetype<CR>
+nnoremap <silent> [denite]y  : <C-u>Denite neoyank<CR>
+
+" nnoremap g<C-j> :Denite file_rec<CR>
+" nnoremap <C-j> :DeniteBufferDir file_rec<CR>
+" nnoremap <C-k> :Denite file_old<CR>
+" nnoremap <C-g> :Denite -auto_preview grep<CR>
+" nnoremap g<C-g> :DeniteCursorWord -auto_preview grep<CR>
 " <C-h> は <BS> と同じ
 " nnoremap <BS> :Denite file_mru<Cr>
 " nnoremap <C-y> :Denite neoyank<Cr>
