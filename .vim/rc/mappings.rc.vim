@@ -34,6 +34,7 @@ inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
 " diffすぐ出す
 ca difff vertical diffsplit
+ca ccd lcd %:h
 " 指定範囲インデント調節の連続化
 vnoremap > >gv
 vnoremap < <gv

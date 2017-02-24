@@ -57,4 +57,13 @@ hi PreProc ctermfg=yellow
 hi MoreMsg ctermfg=red
 hi Question ctermfg=red
 hi Type ctermfg=red
+" original color
+" hi Function guifg=#FF0000
+hi Function ctermfg=blue
+hi Constant ctermfg=darkblue
+" hi Structure ctermfg=blue
+" hi Type ctermfg=blue
+" hi CCClass ctermfg=blue
 
+" color customise
+" lightblue
