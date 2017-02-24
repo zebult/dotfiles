@@ -186,7 +186,7 @@ let g:previm_open_cmd = 'open -a Safari'
 repo = 'zebult/xcode.vim'
 filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = '''
-let g:application_name = "Xcode7.2.1"
+let g:application_name = "Xcode"
 nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
 nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
 nnoremap <silent> <Leader>Q :XcodeClose<CR>

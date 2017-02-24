@@ -1,0 +1,6 @@
+snippet ccrxinterval
+    auto values = CCRx::interval(this, ${1})
+    .subscribe([=](int v) {
+        ${2}
+    }, [](){printf("completed\n");});
+
