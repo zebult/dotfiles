@@ -15,10 +15,10 @@ repo = 'dzeban/vim-log-syntax'
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# vimrcで設定読まないと初期選択状態にならない
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
-hook_add = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'

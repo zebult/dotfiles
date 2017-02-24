@@ -55,15 +55,8 @@ autocmd BufNewFile *.java norm! 2wi%5dh 
 autocmd BufNewFile *.h norm! i% bbb:%s/CLASS_NAME//gggveeelx
 autocmd BufNewFile *.hpp norm! i% bbb:%s/CLASS_NAME//gggveeelx
 
-" tomlから呼べない為ここで呼ぶ
+" このタイミングで呼ばないと補完が選択状態で開始されない
 call s:source_rc('plugins/deoplete.rc.vim')
-" call s:source_rc('plugins/neocomplete.rc.vim')
-call s:source_rc('plugins/denite.rc.vim')
-call s:source_rc('plugins/fugitive.rc.vim')
-call s:source_rc('plugins/quickrun.rc.vim')
-" call s:source_rc('plugins/gtags.rc.vim')
-call s:source_rc('plugins/submode.rc.vim')
-call s:source_rc('plugins/smartchr.rc.vim')
 
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く
