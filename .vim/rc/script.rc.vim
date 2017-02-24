@@ -29,7 +29,7 @@ endfunction
 command -bar JsonPretty  call JsonPretty()
 
 function! AutoMethodMake() abort
-  normal 0wms"my$?classw"cyiwGo"mpxa {}kk0w"cPa::'sj
+  normal 0wms"my$gg/classw"cyiwGo"mpxa {}kk0w"cPa::'sj
 endfunction
 command -bar AutoMethodMake  call AutoMethodMake()
 
@@ -44,6 +44,12 @@ function! LogcatCocosDubug() abort
   r! adb logcat -v time -d | grep 'debug info'
 endfunction
 command -bar LogcatCocosDubug call LogcatCocosDubug()
+
+" TODO: add optionj
+function! CocosRunAndroid() abort
+  !cocos run -p android --android-studio -j 2
+endfunction
+command -bar CocosRunAndroid call CocosRunAndroid()
 
 function! Pwd() abort
   echo expand("%:p")

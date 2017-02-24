@@ -164,63 +164,70 @@ case "${os}" in
         mas install 896624060 # Kobito
         mas install 585829637 # Todoist
         # mas install 409203825 # Numbers
+
+        # 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
+        cd $HOME/Documents
+        git clone https://gist.github.com/d5ee659c9d2bc1575cbc93aaca6988a4.git
+        mv d5ee659c9d2bc1575cbc93aaca6988a4 CheatSheet
+        sudo ln -snfv $HOME/Documents/CheatSheet /0CheatSheet
+
+        # 4. Karabiner setting
+        cd $HOME/Library/Application\ Support/Karabiner
+        DIR=${PWD##*/}
+        if [ $DIR != "Karabiner" ]; then
+            echo ERROR: Karabiner clone.
+            exit
+        fi
+        cd ..
+        rm -rf Karabiner
+        git clone https://github.com/zebult/Karabiner.git
+
+        # 5. keygen
+        cd $HOME
+        mkdir .ssh
+        cd .ssh
+        ssh-keygen
+
+        # util shell link
+        cd $HOME
+        mkdir -p .bin/sh
+        ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
+        ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
+        ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
+        chmod 755 $HOME/.bin/sh/*
+
+        # Alfred
+        cd $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/preferences/features/
+        DIR=${PWD##*/}
+        if [ $DIR != "features" ]; then
+            echo "Please set alfred plist. $ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist"
+        else
+            mkdir websearch
+            cd websearch
+            ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
+        fi
+
+        # cocos2d-x
+        mkdir -p /Applications/Cocos/Cocos2d-x
+        wget http://www.cocos2d-x.org/filedown/cocos2d-x-3.6.zip -P /Applications/Cocos/Cocos2d-x
+        cd /Applications/Cocos/Cocos2d-x
+        unzip -o /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6.zip
+        rm -rf cocos2d-x-3.6.zip
+        /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/setup.py
+        echo "you call don't python3->pyenv global 2.7.9 3.4.3"
+        # ln -snfv /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos /usr/local/include/
+
+        cd $HOME
+
+        # Mac Settings
+        defaults write com.apple.dashboard mcx-disabled -boolean true; killall Dock # DashBoard消去
+        defaults write com.apple.dock autohide-delay -float 0;killall Dock # Dock表示時間0
+        defaults write com.apple.desktopservices DSDontWriteNetworkStores true # ネットワークドライブで.DS_Storeファイルを作成しないようにする
+        defaults write -g QLPanelAnimationDuration -float 0 # クイックルックアニメーション無し
+        defaults write com.apple.dock workspaces-edge-delay -float 0.2;killall Dock # アプリがデスクトップ間を移動する際の速度を変更 ???
+
         ;;
 esac
-
-# 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
-cd $HOME/Documents
-git clone https://gist.github.com/d5ee659c9d2bc1575cbc93aaca6988a4.git
-mv d5ee659c9d2bc1575cbc93aaca6988a4 CheatSheet
-sudo ln -snfv $HOME/Documents/CheatSheet /0CheatSheet
-
-# 4. Karabiner setting
-cd $HOME/Library/Application\ Support/Karabiner
-DIR=${PWD##*/}
-if [ $DIR != "Karabiner" ]; then
-    echo ERROR: Karabiner clone.
-    exit
-fi
-cd ..
-rm -rf Karabiner
-git clone https://github.com/zebult/Karabiner.git
-
-# 5. keygen
-cd $HOME
-mkdir .ssh
-cd .ssh
-ssh-keygen
-
-# util shell link
-cd $HOME
-mkdir -p .bin/sh
-ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
-ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
-ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
-chmod 755 $HOME/.bin/sh/*
-
-# Alfred
-cd $HOME/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/preferences/features/
-DIR=${PWD##*/}
-if [ $DIR != "features" ]; then
-    echo "Please set alfred plist. $ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist"
-else
-    mkdir websearch
-    cd websearch
-    ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
-fi
-
-# cocos2d-x
-mkdir -p /Applications/Cocos/Cocos2d-x
-wget http://www.cocos2d-x.org/filedown/cocos2d-x-3.6.zip -P /Applications/Cocos/Cocos2d-x
-cd /Applications/Cocos/Cocos2d-x
-unzip -o /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6.zip
-rm -rf cocos2d-x-3.6.zip
-/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/setup.py
-echo "you call don't python3->pyenv global 2.7.9 3.4.3"
-# ln -snfv /Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos /usr/local/include/
-
-cd $HOME
-
 echo finish🍺
 
 # branch 表示
