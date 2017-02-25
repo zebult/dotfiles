@@ -31,16 +31,16 @@ for mapping in mapping_list
   endfor
 endfor
 
-nnoremap <silent> [denite]h  : <C-u>Denite help<CR>
-nnoremap <silent> [denite]H  : <C-u>DeniteCursorWord help<CR>
+nnoremap <silent> [denite]h  :<C-u>Denite help<CR>
+nnoremap <silent> [denite]H  :<C-u>DeniteCursorWord help<CR>
 
-nnoremap <silent> [denite]r  : <C-u>Denite -resume<CR>
-nnoremap <silent> [denite]n  : <C-u>Denite -resume -select=+1 -immediately<CR>
-nnoremap <silent> <M-n>      : <C-u>Denite -resume -select=+1 -immediately<CR><C-c>
-nnoremap <silent> [denite]p  : <C-u>Denite -resume -select=-1 -immediately<CR>
-nnoremap <silent> <M-p>      : <C-u>Denite -resume -select=-1 -immediately<CR><C-c>
-nnoremap <silent> [denite]T  : <C-u>Denite filetype<CR>
-nnoremap <silent> [denite]y  : <C-u>Denite neoyank<CR>
+nnoremap <silent> [denite]r  :<C-u>Denite -resume<CR>
+nnoremap <silent> [denite]n  :<C-u>Denite -resume -select=+1 -immediately<CR>
+nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately<CR>
+nnoremap <silent> <M-n>      :<C-u>Denite -resume -select=+1 -immediately<CR>
+nnoremap <silent> <M-p>      :<C-u>Denite -resume -select=-1 -immediately<CR>
+nnoremap <silent> [denite]T  :<C-u>Denite filetype<CR>
+nnoremap <silent> [denite]y  :<C-u>Denite neoyank<CR>
 
 nnoremap <C-j> :DeniteBufferDir file_rec<CR>
 nnoremap <C-k> :Denite file_old<CR>

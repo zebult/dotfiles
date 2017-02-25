@@ -148,10 +148,6 @@ nnoremap <Leader>Q :qa<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 
-" help
-nnoremap <BS> :help<Space>
-nnoremap g<BS> :help<Space><C-r><C-w><CR>
-
 vnoremap v 0o$
 
 set completeopt=menuone
