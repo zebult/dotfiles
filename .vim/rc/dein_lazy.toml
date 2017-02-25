@@ -41,6 +41,7 @@ repo = 'thinca/vim-quickrun'
 on_map = '<Plug>'
 hook_add = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 
+# syntax check with quickrun and save
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 on_source = 'vim-quickrun.vim'
@@ -56,6 +57,10 @@ hook_post_source = '''
 call watchdogs#setup(g:quickrun_config)
 '''
 
+# 構文チェック
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+
 [[plugins]]
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'
@@ -64,11 +69,6 @@ on_source = 'vim-quickrun.vim'
 repo = 'vim-scripts/gtags.vim'
 on_i = 1
 hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
-
-# 構文チェック
-[[plugins]]
-repo = 'scrooloose/sYntastic.git'
-on_i = 1
 
 # 英単語辞書補完(重いのでoff)
 # [[plugins]]
@@ -123,10 +123,6 @@ nnoremap <Leader>b :W3mTab google<CR>
 # default key is 'gs'
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
-
-[[plugins]]
-repo = 'tomtom/tcomment_vim'
-on_map = '<C-_>'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'

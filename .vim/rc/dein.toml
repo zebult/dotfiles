@@ -78,9 +78,13 @@ hook_add = '''
     let g:splash#path = $HOME . '/.vim/rc/splash.txt'
 '''
 
+# dependency vim-watchdogs
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
-on_source = 'vim-quickrun.vim'
+
+# Need shabadoubi touch henshin
+[[plugins]]
+repo = 'osyo-manga/unite-quickfix'
 
 # camel need
 [[plugins]]
@@ -100,6 +104,9 @@ repo = 'mattn/webapi-vim'
 repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
 
 # Need to `brew install global`
 [[plugins]]
@@ -251,15 +258,18 @@ hook_add = '''
     map R  <Plug>(operator-replace)
 '''
 
+# gitコマンド
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
 
+# gitマーク, ハイライト
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
-    let g:gitgutter_highlight_lines = 0
+    let g:gitgutter_highlight_lines = 1
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
+    " # TODO: change color
 '''
 
 [[plugins]]

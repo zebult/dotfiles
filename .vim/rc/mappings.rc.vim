@@ -123,7 +123,6 @@ cnoremap <C-d> <Del>
 " nnoremap <Leader>d :vertical diffsplit
 nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
-nnoremap <Leader>r :QuickRun<CR>" TODO: 数秒後できたら(:HierUpdate<CR> )
 nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
