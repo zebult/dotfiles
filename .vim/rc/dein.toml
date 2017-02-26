@@ -82,10 +82,6 @@ hook_add = '''
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 
-# Need shabadoubi touch henshin
-[[plugins]]
-repo = 'osyo-manga/unite-quickfix'
-
 # camel need
 [[plugins]]
 repo = 'kana/vim-operator-user'

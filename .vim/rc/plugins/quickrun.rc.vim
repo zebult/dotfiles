@@ -2,13 +2,14 @@
 " let g:quickrun_config = get(g:, 'quickrun_config', {})
 let g:quickrun_config = {
 \   '_' : {
-\       "hook/close_quickfix/enable_hook_loaded" : 1,
-\       "hook/close_quickfix/enable_success" : 1,
-\       "hook/close_buffer/enable_failure" : 1,
-\       "hook/close_buffer/enable_empty_data" : 1,
-\       "outputter" : "multi:buffer:quickfix",
+\       'outputter/buffer/running_mark' : 'ﾊﾞﾝ（∩`･ω･）ﾊﾞﾝﾊﾞﾝﾊﾞﾝ',
+\       'hook/close_quickfix/enable_hook_loaded' : 1,
+\       'hook/close_quickfix/enable_success' : 1,
+\       'hook/close_buffer/enable_failure' : 1,
+\       'hook/close_buffer/enable_empty_data' : 1,
+\       'outputter' : 'multi:buffer:quickfix',
 \       'hook/inu/enable' : 1,
-\       'hook/inu/wait' : 10,
+\       'hook/inu/wait' : 2,
 \       'outputter/buffer/split' : ':botright 8sp',
 \       'runner' : 'vimproc',
 \       'runner/vimproc/updatetime' : 40,
@@ -19,7 +20,7 @@ let g:quickrun_config = {
 " \       'outputter/error/success' : 'buffer',
 " \       'outputter/error/error'   : 'quickfix',
 "use c++11
-let g:quickrun_config.cpp = {
+let g:quickrun_config['cpp'] = {
 \   'command': 'g++',
 \   'cmdopt': '-std=c++11'
 \ }
