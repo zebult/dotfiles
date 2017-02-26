@@ -46,21 +46,16 @@ hook_add = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 repo = 'osyo-manga/vim-watchdogs'
 on_source = 'vim-quickrun.vim'
 on_event = ['FocusLost', 'CursorHold']
-hook_add = '''
-let g:quickrun_config = get(g:, 'quickrun_config', {})
-let g:quickrun_config['watchdogs_checker/_'] = {'outputter/quickfix/open_cmd': ''}
-let g:quickrun_config['watchdogs_checker/jshint'] = {'cmdopt': '--config `/.jshintrc'}
-" ファイルの保存時にチェックを行う
-let g:watchdogs_check_BufWritePost_enable = 1
-'''
+hook_add = 'source ~/.vim/rc/plugins/watchdogs.rc.vim'
 hook_post_source = '''
 call watchdogs#setup(g:quickrun_config)
 '''
 
-# 構文チェック
+# syntax check(location list, signs)
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
 
+# syntax error color
 [[plugins]]
 repo = 'cohama/vim-hier'
 on_source = 'vim-quickrun.vim'

@@ -1,4 +1,4 @@
-" GUI
+" View
 colorscheme nefertiti
 
 " 256に制限をかける
@@ -33,20 +33,20 @@ if has('multi_byte_ime') || has('xim')
 endif
 
 " サーチ色変更
-hi Search ctermbg=yellow guibg=#A99275
-hi IncSearch ctermfg=yellow guifg=#A99275
+hi Search ctermbg=yellow guibg=yellow
+hi IncSearch ctermfg=yellow guifg=yellow
 " 検索をハイライトする
 set hlsearch
 " 選択した範囲文字色
-hi Visual ctermfg=red guifg=#A97775
+hi Visual ctermfg=red guifg=red
 " 行番号
-hi LineNr ctermfg=darkgray ctermbg=none guifg=#595959
+hi LineNr ctermfg=darkgray ctermbg=none guifg=none
 " 現在行番号
-hi CursorLineNr ctermfg=yellow guifg=#A99275
+hi CursorLineNr ctermfg=yellow guifg=yellow
 " キャリッジリターン(CR)
 hi NonText ctermfg=darkgray
 " コメント色
-hi Comment ctermfg=darkgray guifg=#595959
+hi Comment ctermfg=darkgray guifg=darkgray
 " 補完色
 hi PmenuSel ctermbg=yellow
 " 微調整
@@ -67,3 +67,7 @@ hi Constant ctermfg=darkblue
 
 " color customise
 " lightblue
+hi GitGutterAddLine ctermbg=236 guibg=black
+hi GitGutterChangeLine ctermbg=238 guibg=yellow
+hi GitGutterDeleteLine ctermbg=238 guibg=darkgray
+hi GitGutterChangeDeleteLine ctermbg=238 guibg=yellow

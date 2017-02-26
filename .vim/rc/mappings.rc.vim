@@ -1,6 +1,7 @@
 " Mappings
 
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:NoHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
+" nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:NoHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -154,8 +155,8 @@ inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
 " 対応する括弧へ移動しやすく
-" nnoremap <Bslash> %
-" vnoremap <Bslash> %
+nnoremap <BS> %
+vnoremap <BS> %
 
 " マーク周りの改善
 noremap ' `

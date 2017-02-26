@@ -1,5 +1,4 @@
 " Quickrun
-" let g:quickrun_config = get(g:, 'quickrun_config', {})
 let g:quickrun_config = {
 \   '_' : {
 \       'outputter/buffer/running_mark' : 'ﾊﾞﾝ（∩`･ω･）ﾊﾞﾝﾊﾞﾝﾊﾞﾝ',
@@ -16,16 +15,19 @@ let g:quickrun_config = {
 \   }
 \}
 
-" \       'outputter' : 'error',
-" \       'outputter/error/success' : 'buffer',
-" \       'outputter/error/error'   : 'quickfix',
-"use c++11
+" c++11
 let g:quickrun_config['cpp'] = {
 \   'command': 'g++',
 \   'cmdopt': '-std=c++11'
 \ }
 
-" texファイルをQuickRunでコンパイルする際の設定
+let g:quickrun_config['javascript'] = {
+\   "javascript/watchdogs_checker" : {
+\     "type" : "eslint"
+\   }
+\ }
+
+" tex
 let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',
     \ 'outputter' : 'error',

@@ -56,11 +56,11 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
-" Error時自動で更新
+" 保存時Error時自動で更新し、表示する
 let g:syntastic_mode_map = { 'mode': 'passive' }
 augroup AutoSyntastic
     autocmd!
-    autocmd BufWritePost *.c,*.cpp call s:syntastic()
+    autocmd BufWritePost *.c,*.cpp,*js,*py call s:syntastic()
 augroup END
 function! s:syntastic()
     SyntasticCheck

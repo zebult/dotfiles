@@ -5,7 +5,7 @@ au FileType * setlocal formatoptions-=ro
 
 " plugin不要コマンド
 " airblade/vim-gitgutter
-nunmap <Leader>hu
-nunmap <Leader>hs
-nunmap <Leader>hp
-nunmap <Leader>hr
+" nunmap <Leader>hu
+" nunmap <Leader>hs
+" nunmap <Leader>hp
+" nunmap <Leader>hr

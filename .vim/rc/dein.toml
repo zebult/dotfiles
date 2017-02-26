@@ -262,11 +262,7 @@ hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
 # gitマーク, ハイライト
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-hook_add = '''
-    let g:gitgutter_highlight_lines = 1
-    nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
-    " # TODO: change color
-'''
+hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -350,6 +346,8 @@ hook_add = '''
 '''
 
 # JavaScript ---------------------------
+
+# color
 [[plugins]]
 repo = 'othree/yajs.vim'
 
@@ -400,7 +398,6 @@ on_ft = 'md'
 [[plugins]] # toml syntax
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
-
 
 # Tex ---------------------------
 
