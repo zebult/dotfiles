@@ -25,7 +25,7 @@ COCOS_VERSION="3.11.1"
 NDK_VERSION="android-ndk-r10d"
 SDK_VERSION="22"
 ## Use vim
-export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/cocos
+export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
@@ -45,6 +45,10 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 ## ant
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
+
+## wip
+export CPATH=$CPATH:$COCOS_X_ROOT
+export LIBRARY_PATH=$LIBRARY_PATH:$COCOS_X_ROOT
 
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
