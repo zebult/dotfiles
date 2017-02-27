@@ -33,8 +33,8 @@ if has('multi_byte_ime') || has('xim')
 endif
 
 " サーチ色変更
-hi Search ctermbg=yellow guibg=yellow
-hi IncSearch ctermfg=yellow guifg=yellow
+hi Search ctermbg=lightyellow guibg=lightyellow
+hi IncSearch ctermfg=lightyellow guifg=lightyellow
 " 検索をハイライトする
 set hlsearch
 " 選択した範囲文字色

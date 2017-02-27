@@ -56,6 +56,11 @@ function! Pwd() abort
 endfunction
 command -bar Pwd call Pwd()
 
+function! Lo() abort
+  VimShell
+  " less -f projectj.log
+endfunction
+command -bar Lo call Lo()
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

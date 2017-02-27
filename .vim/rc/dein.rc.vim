@@ -44,7 +44,6 @@ endif
 " if dein#clear_state()
 "     call dein#clear_state()
 " endif
-"
 " if dein#recache_runtimepath()
 "     call dein#recache_runtimepath()
 " endif

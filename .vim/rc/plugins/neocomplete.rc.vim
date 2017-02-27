@@ -37,8 +37,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $CACHE.'/vimshell/command-history',
-    \ 'cpp' : '~/.vim/dict/cpp.dict',
-    \ 'cs' : '~/.vim/dict/cs.dict',
+    \ 'html' : '~/.vim/dict/html.dict',
     \ }
 " 'tokorom/swift-dict.vim'を補完対象にする
 let g:swift_dict_with_neocomplete = 1

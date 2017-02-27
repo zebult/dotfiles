@@ -16,14 +16,14 @@ set whichwrap=h,l
 set ts=4 sw=4 sts=0
 " 検索時大文字小文字を区別しない
 set ignorecase
+" 大文字混在時は大文字小文字区別する
+set smartcase
 "タブをスペースに
 set expandtab
 "インデントを自動でつける
 set autoindent
 " 検索をファイルの先頭へループしない
 " set nowrapscan
-" 大文字混在時は大文字小文字区別する
-set smartcase
 " buffer切り替え時ファイルを保存しなくてもよい
 set hidden
 " 補完時に大文字小文字を区別しない
