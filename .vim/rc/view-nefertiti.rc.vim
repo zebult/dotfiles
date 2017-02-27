@@ -36,7 +36,7 @@ endif
 hi Search ctermbg=lightyellow guibg=lightyellow
 hi IncSearch ctermfg=lightyellow guifg=lightyellow
 " 検索をハイライトする
-set hlsearch
+" set hlsearch
 " 選択した範囲文字色
 hi Visual ctermfg=red guifg=red
 " 行番号

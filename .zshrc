@@ -89,6 +89,7 @@ alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias im='macvim'
 
+alias gip='curl ipecho.net/plain; echo'
 alias sssh='sshrc'
 alias c7='chmod 755'
 alias ag='ag -u'
