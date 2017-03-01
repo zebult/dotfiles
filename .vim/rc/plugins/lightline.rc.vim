@@ -2,27 +2,29 @@ let g:lightline = {
             \ 'colorscheme': 'jellybeans',
             \ 'active': {
             \   'left': [
-            \       ['mode', 'paste'],
-            \       ['fugitive', 'gitgutter', 'readonly', 'filename', 'modified', 'anzu']
-            \   ],
-            \   'right': [ [ 'syntastic', 'lineinfo' ],
-            \              [ 'toggl_task', 'toggl_time', 'percent' ],
-            \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \      ['mode', 'paste'],
+            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'modified', 'anzu']
+            \    ],
+            \   'right': [ [ 'qfstatusline', 'lineinfo', 'percent'],
+            \      [ 'toggl_task', 'toggl_time' ],
+            \      [ 'fileformat', 'fileencoding', 'filetype' ] ]
             \ },
             \ 'component_expand': {
-            \   'syntastic': 'SyntasticStatuslineFlag',
+            \    'qfstatusline': 'qfstatusline#Update',
+            \ },
+            \ 'component_type': {
+            \   'qfstatusline': 'error',
             \ },
             \ 'component_function': {
             \   'fugitive': 'MyFugitive',
             \   'gitgutter': 'MyGitGutter',
             \   'toggl_task': 'toggl#task',
             \   'toggl_time': 'toggl#time',
-            \   'anzu': 'anzu#search_status', 
+            \   'anzu': 'anzu#search_status',
             \ },
-            \ 'component_type': {
-            \   'syntastic': 'error',
             \ }
-            \ }
+
+let g:Qfstatusline#UpdateCmd = function('lightline#update')
 
 function! MyFugitive()
     try
@@ -56,14 +58,14 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
-" 保存時Error時自動で更新し、表示する
-let g:syntastic_mode_map = { 'mode': 'passive' }
-augroup AutoSyntastic
-    autocmd!
-    autocmd BufWritePost *.c,*.cpp,*js,*py call s:syntastic()
-augroup END
-function! s:syntastic()
-    SyntasticCheck
-    call lightline#update()
-endfunction
+" 保存時Error時自動で更新し、表示する 同期処理で重いので不採用
+" let g:syntastic_mode_map = { 'mode': 'passive' }
+" augroup AutoSyntastic
+"     autocmd!
+"     autocmd BufWritePost *.c,*.cpp,*js,*py call s:syntastic()
+" augroup END
+" function! s:syntastic()
+"     SyntasticCheck
+"     call lightline#update()
+" endfunction
 

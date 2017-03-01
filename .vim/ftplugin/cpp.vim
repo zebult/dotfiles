@@ -1,7 +1,7 @@
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 let $VIM_CPP_STDLIB = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
-let $COCOS_ROOT = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos"
+let $COCOS_ROOT = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1"
 let $BOOST_ROOT = "/usr/local/Cellar/boost/1.62.0/include"
 " let $VIM_CPP_INCLUDE_DIR = $COCOS_ROOT . "/usr/local/Cellar/boost/1.62.0"
 " インクルードパスを設定する(gfなどでヘッダーファイルを開ける)

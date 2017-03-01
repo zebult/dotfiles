@@ -45,6 +45,8 @@ nnoremap gc  `[v`]
 nnoremap g0 ggVG
 " 全インデント揃える
 nnoremap gi miggVG='izz
+" ブロックのインデント揃える
+nnoremap gI mivip='izz
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -133,7 +135,6 @@ nnoremap <Leader>g :Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
-autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>

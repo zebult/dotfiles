@@ -51,8 +51,13 @@ let g:quickrun_config['tex'] = {
 
 " show success event
 let g:quickrun_config["watchdogs_checker/_"] = {
-  \ "hook/echo/enable" : 1,
-  \ "hook/echo/output_success": "> No Errors Found."
+  \ 'hook/qfstatusline_update/enable_exit': 1,
+  \ 'hook/qfstatusline_update/priority_exit': 4,
+  \ 'hook/qfsigns_update/enable_exit':   1,
+  \ 'hook/qfsigns_update/priority_exit': 3,
+  \ 'hook/echo/enable' : 1,
+  \ 'hook/close_quickfix/enable_exit' : 1,
+  \ 'hook/echo/output_success': '> No Errors Found.'
   \ }
 
 nnoremap <Leader>r :QuickRun<CR> " TODO: 数秒後できたら(:HierUpdate<CR> )
