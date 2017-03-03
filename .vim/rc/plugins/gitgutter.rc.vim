@@ -3,5 +3,5 @@
     nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
     nmap s] <Plug>GitGutterNextHunk
     nmap s[ <Plug>GitGutterPrevHunk
-    ca state GitGutterPreviewHunk
+    ca status GitGutterPreviewHunk
 

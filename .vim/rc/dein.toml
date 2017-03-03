@@ -20,10 +20,10 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = "has('lua')"
-hook_add = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
+# [[plugins]]
+# repo = 'Shougo/neocomplete.vim'
+# if = "has('lua')"
+# hook_add = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'

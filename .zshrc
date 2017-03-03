@@ -256,7 +256,14 @@ function peco-tree-vim(){
   zle accept-line
 }
 zle -N peco-tree-vim
-bindkey '^h' peco-tree-vim
+bindkey '^n' peco-tree-vim
+
+function git-remote-vim(){
+    BUFFER="vim <(git remote -v)"
+  zle accept-line
+}
+zle -N git-remote-vim
+bindkey '^g' git-remote-vim
 
 function quickVimOpen() {
     BUFFER="vim"
@@ -308,7 +315,7 @@ function memodiary() {
     zle accept-line
 }
 zle -N memodiary
-bindkey '^n' memodiary
+bindkey '^y' memodiary
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

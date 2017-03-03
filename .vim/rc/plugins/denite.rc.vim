@@ -10,8 +10,8 @@ call denite#custom#map('insert' , "<C-p>"  , '<denite:move_to_previous_line>')
 nnoremap [denite] <Nop>
 nmap <Bslash> [denite]
 
-let mapping_list = [{'key': 'j', 'command': 'DeniteBufferDir',  'source': 'file_rec'},
-                  \ {'key': 'J', 'command': 'Denite',           'source': 'file_rec'},
+let mapping_list = [{'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
+                  \ {'key': 'J', 'command': 'DeniteBufferDir',           'source': 'file_rec'},
                   \ {'key': 'k', 'command': 'Denite',           'source': 'file_old'},
                   \ {'key': 'K', 'command': 'Denite',           'source': 'Denite buffer<CR>: Denite -immediately file_old<CR><C-c>'},
                   \ {'key': 'g', 'command': 'Denite',           'source': '-auto_preview grep'},
@@ -42,8 +42,11 @@ nnoremap <silent> <M-p>      :<C-u>Denite -resume -select=-1 -immediately<CR>
 nnoremap <silent> [denite]T  :<C-u>Denite filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>Denite neoyank<CR>
 
-nnoremap <C-j> :DeniteBufferDir file_rec<CR>
+nnoremap <C-j> :Denite file_rec<CR>
+nnoremap g<C-J> :DeniteBufferDir file_rec<CR>
+nnoremap t<C-J> :Denite -default-action=tabopen file_rec<CR>
 nnoremap <C-k> :Denite file_old<CR>
+nnoremap t<C-k> :Denite -default-action=tabopen file_old<CR>
 " nnoremap g<C-j> :Denite file_rec<CR>
 " nnoremap <C-g> :Denite -auto_preview grep<CR>
 " nnoremap g<C-g> :DeniteCursorWord -auto_preview grep<CR>
@@ -55,7 +58,7 @@ nnoremap <C-k> :Denite file_old<CR>
 " Denite入る際、カーソルラインを見やすくする
 " autocmd BufWinEnter * hi CursorLine ctermfg=black ctermbg=yellow
 " Denite抜ける際、カーソルラインをデフォルトに戻す
-" autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE
+" autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
 
 " function! DeniteCursorLineColorChange() abort
 "     hi CursorLine ctermfg=black ctermbg=yellow

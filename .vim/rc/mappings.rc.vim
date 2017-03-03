@@ -79,8 +79,8 @@ nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く
 nnoremap sgf <C-w>gf
 " tagsジャンプを画面分割で開く
-nnoremap g<C-]> :<C-u>vs<CR><C-w>l<C-]>
-nnoremap t<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap s<C-]> :<C-u>vs<CR><C-w>l<C-]>
+nnoremap g<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 nnoremap sw <C-w>w
 nnoremap so <C-w>o

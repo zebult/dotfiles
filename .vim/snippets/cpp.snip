@@ -5,4 +5,7 @@ snippet ccrxinterval
     }, [](){printf("completed\n");});
 
 snippet log
-    CCLOG("${1}: %${2}", ${3});${4}
+    CCLOG("${1}");
+
+snippet cclog
+    CCLOG("${1}: %${2}", ${3});
