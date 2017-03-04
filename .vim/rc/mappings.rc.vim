@@ -45,6 +45,8 @@ nnoremap gc  `[v`]
 nnoremap g0 ggVG
 " 全インデント揃える
 nnoremap gi miggVG='izz
+" ブロックのインデント揃える
+nnoremap gI mivip='izz
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -77,8 +79,8 @@ nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く
 nnoremap sgf <C-w>gf
 " tagsジャンプを画面分割で開く
-nnoremap g<C-]> :<C-u>vs<CR><C-w>l<C-]>
-nnoremap t<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap s<C-]> :<C-u>vs<CR><C-w>l<C-]>
+nnoremap g<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 nnoremap sw <C-w>w
 nnoremap so <C-w>o
@@ -133,7 +135,6 @@ nnoremap <Leader>g :Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
-autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>

@@ -42,27 +42,38 @@ on_i = 1
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-on_map = '<Plug>'
 hook_add = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 
 # syntax check with quickrun and save
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
-on_source = 'vim-quickrun.vim'
-on_event = ['FocusLost', 'CursorHold']
+on_event = ['BufWrite']
 hook_add = 'source ~/.vim/rc/plugins/watchdogs.rc.vim'
 hook_post_source = '''
 call watchdogs#setup(g:quickrun_config)
 '''
-
-# syntax check(location list, signs)
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-# syntax error color
+# syntax error color (jceb fork, gradeup column)
 [[plugins]]
 repo = 'cohama/vim-hier'
-on_source = 'vim-quickrun.vim'
+on_source = 'vim-watchdogs'
+
+# show watchdogs error on command window
+[[plugins]]
+repo = 'dannyob/quickfixstatus'
+on_source = 'vim-watchdogs'
+
+[[plugins]]
+repo = 'KazuakiM/vim-qfsigns'
+on_source = 'vim-watchdogs'
+hook_add = '''
+" let g:qfsigns#AutoJump = 1
+let g:qfsigns#Config = {'id': '5051', 'name': 'QFRare',}
+sign define QFRare texthl=SpellBad text=>>
+'''
+
+[[plugins]]
+repo = 'KazuakiM/vim-qfstatusline'
+on_source = 'vim-watchdogs'
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
@@ -132,9 +143,10 @@ nmap <Leader>o <Plug>(openbrowser-smart-search)
 vmap <Leader>o <Plug>(openbrowser-smart-search)
 '''
 
-[[plugins]]
-repo = 'sjl/gundo.vim'
-hook_add = 'nmap U :<C-u>GundoToggle<CR>'
+# TODO: can not use python3
+# [[plugins]]
+# repo = 'sjl/gundo.vim'
+# hook_add = 'nnoremap U :<C-u>GundoToggle<CR>'
 
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
@@ -168,10 +180,10 @@ nnoremap <Leader>T :TaskList<CR>
 # preview
 [[plugins]]
 repo = 'kannokanno/previm'
-on_map = '<Space>'
 on_ft = 'md'
 hook_add = '''
 let g:previm_open_cmd = 'open -a Safari'
+autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 '''
 
 # Swift ---------------------------
@@ -211,6 +223,7 @@ nnoremap <silent> <Leader>e :XcodeFocus<CR>
 
 [[plugins]]
 repo = 'fatih/vim-go'
+on_ft = 'go'
 
 
 # Html ---------------------------

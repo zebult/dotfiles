@@ -25,7 +25,7 @@ COCOS_VERSION="3.11.1"
 NDK_VERSION="android-ndk-r10d"
 SDK_VERSION="22"
 ## Use vim
-export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION
+export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/cocos
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
@@ -47,8 +47,16 @@ export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
 
 ## wip
-export CPATH=$CPATH:$COCOS_X_ROOT
-export LIBRARY_PATH=$LIBRARY_PATH:$COCOS_X_ROOT
+# export CPATH=$CPATH:/usr/local/include
+# export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
+export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos
+# unset CPATH
+# unset LIBRARY_PATH
+# export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/wip
+# export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/wip/cocos
+# export LIBRARY_PATH=$LIBRARY_PATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
+# export LIBRARY_PATH=$LIBRARY_PATH:/Users/a14198/Documents/workspace/Goodroid/alarm/proj.ios_mac
+
 
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
@@ -248,7 +256,14 @@ function peco-tree-vim(){
   zle accept-line
 }
 zle -N peco-tree-vim
-bindkey '^h' peco-tree-vim
+bindkey '^n' peco-tree-vim
+
+function git-remote-vim(){
+    BUFFER="vim <(git remote -v)"
+  zle accept-line
+}
+zle -N git-remote-vim
+bindkey '^g' git-remote-vim
 
 function quickVimOpen() {
     BUFFER="vim"
@@ -300,7 +315,7 @@ function memodiary() {
     zle accept-line
 }
 zle -N memodiary
-bindkey '^n' memodiary
+bindkey '^y' memodiary
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

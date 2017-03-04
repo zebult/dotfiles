@@ -32,6 +32,13 @@ if has('multi_byte_ime') || has('xim')
     highlight CursorIM guifg=NONE guibg=Purple
 endif
 
+" 現在行ハイライト
+set cursorline
+hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=236
+" hi CursorLine cterm=underline
+" 現在列ハイライト
+" set cursorcolumn
+" hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=236
 " サーチ色変更
 hi Search ctermbg=lightyellow guibg=lightyellow
 hi IncSearch ctermfg=lightyellow guifg=lightyellow
@@ -40,7 +47,7 @@ hi IncSearch ctermfg=lightyellow guifg=lightyellow
 " 選択した範囲文字色
 hi Visual ctermfg=red guifg=red
 " 行番号
-hi LineNr ctermfg=darkgray ctermbg=none guifg=none
+hi LineNr ctermfg=darkgray ctermbg=NONE
 " 現在行番号
 hi CursorLineNr ctermfg=yellow guifg=yellow
 " キャリッジリターン(CR)
@@ -51,6 +58,7 @@ hi Comment ctermfg=darkgray guifg=darkgray
 hi PmenuSel ctermbg=yellow
 " 微調整
 hi SpecialKey ctermfg=blue
+hi SpellBad ctermbg=NONE cterm=underline ctermfg=DarkRed
 " lightblue
 hi PreProc ctermfg=yellow
 " lightgreen
