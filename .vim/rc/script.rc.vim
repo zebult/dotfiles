@@ -56,11 +56,14 @@ function! Pwd() abort
 endfunction
 command -bar Pwd call Pwd()
 
-function! Lo() abort
+function! CCLOG() abort
+  cd `git rev-parse --show-toplevel`
   VimShell
-  " less -f projectj.log
+  norm! aless -f local/logs/project.log
+  " (vimshell_enter)
 endfunction
-command -bar Lo call Lo()
+command -bar CCLOG call CCLOG()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

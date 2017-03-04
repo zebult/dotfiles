@@ -2,6 +2,10 @@
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
+hook_add = '''
+let g:vimshell_split_command =
+      \ get(g:, 'vimshell_split_command', '')
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
