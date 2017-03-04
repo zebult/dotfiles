@@ -24,29 +24,29 @@ let options      = [{'key':  '', 'option' : '-default-action=tabopen'},
 for mapping in mapping_list
   for option in options
     let prefix = 'nnoremap <silent> [denite]'
-    let middle = ' : <C-u>'
+    let middle = ' : <C-u>DCLCC<CR>:'
     let suffix = '<CR>'
     let map_str = prefix . option['key'] . mapping['key'] . middle . mapping['command'] . ' ' . option['option'] . ' ' . mapping['source'] . suffix
     execute map_str
   endfor
 endfor
 
-nnoremap <silent> [denite]h  :<C-u>Denite help<CR>
-nnoremap <silent> [denite]H  :<C-u>DeniteCursorWord help<CR>
+nnoremap <silent> [denite]h  :<C-u>DCLCC<CR>:Denite help<CR>
+nnoremap <silent> [denite]H  :<C-u>DCLCC<CR>:DeniteCursorWord help<CR>
 
-nnoremap <silent> [denite]r  :<C-u>Denite -resume<CR>
-nnoremap <silent> [denite]n  :<C-u>Denite -resume -select=+1 -immediately<CR>
-nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately<CR>
-nnoremap <silent> <M-n>      :<C-u>Denite -resume -select=+1 -immediately<CR>
-nnoremap <silent> <M-p>      :<C-u>Denite -resume -select=-1 -immediately<CR>
-nnoremap <silent> [denite]T  :<C-u>Denite filetype<CR>
-nnoremap <silent> [denite]y  :<C-u>Denite neoyank<CR>
+nnoremap <silent> [denite]r  :<C-u>DCLCC<CR>:Denite -resume<CR>
+nnoremap <silent> [denite]n  :<C-u>DCLCC<CR>:Denite -resume -select=+1 -immediately<CR>
+nnoremap <silent> [denite]p  :<C-u>DCLCC<CR>:Denite -resume -select=-1 -immediately<CR>
+nnoremap <silent> <M-n>      :<C-u>DCLCC<CR>:Denite -resume -select=+1 -immediately<CR>
+nnoremap <silent> <M-p>      :<C-u>DCLCC<CR>:Denite -resume -select=-1 -immediately<CR>
+nnoremap <silent> [denite]T  :<C-u>DCLCC<CR>:Denite filetype<CR>
+nnoremap <silent> [denite]y  :<C-u>DCLCC<CR>:Denite neoyank<CR>
 
-nnoremap <C-j> :Denite file_rec<CR>
-nnoremap g<C-J> :DeniteBufferDir file_rec<CR>
-nnoremap t<C-J> :Denite -default-action=tabopen file_rec<CR>
-nnoremap <C-k> :Denite file_old<CR>
-nnoremap t<C-k> :Denite -default-action=tabopen file_old<CR>
+nnoremap <C-j> :DCLCC<CR>:Denite file_rec<CR>
+nnoremap g<C-J> :DCLCC<CR>:DeniteBufferDir file_rec<CR>
+nnoremap t<C-J> :DCLCC<CR>:Denite -default-action=tabopen file_rec<CR>
+nnoremap <C-k> :DCLCC<CR>:Denite file_old<CR>
+nnoremap t<C-k> :DCLCC<CR>:Denite -default-action=tabopen file_old<CR>
 " nnoremap g<C-j> :Denite file_rec<CR>
 " nnoremap <C-g> :Denite -auto_preview grep<CR>
 " nnoremap g<C-g> :DeniteCursorWord -auto_preview grep<CR>
@@ -58,9 +58,9 @@ nnoremap t<C-k> :Denite -default-action=tabopen file_old<CR>
 " Denite入る際、カーソルラインを見やすくする
 " autocmd BufWinEnter * hi CursorLine ctermfg=black ctermbg=yellow
 " Denite抜ける際、カーソルラインをデフォルトに戻す
-" autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
 
-" function! DeniteCursorLineColorChange() abort
-"     hi CursorLine ctermfg=black ctermbg=yellow
-" endfunction
-" command! -bar DeniteCursorLineColorChange  call DeniteCursorLineColorChange()
+function! DeniteCursorLineColorChange() abort
+    hi CursorLine ctermfg=black ctermbg=yellow
+endfunction
+command! -bar DCLCC  call DeniteCursorLineColorChange()
