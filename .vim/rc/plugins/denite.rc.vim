@@ -2,10 +2,14 @@
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#source('file_rec', 'matcher', ['matcher_cpsm'])
 " カーソルキー, cn, cpで移動
-call denite#custom#map('insert' , "<Down>" , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , "<Up>"   , '<denite:move_to_previous_line>')
-call denite#custom#map('insert' , "<C-n>"  , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , "<C-p>"  , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+" ignore TODO
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+	      \ [ '.git/', '.ropeproject/', '__pycache__/',
+	      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
 
 nnoremap [denite] <Nop>
 nmap <Bslash> [denite]
