@@ -40,10 +40,17 @@ function! Logcat() abort
 endfunction
 command -bar Logcat  call Logcat()
 
-function! LogcatCocosDubug() abort
+function! LogcatCocosDebug() abort
   r! adb logcat -v time -d | grep 'debug info'
 endfunction
-command -bar LogcatCocosDubug call LogcatCocosDubug()
+command -bar LogcatCocosDebug call LogcatCocosDebug()
+
+function! AdbDumpsysAlarm() abort
+  r! adb shell dumpsys alarm
+  set filetype=log
+  QuickhlManualAdd when
+endfunction
+command -bar AdbDumpsysAlarm call AdbDumpsysAlarm()
 
 " TODO: add optionj
 function! CocosRunAndroid() abort
