@@ -259,6 +259,16 @@ hook_add = '''
 repo = 'tpope/vim-fugitive'
 hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
 
+# # GBrowse
+# [[plugins]]
+# repo = 'tpope/vim-rhubarb'
+# hook_add = '''
+#     let g:github_enterprise_urls = ['https://github.com/zebult']
+# '''
+
+[[plugins]]
+repo = 'ruanyl/vim-gh-line'
+
 # gitマーク, ハイライト
 [[plugins]]
 repo = 'airblade/vim-gitgutter'

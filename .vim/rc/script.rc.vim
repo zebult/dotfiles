@@ -36,12 +36,16 @@ command -bar AutoMethodMake  call AutoMethodMake()
 function! Logcat() abort
   r! adb logcat -v time -d
   1d
+  set filetype=logcat
   source $MYVIMRC
 endfunction
 command -bar Logcat  call Logcat()
 
 function! LogcatCocosDebug() abort
   r! adb logcat -v time -d | grep 'debug info'
+  1d
+  set filetype=logcat
+  source $MYVIMRC
 endfunction
 command -bar LogcatCocosDebug call LogcatCocosDebug()
 
@@ -70,6 +74,39 @@ function! CCCreatorLog() abort
   " (vimshell_enter)
 endfunction
 command -bar CCLog call CCCreatorLog()
+
+function! s:qfGitDiff(...) "{{{
+  let [lnum, ret] = [0, []]
+  let dir = matchstr(system('git rev-parse --show-toplevel'), '\v^\f+\ze[\r\n]')
+
+  if empty(dir) | return | endif
+
+  for line in split(system(printf('git diff %s', a:0 ? a:1 : '')), '\v\r\n|\n|\r')
+    if line[:3] ==# 'diff'
+      let [lnum, fname] = [0, dir . '/' . matchstr(line, '\v\sb/\zs\f+$')]
+      continue
+    endif
+    let char = line[0]
+    if char ==# '@'
+      let lnum = str2nr(matchstr(line, '\v\+\d+'))
+      continue
+    endif
+    if lnum
+      if char ==# '+'
+        call add(ret, {
+        \ 'filename': fname, 'type': 'i', 'lnum': lnum, 'col': 1, 'text': line})
+      endif
+      let lnum = stridx('-\', char) + 1 ? lnum : lnum + 1
+    endif
+  endfor
+
+  call setqflist(ret, 'r')
+
+  if len(ret)
+    return 1
+  endif
+endfunction "}}}
+command! -nargs=? QfGitDiff if s:qfGitDiff('<args>') | copen | endif
 
 " 文字出現数カウント
 " function! WordCount(word) abort
