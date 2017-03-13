@@ -108,6 +108,12 @@ function! s:qfGitDiff(...) "{{{
 endfunction "}}}
 command! -nargs=? QfGitDiff if s:qfGitDiff('<args>') | copen | endif
 
+function! RefreshDein() abort
+   call dein#clear_state()
+   call dein#recache_runtimepath()
+endfunction
+command -bar RefreshDein call RefreshDein()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn
@@ -121,3 +127,7 @@ command! -nargs=? QfGitDiff if s:qfGitDiff('<args>') | copen | endif
 " endfunction
 " command -bar EchoPath  call EchoPath()
 
+" 可変長引数
+" command! -nargs=* ZXcodeProjectOpen call zxcode#open_xcode(<f-args>)
+" function! zxcode#open_xcode(...) abort
+" let a:count = get(a:, 1)

@@ -140,7 +140,7 @@ autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>F :VimFiler -simple -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
-nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:<C-u>SrcExplToggle<CR>
+nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 
 " save and close
@@ -149,16 +149,17 @@ nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>Q :qa<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
+nnoremap <Leader># :qa!<Cr>
 
-vnoremap v $:TogglSelectStart<CR>
+nnoremap t$ v$:TogglSelectStart<CR>
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
 " 対応する括弧へ移動しやすく
-nnoremap <BS> %
-vnoremap <BS> %
+nnoremap <Bslash> %
+vnoremap <Bslash> %
 
 " マーク周りの改善
 noremap ' `

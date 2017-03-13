@@ -12,7 +12,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 	      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
 
 nnoremap [denite] <Nop>
-nmap <Bslash> [denite]
+nmap <F1> [denite]
 
 let mapping_list = [{'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
                   \ {'key': 'J', 'command': 'DeniteBufferDir',           'source': 'file_rec'},

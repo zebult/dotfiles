@@ -127,7 +127,7 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
 let g:w3m#external_browser = 'google-chrome'
-nnoremap <Leader>b :W3mTab google<CR>
+nnoremap <Leader>B :W3mTab google<CR>
 '''
 
 # default key is 'gs'
@@ -171,6 +171,13 @@ hook_add = '''
 nnoremap <Leader>T :TaskList<CR>
 '''
 
+# Need to `brew install ctags`
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+let g:tagbar_width = 30
+nnoremap <Leader>t :TagbarToggle<CR>
+'''
 
 # C++ ---------------------------
 
@@ -188,16 +195,10 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 # Swift ---------------------------
 
+# filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 [[plugins]]
-repo = 'zebult/xcode.vim'
-filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
-hook_add = '''
-let g:application_name = "Xcode"
-nnoremap <silent> <Leader>X :XcodeProjectOpen<CR>
-nnoremap <silent> <Leader>x :XcodeFileOpen<CR>
-nnoremap <silent> <Leader>Q :XcodeClose<CR>
-nnoremap <silent> <Leader>e :XcodeFocus<CR>
-'''
+repo = 'zebult/vim-zxcode.vim'
+hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 
 # Xcode化
 # [[plugins]]
