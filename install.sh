@@ -226,10 +226,11 @@ case "${os}" in
 
         # Mac Settings
         defaults write com.apple.dashboard mcx-disabled -boolean true; killall Dock # DashBoard消去
-        defaults write com.apple.dock autohide-delay -float 0;killall Dock # Dock表示時間0
+        defaults write com.apple.dock autohide-delay -float 0; killall Dock # Dock表示時間0
         defaults write com.apple.desktopservices DSDontWriteNetworkStores true # ネットワークドライブで.DS_Storeファイルを作成しないようにする
         defaults write -g QLPanelAnimationDuration -float 0 # クイックルックアニメーション無し
-        defaults write com.apple.dock workspaces-edge-delay -float 0.2;killall Dock # アプリがデスクトップ間を移動する際の速度を変更 ???
+        defaults write com.apple.dock workspaces-edge-delay -float 0.2; killall Dock # アプリがデスクトップ間を移動する際の速度を変更 ???
+        defaults write com.apple.screencapture location ~/Dropbox/ScreenShot/; killall SystemUIServer # スクショ保存場所変更
 
         ;;
 esac

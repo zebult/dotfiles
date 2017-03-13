@@ -150,7 +150,7 @@ nnoremap <Leader>Q :qa<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 
-vnoremap v 0o$
+vnoremap v $:TogglSelectStart<CR>
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
