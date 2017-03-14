@@ -2,16 +2,15 @@ set expandtab
 " タブをスペース2にする
 set ts=2 sw=2 sts=0
 " o(O)を先頭に合わせる
-nnoremap o :call Action_o()<CR>
-nnoremap O :call Action_O()<CR>
-
-nnoremap go o
-nnoremap gO O
+nnoremap go :call Action_o()<CR>
+nnoremap gO :call Action_O()<CR>
 
 " todoリストを簡単に入力する
 abbreviate tl -[ ]
 " todoリストのon/offを切り替える
 nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
+
+let s:bullet_word = "'[\*\-\>]'"
 
 function! ToggleCheckbox() abort
     let l:line = getline('.')
@@ -37,8 +36,7 @@ function! IsBullet() abort
 endfunction
 
 function! CheckBullet(word) abort
-    " if a:word =~ '[\*\-\>]'
-    if a:word =~ '[\*\-\>]'
+    execute "if a:word =~ ".s:bullet_word
         return 1
     end
     return 0

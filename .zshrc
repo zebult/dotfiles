@@ -264,7 +264,6 @@ function git-remote-vim(){
   zle accept-line
 }
 zle -N git-remote-vim
-bindkey '^g' git-remote-vim
 
 function quickVimOpen() {
     BUFFER="vim"

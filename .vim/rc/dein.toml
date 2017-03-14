@@ -113,7 +113,7 @@ repo = 'soramugi/auto-ctags.vim'
 hook_add = 'source ~/.vim/rc/plugins/auto-ctags.rc.vim'
 
 [[plugins]]
-repo = 'haya14busa/vim-easymotion'
+repo = 'easymotion/vim-easymotion'
 hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 
 [[plugins]]
