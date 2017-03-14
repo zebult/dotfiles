@@ -35,10 +35,7 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
-hook_add = '''
-    let g:vimfiler_as_default_explorer  = 1
-    let g:vimfiler_safe_mode_by_default = 0
-'''
+hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -63,9 +60,10 @@ if = "has('nvim')"
 repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
 
-[[plugins]]
-repo = 'wesleyche/SrcExpl'
-hook_add = 'source ~/.vim/rc/plugins/srcexpl.rc.vim'
+# 重くなるかも?
+# [[plugins]]
+# repo = 'wesleyche/SrcExpl'
+# hook_add = 'source ~/.vim/rc/plugins/srcexpl.rc.vim'
 
 # Base Tools: ---------------------------
 

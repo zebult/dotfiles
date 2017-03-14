@@ -47,7 +47,7 @@ set nowritebackup
 " セッションを超えたバックアップファイル作成しない(.un~)
 set noundofile
 " デフォルトを相対行数にする
-set relativenumber
+" set relativenumber
 set number
 " 矩形をブロックにする
 set virtualedit=block

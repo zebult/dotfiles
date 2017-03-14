@@ -45,7 +45,6 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 ## ant
 export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export PATH=$ANT_ROOT:$PATH
-
 ## wip
 # export CPATH=$CPATH:/usr/local/include
 # export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
@@ -57,6 +56,8 @@ export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos
 # export LIBRARY_PATH=$LIBRARY_PATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
 # export LIBRARY_PATH=$LIBRARY_PATH:/Users/a14198/Documents/workspace/Goodroid/alarm/proj.ios_mac
 
+# ccache
+export NDK_CCACHE=/usr/local/bin/ccache
 
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
@@ -271,13 +272,7 @@ function quickVimOpen() {
 }
 zle -N quickVimOpen
 bindkey '^j' quickVimOpen
-
-function quickVimOld() {
-    BUFFER="vim"
-    zle accept-line
-}
-zle -N quickVimOld
-bindkey '^k' quickVimOld
+bindkey '^k' quickVimOpen
 
 function pwdcp() {
     pwd | pbcopy

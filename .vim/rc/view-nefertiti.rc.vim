@@ -33,8 +33,8 @@ if has('multi_byte_ime') || has('xim')
 endif
 
 " 現在行ハイライト
-set cursorline
-hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=236
+" set cursorline
+" hi CursorLine term=bold cterm=NONE ctermfg=NONE ctermbg=236
 " hi CursorLine cterm=underline
 " 現在列ハイライト
 " set cursorcolumn

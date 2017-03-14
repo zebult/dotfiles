@@ -83,6 +83,8 @@ case "${os}" in
         brew install ag
         brew install global # gtags
         brew install sshrc
+        brew install translate-shell
+        brew install --HEAD ccache
         brew install sourcekitten
         brew install source-highlight
         brew install argon/mas/mas

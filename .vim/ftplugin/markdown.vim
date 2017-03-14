@@ -37,6 +37,7 @@ function! IsBullet() abort
 endfunction
 
 function! CheckBullet(word) abort
+    " if a:word =~ '[\*\-\>]'
     if a:word =~ '[\*\-\>]'
         return 1
     end

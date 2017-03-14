@@ -1,4 +1,5 @@
 let g:netrw_browsex_viewer = 'open'
+" add toggle: -, add patch toggle: p
 ca gst Gstatus
 ca gad Gwrite
 ca gcm Gcommit
@@ -12,8 +13,11 @@ ca gfc Gfetch
 ca gps Gpush
 ca gpl Gpull
 ca gr Ggrep
-command! -nargs=0 Gacm call Gacm()
+
 function! Gacm() abort
     Gwrite
     Gcommit
 endfunction
+command! -nargs=0 Gacm call Gacm()
+
+nnoremap <Leader>S :Gstatus<CR><C-w>o
