@@ -124,8 +124,6 @@ cnoremap <C-d> <Del>
 """"""""""""""""""""""""""""""
 
 " Power tools
-" nnoremap <Leader>d :vertical diffsplit
-nnoremap <Leader>d :call Diff()<CR>
 nnoremap <Leader>u :Unite source<CR>
 nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
@@ -140,7 +138,8 @@ autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
 nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
 nnoremap <Leader>F :VimFiler -simple -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
-nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
+" nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
+nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 
 " save and close

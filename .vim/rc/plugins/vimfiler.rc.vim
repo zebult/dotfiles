@@ -10,4 +10,6 @@ endfunction
 
 autocmd FileType vimfiler
       \ nnoremap <buffer><silent>/
-      \ :call UniteFileCurrentDir() <CR>
+      \ :Denite file_rec<CR>
+
+      " \ :call UniteFileCurrentDir() <CR>

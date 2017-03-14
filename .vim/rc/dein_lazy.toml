@@ -62,6 +62,7 @@ on_source = 'vim-watchdogs'
 repo = 'dannyob/quickfixstatus'
 on_source = 'vim-watchdogs'
 
+# Add mark and jump error
 [[plugins]]
 repo = 'KazuakiM/vim-qfsigns'
 on_source = 'vim-watchdogs'
