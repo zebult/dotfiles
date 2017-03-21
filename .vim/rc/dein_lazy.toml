@@ -185,6 +185,10 @@ nnoremap <Leader>t :TagbarToggle<CR>
 
 # Markdown ---------------------------
 
+[[plugins]]
+repo = 'joker1007/vim-markdown-quote-syntax'
+on_ft = 'md'
+
 # preview
 [[plugins]]
 repo = 'kannokanno/previm'

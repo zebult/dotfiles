@@ -27,9 +27,6 @@ noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tj gD
-" メモ取りやすくする
-inoremap <S-Tab> <Left><Left><backspace><backspace><Right><Right>
-inoremap g<Tab> <Left><Left><tab><Right><Right>
 " 自動補完on/off
 inoremap jn <ESC>:NeoCompleteToggle<CR>a
 nnoremap gn :NeoCompleteToggle<CR>
@@ -157,8 +154,8 @@ inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
 " 対応する括弧へ移動しやすく
-nnoremap <Bar> %
-vnoremap <Bar> %
+nnoremap <Tab> %
+vnoremap <Tab> %
 " マーク周りの改善
 noremap ' `
 

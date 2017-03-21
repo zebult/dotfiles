@@ -404,11 +404,6 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = 'md'
 hook_add = 'let g:vim_markdown_folding_disabled=0'
 
-[[plugins]]
-repo = 'joker1007/vim-markdown-quote-syntax'
-on_ft = 'md'
-
-
 # Toml ---------------------------
 
 [[plugins]] # toml syntax

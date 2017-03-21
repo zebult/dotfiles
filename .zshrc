@@ -281,6 +281,13 @@ function pwdcp() {
 zle -N pwdcp
 bindkey '^p' pwdcp
 
+function defaultcolor() {
+    bcolor 45 45 45
+    zle accept-line
+}
+zle -N defaultcolor
+bindkey '^z' defaultcolor
+
 function vimfiler() {
     BUFFER="vim ."
     zle accept-line

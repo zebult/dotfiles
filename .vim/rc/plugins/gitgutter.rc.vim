@@ -3,4 +3,4 @@ let g:gitgutter_highlight_lines = 1
 nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 nmap s] <Plug>GitGutterNextHunk
 nmap s[ <Plug>GitGutterPrevHunk
-ca status GitGutterPreviewHunk
+ca df GitGutterPreviewHunk

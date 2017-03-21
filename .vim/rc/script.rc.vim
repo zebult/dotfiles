@@ -114,6 +114,13 @@ function! RefreshDein() abort
 endfunction
 command -bar RefreshDein call RefreshDein()
 
+function! JsonLine() abort
+  norm! 10000J
+  silent %s/\ //ge
+  silent %s/"/\\"/ge
+endfunction
+command -bar JsonLine call JsonLine()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn
