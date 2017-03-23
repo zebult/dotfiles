@@ -131,10 +131,6 @@ let g:w3m#external_browser = 'google-chrome'
 nnoremap <Leader>B :W3mTab google<CR>
 '''
 
-# default key is 'gs'
-[[plugins]]
-repo = 'AndrewRadev/switch.vim'
-
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 on_map = ['<Plug>(openbrowser-smart-search)']

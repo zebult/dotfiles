@@ -77,6 +77,7 @@ export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'
+alias gcm="gst; git commit -m"
 alias gacm="gst; git add .; git commit -m"
 alias gst="git status -sb"
 alias gdf="git diff"
@@ -271,7 +272,6 @@ function quickVimOpen() {
 }
 zle -N quickVimOpen
 bindkey '^j' quickVimOpen
-bindkey '^k' quickVimOpen
 
 function pwdcp() {
     pwd | pbcopy

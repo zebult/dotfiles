@@ -249,13 +249,25 @@ hook_add = '''
 [[plugins]]
 repo = 'kana/vim-operator-replace.git'
 hook_add = '''
-    map R  <Plug>(operator-replace)
+    map R <Plug>(operator-replace)
 '''
 
 # gitコマンド
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
+
+[[plugins]]
+repo = 'AndrewRadev/switch.vim'
+hook_add = '''
+" default key is 'gs'
+let g:switch_mapping = 'si'
+let g:switch_custom_definitions =
+\ [
+    \   ['foo', 'bar', 'baz'],
+    \   ['ouch', 'itch']
+    \ ]
+'''
 
 # # GBrowse
 # [[plugins]]

@@ -108,10 +108,10 @@ augroup SaveGroup
 augroup END
 
 " 無限undo
-if has('persistent_undo')
-	set undodir=~/.vimundo
-	set undofile
-endif
+" if has('persistent_undo')
+" 	set undodir=~/.vimundo
+" 	set undofile
+" endif
 
 " 最後のカーソル位置を復元する
 augroup UtilitiesGroup

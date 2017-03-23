@@ -156,6 +156,11 @@ let MyAutoComplete_StartLength = 3
 " 対応する括弧へ移動しやすく
 nnoremap <Tab> %
 vnoremap <Tab> %
+" Mac Tab, <C-i>同じ問題仮の対応
+nnoremap g<C-i> <C-i>
+
+nmap gp Riw
+
 " マーク周りの改善
 noremap ' `
 
