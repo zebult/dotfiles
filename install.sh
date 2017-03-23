@@ -81,6 +81,7 @@ case "${os}" in
         brew install tree
         brew install w3m
         brew install ag
+        brew install nkf # vim dict
         brew install global # gtags
         brew install sshrc
         brew install translate-shell

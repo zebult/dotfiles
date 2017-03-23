@@ -134,6 +134,7 @@ function! CursorLineColorLowlight() abort
   hi CursorColumn ctermbg=235
   hi Cursor ctermbg=lightgreen
 endfunction
+command! -bar CursorLineColorLowlight call CursorLineColorLowlight()
 noremap <Plug>(cursor-line-color-lowlight) :<C-u>call CursorLineColorLowlight()<CR>
 " 文字出現数カウント
 " function! WordCount(word) abort

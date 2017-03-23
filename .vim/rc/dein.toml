@@ -201,9 +201,10 @@ repo = 'tpope/vim-surround'
 repo = 'kana/vim-smartchr'
 hook_add = 'source ~/.vim/rc/plugins/smartchr.rc.vim'
 
-[[plugins]]
-repo = 'junegunn/vim-emoji'
-hook_add = 'set completefunc=emoji#complete'
+# <C-x><C-u>
+# [[plugins]]
+# repo = 'junegunn/vim-emoji'
+# hook_add = 'set completefunc=emoji#complete'
 
 [[plugins]]
 repo = 't9md/vim-quickhl'

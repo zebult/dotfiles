@@ -126,7 +126,7 @@ nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
-nnoremap ga :Ag<Space>
+nnoremap ga :CursorLineColorLowlight<CR>:Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
@@ -161,7 +161,8 @@ nnoremap g<C-i> <C-i>
 
 nmap gp Riw
 
-nnoremap <silent> <C-n> :cn<CR>:CHL<CR>
+" nnoremap <silent> <C-n> :CHL<CR>:cn<CR>
+nnoremap <silent> <C-n> :cn<CR>:CursorLineColorLowlight<CR>
 nnoremap <silent> <C-p> :cp<CR>
 
 " マーク周りの改善

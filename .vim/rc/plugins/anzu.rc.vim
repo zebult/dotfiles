@@ -2,8 +2,8 @@
 " nmap N <Plug>(cursor-line-color-lowlight)<Plug>(anzu-mode-N)
 nmap n <Plug>(cursor-line-color-lowlight)<Plug>(anzu-n)
 nmap N <Plug>(cursor-line-color-lowlight)<Plug>(anzu-N)
-nmap * <Plug>(cursor-line-color-lowlight)<Plug>(anzu-star)N
-nmap # <Plug>(cursor-line-color-lowlight)<Plug>(anzu-sharp)N
+nmap * <Plug>(cursor-line-color-lowlight)<Plug>(anzu-star)
+" nmap # <Plug>(cursor-line-color-lowlight)<Plug>(anzu-sharp)
 " augroup vim-anzu
 "     " 一定時間キー入力がないとき、ウインドウを移動したとき、タブを移動したときに
 "     " 検索ヒット数の表示を消去する

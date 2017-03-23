@@ -60,43 +60,8 @@ set backspace=indent,eol,start
 " let g:clang_c_options = '-std=c11'
 " let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 
-" clipboard
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
-
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
-
 " Search hit number
-nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
-
-function! s:move_cursor_pos_mapping(str, ...)
-    let left = get(a:, 1, "<Left>")
-    let lefts = join(map(split(matchstr(a:str, '.*<Cursor>\zs.*\ze'), '.\zs'), 'left'), "")
-    return substitute(a:str, '<Cursor>', '', '') . lefts
-endfunction
-
-function! _(str)
-    return s:move_cursor_pos_mapping(a:str, "\<Left>")
-endfunction
-
-" vimdiff
-function Diff()
-    :tabne
-    :edit OLD
-    :setlocal scrollbind
-    :rightbelow vnew NEW
-    :setlocal scrollbind
-endfunction
-
-" abbreviate
-abbreviate TT // TODO:
-
-" original function
-source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
-source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
+" nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
 augroup SaveGroup
     autocmd!
@@ -106,14 +71,6 @@ augroup SaveGroup
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
 augroup END
-
-" 無限undo
-" if has('persistent_undo')
-" 	set undodir=~/.vimundo
-" 	set undofile
-" endif
-
-" autocmd QuickFixCmdPre call CursorLineColorHighlight()
 
 augroup MyGroup
   autocmd InsertEnter * set nocursorline
@@ -125,10 +82,3 @@ augroup ExitExMode
   autocmd BufWinLeave * set nocursorline
 augroup END
 
-" 最後のカーソル位置を復元する
-augroup UtilitiesGroup
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-            \   exe "normal! g'\"" |
-            \ endif
-augroup END
