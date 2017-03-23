@@ -123,7 +123,7 @@ command -bar JsonLine call JsonLine()
 
 function! CursorLineColorHighlight() abort
   set cursorline
-  hi CursorLine cterm=NONE ctermbg=yellow
+  hi CursorLine ctermfg=black ctermbg=yellow
 endfunction
 command! -bar CHL call CursorLineColorHighlight()
 
