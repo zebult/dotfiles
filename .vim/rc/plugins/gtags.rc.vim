@@ -18,7 +18,7 @@ endfunction
 command -bar Caller call Caller()
 
 " 次の検索結果
-nnoremap <C-n> :cn<CR>
+" nnoremap <C-n> :cn<CR>
 " 前の検索結果
-nnoremap <C-p> :cp<CR>
+" nnoremap <C-p> :cp<CR>
 

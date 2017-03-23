@@ -121,6 +121,20 @@ function! JsonLine() abort
 endfunction
 command -bar JsonLine call JsonLine()
 
+function! CursorLineColorHighlight() abort
+  set cursorline
+  hi CursorLine cterm=NONE ctermbg=yellow
+endfunction
+command! -bar CHL call CursorLineColorHighlight()
+
+function! CursorLineColorLowlight() abort
+  set cursorline
+  set cursorcolumn
+  hi CursorLine cterm=NONE ctermbg=235
+  hi CursorColumn ctermbg=235
+  hi Cursor ctermbg=lightgreen
+endfunction
+noremap <Plug>(cursor-line-color-lowlight) :<C-u>call CursorLineColorLowlight()<CR>
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

@@ -40,8 +40,8 @@ endif
 " set cursorcolumn
 " hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=236
 " サーチ色変更
-hi Search ctermbg=lightyellow guibg=lightyellow
-hi IncSearch ctermfg=lightyellow guifg=lightyellow
+hi Search ctermbg=darkgreen guibg=darkgreen
+hi IncSearch ctermfg=darkgreen guifg=darkgreen
 " 検索をハイライトする
 " set hlsearch
 " 選択した範囲文字色

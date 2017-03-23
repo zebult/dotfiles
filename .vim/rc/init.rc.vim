@@ -113,6 +113,18 @@ augroup END
 " 	set undofile
 " endif
 
+" autocmd QuickFixCmdPre call CursorLineColorHighlight()
+
+augroup MyGroup
+  autocmd InsertEnter * set nocursorline
+augroup END
+
+augroup ExitExMode
+  autocmd!
+  autocmd BufWinLeave * hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+  autocmd BufWinLeave * set nocursorline
+augroup END
+
 " 最後のカーソル位置を復元する
 augroup UtilitiesGroup
 autocmd BufReadPost *
