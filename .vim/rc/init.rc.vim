@@ -72,9 +72,9 @@ augroup SaveGroup
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
 augroup END
 
-augroup MyGroup
-  autocmd InsertEnter * set nocursorline
-augroup END
+" augroup MyGroup
+"   autocmd InsertEnter * set nocursorline
+" augroup END
 
 augroup ExitExMode
   autocmd!

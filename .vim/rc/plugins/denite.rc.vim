@@ -43,7 +43,7 @@ nnoremap <silent> [denite]n  :<C-u>CHL<CR>:Denite -resume -select=+1 -immediatel
 nnoremap <silent> [denite]p  :<C-u>CHL<CR>:Denite -resume -select=-1 -immediately<CR>
 " nnoremap <silent> <M-n>      :<C-u>CHL<CR>:Denite -resume -select=+1 -immediately<CR>
 " nnoremap <silent> <M-p>      :<C-u>CHL<CR>:Denite -resume -select=-1 -immediately<CR>
-nnoremap <silent> [denite]T  :<C-u>CHL<CR>:Denite filetype<CR>
+nnoremap <silent> [denite]f  :<C-u>CHL<CR>:Denite filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>CHL<CR>:Denite neoyank<CR>
 
 nnoremap <C-j> :CHL<CR>:Denite file_rec<CR>
