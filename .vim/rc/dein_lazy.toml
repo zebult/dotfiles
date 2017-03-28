@@ -178,7 +178,6 @@ nnoremap <Leader>t :TagbarToggle<CR>
 
 # C++ ---------------------------
 
-
 # Markdown ---------------------------
 
 [[plugins]]
@@ -204,8 +203,7 @@ hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 # Xcode化
 # [[plugins]]
 # repo = 'msanders/cocoa.vim'
-# on_i = 1
-# filetypes = ['m', 'swift', 'cpp', 'h', 'hpp']
+# filetypes = ['mm', 'm', 'swift', 'cpp', 'h', 'hpp']
 
 # iOSシミュレータ使える??
 # [[plugins]]

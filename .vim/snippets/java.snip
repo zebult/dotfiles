@@ -1,3 +1,15 @@
 snippet syso
     System.out.println("${1}");
 
+snippet log
+    Log.d("${1}", "${2}" + ${3});
+
+snippet getter
+    public ${1:int} get${2}() {
+        return ${3};
+    }
+
+snippet setter
+    public void set${1}(${2:int} ${3}) {
+        ${4} = ${3};
+    }

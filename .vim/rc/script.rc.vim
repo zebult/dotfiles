@@ -136,6 +136,13 @@ function! CursorLineColorLowlight() abort
 endfunction
 command! -bar CursorLineColorLowlight call CursorLineColorLowlight()
 noremap <Plug>(cursor-line-color-lowlight) :<C-u>call CursorLineColorLowlight()<CR>
+
+function! LogcatSearchError() abort
+  norm! /FATAL EXCEPTION: main
+endfunction
+command! -bar LogcatSearchError call LogcatSearchError()
+
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

@@ -17,3 +17,6 @@ inoremap <expr><CR>  pumvisible() ? "\<C-y>"  : "\<CR>"
 inoremap <expr><Tab> pumvisible() ? "\<C-n>"  : "\<Tab>"
 inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
 
+" 自動補完on/off
+inoremap jn <ESC>:NeoCompleteToggle<CR>a
+" nnoremap gn :NeoCompleteToggle<CR>

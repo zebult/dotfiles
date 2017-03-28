@@ -27,9 +27,6 @@ noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tj gD
-" 自動補完on/off
-inoremap jn <ESC>:NeoCompleteToggle<CR>a
-nnoremap gn :NeoCompleteToggle<CR>
 " diffすぐ出す
 ca difff vertical diffsplit
 ca ccd lcd %:h
@@ -126,7 +123,7 @@ nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
-nnoremap ga :CursorLineColorLowlight<CR>:Ag<Space>
+nnoremap g/ :CursorLineColorLowlight<CR>:Ag<Space>
 " includeへ移動
 nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
@@ -160,6 +157,7 @@ vnoremap <Tab> %
 nnoremap g<C-i> <C-i>
 
 nmap gp Riw
+" nmap cp Riw
 
 " nnoremap <silent> <C-n> :CHL<CR>:cn<CR>
 nnoremap <silent> <C-n> :cn<CR>:CursorLineColorLowlight<CR>
