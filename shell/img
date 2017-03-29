@@ -1,0 +1,147 @@
+#!/bin/bash
+PROGNAME=$(basename $0)
+VERSION="1.0"
+
+usage() {
+    echo "Usage: $PROGNAME [OPTIONS] FILE"
+    echo "  This script is image fix tool."
+    echo
+    echo "Options:"
+    echo "  -h, --help"
+    echo "      --version"
+    echo "  -a, --long-a ARG"
+    echo "  -b, --long-b [ARG]"
+    echo "  -c, --long-c"
+    echo
+    exit 1
+}
+
+for OPT in "$@"
+do
+    case "$OPT" in
+        '-h'|'--help' )
+            usage
+            exit 1
+            ;;
+        '--version' )
+            echo $VERSION
+            exit 1
+            ;;
+        '-r'|'--resize' )
+            # img -r width file file ...
+            width=$2
+            shift
+            echo "Want you backup?[y/n]"
+            read backup_flag
+            for i in `seq 1 ${#}`
+            do
+                shift
+                if [ -z "$1" ]; then
+                    break
+                fi
+                if [ ${backup_flag} == "y" ]; then
+                    file_name=`echo $1 | cut -d"." -f1`
+                    extension=`echo $1 | cut -d"." -f2`
+                    imageName=$file_name\_r\.$extension
+                elif [ ${backup_flag} == "n" ]; then
+                    imageName=$1
+                fi
+                echo $imageName
+                convert -filter box -resize $width $1 $imageName
+            done
+            exit 1
+            ;;
+        '-m'|'--merge' )
+            # img -m file file ...
+            imageCount=0
+            for i in `seq 1 ${#}`
+            do
+                shift
+                imageNames=$imageNames' '${1}
+                imageCount=`expr $imageCount + 1`
+            done
+            percentage=`expr 100 / $imageCount`
+            convert -geometry $percentage% +append $imageNames out_m.png
+            exit 1
+            ;;
+        '--'|'-' )
+            shift 1
+            param+=( "$@" )
+            break
+            ;;
+        -*)
+            echo "$PROGNAME: illegal option -- '$(echo $1 | sed 's/^-*//')'" 1>&2
+            exit 1
+            ;;
+        *)
+            if [[ ! -z "$1" ]] && [[ ! "$1" =~ ^-+ ]]; then
+                #param=( ${param[@]} "$1" )
+                param+=( "$1" )
+                shift 1
+            fi
+            ;;
+    esac
+done
+
+if [ -z $param ]; then
+    echo "$PROGNAME: too few arguments" 1>&2
+    echo "Try '$PROGNAME --help' for more information." 1>&2
+    exit 1
+fi
+
+# #!/bin/sh
+# # imgMerge a.png b.png -> out.png
+#
+# error() {
+#     echo "Plese set option.\n \
+    #         -m, --merge\n \
+    #         -p, -plus\n \
+    #         -d,  --decrease"
+# }
+#
+# main() {
+#     echo "$1"
+#     while getopts ab:c: OPT
+#     do
+#         case $OPT in
+#             "a" ) echo "a" ;;
+#             "b" ) echo "b" ;;
+#             "c" ) echo "c" ;;
+#         esac
+#     done
+#     if [ -n "$1" ]; then
+#         echo "aru"
+#         # Get file
+#         # force push
+#         case "$1" in
+#             "-m" | "--merge" ) echo "switch: m"
+#                 break ;;
+#             * ) echo "その他"
+    #                 break ;;
+    #         esac
+    #
+    #         if [ $1 = "-m" -o $1 = "--merge" ]; then
+    #             echo "-mきた"
+    #             # imageNames=()
+    #             # imageCount=0
+    #             # for i in `seq 1 ${#}`
+    #             # do
+    #             #     imageNames+=(${1})
+    #             #     imageCount=`expr $imageCount + 1`
+    #             #     shift
+    #             # done
+    #             # percentage=`expr 100 / $imageCount`
+    #             # convert -geometry $percentage% +append $imageNames out_m.png
+    #         fi
+    #         # if [ $1 = "-r" -o $1 = "--resize"]; then
+    #         # if [ $1 = "-r"]; then
+    #         # convert -filter box -resize $2 $3 out_r.png
+    #         # fi
+    #         # if [ $1 = "-h" -o $1 = "--help" ]; then
+    #         #     error()
+    #         # fi
+    #     fi
+    # }
+    #
+    # main
+    #
