@@ -106,7 +106,7 @@ hook_add = '''
 inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " ポップアップ削除
-inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+" inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 '''
 
 # make plugin(:LayoutPlugin xxx.vim)

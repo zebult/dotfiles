@@ -125,7 +125,7 @@ nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap g/ :CursorLineColorLowlight<CR>:Ag<Space>
 " includeへ移動
-nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
+" nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
@@ -135,6 +135,9 @@ nnoremap <Leader>O :!open .<CR><CR>
 " nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
+noremap <Leader>h  ^
+noremap <Leader>l  $
+nnoremap <Leader>/  *
 
 " save and close
 nnoremap <Leader>w :w<Cr>
@@ -165,6 +168,8 @@ nnoremap <silent> <C-p> :cp<CR>
 
 " マーク周りの改善
 noremap ' `
+
+noremap <Bar> =
 
 " 選択してもそのまま貼り付けられるようにする
 vnoremap <silent> p "0p

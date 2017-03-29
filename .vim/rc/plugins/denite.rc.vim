@@ -20,8 +20,8 @@ let mapping_list = [{'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
       \ {'key': 'K', 'command': 'Denite',           'source': 'Denite buffer<CR>: Denite -immediately file_old<CR><C-c>'},
       \ {'key': 'g', 'command': 'Denite',           'source': '-winheight=3 -auto_preview grep'},
       \ {'key': 'G', 'command': 'DeniteCursorWord', 'source': '-winheight=3 -auto_preview grep'}]
-let options      = [{'key':  '', 'option' : '-default-action=open'},
-      \ {'key': 't', 'option' : '-default-action=tabopen'},
+let options      = [{'key':  '', 'option' : '-default-action=tabopen'},
+      \ {'key': 'b', 'option' : '-default-action=open'},
       \ {'key': 'v', 'option' : '-default-action=vsplit'},
       \ {'key': 's', 'option' : '-default-action=split'}]
 

@@ -101,6 +101,7 @@ repo = 'vim-jp/vital.vim'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+hook_add = 'source ~/.vim/rc/plugins/tcomment.rc.vim'
 
 # Need to `brew install global`
 [[plugins]]
