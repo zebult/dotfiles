@@ -59,7 +59,8 @@ set backspace=indent,eol,start
 " メタ文字として扱う文字を`magic`で指定(`.`,`*`,`$`,`^`,`[`などを`\`で前置なしでメタ文字として扱う)
 " set magic
 " メタ文字として扱う文字を`nomagic`で指定(`$`,`^`などを`\ `で前置なしでメタ文字として扱う)
-set nomagic
+" set nomagic " easymotion詰む
+
 " include周りの設定
 " let g:clang_c_options = '-std=c11'
 " let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
