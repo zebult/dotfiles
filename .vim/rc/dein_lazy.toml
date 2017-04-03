@@ -197,7 +197,7 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 # filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 [[plugins]]
-repo = 'zebult/vim-zxcode.vim'
+repo = 'zebult/vim-zxcode'
 hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 
 # Xcode化
