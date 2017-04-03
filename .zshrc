@@ -97,6 +97,7 @@ alias gsu="git submodule update"
 alias gsv="git stash save"
 alias glist="git stash list"
 alias gfu="git ls-files -u"
+alias gcp="git cherry-pick"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
@@ -259,6 +260,30 @@ function peco-tree-vim(){
 }
 zle -N peco-tree-vim
 bindkey '^n' peco-tree-vim
+
+function peco-branch () {
+    local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
+    if [ -n "$branch" ]; then
+      if [ -n "$LBUFFER" ]; then
+        local new_left="${LBUFFER%\ } $branch"
+      else
+        local new_left="$branch"
+      fi
+      BUFFER=${new_left}${RBUFFER}
+      CURSOR=${#new_left}
+    fi
+}
+zle -N peco-branch
+bindkey '^b' peco-branch
+# bindkey '^xb' peco-branch # C-x b でブランチ選択
+
+peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle reset-prompt
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 function git-remote-vim(){
     BUFFER="vim <(git remote -v)"

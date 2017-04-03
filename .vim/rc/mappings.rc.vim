@@ -124,6 +124,7 @@ nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap g/ :CursorLineColorLowlight<CR>:Ag<Space>
+nnoremap <Leader>g :CursorLineColorLowlight<CR>:Ag<Space>
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
@@ -135,9 +136,6 @@ nnoremap <Leader>O :!open .<CR><CR>
 " nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
-noremap <Leader>h  ^
-noremap <Leader>l  $
-nnoremap <Leader>/  *
 
 " save and close
 nnoremap <Leader>w :w<Cr>

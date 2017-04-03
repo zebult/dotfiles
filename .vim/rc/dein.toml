@@ -89,6 +89,9 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'kana/vim-textobj-user'
 
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+
 # Need API
 [[plugins]]
 repo = 'mattn/webapi-vim'

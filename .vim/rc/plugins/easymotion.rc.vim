@@ -1,11 +1,12 @@
-map <Leader>j <Plug>(easymotion-w)
+map <Leader>l <Plug>(easymotion-w)
+" map <Leader>j <Plug>(easymotion-w)
+map <Leader>h <Plug>(easymotion-b)
 " map <Leader>h <Plug>(easymotion-b)
-map <Leader>k <Plug>(easymotion-b)
+" map <Leader>k <Plug>(easymotion-b)
 " map <Leader>j <Plug>(easymotion-j)
 " map <Leader>k <Plug>(easymotion-k)
-" map <Leader>l <Plug>(easymotion-w)
-" map <Leader>h <Plug>(easymotion-b)
 let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvb'
+
 " 以下機能しない処理
 " let g:EasyMotion_smartcase = 1
 let g:EasyMotion_startofline = 0 " 先頭列へ行く機能off
