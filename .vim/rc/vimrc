@@ -45,6 +45,7 @@ call s:source_rc('view-nefertiti.rc.vim')
 call s:source_rc('skeleton.rc.vim')
 call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
+call s:source_rc('macro.rc.vim')
 call s:source_rc('util.rc.vim')
 
 " original function

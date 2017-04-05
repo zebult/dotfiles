@@ -28,18 +28,13 @@ function! JsonPretty() abort
 endfunction
 command -bar JsonPretty  call JsonPretty()
 
-function! AutoMethodMake() abort
-  normal 0wms"my$gg/classw"cyiwGo"mpxa {}kk0w"cPa::'sj
-endfunction
-command -bar AutoMethodMake  call AutoMethodMake()
-
-function! Logcat() abort
+function! LogcatD() abort
   r! adb logcat -v time -d
   1d
   set filetype=logcat
   source $MYVIMRC
 endfunction
-command -bar Logcat  call Logcat()
+command -bar LogcatD  call LogcatD()
 
 function! LogcatCocosDebug() abort
   r! adb logcat -v time -d | grep 'debug info'

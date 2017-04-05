@@ -98,6 +98,7 @@ alias gsv="git stash save"
 alias glist="git stash list"
 alias gfu="git ls-files -u"
 alias gcp="git cherry-pick"
+alias grb="git rebase"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"

@@ -1,2 +1,10 @@
+function! AutoMethodMake() abort
+  normal 0wms"my$gg/classw"cyiwGo"mpxa {}kk0w"cPa::'sj
+endfunction
+command -bar AutoMethodMake  call AutoMethodMake()
+
 " _xxxYYY to mXxxYYY
-" @q='/_yiwo%s/pa/pa/gbbrml~0wy$;0\gg/%\dd'
+function! ChangeUnderToM() abort
+  normal mz/_yiwo%s/pa/pa/gbbrml~^y$;0gg/%dd'z
+endfunction
+command! -bar ChangeUnderToM call ChangeUnderToM()
