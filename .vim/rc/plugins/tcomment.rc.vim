@@ -1,4 +1,4 @@
-let g:tcommentMapLeader1 = '<F13>'
+let g:tcommentMapLeader1 = '<F12>'
 " let g:tcommentMapLeader2 = '<Leader>'
 let g:tcommentMapLeaderOp1 = 'gc'
 let g:tcommentMapLeaderOp2 = 'gC'
