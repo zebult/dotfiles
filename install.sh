@@ -177,12 +177,14 @@ case "${os}" in
         # mas install 409203825 # Numbers
 
         # Alacritty
-        rustup override set nightly
-        cd /Applications
-        git clone https://github.com/jwilm/alacritty
-        cd alacritty
-        cargo build --release
-        sudo cp target/release/alacritty /usr/local/bin
+        # rustup override set nightly
+        # cd /Applications
+        # git clone https://github.com/jwilm/alacritty
+        # cd alacritty
+        # cargo build --release
+        # sudo cp target/release/alacritty /usr/local/bin
+        brew tap mscharley/homebrew
+        brew install --HEAD alacritty
         ln -snfv $DOTFILES/alacritty $HOME/.config/alacritty
 
         # 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
