@@ -89,6 +89,7 @@ alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
 alias grh="git reset --hard"
+alias grs="git reset --soft"
 alias gcl="git clean -df"
 alias gsw="git show"
 alias gbl="git blame"
@@ -116,7 +117,7 @@ alias tokyo='curl wttr.in/Tokyo'
 
 # set -o vi
 
-functions macvim () {
+macvim () {
     if [ -d /Applications/MacVim.app ]
     then
         [ ! -f $1 ] && touch $1
@@ -126,21 +127,21 @@ functions macvim () {
     fi
 }
 
-functions zipr() {
+zipr() {
     zip -r $1 $1;
 }
 
-functions tmp() {
+tmp() {
     mkdir tmp;
     cd tmp;
 }
 
-functions mkcd() {
+mkcd() {
     mkdir $1;
     cd $1
 }
 
-functions gps() {
+gps() {
     gst
     if [ -n "$1" ]; then
         # force push
@@ -154,7 +155,7 @@ functions gps() {
     fi
 }
 
-functions gpsu() {
+gpsu() {
     gst
     if [ -n "$1" ]; then
         # force push
@@ -169,20 +170,20 @@ functions gpsu() {
 }
 
 # don't use submodule
-functions gpl() {
+gpl() {
     gst
     echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
     git pull origin `git rev-parse --abbrev-ref HEAD`
 }
 
-functions gplu() {
+gplu() {
     gst
     echo "git pull upstream `git rev-parse --abbrev-ref HEAD`"
     git pull upstream `git rev-parse --abbrev-ref HEAD`
 }
 
 # git rebase origin
-functions gro() {
+gro() {
     # gst
     branch=`git rev-parse --abbrev-ref HEAD`
     echo $branch
@@ -206,7 +207,7 @@ functions gro() {
     fi
 }
 
-functions gamd() {
+gamd() {
     gst
     checkRecentLog
     if [ -n "$2" ]; then
@@ -228,11 +229,11 @@ checkRecentLog() {
     echo "======="
 }
 
-functions gbo()  {
+gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
 }
 
-functions guu()
+guu()
 {
     if [ -n "$1" ]; then
         echo "update "$1
@@ -254,7 +255,7 @@ dush()
     du -sh * | grep G
 }
 
-function peco-tree-vim(){
+peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
   BUFFER="vim $SELECTED_FILE"
   zle accept-line
@@ -262,7 +263,7 @@ function peco-tree-vim(){
 zle -N peco-tree-vim
 bindkey '^n' peco-tree-vim
 
-function peco-branch () {
+peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
     if [ -n "$branch" ]; then
       if [ -n "$LBUFFER" ]; then
@@ -286,20 +287,20 @@ peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-function git-remote-vim(){
+git-remote-vim(){
     BUFFER="vim <(git remote -v)"
   zle accept-line
 }
 zle -N git-remote-vim
 
-function quickVimOpen() {
+quickVimOpen() {
     BUFFER="vim"
     zle accept-line
 }
 zle -N quickVimOpen
 bindkey '^j' quickVimOpen
 
-function pwdcp() {
+pwdcp() {
     pwd | pbcopy
     echo `pwd`
     zle accept-line
@@ -307,21 +308,21 @@ function pwdcp() {
 zle -N pwdcp
 bindkey '^p' pwdcp
 
-function defaultcolor() {
+defaultcolor() {
     bcolor 45 45 45
     zle accept-line
 }
 zle -N defaultcolor
 bindkey '^z' defaultcolor
 
-function vimfiler() {
+vimfiler() {
     BUFFER="vim ."
     zle accept-line
 }
 zle -N vimfiler
 bindkey '^f' vimfiler
 
-function sourcezshrc() {
+sourcezshrc() {
     echo 'source ~/.zshrc'
     source ~/.zshrc
     zle accept-line
@@ -329,7 +330,7 @@ function sourcezshrc() {
 zle -N sourcezshrc
 bindkey '^t' sourcezshrc
 
-function currentopen() {
+currentopen() {
     echo "open "`pwd`
     open .
     zle accept-line
@@ -337,7 +338,7 @@ function currentopen() {
 zle -N currentopen
 bindkey '^o' currentopen
 
-function memodiary() {
+memodiary() {
     BUFFER="vim ~/Dropbox/Saichi/Diary/$(date "+%Y/%m/%d.md")"
     zle accept-line
 }

@@ -1,7 +1,7 @@
-function! AutoMethodMake() abort
+function! AutoMethodMakeMacro() abort
   normal 0wms"my$gg/classw"cyiwGo"mpxa {}kk0w"cPa::'sj
 endfunction
-command -bar AutoMethodMake  call AutoMethodMake()
+command -bar AutoMethodMakeMacro call AutoMethodMakeMacro()
 
 " _xxxYYY to mXxxYYY
 function! ChangeUnderToM() abort

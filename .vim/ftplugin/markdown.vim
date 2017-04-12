@@ -52,9 +52,10 @@ endfunction
 
 function! IsTodo() abort
   let l:headWord = getline('.')[0]
-  " let l:secondWord = getline('.')[2]
-  " if l:headWord == '-' && l:secondWord == '['
-  if l:headWord == '-'
+  let l:secondWord = getline('.')[2]
+  " echo secondWord
+  if l:headWord == '-' && l:secondWord == '['
+  " if l:headWord == '-'
     return 1
   end
   return 0
@@ -62,24 +63,28 @@ endfunction
 
 function! Action_o() abort
   if IsBullet()
-    execute "normal! $aa\"ox"
+    if IsTodo()
+      execute "normal! $aa\"ox"
+      execute "normal! i [ ]"
+    else
+      execute "normal! $aa\"ox"
+    end
   else
     execute "normal! o"
-  end
-  if IsTodo()
-    execute "normal! i [ ]"
   end
   startinsert!
 endfunction
 
 function! Action_O() abort
   if IsBullet()
-    execute "normal! 0\"oylO\"opa "
+    if IsTodo()
+      execute "normal! 0\"oylO\"opa "
+      execute "normal! i [ ]"
+    else
+      execute "normal! 0\"oylO\"opa "
+    end
   else
     execute "normal! O"
-  end
-  if IsTodo()
-    execute "normal! i [ ]"
   end
   startinsert!
 endfunction

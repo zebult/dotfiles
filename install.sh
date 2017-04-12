@@ -201,6 +201,7 @@ case "${os}" in
         mkdir -p .bin/sh
         ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
         ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
+        ln -snfv $HOME/dotfiles/shell/img $HOME/.bin/sh/img
         ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
         chmod 755 $HOME/.bin/sh/*
 
