@@ -182,8 +182,8 @@ case "${os}" in
         git clone https://github.com/jwilm/alacritty
         cd alacritty
         cargo build --release
-        sudo cp target/release/alacritty /usr/local/bin 
-        sudo ln -snfv $DOTFILES/alacritty.yml /Applications/alacritty/alacritty.yml
+        sudo cp target/release/alacritty /usr/local/bin
+        ln -snfv $DOTFILES/alacritty $HOME/.config/alacritty
 
         # 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
         cd $HOME/Documents
@@ -254,6 +254,6 @@ esac
 echo finish🍺
 
 # branch 表示
-# vim .zpreztorc
+# vim $HOME/.zpreztorc
 # zstyle ':prezto:load' pmodule \ に'git' 追加
 
