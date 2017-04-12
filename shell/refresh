@@ -1,16 +1,32 @@
 #!/bin/sh
 
-# Shift起動のセーフブートでざっくりキャッシュクリア
+# Shift起動でセーフブート(Mac cache clear)
 # Chrome > 環境設定 > 詳細設定を表示... > 閲覧履歴データの消去(すべて)
+# Vivaldi > <C-y> > 閲覧履歴を消去... > すべて
 
+# remove old version
+brew update
+brew upgrade
+brew cleanup
+
+gem cleanup
+
+# Xcode
 sudo rm -rf ~/Library/Developer/Xcode/DerivedData/*
-sudo rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/*
-# Cache全般
-sudo rm -rf ~/Library/Caches/*
-# Archiveする度溜まる
+sudo rm -rf ~/Library/Developer/Xcode/iOS\ Device\ Logs/*
+sudo rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*
+## Archiveする度溜まる
 sudo rm -rf ~/Library/Developer/Xcode/Archives/*
-# iOSデバイスの機種, OS毎に作成される
+## iOSデバイスの機種, OS毎に作成される
 xcrun simctl erase ~/Library/Developer/CoreSimulator/Devices/*
 
+# Cache
+sudo rm -rf ~/Library/Caches/*
+
+# Android SDK reset (Android sdk全てinstallするとsysytem-images100GB近く溜まる)
+# rm -rf /usr/local/var/lib/android-sdk/*
+# rm -rf /usr/local/Cellar/android-sdk/22/platforms/*
+# rm -rf /usr/local/Cellar/android-sdk/22/system-images/*
+
 sudo rm -rf ~/.gradle
-gem cleanup
+
