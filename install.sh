@@ -1,8 +1,10 @@
 #!/bin/bash
 
+DOTFILES=$HOME/dotfiles
+
 cd $HOME
 git clone https://github.com/zebult/dotfiles.git
-cd dotfiles
+cd $DOTFILES
 
 DIR=${PWD##*/}
 if [ $DIR != "dotfiles" ]; then
@@ -16,7 +18,7 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
 
     echo "###link -> $f"
-    ln -snfv "$HOME"/"dotfiles"/"$f" "$HOME"/"$f"
+    ln -snfv "$DOTFILES"/"$f" "$HOME"/"$f"
 done
 
 # .gitconfig.local settings
@@ -92,15 +94,15 @@ case "${os}" in
         curl -L git.io/enhancd | sh
         git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
         mkdir -p $HOME/.config
-        ln -snfv $HOME/dotfiles/peco $HOME/.config/peco
+        ln -snfv $DOTFILES/peco $HOME/.config/peco
         ln -snfv $HOME/.vim $HOME/.config/nvim
         ln -snfv $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
         sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
         chsh -s /usr/local/bin/zsh
         zsh
         source ${HOME}/.zshrc
-        chmod 755 $HOME/dotfiles/setupPrezto.sh
-        $HOME/dotfiles/setupPrezto.sh
+        chmod 755 $DOTFILES/setupPrezto.sh
+        $DOTFILES/setupPrezto.sh
         source ${HOME}/.zshrc
         pyenv install -list
         echo 'Input python 3.x version...'
@@ -174,6 +176,15 @@ case "${os}" in
         mas install 585829637 # Todoist
         # mas install 409203825 # Numbers
 
+        # Alacritty
+        rustup override set nightly
+        cd /Applications
+        git clone https://github.com/jwilm/alacritty
+        cd alacritty
+        cargo build --release
+        sudo cp target/release/alacritty /usr/local/bin 
+        sudo ln -snfv $DOTFILES/alacritty.yml /Applications/alacritty/alacritty.yml
+
         # 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
         cd $HOME/Documents
         git clone https://gist.github.com/d5ee659c9d2bc1575cbc93aaca6988a4.git
@@ -200,10 +211,10 @@ case "${os}" in
         # util shell link
         cd $HOME
         mkdir -p .bin/sh
-        ln -snfv $HOME/dotfiles/shell/dpull $HOME/.bin/sh/dpull
-        ln -snfv $HOME/dotfiles/shell/dpush $HOME/.bin/sh/dpush
-        ln -snfv $HOME/dotfiles/shell/img $HOME/.bin/sh/img
-        ln -snfv $HOME/dotfiles/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
+        ln -snfv $DOTFILES/shell/dpull $HOME/.bin/sh/dpull
+        ln -snfv $DOTFILES/shell/dpush $HOME/.bin/sh/dpush
+        ln -snfv $DOTFILES/shell/img $HOME/.bin/sh/img
+        ln -snfv $DOTFILES/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
         chmod 755 $HOME/.bin/sh/*
 
         # Alfred
