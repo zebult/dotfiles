@@ -61,7 +61,7 @@ case "${os}" in
         brew install Caskroom/versions/macvim-kaoriya --with-lua --with-cscope --with-python --with-python3
         brew instal pyenv
         brew install vim --with-lua
-        brew install neovim/neovim/neovim
+        brew install neovim
         brew install ctags
         brew install boost
         brew tap sanemat/font
@@ -113,7 +113,8 @@ case "${os}" in
         pyenv rehash
         echo 'python new version->'
         python --version
-        pip3 install neovim
+        # pip3 install neovim
+        pip3 install --user --upgrade neovim
 
         # TODO: 2系を標準にするべき?  pyenv global 2.7.9 3.4.3 #手前から優先
         brew install go

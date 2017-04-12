@@ -57,4 +57,3 @@ function! s:check_lazy_plugins() abort
 endfunction
 
 call s:check_lazy_plugins()
-
