@@ -77,7 +77,7 @@ export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'
-alias gcm="gst; git commit -m"
+alias gcm="gst; git commit"
 alias gacm="gst; git add .; git commit -m"
 alias gst="git status -sb"
 alias gdf="git diff"

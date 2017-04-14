@@ -122,6 +122,15 @@ function! CursorLineColorHighlight() abort
 endfunction
 command! -bar CHL call CursorLineColorHighlight()
 
+function! CursorLineColorMiddlelight() abort
+  set cursorline
+  set cursorcolumn
+  hi CursorLine cterm=NONE ctermbg=1
+  hi CursorColumn ctermbg=1
+  hi Cursor ctermbg=lightgreen
+endfunction
+command! -bar CML call CursorLineColorMiddlelight()
+
 function! CursorLineColorLowlight() abort
   set cursorline
   set cursorcolumn
@@ -129,7 +138,7 @@ function! CursorLineColorLowlight() abort
   hi CursorColumn ctermbg=235
   hi Cursor ctermbg=lightgreen
 endfunction
-command! -bar CursorLineColorLowlight call CursorLineColorLowlight()
+command! -bar CLL call CursorLineColorLowlight()
 noremap <Plug>(cursor-line-color-lowlight) :<C-u>call CursorLineColorLowlight()<CR>
 
 function! LogcatSearchError() abort
