@@ -1,6 +1,5 @@
 " Mappings
 
-" nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:GitGutterLineHighlightsDisable<CR>:NoHighlightTrailingSpaces<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -124,8 +123,10 @@ nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
-nnoremap g/ :CursorLineColorLowlight<CR>:Ag<Space>
-nnoremap <Leader>g :CursorLineColorLowlight<CR>:Ag<Space>
+nnoremap ga :CLL<CR>:Ag<Space>
+nnoremap g/ :CLL<CR>:Ag<Space>
+nnoremap <Leader>g :CLL<CR>:Ag<Space>
+
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
 " nnoremap gt :Calendar -view=clock<CR>
@@ -161,9 +162,13 @@ nnoremap g<C-i> <C-i>
 nmap gp Riw
 " nmap cp Riw
 
+nnoremap gh ,
+nnoremap gl ;
+
 " nnoremap <silent> <C-n> :CHL<CR>:cn<CR>
-nnoremap <silent> <C-n> :cn<CR>:CursorLineColorLowlight<CR>
-nnoremap <silent> <C-p> :cp<CR>
+" nnoremap <silent> <C-n> :cn<CR>:CLL<CR>
+nnoremap <silent> <C-n> :cn<CR>:CML<CR>
+nnoremap <silent> <C-p> :cp<CR>:CML<CR>
 
 " マーク周りの改善
 noremap ' `
