@@ -14,16 +14,20 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 nnoremap [denite] <Nop>
 nmap <Bslash> [denite]
 
-let mapping_list = [{'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
+let mapping_list = [
+      \ {'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
       \ {'key': 'J', 'command': 'DeniteBufferDir',           'source': 'file_rec'},
       \ {'key': 'k', 'command': 'Denite',           'source': 'file_old'},
       \ {'key': 'K', 'command': 'Denite',           'source': 'Denite buffer<CR>: Denite -immediately file_old<CR><C-c>'},
       \ {'key': 'g', 'command': 'Denite',           'source': '-winheight=3 -auto_preview grep'},
-      \ {'key': 'G', 'command': 'DeniteCursorWord', 'source': '-winheight=3 -auto_preview grep'}]
-let options      = [{'key':  '', 'option' : '-default-action=tabopen'},
+      \ {'key': 'G', 'command': 'DeniteCursorWord', 'source': '-winheight=3 -auto_preview grep'}
+      \ ]
+let options      = [
+      \ {'key':  '', 'option' : '-default-action=tabopen'},
       \ {'key': 'b', 'option' : '-default-action=open'},
       \ {'key': 'v', 'option' : '-default-action=vsplit'},
-      \ {'key': 's', 'option' : '-default-action=split'}]
+      \ {'key': 's', 'option' : '-default-action=split'}
+      \ ]
 
 for mapping in mapping_list
   for option in options
@@ -35,20 +39,35 @@ for mapping in mapping_list
   endfor
 endfor
 let bar_height = 5
-execute "nnoremap <silent> [denite]h :<C-u>CHL<CR>:Denite -winheight=".bar_height." help<CR><C-w>o"
-execute "nnoremap <silent> [denite]H :<C-u>CHL<CR>:DeniteCursorWord -winheight=".bar_height." help<CR><C-w>o"
 
 nnoremap <silent> [denite]r  :<C-u>CHL<CR>:Denite -resume<CR>
 nnoremap <silent> [denite]n  :<C-u>CHL<CR>:Denite -resume -select=+1 -immediately<CR>
 nnoremap <silent> [denite]p  :<C-u>CHL<CR>:Denite -resume -select=-1 -immediately<CR>
-" nnoremap <silent> <M-n>      :<C-u>CHL<CR>:Denite -resume -select=+1 -immediately<CR>
-" nnoremap <silent> <M-p>      :<C-u>CHL<CR>:Denite -resume -select=-1 -immediately<CR>
+
+nnoremap <silent> [denite]h :<C-u>CHL<CR>:Denite help<CR><C-w>o
+nnoremap <silent> [denite]H :<C-u>CHL<CR>:DeniteCursorWord help<CR><C-w>o
+
 nnoremap <silent> [denite]f  :<C-u>CHL<CR>:Denite filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>CHL<CR>:Denite neoyank<CR>
 
-nnoremap <C-j> :CHL<CR>:Denite file_rec<CR>
-nnoremap g<C-J> :CHL<CR>:DeniteBufferDir file_rec<CR>
-nnoremap t<C-J> :CHL<CR>:Denite -default-action=tabopen file_rec<CR>
-nnoremap <C-k> :CHL<CR>:Denite file_old<CR>
-nnoremap t<C-k> :CHL<CR>:Denite -default-action=tabopen file_old<CR>
+function! DeniteFileRec() abort
+  CHL
+  Denite file_rec
+endfunction
+command! DeniteFileRec call DeniteFileRec()
+
+function! DeniteFileOld() abort
+  CHL
+  Denite file_old
+endfunction
+command! DeniteFileOld call DeniteFileOld()
+
+" nnoremap <silent> <M-n>      :<C-u>CHL<CR>:Denite -resume -select=+1 -immediately<CR>
+" nnoremap <silent> <M-p>      :<C-u>CHL<CR>:Denite -resume -select=-1 -immediately<CR>
+
+" nnoremap <C-j> :CHL<CR>:Denite file_rec<CR>
+" nnoremap g<C-J> :CHL<CR>:DeniteBufferDir file_rec<CR>
+" nnoremap t<C-J> :CHL<CR>:Denite -default-action=tabopen file_rec<CR>
+" nnoremap <C-k> :CHL<CR>:Denite file_old<CR>
+" nnoremap t<C-k> :CHL<CR>:Denite -default-action=tabopen file_old<CR>
 

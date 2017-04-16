@@ -156,14 +156,14 @@ let MyAutoComplete_StartLength = 3
 " 対応する括弧へ移動しやすく
 nnoremap <Tab> %
 vnoremap <Tab> %
-" Mac Tab, <C-i>同じ問題仮の対応
-nnoremap g<C-i> <C-i>
+
+nnoremap <F11> <C-i>
 
 nmap gp Riw
 " nmap cp Riw
 
-nnoremap gh ,
-nnoremap gl ;
+" nnoremap gh ,
+" nnoremap gl ;
 
 " nnoremap <silent> <C-n> :CHL<CR>:cn<CR>
 " nnoremap <silent> <C-n> :cn<CR>:CLL<CR>
