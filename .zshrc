@@ -277,7 +277,6 @@ peco-branch () {
 }
 zle -N peco-branch
 bindkey '^b' peco-branch
-# bindkey '^xb' peco-branch # C-x b でブランチ選択
 
 peco-select-history() {
     BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
@@ -293,12 +292,19 @@ git-remote-vim(){
 }
 zle -N git-remote-vim
 
-quickVimOpen() {
-    BUFFER="vim"
+fileRecVimOpen() {
+    BUFFER='vim -c "DeniteFileRec"'
     zle accept-line
 }
-zle -N quickVimOpen
-bindkey '^j' quickVimOpen
+zle -N fileRecVimOpen
+bindkey '^j' fileRecVimOpen
+
+fileOldVimOpen() {
+    BUFFER='vim -c "DeniteFileOld"'
+    zle accept-line
+}
+zle -N fileOldVimOpen
+bindkey '^k' fileOldVimOpen
 
 pwdcp() {
     pwd | pbcopy
