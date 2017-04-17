@@ -35,8 +35,8 @@ let defaultengine = "google.co.jp"
 let qmark t = ["http://cvim.ipsj.or.jp/"]
 
 " Move
-map j scrollPageDown
-map k scrollPageUp
+" map j scrollPageDown " TODO: want harf
+" map k scrollPageUp
 map <C-e> scrollDown
 map <C-y> scrollUp
 map <C-h> scrollLeft
