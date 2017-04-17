@@ -9,7 +9,7 @@ nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
 " Grep
 nnoremap <C-g> :Gtags -g <C-r><C-w>
 " このファイルの関数一覧
-nnoremap <C-t> :Gtags -f %<CR>
+nnoremap <C-m> :Gtags -f %<CR>
 
 " function! Caller() abort
 "   :Gtags -r

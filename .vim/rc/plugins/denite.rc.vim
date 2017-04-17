@@ -49,6 +49,7 @@ nnoremap <silent> [denite]H :<C-u>CHL<CR>:DeniteCursorWord help<CR><C-w>o
 
 nnoremap <silent> [denite]f  :<C-u>CHL<CR>:Denite filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>CHL<CR>:Denite neoyank<CR>
+nnoremap <silent> [denite]l  :<C-u>CHL<CR>:Denite outline<CR>
 
 function! DeniteFileRec() abort
   CHL

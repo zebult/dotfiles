@@ -165,10 +165,8 @@ nmap gp Riw
 " nnoremap gh ,
 " nnoremap gl ;
 
-" nnoremap <silent> <C-n> :CHL<CR>:cn<CR>
-" nnoremap <silent> <C-n> :cn<CR>:CLL<CR>
-nnoremap <silent> <C-n> :cn<CR>:CML<CR>
-nnoremap <silent> <C-p> :cp<CR>:CML<CR>
+nnoremap <silent> <C-n> :cn<CR>:CLL<CR>zz
+nnoremap <silent> <C-p> :cp<CR>:CLL<CR>zz
 
 " マーク周りの改善
 noremap ' `
