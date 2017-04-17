@@ -1,6 +1,6 @@
 " Mappings
 
-nnoremap <silent> <ESC><ESC> :nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
+nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
 vnoremap <silent> cy c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -115,6 +115,9 @@ cnoremap <C-f> <Right>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
+" logical search
+cnoremap <Bar><Bar> <Bslash><Bar>
+cnoremap && .*
 """"""""""""""""""""""""""""""
 
 " Power tools
@@ -165,8 +168,8 @@ nmap gp Riw
 " nnoremap gh ,
 " nnoremap gl ;
 
-nnoremap <silent> <C-n> :cn<CR>:CLL<CR>zz
-nnoremap <silent> <C-p> :cp<CR>:CLL<CR>zz
+nnoremap <silent> <C-n> :cn<CR>:CML<CR>zz
+nnoremap <silent> <C-p> :cp<CR>:CML<CR>zz
 
 " マーク周りの改善
 noremap ' `

@@ -29,12 +29,14 @@ let defaultengine = "google.co.jp"
 " let qmark j = ["javascript:var%20t=((window.getSelection&&window.getSelection())%7C%7C(document.getSelection&&document.getSelection())%7C%7C(document.selection&&document.selection.createRange&&document.selection.createRange().text));var%20e=(document.charset%7C%7Cdocument.characterSet);if(t!='')%7Blocation.href='http://translate.google.com/?text='+t+'&hl=ja&langpair=auto%7Cja&tbb=1&ie='+e;%7Delse%7Blocation.href='http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&hl=ja&langpair=auto%7Cja&tbb=1&ie='+e;%7D;"]
 " let qmark l = ["http://www.google.com/language_tools"]
 " Feedly/Pocket/GitHub
-" let qmark f = ["http://cloud.feedly.com/#latest"]                                   
-" let qmark p = ["http://getpocket.com/a/queue/"]                                     
-" let qmark g = ["http://github.com/rcmdnk"]       
+" let qmark f = ["http://cloud.feedly.com/#latest"]
+" let qmark p = ["http://getpocket.com/a/queue/"]
+" let qmark g = ["http://github.com/rcmdnk"]
 let qmark t = ["http://cvim.ipsj.or.jp/"]
 
 " Move
+map j jjj
+map k kkk
 map <C-h> scrollLeft
 map <C-j> scrollDown
 map <C-k> scrollUp

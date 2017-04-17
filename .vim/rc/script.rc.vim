@@ -125,8 +125,8 @@ command! -bar CHL call CursorLineColorHighlight()
 function! CursorLineColorMiddlelight() abort
   set cursorline
   set cursorcolumn
-  hi CursorLine cterm=NONE ctermbg=1
-  hi CursorColumn ctermbg=1
+  hi CursorLine cterm=NONE ctermbg=124
+  hi CursorColumn ctermbg=124
   hi Cursor ctermbg=lightgreen
 endfunction
 command! -bar CML call CursorLineColorMiddlelight()
