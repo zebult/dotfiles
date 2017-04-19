@@ -1,8 +1,8 @@
 " 行末の空白削除
-function! ClearEnd() abort
+function! FixWhitespace() abort
   silent %s/\s\+$//ge
 endfunction
-command -bar ClearEnd  call ClearEnd()
+command -bar FixWhitespace  call FixWhitespace()
 
 " スペース全削除
 function! ClearSpace() range
@@ -50,6 +50,11 @@ function! AdbDumpsysAlarm() abort
   QuickhlManualAdd when
 endfunction
 command -bar AdbDumpsysAlarm call AdbDumpsysAlarm()
+
+function! AdbDumpsysAlarmTriming() abort
+  normal n3jVnkdk
+endfunction
+command -bar AdbDumpsysAlarmTriming call AdbDumpsysAlarmTriming()
 
 " TODO: add optionj
 function! CocosRunAndroid() abort
@@ -125,8 +130,8 @@ command! -bar CHL call CursorLineColorHighlight()
 function! CursorLineColorMiddlelight() abort
   set cursorline
   set cursorcolumn
-  hi CursorLine cterm=NONE ctermbg=124
-  hi CursorColumn ctermbg=124
+  hi CursorLine cterm=NONE ctermbg=232
+  hi CursorColumn ctermbg=232
   hi Cursor ctermbg=lightgreen
 endfunction
 command! -bar CML call CursorLineColorMiddlelight()

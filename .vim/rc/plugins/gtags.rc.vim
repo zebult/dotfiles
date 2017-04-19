@@ -11,9 +11,10 @@ nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
 vnoremap <C-k> <Esc>:vs<CR><C-w>l:Gtags -r <C-r><C-w><CR>
 nnoremap s<C-k> :sp<CR><C-w>j:Gtags -r <C-r><C-w><CR>
 " Grep
-nnoremap <C-g> :Gtags -g <C-r><C-w>
+nnoremap g/ :Gtags -g 
+nnoremap g* :Gtags -g <C-r><C-w><CR>
 " このファイルの関数一覧
-nnoremap <C-m> :Gtags -f %<CR>
+nnoremap <C-t> :Gtags -f %<CR>
 
 " function! Caller() abort
 "   :Gtags -r

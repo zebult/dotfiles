@@ -4,5 +4,3 @@ let g:tcommentMapLeaderOp1 = 'gc'
 let g:tcommentMapLeaderOp2 = 'gC'
 
 call tcomment#DefineType('objc', '// %s')
-
-nmap <Bslash><Bslash> ==

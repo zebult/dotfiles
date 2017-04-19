@@ -127,8 +127,6 @@ nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap ga :CLL<CR>:Ag<Space>
-nnoremap g/ :CLL<CR>:Ag<Space>
-nnoremap <Leader>g :CLL<CR>:Ag<Space>
 
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
@@ -161,15 +159,15 @@ nnoremap <Tab> %
 vnoremap <Tab> %
 
 nnoremap <F11> <C-i>
-
+nnoremap <C-m> gd:nohlsearch<CR>
 nmap gp Riw
 " nmap cp Riw
 
 " nnoremap gh ,
 " nnoremap gl ;
 
-nnoremap <silent> <C-n> :cn<CR>:CML<CR>zz
-nnoremap <silent> <C-p> :cp<CR>:CML<CR>zz
+nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
+nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz
 
 " マーク周りの改善
 noremap ' `

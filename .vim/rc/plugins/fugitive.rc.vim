@@ -3,7 +3,6 @@ let g:netrw_browsex_viewer = 'open'
 ca gst Gstatus
 ca gad Gwrite
 ca gcm Gcommit
-ca gacm Gacm
 ca gco Gread
 ca gbl Gblame
 ca glo Glog

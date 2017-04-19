@@ -102,6 +102,13 @@ repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
 
+# [[plugins]]
+# repo = 'Siprah/vim-todoist'
+
+# [[plugins]]
+# repo = 'kien/rainbow_parentheses.vim'
+# hook_add = 'source ~/.vim/rc/plugins/rainbow_parentheses.rc.vim'
+
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = 'source ~/.vim/rc/plugins/tcomment.rc.vim'

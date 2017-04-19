@@ -78,7 +78,7 @@ on_source = 'vim-watchdogs'
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
-on_i = 1
+on_ft = ['cpp', 'h', 'hpp']
 hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 
 # 英単語辞書補完(重いのでoff)
@@ -195,10 +195,14 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 # Swift ---------------------------
 
-# filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
+# [[plugins]]
+# repo = 'zebult/vim-zxcode'
+# hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
+
 [[plugins]]
-repo = 'zebult/vim-zxcode'
-hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
+repo = 'tokorom/xcode-actions.vim'
+filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
+hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 
 # Xcode化
 # [[plugins]]
