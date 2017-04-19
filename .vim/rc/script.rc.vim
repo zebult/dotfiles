@@ -73,7 +73,7 @@ function! CCCreatorLog() abort
   norm! atail -f local/logs/project.log
   " (vimshell_enter)
 endfunction
-command -bar CCLog call CCCreatorLog()
+command -bar CCCreatorLog call CCCreatorLog()
 
 function! s:qfGitDiff(...) "{{{
   let [lnum, ret] = [0, []]
