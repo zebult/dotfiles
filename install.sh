@@ -250,6 +250,10 @@ case "${os}" in
         defaults write com.apple.dock workspaces-edge-delay -float 0.2; killall Dock # アプリがデスクトップ間を移動する際の速度を変更 ???
         defaults write com.apple.screencapture location ~/Dropbox/ScreenShot/; killall SystemUIServer # スクショ保存場所変更
 
+        # Xcode Settings
+        defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+        defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks 2
+
         # gradle daemon でandroidビルドの高速化
         touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
 esac

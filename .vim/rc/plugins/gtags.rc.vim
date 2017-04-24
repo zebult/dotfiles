@@ -3,20 +3,37 @@
 " https://www.machu.jp/diary/20090308.html
 
 " 定義
-nnoremap <C-j> :GtagsCursor<CR>
-vnoremap <C-j> <Esc>:vs<CR><C-w>l:GtagsCursor<CR>
-nnoremap s<C-j> :sp<CR><C-w>j:GtagsCursor<CR>
+nnoremap <C-j> :GtagsCallees<CR>
+nnoremap t<C-j> :tab sp<CR>:GtagsCallees<CR>
+vnoremap <C-j> <Esc>:vs<CR><C-w>l:GtagsCallees<CR>
+nnoremap s<C-j> :sp<CR><C-w>j:GtagsCallees<CR>
 " 参照(Caller)
-nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
-vnoremap <C-k> <Esc>:vs<CR><C-w>l:Gtags -r <C-r><C-w><CR>
-nnoremap s<C-k> :sp<CR><C-w>j:Gtags -r <C-r><C-w><CR>
+nnoremap <C-k> :GtagsCaller<CR>
+nnoremap t<C-k> :tab sp<CR>:GtagsCaller<CR>
+vnoremap <C-k> <Esc>:vs<CR><C-w>l:GtagsCaller<CR>
+nnoremap s<C-k> :sp<CR><C-w>j:GtagsCaller<CR>
 " Grep
 nnoremap g/ :Gtags -g 
 nnoremap g* :Gtags -g <C-r><C-w><CR>
 " このファイルの関数一覧
 nnoremap <C-t> :Gtags -f %<CR>
 
-" function! Caller() abort
-"   :Gtags -r
-" endfunction
-" command -bar Caller call Caller()
+function! QuickFixHidden() abort
+  if (len(getqflist()) <= 1)
+    cclose
+  endif
+endfunction
+
+function! GtagsCallees() abort
+  let g:Gtags_OpenQuickfixWindow = 0
+  GtagsCursor
+  call QuickFixHidden()
+endfunction
+command -bar GtagsCallees call GtagsCallees()
+
+function! GtagsCaller() abort
+  let g:Gtags_OpenQuickfixWindow = 1
+  normal ;Gtags -r 
+  call QuickFixHidden()
+endfunction
+command -bar GtagsCaller call GtagsCaller()

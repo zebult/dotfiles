@@ -77,7 +77,7 @@ export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'
-alias gcm="gst; git commit"
+alias gcm="gst; git commit -v"
 alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
@@ -148,7 +148,7 @@ gacm() {
     if [ -n "$1" ]; then
         git commit -m $1
     else
-        git commit
+        git commit -v
     fi
 }
 
@@ -244,6 +244,10 @@ gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
 }
 
+gbrrd()  {
+    git branch | grep $1 | xargs git branch -d
+}
+
 guu()
 {
     if [ -n "$1" ]; then
@@ -264,6 +268,11 @@ guu()
 dush()
 {
     du -sh * | grep G
+}
+
+xp()
+{
+    defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks $1
 }
 
 peco-tree-vim(){

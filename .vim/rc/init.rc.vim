@@ -1,6 +1,7 @@
 " Initialize:
 
 let $DOTVIM = expand('~/.vim')
+set spelllang+=cjk
 let mapleader = "\<Space>"
 set ambiwidth=double
 rv! " 履歴共有

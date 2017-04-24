@@ -1,6 +1,9 @@
 " use ag
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#source('file_rec', 'matcher', ['matcher_cpsm'])
+" call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
+" call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])
 " カーソルキー, cn, cpで移動
 call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
 call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')

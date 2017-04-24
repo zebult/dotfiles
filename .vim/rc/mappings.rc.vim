@@ -21,6 +21,7 @@ noremap gj j
 noremap gk k
 noremap ;  :
 noremap :  ;
+noremap 8* *N
 
 noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>

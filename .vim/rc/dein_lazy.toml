@@ -195,9 +195,9 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 # Swift ---------------------------
 
-# [[plugins]]
-# repo = 'zebult/vim-zxcode'
-# hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
+[[plugins]]
+repo = 'zebult/vim-zxcode'
+hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 
 [[plugins]]
 repo = 'tokorom/xcode-actions.vim'

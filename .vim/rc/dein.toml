@@ -417,9 +417,9 @@ on_ft = 'kotlin'
 
 # syntax hilight, foldmethod
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = 'md'
-hook_add = 'let g:vim_markdown_folding_disabled=0'
+repo = 'plasticboy/vim-markdown'
+filetypes  =  ['md', 'mkd', 'markdown']
+# repo = 'rcmdnk/vim-markdown' # jis very slow
 
 # Toml ---------------------------
 
