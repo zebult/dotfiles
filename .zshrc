@@ -22,6 +22,9 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
 COCOS_VERSION="3.11.1"
+# N
+# NDK_VERSION="android-ndk-r10e"
+# A
 NDK_VERSION="android-ndk-r10d"
 SDK_VERSION="22"
 ## Use vim
