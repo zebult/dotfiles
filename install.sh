@@ -82,6 +82,7 @@ case "${os}" in
         brew install wget
         brew install tree
         brew install w3m
+        gem install vmail
         brew install ag
         brew install nkf # vim dict
         brew install global # gtags

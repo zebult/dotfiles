@@ -110,6 +110,10 @@ repo = 'vim-jp/vital.vim'
 # hook_add = 'source ~/.vim/rc/plugins/rainbow_parentheses.rc.vim'
 
 [[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
+
+[[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = 'source ~/.vim/rc/plugins/tcomment.rc.vim'
 

@@ -146,6 +146,12 @@ endfunction
 command! -bar CLL call CursorLineColorLowlight()
 noremap <Plug>(cursor-line-color-lowlight) :<C-u>call CursorLineColorLowlight()<CR>
 
+function! VmailInit() abort
+  set relativenumber
+  CHL
+endfunction
+command! -bar VmailInit call VmailInit()
+
 function! LogcatSearchError() abort
   norm! /FATAL EXCEPTION: main
 endfunction

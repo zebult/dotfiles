@@ -41,6 +41,14 @@ set matchpairs+=｛:｝
 set matchpairs+=「:」
 set matchpairs+=【:】
 set matchpairs+=（:）
+
+set list
+" set listchars=tab:\ \ ,eol:\ ,extends:»,precedes:« " 列折り返す際はこちらを使う
+set listchars=tab:\ \ ,eol:\ 
+set guifont=Ricty-Regular-for-Powerline:h16
+" 列折り返す(nowrapで折り返さず列スクロールする)
+set wrap
+
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile

@@ -124,6 +124,15 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
 
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+on_i = 1
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_i = 1
+
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
@@ -148,6 +157,7 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
+on_i = 1
 
 [[plugins]]
 repo = 'kana/vim-altr'
