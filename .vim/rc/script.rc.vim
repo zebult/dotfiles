@@ -108,11 +108,11 @@ function! s:qfGitDiff(...) "{{{
 endfunction "}}}
 command! -nargs=? QfGitDiff if s:qfGitDiff('<args>') | copen | endif
 
-function! RefreshDein() abort
+function! DeinRefresh() abort
    call dein#clear_state()
    call dein#recache_runtimepath()
 endfunction
-command -bar RefreshDein call RefreshDein()
+command -bar DeinRefresh call DeinRefresh()
 
 function! JsonLine() abort
   norm! 10000J
@@ -157,7 +157,6 @@ function! LogcatSearchError() abort
 endfunction
 command! -bar LogcatSearchError call LogcatSearchError()
 
-
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn
@@ -175,3 +174,9 @@ command! -bar LogcatSearchError call LogcatSearchError()
 " command! -nargs=* ZXcodeProjectOpen call zxcode#open_xcode(<f-args>)
 " function! zxcode#open_xcode(...) abort
 " let a:count = get(a:, 1)
+
+function! PlayGround() abort
+  echo 'test'
+endfunction
+command! -bar PlayGround call PlayGround()
+

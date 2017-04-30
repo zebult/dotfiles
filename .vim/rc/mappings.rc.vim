@@ -123,7 +123,7 @@ cnoremap && .*
 
 " Power tools
 nnoremap <Leader>u :Unite source<CR>
-nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
+" nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>

@@ -1,3 +1,3 @@
-map <silent> [w <Plug>CamelCaseMotion_w
-map <silent> [b <Plug>CamelCaseMotion_b
-map <silent> [e <Plug>CamelCaseMotion_e
+map <silent> W <Plug>CamelCaseMotion_w
+map <silent> B <Plug>CamelCaseMotion_b
+map <silent> E <Plug>CamelCaseMotion_e

@@ -12,7 +12,8 @@ nnoremap go o
 nnoremap gO O
 
 " todoリストを簡単に入力する
-abbreviate tl -[ ]
+" abbreviate tl -[ ]jjllxi
+abbreviate tl -[ ]jjxxa
 " todoリストのon/offを切り替える
 nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
 

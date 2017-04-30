@@ -158,7 +158,7 @@ repo = 'mattn/googlesuggest-complete-vim'
 repo = 'kana/vim-metarw'
 
 [[plugins]]
-repo = 'mattn/vim-metarw-redmine'
+repo = 'zebult/vim-metarw-redmine'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
 
 [[plugins]]

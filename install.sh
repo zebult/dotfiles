@@ -81,7 +81,8 @@ case "${os}" in
         brew install tig
         brew install wget
         brew install tree
-        brew install w3m
+        brew install w3m # text browser
+        brew install lynx # text browser
         gem install vmail
         brew install ag
         brew install nkf # vim dict
