@@ -115,6 +115,7 @@ alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
+alias tr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 

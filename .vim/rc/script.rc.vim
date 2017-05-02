@@ -1,11 +1,11 @@
 " 行末の空白削除
-function! FixWhitespace() abort
+function! ClearEndSpace() abort
   silent %s/\s\+$//ge
 endfunction
-command -bar FixWhitespace  call FixWhitespace()
+command -bar ClearEndSpace  call ClearEndSpace()
 
 " スペース全削除
-function! ClearSpace() range
+function! ClearLineSpace() range
   for linenum in range(a:firstline, a:lastline)
     let curr_line = getline(linenum)
     let repl = substitute(curr_line,' ','','g')
@@ -15,7 +15,7 @@ function! ClearSpace() range
     call setline(".", repl)
   endfor
 endfunction
-command! -range ClearSpace <line1>,<line2>call ClearSpace()
+command! -range ClearLineSpace <line1>,<line2>call ClearLineSpace()
 
 " 行末空白ハイライト消去
 function! NoHighlightTrailingSpaces() abort
@@ -28,26 +28,36 @@ function! JsonPretty() abort
 endfunction
 command -bar JsonPretty  call JsonPretty()
 
-function! LogcatD() abort
-  r! adb logcat -v time -d
+function! LogcatD(...) abort
+  if a:0 >= 1
+    execute "r! adb logcat -v time -d | grep ".a:1
+  else
+    r! adb logcat -v time -d
+  end
   1d
   set filetype=logcat
   source $MYVIMRC
 endfunction
-command -bar LogcatD  call LogcatD()
+command! -nargs=? LogcatD call LogcatD(<f-args>)
 
-function! LogcatCocosDebug() abort
-  r! adb logcat -v time -d | grep 'debug info'
+function! LogcatCocosDebug(...) abort
+  if a:0 >= 1
+    execute "r! adb logcat -v time -d | grep 'debug info' | grep ".a:1
+  else
+    r! adb logcat -v time -d | grep 'debug info'
+  end
   1d
   set filetype=logcat
   source $MYVIMRC
 endfunction
-command -bar LogcatCocosDebug call LogcatCocosDebug()
+command! -nargs=? LogcatCocosDebug call LogcatCocosDebug(<f-args>)
 
 function! AdbDumpsysAlarm() abort
   r! adb shell dumpsys alarm
   set filetype=log
-  QuickhlManualAdd when
+  QuickhlManualAdd when=
+  QuickhlManualAdd RTC_WAKEUP
+  execute "normal /RTC.*"
 endfunction
 command -bar AdbDumpsysAlarm call AdbDumpsysAlarm()
 
@@ -176,7 +186,12 @@ command! -bar LogcatSearchError call LogcatSearchError()
 " let a:count = get(a:, 1)
 
 function! PlayGround() abort
-  echo 'test'
+  let ps = system('ps')
+  if match(ps, 'gtags.*-v') != -1
+    echo 'exist'
+  else
+    echo 'none'
+  endif
 endfunction
 command! -bar PlayGround call PlayGround()
 
