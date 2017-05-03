@@ -1,7 +1,7 @@
 map <Leader>l <Plug>(easymotion-w)
 map <Leader>h <Plug>(easymotion-b)
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvb'
 
 " 以下機能しない処理

@@ -6,23 +6,26 @@ let g:lightline = {
             \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'modified', 'anzu']
             \    ],
             \   'right': [ [ 'qfstatusline', 'lineinfo', 'percent'],
-            \      [ 'toggl_task', 'toggl_time' ],
+            \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'],
             \      [ 'fileformat', 'fileencoding', 'filetype' ] ]
             \ },
             \ 'component_expand': {
             \    'qfstatusline': 'qfstatusline#Update',
+            \    'fugitive': 'MyFugitive',
+            \    'gitgutter': 'MyGitGutter',
+            \    'toggl_task': 'toggl#task',
+            \    'toggl_time': 'toggl#time',
+            \    'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
             \ },
             \ 'component_type': {
             \   'qfstatusline': 'error',
             \ },
             \ 'component_function': {
-            \   'fugitive': 'MyFugitive',
-            \   'gitgutter': 'MyGitGutter',
-            \   'toggl_task': 'toggl#task',
-            \   'toggl_time': 'toggl#time',
             \   'anzu': 'anzu#search_status',
             \ },
             \ }
+" component_expand   : call lightline#update()
+" component_function : cursor move
 
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
 

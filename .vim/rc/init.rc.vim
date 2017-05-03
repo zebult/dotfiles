@@ -41,6 +41,14 @@ set matchpairs+=｛:｝
 set matchpairs+=「:」
 set matchpairs+=【:】
 set matchpairs+=（:）
+
+set list
+" set listchars=tab:\ \ ,eol:\ ,extends:»,precedes:« " 列折り返す際はこちらを使うとよいかも
+set listchars=tab:\ \ ,eol:\ 
+set guifont=Ricty-Regular-for-Powerline:h16
+" 列折り返す(nowrapで折り返さず列スクロールする)
+set wrap
+
 " ~(バックアップ)ファイル作成しない
 set nobackup
 set noswapfile
@@ -76,6 +84,14 @@ augroup SaveGroup
     " 保存時空白ハイライト
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
+    autocmd BufWritePre * call lightline#update()
+augroup END
+
+augroup HoldCursorGroup
+    autocmd!
+    autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
+    autocmd CursorHold * match TrailingSpaces /\s\+$/
+    autocmd CursorHold * call lightline#update()
 augroup END
 
 " augroup MyGroup

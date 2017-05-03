@@ -119,15 +119,16 @@ cnoremap <C-d> <Del>
 " logical search
 cnoremap <Bar><Bar> <Bslash><Bar>
 cnoremap && .*
+cnoremap ( \(
 """"""""""""""""""""""""""""""
 
 " Power tools
 nnoremap <Leader>u :Unite source<CR>
-nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
+" nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
 " nnoremap <Leader>f :vim %<Left><Left>
 " nnoremap <Leader>F :vim <C-r><C-w> %<CR>
-nnoremap ga :CLL<CR>:Ag<Space>
+nnoremap ga :CLL<CR>:Ag<Space>''<Left>
 
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o

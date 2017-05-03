@@ -118,11 +118,19 @@ repo = 'osyo-manga/vim-anzu'
 on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
-# TODO: 使いたい
-# [[plugins]]
-# repo = 'hewes/unite-gtags'
-
 # Convenience Tools: ---------------------------
+
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+on_i = 1
+hook_add = 'source ~/.vim/rc/plugins/ref.rc.vim'
+
+# macvim日本語打てなくなる
+# [[plugins]]
+# repo = 'cohama/lexima.vim'
+# if = "!has('gui_running')"
+# on_i = 1
 
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
@@ -148,6 +156,7 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
+on_i = 1
 
 [[plugins]]
 repo = 'kana/vim-altr'
