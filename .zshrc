@@ -10,9 +10,11 @@ ENHANCD_DOT_ARG="-up"
 # shell path
 export PATH=$PATH:$HOME/.bin/sh
 # vim path
-export PATH="/usr/local/bin:${PATH}"
+export PATH=/usr/local/bin:${PATH}
 # swift path
 export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
+# perl path
+# export PATH=/usr/bin/perl:$PATH
 # go path(go get glide)
 export GOPATH=$HOME/.go:~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
@@ -108,9 +110,11 @@ alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリック
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias im='macvim'
+alias perl='/usr/bin/perl'
 
 alias gip='curl ipecho.net/plain; echo'
 alias sssh='sshrc'
+alias tre="pwd;find . | sort | sed '1d;s/^\.//;s/\/\([^/]*\)$/|--\1/;s/\/[^/|]*/|  /g'"
 alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'
