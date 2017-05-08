@@ -86,10 +86,11 @@ cnoreabbrev wq!! w !sudo tee > /dev/null %<CR>:q!<CR>
 cnoreabbrev w!! w !sudo tee > /dev/null %
 
 " Color
-colorscheme evening
-hi Normal ctermbg=black
-hi Normal ctermbg=black
-hi Visual ctermbg=gray
+colorscheme darkblue
+
+" hi Normal ctermbg=black
+" hi Normal ctermbg=black
+" hi Visual ctermbg=gray
 
 " After
 au FileType * setlocal formatoptions-=ro

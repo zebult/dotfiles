@@ -337,7 +337,6 @@ on_ft = 'swift'
 repo = 'tokorom/swift-dict.vim'
 on_ft = 'swift'
 
-
 # C++ ---------------------------
 
 # syntax
