@@ -49,10 +49,7 @@ nnoremap <silent> p p`]
 nnoremap ml :marks<CR>
 
 nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
-" setter, getter自動生成
-" map Kk mawv/ <CR>"ty/ <CR>wve"ny/getters<CR>$a<CR><CR><Esc>xxa<Tab>public <Esc>"tpa<Esc>"npbiget<Esc>l~hea() {<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxa<Tab>public void <Esc>"npbiset<Esc>l~hea (<Esc>"tpa<Esc>"npa) {<CR><Tab>this.<Esc>"npa = <Esc>"npa;<CR>}<Esc>=<CR>`ak
-" メンバ変数アクセサ生成(m_付き限定)
-nnoremap KK w"tyiww"myiwf_lve"vyopublic <Esc>"tpa <Esc>"vpb~higet<Esc>$a() {return <Esc>"mpa;}<Esc>opublic void <Esc>"vpb~hiset<Esc>$a(<Esc>"tpa <Esc>"vpa) {<Esc>"mpa=<Esc>"vpa;}<Esc>kk0w
+
 " filename to  clipboard
 nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
@@ -167,6 +164,9 @@ nmap gp Riw
 
 " nnoremap gh ,
 " nnoremap gl ;
+
+nnoremap <M-h> ,
+nnoremap <M-l> ;
 
 nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
 nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz

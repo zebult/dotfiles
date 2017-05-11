@@ -93,6 +93,7 @@ alias grbd="git push origin --delete"
 alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
+alias glnm="git log --no-merges"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
 alias gcl="git clean -df"
@@ -119,7 +120,7 @@ alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
-alias tr='vim <(tree)'
+alias vtree='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 
