@@ -80,8 +80,8 @@ nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp new<CR><C-w>J
-nnoremap sv :<C-u>vs new<CR><C-w>L
+nnoremap ss :<C-u>new<CR><C-w>J
+nnoremap sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
@@ -162,8 +162,8 @@ nnoremap <C-m> gd:nohlsearch<CR>
 nmap gp Riw
 " nmap cp Riw
 
-" nnoremap gh ,
-" nnoremap gl ;
+nnoremap gh ,
+nnoremap gl ;
 
 nnoremap <M-h> ,
 nnoremap <M-l> ;

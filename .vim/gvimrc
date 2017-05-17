@@ -2,6 +2,7 @@
 set guioptions-=T
 " 複数存在すれば表示
 set showtabline=1
+set guioptions-=e
 " メニューバーなし
 set guioptions-=m
 " 右スクロールバーなし

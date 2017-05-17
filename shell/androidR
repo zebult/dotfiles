@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo "Input search apk word..."
+read word
+adb shell pm list packages -f | grep $word
+echo "Input apk path..."
+read apk_path
+adb pull $apk_path
+
+if [ $? -gt 0 ]; then
+    echo 'error'
+    exit 1
+fi
+
+echo '!!!droid start!!!'
+
+unzip base.apk
+~/Documents/workspace/tool/dex2jar-2.0/d2j-dex2jar.sh classes.dex
+unzip -o classes-dex2jar.jar -d ./Classes
+~/Documents/workspace/tool/jad158g.mac.intel/jad -d output -r -s java -8 **/*.class
+
+echo '\ncompleted.'
