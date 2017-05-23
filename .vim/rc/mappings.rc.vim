@@ -165,6 +165,9 @@ nmap gp Riw
 nnoremap gh ,
 nnoremap gl ;
 
+nnoremap ˙ ,
+nnoremap ¬ ;
+
 nnoremap <M-h> ,
 nnoremap <M-l> ;
 

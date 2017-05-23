@@ -154,9 +154,9 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # hook_add = 'nnoremap U :<C-u>GundoToggle<CR>'
 
 # Need 'brew install cmigemo' (gvim限定)
-[[plugins]]
-repo = 'haya14busa/vim-migemo'
-on_i = 1
+# [[plugins]]
+# repo = 'haya14busa/vim-migemo'
+# on_i = 1
 
 [[plugins]]
 repo = 'kana/vim-altr'
