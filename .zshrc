@@ -28,6 +28,9 @@ COCOS_VERSION="3.11.1"
 # NDK_VERSION="android-ndk-r10e"
 # A
 NDK_VERSION="android-ndk-r10d"
+# S
+# NDK_VERSION="android-ndk-r12b"
+# NDK_VERSION="android-ndk-r14b"
 SDK_VERSION="22"
 ## Use vim
 export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/cocos
@@ -48,7 +51,8 @@ export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/$SDK_VERSION
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 ## ant
-export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
+# export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
+export ANT_ROOT=/usr/local/bin
 export PATH=$ANT_ROOT:$PATH
 ## wip
 # export CPATH=$CPATH:/usr/local/include
@@ -121,7 +125,7 @@ alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
 
-alias vtree='vim <(tree)'
+alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 
@@ -382,6 +386,13 @@ memodiary() {
 }
 zle -N memodiary
 bindkey '^y' memodiary
+
+zshrcopen() {
+    BUFFER="vim ~/.zshrc"
+    zle accept-line
+}
+zle -N zshrcopen
+bindkey '^z' zshrcopen
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

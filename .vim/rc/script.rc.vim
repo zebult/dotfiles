@@ -167,6 +167,11 @@ function! LogcatSearchError() abort
 endfunction
 command! -bar LogcatSearchError call LogcatSearchError()
 
+function! MacvimOpen() abort
+  !open %:p
+endfunction
+command! -bar MacvimOpen call MacvimOpen()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

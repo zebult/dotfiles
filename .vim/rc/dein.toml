@@ -19,6 +19,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
+if = "!has('gui_running')"
 
 # [[plugins]]
 # repo = 'Shougo/neocomplete.vim'
@@ -288,9 +289,9 @@ hook_add = 'source ~/.vim/rc/plugins/switch.rc.vim'
 repo = 'ruanyl/vim-gh-line'
 
 # gitマーク, ハイライト
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
+# hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

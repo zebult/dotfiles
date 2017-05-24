@@ -6,8 +6,7 @@ let g:lightline = {
             \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'modified', 'anzu']
             \    ],
             \   'right': [ [ 'qfstatusline', 'lineinfo', 'percent'],
-            \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'],
-            \      [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'] ]
             \ },
             \ 'component_expand': {
             \    'qfstatusline': 'qfstatusline#Update',

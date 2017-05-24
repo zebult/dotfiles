@@ -15,6 +15,8 @@ nnoremap gO O
 " abbreviate tl -[ ]xxa " cohama/lexima.vim
 abbreviate tl -[ ]
 
+abbreviate gl ## Today's goal
+
 " todoリストのon/offを切り替える
 nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
 

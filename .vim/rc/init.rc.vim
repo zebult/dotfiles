@@ -77,6 +77,20 @@ set backspace=indent,eol,start
 " Search hit number
 " nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
+abbreviate json
+      \ {
+      \   "size": 10,
+      \   "from": 0,
+      \   "query": {
+      \     "bool": {
+      \       "must": [
+      \         {"term": {"entryContent": "インド"}},
+      \         {"term": {"entryContent": "カレー"}}
+      \       ]
+      \     }
+      \   }
+      \ }
+
 augroup SaveGroup
     autocmd!
     " 保存時Git差分ハイライト
@@ -89,8 +103,8 @@ augroup END
 
 augroup HoldCursorGroup
     autocmd!
-    autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
-    autocmd CursorHold * match TrailingSpaces /\s\+$/
+    " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
+    " autocmd CursorHold * match TrailingSpaces /\s\+$/
     autocmd CursorHold * call lightline#update()
 augroup END
 
