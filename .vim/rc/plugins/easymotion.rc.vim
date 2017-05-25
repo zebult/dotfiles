@@ -3,10 +3,10 @@ map <Leader>h <Plug>(easymotion-b)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-map f <Plug>(easymotion-fl)
-map t <Plug>(easymotion-tl)
-map F <Plug>(easymotion-Fl)
-map T <Plug>(easymotion-Tl)
+" map f <Plug>(easymotion-fl)
+" map t <Plug>(easymotion-tl)
+" map F <Plug>(easymotion-Fl)
+" map T <Plug>(easymotion-Tl)
 
 let g:EasyMotion_keys = 'hjklasdfgyuiopqwertnmzxcvb'
 

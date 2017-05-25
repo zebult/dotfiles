@@ -49,6 +49,7 @@ repo   = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'Shougo/unite-outline'
 
+# macvim slowly?
 # [[plugins]]
 # repo = 'Shougo/neomru.vim'
 # if = "!has('gui_running')"
@@ -419,11 +420,19 @@ on_ft = 'kotlin'
 
 # Markdown ---------------------------
 
-# syntax hilight, foldmethod
+# syntax hilight
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
+repo = 'gabrielelana/vim-markdown'
 filetypes  =  ['md', 'mkd', 'markdown']
-# repo = 'rcmdnk/vim-markdown' # jis very slow
+hook_add = '''
+    let g:markdown_enable_folding = 0
+    let g:markdown_enable_spell_checking = 0
+'''
+
+# foldmethod jis quickly
+# [[plugins]]
+# repo = 'nelstrom/vim-markdown-folding'
+# filetypes  =  ['md', 'mkd', 'markdown']
 
 # Toml ---------------------------
 

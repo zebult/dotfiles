@@ -114,7 +114,8 @@ alias grb="git rebase"
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
-alias im='macvim'
+# alias vi=vim -u NONE --noplugin
+alias mvim='macvim'
 alias perl='/usr/bin/perl'
 
 alias gip='curl ipecho.net/plain; echo'
@@ -131,7 +132,7 @@ alias tokyo='curl wttr.in/Tokyo'
 
 function mc () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-# set -o vi
+set -o vi
 
 macvim () {
     if [ -d /Applications/MacVim.app ]

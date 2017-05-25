@@ -77,7 +77,7 @@ set backspace=indent,eol,start
 " Search hit number
 " nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
-abbreviate json
+abbreviate jsonn
       \ {
       \   "size": 10,
       \   "from": 0,

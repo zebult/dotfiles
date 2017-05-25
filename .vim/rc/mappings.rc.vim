@@ -15,10 +15,10 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
 inoremap jj <ESC><ESC><ESC>
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
+" noremap j gj
+" noremap k gk
+" noremap gj j
+" noremap gk k
 noremap ;  :
 noremap :  ;
 noremap 8* *N
@@ -164,9 +164,12 @@ nmap gp Riw
 
 nnoremap gh ,
 nnoremap gl ;
-
 nnoremap ˙ ,
 nnoremap ¬ ;
+nnoremap gf f
+nnoremap gF F
+nnoremap gt t
+nnoremap gT T
 
 nnoremap <M-h> ,
 nnoremap <M-l> ;
