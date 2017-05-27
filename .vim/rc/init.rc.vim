@@ -1,6 +1,8 @@
 " Initialize:
 
 let $DOTVIM = expand('~/.vim')
+" Nvimでカーソルを|にしたい
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set spelllang+=cjk
 let mapleader = "\<Space>"
 set ambiwidth=double
