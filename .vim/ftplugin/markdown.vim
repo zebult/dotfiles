@@ -93,6 +93,8 @@ function! Action_O() abort
   startinsert!
 endfunction
 
+set syntax=markdown
+
 au FileType markdown syn region myMkdHeaderFold
         \ start="\v^\s*\z(\#{1,6})"
         \ skip="\v(\n\s*\z1\#)\@="

@@ -1,4 +1,4 @@
-# Source Prezto.
+# Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -6,6 +6,12 @@ fi
 ENHANCD_HYPHEN_ARG="-ls"
 ENHANCD_DOT_ARG="-up"
 . $HOME/.enhancd/init.sh
+
+# zplug
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
+# source ~/.zplug/zplug
+# zplug "b4b4r07/zle-vimode"
 
 # shell path
 export PATH=$PATH:$HOME/.bin/sh
@@ -130,9 +136,18 @@ alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 
-function mc () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
 set -o vi
+bindkey -M viins '^A'  beginning-of-line
+bindkey -M viins '^E'  end-of-line
+bindkey -M viins '^K'  kill-line
+bindkey -M viins '^N'  down-line-or-history
+bindkey -M viins '^R'  history-incremental-pattern-search-backward
+bindkey -M viins '^W'  backward-kill-word
+bindkey -M viins '^Y'  vi-movement-mode
+
+mc () {
+    mkdir -p "$@" && eval cd "\"\$$#\"";
+}
 
 macvim () {
     if [ -d /Applications/MacVim.app ]
