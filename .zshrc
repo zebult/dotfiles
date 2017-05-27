@@ -8,10 +8,17 @@ ENHANCD_DOT_ARG="-up"
 . $HOME/.enhancd/init.sh
 
 # zplug
-# export ZPLUG_HOME=/usr/local/opt/zplug
-# source $ZPLUG_HOME/init.zsh
-# source ~/.zplug/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 # zplug "b4b4r07/zle-vimode"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+
+if ! zplug check; then
+    zplug install
+fi
+zplug load
 
 # shell path
 export PATH=$PATH:$HOME/.bin/sh
@@ -143,7 +150,6 @@ bindkey -M viins '^K'  kill-line
 bindkey -M viins '^N'  down-line-or-history
 bindkey -M viins '^R'  history-incremental-pattern-search-backward
 bindkey -M viins '^W'  backward-kill-word
-bindkey -M viins '^Y'  vi-movement-mode
 
 mc () {
     mkdir -p "$@" && eval cd "\"\$$#\"";
@@ -366,12 +372,12 @@ pwdcp() {
 zle -N pwdcp
 bindkey '^p' pwdcp
 
-defaultcolor() {
-    bcolor 45 45 45
-    zle accept-line
-}
-zle -N defaultcolor
-bindkey '^z' defaultcolor
+# defaultcolor() {
+#     bcolor 45 45 45
+#     zle accept-line
+# }
+# zle -N defaultcolor
+# bindkey '^z' defaultcolor
 
 vimfiler() {
     BUFFER="vim ."
@@ -412,4 +418,3 @@ bindkey '^z' zshrcopen
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
-
