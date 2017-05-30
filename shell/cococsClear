@@ -1,0 +1,7 @@
+#!/bin/sh
+rm -rf proj.android-studio/app/build
+rm -rf proj.android-studio/app/obj
+rm -rf proj.android-studio/app/libs/armeabi
+rm -rf proj.android-studio/app/libs/x86/libcocos2dcpp.so
+rm -rf cocos2d/cocos/platform/android/libcocos2dx/build
+
