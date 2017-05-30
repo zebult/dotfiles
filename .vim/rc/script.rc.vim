@@ -28,6 +28,12 @@ function! JsonPretty() abort
 endfunction
 command -bar JsonPretty  call JsonPretty()
 
+function! XmlPretty() abort
+  %s/></>\r</g | filetype indent on | setf xml | normal gg=G
+endfunction
+command -bar XmlPretty  call XmlPretty()
+
+
 function! LogcatD(...) abort
   if a:0 >= 1
     execute "r! adb logcat -v time -d | grep ".a:1

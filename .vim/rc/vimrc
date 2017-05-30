@@ -47,6 +47,7 @@ call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
 call s:source_rc('macro.rc.vim')
 call s:source_rc('util.rc.vim')
+call s:source_rc('playground.rc.vim')
 
 " original function
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim

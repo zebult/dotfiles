@@ -253,8 +253,8 @@ hook_add = '''
 repo = 'kana/vim-textobj-indent'
 
 # DEFAULT KEY MAPPINGS, ,w ex(ci,w)
-[[plugins]]
-repo = 'h1mesuke/textobj-wiw'
+# [[plugins]]
+# repo = 'h1mesuke/textobj-wiw'
 
 [[plugins]]
 repo = 'tyru/operator-camelize.vim'
@@ -290,9 +290,9 @@ hook_add = 'source ~/.vim/rc/plugins/switch.rc.vim'
 repo = 'ruanyl/vim-gh-line'
 
 # gitマーク, ハイライト
-# [[plugins]]
-# repo = 'airblade/vim-gitgutter'
-# hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

@@ -162,17 +162,14 @@ nnoremap <C-m> gd:nohlsearch<CR>
 nmap gp Riw
 " nmap cp Riw
 
-nnoremap gh ,
-nnoremap gl ;
+" nnoremap gh ,
+" nnoremap gl ;
 nnoremap ˙ ,
 nnoremap ¬ ;
-nnoremap gf f
-nnoremap gF F
-nnoremap gt t
-nnoremap gT T
-
-nnoremap <M-h> ,
-nnoremap <M-l> ;
+" nnoremap gf f
+" nnoremap gF F
+" nnoremap gt t
+" nnoremap gT T
 
 nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
 nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz
