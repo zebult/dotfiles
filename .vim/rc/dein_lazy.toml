@@ -180,10 +180,7 @@ nnoremap <Leader>T :TaskList<CR>
 # Need to `brew install ctags`
 [[plugins]]
 repo = 'majutsushi/tagbar'
-hook_add = '''
-let g:tagbar_width = 30
-nnoremap <Leader>t :TagbarToggle<CR>
-'''
+hook_add = 'source ~/.vim/rc/plugins/tagbar.rc.vim'
 
 # C++ ---------------------------
 

@@ -151,6 +151,11 @@ bindkey -M viins '^N'  down-line-or-history
 bindkey -M viins '^R'  history-incremental-pattern-search-backward
 bindkey -M viins '^W'  backward-kill-word
 
+function gifo() { git-foresta --style=10 "$@" | less -RSX }
+function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
+compdef _git gifo=git-log
+compdef _git gifa=git-log
+
 mc () {
     mkdir -p "$@" && eval cd "\"\$$#\"";
 }

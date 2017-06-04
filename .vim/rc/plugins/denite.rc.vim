@@ -18,16 +18,16 @@ nnoremap [denite] <Nop>
 nmap <Bslash> [denite]
 
 let mapping_list = [
-      \ {'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
-      \ {'key': 'J', 'command': 'DeniteBufferDir',           'source': 'file_rec'},
+      \ {'key': 'j', 'command': 'DeniteBufferDir',  'source': 'file_rec'},
+      \ {'key': 'J', 'command': 'Denite',           'source': 'file_rec'},
       \ {'key': 'k', 'command': 'Denite',           'source': 'file_old'},
       \ {'key': 'K', 'command': 'Denite',           'source': 'Denite buffer<CR>: Denite -immediately file_old<CR><C-c>'},
       \ {'key': 'g', 'command': 'Denite',           'source': '-winheight=3 -auto_preview grep'},
       \ {'key': 'G', 'command': 'DeniteCursorWord', 'source': '-winheight=3 -auto_preview grep'}
       \ ]
 let options      = [
-      \ {'key':  '', 'option' : '-default-action=tabopen'},
-      \ {'key': 'b', 'option' : '-default-action=open'},
+      \ {'key': 't', 'option' : '-default-action=tabopen'},
+      \ {'key':  '', 'option' : '-default-action=open'},
       \ {'key': 'v', 'option' : '-default-action=vsplit'},
       \ {'key': 's', 'option' : '-default-action=split'}
       \ ]

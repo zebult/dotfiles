@@ -1,5 +1,6 @@
 " Mappings
 
+" nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -116,15 +117,13 @@ cnoremap <C-d> <Del>
 " logical search
 cnoremap <Bar><Bar> <Bslash><Bar>
 cnoremap && .*
-cnoremap ( \(
+" cnoremap ( \(
 """"""""""""""""""""""""""""""
 
 " Power tools
 nnoremap <Leader>u :Unite source<CR>
 " nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
-" nnoremap <Leader>f :vim %<Left><Left>
-" nnoremap <Leader>F :vim <C-r><C-w> %<CR>
 nnoremap ga :CLL<CR>:Ag<Space>''<Left>
 
 " includeへ移動
@@ -132,11 +131,9 @@ nnoremap ga :CLL<CR>:Ag<Space>''<Left>
 " nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
-nnoremap <Leader>f :VimFiler -split -simple -winwidth=25 -no-quit<CR>
-nnoremap <Leader>F :VimFiler -simple -no-quit<CR>
 nnoremap <Leader>O :!open .<CR><CR>
 " nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
-nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:TagbarToggle<CR><C-w>l
+nnoremap <Leader>A :VimFilerBufferDir -split -simple -winwidth=40 -no-quit<CR><C-w>l:TagbarClose<CR>:TagbarOpen<CR>
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 
 " save and close
@@ -170,6 +167,8 @@ nnoremap ¬ ;
 " nnoremap gF F
 " nnoremap gt t
 " nnoremap gT T
+
+" nnoremap gd gd
 
 nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
 nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz

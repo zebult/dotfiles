@@ -110,8 +110,9 @@ augroup HoldCursorGroup
     autocmd CursorHold * call lightline#update()
 augroup END
 
-" augroup MyGroup
-"   autocmd InsertEnter * set nocursorline
+" augroup CursorMovedGroup
+"     autocmd!
+"     autocmd CursorMoved * call tagbar#highlighttag(1, 1)
 " augroup END
 
 augroup ExitExMode

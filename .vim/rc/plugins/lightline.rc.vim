@@ -3,28 +3,29 @@ let g:lightline = {
             \ 'active': {
             \   'left': [
             \      ['mode', 'paste'],
-            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'modified', 'anzu']
+            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu']
             \    ],
             \   'right': [ [ 'qfstatusline', 'lineinfo', 'percent'],
             \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'] ]
             \ },
             \ 'component_expand': {
-            \    'qfstatusline': 'qfstatusline#Update',
-            \    'fugitive': 'MyFugitive',
-            \    'gitgutter': 'MyGitGutter',
-            \    'toggl_task': 'toggl#task',
-            \    'toggl_time': 'toggl#time',
-            \    'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
+            \   'qfstatusline': 'qfstatusline#Update',
+            \   'fugitive': 'MyFugitive',
+            \   'gitgutter': 'MyGitGutter',
+            \   'toggl_task': 'toggl#task',
+            \   'toggl_time': 'toggl#time',
+            \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
             \ },
             \ 'component_type': {
             \   'qfstatusline': 'error',
             \ },
             \ 'component_function': {
+            \   'tagbar': 'MyCurrentTag',
             \   'anzu': 'anzu#search_status',
             \ },
             \ }
-" component_expand   : call lightline#update()
-" component_function : cursor move
+" component_expand   : 一定時間後に呼ばれる call lightline#update() 
+" component_function : カーソル動く度呼ばれる cursor move
 
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
 
@@ -58,6 +59,10 @@ function! MyGitGutter()
     endif
   endfor
   return join(ret, ' ')
+endfunction
+
+function! MyCurrentTag()
+  return tagbar#currenttag('%s', '')
 endfunction
 
 " 保存時Error時自動で更新し、表示する 同期処理で重いので不採用
