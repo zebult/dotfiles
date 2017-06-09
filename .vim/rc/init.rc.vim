@@ -9,7 +9,8 @@ set ambiwidth=double
 rv! " 履歴共有
 set incsearch
 " 最後改行勝手にいれないはず
-set nofixeol
+" set nofixeol
+set noeol
 " ブランチ名をステータスラインに表示する
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
@@ -114,6 +115,11 @@ augroup END
 "     autocmd!
 "     autocmd CursorMoved * call tagbar#highlighttag(1, 1)
 " augroup END
+
+augroup InsertLeaveGroup
+  autocmd!
+  autocmd InsertLeave * set nopaste
+augroup END
 
 augroup ExitExMode
   autocmd!

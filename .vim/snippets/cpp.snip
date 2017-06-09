@@ -14,3 +14,19 @@ snippet foreach
     for (auto ${1}: ${2}) {
         ${3}
     }
+
+snippet synthesize
+    CC_SYNTHESIZE(${1:class}, _${2:name}, <|3|><|2|>);
+
+snippet assert
+    CCASSERT(${1:false}, "${2:content}");
+
+snippet perform
+    Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]() {
+    });
+
+snippet retain
+    CC_SAFE_RETAIN(${1:obj});
+
+snippet release
+    CC_SAFE_RELEASE_NULL(${1:obj});

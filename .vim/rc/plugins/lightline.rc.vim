@@ -15,12 +15,12 @@ let g:lightline = {
             \   'toggl_task': 'toggl#task',
             \   'toggl_time': 'toggl#time',
             \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
+            \   'tagbar': 'MyCurrentTag',
             \ },
             \ 'component_type': {
             \   'qfstatusline': 'error',
             \ },
             \ 'component_function': {
-            \   'tagbar': 'MyCurrentTag',
             \   'anzu': 'anzu#search_status',
             \ },
             \ }

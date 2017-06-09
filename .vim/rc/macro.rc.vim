@@ -22,3 +22,16 @@ function! AutoCapusule() abort
 " map Kk mawv/ <CR>"ty/ <CR>wve"ny/getters<CR>$a<CR><CR><Esc>xxa<Tab>public <Esc>"tpa<Esc>"npbiget<Esc>l~hea() {<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxa<Tab>public void <Esc>"npbiset<Esc>l~hea (<Esc>"tpa<Esc>"npa) {<CR><Tab>this.<Esc>"npa = <Esc>"npa;<CR>}<Esc>=<CR>`ak
 endfunction
 command! -bar AutoCapusule call AutoCapusule()
+
+" Redmine
+function! RedmineDateIncrement() abort
+  normal /due_date:$hGo w
+endfunction
+command! -bar RedmineDateIncrement call RedmineDateIncrement()
+nnoremap Ra :RedmineDateIncrement<CR>
+
+function! RedmineDateDecrement() abort
+  normal /due_date:$hGo w
+endfunction
+command! -bar RedmineDateDecrement call RedmineDateDecrement()
+nnoremap Rx :RedmineDateDecrement<CR>

@@ -10,7 +10,7 @@ nnoremap s<C-j> :sp<CR><C-w>j:GtagsCallees<CR>
 " 参照(Caller)
 nnoremap <C-k> :GtagsCaller<CR>
 nnoremap t<C-k> :tab sp<CR>:GtagsCaller<CR>
-vnoremap <C-k> <Esc>:vs<CR><C-w>l:GtagsCaller<CR>
+" vnoremap <C-k> <Esc>:vs<CR><C-w>l:GtagsCaller<CR> snippetsの展開に使う
 nnoremap s<C-k> :sp<CR><C-w>j:GtagsCaller<CR>
 " Grep
 nnoremap g/ :Gtags -g 
@@ -25,7 +25,7 @@ function! QuickFixHidden() abort
 endfunction
 
 function! GtagsCallees() abort
-  let g:Gtags_OpenQuickfixWindow = 0
+  let g:Gtags_OpenQuickfixWindow = 1
   GtagsCursor
   call QuickFixHidden()
 endfunction
