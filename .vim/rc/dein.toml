@@ -137,6 +137,7 @@ hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 repo = 'mrtazz/simplenote.vim'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 
+# メタ文字含むとlightline壊れるので注意
 [[plugins]]
 repo = 'zebult/toggl.vim'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'

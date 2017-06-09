@@ -226,14 +226,24 @@ gpsu() {
 # don't use submodule
 gpl() {
     gst
-    echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
-    git pull origin `git rev-parse --abbrev-ref HEAD`
+    if [ -n "$1" ]; then
+        echo "git pull origin $1"
+        git pull origin $1
+    else
+        echo "git pull origin `git rev-parse --abbrev-ref HEAD`"
+        git pull origin `git rev-parse --abbrev-ref HEAD`
+    fi
 }
 
 gplu() {
     gst
-    echo "git pull upstream `git rev-parse --abbrev-ref HEAD`"
-    git pull upstream `git rev-parse --abbrev-ref HEAD`
+    if [ -n "$1" ]; then
+        echo "git pull upstream $1"
+        git pull upstream $1
+    else
+        echo "git pull upstream `git rev-parse --abbrev-ref HEAD`"
+        git pull upstream `git rev-parse --abbrev-ref HEAD`
+    fi
 }
 
 # git rebase origin
