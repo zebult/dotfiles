@@ -182,6 +182,9 @@ nnoremap <Leader>T :TaskList<CR>
 repo = 'majutsushi/tagbar'
 hook_add = 'source ~/.vim/rc/plugins/tagbar.rc.vim'
 
+[[plugins]]
+repo = 'rizzatti/dash.vim'
+
 # C++ ---------------------------
 
 # Markdown ---------------------------
