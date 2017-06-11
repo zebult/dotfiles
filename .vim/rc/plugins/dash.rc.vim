@@ -1,2 +1,2 @@
-nmap <silent> <leader>d <Plug>DashSearch
-nmap <silent> <leader>D <Plug>DashGlobalSearch
+nnoremap <silent> <Space>d :Dash<CR>
+nnoremap <silent> <Space>D :Dash!<CR>

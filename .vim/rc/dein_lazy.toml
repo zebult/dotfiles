@@ -185,6 +185,7 @@ hook_add = 'source ~/.vim/rc/plugins/tagbar.rc.vim'
 [[plugins]]
 repo = 'rizzatti/dash.vim'
 hook_add = 'source ~/.vim/rc/plugins/dash.rc.vim'
+on_map = '<Plug>(Dash'
 
 # C++ ---------------------------
 

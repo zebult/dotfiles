@@ -505,7 +505,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("CCClass", s:blue, "", "")
 
 	call <SID>X("CTagsType", s:foreground, "", "")
-	call <SID>X("CTagsClass", s:blue, "", "")
+	call <SID>X("CTagsClass", s:foreground, "", "")
 	call <SID>X("CTagsMember", s:red, "", "")
 	call <SID>X("CTagsNameSpace", s:foreground, "", "")
 	call <SID>X("CTagsGlobalVariable", s:purple, "", "")

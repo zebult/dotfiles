@@ -99,9 +99,9 @@ repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'vim-jp/vital.vim'
 
-[[plugins]]
-repo = 'abudden/taghighlight-automirror'
-hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
+# [[plugins]]
+# repo = 'abudden/taghighlight-automirror'
+# hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
 
 # Convenience Tools: ---------------------------
 
