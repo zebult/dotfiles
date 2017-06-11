@@ -101,6 +101,7 @@ repo = 'vim-jp/vital.vim'
 
 [[plugins]]
 repo = 'abudden/taghighlight-automirror'
+hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
 
 # Convenience Tools: ---------------------------
 
@@ -428,18 +429,22 @@ on_ft = 'kotlin'
 # Markdown ---------------------------
 
 # syntax hilight
-[[plugins]]
-repo = 'gabrielelana/vim-markdown'
-filetypes  =  ['md', 'mkd', 'markdown']
-hook_add = '''
-    let g:markdown_enable_folding = 0
-    let g:markdown_enable_spell_checking = 0
-'''
+# [[plugins]]
+# repo = 'gabrielelana/vim-markdown'
+# filetypes  =  ['md', 'mkd', 'markdown']
+# hook_add = '''
+#     " let g:markdown_enable_folding = 0
+#     let g:markdown_enable_spell_checking = 0
+# '''
 
 # foldmethod jis quickly
 # [[plugins]]
 # repo = 'nelstrom/vim-markdown-folding'
 # filetypes  =  ['md', 'mkd', 'markdown']
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+filetypes  =  ['md', 'mkd', 'markdown']
 
 # Toml ---------------------------
 

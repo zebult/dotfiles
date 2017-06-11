@@ -487,6 +487,24 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("diffRemoved", s:red, "", "")
 	call <SID>X("gitcommitSummary", "", "", "bold")
 
+    " Zebult
+	call <SID>X("cType", s:purple, "", "")
+	call <SID>X("cNumber", s:foreground, "", "")
+	call <SID>X("cFloat", s:foreground, "", "")
+	call <SID>X("cString", s:foreground, "", "")
+	call <SID>X("cppType", s:purple, "", "")
+	call <SID>X("cppNumber", s:foreground, "", "")
+	call <SID>X("cppAccess", s:purple, "", "")
+	call <SID>X("cppStatement", s:purple, "", "")
+	call <SID>X("cppSTLtype", s:blue, "", "")
+	call <SID>X("cppBoolean", s:foreground, "", "")
+
+	call <SID>X("CCClass", s:blue, "", "")
+
+	call <SID>X("CTagsClass", s:green, "", "")
+	call <SID>X("CTagsMember", s:purple, "", "")
+	call <SID>X("CTagsNameSpace", s:foreground, "", "")
+
 	" Delete Functions
 	delf <SID>X
 	delf <SID>rgb

@@ -342,7 +342,7 @@ peco-tree-dir(){
   zle accept-line
 }
 zle -N peco-tree-dir
-bindkey '^e' peco-tree-dir
+bindkey '^s' peco-tree-dir
 
 peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')

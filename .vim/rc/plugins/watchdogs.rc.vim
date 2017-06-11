@@ -9,4 +9,4 @@ let g:watchdogs_check_CursorHold_enable = 0
 " let g:watchdogs_check_CursorHold_enables = {
 " \   "cpp" : 0
 " \}
-nnoremap <Leader>d :w<CR>:WatchdogsRun<CR>
+" nnoremap <Leader>d :w<CR>:WatchdogsRun<CR>

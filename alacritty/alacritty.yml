@@ -99,8 +99,8 @@ colors:
   bright:
     black:   '0x666666'
     # red:     '0xff3334'
-    # red:     '0xb98b88' # my red
-    red:     '0xb294bb' # magenta
+    red:     '0xb98b88' # my red
+    # red:     '0xb294bb' # magenta
     green:   '0x9ec400'
     yellow:  '0xf0c674'
     blue:    '0x81a2be'
