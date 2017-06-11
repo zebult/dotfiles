@@ -100,7 +100,7 @@ repo = 'mattn/webapi-vim'
 repo = 'vim-jp/vital.vim'
 
 [[plugins]]
-repo = 'vim-scripts/TagHighlight'
+repo = 'abudden/taghighlight-automirror'
 
 # Convenience Tools: ---------------------------
 
@@ -110,6 +110,12 @@ repo = 'vim-scripts/TagHighlight'
 # [[plugins]]
 # repo = 'kien/rainbow_parentheses.vim'
 # hook_add = 'source ~/.vim/rc/plugins/rainbow_parentheses.rc.vim'
+
+[[plugins]]
+repo = 'vim-scripts/DoxygenToolkit.vim'
+
+# [[plugins]]
+# repo = 'thinca/vim-fontzoom'
 
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
@@ -346,14 +352,14 @@ on_ft = 'swift'
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
 
-# cocos2d-x syntax color
-[[plugins]]
-repo = 'Xuyuanp/vim-cc2dx'
-
 # color
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
+
+# cocos2d-x syntax color
+[[plugins]]
+repo = 'Rubonnek/vim-cc2dx'
 
 # ouch objc
 # [[plugins]]

@@ -8,8 +8,8 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme one-dark
-" colorscheme Tomorrow-Night
-colorscheme tomorrow-night-org
+colorscheme Tomorrow-Night
+" colorscheme tomorrow-night-org
 
 " 256に制限をかける
 set t_Co=256
@@ -40,9 +40,16 @@ endif
 " hi Function ctermfg=67
 " hi diffAdded ctermfg=2
 " hi SpecialKey ctermfg=2
-hi cType ctermfg=139 guifg=139
-hi cppType ctermfg=139 guifg=139
-hi cppAccess ctermfg=139 guifg=139
+hi cType        ctermfg=139 guifg=139
+hi cppType      ctermfg=139 guifg=139
+hi cppAccess    ctermfg=139 guifg=139
+hi cppStatement ctermfg=139 guifg=139
+hi cppSTLtype   ctermfg=173 guifg=173
+hi CCClass ctermfg=173 guifg=173
+
+hi GlobalConstant ctermfg=173 guifg=173
+hi GlobalVariable ctermfg=173 guifg=173
+hi LocalVariable ctermfg=173 guifg=173
 
 hi GitGutterAddLine ctermbg=236 guibg=black
 hi GitGutterChangeLine ctermbg=238 guibg=yellow
