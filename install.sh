@@ -55,6 +55,8 @@ case "${os}" in
         brew cask install xquartz
         brew install llvm --with-clang #c++ auto complete
         brew install zsh
+        brew install zplug
+        chmod 755 /usr/local/share/zsh
         brew install cscope
         brew install python
         brew install python3

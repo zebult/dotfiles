@@ -72,41 +72,73 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
-# Colors (Tomorrow Night Bright)
+# https://github.com/jwilm/alacritty/wiki/Color-schemes
+# Colors (Tomorrow Night)
 colors:
   # Default colors
   primary:
-    background: '0x3b3b3b'
-    foreground: '0xb4b4b4'
-    # foreground: '0xc8c8c8'
-    # foreground: '0xeaeaea'
-
+    # background: '0x1d1f21'
+    background: '0x3b3b3b' # my bg color
+    foreground: '0xc5c8c6'
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x3b3b3b'
-    cursor: '0xb9a188'
-
+    text: '0x1d1f21'
+    cursor: '0xffffff'
   # Normal colors
   normal:
-    black:   '0x484848'
-    red:     '0xb96a64'
-    green:   '0x799e79'
-    yellow:  '0xb89263'
+    black:   '0x1d1f21'
+    red:     '0xcc6666'
+    # green:   '0xb5bd68'
+    green:   '0x91C58F' # cocos tomorrow green
+    yellow:  '0xe6c547'
     blue:    '0x81a2be'
-    magenta: '0xb96a64'
-    cyan:    '0xd3d3d3'
-    white:   '0xd9c4b2'
-
+    magenta: '0xb294bb'
+    cyan:    '0x70c0ba'
+    white:   '0x373b41'
   # Bright colors
   bright:
-    black:   '0x595959'
-    red:     '0xb98b88'
-    green:   '0x9e9e9e'
-    yellow:  '0xb8a288'
-    blue:    '0x788e4f'
-    magenta: '0xb2b2b2'
-    cyan:    '0xe3e3e3'
-    white:   '0xe0d2c7'
+    black:   '0x666666'
+    # red:     '0xff3334'
+    red:     '0xb98b88' # my red
+    green:   '0x9ec400'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0x282a2e'
+
+# # Colors (Tomorrow Night Bright)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x3b3b3b'
+#     foreground: '0xb4b4b4'
+#     # foreground: '0xc8c8c8'
+#     # foreground: '0xeaeaea'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x3b3b3b'
+#     cursor: '0xb9a188'
+#   # Normal colors
+#   normal:
+#     black:   '0x484848'
+#     red:     '0xb96a64'
+#     green:   '0x799e79'
+#     yellow:  '0xb89263'
+#     blue:    '0x81a2be'
+#     magenta: '0xb96a64'
+#     cyan:    '0xd3d3d3'
+#     white:   '0xd9c4b2'
+#   # Bright colors
+#   bright:
+#     black:   '0x595959'
+#     red:     '0xb98b88'
+#     green:   '0x9e9e9e'
+#     yellow:  '0xb8a288'
+#     blue:    '0x788e4f'
+#     magenta: '0xb2b2b2'
+#     cyan:    '0xe3e3e3'
+#     white:   '0xe0d2c7'
 
 # Visual Bell
 #
@@ -175,12 +207,12 @@ key_bindings:
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
-  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+  # - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
   - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
   - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
   - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
   - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
-  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+  # - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
@@ -237,7 +269,7 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: false
+hide_cursor_when_typing: true
 
 # Shell
 #

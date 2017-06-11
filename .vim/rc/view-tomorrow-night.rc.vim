@@ -8,12 +8,8 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme one-dark
-" colorscheme solarized
-" colorscheme spacegray
-colorscheme tomorrow-night
-" colorscheme twilight
-" colorscheme jellybeans
-" colorscheme nefertiti
+" colorscheme Tomorrow-Night
+colorscheme tomorrow-night-org
 
 " 256に制限をかける
 set t_Co=256
@@ -41,10 +37,12 @@ if has('multi_byte_ime') || has('xim')
     highlight CursorIM guifg=NONE guibg=Purple
 endif
 " " 微調整
-" hi Type ctermfg=67
 " hi Function ctermfg=67
 " hi diffAdded ctermfg=2
 " hi SpecialKey ctermfg=2
+hi cType ctermfg=139 guifg=139
+hi cppType ctermfg=139 guifg=139
+hi cppAccess ctermfg=139 guifg=139
 
 hi GitGutterAddLine ctermbg=236 guibg=black
 hi GitGutterChangeLine ctermbg=238 guibg=yellow

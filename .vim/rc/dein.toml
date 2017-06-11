@@ -99,6 +99,9 @@ repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'vim-jp/vital.vim'
 
+[[plugins]]
+repo = 'vim-scripts/TagHighlight'
+
 # Convenience Tools: ---------------------------
 
 # [[plugins]]
