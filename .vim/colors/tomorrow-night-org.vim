@@ -492,6 +492,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("cNumber", s:foreground, "", "")
 	call <SID>X("cFloat", s:foreground, "", "")
 	call <SID>X("cString", s:foreground, "", "")
+	call <SID>X("cInclude", s:purple, "", "")
+	call <SID>X("cDefine", s:purple, "", "")
+	call <SID>X("cCustomFunc", s:foreground, "", "")
 	call <SID>X("cppType", s:purple, "", "")
 	call <SID>X("cppNumber", s:foreground, "", "")
 	call <SID>X("cppAccess", s:purple, "", "")
@@ -501,9 +504,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	call <SID>X("CCClass", s:blue, "", "")
 
-	call <SID>X("CTagsClass", s:green, "", "")
-	call <SID>X("CTagsMember", s:purple, "", "")
+	call <SID>X("CTagsType", s:foreground, "", "")
+	call <SID>X("CTagsClass", s:blue, "", "")
+	call <SID>X("CTagsMember", s:red, "", "")
 	call <SID>X("CTagsNameSpace", s:foreground, "", "")
+	call <SID>X("CTagsGlobalVariable", s:purple, "", "")
+	call <SID>X("CTagsFunction", s:foreground, "", "")
 
 	" Delete Functions
 	delf <SID>X
