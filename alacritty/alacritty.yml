@@ -92,9 +92,8 @@ colors:
     red:     '0xb96a64'
     green:   '0x799e79'
     yellow:  '0xb89263'
-    blue:    '0x788e4f'
+    blue:    '0x81a2be'
     magenta: '0xb96a64'
-    # magenta: '0x898989'
     cyan:    '0xd3d3d3'
     white:   '0xd9c4b2'
 

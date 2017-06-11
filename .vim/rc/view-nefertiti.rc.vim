@@ -1,5 +1,8 @@
 " View
+" repo = 'jeetsukumaran/vim-nefertiti'
+" repo = 'AlessandroYorba/Alduin'
 colorscheme nefertiti
+
 
 " 256に制限をかける
 set t_Co=256
@@ -26,6 +29,11 @@ if has('multi_byte_ime') || has('xim')
     highlight Cursor guifg=NONE guibg=Green
     highlight CursorIM guifg=NONE guibg=Purple
 endif
+
+" hi Normal ctermbg=NONE guifg=NONE
+" hi CursorLineNr ctermbg=NONE guifg=NONE
+" hi LineNr ctermbg=NONE guifg=NONE
+" hi String ctermbg=NONE guifg=NONE
 
 " 現在行ハイライト
 " set cursorline

@@ -178,6 +178,14 @@ function! MacvimOpen() abort
 endfunction
 command! -bar MacvimOpen call MacvimOpen()
 
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+command! -bar SynStack call SynStack()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

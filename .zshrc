@@ -329,12 +329,20 @@ xp()
 }
 
 peco-tree-vim(){
-  local SELECTED_FILE=$(tree --charset=o -f | peco | tr -d '\||`|-' | xargs echo)
+  local SELECTED_FILE=$(tree --charset=o -i -f | peco | xargs echo)
   BUFFER="vim $SELECTED_FILE"
   zle accept-line
 }
 zle -N peco-tree-vim
 bindkey '^n' peco-tree-vim
+
+peco-tree-dir(){
+  local SELECTED_DIRECTORY=$(tree --charset=o -i -f -d | peco | xargs echo)
+  cd $SELECTED_DIRECTORY
+  zle accept-line
+}
+zle -N peco-tree-dir
+bindkey '^e' peco-tree-dir
 
 peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
