@@ -155,7 +155,8 @@ nnoremap <Tab> %
 vnoremap <Tab> %
 
 nnoremap <F11> <C-i>
-nnoremap <C-m> gd:nohlsearch<CR>
+" <C-m>はEnterと同じ扱い
+" nnoremap <C-m> gd:nohlsearch<CR>
 nmap gp Riw
 " nmap cp Riw
 

@@ -21,6 +21,9 @@ snippet synthesize
 snippet assert
     CCASSERT(${1:false}, "${2:content}");
 
+snippet read
+    CC_SYNTHESIZE_READONLY(${1:class}, _${2:name}, <|3|><|2|>);
+
 snippet perform
     Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]() {
     });
@@ -30,3 +33,7 @@ snippet retain
 
 snippet release
     CC_SAFE_RELEASE_NULL(${1:obj});
+
+snippet delay
+    runAction(Sequence::create(DelayTime::create(0.01f), CallFunc::create([=]() {
+    }), runAction));

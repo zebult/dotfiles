@@ -441,3 +441,6 @@ bindkey '^z' zshrcopen
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/zsh_autocomplete

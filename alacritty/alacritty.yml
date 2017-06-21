@@ -108,36 +108,36 @@ custom_cursor_colors: true
 #     cyan:    '0x54ced6'
 #     white:   '0x282a2e'
 
-# Colors (Tomorrow Night Bright)
+# Colors (Zebult)
 colors:
   # Default colors
   primary:
     background: '0x3b3b3b'
     foreground: '0xb4b4b4'
-    # foreground: '0xc8c8c8'
-    # foreground: '0xeaeaea'
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0x3b3b3b'
-    cursor: '0xb9a188'
+    cursor: '0xb89263'
   # Normal colors
   normal:
     black:   '0x484848'
     red:     '0xb96a64'
+    # red:     '0x8B6F5C'
+    # green:   '0x9E8979'
     green:   '0x799e79'
     yellow:  '0xb89263'
-    # blue:    '0x81a2be'
-    blue:    '0x788e4f'
-    magenta: '0xb96a64'
+    blue:    '0x799e79'
+    magenta: '0x8B6F5C'
     cyan:    '0xd3d3d3'
     white:   '0xd9c4b2'
   # Bright colors
   bright:
     black:   '0x595959'
     red:     '0xb98b88'
+    # red:     '0x8B6F5C'
     green:   '0x9e9e9e'
     yellow:  '0xb8a288'
-    blue:    '0x788e4f'
+    blue:    '0x799e79'
     magenta: '0xb2b2b2'
     cyan:    '0xe3e3e3'
     white:   '0xe0d2c7'

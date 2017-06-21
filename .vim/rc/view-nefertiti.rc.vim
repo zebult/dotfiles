@@ -2,7 +2,8 @@
 " repo = 'jeetsukumaran/vim-nefertiti'
 " repo = 'AlessandroYorba/Alduin'
 colorscheme nefertiti
-
+" colorscheme carvedwood
+" colorscheme camo
 
 " 256に制限をかける
 set t_Co=256

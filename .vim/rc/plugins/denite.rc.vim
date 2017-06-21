@@ -54,6 +54,7 @@ nnoremap <silent> [denite]f  :<C-u>CHL<CR>:Denite filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>CHL<CR>:Denite neoyank<CR>
 nnoremap <silent> [denite]l  :<C-u>CHL<CR>:Denite outline<CR>
 nnoremap <Bslash><Bslash> :<C-u>CHL<CR>:Denite outline<CR>
+" nnoremap <Bslash><Bslash> :<C-u>CHL<CR>:Denite unite:outline<CR>
 
 function! DeniteFileRec() abort
   CHL
