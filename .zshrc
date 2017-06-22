@@ -139,6 +139,8 @@ alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
 
+alias cp='cp -v'
+
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
