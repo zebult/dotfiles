@@ -140,6 +140,7 @@ alias fn='find . -name'
 alias mf='mdfind'
 
 alias cp='cp -v'
+alias cdn='peco-tree-vim'
 
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
