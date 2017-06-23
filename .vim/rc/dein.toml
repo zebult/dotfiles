@@ -349,6 +349,10 @@ on_ft = 'swift'
 
 # C++ ---------------------------
 
+[[plugins]]
+repo = 'lyuts/vim-rtags'
+hook_add = 'source ~/.vim/rc/plugins/rtags.rc.vim'
+
 # syntax
 [[plugins]]
 repo = 'vim-jp/cpp-vim'
