@@ -90,6 +90,7 @@ case "${os}" in
         brew install nkf # vim dict
         brew install global # gtags
         brew install rtags
+        gem install xcpretty
         brew install sshrc
         brew install translate-shell
         brew install --HEAD ccache

@@ -105,6 +105,12 @@ repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
 
+# macvim日本語打てなくなる?
+# if = "!has('gui_running')"
+[[plugins]]
+repo = 'cohama/lexima.vim'
+# hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
+
 # [[plugins]]
 # repo = 'Siprah/vim-todoist'
 
@@ -361,6 +367,13 @@ repo = 'vim-jp/cpp-vim'
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
+
+[[plugins]]
+repo = 'osyo-manga/vim-cpp-syntax-reserved_identifiers'
+# hook_add = '''
+#     highlight link cReservedIdentifiers ErrorMsg
+# '''
+# on_ft = 'cpp'
 
 # cocos2d-x syntax color
 [[plugins]]
