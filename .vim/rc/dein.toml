@@ -30,6 +30,7 @@ hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 # vimfier need
 [[plugins]]
 repo = 'Shougo/unite.vim'
+hook_add = 'source ~/.vim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -105,10 +106,10 @@ repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
 
-# macvim日本語打てなくなる?
-# if = "!has('gui_running')"
+# macvim日本語打てなくなる
 [[plugins]]
 repo = 'cohama/lexima.vim'
+if = "!has('gui_running')"
 # hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 
 # [[plugins]]
@@ -213,14 +214,14 @@ repo = 'mattn/vim-metarw-gdrive'
 [[plugins]]
 repo = 'mattn/vim-metarw-simplenote'
 
-[[plugins]]
-repo = 'simeji/vim-chatworker.git'
-rev  = 'get-messages'
-hook_add = '''
-    " let g:chatwork_token = ''
-    " nnoremap <Leader>c :Unite chatworker<CR>x
-    " nnoremap <Leader>p :Unite chatwork_post_message<CR>x
-'''
+# [[plugins]]
+# repo = 'simeji/vim-chatworker.git'
+# rev  = 'get-messages'
+# hook_add = '''
+#     " let g:chatwork_token = ''
+#     " nnoremap <Leader>c :Unite chatworker<CR>x
+#     " nnoremap <Leader>p :Unite chatwork_post_message<CR>x
+# '''
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
@@ -368,8 +369,9 @@ repo = 'vim-jp/cpp-vim'
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
 
-[[plugins]]
-repo = 'osyo-manga/vim-cpp-syntax-reserved_identifiers'
+# .vim/syntaxに記述
+# [[plugins]]
+# repo = 'osyo-manga/vim-cpp-syntax-reserved_identifiers'
 # hook_add = '''
 #     highlight link cReservedIdentifiers ErrorMsg
 # '''
@@ -378,13 +380,6 @@ repo = 'osyo-manga/vim-cpp-syntax-reserved_identifiers'
 # cocos2d-x syntax color
 [[plugins]]
 repo = 'Rubonnek/vim-cc2dx'
-
-# ouch objc
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# on_ft = ['c', 'cpp', 'cmake']
-# if = "has('nvim')"
-# depends = ['deoplete.nvim']
 
 # clang complete(need vimproc)
 [[plugins]]

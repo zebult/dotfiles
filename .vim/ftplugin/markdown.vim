@@ -13,7 +13,8 @@ nnoremap gO O
 
 " todoリストを簡単に入力する
 " abbreviate tl -[ ]xxa " cohama/lexima.vim
-abbreviate tl -[ ]
+" abbreviate tl -[ ]
+abbreviate tl -[ x$a
 
 abbreviate gl ## g
 

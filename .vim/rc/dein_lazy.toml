@@ -182,6 +182,15 @@ on_map = '<Plug>(Dash'
 
 # C++ ---------------------------
 
+# # ouch objc
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+# hook_add = '''
+# '''
+# on_ft = ['c', 'cpp', 'cmake']
+# if = "has('nvim')"
+# depends = ['deoplete.nvim']
+
 # Markdown ---------------------------
 
 [[plugins]]
