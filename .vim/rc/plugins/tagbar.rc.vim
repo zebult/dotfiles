@@ -6,7 +6,8 @@ nnoremap <Leader>t :TagbarClose<CR>:TagbarOpen<CR>:TagbarClose<CR>
 nnoremap <Leader>T :TagbarToggle<CR>
 " nnoremap <Leader>Tt :TagbarClose<CR>:TagbarOpen<CR>
 " nnoremap <Leader>TT :TagbarClose<CR>
-nnoremap <Bar><Bar> :TagbarOpen<CR>:wincmd l<CR>/
+" nnoremap <Bar><Bar> :TagbarOpen<CR>:wincmd l<CR>/
+nnoremap TT :TagbarOpen<CR>:wincmd l<CR>/
 
 " :set modifiable
 " :set write

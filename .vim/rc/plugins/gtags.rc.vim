@@ -3,15 +3,15 @@
 " https://www.machu.jp/diary/20090308.html
 
 " 定義
-nnoremap g<C-j> :GtagsCallees<CR>
-nnoremap gt<C-j> :tab sp<CR>:GtagsCallees<CR>
-vnoremap g<C-j> <Esc>:vs<CR><C-w>l:GtagsCallees<CR>
-nnoremap gs<C-j> :sp<CR><C-w>j:GtagsCallees<CR>
+nnoremap <C-j> :GtagsCallees<CR>
+nnoremap t<C-j> :tab sp<CR>:GtagsCallees<CR>
+vnoremap <C-j> <Esc>:vs<CR><C-w>l:GtagsCallees<CR>
+nnoremap s<C-j> :sp<CR><C-w>j:GtagsCallees<CR>
 " 参照(Caller)
-nnoremap g<C-k> :GtagsCaller<CR>
-nnoremap gt<C-k> :tab sp<CR>:GtagsCaller<CR>
-vnoremap g<C-k> <Esc>:vs<CR><C-w>l:GtagsCaller<CR> snippetsの展開に使う
-nnoremap gs<C-k> :sp<CR><C-w>j:GtagsCaller<CR>
+nnoremap <C-k> :GtagsCaller<CR>
+nnoremap t<C-k> :tab sp<CR>:GtagsCaller<CR>
+vnoremap <C-k> <Esc>:vs<CR><C-w>l:GtagsCaller<CR> snippetsの展開に使う
+nnoremap s<C-k> :sp<CR><C-w>j:GtagsCaller<CR>
 
 " Grep
 nnoremap g/ :Gtags -g 
