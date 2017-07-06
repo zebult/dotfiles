@@ -1,5 +1,6 @@
 function! AutoMethodMakeMacro() abort
-  normal 0wms"my$gg/classw"cyiwGo"mpxa {}kk0w"cPa::'sj
+  " normal 0wms"my$gg/class\w"cyiwGo"mpxa {\}\kk0w"cPa::'sj
+  normal 0wms"my$gg/classw"cyiwGo"mpxa {k0w"cPa::'sj
 endfunction
 command -bar AutoMethodMakeMacro call AutoMethodMakeMacro()
 

@@ -85,12 +85,16 @@ nnoremap ss :<C-u>new<CR><C-w>J
 nnoremap sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+nnoremap sb :<C-u>Denite buffer -buffer-name=file<CR>
+nnoremap sB :<C-u>Denite buffer_tab -buffer-name=file<CR>
 vnoremap s% y:%s ///g<Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
+for n in range(1, 9)
+  execute 'nnoremap <silent> '.n.'t :<C-u>tabnext'.n.'<CR>'
+endfor
+" nnoremap <silent> 2t :<C-u>tabnext2<CR>
 " Memo日付移動
 " nnoremap g, i
 " nnoremap g. i

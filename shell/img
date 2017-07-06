@@ -2,7 +2,7 @@
 PROGNAME=$(basename $0)
 VERSION="1.0"
 IS_BACKUP=true
-IMG_EXTENSIONS=("png" "jpeg")
+IMG_EXTENSIONS=("png" "jpeg" "PNG" "JPEG")
 IMG_QUALITY=160
 
 usage() {
@@ -21,6 +21,7 @@ usage() {
 is_img() {
     for ext in ${IMG_EXTENSIONS[@]}; do
         if [ $ext == $1 ]; then
+            echo 'ERROR: not image extensions'
             return 1
             exit
         fi

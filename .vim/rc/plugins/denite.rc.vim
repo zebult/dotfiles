@@ -1,6 +1,6 @@
 " use ag
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#source('file_rec', 'matcher', ['matcher_cpsm'])
+call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
 " call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
 call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
 " call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])

@@ -123,12 +123,14 @@ alias glist="git stash list"
 alias gfu="git ls-files -u"
 alias gcp="git cherry-pick"
 alias grb="git rebase"
+alias grv="git revert"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 # alias vi=vim -u NONE --noplugin
 alias mvim='macvim'
+alias vimm='vim **/*'
 alias perl='/usr/bin/perl'
 
 alias gip='curl ipecho.net/plain; echo'
