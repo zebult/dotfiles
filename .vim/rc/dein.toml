@@ -210,6 +210,7 @@ let g:qiita_token='xxxxxx'
 
 [[plugins]]
 repo = 'mattn/vim-metarw-gdrive'
+hook_add = 'source ~/.vim/rc/plugins/gdrive.rc.vim'
 
 [[plugins]]
 repo = 'mattn/vim-metarw-simplenote'
