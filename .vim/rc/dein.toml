@@ -178,14 +178,14 @@ repo = 'kana/vim-metarw'
 repo = 'zebult/vim-metarw-redmine'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
 
-[[plugins]]
-repo = 'basyura/unite-yarm'
-hook_add = '''
-  let g:unite_yarm_server_url = ''
-  let g:unite_yarm_access_key = ''
-  let g:unite_yarm_limit = 100
-  let g:unite_yarm_backup_dir = '/tmp/yarm'
-'''
+# [[plugins]]
+# repo = 'basyura/unite-yarm'
+# hook_add = '''
+#   let g:unite_yarm_server_url = ''
+#   let g:unite_yarm_access_key = ''
+#   let g:unite_yarm_limit = 100
+#   let g:unite_yarm_backup_dir = '/tmp/yarm'
+# '''
 
 # ok~
 # [[plugins]]
@@ -456,8 +456,11 @@ on_ft = 'kotlin'
 # filetypes  =  ['md', 'mkd', 'markdown']
 
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
-filetypes  =  ['md', 'mkd', 'markdown']
+repo = 'plasticboy/vim-markdown'
+
+# [[plugins]]
+# repo = 'rcmdnk/vim-markdown'
+# filetypes  =  ['md', 'mkd', 'markdown']
 
 # Toml ---------------------------
 
