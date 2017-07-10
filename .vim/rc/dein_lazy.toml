@@ -235,7 +235,6 @@ hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 # on_ft = 'swift'
 # hook_add = 'autocmd FileType swift imap <buffer> <C-k> <Plug>(autocomplete_swift_jump_to_placeholder)' not use snip
 
-
 # Go ---------------------------
 
 [[plugins]]

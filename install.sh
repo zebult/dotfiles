@@ -122,6 +122,7 @@ case "${os}" in
         echo 'python new version->'
         python --version
         # pip3 install neovim
+        pip2 install --user --upgrade neovim #python2も使えるようにする
         pip3 install --user --upgrade neovim
         pip install awscli
         # TODO: 2系を標準にするべき?  pyenv global 2.7.9 3.4.3 #手前から優先

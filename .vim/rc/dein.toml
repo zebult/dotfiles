@@ -432,6 +432,9 @@ repo = 'thinca/vim-logcat'
 repo = 'OrangeT/vim-csharp'
 on_ft = ['cs', 'csi', 'csx']
 
+[[plugins]]
+repo = 'dimixar/deoplete-omnisharp'
+on_ft = ['cs', 'csi', 'csx']
 
 # Kotlin ---------------------------
 

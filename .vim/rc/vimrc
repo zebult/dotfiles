@@ -1,7 +1,9 @@
 " zebult vimrc
 
 " deoplete must setting
+let g:python2_host_prog = expand('~/.pyenv/shims/python2')
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
+
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/deoplete.nvim
 
 if &compatible

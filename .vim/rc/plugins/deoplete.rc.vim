@@ -11,9 +11,9 @@ let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTool
 let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
 
 " オムニ補完を対象にする
-if !exists("g:deoplete#omni#input_patterns")
-  let g:deoplete#omni#input_patterns = {}
-endif
+" if !exists("g:deoplete#omni#input_patterns")
+"   let g:deoplete#omni#input_patterns = {}
+" endif
 " clang family omnicomplete
 " let g:deoplete#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 " let g:deoplete#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
