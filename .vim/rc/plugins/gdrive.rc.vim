@@ -2,4 +2,4 @@
 " :GdriveSetup
 
 nnoremap <Leader>D :e gdrive:<CR>
-ca gd e gdrive:
+ca drive e gdrive:
