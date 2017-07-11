@@ -191,10 +191,10 @@ on_map = '<Plug>(Dash'
 # if = "has('nvim')"
 # depends = ['deoplete.nvim']
 
-[[plugins]]
-repo = 'tweekmonster/deoplete-clang2'
-depends = ['deoplete.nvim']
-on_ft = ['c', 'cpp', 'cmake', 'mm', 'm']
+# [[plugins]]
+# repo = 'tweekmonster/deoplete-clang2'
+# depends = ['deoplete.nvim']
+# on_ft = ['c', 'cpp', 'cmake', 'mm', 'm']
 
 # Markdown ---------------------------
 

@@ -111,7 +111,7 @@ repo = 'vim-jp/vital.vim'
 [[plugins]]
 repo = 'cohama/lexima.vim'
 if = "!has('gui_running')"
-hook_post_source = 'source ~/.vim/rc/plugins/lexima.rc.vim'
+hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 # hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 
 # [[plugins]]
