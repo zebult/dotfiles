@@ -25,6 +25,7 @@ if = "!has('gui_running')"
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+if = "has('nvim')"
 hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # vimfier need
