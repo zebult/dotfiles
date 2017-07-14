@@ -1,2 +1,5 @@
 snippet log
     NSLog(@"${1}");${2}
+
+snippet timer
+    [NSTimer scheduledTimerWithTimeInterval:${1:0.1} target:self selector:@selector(${2:hoge:}) userInfo:nil repeats:${3:YES}];
