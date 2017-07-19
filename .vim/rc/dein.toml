@@ -90,6 +90,7 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'kana/vim-textobj-user'
 
+# f
 [[plugins]]
 repo = 'kana/vim-textobj-function'
 

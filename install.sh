@@ -226,10 +226,10 @@ case "${os}" in
         # util shell link
         cd $HOME
         mkdir -p .bin/sh
-        ln -snfv $DOTFILES/shell/dpull $HOME/.bin/sh/dpull
-        ln -snfv $DOTFILES/shell/dpush $HOME/.bin/sh/dpush
-        ln -snfv $DOTFILES/shell/img $HOME/.bin/sh/img
-        ln -snfv $DOTFILES/shell/git-imgdiff $HOME/.bin/sh/git-imgdiff
+        cd $DOTFILES/shell
+        for FILE in *; do
+            ln -snfv $DOTFILES/shell/$FILE $HOME/.bin/sh/$FILE
+        done
         chmod 755 $HOME/.bin/sh/*
 
         # Alfred

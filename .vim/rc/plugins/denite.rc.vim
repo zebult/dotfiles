@@ -75,17 +75,17 @@ nnoremap <Bslash><Bslash> :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 " let bar_height = 5
 " nnoremap <Bslash><Bslash> :<C-u>Denite unite:outline<CR>
 
-" function! DeniteFileRec() abort
-"   CHL
-"   Denite file_rec
-" endfunction
-" command! DeniteFileRec call DeniteFileRec()
+function! DeniteFileRec() abort
+  CHL
+  Denite file_rec
+endfunction
+command! DeniteFileRec call DeniteFileRec()
 
-" function! DeniteFileOld() abort
-"   CHL
-"   Denite file_old
-" endfunction
-" command! DeniteFileOld call DeniteFileOld()
+function! DeniteFileOld() abort
+  CHL
+  Denite file_old
+endfunction
+command! DeniteFileOld call DeniteFileOld()
 
 " nnoremap <silent> <M-n>      :<C-u>Denite -resume -select=+1 -immediately<CR>
 " nnoremap <silent> <M-p>      :<C-u>Denite -resume -select=-1 -immediately<CR>

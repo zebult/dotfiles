@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# RATE=16000 # NG
+# RATE=40000 # NG
+RATE=70000 #OK
+# RATE=80000 # GOOD
+
+echo bitrate: $RATE
+
+for x in "$@"
+do
+  OLD_BITRATE=`ffmpeg -i $x 2>&1 | grep bitrate | awk '{print $6" "$7}' | tr -d ,`
+  afconvert -f m4af -b $RATE -o $x  $x
+  NEW_BITRATE=`ffmpeg -i $x 2>&1 | grep bitrate | awk '{print $6" "$7}' | tr -d ,`
+  echo $x $OLD_BITRATE "->" $NEW_BITRATE
+done
+
