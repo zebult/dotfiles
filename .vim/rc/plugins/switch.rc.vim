@@ -6,4 +6,6 @@ let g:switch_custom_definitions =
     \   ['if', 'else'],
     \   ['<', '>'],
     \   ['+', '-'],
+    \   ['YES', 'NO'],
+    \   ['yes', 'no'],
     \ ]

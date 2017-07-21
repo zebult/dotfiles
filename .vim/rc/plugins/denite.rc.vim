@@ -47,8 +47,13 @@ for mapping in mapping_list
   endfor
 endfor
 
-nnoremap <silent> [denite]t :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> [denite]k :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
+
+nnoremap <silent> [denite]t :tabnew<CR>:<C-u>DeniteBufferDir -default-action=open -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
+
 nnoremap <silent> [denite]v :<C-u>DeniteBufferDir -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
+
 nnoremap <silent> [denite]s :<C-u>DeniteBufferDir -default-action=split -highlight-mode-insert=Search file_rec<CR>
 
 nnoremap <silent> [denite]T :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
@@ -70,17 +75,17 @@ nnoremap <Bslash><Bslash> :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 " let bar_height = 5
 " nnoremap <Bslash><Bslash> :<C-u>Denite unite:outline<CR>
 
-" function! DeniteFileRec() abort
-"   CHL
-"   Denite file_rec
-" endfunction
-" command! DeniteFileRec call DeniteFileRec()
+function! DeniteFileRec() abort
+  CHL
+  Denite file_rec
+endfunction
+command! DeniteFileRec call DeniteFileRec()
 
-" function! DeniteFileOld() abort
-"   CHL
-"   Denite file_old
-" endfunction
-" command! DeniteFileOld call DeniteFileOld()
+function! DeniteFileOld() abort
+  CHL
+  Denite file_old
+endfunction
+command! DeniteFileOld call DeniteFileOld()
 
 " nnoremap <silent> <M-n>      :<C-u>Denite -resume -select=+1 -immediately<CR>
 " nnoremap <silent> <M-p>      :<C-u>Denite -resume -select=-1 -immediately<CR>

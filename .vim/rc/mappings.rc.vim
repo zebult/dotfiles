@@ -179,6 +179,12 @@ nnoremap ¬ ;
 
 " nnoremap gd gd
 
+" set scrolloff=9999
+" nnoremap <expr> 1 match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
+
+nnoremap <expr> 0
+\  match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
+
 nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
 nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz
 

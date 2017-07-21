@@ -121,6 +121,10 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'tyru/eskk.vim'
+hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
+
+[[plugins]]
 repo = 'thinca/vim-ref'
 on_i = 1
 hook_add = 'source ~/.vim/rc/plugins/ref.rc.vim'

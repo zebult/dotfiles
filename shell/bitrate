@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# RATE=16000 # NG
+# RATE=40000 # NG
+# RATE=64k
+RATE=96k
+# RATE=128000 # 128bit
+# RATE=120000 ~ 300000 # init
+
+# EXTENSION=MPG3 # afconvert -hf
+
+echo bitrate=$RATE
+
+for x in "$@"
+do
+    INPUT_FILE=$x
+    OUTPUT_FILE=NEW_$x
+
+    OLD_SIZE=`du -sh $INPUT_FILE | awk '{print $1}'`
+    OLD_BITRATE=`ffmpeg -i $INPUT_FILE 2>&1 | grep bitrate | awk '{print $6" "$7}' | tr -d ,`
+    OLD_BITRATE=`echo $OLD_BITRATE | sed -e 's/from bitrate//g'`
+    OLD_INFO=`ffmpeg -i $INPUT_FILE 2>&1 | grep "Duration.*bitrate"`
+
+    INFO=`ffmpeg -y -i $INPUT_FILE -ab $RATE $OUTPUT_FILE 2>&1 | grep "size.*bitrate"`
+
+    NEW_SIZE=`du -sh $OUTPUT_FILE | awk '{print $1}'`
+    NEW_BITRATE=`ffmpeg -i $OUTPUT_FILE 2>&1 | grep bitrate | awk '{print $6" "$7}' | tr -d ,`
+    NEW_INFO=`ffmpeg -i $OUTPUT_FILE 2>&1 | grep "Duration.*bitrate"`
+
+    echo $x "| old info | " $OLD_INFO
+    echo "| new info | " $NEW_INFO
+    echo "| diff bitrate | " $OLD_BITRATE "->" $NEW_BITRATE
+    echo "| diff size | " $OLD_SIZE "->" $NEW_SIZE
+    echo ""
+
+    rm -f $INPUT_FILE
+    mv $OUTPUT_FILE $INPUT_FILE
+done
+
