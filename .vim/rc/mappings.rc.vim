@@ -161,6 +161,8 @@ nnoremap <Tab> %
 vnoremap <Tab> %
 
 nnoremap <F11> <C-i>
+nnoremap t<C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>1<CR>
+
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>
 nmap gp Riw
