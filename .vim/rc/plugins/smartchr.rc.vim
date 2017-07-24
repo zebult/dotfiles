@@ -24,3 +24,5 @@ autocmd FileType *          inoremap <buffer> <expr> @ search('^\(#.\+\)\?\%#','
 " autocmd FileType *          inoremap <buffer> <expr> " smartchr#loop('"', '""', '""<Left>')
 " autocmd FileType *          inoremap <buffer> <expr> ' smartchr#loop("'", "''", "''<Left>")
 " autocmd FileType toml       inoremap <buffer> <expr> ' smartchr#loop("'", "''", "'''", "'''<CR>'''<Left><Left><Left><CR><Up><Tab>")
+
+autocmd FileType cs  inoremap <buffer> <expr> / smartchr#loop('/', '//', '/// <summary><CR>/// <`0`><CR>/// </summary>')

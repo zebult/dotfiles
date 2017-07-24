@@ -38,6 +38,9 @@ repo = 'Shougo/vimfiler.vim'
 hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
 
 [[plugins]]
+repo = 'cocopon/vaffle.vim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
