@@ -108,6 +108,9 @@ repo = 'vim-jp/vital.vim'
 
 # Convenience Tools: ---------------------------
 
+# [[plugins]]
+# repo = 'zebult/scrolloff_toggle.vim'
+
 # macvim日本語打てなくなる
 [[plugins]]
 repo = 'cohama/lexima.vim'

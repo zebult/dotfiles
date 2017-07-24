@@ -1,3 +1,9 @@
+snippet if
+    if(${1})
+    {
+        ${2}
+    }
+
 snippet ccrxinterval
     auto values = CCRx::interval(this, ${1})
     .subscribe([=](int v) {
@@ -16,13 +22,13 @@ snippet foreach
     }
 
 snippet synthesize
-    CC_SYNTHESIZE(${1:class}, _${2:name}, <|3|><|2|>);
+    CC_SYNTHESIZE(${1:class}, _${2:name}, ${3}<|2|>);
 
 snippet assert
     CCASSERT(${1:false}, "${2:content}");
 
 snippet read
-    CC_SYNTHESIZE_READONLY(${1:class}, _${2:name}, <|3|><|2|>);
+    CC_SYNTHESIZE_READONLY(${1:class}, _${2:name}, ${3}<|2|>);
 
 snippet perform
     Director::getInstance()->getScheduler()->performFunctionInCocosThread([=]() {
@@ -37,3 +43,55 @@ snippet release
 snippet delay
     runAction(Sequence::create(DelayTime::create(0.01f), CallFunc::create([=]() {
     }), runAction));
+
+# Cocos2d-x
+
+snippet tmplayer
+    auto tmpLayer = Layout::create();
+    tmpLayer->setBackGroundColor(Color3B::GREEN);
+    tmpLayer->setBackGroundColorType(Layout::BackGroundColorType::SOLID);
+    tmpLayer->setContentSize(Size(Vec2(100, 100)));
+    tmpLayer->setPosition(Vec2::ZERO);
+    this->addChild(tmpLayer);
+
+    tmpLayer->setTouchEnabled(true);
+    tmpLayer->addTouchEventListener([=](Ref* ref, Widget::TouchEventType eventType) {
+        if (eventType == Widget::TouchEventType::ENDED) {
+            CCLOG("aaa");
+        }
+    });
+
+snippet create
+    Scene* ${1:class name}::create() {
+        auto scene = Scene::create();
+        auto layer = <|1|>::create();
+        scene->addChild(layer);
+        return scene;
+    }
+    static cocos2d::Scene* create();
+
+# snippet sceneh
+# #ifndef ${1:class name}Controller_hpp'
+# #define <|1|>Controller_hpp
+#
+# #include "SceneRoid.h"
+#
+# class <|1|>View;
+# class <|1|>Logic;
+#
+# class <|1|>Controller : public SceneRoid {
+# public:
+#     CREATE_FUNC(<|1|>Controller);
+#     virtual ~<|1|>Controller();
+# protected:
+#     <|1|>Controller();
+#     virtual bool init() override;
+#     virtual void initUI() override;
+#
+#     <|1|>View* _ui;
+#     <|1|>Logic* _logic;
+# private:
+#     virtual void onMoveScene(const long dest) override;
+# };
+#
+# #endif /* <|1|>Controller_hpp */

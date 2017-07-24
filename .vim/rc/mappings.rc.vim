@@ -20,6 +20,9 @@ inoremap jj <ESC><ESC><ESC>
 " noremap k gk
 " noremap gj j
 " noremap gk k
+nnoremap <Down> <C-e>j
+nnoremap <Up> <C-y>k
+
 noremap ;  :
 noremap :  ;
 noremap 8* *N
@@ -92,6 +95,10 @@ nnoremap sB :<C-u>Denite buffer_tab -buffer-name=file<CR>
 vnoremap s% y:%s ///g<Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
+
+vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r>0<Right><C-r>0
+nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
+nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 for n in range(1, 9)
   execute 'nnoremap <silent> '.n.'t :<C-u>tabnext'.n.'<CR>'
@@ -177,11 +184,13 @@ nnoremap ¬ ;
 
 " nnoremap gd gd
 
-" set scrolloff=9999
 " nnoremap <expr> 1 match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
 
 nnoremap <expr> 0
-\  match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
+\         col('.') == 1 ? '^' : '0'
+
+" nnoremap <expr> 0
+" \  match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
 
 nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
 nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz
