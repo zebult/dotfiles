@@ -3,11 +3,34 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = "has('nvim')"
-hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+on_cmd = 'Denite'
+hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
+hook_post_source = '''
+" use ag
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
+" call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
+" call denite#custom#source('file_rec', 'sorters', ['sorter_rank'])
+call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+" call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
+" call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])
+
+" カーソルキー, cn, cpで移動
+call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+
+" ignore
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [ '.git/', '.ropeproject/', '__pycache__/',
+      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
+
+'''
 
 # vimfier need
 [[plugins]]
 repo = 'Shougo/unite.vim'
+on_cmd = 'Unite'
 hook_post_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
@@ -17,10 +40,6 @@ on_map = '<Leader>f'
 
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
-
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
@@ -155,6 +174,7 @@ on_i = 1
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+on_event = 'BufRead'
 hook_add = '''
 let g:tcommentMapLeader1 = '<F12>'
 let g:tcommentMapLeaderOp1 = 'gc'
@@ -163,7 +183,6 @@ let g:tcommentMapLeaderOp2 = 'gC'
 hook_post_source = '''
 call tcomment#DefineType('objc', '// %s')
 '''
-# on_map = '<Plug>TComment'
 
 # Need to `brew install global`
 [[plugins]]
@@ -178,8 +197,8 @@ on_map = '<C-[>'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
+on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
-on_map = '<Space>'
 
 [[plugins]]
 repo = 'mrtazz/simplenote.vim'
@@ -219,16 +238,6 @@ nnoremap <Leader>B :W3mTab google<CR>
 '''
 on_map = '<Leader>B'
 
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-# on_map = ['<Plug>(openbrowser-smart-search)']
-# on_map = ['<Plug>(openbrowser-smart-search)']
-hook_add = '''
-let g:netrw_nogx = 1
-nmap <Leader>o <Plug>(openbrowser-smart-search)
-vmap <Leader>o <Plug>(openbrowser-smart-search)
-'''
-
 # TODO: can not use python3
 # [[plugins]]
 # repo = 'sjl/gundo.vim'
@@ -254,12 +263,13 @@ on_map = '<Leader>c'
 repo = 'vim-scripts/Align'
 on_i = 1
 
-[[plugins]]
-repo = 'vim-scripts/TaskList.vim'
-hook_add = '''
-nnoremap <Leader>T :TaskList<CR>
-'''
-on_map = '<Leader>T'
+# TODO 一覧
+# [[plugins]]
+# repo = 'vim-scripts/TaskList.vim'
+# hook_add = '''
+# nnoremap <Leader>T :TaskList<CR>
+# '''
+# on_map = '<Leader>T'
 
 # Need to `brew install ctags`
 [[plugins]]

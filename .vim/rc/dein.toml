@@ -9,6 +9,7 @@ repo = 'dzeban/vim-log-syntax'
 
 # Shougo ---------------------------
 
+# http://qiita.com/delphinus/items/cd221a450fd23506e81a
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -83,6 +84,18 @@ repo = 'mattn/webapi-vim'
 # Library
 [[plugins]]
 repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+let g:netrw_nogx = 1
+nmap <Leader>o <Plug>(openbrowser-smart-search)
+vmap <Leader>o <Plug>(openbrowser-smart-search)
+'''
 
 # [[plugins]]
 # repo = 'abudden/taghighlight-automirror'

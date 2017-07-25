@@ -4,6 +4,8 @@
 
 imap <F10> <Plug>(eskk:toggle)
 
+g:eskk#no_default_mappings = 1
+
 let g:eskk#start_completion_length = 2
 let g:eskk#show_candidates_count = 2
 
