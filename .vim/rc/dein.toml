@@ -23,31 +23,12 @@ if = "!has('gui_running')"
 # if = "has('lua')"
 # hook_add = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-if = "has('nvim')"
-hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
-
-# vimfier need
-[[plugins]]
-repo = 'Shougo/unite.vim'
-hook_add = 'source ~/.vim/rc/plugins/unite.rc.vim'
-
-[[plugins]]
-repo = 'Shougo/vimfiler.vim'
-hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
-
-[[plugins]]
-repo = 'cocopon/vaffle.vim'
-
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
-
 # need neosnippet
+# no lazy
 [[plugins]]
 repo   = 'Shougo/neosnippet-snippets'
 
+# no lazy
 [[plugins]]
 repo = 'Shougo/unite-outline'
 
@@ -55,10 +36,6 @@ repo = 'Shougo/unite-outline'
 # [[plugins]]
 # repo = 'Shougo/neomru.vim'
 # if = "!has('gui_running')"
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-if = "has('nvim')"
 
 [[plugins]]
 repo = 'nixprime/cpsm'
@@ -80,14 +57,16 @@ hook_add = '''
     let g:splash#path = $HOME . '/.vim/rc/splash.txt'
 '''
 
+# no lazy
 # dependency vim-watchdogs
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
 
-# camel need
+# no lazy
 [[plugins]]
 repo = 'kana/vim-operator-user'
 
+# no lazy
 # vim-textobj-indent need
 # map <Leader>I <plug>(textobj-indent-i)
 [[plugins]]
@@ -114,13 +93,6 @@ repo = 'vim-jp/vital.vim'
 # [[plugins]]
 # repo = 'zebult/scrolloff_toggle.vim'
 
-# macvim日本語打てなくなる
-[[plugins]]
-repo = 'cohama/lexima.vim'
-if = "!has('gui_running')"
-hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
-# hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
-
 # [[plugins]]
 # repo = 'Siprah/vim-todoist'
 
@@ -128,42 +100,8 @@ hook_add = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 # repo = 'kien/rainbow_parentheses.vim'
 # hook_add = 'source ~/.vim/rc/plugins/rainbow_parentheses.rc.vim'
 
-[[plugins]]
-repo = 'vim-scripts/DoxygenToolkit.vim'
-
 # [[plugins]]
 # repo = 'thinca/vim-fontzoom'
-
-[[plugins]]
-repo = 'bkad/CamelCaseMotion'
-hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
-
-[[plugins]]
-repo = 'tomtom/tcomment_vim'
-hook_add = 'source ~/.vim/rc/plugins/tcomment.rc.vim'
-
-# Need to `brew install global`
-[[plugins]]
-repo = 'zebult/auto-gtags.vim'
-hook_add = 'source ~/.vim/rc/plugins/auto-gtags.rc.vim'
-
-# Need to `brew install ctags`
-[[plugins]]
-repo = 'soramugi/auto-ctags.vim'
-hook_add = 'source ~/.vim/rc/plugins/auto-ctags.rc.vim'
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
-
-[[plugins]]
-repo = 'mrtazz/simplenote.vim'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
-
-# メタ文字含むとlightline壊れるので注意
-[[plugins]]
-repo = 'zebult/toggl.vim'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -177,6 +115,7 @@ hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 #     map g/ <Plug>(incsearch-stay)
 # '''
 
+# no lazy
 [[plugins]]
 repo = 'mattn/googlesuggest-complete-vim'
 
@@ -337,8 +276,9 @@ repo = 'rking/ag.vim'
 [[plugins]]
 repo = 'airblade/vim-rooter'
 hook_add = '''
-    let g:rooter_use_lcd = 1
-    let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
+    " let g:rooter_use_lcd = 1 " not echo
+    " let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
+    let g:rooter_patterns = ['Classes/']
 '''
 
 
@@ -473,12 +413,12 @@ on_ft = 'kotlin'
 # repo = 'nelstrom/vim-markdown-folding'
 # filetypes  =  ['md', 'mkd', 'markdown']
 
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-
 # [[plugins]]
 # repo = 'rcmdnk/vim-markdown'
 # filetypes  =  ['md', 'mkd', 'markdown']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
 
 # Toml ---------------------------
 

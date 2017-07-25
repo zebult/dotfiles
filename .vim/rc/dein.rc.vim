@@ -41,12 +41,12 @@ endif
 "   call dein#update()
 " endif
 
-"if dein#clear_state()
-"    call dein#clear_state()
-"endif
-"if dein#recache_runtimepath()
-"    call dein#recache_runtimepath()
-"endif
+" if dein#clear_state()
+"     call dein#clear_state()
+" endif
+" if dein#recache_runtimepath()
+"     call dein#recache_runtimepath()
+" endif
 
 " lazyにしても意味ないプラギン洗い出し
 function! s:check_lazy_plugins() abort

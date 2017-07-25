@@ -84,8 +84,8 @@ export NDK_CCACHE=/usr/local/bin/ccache
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
-export EDITOR=/usr/local/bin/vim
-export VISUAL=vim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=nvim
 # nvim
 export XDG_CONFIG_HOME=~/.config
 export PYENV_ROOT="$HOME/.pyenv"

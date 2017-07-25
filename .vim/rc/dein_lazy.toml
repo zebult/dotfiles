@@ -1,11 +1,39 @@
 # Shougo: ---------------------------
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+if = "has('nvim')"
+hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+
+# vimfier need
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_post_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+on_map = '<Leader>f'
+
+# [[plugins]]
+# repo = 'cocopon/vaffle.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
 repo = 'Shougo/vimshell.vim'
+on_map = '<Leader>v'
 hook_add = '''
 let g:vimshell_split_command =
       \ get(g:, 'vimshell_split_command', '')
 '''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+if = "has('nvim')"
+on_i = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -27,7 +55,6 @@ hook_add = '''
 let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
 let g:neoinclude#_paths = '/usr/local/Cellar/boost'
 '''
-
 
 # Base Tools: ---------------------------
 
@@ -52,6 +79,7 @@ hook_add = 'source ~/.vim/rc/plugins/watchdogs.rc.vim'
 hook_post_source = '''
 call watchdogs#setup(g:quickrun_config)
 '''
+
 # syntax error color (jceb fork, gradeup column)
 [[plugins]]
 repo = 'cohama/vim-hier'
@@ -110,8 +138,8 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 '''
 
 # make plugin(:LayoutPlugin xxx.vim)
-[[plugins]]
-repo = 'mopp/layoutplugin.vim'
+# [[plugins]]
+# repo = 'mopp/layoutplugin.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
@@ -121,8 +149,62 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+let g:tcommentMapLeader1 = '<F12>'
+let g:tcommentMapLeaderOp1 = 'gc'
+let g:tcommentMapLeaderOp2 = 'gC'
+'''
+hook_post_source = '''
+call tcomment#DefineType('objc', '// %s')
+'''
+# on_map = '<Plug>TComment'
+
+# Need to `brew install global`
+[[plugins]]
+repo = 'zebult/auto-gtags.vim'
+hook_add = 'source ~/.vim/rc/plugins/auto-gtags.rc.vim'
+
+# Need to `brew install ctags`
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
+hook_add = 'source ~/.vim/rc/plugins/auto-ctags.rc.vim'
+on_map = '<C-[>'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+on_map = '<Space>'
+
+[[plugins]]
+repo = 'mrtazz/simplenote.vim'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
+
+# メタ文字含むとlightline壊れるので注意
+[[plugins]]
+repo = 'zebult/toggl.vim'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
+
+[[plugins]]
+repo = 'vim-scripts/DoxygenToolkit.vim'
+
+# macvim日本語打てなくなる
+[[plugins]]
+repo = 'cohama/lexima.vim'
+if = "!has('gui_running')"
+hook_post_source = 'source ~/.vim/rc/plugins/lexima.rc.vim'
+on_i = 1
+
+[[plugins]]
 repo = 'tyru/eskk.vim'
-hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
+hook_post_source = 'source ~/.vim/rc/plugins/eskk.rc.vim'
+on_i = 1
+on_map = '<Plug>(eskk:toggle)'
 
 [[plugins]]
 repo = 'thinca/vim-ref'
@@ -135,10 +217,12 @@ hook_add = '''
 let g:w3m#external_browser = 'google-chrome'
 nnoremap <Leader>B :W3mTab google<CR>
 '''
+on_map = '<Leader>B'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-on_map = ['<Plug>(openbrowser-smart-search)']
+# on_map = ['<Plug>(openbrowser-smart-search)']
+# on_map = ['<Plug>(openbrowser-smart-search)']
 hook_add = '''
 let g:netrw_nogx = 1
 nmap <Leader>o <Plug>(openbrowser-smart-search)
@@ -163,16 +247,19 @@ on_map = '<Plug>(altr-'
 [[plugins]]
 repo = 'itchyny/calendar.vim'
 hook_add = 'source ~/.vim/rc/plugins/calendar.rc.vim'
+on_map = '<Leader>c'
 
 # file shaping(:Align =)
 [[plugins]]
 repo = 'vim-scripts/Align'
+on_i = 1
 
 [[plugins]]
 repo = 'vim-scripts/TaskList.vim'
 hook_add = '''
 nnoremap <Leader>T :TaskList<CR>
 '''
+on_map = '<Leader>T'
 
 # Need to `brew install ctags`
 [[plugins]]
@@ -219,6 +306,7 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 [[plugins]]
 repo = 'zebult/vim-zxcode'
+filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 
 [[plugins]]
@@ -249,12 +337,15 @@ hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+on_i = 1
 
 
 # Html ---------------------------
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
+filetypes = ['html']
+on_i = 1
 
 # Game ---------------------------
 # [[plugins]]

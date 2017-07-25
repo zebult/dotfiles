@@ -29,8 +29,6 @@ let g:neocomplete#include_paths = {
   \ 'cpp'  : '.,/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos',
   \ 'c'    : '.,/usr/include',
   \ }
-" SKK使えるように
-let g:eskk#enable_completion = 1
 " 辞書(C-x-k)も自動補完対象にする
 let g:neosnippet#enable_snipmate_compatibility = 1
 " 辞書ファイルの定義
