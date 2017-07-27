@@ -57,14 +57,14 @@ nnoremap <Bslash><Bslash> :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 " nnoremap <Bslash><Bslash> :<C-u>Denite unite:outline<CR>
 
 function! DeniteFileRec() abort
-  CHL
-  Denite file_rec
+  " CHL
+  Denite -highlight-mode-insert=Search file_rec
 endfunction
 command! DeniteFileRec call DeniteFileRec()
 
 function! DeniteFileOld() abort
-  CHL
-  Denite file_old
+  " CHL
+  Denite -highlight-mode-insert=Search file_old
 endfunction
 command! DeniteFileOld call DeniteFileOld()
 
