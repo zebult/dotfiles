@@ -4,7 +4,7 @@
 
 imap <F10> <Plug>(eskk:toggle)
 
-g:eskk#no_default_mappings = 1
+let g:eskk#no_default_mappings = 1
 
 let g:eskk#start_completion_length = 2
 let g:eskk#show_candidates_count = 2
@@ -24,20 +24,3 @@ let g:eskk#egg_like_newline = 1
 let g:eskk#egg_like_newline_completion = 1
 let g:eskk#enable_completion = 1
 let g:eskk#keep_state = 0
-
-function! s:eskk_use_camma_period()
-  let table = eskk#table#new('rom_to_hira*', 'rom_to_hira')
-  call table.add_map(',', '，')
-  call table.add_map('.', '．')
-  call table.add_map('=', '＝')
-  call table.add_map('~', '～')
-  call eskk#register_mode_table('hira', table)
-
-  let table = eskk#table#new('rom_to_kata*', 'rom_to_kata')
-  call table.add_map(',', '，')
-  call table.add_map('.', '．')
-  call table.add_map('=', '＝')
-  call table.add_map('~', '～')
-  call eskk#register_mode_table('kata', table)
-endfunction
-call s:eskk_use_camma_period()
