@@ -184,6 +184,10 @@ nnoremap ¬ ;
 " nnoremap gt t
 " nnoremap gT T
 
+nnoremap [[ [m
+nnoremap g[[ [M
+nnoremap ]] ]m
+nnoremap g]] ]M
 " nnoremap gd gd
 
 " nnoremap <expr> 1 match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'

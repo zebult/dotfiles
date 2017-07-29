@@ -279,6 +279,9 @@ on_map = '<Leader>c'
 # file shaping(:Align =)
 [[plugins]]
 repo = 'vim-scripts/Align'
+hook_add = '''
+let g:loaded_AlignMapsPlugin = 0
+'''
 on_i = 1
 
 # TODO 一覧
