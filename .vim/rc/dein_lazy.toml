@@ -143,6 +143,7 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # cs complement
 # 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)
 # path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
+# [deoplete]大量エラー発生時→build上手く行っていない, monoがない
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 filetypes  =  ['cs', 'csi', 'csx']
