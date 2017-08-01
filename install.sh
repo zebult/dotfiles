@@ -91,6 +91,7 @@ case "${os}" in
         brew install global # gtags
         brew install rtags
         gem install xcpretty
+        gem install neovim
         brew install sshrc
         brew install translate-shell
         brew install --HEAD ccache
@@ -112,7 +113,7 @@ case "${os}" in
         $DOTFILES/setupPrezto.sh
         source ${HOME}/.zshrc
         pyenv install -list
-        echo 'Input python 3.x version...'
+        echo 'Input python 3.x version...(ex: 3.5.2)'
         read PYTHON_VERSION
         pyenv install $PYTHON_VERSION
         # Error: zlib not available($xcode-select --install)
