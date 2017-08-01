@@ -188,6 +188,11 @@ nnoremap [[ [m
 nnoremap g[[ [M
 nnoremap ]] ]m
 nnoremap g]] ]M
+
+vnoremap [[ [m
+vnoremap g[[ [M
+vnoremap ]] ]m
+vnoremap g]] ]M
 " nnoremap gd gd
 
 " nnoremap <expr> 1 match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
