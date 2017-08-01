@@ -146,6 +146,7 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 filetypes  =  ['cs', 'csi', 'csx']
+on_i = 1
 windows = 'msbuild server/OmniSharp.sln'
 mac     = 'xbuild server/OmniSharp.sln'
 unix    = 'xbuild server/OmniSharp.sln'

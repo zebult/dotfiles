@@ -84,8 +84,8 @@ snippet ismaster
 snippet yield
     yield return new WaitForSeconds(${1});
 snippet IEnumerator
-    i_enumerator ${1}() {
-        Yield Return New wait_for_seconds(${2});
+    IEnumerator ${1}() {
+        yield return new WaitForSeconds(${2});
     }
 snippet StartCoroutine
     StartCoroutine(${0});
