@@ -68,9 +68,9 @@ snippet tryget
     }
 snippet main
     using System;
-    class ${0} 
+    class ${0}
     {
-        static void Main() 
+        static void Main()
         {
             Console.WriteLine("Hello World!");
         }
@@ -84,6 +84,34 @@ snippet ismaster
 snippet yield
     yield return new WaitForSeconds(${1});
 snippet IEnumerator
-	IEnumerator ${1}() {
-        yield return new WaitForSeconds(${2});
+    i_enumerator ${1}() {
+        Yield Return New wait_for_seconds(${2});
     }
+snippet StartCoroutine
+    StartCoroutine(${0});
+snippet void
+    private void ${0}() {
+    }
+snippet fori
+    for (int i = 0; i < ${0:list}.Count; i++) {
+    }
+snippet OnCollisionEnter
+    void OnCollisionEnter(Collision col) {
+        ${0:col.gameObject}
+    }
+snippet OnCollisionStay
+    void OnCollisionStay(Collision col) {
+        ${0:col.gameObject}
+    }
+snippet OnCollisionExit
+    void OnCollisionExit(Collision col) {
+        ${0:col.gameObject}
+    }
+snippet OnTriggerEnter
+    void OnTriggerEnter(Collider col) {
+        ${0:col.gameObject}
+    }
+snippet position_relative
+    this.transform.position += new Vector3(0, 1${0}, 0);
+snippet loadLevel
+    Application.LoadLevel("${0}");
