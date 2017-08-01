@@ -4,7 +4,6 @@
 repo = 'Shougo/denite.nvim'
 if = "has('nvim')"
 on_cmd = 'Denite'
-hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 hook_post_source = '''
 " use ag
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
@@ -26,6 +25,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
 
 '''
+hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # vimfier need
 [[plugins]]
@@ -94,10 +94,10 @@ hook_add = 'source ~/.vim/rc/plugins/quickrun.rc.vim'
 [[plugins]]
 repo = 'osyo-manga/vim-watchdogs'
 on_event = ['BufWrite']
-hook_add = 'source ~/.vim/rc/plugins/watchdogs.rc.vim'
 hook_post_source = '''
 call watchdogs#setup(g:quickrun_config)
 '''
+hook_add = 'source ~/.vim/rc/plugins/watchdogs.rc.vim'
 
 # syntax error color (jceb fork, gradeup column)
 [[plugins]]
@@ -141,10 +141,10 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # filetypes  =  ['c', 'cpp']
 
 # cs complement
-# 自動でserverセットアップしてくれる(してくれない場合手動: plugin下のserverへ行き, xbuild)
+# 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)
+# path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
-on_i = 1
 filetypes  =  ['cs', 'csi', 'csx']
 windows = 'msbuild server/OmniSharp.sln'
 mac     = 'xbuild server/OmniSharp.sln'
@@ -175,13 +175,13 @@ on_i = 1
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 on_event = 'BufRead'
+hook_post_source = '''
+call tcomment#DefineType('objc', '// %s')
+'''
 hook_add = '''
 let g:tcommentMapLeader1 = '<F12>'
 let g:tcommentMapLeaderOp1 = 'gc'
 let g:tcommentMapLeaderOp2 = 'gC'
-'''
-hook_post_source = '''
-call tcomment#DefineType('objc', '// %s')
 '''
 
 # Need to `brew install global`
@@ -221,7 +221,8 @@ on_i = 1
 
 [[plugins]]
 repo = 'tyru/eskk.vim'
-hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
+on_i = 1
+on_map = '<Plug>(eskk:toggle)'
 hook_post_source = '''
 function! s:eskk_use_camma_period()
   let table = eskk#table#new('rom_to_hira*', 'rom_to_hira')
@@ -240,8 +241,7 @@ function! s:eskk_use_camma_period()
 endfunction
 call s:eskk_use_camma_period()
 '''
-on_i = 1
-on_map = '<Plug>(eskk:toggle)'
+hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
 
 [[plugins]]
 repo = 'thinca/vim-ref'

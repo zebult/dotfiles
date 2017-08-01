@@ -195,6 +195,8 @@ vnoremap ]] ]m
 vnoremap g]] ]M
 " nnoremap gd gd
 
+nnoremap <Leader>H :CHL<CR>:CML<CR>
+
 " nnoremap <expr> 1 match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
 
 nnoremap <expr> 0
