@@ -1,7 +1,13 @@
 let g:OmniSharp_stop_server = 0
 
+" 定義
 autocmd FileType cs nnoremap <C-j> :OmniSharpGotoDefinition<cr>
+autocmd FileType cs nnoremap t<C-j> :tab sp<CR>:OmniSharpGotoDefinition<CR>
+autocmd FileType cs nnoremap s<C-j> :sp<CR><C-w>j:OmniSharpGotoDefinition<CR>
+" 参照(Caller)
 autocmd FileType cs nnoremap <C-k> :OmniSharpFindUsages<cr>
+autocmd FileType cs nnoremap t<C-k> :tab sp<CR>:OmniSharpFindUsages<CR>
+autocmd FileType cs nnoremap s<C-k> :sp<CR><C-w>j:OmniSharpFindUsages<CR>
 
 autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
 autocmd FileType cs nnoremap <leader>Fx :OmniSharpFixUsings<cr>
