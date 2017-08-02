@@ -46,7 +46,13 @@ call s:source_rc('path.rc.vim')
 call s:source_rc('dein.rc.vim')
 call s:source_rc('mappings.rc.vim')
 " call s:source_rc('view-tomorrow-night.rc.vim')
-call s:source_rc('view-nefertiti.rc.vim')
+
+if has('gui_running')
+  call s:source_rc('view-nefertiti.rc.vim')
+else
+  call s:source_rc('view-nord.rc.vim')
+endif
+
 call s:source_rc('skeleton.rc.vim')
 call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
