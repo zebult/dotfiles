@@ -1,4 +1,6 @@
-" Initialize:
+" Initialize
+
+set sh=zsh
 
 let $DOTVIM = expand('~/.vim')
 " Nvimでカーソルを|にしたい

@@ -3,29 +3,10 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = "has('nvim')"
-on_cmd = 'Denite'
-hook_post_source = '''
-" use ag
-call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
-" call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
-" call denite#custom#source('file_rec', 'sorters', ['sorter_rank'])
-call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
-" call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
-" call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])
-
-" カーソルキー, cn, cpで移動
-call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
-
-" ignore
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [ '.git/', '.ropeproject/', '__pycache__/',
-      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
-
-'''
-hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
+on_i = 1
+hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+# hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
+# on_cmd = 'Denite'
 
 # vimfier need
 [[plugins]]
@@ -69,7 +50,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'
 on_i = 1
-filetypes = ['c', 'cpp', 'm', 'mm']
+on_ft = ['c', 'cpp', 'm', 'mm']
 hook_add = '''
 let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
 let g:neoinclude#_paths = '/usr/local/Cellar/boost'
@@ -78,6 +59,7 @@ let g:neoinclude#_paths = '/usr/local/Cellar/boost'
 # Base Tools: ---------------------------
 
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
+# on_event = 'BufRead'
 [[plugins]]
 repo = 'tpope/vim-dispatch'
 on_i = 1
@@ -132,31 +114,13 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # [[plugins]]
 # repo = 'ujihisa/neco-look'
 # on_i = 1
-# filetypes  =  ['*']
+# on_ft  =  ['*']
 
 # c, cpp complement
 # [[plugins]]
 # repo = 'justmao945/vim-clang'
 # on_i = 1
-# filetypes  =  ['c', 'cpp']
-
-# cs complement
-# 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)
-# path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
-# [deoplete]大量エラー発生時→build上手く行っていない, monoがない
-[[plugins]]
-repo = 'OmniSharp/omnisharp-vim'
-filetypes  =  ['cs', 'csi', 'csx']
-on_i = 1
-windows = 'msbuild server/OmniSharp.sln'
-mac     = 'xbuild server/OmniSharp.sln'
-unix    = 'xbuild server/OmniSharp.sln'
-hook_add = '''
-inoremap <expr> <CR>    pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" ポップアップ削除
-" inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
-'''
+# on_ft  =  ['c', 'cpp']
 
 # make plugin(:LayoutPlugin xxx.vim)
 # [[plugins]]
@@ -168,11 +132,6 @@ on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
-
-[[plugins]]
-repo = 'bkad/CamelCaseMotion'
-hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
-on_i = 1
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -195,7 +154,7 @@ hook_add = 'source ~/.vim/rc/plugins/auto-gtags.rc.vim'
 [[plugins]]
 repo = 'soramugi/auto-ctags.vim'
 hook_add = 'source ~/.vim/rc/plugins/auto-ctags.rc.vim'
-on_map = '<C-[>'
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -223,7 +182,6 @@ on_i = 1
 
 [[plugins]]
 repo = 'tyru/eskk.vim'
-on_i = 1
 on_map = '<Plug>(eskk:toggle)'
 hook_post_source = '''
 function! s:eskk_use_camma_period()
@@ -245,10 +203,9 @@ call s:eskk_use_camma_period()
 '''
 hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
 
-[[plugins]]
-repo = 'thinca/vim-ref'
-on_i = 1
-hook_add = 'source ~/.vim/rc/plugins/ref.rc.vim'
+# [[plugins]]
+# repo = 'thinca/vim-ref'
+# hook_add = 'source ~/.vim/rc/plugins/ref.rc.vim'
 
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
@@ -320,6 +277,35 @@ on_map = '<Plug>(Dash'
 # depends = ['deoplete.nvim']
 # on_ft = ['c', 'cpp', 'cmake', 'mm', 'm']
 
+# C# ---------------------------
+
+# lightlineにエラー表示 http://itchyny.hatenablog.com/entry/20130918/1379461406
+# TODO: neomakeが速いらしい
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_event = ['BufWrite']
+on_ft  =  ['cs', 'js', 'py']
+hook_add = '''
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+'''
+
+# cs complement
+# 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)
+# path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
+# [deoplete]大量エラー発生時→build上手く行っていない, monoがない
+[[plugins]]
+repo = 'yucchiy/omnisharp-vim'
+on_ft =  ['cs', 'csi', 'csx']
+depends = ['vim-dispatch']
+windows = 'msbuild server/OmniSharp.sln'
+mac     = 'xbuild server/OmniSharp.sln'
+unix    = 'xbuild server/OmniSharp.sln'
+hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
+
 # Markdown ---------------------------
 
 [[plugins]]
@@ -339,18 +325,18 @@ autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 
 [[plugins]]
 repo = 'zebult/vim-zxcode'
-filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
+on_ft = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = 'source ~/.vim/rc/plugins/zxcode.rc.vim'
 
 [[plugins]]
 repo = 'tokorom/xcode-actions.vim'
-filetypes = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
+on_ft = ['m', 'mm', 'swift', 'cpp', 'h', 'hpp']
 hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 
 # Xcode化
 # [[plugins]]
 # repo = 'msanders/cocoa.vim'
-# filetypes = ['mm', 'm', 'swift', 'cpp', 'h', 'hpp']
+# on_ft = ['mm', 'm', 'swift', 'cpp', 'h', 'hpp']
 
 # iOSシミュレータ使える??
 # [[plugins]]
@@ -370,15 +356,14 @@ hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
-on_i = 1
-
+on_event = ['BufWrite']
 
 # Html ---------------------------
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-filetypes = ['html']
-on_i = 1
+on_ft = 'html'
+on_event = ['BufWrite']
 
 # Game ---------------------------
 # [[plugins]]

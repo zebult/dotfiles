@@ -5,7 +5,7 @@ let g:lightline = {
             \      ['mode', 'paste'],
             \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu']
             \    ],
-            \   'right': [ [ 'qfstatusline', 'lineinfo', 'percent'],
+            \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
             \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'] ]
             \ },
             \ 'component_expand': {
@@ -16,15 +16,17 @@ let g:lightline = {
             \   'toggl_time': 'toggl#time',
             \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
             \   'tagbar': 'MyCurrentTag',
+            \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
             \ 'component_type': {
             \   'qfstatusline': 'error',
+            \   'syntastic': 'error',
             \ },
             \ 'component_function': {
             \   'anzu': 'anzu#search_status',
             \ },
             \ }
-" component_expand   : 一定時間後に呼ばれる call lightline#update() 
+" component_expand   : 一定時間後に呼ばれる call lightline#update()
 " component_function : カーソル動く度呼ばれる cursor move
 
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
@@ -66,13 +68,14 @@ function! MyCurrentTag()
 endfunction
 
 " 保存時Error時自動で更新し、表示する 同期処理で重いので不採用
-" let g:syntastic_mode_map = { 'mode': 'passive' }
-" augroup AutoSyntastic
-"     autocmd!
-"     autocmd BufWritePost *.c,*.cpp,*js,*py call s:syntastic()
-" augroup END
-" function! s:syntastic()
-"     SyntasticCheck
-"     call lightline#update()
-" endfunction
+let g:syntastic_mode_map = { 'mode': 'passive' }
+augroup AutoSyntastic
+    autocmd!
+    autocmd BufWritePost *.cs,*js,*py call s:syntastic()
+    " autocmd BufWritePost *.c,*.cpp,*js,*py call s:syntastic()
+augroup END
+function! s:syntastic()
+    SyntasticCheck
+    call lightline#update()
+endfunction
 

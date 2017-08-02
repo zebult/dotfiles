@@ -96,6 +96,9 @@ vnoremap s% y:%s ///g<Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
+nnoremap dn :lnext<CR>
+nnoremap dp :lprevious<CR>
+
 vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>

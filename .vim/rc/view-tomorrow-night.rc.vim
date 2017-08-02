@@ -13,8 +13,8 @@ autocmd ColorScheme * highlight Visual ctermfg=31 guifg=#008800
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermfg=241
 " colorscheme one-dark
-" colorscheme Tomorrow-Night
-colorscheme tomorrow-night-org
+colorscheme Tomorrow-Night-Eighties
+" colorscheme tomorrow-night-org
 
 
 " カーソルの形状変更
