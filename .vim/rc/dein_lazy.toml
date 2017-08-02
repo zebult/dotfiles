@@ -3,10 +3,11 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = "has('nvim')"
-on_i = 1
+hook_add = 'nnoremap <Bslash><Bslash> :Denite<CR>'
 hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
-# hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
+# on_i = 1
 # on_cmd = 'Denite'
+# hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # vimfier need
 [[plugins]]

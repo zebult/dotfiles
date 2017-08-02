@@ -6,7 +6,7 @@ let g:lightline = {
             \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu']
             \    ],
             \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
-            \      [ 'toggl_task', 'toggl_time' , 'auto_gtags_is_making_gtags'] ]
+            \      [ 'toggl_task', 'toggl_time'] ]
             \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
@@ -14,7 +14,6 @@ let g:lightline = {
             \   'gitgutter': 'MyGitGutter',
             \   'toggl_task': 'toggl#task',
             \   'toggl_time': 'toggl#time',
-            \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
             \   'tagbar': 'MyCurrentTag',
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
@@ -26,6 +25,9 @@ let g:lightline = {
             \   'anzu': 'anzu#search_status',
             \ },
             \ }
+"  , 'auto_gtags_is_making_gtags'
+" component_expand \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
+
 " component_expand   : 一定時間後に呼ばれる call lightline#update()
 " component_function : カーソル動く度呼ばれる cursor move
 
