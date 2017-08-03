@@ -41,6 +41,7 @@ if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
 
+call s:source_rc('term_color.nvim')
 call s:source_rc('filetype.rc.vim')
 call s:source_rc('path.rc.vim')
 call s:source_rc('dein.rc.vim')
