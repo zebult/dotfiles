@@ -17,6 +17,12 @@ function! ClearLineSpace() range
 endfunction
 command! -range ClearLineSpace <line1>,<line2>call ClearLineSpace()
 
+" 全角スペース全削除
+function! ClearZenkakuSpace() abort
+  silent %s/　/ /ge
+endfunction
+command -bar ClearZenkakuSpace  call ClearZenkakuSpace()
+
 " 行末空白ハイライト消去
 function! NoHighlightTrailingSpaces() abort
   highlight clear TrailingSpaces
@@ -185,6 +191,26 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 command! -bar SynStack call SynStack()
+
+function! QuickFixNext() abort
+  if (len(getqflist()) <= 1)
+    lopen
+    normal 
+  else
+    lnext
+  endif
+endfunction
+command! -bar QuickFixNext call QuickFixNext()
+
+function! QuickFixPrev() abort
+  if (len(getqflist()) <= 1)
+    lopen
+    normal 
+  else
+    lprev
+  endif
+endfunction
+command! -bar QuickFixPrev call QuickFixPrev()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

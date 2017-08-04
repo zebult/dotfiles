@@ -40,8 +40,8 @@ endif
 " set cursorcolumn
 " hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=236
 " サーチ色変更
-hi Search ctermbg=darkgreen guibg=darkgreen
-hi IncSearch ctermfg=darkgreen guifg=darkgreen
+" hi Search ctermbg=darkgreen guibg=darkgreen
+" hi IncSearch ctermfg=darkgreen guifg=darkgreen
 " 検索をハイライトする
 " set hlsearch
 " 選択した範囲文字色
@@ -58,18 +58,22 @@ hi Comment ctermfg=darkgray guifg=darkgray
 " hi PmenuSel ctermbg=yellow
 " 微調整
 hi SpecialKey ctermfg=blue
-hi SpellBad ctermbg=NONE cterm=underline ctermfg=DarkRed
+" hi SpellBad ctermbg=NONE cterm=underline ctermfg=DarkRed
+hi SpellBad ctermbg=NONE cterm=undercurl ctermfg=darkred
+" Qf sign
+hi Error ctermfg=darkgray guifg=darkgray ctermbg=darkred guibg=darkred
+" sytastic
 hi ErrorMsg ctermfg=darkgray guifg=darkgray
 " lightblue
 hi PreProc ctermfg=yellow
 " lightgreen
-hi MoreMsg ctermfg=red
-hi Question ctermfg=red
+" hi MoreMsg ctermfg=red
+" hi Question ctermfg=red
 hi Type ctermfg=red
 " original color
 " hi Function guifg=#FF0000
-hi Function ctermfg=blue
-hi Constant ctermfg=darkblue
+" hi Function ctermfg=blue
+" hi Constant ctermfg=darkblue
 " hi Structure ctermfg=blue
 " hi Type ctermfg=blue
 " hi CCClass ctermfg=blue

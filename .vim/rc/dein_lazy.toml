@@ -125,8 +125,9 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # on_ft  =  ['c', 'cpp']
 
 # make plugin(:LayoutPlugin xxx.vim)
-# [[plugins]]
-# repo = 'mopp/layoutplugin.vim'
+[[plugins]]
+on_cmd = 'LayoutPlugin'
+repo = 'mopp/layoutplugin.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
@@ -307,6 +308,16 @@ windows = 'msbuild server/OmniSharp.sln'
 mac     = 'xbuild server/OmniSharp.sln'
 unix    = 'xbuild server/OmniSharp.sln'
 hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
+
+[[plugins]]
+repo = 'zebult/univim'
+on_map = 'U'
+hook_add = '''
+nnoremap Up :<C-u>UnivimPlay<CR>
+nnoremap U/ :<C-u>UnivimFind<CR>
+nnoremap Ub :<C-u>UnivimMenu Build\ Setting<CR>
+nnoremap Us :<C-u>UnivimMenu SymbolEditorWindow<CR>
+'''
 
 # Markdown ---------------------------
 

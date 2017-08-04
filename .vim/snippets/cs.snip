@@ -115,6 +115,10 @@ snippet position_relative
     this.transform.position += new Vector3(0, 1${0}, 0);
 snippet loadLevel
     Application.LoadLevel("${0}");
+snippet preprocessor_macro
+    #if ${0}
+    #else
+    #endif
 
 snippet glog
     GRAdvancedDebugLog.Log (${0});
@@ -122,4 +126,3 @@ snippet glog_err
     GRAdvancedDebugLog.LogError (${0});
 snippet glog_db
     GRAdvancedDebugLog.DBLog (${0});
-

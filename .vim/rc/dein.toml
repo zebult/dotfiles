@@ -278,6 +278,7 @@ repo = 'ruanyl/vim-gh-line'
 # gitマーク, ハイライト
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+if = "!has('gui_running')"
 hook_add = 'source ~/.vim/rc/plugins/gitgutter.rc.vim'
 
 [[plugins]]

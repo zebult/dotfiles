@@ -1,5 +1,12 @@
+" http://wakame.hatenablog.jp/entry/2017/05/03/222511
+
+" add      : -
+" patch    : p
+" diff     : D
+" checkout : U
+
 let g:netrw_browsex_viewer = 'open'
-" add toggle: -, add patch toggle: p
+
 ca gst Gstatus
 ca gad Gwrite
 ca gcm Gcommit

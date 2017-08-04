@@ -113,8 +113,10 @@ augroup HoldCursorGroup
     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     " autocmd CursorHold * match TrailingSpaces /\s\+$/
-    autocmd CursorHold * call toggl#task_cache_update()
-    autocmd CursorHold * call lightline#update()
+    if has('gui_running')
+      autocmd CursorHold * call toggl#task_cache_update()
+      autocmd CursorHold * call lightline#update()
+    endif
 augroup END
 
 " augroup CursorMovedGroup
@@ -133,3 +135,13 @@ augroup ExitExMode
   autocmd BufWinLeave * set nocursorline
 augroup END
 
+"バイナリ編集(xxd)モード（vim -b での起動、もしくは *.bin ファイルを開くと発動します）
+augroup BinaryXXD
+  autocmd!
+  autocmd BufReadPre  *.bin let &binary =1
+  autocmd BufReadPost * if &binary | silent %!xxd -g 1
+  autocmd BufReadPost * set ft=xxd | endif
+  autocmd BufWritePre * if &binary | %!xxd -r | endif
+  autocmd BufWritePost * if &binary | silent %!xxd -g 1
+  autocmd BufWritePost * set nomod | endif
+augroup END

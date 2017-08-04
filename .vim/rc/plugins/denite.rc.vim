@@ -77,9 +77,8 @@ command! DeniteFileOld call DeniteFileOld()
 
 " use ag
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
-" call denite#custom#source('file_rec', 'matchers', ['matcher_cpsm'])
-" call denite#custom#source('file_rec', 'sorters', ['sorter_rank'])
-call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+" call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy','matcher_ignore_globs'])
 " call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
 " call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])
 
@@ -92,5 +91,11 @@ call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
 " ignore
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ [ '.git/', '.ropeproject/', '__pycache__/',
-      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.meta'])
+      \   '*.png', '*.jpg',
+      \   '*.caf', '*.mp3', '*.mp4',
+      \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
+      \   '*.csd', '*.csb', '*.bin', '*.jar', '*.cmake',
+      \   '*.o', '*.d', '*.3', '*.a', '*.inl', '*.pch', '*.filters', '*.props', '*dll', '*.lib', '*.so', '*.cl', '*.vcxproj', '*.bat', '*.def', '*.vcxitems', '*.aidl', '*.xaml',
+      \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln',
+      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
 
