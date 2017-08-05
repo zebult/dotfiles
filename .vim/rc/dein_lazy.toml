@@ -183,9 +183,10 @@ if = "!has('gui_running')"
 hook_post_source = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 on_i = 1
 
+# on_map = '<Plug>(eskk:toggle)'
 [[plugins]]
 repo = 'tyru/eskk.vim'
-on_map = '<Plug>(eskk:toggle)'
+on_map = '<F10>'
 hook_post_source = '''
 function! s:eskk_use_camma_period()
   let table = eskk#table#new('rom_to_hira*', 'rom_to_hira')
