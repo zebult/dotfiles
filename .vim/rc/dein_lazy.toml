@@ -302,7 +302,7 @@ let g:syntastic_check_on_wq = 0
 # path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
 # [deoplete]大量エラー発生時→build上手く行っていない, monoがない
 [[plugins]]
-repo = 'yucchiy/omnisharp-vim'
+repo = 'OmniSharp/omnisharp-vim'
 on_ft =  ['cs', 'csi', 'csx']
 depends = ['vim-dispatch']
 windows = 'msbuild server/OmniSharp.sln'
