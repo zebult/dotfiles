@@ -20,4 +20,4 @@
 [http]
 	postBuffer = 524288000
 [commit]
-	template = /Users/zebra/.gitmessage
+	template = ~/.gitmessage
