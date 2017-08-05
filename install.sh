@@ -21,6 +21,8 @@ do
     ln -snfv "$DOTFILES"/"$f" "$HOME"/"$f"
 done
 
+git config --global commit.template $HOME/.gitmessage
+
 # .gitconfig.local settings
 cp gitconfig.local $HOME/.gitconfig.local
 # input
