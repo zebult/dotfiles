@@ -21,13 +21,13 @@ let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools
 " let g:deoplete#omni#input_patterns.objcpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " 補完候補閉じる
-inoremap <expr><C-e> deoplete#cancel_popup()
+" inoremap <expr><C-e> deoplete#cancel_popup()
 
 " 補完候補確定
-inoremap <expr><C-y> deoplete#close_popup()
-inoremap <expr><CR>  pumvisible() ? "\<C-y>"  : "\<CR>"
-inoremap <expr><Tab> pumvisible() ? "\<C-n>"  : "\<Tab>"
-inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
+" inoremap <expr><C-y> deoplete#close_popup()
+" inoremap <expr><CR>  pumvisible() ? "\<C-y>"  : "\<CR>"
+" inoremap <expr><Tab> pumvisible() ? "\<C-n>"  : "\<Tab>"
+" inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-x>\<C-o>"
 
 " 自動補完on/off
 " inoremap jn <ESC>:NeoCompleteToggle<CR>a

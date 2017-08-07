@@ -186,24 +186,44 @@ on_i = 1
 # on_map = '<Plug>(eskk:toggle)'
 [[plugins]]
 repo = 'tyru/eskk.vim'
-on_map = '<F10>'
+on_i = 1
 hook_post_source = '''
-function! s:eskk_use_camma_period()
-  let table = eskk#table#new('rom_to_hira*', 'rom_to_hira')
-  call table.add_map(',', '，')
-  call table.add_map('.', '．')
-  call table.add_map('=', '＝')
-  call table.add_map('~', '～')
-  call eskk#register_mode_table('hira', table)
+imap <C-j> <Plug>(eskk:toggle)
+cmap <C-j> <Plug>(eskk:toggle)
 
-  let table = eskk#table#new('rom_to_kata*', 'rom_to_kata')
+if dein#is_sourced('eskk')
+  augroup vimrc-plugin-eskk
+    autocmd!
+    autocmd CursorHold * silent EskkUpdateDictionary
+    autocmd User eskk-initialize-pre call s:init_eskk()
+  augroup END
+endif
+
+function! s:init_eskk()
+  let t = eskk#table#new('rom_to_hira*', 'rom_to_hira')
   call table.add_map(',', '，')
   call table.add_map('.', '．')
   call table.add_map('=', '＝')
   call table.add_map('~', '～')
-  call eskk#register_mode_table('kata', table)
+  call t.add_map('va', 'ゔぁ')
+  call t.add_map('vi', 'ゔぃ')
+  call t.add_map('vu', 'ゔ')
+  call t.add_map('ve', 'ゔぇ')
+  call t.add_map('vo', 'ゔぉ')
+  call t.add_map('z ', '　')
+  call t.add_map('h-', '-')
+  call t.add_map('h!', '!')
+  call t.add_map('h/', '/')
+  call t.add_map('h ', ' ')
+  call t.add_map('h:', ':')
+  call t.add_map('h;', ';')
+  call t.add_map('h[', '[')
+  call t.add_map('h]', ']')
+  call t.add_map('h(', '(')
+  call t.add_map('h)', ')')
+  call eskk#register_mode_table('hira', t)
+  unlet t
 endfunction
-call s:eskk_use_camma_period()
 '''
 hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
 
@@ -300,7 +320,8 @@ let g:syntastic_check_on_wq = 0
 # cs complement
 # 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)
 # path/OmniSharp/omnisharp-vim/server$ xbuild # xbuildはmonoに同包されているコマンド
-# [deoplete]大量エラー発生時→build上手く行っていない, monoがない
+# xbuildで379 Error(s)等で失敗する場合は、vimの再読込すると直った(monoの再インストールは意味なかった)
+# [deoplete]大量エラー発生時: monoの準備終わってない(Solution has finished loadingが呼ばれたらok)
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 on_ft =  ['cs', 'csi', 'csx']
@@ -318,6 +339,7 @@ nnoremap Up :<C-u>UnivimPlay<CR>
 nnoremap U/ :<C-u>UnivimFind<CR>
 nnoremap Ub :<C-u>UnivimMenu Build\ Setting<CR>
 nnoremap Us :<C-u>UnivimMenu SymbolEditorWindow<CR>
+nnoremap Uu :<C-u>UnivimMenu Scenario Data Builder<CR>
 '''
 
 # Markdown ---------------------------

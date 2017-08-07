@@ -61,7 +61,8 @@ hi SpecialKey ctermfg=blue
 " hi SpellBad ctermbg=NONE cterm=underline ctermfg=DarkRed
 hi SpellBad ctermbg=NONE cterm=undercurl ctermfg=darkred
 " Qf sign
-hi Error ctermfg=darkgray guifg=darkgray ctermbg=darkred guibg=darkred
+" hi Error ctermfg=darkgray guifg=darkgray ctermbg=darkred guibg=darkred
+hi Error ctermfg=darkred guifg=darkred ctermbg=none guibg=none
 " sytastic
 hi ErrorMsg ctermfg=darkgray guifg=darkgray
 " lightblue
