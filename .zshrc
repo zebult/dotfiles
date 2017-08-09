@@ -350,7 +350,7 @@ peco-tree-dir(){
   zle accept-line
 }
 zle -N peco-tree-dir
-bindkey '^s' peco-tree-dir
+bindkey '^f' peco-tree-dir
 
 peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
@@ -410,12 +410,12 @@ bindkey '^p' pwdcp
 # zle -N defaultcolor
 # bindkey '^z' defaultcolor
 
-vimfiler() {
-    BUFFER="vim ."
-    zle accept-line
-}
-zle -N vimfiler
-bindkey '^f' vimfiler
+# vimfiler() {
+#     BUFFER="vim ."
+#     zle accept-line
+# }
+# zle -N vimfiler
+# bindkey '^f' vimfiler
 
 sourcezshrc() {
     echo 'source ~/.zshrc'
@@ -423,7 +423,7 @@ sourcezshrc() {
     zle accept-line
 }
 zle -N sourcezshrc
-bindkey '^t' sourcezshrc
+bindkey '^s' sourcezshrc
 
 currentopen() {
     echo "open "`pwd`
@@ -439,6 +439,13 @@ memodiary() {
 }
 zle -N memodiary
 bindkey '^y' memodiary
+
+todolist() {
+    BUFFER="vim ~/Dropbox/Saichi/Diary/todo.md"
+    zle accept-line
+}
+zle -N todolist
+bindkey '^t' todolist
 
 zshrcopen() {
     BUFFER="vim ~/.zshrc"

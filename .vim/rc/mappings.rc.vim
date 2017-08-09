@@ -69,8 +69,15 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap sn gt
-nnoremap sp gT
+nnoremap sn :<C-u>bn<CR>
+nnoremap sp :<C-u>bp<CR>
+" nnoremap sN :<C-u>bn<CR>
+" nnoremap sP :<C-u>bp<CR>
+" nnoremap fn :<C-u>bn<CR>
+" nnoremap fp :<C-u>bp<CR>
+" nnoremap <Leader>s :<C-u>bn<CR>
+nnoremap tn gt
+nnoremap tp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く
@@ -82,11 +89,6 @@ nnoremap g<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap sw <C-w>w
 nnoremap so <C-w>o
 nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap fn :<C-u>bn<CR>
-nnoremap fp :<C-u>bp<CR>
-nnoremap <Leader>s :<C-u>bn<CR>
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>new<CR><C-w>J

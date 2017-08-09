@@ -6,7 +6,7 @@ set autohidecursor
 " set noinsertmappings
 set nosmoothscroll
 let highlight = "#ff00ff"
-let blacklists = ["https://trello.com/*"]
+let blacklists = ["https://trello.com/*", "https://www.chatwork.com/*"]
 let mapleader = "<Space>"
 let locale = "jp"
 let typelinkhintsdelay = 0
