@@ -14,7 +14,7 @@ snippet update
 snippet find
     GameObject.Find("${1}")${2}
 snippet gc
-    GetComponent()
+    ${1}.transform.GetComponent<${2}>();
 snippet ac
     AddComponent()
 snippet sar
@@ -107,6 +107,18 @@ snippet OnCollisionExit
     void OnCollisionExit(Collision col) {
         ${0:col.gameObject}
     }
+snippet OnCollisionEnter2D
+    void OnCollisionEnter(Collision2D col) {
+        ${0:col.gameObject}
+    }
+snippet OnCollisionStay2D
+    void OnCollisionStay(Collision2D col) {
+        ${0:col.gameObject}
+    }
+snippet OnCollisionExit2D
+    void OnCollisionExit(Collision2D col) {
+        ${0:col.gameObject}
+    }
 snippet OnTriggerEnter
     void OnTriggerEnter(Collider col) {
         ${0:col.gameObject}
@@ -126,3 +138,13 @@ snippet glog_err
     GRAdvancedDebugLog.LogError (${0});
 snippet glog_db
     GRAdvancedDebugLog.DBLog (${0});
+snippet Instantiate
+    Instantiate(Resources.Load ("Prefabs/${0}"));
+snippet Instantiate_full
+    Instantiate(Resources.Load("Prefabs/${0}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
+
+snippet ui
+    using UnityEngine.UI;
+snippet spine
+    using Spine;
+    using Spine.Unity;

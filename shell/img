@@ -93,6 +93,7 @@ do
                 exit 1
             fi
             echo "success >> out_m.png"
+            open out_m.png
             exit 1
             ;;
         '-f'|'--forceoverwrite' )
