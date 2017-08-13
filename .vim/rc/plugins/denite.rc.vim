@@ -37,8 +37,7 @@ nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-
 nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
 
 " Show
-nnoremap <silent> [denite]B :<C-u>Denite buffer -highlight-mode-insert=Search file_old<CR>
-nnoremap <silent> [denite]f :<C-u>Denite buffer -highlight-mode-insert=Search file_old<CR>
+nnoremap <silent> [denite]f :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> [denite]T :<C-u>Unite tab<CR>
 
 nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
@@ -93,9 +92,9 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ [ '.git/', '.ropeproject/', '__pycache__/',
       \   '*.png', '*.jpg',
       \   '*.caf', '*.mp3', '*.mp4',
-      \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
       \   '*.csd', '*.csb', '*.bin', '*.jar', '*.cmake',
       \   '*.o', '*.d', '*.3', '*.a', '*.inl', '*.pch', '*.filters', '*.props', '*dll', '*.lib', '*.so', '*.cl', '*.vcxproj', '*.bat', '*.def', '*.vcxitems', '*.aidl', '*.xaml',
       \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln',
       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
+      " \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
 

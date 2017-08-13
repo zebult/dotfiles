@@ -159,6 +159,7 @@ nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 nnoremap <Leader>w :w<Cr>
 nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>Q :qa<Cr>
+nnoremap <Leader>1 :bd<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 nnoremap <Leader># :qa!<Cr>
