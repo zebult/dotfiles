@@ -251,7 +251,9 @@ on_map = '<Leader>B'
 
 [[plugins]]
 repo = 'kana/vim-altr'
-hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
+hook_add = '''
+nmap <Leader>a <Plug>(altr-forward)
+'''
 on_map = '<Plug>(altr-'
 
 [[plugins]]

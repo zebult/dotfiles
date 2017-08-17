@@ -95,6 +95,7 @@ snippet void
 snippet fori
     for (int i = 0; i < ${0:list}.Count; i++) {
     }
+
 snippet OnCollisionEnter
     void OnCollisionEnter(Collision col) {
         ${0:col.gameObject}
@@ -108,24 +109,49 @@ snippet OnCollisionExit
         ${0:col.gameObject}
     }
 snippet OnCollisionEnter2D
-    void OnCollisionEnter(Collision2D col) {
+    void OnCollisionEnter2D(Collision2D col) {
         ${0:col.gameObject}
     }
 snippet OnCollisionStay2D
-    void OnCollisionStay(Collision2D col) {
+    void OnCollisionStay2D(Collision2D col) {
         ${0:col.gameObject}
     }
 snippet OnCollisionExit2D
-    void OnCollisionExit(Collision2D col) {
+    void OnCollisionExit2D(Collision2D col) {
         ${0:col.gameObject}
     }
+
 snippet OnTriggerEnter
     void OnTriggerEnter(Collider col) {
         ${0:col.gameObject}
     }
+snippet OnTriggerStay
+    void OnTriggerStay(Collider col) {
+        ${0:col.gameObject}
+    }
+snippet OnTriggerExit
+    void OnTriggerExit(Collider col) {
+        ${0:col.gameObject}
+    }
+snippet OnTriggerEnter2D
+    void OnTriggerEnter2D(Collider2D col) {
+        ${0:col.gameObject}
+    }
+snippet OnTriggerStay2D
+    void OnTriggerStay2D(Collider2D col) {
+        ${0:col.gameObject}
+    }
+snippet OnTriggerExit2D
+    void OnTriggerExit2D(Collider2D col) {
+        ${0:col.gameObject}
+    }
+
 snippet position_relative
-    this.transform.position += new Vector3(0, 1${0}, 0);
-snippet loadLevel
+    transform.position += new Vector3(0, 1${0}, 0);
+snippet scale
+    transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
+
+snippet applicationLoadLevel
     Application.LoadLevel("${0}");
 snippet preprocessor_macro
     #if ${0}

@@ -295,6 +295,12 @@ gamd() {
     fi
 }
 
+gplb() {
+    git log --oneline -1
+    git push . origin/"$1":"$1"
+    git log --oneline -10
+}
+
 checkRecentLog() {
     echo "======="
     glo -2

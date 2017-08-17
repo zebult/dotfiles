@@ -21,6 +21,10 @@ let g:quickrun_config['cpp'] = {
 \   'cmdopt': '-std=c++11'
 \ }
 
+let g:quickrun_config['python'] = {
+\   'command': 'python2'
+\ }
+
 let g:quickrun_config['javascript'] = {
 \   "javascript/watchdogs_checker" : {
 \     "type" : "eslint"
