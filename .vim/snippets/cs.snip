@@ -75,8 +75,6 @@ snippet main
             Console.WriteLine("Hello World!");
         }
     }
-snippet SerializeField
-    [SerializeField]
 snippet ismaster
     if (PhotonNetwork.isMasterClient) {
         ${1}
@@ -145,6 +143,11 @@ snippet OnTriggerExit2D
     void OnTriggerExit2D(Collider2D col) {
         ${0:col.gameObject}
     }
+
+snippet SerializeField
+    [SerializeField]
+snippet HideInInspector
+    [HideInInspector]
 
 snippet position_relative
     transform.position += new Vector3(0, 1${0}, 0);

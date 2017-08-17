@@ -1,7 +1,6 @@
 nmap gn <Plug>(cursor-line-color-lowlight)<Plug>(anzu-mode-n)
 " nmap gp <Plug>(cursor-line-color-lowlight)<Plug>(anzu-mode-N)
-" nmap N <Plug>(cursor-line-color-lowlight)<Plug>(anzu-N)
-nmap N <Plug>(cursor-line-color-lowlight)<Plug>(anzu-mode-N)
+nmap N <Plug>(cursor-line-color-lowlight)<Plug>(anzu-N)
 nmap n <Plug>(cursor-line-color-lowlight)<Plug>(anzu-n)
 nmap * <Plug>(cursor-line-color-lowlight)<Plug>(anzu-star)
 " nmap # <Plug>(cursor-line-color-lowlight)<Plug>(anzu-sharp)
