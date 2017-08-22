@@ -20,8 +20,8 @@ inoremap jj <ESC><ESC><ESC>
 " noremap k gk
 " noremap gj j
 " noremap gk k
-nnoremap <Down> <C-e>j
-nnoremap <Up> <C-y>k
+nnoremap <Down> 5j
+nnoremap <Up> 5k
 
 noremap ;  :
 noremap :  ;
@@ -159,7 +159,7 @@ nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 nnoremap <Leader>w :w<Cr>
 nnoremap <Leader>q :q<Cr>
 nnoremap <Leader>Q :qa<Cr>
-nnoremap <Leader>1 :bd<Cr>
+nnoremap <Leader>e :bd<Cr>
 nnoremap <Leader>2 :wq<Cr>
 nnoremap <Leader>! :q!<Cr>
 nnoremap <Leader># :qa!<Cr>

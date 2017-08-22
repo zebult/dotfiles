@@ -1,8 +1,8 @@
 nnoremap [denite] <Nop>
 nmap <Bslash> [denite]
 
+      " \ {'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
 let mapping_list = [
-      \ {'key': 'j', 'command': 'Denite',  'source': 'file_rec'},
       \ {'key': 'J', 'command': 'DeniteBufferDir',           'source': 'file_rec'},
       \ {'key': 'k', 'command': 'Denite',           'source': 'file_old'},
       \ {'key': 'K', 'command': 'Denite',           'source': 'Denite buffer<CR>: Denite -immediately file_old<CR><C-c>'},
@@ -37,7 +37,7 @@ nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-
 nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
 
 " Show
-nnoremap <silent> [denite]f :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> [denite]j :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> [denite]T :<C-u>Unite tab<CR>
 
 nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
