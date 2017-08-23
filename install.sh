@@ -123,6 +123,8 @@ case "${os}" in
         pyenv rehash
         echo 'python new version->'
         python --version
+        python3 -m easy_install pip
+        pip install requests
         # pip3 install neovim
         pip2 install --user --upgrade neovim #python2も使えるようにする
         pip3 install --user --upgrade neovim
