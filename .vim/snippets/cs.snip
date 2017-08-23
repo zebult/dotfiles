@@ -177,3 +177,10 @@ snippet ui
 snippet spine
     using Spine;
     using Spine.Unity;
+
+snippet prop
+    public ${1:type} ${0:var} { get; set; }
+
+snippet prope
+    private bool __${1:value};
+    public bool <|1|> { get { return __<|1|>; } set { __<|1|> = value; } }

@@ -461,6 +461,13 @@ zshrcopen() {
 zle -N zshrcopen
 bindkey '^z' zshrcopen
 
+unitylog() {
+    BUFFER="vim <(tail -n +2 ~/Library/Logs/Unity/Editor.log)"
+    zle accept-line
+}
+zle -N unitylog
+bindkey '^u' unitylog
+
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
