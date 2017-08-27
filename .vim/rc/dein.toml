@@ -111,6 +111,7 @@ let g:openbrowser_browser_commands = [
 
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
+hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
 
 # [[plugins]]
 # repo = 'zebult/scrolloff_toggle.vim'

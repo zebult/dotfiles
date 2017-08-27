@@ -34,6 +34,19 @@ function! JsonPretty() abort
 endfunction
 command -bar JsonPretty  call JsonPretty()
 
+function! JsonLine() abort
+  norm! 10000J
+  silent %s/\ //ge
+endfunction
+command -bar JsonLine call JsonLine()
+
+function! JsonLineEscape() abort
+  norm! 10000J
+  silent %s/\ //ge
+  silent %s/"/\\"/ge
+endfunction
+command -bar JsonLineEscape call JsonLineEscape()
+
 function! XmlPretty() abort
   %s/></>\r</g | filetype indent on | setf xml | normal gg=G
 endfunction
@@ -135,13 +148,6 @@ function! DeinRefresh() abort
    call dein#recache_runtimepath()
 endfunction
 command -bar DeinRefresh call DeinRefresh()
-
-function! JsonLine() abort
-  norm! 10000J
-  silent %s/\ //ge
-  silent %s/"/\\"/ge
-endfunction
-command -bar JsonLine call JsonLine()
 
 function! CursorLineColorHighlight() abort
   set cursorline

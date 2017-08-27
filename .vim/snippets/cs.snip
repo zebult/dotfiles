@@ -3,12 +3,19 @@ snippet if
     {
         ${2}
     }
+snippet awake
+    void Awake()
+    {
+        ${1}
+    }
 snippet start
-    void Start() {
+    void Start()
+    {
         ${1}
     }
 snippet update
-    void Update() {
+    void Update()
+    {
         ${1}
     }
 snippet find
@@ -90,6 +97,9 @@ snippet StartCoroutine
 snippet void
     private void ${0}() {
     }
+snippet voidp
+    public void ${0}() {
+    }
 snippet fori
     for (int i = 0; i < ${0:list}.Count; i++) {
     }
@@ -164,11 +174,16 @@ snippet preprocessor_macro
     #endif
 
 snippet glog
-    GRAdvancedDebugLog.Log (${0});
+    GRAdvancedDebugLog.Log(${0});
 snippet glog_err
-    GRAdvancedDebugLog.LogError (${0});
+    GRAdvancedDebugLog.LogError(${0});
 snippet glog_db
-    GRAdvancedDebugLog.DBLog (${0});
+    GRAdvancedDebugLog.DBLog(${0});
+snippet ggetparam
+    GRGameManager.Instance.GetParameter("${0}");
+snippet ggetword
+    GRGameManager.Instance.GetWord("${0}");
+
 snippet Instantiate
     Instantiate(Resources.Load ("Prefabs/${0}"));
 snippet Instantiate_full
@@ -184,5 +199,20 @@ snippet prop
     public ${1:type} ${0:var} { get; set; }
 
 snippet prope
-    private bool __${1:value};
-    public bool <|1|> { get { return __<|1|>; } set { __<|1|> = value; } }
+    private ${1:type} __${2:value};
+    public <|1|> <|2|>
+    {
+        get { return __<|2|>; }
+        set
+        {
+            __<|2|> = value;
+        }
+    }
+
+snippet Assert
+    Debug.Assert(${1}, ${0});
+snippet foreach_child
+    foreach (Transform ${1} in GameObject.Find("${2}").transform)
+    {
+        ${3}
+    }

@@ -94,7 +94,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \   '*.caf', '*.mp3', '*.mp4',
       \   '*.csd', '*.csb', '*.bin', '*.jar', '*.cmake',
       \   '*.o', '*.d', '*.3', '*.a', '*.inl', '*.pch', '*.filters', '*.props', '*dll', '*.lib', '*.so', '*.cl', '*.vcxproj', '*.bat', '*.def', '*.vcxitems', '*.aidl', '*.xaml',
-      \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln',
+      \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln', '*.unity',
       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
       " \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
 

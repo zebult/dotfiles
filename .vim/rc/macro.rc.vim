@@ -36,3 +36,51 @@ function! RedmineDateDecrement() abort
 endfunction
 command! -bar RedmineDateDecrement call RedmineDateDecrement()
 nnoremap Rx :RedmineDateDecrement<CR>
+
+" Auto entity create
+function! AutoUnityEntityCreate() abort
+  normal mu
+  normal "eyiw/convertj%k%kkVjypkdiw"ePj0fT2lde"eP
+  normal "cyiwG?privatevipyjpokkdiinkkkwd$"epNwdiw"ePwdiw"cP
+  normal bb;OmniSharpGotoDefinitionjjviiyjopo{j
+  normal }kddkvip;FieldToEntity
+endfunction
+command! -bar AutoUnityEntityCreate call AutoUnityEntityCreate()
+
+" フィールドをエンティティ代入式に変換
+function! FieldToEntity() range
+  for linenum in range(a:firstline, a:lastline)
+    execute linenum." call s:PrivateFieldToEntity()"
+  endfor
+
+  normal vip;Align =
+  normal vip==
+  normal {iDebug.Log("");hhh"epa Specialize==
+  normal o"epa Entity = new "epa();==
+  normal V}k;Align =
+  normal }ireturn Entity;==
+  normal 'u
+
+endfunction
+command! -range FieldToEntity <line1>,<line2>call FieldToEntity()
+
+function! s:PrivateFieldToEntity() abort
+    let repl = substitute(getline('.'),'public','','g')
+    call setline(line("."), repl)
+
+    normal w"zyiw"0ciwEntity.l"0x$i = ("zp$iRow["^f.lyiwf"pviwC
+
+    let repl = substitute(getline('.'),'(float)','System.Convert.ToSingle(','g')
+    call setline(line("."), repl)
+
+    let repl = substitute(getline('.'),'(bool)','System.Convert.ToBoolean(','g')
+    call setline(line("."), repl)
+
+    if match(getline('.'), 'ToSingle') != -1
+      normal $i)
+    endif
+
+    if match(getline('.'), 'ToBoolean') != -1
+      normal $i)
+    endif
+endfunction
