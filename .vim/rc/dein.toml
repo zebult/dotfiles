@@ -97,10 +97,6 @@ hook_add = '''
 let g:netrw_nogx = 1
 nmap <Leader>o <Plug>(openbrowser-smart-search)
 vmap <Leader>o <Plug>(openbrowser-smart-search)
-let g:openbrowser_browser_commands = [
-\   {'name': '/Applications/Vivaldi.app',
-\    'args': ['start', '{browser}', '{uri}']}
-\]
 '''
 
 # [[plugins]]

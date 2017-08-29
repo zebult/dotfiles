@@ -26,4 +26,4 @@ function! Gacm() abort
 endfunction
 command! -nargs=0 Gacm call Gacm()
 
-nnoremap <Leader>S :Gstatus<CR><C-w>o
+nnoremap <Leader>gs :Gstatus<CR><C-w>o

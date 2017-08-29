@@ -144,6 +144,7 @@ alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
+alias unc-cs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup'
 
 alias cp='cp -v'
 alias cdn='peco-tree-vim'

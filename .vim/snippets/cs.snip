@@ -31,11 +31,11 @@ snippet rc
 snippet ee
     [ExecuteInEditMode]
 snippet log
-    Debug.Log(${0});
+    Debug.Log(${1});
 snippet log_warn
-    Debug.LogWarning(${0});
+    Debug.LogWarning(${1});
 snippet log_err
-    Debug.LogError(${0});
+    Debug.LogError(${1});
 snippet inst
     (${2:GameObject}) GameObject.Instantiate(${1:thing}, Vector3.zero, Quaternion.identity);
 snippet go
@@ -75,7 +75,7 @@ snippet tryget
     }
 snippet main
     using System;
-    class ${0}
+    class ${1}
     {
         static void Main()
         {
@@ -93,12 +93,12 @@ snippet IEnumerator
         yield return new WaitForSeconds(${2});
     }
 snippet StartCoroutine
-    StartCoroutine(${0});
+    StartCoroutine(${1});
 snippet void
-    private void ${0}() {
+    private void ${1}() {
     }
 snippet voidp
-    public void ${0}() {
+    public void ${1}() {
     }
 snippet fori
     for (int i = 0; i < ${0:list}.Count; i++) {
@@ -160,34 +160,34 @@ snippet HideInInspector
     [HideInInspector]
 
 snippet position_relative
-    transform.position += new Vector3(0, ${0}, 0);
+    transform.position += new Vector3(0, ${1}, 0);
 snippet rotation_absolute
     transform.rotation = Quaternion.Euler(0, {0}, 0);
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 
 snippet applicationLoadLevel
-    Application.LoadLevel("${0}");
+    Application.LoadLevel("${1}");
 snippet preprocessor_macro
-    #if ${0}
+    #if ${1}
     #else
     #endif
 
 snippet glog
-    GRAdvancedDebugLog.Log(${0});
+    GRAdvancedDebugLog.Log(${1});
 snippet glog_err
-    GRAdvancedDebugLog.LogError(${0});
+    GRAdvancedDebugLog.LogError(${1});
 snippet glog_db
-    GRAdvancedDebugLog.DBLog(${0});
+    GRAdvancedDebugLog.DBLog(${1});
 snippet ggetparam
-    GRGameManager.Instance.GetParameter("${0}");
+    GRGameManager.Instance.GetParameter("${1}");
 snippet ggetword
-    GRGameManager.Instance.GetWord("${0}");
+    GRGameManager.Instance.GetWord("${1}");
 
 snippet Instantiate
-    Instantiate(Resources.Load ("Prefabs/${0}"));
+    Instantiate(Resources.Load ("Prefabs/${1}"));
 snippet Instantiate_full
-    Instantiate(Resources.Load("Prefabs/${0}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
+    Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
 
 snippet ui
     using UnityEngine.UI;
@@ -210,9 +210,41 @@ snippet prope
     }
 
 snippet Assert
-    Debug.Assert(${1}, ${0});
+    Debug.Assert(${1}, ${2});
 snippet foreach_child
     foreach (Transform ${1} in GameObject.Find("${2}").transform)
     {
         ${3}
     }
+snippet conditional
+    [System.Diagnostics.Conditional("${1:DEBUG}")]
+snippet update_rx
+    var update = Observable
+                    .EveryUpdate()
+                    .Subscribe(_ => ${1})
+                    .AddTo(this);
+snippet timer_rx
+    Observable.Interval(TimeSpan.FromMilliseconds(1000)).Subscribe(_ => {
+            ${1}
+    }).AddTo(this);
+snippet color
+    var color = new Color(.0f, .0f, .0f, .0f);
+snippet readonly
+    private readonly ${1} ${2}
+snippet enum_string
+    public enum ${1}
+    {
+        ${2}
+    }
+    public static class <|1|>Ext
+    {
+        public static string ObtainType(this <|1|> value)
+        {
+            string[] values = { ""};
+            return values[(int) value];
+        }
+    }
+    <|1|>.Xxx.ObtainType()
+snippet action
+    (() => {
+    });
