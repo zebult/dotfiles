@@ -12,8 +12,8 @@ autocmd FileType cs nnoremap s<C-k> :sp<CR><C-w>j:OmniSharpFindUsages<CR>
 autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
 autocmd FileType cs nnoremap <leader>Fx :OmniSharpFixUsings<cr>
 
-autocmd FileType cs nnoremap [[ :OmniSharpNavigateUp<cr>
-autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
+" autocmd FileType cs nnoremap [[ :OmniSharpNavigateUp<cr>
+" autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
 
 autocmd FileType cs nnoremap <Leader>R :OmniSharpReloadSolution<cr>
 autocmd FileType cs nnoremap <Leader>S :OmniSharpRename<cr>

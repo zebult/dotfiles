@@ -166,7 +166,7 @@ snippet rotation_absolute
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 
-snippet applicationLoadLevel
+snippet application
     Application.LoadLevel("${1}");
 snippet preprocessor_macro
     #if ${1}
@@ -248,3 +248,7 @@ snippet enum_string
 snippet action
     (() => {
     });
+snippet button
+    ${1}.OnClickAsObservable()
+    .Subscribe(_ => GRUtil.SafeCall(${2}))
+    .AddTo(this);

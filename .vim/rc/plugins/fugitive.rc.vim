@@ -8,8 +8,8 @@
 let g:netrw_browsex_viewer = 'open'
 
 ca gst Gstatus
-ca gad Gwrite
-ca gcm Gcommit
+ca gad Gwrite .
+ca gcm Gcommit -v
 ca gco Gread
 ca gbl Gblame
 ca glo Glog
@@ -26,4 +26,4 @@ function! Gacm() abort
 endfunction
 command! -nargs=0 Gacm call Gacm()
 
-nnoremap <Leader>gs :Gstatus<CR><C-w>o
+nnoremap <Leader>gg :Gstatus<CR><C-w>o

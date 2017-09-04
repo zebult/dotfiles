@@ -49,7 +49,7 @@ nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately -highl
 nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
 nnoremap <silent> [denite]H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
 
-nnoremap <silent> [denite]F  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
+nnoremap <silent> [denite]f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
 nnoremap <silent> [denite]a  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 

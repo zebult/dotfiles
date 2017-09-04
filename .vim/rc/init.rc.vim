@@ -107,6 +107,7 @@ augroup SaveGroup
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     autocmd BufWritePre * call lightline#update()
+    autocmd BufWritePre *.cs call Uncrustify('cs')
 augroup END
 
 augroup HoldCursorGroup

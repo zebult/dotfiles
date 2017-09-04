@@ -1,3 +1,4 @@
+let g:rtagsUseDefaultMappings = 0
 " 定義へジャンプ
 nnoremap <silent> r<C-j> :call rtags#JumpTo(g:SAME_WINDOW)<CR>
 " 参照へジャンプ

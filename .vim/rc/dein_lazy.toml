@@ -349,7 +349,9 @@ hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 repo = 'zebult/univim'
 on_map = 'U'
 hook_add = '''
-nnoremap Up :<C-u>UnivimPlay<CR>
+" nnoremap Up :<C-u>UnivimPlay<CR>
+" autocmd FileType cs nnoremap <Leader>r :<C-u>UnivimPlay<CR>
+autocmd FileType cs nnoremap rr :<C-u>UnivimPlay<CR>
 nnoremap U/ :<C-u>UnivimFind<CR>
 nnoremap Ub :<C-u>UnivimMenu Build\ Setting<CR>
 nnoremap Us :<C-u>UnivimMenu SymbolEditorWindow<CR>

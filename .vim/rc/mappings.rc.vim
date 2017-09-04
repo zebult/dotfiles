@@ -76,8 +76,8 @@ nnoremap sp :<C-u>bp<CR>
 " nnoremap fn :<C-u>bn<CR>
 " nnoremap fp :<C-u>bp<CR>
 " nnoremap <Leader>s :<C-u>bn<CR>
-nnoremap tn gt
-nnoremap tp gT
+nnoremap sN gt
+nnoremap sP gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く

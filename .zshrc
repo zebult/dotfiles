@@ -144,7 +144,7 @@ alias c7='chmod 755'
 alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
-alias unc-cs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup'
+alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
 
 alias cp='cp -v'
 alias cdn='peco-tree-vim'
@@ -152,6 +152,8 @@ alias cdn='peco-tree-vim'
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
+
+alias gen="mvim ~/Dropbox/Saichi/Document/work/goodroid/gen.md"
 
 set -o vi
 bindkey -M viins '^A'  beginning-of-line
@@ -317,6 +319,28 @@ gbrrd()  {
     git branch | grep $1 | xargs git branch -d
 }
 
+gop() {
+    COMMAND=diff
+    REV=HEAD
+    OPT='--relative'
+
+    if [ $1 ]; then
+        COMMAND=$1
+    fi
+
+    if [ $2 ]; then
+        REV=$2
+    fi
+
+    if [ $COMMAND = "show" ]; then
+        PARAM='--pretty=format: --name-only'
+    else
+        PARAM='--name-only'
+    fi
+
+    git $COMMAND $PARAM $OPT $REV | xargs $EDITOR
+}
+
 guu()
 {
     if [ -n "$1" ]; then
@@ -358,7 +382,7 @@ peco-tree-dir(){
   zle accept-line
 }
 zle -N peco-tree-dir
-bindkey '^f' peco-tree-dir
+bindkey '^;' peco-tree-dir
 
 peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
@@ -418,12 +442,12 @@ bindkey '^p' pwdcp
 # zle -N defaultcolor
 # bindkey '^z' defaultcolor
 
-# vimfiler() {
-#     BUFFER="vim ."
-#     zle accept-line
-# }
-# zle -N vimfiler
-# bindkey '^f' vimfiler
+vimfiler() {
+    BUFFER="vim ."
+    zle accept-line
+}
+zle -N vimfiler
+bindkey '^f' vimfiler
 
 sourcezshrc() {
     echo 'source ~/.zshrc'
