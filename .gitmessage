@@ -1,5 +1,8 @@
 
 # http://qiita.com/gogotanaka/items/b65e1b081fa976e5d754
+# - Add space between name and level for header :ヘッダーの名前とレベルの間にスペースを追加する
+# - Procedure giveup popup configure  :giveup popupの設定処理をまとめる
+# - Change the structure to component :構成をcomponentに変更
 # - Fix typo in docs
 # - Remove unused code
 # - Remove use of deprecated method

@@ -180,15 +180,19 @@ snippet glog_err
 snippet glog_db
     GRAdvancedDebugLog.DBLog(${1});
 snippet ggetparam
-    GRGameManager.Instance.GetParameter("${1}");
+    GM.I.GetParam("${1}");
 snippet ggetword
-    GRGameManager.Instance.GetWord("${1}");
+    GM.I.GetWord("${1}");
 
 snippet Instantiate
     Instantiate(Resources.Load ("Prefabs/${1}"));
 snippet Instantiate_full
     Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
+snippet loadprefab
+    Instantiate(GRResourceCommon.LoadPrefab("Prefabs/Scene/${1}"));
 
+snippet linq
+    using System.Linq;
 snippet ui
     using UnityEngine.UI;
 snippet spine
@@ -199,13 +203,14 @@ snippet prop
     public ${1:type} ${0:var} { get; set; }
 
 snippet prope
-    private ${1:type} __${2:value};
+    [SerializeField]
+    private ${1:type} _${2:value};
     public <|1|> <|2|>
     {
-        get { return __<|2|>; }
+        get { return _<|2|>; }
         set
         {
-            __<|2|> = value;
+            _<|2|> = value;
         }
     }
 
@@ -246,9 +251,10 @@ snippet enum_string
     }
     <|1|>.Xxx.ObtainType()
 snippet action
-    (() => {
-    });
+    (() => );
 snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
     .AddTo(this);
+snippet subject
+    public Subject <${1}> ${2}Subject = new Subject <<|1|>>();

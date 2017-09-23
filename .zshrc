@@ -382,7 +382,7 @@ peco-tree-dir(){
   zle accept-line
 }
 zle -N peco-tree-dir
-bindkey '^;' peco-tree-dir
+bindkey '^f' peco-tree-dir
 
 peco-branch () {
     local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
@@ -413,12 +413,12 @@ git-remote-vim(){
 }
 zle -N git-remote-vim
 
-fileRecVimOpen() {
-    BUFFER='vim -c "DeniteFileRec"'
-    zle accept-line
-}
-zle -N fileRecVimOpen
-bindkey '^j' fileRecVimOpen
+# fileRecVimOpen() {
+#     BUFFER='vim -c "DeniteFileRec"'
+#     zle accept-line
+# }
+# zle -N fileRecVimOpen
+# bindkey '^f' fileRecVimOpen
 
 fileOldVimOpen() {
     BUFFER='vim -c "DeniteFileOld"'
@@ -442,12 +442,12 @@ bindkey '^p' pwdcp
 # zle -N defaultcolor
 # bindkey '^z' defaultcolor
 
-vimfiler() {
-    BUFFER="vim ."
-    zle accept-line
-}
-zle -N vimfiler
-bindkey '^f' vimfiler
+# vimfiler() {
+#     BUFFER="vim ."
+#     zle accept-line
+# }
+# zle -N vimfiler
+# bindkey '^f' vimfiler
 
 sourcezshrc() {
     echo 'source ~/.zshrc'

@@ -266,7 +266,7 @@ case "${os}" in
         defaults write com.apple.desktopservices DSDontWriteNetworkStores true # ネットワークドライブで.DS_Storeファイルを作成しないようにする
         defaults write -g QLPanelAnimationDuration -float 0 # クイックルックアニメーション無し
         defaults write com.apple.dock workspaces-edge-delay -float 0.2; killall Dock # アプリがデスクトップ間を移動する際の速度を変更 ???
-        defaults write com.apple.screencapture location ~/Dropbox/ScreenShot/; killall SystemUIServer # スクショ保存場所変更
+        defaults write com.apple.screencapture location ~/Dropbox/jk/; killall SystemUIServer # スクショ保存場所変更
 
         # Xcode Settings
         defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES

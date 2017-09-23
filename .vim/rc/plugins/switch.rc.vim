@@ -10,4 +10,6 @@ let g:switch_custom_definitions =
     \   ['yes', 'no'],
     \   ['private', 'public'],
     \   ['int', 'string', 'bool', 'float', 'double'],
+    \   ['Start', 'Stop'],
+    \   ['start', 'stop'],
     \ ]

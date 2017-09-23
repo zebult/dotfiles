@@ -77,7 +77,7 @@ repo = 'kana/vim-textobj-user'
 
 # f
 [[plugins]]
-repo = 'kana/vim-textobj-function'
+repo = 'randomize/vim-textobj-function'
 
 # Need API
 [[plugins]]

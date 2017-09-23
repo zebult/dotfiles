@@ -15,6 +15,13 @@ let g:quickrun_config = {
 \   }
 \}
 
+let g:quickrun_config['cs'] = {
+			\ 'command'  : 'csc',
+			\ 'runmode'  : 'simple',
+			\ 'exec'     : ['%c /nologo %s:gs?/?\\? > /dev/null', '"%S:p:r:gs?/?\\?.exe" %a', ':call delete("%S:p:r.exe")'],
+			\ 'tempfile' : '{tempname()}.cs',
+			\ }
+
 " c++11
 let g:quickrun_config['cpp'] = {
 \   'command': 'g++',
