@@ -68,6 +68,11 @@ snippet foreach_index
         <|1|>.Content;
         <|1|>.Index;
     }
+snippet foreach_range
+    foreach(var i in Enumerable.Range(0,${1}))
+    {
+        ${2}
+    }
 snippet list
     List ${2:var} = new List();
 snippet dict
