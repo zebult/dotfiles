@@ -243,7 +243,7 @@ snippet serialize_member
     [SerializeField]
     private ${1:type} ${2:value};
 
-snippet Assert
+snippet assert
     Debug.Assert(${1}, ${2});
 snippet foreach_child
     foreach (Transform ${1} in GameObject.Find("${2}").transform)
@@ -285,6 +285,8 @@ snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
     .AddTo(this);
+snippet safacall
+    GRUtil.SafeCall(${1})
 snippet subject
     public Subject <${1}> ${2}Subject = new Subject <<|1|>>();
 snippet Random
