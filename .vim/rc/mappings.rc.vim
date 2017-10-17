@@ -44,9 +44,7 @@ nnoremap gc  `[v`]
 " 全選択
 nnoremap g0 ggVG
 " 全インデント揃える
-nnoremap gi miggVG='izz
-" ブロックのインデント揃える
-nnoremap gI mivip='izz
+nnoremap gI miggVG='izz
 " 貼り付けたらテキストの末尾へ
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -83,8 +81,10 @@ nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く
 nnoremap sgf <C-w>gf
 " tagsジャンプを画面分割で開く
-nnoremap s<C-]> :<C-u>vs<CR><C-w>l<C-]>
-nnoremap g<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap s<C-]> :<C-u>sp<CR><C-w>j<C-]>
+vnoremap <C-]> :<C-u>vs<CR><C-w>l<C-]>
+nnoremap t<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" nnoremap t<C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>1<CR>
 " nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 nnoremap sw <C-w>w
 nnoremap so <C-w>o
@@ -175,7 +175,6 @@ nnoremap <Tab> %
 vnoremap <Tab> %
 
 nnoremap <F11> <C-i>
-nnoremap t<C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>1<CR>
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>

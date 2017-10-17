@@ -8,6 +8,19 @@ setlocal shiftwidth=4
 nnoremap gl yiwoDebug.Log("p:" + p);
 vnoremap gl yoDebug.Log("p:" + p);
 
+" null
+nnoremap gN yiwOif(p == null){Debug.Log("p is null");}
+vnoremap gN yOif(p == null){Debug.Log("p is null");}
+
+nnoremap <Leader>r :QuickRunCS<CR>
+function! QuickRunCS() abort
+  silent execute "!mcs %"
+  let exeFile = "%:r".".exe"
+  silent execute "!mono ".exeFile
+  silent execute "!rm ".exeFile
+endfunction
+command! -bar QuickRunCS call QuickRunCS()
+
 augroup cs_groupe
     autocmd!
     autocmd FileType cs set omnifunc=OmniSharp#Complete

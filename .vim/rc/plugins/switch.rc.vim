@@ -13,4 +13,5 @@ let g:switch_custom_definitions =
     \   ['int', 'string', 'bool', 'float', 'double'],
     \   ['Start', 'Stop'],
     \   ['start', 'stop'],
+    \   ['right', 'left'],
     \ ]
