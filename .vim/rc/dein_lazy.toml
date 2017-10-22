@@ -252,9 +252,9 @@ nnoremap <Leader>B :W3mTab google<CR>
 on_map = '<Leader>B'
 
 # TODO: can not use python3
-# [[plugins]]
-# repo = 'sjl/gundo.vim'
-# hook_add = 'nnoremap U :<C-u>GundoToggle<CR>'
+[[plugins]]
+repo = 'sjl/gundo.vim'
+hook_add = 'nnoremap UU :<C-u>GundoToggle<CR>'
 
 # Need 'brew install cmigemo' (gvim限定)
 # [[plugins]]

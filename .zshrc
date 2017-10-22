@@ -106,7 +106,7 @@ alias gmg="git merge"
 alias gdt="git difftool"
 alias gmt="git mergetool"
 alias gbr="git branch"
-alias grbd="git push origin --delete"
+alias gbrd="git push origin --delete"
 alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
@@ -145,6 +145,7 @@ alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
 alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
+alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 
 alias cp='cp -v'
 alias cdn='peco-tree-vim'
@@ -486,12 +487,12 @@ zshrcopen() {
 zle -N zshrcopen
 bindkey '^z' zshrcopen
 
-unitylog() {
+ulog() {
     BUFFER="vim <(tail -n +2 ~/Library/Logs/Unity/Editor.log)"
     zle accept-line
 }
-zle -N unitylog
-bindkey '^u' unitylog
+zle -N ulog
+bindkey '^u' ulog
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux

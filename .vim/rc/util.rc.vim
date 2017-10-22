@@ -90,10 +90,10 @@ function Diff()
 endfunction
 
 " 無限undo
-" if has('persistent_undo')
-" 	set undodir=~/.vimundo
-" 	set undofile
-" endif
+if has('persistent_undo')
+	set undodir=~/.vimundo
+	set undofile
+endif
 
 " autocmd QuickFixCmdPre call CursorLineColorHighlight()
 

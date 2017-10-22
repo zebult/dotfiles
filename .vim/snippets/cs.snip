@@ -3,6 +3,10 @@ snippet if
     {
         ${2}
     }
+snippet if_macro
+    #if ${1}
+        ${2}
+    #endif
 snippet awake
     void Awake()
     {
@@ -36,6 +40,8 @@ snippet log_warn
     Debug.LogWarning(${1});
 snippet log_err
     Debug.LogError(${1});
+snippet log_c
+    Console.WriteLine(${1});
 snippet inst
     (${2:GameObject}) GameObject.Instantiate(${1:thing}, Vector3.zero, Quaternion.identity);
 snippet go
@@ -58,6 +64,17 @@ snippet ford
     foreach (KeyValuePair pair in ${3:dict}) {
         ${4}
     }
+snippet foreach_index
+    foreach (var ${1} in ${2:list}.Select((Content, Index) => new { Content, Index }))
+    {
+        <|1|>.Content;
+        <|1|>.Index;
+    }
+snippet foreach_range
+    foreach(var i in Enumerable.Range(0,${1}))
+    {
+        ${2}
+    }
 snippet list
     List ${2:var} = new List();
 snippet dict
@@ -75,11 +92,11 @@ snippet tryget
     }
 snippet main
     using System;
-    class ${1}
+    class A
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("");
         }
     }
 snippet ismaster
@@ -95,10 +112,16 @@ snippet IEnumerator
 snippet StartCoroutine
     StartCoroutine(${1});
 snippet void
-    private void ${1}() {
+    private void ${1}()
+    {
     }
 snippet voidp
-    public void ${1}() {
+    public void ${1}()
+    {
+    }
+snippet init
+    public void Init()
+    {
     }
 snippet fori
     for (int i = 0; i < ${0:list}.Count; i++) {
@@ -166,8 +189,12 @@ snippet rotation_absolute
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 
-snippet application
-    Application.LoadLevel("${1}");
+snippet load_scene
+    using UnityEngine.SceneManagement; 
+    SceneManager.LoadScene ("${1}");
+snippet scene_name
+    string sceneName = SceneManager.GetActiveScene ().name;
+
 snippet preprocessor_macro
     #if ${1}
     #else
@@ -188,8 +215,10 @@ snippet Instantiate
     Instantiate(Resources.Load ("Prefabs/${1}"));
 snippet Instantiate_full
     Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
-snippet loadprefab
+snippet load_prefab
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/Scene/${1}"));
+snippet load_sprite
+    Instantiate(GRResourceCommon.LoadSprite("Prefabs/Scene/${1}"));
 
 snippet linq
     using System.Linq;
@@ -198,23 +227,30 @@ snippet ui
 snippet spine
     using Spine;
     using Spine.Unity;
+snippet unirx
+    using UniRx;
 
 snippet prop
     public ${1:type} ${0:var} { get; set; }
 
 snippet prope
     [SerializeField]
-    private ${1:type} _${2:value};
+    private ${1:type} _${2:value} = ${3};
     public <|1|> <|2|>
     {
         get { return _<|2|>; }
-        set
-        {
-            _<|2|> = value;
-        }
+        set { _<|2|> = value; }
     }
+snippet member_serialize
+    [SerializeField]
+    private ${1:type} ${2:value};
+snippet member
+    private ${1:type} ${2:value};
 
-snippet Assert
+snippet reactive
+    ReactiveProperty <${1}>
+
+snippet assert
     Debug.Assert(${1}, ${2});
 snippet foreach_child
     foreach (Transform ${1} in GameObject.Find("${2}").transform)
@@ -223,13 +259,19 @@ snippet foreach_child
     }
 snippet conditional
     [System.Diagnostics.Conditional("${1:DEBUG}")]
+snippet require
+    [RequireComponent(typeof(${1}))]
 snippet update_rx
     var update = Observable
                     .EveryUpdate()
                     .Subscribe(_ => ${1})
                     .AddTo(this);
+snippet subscribe
+    ${1}
+    .Subscribe(_ => ${2});
+
 snippet timer_rx
-    Observable.Interval(TimeSpan.FromMilliseconds(1000)).Subscribe(_ => {
+    Observable.Interval(TimeSpan.FromSeconds(1000)).Subscribe(_ => {
             ${1}
     }).AddTo(this);
 snippet color
@@ -256,5 +298,45 @@ snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
     .AddTo(this);
+snippet safacall
+    GRUtil.SafeCall(${1})
 snippet subject
     public Subject <${1}> ${2}Subject = new Subject <<|1|>>();
+snippet Random
+    UnityEngine.Random.Range(0, ${1});
+
+snippet /return
+    /// <returns>${0}</returns>
+
+snippet www
+    StartCoroutine(DownloadStart(url));
+    IEnumerator DownloadStart(string Url)
+    {
+        Debug.Log("!!! start");
+        WWW request = new WWW(Url);
+
+        yield return request;
+
+        if (!string.IsNullOrEmpty(request.error)) {
+            Debug.Log("!!!" + request.error);
+        } else {
+            Debug.Log("!!! finish");
+            // UTF8文字列として取得する
+            string text = request.text;
+            Debug.Log("!!! complete" + text);
+
+            // バイナリデータとして取得する
+            byte[] results = request.bytes;
+        }
+    }
+
+snippet www_rx
+    ObservableWWW.GetWWW(url, null, null)
+    .Timeout(TimeSpan.FromSeconds(30))
+    .Subscribe(ReceivedData => {
+        Debug.Log("!!! veri Download finish!" + Type);
+    }, err => {
+        Debug.Log("!!! veri Download err!" + Type);
+        ErrorHandring(err);
+    })
+    .AddTo(this);
