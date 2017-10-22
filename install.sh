@@ -87,6 +87,7 @@ case "${os}" in
         brew install lynx # text browser
         gem install vmail
         brew install ag
+        brew install pv
         brew install nkf # vim dict
         brew install global # gtags
         brew install rtags
