@@ -241,8 +241,10 @@ snippet prope
         get { return _<|2|>; }
         set { _<|2|> = value; }
     }
-snippet serialize_member
+snippet member_serialize
     [SerializeField]
+    private ${1:type} ${2:value};
+snippet member
     private ${1:type} ${2:value};
 
 snippet reactive
@@ -264,6 +266,10 @@ snippet update_rx
                     .EveryUpdate()
                     .Subscribe(_ => ${1})
                     .AddTo(this);
+snippet subscribe
+    ${1}
+    .Subscribe(_ => ${2});
+
 snippet timer_rx
     Observable.Interval(TimeSpan.FromSeconds(1000)).Subscribe(_ => {
             ${1}
@@ -301,3 +307,36 @@ snippet Random
 
 snippet /return
     /// <returns>${0}</returns>
+
+snippet www
+    StartCoroutine(DownloadStart(url));
+    IEnumerator DownloadStart(string Url)
+    {
+        Debug.Log("!!! start");
+        WWW request = new WWW(Url);
+
+        yield return request;
+
+        if (!string.IsNullOrEmpty(request.error)) {
+            Debug.Log("!!!" + request.error);
+        } else {
+            Debug.Log("!!! finish");
+            // UTF8文字列として取得する
+            string text = request.text;
+            Debug.Log("!!! complete" + text);
+
+            // バイナリデータとして取得する
+            byte[] results = request.bytes;
+        }
+    }
+
+snippet www_rx
+    ObservableWWW.GetWWW(url, null, null)
+    .Timeout(TimeSpan.FromSeconds(30))
+    .Subscribe(ReceivedData => {
+        Debug.Log("!!! veri Download finish!" + Type);
+    }, err => {
+        Debug.Log("!!! veri Download err!" + Type);
+        ErrorHandring(err);
+    })
+    .AddTo(this);

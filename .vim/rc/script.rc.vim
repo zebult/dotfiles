@@ -218,6 +218,12 @@ function! QuickFixPrev() abort
 endfunction
 command! -bar QuickFixPrev call QuickFixPrev()
 
+" 文字数カウント
+function! CountWord() abort
+  %s/./&/g
+endfunction
+command -bar CountWord  call CountWord()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

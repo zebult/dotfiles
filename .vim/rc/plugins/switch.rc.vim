@@ -14,4 +14,5 @@ let g:switch_custom_definitions =
     \   ['Start', 'Stop'],
     \   ['start', 'stop'],
     \   ['right', 'left'],
+    \   ['after', 'before'],
     \ ]
