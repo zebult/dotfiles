@@ -8,7 +8,7 @@ let g:switch_custom_definitions =
     \   ['+', '-'],
     \   ['YES', 'NO'],
     \   ['yes', 'no'],
-    \   ['private', 'public'],
+    \   ['public', 'private', 'protected'],
     \   ['virtual', 'override'],
     \   ['int', 'string', 'bool', 'float', 'double'],
     \   ['Start', 'Stop'],
