@@ -369,6 +369,16 @@ xp()
     defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks $1
 }
 
+battery()
+{
+    cap=`ioreg -l | grep Capacity`
+    full=`echo $cap | sed -e "s/^.*MaxCapacity\" = \([0-9]*\).*/\1/"`
+    curr=`echo $cap | sed -e "s/^.*CurrentCapacity\" = \([0-9]*\).*/\1/"`
+    pct=`echo "scale=3; $curr / $full * 100" | bc`
+    echo -----
+    printf "%.1f%%\n" $pct
+}
+
 peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -i -f | peco | xargs echo)
   BUFFER="vim $SELECTED_FILE"
@@ -496,6 +506,27 @@ bindkey '^u' ulog
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
+tm()
+{
+    if [ -n "$1" ]; then
+        if [ $1 = "h" ]; then
+            tmux select-pane -L
+        elif [ $1 = "j" ]; then
+            tmux select-pane -D
+        elif [ $1 = "k" ]; then
+            tmux select-pane -U
+        elif [ $1 = "l" ]; then
+            tmux select-pane -R
+        elif [ $1 = "v" ]; then
+            tmux split-window -h
+        elif [ $1 = "s" ]; then
+            tmux split-window -v
+        fi
+    else
+        echo "usage tm h, j, k, l, v, s"
+    fi
+}
 
 ### Added by the Bluemix CLI
 # source /usr/local/Bluemix/bx/zsh_autocomplete
