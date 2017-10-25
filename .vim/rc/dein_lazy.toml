@@ -352,6 +352,8 @@ hook_add = '''
 " nnoremap Up :<C-u>UnivimPlay<CR>
 " autocmd FileType cs nnoremap <Leader>r :<C-u>UnivimPlay<CR>
 autocmd FileType cs nnoremap rr :<C-u>UnivimPlay<CR>
+nnoremap <Leader>ua :<C-u>UnivimMenu Build\ Project\ AllScene\ Android<CR>
+nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 nnoremap U/ :<C-u>UnivimFind<CR>
 nnoremap Ub :<C-u>UnivimMenu Build\ Setting<CR>
 nnoremap Us :<C-u>UnivimMenu SymbolEditorWindow<CR>
