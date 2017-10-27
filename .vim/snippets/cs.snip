@@ -7,6 +7,18 @@ snippet if_macro
     #if ${1}
         ${2}
     #endif
+snippet UNITY
+    #if UNITY_EDITOR
+        ${0}
+    #endif
+snippet IPHONE
+    #if UNITY_IPHONE
+        ${0}
+    #endif
+snippet ANDROID
+    #if UNITY_ANDROID
+        ${0}
+    #endif
 snippet awake
     void Awake()
     {
@@ -340,3 +352,14 @@ snippet www_rx
         ErrorHandring(err);
     })
     .AddTo(this);
+
+snippet write
+    System.IO.StreamWriter sw = new System.IO.StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
+    sw.Write("aaa\n");
+    sw.Close();
+
+snippet menu_item
+    [UnityEditor.MenuItem("Tools/${1}")]
+    public static void <|1|>()
+    {
+    }

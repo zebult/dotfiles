@@ -146,6 +146,8 @@ autocmd FileType cpp noremap <buffer> <c-f> :call Uncrustify('cpp')<CR>
 autocmd FileType cpp vnoremap <buffer> <c-f> :call RangeUncrustify('cpp')<CR>
 autocmd FileType cs noremap <buffer> <c-f> :call Uncrustify('cs')<CR>
 autocmd FileType cs vnoremap <buffer> <c-f> :call RangeUncrustify('cs')<CR>
+autocmd FileType objc noremap <buffer> <c-f> :call Uncrustify('mm')<CR>
+autocmd FileType objc vnoremap <buffer> <c-f> :call RangeUncrustify('mm')<CR>
 '''
 
 [[plugins]]
