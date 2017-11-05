@@ -58,6 +58,11 @@ nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register
 nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
 " Screen split key mappings
+" nnoremap sN :<C-u>bn<CR>
+" nnoremap sP :<C-u>bp<CR>
+" nnoremap fn :<C-u>bn<CR>
+" nnoremap fp :<C-u>bp<CR>
+" nnoremap <Leader>s :<C-u>bn<CR>
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -67,15 +72,10 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap sn :<C-u>bn<CR>
-nnoremap sp :<C-u>bp<CR>
-" nnoremap sN :<C-u>bn<CR>
-" nnoremap sP :<C-u>bp<CR>
-" nnoremap fn :<C-u>bn<CR>
-" nnoremap fp :<C-u>bp<CR>
-" nnoremap <Leader>s :<C-u>bn<CR>
-nnoremap sN gt
-nnoremap sP gT
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+nnoremap sn gt
+nnoremap sp gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 " tagsジャンプを新規タブで開く

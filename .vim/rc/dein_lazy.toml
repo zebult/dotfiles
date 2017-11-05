@@ -135,6 +135,18 @@ on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+on_event = 'BufRead'
+hook_add  = '''
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+vnoremap sub :OverCommandLine<CR>s/<C-r>=substitute(@0, '!', '\\!', 'g')<CR>//g<Left><Left>
+" nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+'''
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'cofyc/vim-uncrustify'
@@ -259,9 +271,12 @@ repo = 'sjl/gundo.vim'
 hook_add = 'nnoremap UU :<C-u>GundoToggle<CR>'
 
 # Need 'brew install cmigemo' (gvim限定)
-# [[plugins]]
-# repo = 'haya14busa/vim-migemo'
-# on_i = 1
+[[plugins]]
+repo = 'haya14busa/vim-migemo'
+on_event = 'BufRead'
+hook_add  = '''
+nnoremap g/ :Migemo<CR>
+'''
 
 [[plugins]]
 repo = 'kana/vim-altr'

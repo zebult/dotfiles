@@ -85,6 +85,8 @@ set backspace=indent,eol,start
 " Search hit number
 " nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
+autocmd FileType cvs,svn,gitcommit setlocal spell spelllang=en_us
+
 abbreviate jsonn
       \ {
       \   "size": 10,
