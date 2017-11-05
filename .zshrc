@@ -128,6 +128,7 @@ alias grb="git rebase"
 alias grv="git revert"
 alias gcf="git diff --diff-filter=U"
 alias gtr="git tree"
+alias gclo="git clone"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"

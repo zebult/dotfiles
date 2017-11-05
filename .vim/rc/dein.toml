@@ -78,6 +78,9 @@ repo = 'kana/vim-textobj-user'
 # f
 [[plugins]]
 repo = 'randomize/vim-textobj-function'
+hook_add = '''
+    nmap vf vaf
+'''
 
 # Need API
 [[plugins]]
@@ -104,6 +107,10 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
 
 # Convenience Tools: ---------------------------
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'

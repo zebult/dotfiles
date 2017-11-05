@@ -209,7 +209,17 @@ snippet scene_name
 
 snippet preprocessor_macro
     #if ${1}
+    #elif
     #else
+    #endif
+snippet ios
+    #if UNITY_IOS
+    #endif
+snippet android
+    #if UNITY_ANDRIOD
+    #endif
+snippet unity
+    #if UNITY_EDITOR
     #endif
 
 snippet glog
@@ -345,10 +355,10 @@ snippet www
 snippet www_rx
     ObservableWWW.GetWWW(url, null, null)
     .Timeout(TimeSpan.FromSeconds(30))
-    .Subscribe(ReceivedData => {
-        Debug.Log("!!! veri Download finish!" + Type);
+    .Subscribe(receivedData => {
+        Debug.Log("!!! Download finish!" + receivedData.text);
     }, err => {
-        Debug.Log("!!! veri Download err!" + Type);
+        Debug.Log("!!! Download err!" + Type);
         ErrorHandring(err);
     })
     .AddTo(this);
@@ -363,3 +373,11 @@ snippet menu_item
     public static void <|1|>()
     {
     }
+
+snippet application_openurl
+    Application.OpenURL(${0});
+
+snippet play_bgm
+    GRAudioManager.Instance.PlayBGM(ResourcesData.${1});
+snippet play_se
+    GRAudioManager.Instance.PlayOneShotSE(ResourcesData.${1});

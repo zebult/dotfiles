@@ -224,6 +224,13 @@ function! CountWord() abort
 endfunction
 command -bar CountWord  call CountWord()
 
+" 重複チェック
+function! Uniq() abort
+  r!uniq -c %
+  /   2
+endfunction
+command! -bar Uniq call Uniq()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

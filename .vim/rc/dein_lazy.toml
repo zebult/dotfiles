@@ -145,10 +145,6 @@ vnoremap sub :OverCommandLine<CR>s/<C-r>=substitute(@0, '!', '\\!', 'g')<CR>//g<
 '''
 
 [[plugins]]
-repo = 'rhysd/clever-f.vim'
-on_event = 'BufRead'
-
-[[plugins]]
 repo = 'cofyc/vim-uncrustify'
 on_event = 'BufRead'
 hook_add = '''
@@ -187,8 +183,16 @@ on_event = 'BufRead'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
-on_map = {n = '<Plug>'}
+on_event = 'BufRead'
 hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
+
+[[plugins]]
+repo = 'haya14busa/vim-edgemotion'
+on_event = 'BufRead'
+hook_add = '''
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
+'''
 
 [[plugins]]
 repo = 'mrtazz/simplenote.vim'
