@@ -139,9 +139,12 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 repo = 'osyo-manga/vim-over'
 on_event = 'BufRead'
 hook_add  = '''
-nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
-vnoremap sub :OverCommandLine<CR>s/<C-r>=substitute(@0, '!', '\\!', 'g')<CR>//g<Left><Left>
-" nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>
+nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+vnoremap sub :OverCommandLine<CR>s///g<Left><Left><Left>
+vnoremap sup :OverCommandLine<CR>s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+" vnoremap sub :OverCommandLine<CR>'<,'>s///g<Left><Left><Left>
+" vnoremap sub :OverCommandLine<CR>s/<C-r>=substitute(@0, '!', '\\!', 'g')<CR>//g<Left><Left>
 '''
 
 [[plugins]]

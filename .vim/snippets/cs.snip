@@ -131,6 +131,14 @@ snippet voidp
     public void ${1}()
     {
     }
+snippet voids
+    public static void ${1}()
+    {
+    }
+snippet voidr
+    protected void ${1}()
+    {
+    }
 snippet init
     public void Init()
     {
@@ -292,14 +300,23 @@ snippet subscribe
     ${1}
     .Subscribe(_ => ${2});
 
-snippet timer_rx
-    Observable.Interval(TimeSpan.FromSeconds(1000)).Subscribe(_ => {
+snippet timer_interval_rx
+    Observable.Interval(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
+            ${1}
+    }).AddTo(this);
+snippet timer_once_rx
+    Observable.Timer(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
             ${1}
     }).AddTo(this);
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
 snippet readonly
     private readonly ${1} ${2}
+snippet enum
+    public enum ${1}
+    {
+        ${2}
+    }
 snippet enum_string
     public enum ${1}
     {
@@ -377,7 +394,20 @@ snippet menu_item
 snippet application_openurl
     Application.OpenURL(${0});
 
+snippet string_isnullorempty
+    if (string.IsNullOrEmpty(s))
+
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});
 snippet play_se
     GRAudioManager.Instance.PlayOneShotSE(ResourcesData.${1});
+
+snippet popup
+    var popup = Instantiate(GRResourceCommon.LoadPrefab(Popup.${1}.ObtainPath())).GetComponent <${2}>();
+snippet popup_common
+    var    popup = Instantiate(GRResourceCommon.LoadPrefab(Popup.Common.ObtainPath())).GetComponent <PopupCommon>();
+    string title = GM.I.GetWord("");
+    string desc  = GM.I.GetWord("");
+    popup.Init(title, desc, false);
+snippet change_scene
+    GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));

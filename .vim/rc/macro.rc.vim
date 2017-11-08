@@ -84,3 +84,17 @@ function! s:PrivateFieldToEntity() abort
       normal $i)
     endif
 endfunction
+
+" エンティティのkeyにメンバ代入
+function! EntityIntoKey()
+    normal 0f.lyiwf"lgpviwCj0
+endfunction
+command! -range EntityIntoKey <line1>,<line2>call EntityIntoKey()
+
+" エンティティのコンバーターを適当に作成
+function! EntityToConverter()
+    normal $b"zyiwOEntity."zpa = j^wyiwk$a(pla Row[""zp$a;
+    call EntityIntoKey()
+    normal dd
+endfunction
+command! -range EntityToConverter <line1>,<line2>call EntityToConverter()
