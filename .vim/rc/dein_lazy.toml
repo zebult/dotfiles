@@ -141,10 +141,9 @@ on_event = 'BufRead'
 hook_add  = '''
 nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left>
 nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
-vnoremap sub :OverCommandLine<CR>s///g<Left><Left><Left>
+vnoremap sub "1y:OverCommandLine<CR>%s/<C-r>1/<C-r>1/g<Left><Left>
+" vnoremap sub :OverCommandLine<CR>s///g<Left><Left><Left>
 vnoremap sup :OverCommandLine<CR>s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
-" vnoremap sub :OverCommandLine<CR>'<,'>s///g<Left><Left><Left>
-" vnoremap sub :OverCommandLine<CR>s/<C-r>=substitute(@0, '!', '\\!', 'g')<CR>//g<Left><Left>
 '''
 
 [[plugins]]
@@ -275,7 +274,7 @@ on_map = '<Leader>B'
 # TODO: can not use python3
 [[plugins]]
 repo = 'sjl/gundo.vim'
-hook_add = 'nnoremap UU :<C-u>GundoToggle<CR>'
+hook_add = 'nnoremap zu :<C-u>GundoToggle<CR>'
 
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
@@ -378,10 +377,10 @@ hook_add = '''
 autocmd FileType cs nnoremap rr :<C-u>UnivimPlay<CR>
 nnoremap <Leader>ua :<C-u>UnivimMenu Build\ Project\ AllScene\ Android<CR>
 nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
-nnoremap U/ :<C-u>UnivimFind<CR>
-nnoremap Ub :<C-u>UnivimMenu Build\ Setting<CR>
-nnoremap Us :<C-u>UnivimMenu SymbolEditorWindow<CR>
-nnoremap Uu :<C-u>UnivimMenu Scenario Data Builder<CR>
+"nnoremap <Leader>u/ :<C-u>UnivimFind<CR>
+"nnoremap <Leader>ub :<C-u>UnivimMenu Build\ Setting<CR>
+"nnoremap <Leader>us :<C-u>UnivimMenu SymbolEditorWindow<CR>
+"nnoremap <Leader>uu :<C-u>UnivimMenu Scenario Data Builder<CR>
 '''
 
 # Markdown ---------------------------

@@ -1,5 +1,7 @@
 
 # http://qiita.com/gogotanaka/items/b65e1b081fa976e5d754
+# - Refactor xxx
+# - Delete unnecessary log
 # - Update provisioning
 # - Add space between name and level for header :ヘッダーの名前とレベルの間にスペースを追加する
 # - Procedure giveup popup configure  :giveup popupの設定処理をまとめる

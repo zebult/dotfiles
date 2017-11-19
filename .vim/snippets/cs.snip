@@ -24,9 +24,21 @@ snippet awake
     {
         ${1}
     }
+snippet base_awake
+    override protected void Awake()
+    {
+        base.Awake();
+        ${1}
+    }
 snippet start
     void Start()
     {
+        ${1}
+    }
+snippet base_start
+    override protected void Start()
+    {
+        base.Start();
         ${1}
     }
 snippet update
@@ -37,7 +49,7 @@ snippet update
 snippet find
     GameObject.Find("${1}")${2}
 snippet gc
-    ${1}.transform.GetComponent<${2}>();
+    .GetComponent<${1}>()
 snippet ac
     AddComponent()
 snippet sar
@@ -89,6 +101,9 @@ snippet foreach_range
     }
 snippet list
     List ${2:var} = new List();
+snippet sort_list
+    // 昇順
+    ${1:list}.Sort((a, b) => a.${2:value} - b.<|2|>);
 snippet dict
     Dictionary ${3:var} = new Dictionary();
 snippet sort
@@ -224,7 +239,7 @@ snippet ios
     #if UNITY_IOS
     #endif
 snippet android
-    #if UNITY_ANDRIOD
+    #if UNITY_ANDROID
     #endif
 snippet unity
     #if UNITY_EDITOR
@@ -292,10 +307,10 @@ snippet conditional
 snippet require
     [RequireComponent(typeof(${1}))]
 snippet update_rx
-    var update = Observable
-                    .EveryUpdate()
-                    .Subscribe(_ => ${1})
-                    .AddTo(this);
+    Observable
+        .EveryUpdate()
+        .Subscribe(_ => ${1})
+        .AddTo(this);
 snippet subscribe
     ${1}
     .Subscribe(_ => ${2});
@@ -308,6 +323,9 @@ snippet timer_once_rx
     Observable.Timer(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
             ${1}
     }).AddTo(this);
+snippet next_frame
+    Observable.NextFrame()
+        .Subscribe(_ => ${1});
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
 snippet readonly
@@ -375,8 +393,7 @@ snippet www_rx
     .Subscribe(receivedData => {
         Debug.Log("!!! Download finish!" + receivedData.text);
     }, err => {
-        Debug.Log("!!! Download err!" + Type);
-        ErrorHandring(err);
+        GRAdvancedDebugLog.LogError(err.ToString());
     })
     .AddTo(this);
 
@@ -397,11 +414,43 @@ snippet application_openurl
 snippet string_isnullorempty
     if (string.IsNullOrEmpty(s))
 
+snippet object_to_int
+    System.Convert.ToInt32(${1:object});
+snippet object_to_float
+    System.Convert.ToSingle(${1:object});
+snippet bool_to_float
+    Convert.ToSingle(${1:bool});
+snippet int_to_bool
+    System.Convert.ToBoolean(${1:int})
+snippet int_to_float
+    (float)${1:int}
+snippet int_to_string
+    ${1:int}.ToString();
+snippet int_to_enum
+    (${1:type})(${2:int})
+snippet float_to_string
+    ${1:float}.ToString("R");
+snippet float_to_int
+    (int)${1:float}f
+snippet string_to_int
+    int.Parse(${1:string});
+snippet string_to_long
+    long.Parse(${1:string});
+snippet string_to_enum
+    (${1:type}) Enum.Parse(typeof(<|1|>), ${2:string});
+snippet enum_to_int
+    (int)${enum};
+snippet enum_to_string
+    ${1:type}.GetName(typeof(<|1|>), ${2:value});
+snippet screen_to_world
+    Camera.main.ScreenToWorldPoint(${1:position});
+snippet world_to_screen
+    Camera.main.WorldToScreenPoint(${1:position});
+
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});
 snippet play_se
     GRAudioManager.Instance.PlayOneShotSE(ResourcesData.${1});
-
 snippet popup
     var popup = Instantiate(GRResourceCommon.LoadPrefab(Popup.${1}.ObtainPath())).GetComponent <${2}>();
 snippet popup_common
@@ -411,3 +460,5 @@ snippet popup_common
     popup.Init(title, desc, false);
 snippet change_scene
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
+snippet Instantiate_g
+    Instantiate(GRResourceCommon.LoadPrefab("Prefabs/${1}"));

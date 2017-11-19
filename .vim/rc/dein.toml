@@ -78,9 +78,6 @@ repo = 'kana/vim-textobj-user'
 # f
 [[plugins]]
 repo = 'randomize/vim-textobj-function'
-hook_add = '''
-    nmap vf vaf
-'''
 
 # Need API
 [[plugins]]

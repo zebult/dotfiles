@@ -98,3 +98,19 @@ function! EntityToConverter()
     normal dd
 endfunction
 command! -range EntityToConverter <line1>,<line2>call EntityToConverter()
+
+" c++ document to c#
+function! DocmentCppToCs() abort
+  InitMapping
+  normal {//%r/$a <summary>////\n$a </summary>
+  MinimumMapping
+endfunction
+command! -bar DocmentCppToCs call DocmentCppToCs()
+
+" c++ document to c#
+function! DocmentParamCppToCs()
+  InitMapping
+  normal 0f@r<wwiname="t a">$a</param>
+  MinimumMapping
+endfunction
+command! -range DocmentParamCppToCs <line1>,<line2>call DocmentParamCppToCs()

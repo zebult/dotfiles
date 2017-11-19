@@ -99,6 +99,7 @@ export ENHANCD_FILTER=peco
 
 # alias
 alias ll='ls -alh'
+alias llp='ls -alh | peco'
 alias gcm="gst; git commit -v"
 alias gst="git status -sb"
 alias gdf="git diff"
@@ -115,7 +116,7 @@ alias glnm="git log --no-merges"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
 alias gcl="git clean -df"
-alias gsw="git show"
+alias gsw="ggsw"
 alias gbl="git blame"
 alias glp="git log -p -1"
 alias gsu="git submodule update"
@@ -260,6 +261,18 @@ gplu() {
     fi
 }
 
+ggsw() {
+    if [ -n "$1" ]; then
+        if [[ $1 =~ ^[0-9]$ ]] ; then
+            git show stash@\{$1\}
+        else
+            git show $1
+        fi
+    else
+        git show
+    fi
+}
+
 # git rebase origin
 gro() {
     # gst
@@ -382,15 +395,27 @@ battery()
 
 peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -i -f | peco | xargs echo)
-  BUFFER="vim $SELECTED_FILE"
+  if [ ! -z $SELECTED_FILE ] ; then
+      BUFFER="vim -p $SELECTED_FILE"
+  fi
   zle accept-line
 }
 zle -N peco-tree-vim
 bindkey '^n' peco-tree-vim
 
+agv(){
+  local SELECTED_FILE=$(ag -l $1 | peco | xargs echo)
+  if [ ! -z $SELECTED_FILE ] ; then
+      BUFFER="vim -p "$SELECTED_FILE
+      eval $BUFFER
+  fi
+}
+
 peco-tree-dir(){
   local SELECTED_DIRECTORY=$(tree --charset=o -i -f -d | peco | xargs echo)
-  cd $SELECTED_DIRECTORY
+  if [ ! -z $SELECTED_DIRECTORY ] ; then
+      cd $SELECTED_DIRECTORY
+  fi
   zle accept-line
 }
 zle -N peco-tree-dir

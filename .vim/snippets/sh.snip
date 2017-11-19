@@ -2,3 +2,7 @@ snippet random_num
     RAND=$((RANDOM % ${1}))
 snippet random_str
     RAND=\`cat /dev/urandom | base64 | fold -w ${1} | head -n 1\`
+snippet sed_val
+    test="apple"
+    test=$(echo $test | sed -e 's/a/e/g')
+    echo $test

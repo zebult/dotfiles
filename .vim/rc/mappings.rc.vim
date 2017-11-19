@@ -1,5 +1,31 @@
 " Mappings
 
+function! MinimumMapping() abort
+  nnoremap <Leader>w :w<Cr>
+  nnoremap <Leader>q :q<Cr>
+  nnoremap <Leader>Q :qa<Cr>
+  nnoremap <Leader>e :bd<Cr>
+  nnoremap <Leader>2 :wq<Cr>
+  nnoremap <Leader>! :q!<Cr>
+  nnoremap <Leader># :qa!<Cr>
+  noremap ;  :
+  noremap :  ;
+  inoremap jj <ESC><ESC><ESC>
+  nnoremap <Tab> %
+  vnoremap <Tab> %
+nnoremap <F11> <C-i>
+
+endfunction
+command -bar MinimumMapping call MinimumMapping()
+
+function! InitMapping() abort
+  let b:lexima_disabled = 1
+  mapclear
+endfunction
+command -bar InitMapping call InitMapping()
+
+MinimumMapping
+
 nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
@@ -15,16 +41,9 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " 行数切り替え
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
-inoremap jj <ESC><ESC><ESC>
-" noremap j gj
-" noremap k gk
-" noremap gj j
-" noremap gk k
 nnoremap <Down> 5j
 nnoremap <Up> 5k
 
-noremap ;  :
-noremap :  ;
 noremap 8* *N
 
 noremap <C-e> 2<C-e>
@@ -72,8 +91,8 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
+nnoremap dn :<C-u>bn<CR>
+nnoremap dp :<C-u>bp<CR>
 nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
@@ -155,26 +174,11 @@ nnoremap <Leader>O :!open .<CR><CR>
 nnoremap <Leader>A :VimFilerBufferDir -split -simple -winwidth=40 -no-quit<CR><C-w>l:TagbarClose<CR>:TagbarOpen<CR>
 nnoremap <Leader>$ :%s/\s\+$//ge<CR>
 
-" save and close
-nnoremap <Leader>w :w<Cr>
-nnoremap <Leader>q :q<Cr>
-nnoremap <Leader>Q :qa<Cr>
-nnoremap <Leader>e :bd<Cr>
-nnoremap <Leader>2 :wq<Cr>
-nnoremap <Leader>! :q!<Cr>
-nnoremap <Leader># :qa!<Cr>
-
 nnoremap t$ v$:TogglSelectStart<CR>
 
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
-
-" 対応する括弧へ移動しやすく
-nnoremap <Tab> %
-vnoremap <Tab> %
-
-nnoremap <F11> <C-i>
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>

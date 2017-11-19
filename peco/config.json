@@ -1,7 +1,7 @@
 {
+  "InitialFilter" : "IgnoreCase",
   "Keymap": {
-    "C-k": "peco.SelectUp",
-    "C-j": "peco.SelectDown"
+    "C-j": "peco.ToggleSelectionAndSelectNext"
   },
   "Style": {
     "Selected": ["red"],
