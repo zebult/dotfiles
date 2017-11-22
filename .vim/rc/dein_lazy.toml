@@ -158,6 +158,8 @@ autocmd FileType cs noremap <buffer> <c-f> :call Uncrustify('cs')<CR>
 autocmd FileType cs vnoremap <buffer> <c-f> :call RangeUncrustify('cs')<CR>
 autocmd FileType objc noremap <buffer> <c-f> :call Uncrustify('mm')<CR>
 autocmd FileType objc vnoremap <buffer> <c-f> :call RangeUncrustify('mm')<CR>
+autocmd FileType java noremap <buffer> <c-f> :call Uncrustify('java')<CR>
+autocmd FileType java vnoremap <buffer> <c-f> :call RangeUncrustify('java')<CR>
 '''
 
 [[plugins]]

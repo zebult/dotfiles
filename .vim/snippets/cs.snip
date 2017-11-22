@@ -323,7 +323,7 @@ snippet timer_once_rx
     Observable.Timer(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
             ${1}
     }).AddTo(this);
-snippet next_frame
+snippet timer_next_frame
     Observable.NextFrame()
         .Subscribe(_ => ${1});
 snippet color
@@ -411,8 +411,12 @@ snippet menu_item
 snippet application_openurl
     Application.OpenURL(${0});
 
-snippet string_isnullorempty
-    if (string.IsNullOrEmpty(s))
+snippet str_isnullorempty
+    if (string.IsNullOrEmpty(${1:str}))
+snippet str_find_index
+    ${1:str}.IndexOf(${2:target});
+snippet str_split
+    ${1:str}.Split('${2:target char}');
 
 snippet object_to_int
     System.Convert.ToInt32(${1:object});
@@ -424,23 +428,23 @@ snippet int_to_bool
     System.Convert.ToBoolean(${1:int})
 snippet int_to_float
     (float)${1:int}
-snippet int_to_string
+snippet int_to_str
     ${1:int}.ToString();
 snippet int_to_enum
     (${1:type})(${2:int})
-snippet float_to_string
+snippet float_to_str
     ${1:float}.ToString("R");
 snippet float_to_int
     (int)${1:float}f
-snippet string_to_int
-    int.Parse(${1:string});
-snippet string_to_long
-    long.Parse(${1:string});
-snippet string_to_enum
-    (${1:type}) Enum.Parse(typeof(<|1|>), ${2:string});
+snippet str_to_int
+    int.Parse(${1:str});
+snippet str_to_long
+    long.Parse(${1:str});
+snippet str_to_enum
+    (${1:type}) Enum.Parse(typeof(<|1|>), ${2:str});
 snippet enum_to_int
-    (int)${enum};
-snippet enum_to_string
+    (int)${1:enum};
+snippet enum_to_str
     ${1:type}.GetName(typeof(<|1|>), ${2:value});
 snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});

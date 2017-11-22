@@ -3,3 +3,6 @@ snippet log
 
 snippet timer
     [NSTimer scheduledTimerWithTimeInterval:${1:0.1} target:self selector:@selector(${2:hoge:}) userInfo:nil repeats:${3:YES}];
+
+snippet char_to_nsstr
+    NSString *_${1:nsstr}       = [NSString stringWithUTF8String:<|1|> ? <|1|> : ""];
