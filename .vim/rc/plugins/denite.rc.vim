@@ -37,7 +37,8 @@ nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-
 nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
 
 " Show
-nnoremap <silent> [denite]j :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]j :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> [denite]j :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> [denite]T :<C-u>Unite tab<CR>
 
 nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>

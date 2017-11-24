@@ -105,9 +105,9 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 
 # Convenience Tools: ---------------------------
 
-[[plugins]]
-repo = 'rhysd/clever-f.vim'
-on_event = 'BufRead'
+# [[plugins]]
+# repo = 'rhysd/clever-f.vim'
+# on_event = 'BufRead'
 
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'

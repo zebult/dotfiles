@@ -397,6 +397,17 @@ snippet www_rx
     })
     .AddTo(this);
 
+snippet www_rx_post
+    WWWForm form = new WWWForm();
+    form.AddField("uid", UserId);
+
+    ObservableWWW.Post(url, form, null)
+    .Timeout(TimeSpan.FromSeconds(30))
+    .Subscribe(receivedData => {
+    }, err => {
+        GRAdvancedDebugLog.LogError(err.ToString());
+    }).AddTo(this);
+
 snippet write
     System.IO.StreamWriter sw = new System.IO.StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
     sw.Write("aaa\n");
@@ -450,6 +461,25 @@ snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});
 snippet world_to_screen
     Camera.main.WorldToScreenPoint(${1:position});
+
+snippet json_to_dic_MINI
+    Dictionary<string, object> dic = Json.Deserialize(${1:json}) as Dictionary<string, object>;
+snippet dic_to_json_MINI
+    string json = Json.Serialize(${1:dic});
+snippet json_create_JSON_NODE
+    using MiniJSON;
+    var ${1:dic} = new Dictionary<string, object>()
+    {
+        { "hoge", "hoge" },
+    };
+    string json = Json.Serialize(<|1|>);
+snippet json_get_value_JSON_NODE
+    string bgm = JsonNodeRoot["stage"]["0"]["bgm"].Get<string>();
+snippet json_get_array_JSON_NODE
+    foreach (var ranking in JsonNodeApps["ranking"])
+    {
+        int rank = (int) (ranking["rank"].Get <long>());
+    }
 
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});
