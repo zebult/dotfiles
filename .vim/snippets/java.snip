@@ -8,8 +8,15 @@ snippet getter
     public ${1:int} get${2}() {
         return ${3};
     }
-
 snippet setter
     public void set${1}(${2:int} ${3}) {
         ${4} = ${3};
+    }
+snippet void
+    private void ${1}()
+    {
+    }
+snippet voidp
+    public void ${1}()
+    {
     }

@@ -35,7 +35,7 @@ endfunction
 command -bar JsonPretty  call JsonPretty()
 
 function! JsonLine() abort
-  norm! 10000J
+  norm! 100000J
   silent %s/\ //ge
 endfunction
 command -bar JsonLine call JsonLine()

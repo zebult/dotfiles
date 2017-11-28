@@ -41,6 +41,8 @@ snippet base_start
         base.Start();
         ${1}
     }
+snippet op
+    override protected
 snippet update
     void Update()
     {
@@ -244,6 +246,9 @@ snippet android
 snippet unity
     #if UNITY_EDITOR
     #endif
+snippet adhoc
+    #if APP_STORE || ADHOC
+    #endif
 
 snippet glog
     GRAdvancedDebugLog.Log(${1});
@@ -350,7 +355,7 @@ snippet enum_string
     }
     <|1|>.Xxx.ObtainType()
 snippet action
-    (() => );
+    () => 
 snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
