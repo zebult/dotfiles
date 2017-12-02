@@ -30,7 +30,9 @@ endfunction
 command -bar NoHighlightTrailingSpaces  call NoHighlightTrailingSpaces()
 
 function! JsonPretty() abort
+  norm mz
   silent! %!jq '.'
+  norm 'z
 endfunction
 command -bar JsonPretty  call JsonPretty()
 

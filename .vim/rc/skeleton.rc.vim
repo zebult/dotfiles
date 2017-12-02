@@ -12,4 +12,5 @@ augroup template
   autocmd BufNewFile *.swift 0r $HOME/.vim/template/skeleton.swift
   autocmd BufNewFile *.java 0r $HOME/.vim/template/skeleton.java
   autocmd BufNewFile *.js 0r $HOME/.vim/template/skeleton.js
+  autocmd BufNewFile *.json 0r $HOME/.vim/template/skeleton.json
 augroup END

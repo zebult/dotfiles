@@ -87,20 +87,6 @@ set backspace=indent,eol,start
 
 autocmd FileType cvs,svn,gitcommit setlocal spell spelllang=en_us
 
-abbreviate jsonn
-      \ {
-      \   "size": 10,
-      \   "from": 0,
-      \   "query": {
-      \     "bool": {
-      \       "must": [
-      \         {"term": {"entryContent": "インド"}},
-      \         {"term": {"entryContent": "カレー"}}
-      \       ]
-      \     }
-      \   }
-      \ }
-
 augroup SaveGroup
     autocmd!
     " 保存時Git差分ハイライト
@@ -111,6 +97,7 @@ augroup SaveGroup
     autocmd BufWritePre * call lightline#update()
     autocmd BufWritePre *.cs call Uncrustify('cs')
     autocmd BufWritePre *.mm call Uncrustify('mm')
+    autocmd BufWritePre *.json call JsonPretty()
 augroup END
 
 augroup HoldCursorGroup

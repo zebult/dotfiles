@@ -105,6 +105,7 @@ case "${os}" in
         git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
         mkdir -p $HOME/.config
         ln -snfv $DOTFILES/peco $HOME/.config/peco
+        ln -snfv $DOTFILES/Karabiner $HOME/.config/Karabiner
         ln -snfv $HOME/.vim $HOME/.config/nvim
         ln -snfv $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
         sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
