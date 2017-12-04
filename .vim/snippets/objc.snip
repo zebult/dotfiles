@@ -6,3 +6,9 @@ snippet timer
 
 snippet char_to_nsstr
     NSString *_${1:nsstr}       = [NSString stringWithUTF8String:<|1|> ? <|1|> : ""];
+
+snippet if
+    if(${1})
+    {
+        ${2}
+    }
