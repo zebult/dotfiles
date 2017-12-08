@@ -110,6 +110,8 @@ augroup SaveGroup
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     autocmd BufWritePre * call lightline#update()
     autocmd BufWritePre *.cs call Uncrustify('cs')
+    autocmd BufWritePre *.cpp call Uncrustify('cpp')
+    autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.mm call Uncrustify('mm')
 augroup END
 
