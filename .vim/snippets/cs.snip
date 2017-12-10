@@ -331,6 +331,14 @@ snippet timer_once_rx
 snippet timer_next_frame
     Observable.NextFrame()
         .Subscribe(_ => ${1});
+
+snippet thread_main
+    Observable.Create <int>(observer => { observer.OnNext(0); return null; })
+    .ObserveOnMainThread()
+    .Subscribe(_ => {
+        ${1}
+    });
+
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
 snippet readonly

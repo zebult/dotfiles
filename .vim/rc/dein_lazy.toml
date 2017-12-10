@@ -290,8 +290,16 @@ nnoremap g/ :Migemo<CR>
 repo = 'kana/vim-altr'
 hook_add = '''
 nmap <Leader>a <Plug>(altr-forward)
+"call altr#define('autoload/%.vim', 'doc/%.txt', 'plugin/%.vim')
 '''
 on_map = '<Plug>(altr-'
+
+[[plugins]]
+repo = 'vim-scripts/a.vim.git'
+hook_add = '''
+nnoremap s; :AV<CR>
+'''
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'itchyny/calendar.vim'

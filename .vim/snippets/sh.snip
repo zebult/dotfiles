@@ -11,3 +11,11 @@ snippet fori
     do
     echo "i = $i";
     done
+snippet if_null_check
+    if [ -n "$HOGE" ]; then
+        # has HOEG
+    elif [ -n "$FUGA" ]; then
+        # has FUGA
+    else
+        # no
+    fi

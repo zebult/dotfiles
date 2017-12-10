@@ -14,7 +14,7 @@ autocmd FileType cpp vnoremap zk <Esc>:vs<CR><C-w>l:GtagsCaller<CR> snippetsの�
 autocmd FileType cpp nnoremap szk :sp<CR><C-w>j:GtagsCaller<CR>
 
 " Grep
-autocmd FileType cpp nnoremap g/ :Gtags -g 
+" autocmd FileType cpp nnoremap g/ :Gtags -g 
 autocmd FileType cpp nnoremap g* :Gtags -g <C-r><C-w><CR>
 
 " このファイルの関数一覧

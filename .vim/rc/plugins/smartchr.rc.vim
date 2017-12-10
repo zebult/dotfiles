@@ -4,7 +4,8 @@ autocmd FileType *          inoremap <buffer> <expr> - smartchr#loop('-', '--', 
 autocmd FileType markdown   inoremap <buffer> <expr> - search('^\(#.\+\)\?\%#','bcn')? smartchr#loop('- ', '-'): '-'
 autocmd FileType *          inoremap <buffer> <expr> * smartchr#loop('*', '*= ')
 autocmd FileType markdown   inoremap <buffer> <expr> * search('^\(#.\+\)\?\%#','bcn')? smartchr#loop('* ', '*'): '*'
-autocmd FileType *          inoremap <buffer> <expr> , smartchr#loop(',', '→', '←', '↑', '↓')
+" autocmd FileType *          inoremap <buffer> <expr> , smartchr#loop(', ', '→', '←', '↑', '↓')
+autocmd FileType *          inoremap <buffer> <expr> , smartchr#loop(',', ' -> ', ' <- ', '↑', '↓')
 autocmd FileType cpp,h,hpp  inoremap <buffer> <expr> , smartchr#loop(', ', ' -> ')
 autocmd FileType cs  inoremap <buffer> <expr> , smartchr#loop(', ', ' => ')
 " autocmd FileType *          inoremap <buffer> <expr> " smartchr#loop('"', '""', '""<Left>')
