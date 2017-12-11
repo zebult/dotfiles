@@ -71,7 +71,7 @@ function! Action_o() abort
   if IsBullet()
     if IsTodo()
       execute "normal! $aa\"ox"
-      execute "normal! i [ ]"
+      execute "normal! i- [ ] "
     else
       execute "normal! $aa\"ox"
     end
