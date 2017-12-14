@@ -124,7 +124,7 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # on_i = 1
 # on_ft  =  ['c', 'cpp']
 
-# make plugin(:LayoutPlugin xxx.vim)
+# make plugin(create plugin) (:LayoutPlugin xxx.vim)
 [[plugins]]
 on_cmd = 'LayoutPlugin'
 repo = 'mopp/layoutplugin.vim'
@@ -145,6 +145,10 @@ vnoremap sub "1y:OverCommandLine<CR>%s/<C-r>1/<C-r>1/g<Left><Left>
 " vnoremap sub :OverCommandLine<CR>s///g<Left><Left><Left>
 vnoremap sup :OverCommandLine<CR>s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 '''
+
+[[plugins]]
+repo = 'malithsen/trello-vim'
+on_i = 1
 
 [[plugins]]
 repo = 'cofyc/vim-uncrustify'
@@ -201,11 +205,13 @@ map <C-k> <Plug>(edgemotion-k)
 [[plugins]]
 repo = 'mrtazz/simplenote.vim'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
+on_event = 'BufWrite'
 
 # メタ文字含むとlightline壊れるので注意
 [[plugins]]
 repo = 'zebult/toggl.vim'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'vim-scripts/DoxygenToolkit.vim'

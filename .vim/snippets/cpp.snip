@@ -4,11 +4,11 @@ snippet if
         ${2}
     }
 
-snippet ccrxinterval
-    auto values = CCRx::interval(this, ${1})
+snippet interval
+    CCRx::interval(this, ${1})
     .subscribe([=](int v) {
         ${2}
-    }, [](){printf("completed\n");});
+    });
 
 snippet log
     CCLOG("${1}");
@@ -21,7 +21,7 @@ snippet foreach
         ${3}
     }
 
-snippet synthesize
+snippet cc_synthesize
     CC_SYNTHESIZE(${1:class}, _${2:name}, ${3}<|2|>);
 
 snippet assert
@@ -43,6 +43,13 @@ snippet release
 snippet delay
     runAction(Sequence::create(DelayTime::create(0.01f), CallFunc::create([=]() {
     }), runAction));
+
+snippet ggetparam
+    GMI->getParam("${1}");
+snippet ggetword
+    GMI->getWord("${1}");
+snippet rand
+    GRUtils::MathUtil::getRandom_0_1()
 
 # Cocos2d-x
 
@@ -69,6 +76,12 @@ snippet create
         return scene;
     }
     static cocos2d::Scene* create();
+
+snippet getChildren
+    for (auto child : _csb->getChildren())
+    {
+        LOG("!!! child name: %s", child->getName().c_str());
+    }
 
 # snippet sceneh
 # #ifndef ${1:class name}Controller_hpp'

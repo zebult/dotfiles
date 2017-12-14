@@ -13,7 +13,7 @@ if &compatible
   set nocompatible
 endif
 
-" rc読み込み TODO: 関数の内容理解する
+" rc読み込み
 function! s:source_rc(path, ...) abort "{{{
   let use_global = get(a:000, 0, !has('vim_starting'))
   let abspath = resolve(expand('~/.vim/rc/' . a:path))
@@ -57,6 +57,7 @@ endif
 call s:source_rc('skeleton.rc.vim')
 call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
+" call s:source_rc('tmp.vim')
 call s:source_rc('macro.rc.vim')
 call s:source_rc('util.rc.vim')
 call s:source_rc('playground.rc.vim')

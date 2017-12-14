@@ -1,2 +1,13 @@
-" let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+let g:plugin_mode = 0
+if len(findfile(".development.vim", ".;")) > 0
+  let g:plugin_mode = 1
+  set runtimepath&
+
+  execute 'set runtimepath+=' . getcwd()
+
+  for plug in split(glob(getcwd() . "/*"), '\n')
+    execute 'set runtimepath+=' . plug
+  endfor
+endif
+
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vimrc'

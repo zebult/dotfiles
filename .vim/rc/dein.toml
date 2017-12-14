@@ -149,6 +149,10 @@ repo = 'kana/vim-metarw'
 repo = 'zebult/vim-metarw-redmine'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
 
+[[plugins]]
+repo = 'zebult/vim-metarw-trello'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
+
 # [[plugins]]
 # repo = 'basyura/unite-yarm'
 # hook_add = '''

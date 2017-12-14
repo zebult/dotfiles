@@ -5,17 +5,15 @@ let g:lightline = {
             \ 'active': {
             \   'left': [
             \      ['mode', 'paste'],
-            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu']
+            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu', 'toggl_task']
             \    ],
-            \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
-            \      [ 'toggl_task', 'toggl_time'] ]
+            \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent']],
             \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
             \   'fugitive': 'MyFugitive',
             \   'gitgutter': 'MyGitGutter',
-            \   'toggl_task': 'toggl#task',
-            \   'toggl_time': 'toggl#time',
+            \   'toggl_task': 'MyToggleTask',
             \   'tagbar': 'MyCurrentTag',
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
@@ -34,6 +32,10 @@ let g:lightline = {
 " component_function : カーソル動く度呼ばれる cursor move
 
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
+
+function! MyToggleTask()
+    return "Toggle: ".toggl#task()." ".toggl#time()
+endfunction
 
 function! MyFugitive()
     try

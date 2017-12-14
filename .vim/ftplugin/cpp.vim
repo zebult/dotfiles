@@ -23,6 +23,14 @@ call s:add_path($COCOS_ROOT)
 
 setlocal shiftwidth=4
 
+" log
+nnoremap gl yiwoCCLOG("p: %s", p);
+vnoremap gl yoCCLOG("p: %s", p);
+
+" null
+nnoremap gN yiwOif(p == nullptr){CCLOG("p is null");}
+vnoremap gN yOif(p == nullptr){CCLOG("p is null");}
+
 " 最後に定義された include 箇所へ移動してを挿入モードへ
 nnoremap <buffer><silent> <Space>ii :execute "?".&include<CR> :noh<CR> o
 

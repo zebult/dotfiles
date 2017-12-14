@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'zebult/vim-metarw-trello'
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
+
+[[plugins]]
+repo = 'zebult/helloworld-vim'

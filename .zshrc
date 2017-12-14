@@ -124,13 +124,14 @@ alias gsu="git submodule update"
 alias gsb="git submodule"
 alias gsv="git stash save"
 alias glist="git stash list"
-alias gfu="git ls-files -u"
 alias gcp="git cherry-pick"
 alias grb="git rebase"
 alias grv="git revert"
+# alias gcl="git ls-files -u"
 alias gcf="git diff --diff-filter=U"
 alias gtr="git tree"
 alias gclo="git clone"
+alias gth="git checkout --theirs ."
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
@@ -138,6 +139,8 @@ alias vim=nvim
 # alias vi=vim -u NONE --noplugin
 alias mvim='macvim'
 alias vimm='vim **/*'
+alias cal='vim -c "Cal"'
+alias seat='vim -c "SimpleNoteSeat"'
 alias perl='/usr/bin/perl'
 
 alias gip='curl ipecho.net/plain; echo'
