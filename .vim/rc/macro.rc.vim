@@ -24,6 +24,18 @@ function! AutoCapusule() abort
 endfunction
 command! -bar AutoCapusule call AutoCapusule()
 
+function! CppAutoFunc(class) range
+  for linenum in range(a:firstline, a:lastline)
+    norm mzyy}P^e
+    redi @z
+    silent echo a:class
+    redi END
+    norm "zpkJea::lx
+    norm $xa{dd'zj
+  endfor
+endfunction
+command! -range -nargs=? CppAutoFunc <line1>,<line2>call CppAutoFunc(<f-args>)
+
 " Redmine
 function! RedmineDateIncrement() abort
   normal /due_date:$hGo w

@@ -10,9 +10,12 @@ let g:switch_custom_definitions =
     \   ['yes', 'no'],
     \   ['public', 'private', 'protected'],
     \   ['virtual', 'override'],
-    \   ['int', 'string', 'bool', 'float', 'double'],
+    \   ['int', 'string', 'bool', 'float', 'double', 'void'],
     \   ['Start', 'Stop'],
     \   ['start', 'stop'],
     \   ['right', 'left'],
+    \   ['Right', 'Left'],
     \   ['after', 'before'],
+    \   ['on', 'off'],
+    \   ['ON', 'OFF'],
     \ ]

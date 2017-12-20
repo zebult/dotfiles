@@ -230,14 +230,7 @@ hook_add = 'source ~/.vim/rc/plugins/submode.rc.vim'
 
 [[plugins]]
 repo = 'jacquesbh/vim-showmarks'
-hook_add = '''
-    nnoremap mm :NoShowMarks!<CR>:DoShowMarks!<CR>
-    " 最初からマークを表示する
-    aug show-marks-sync
-        au!
-        au BufReadPost * sil! DoShowMarks
-    aug END
-'''
+hook_add = 'source ~/.vim/rc/plugins/showmarks.rc.vim'
 
 # i: ex(cii)
 [[plugins]]
@@ -301,14 +294,13 @@ hook_add = '''
 [[plugins]]
 repo = 'rking/ag.vim'
 
-[[plugins]]
-repo = 'airblade/vim-rooter'
-hook_add = '''
-    " let g:rooter_use_lcd = 1 " not echo
-    " let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
-    let g:rooter_patterns = ['Classes/']
-'''
-
+# [[plugins]]
+# repo = 'airblade/vim-rooter'
+# hook_add = '''
+#     " let g:rooter_use_lcd = 1 " not echo
+#     " let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
+#     let g:rooter_patterns = ['Classes/']
+# '''
 
 # Swift ---------------------------
 

@@ -4,6 +4,16 @@ snippet if
         ${2}
     }
 
+snippet fori
+    for (int i = 0; i < ${0:vector}.size(); i++)
+    {
+    }
+
+snippet void
+    void ${2}::${1}()
+    {
+    }
+
 snippet interval
     CCRx::interval(this, ${1})
     .subscribe([=](int v) {
@@ -51,6 +61,9 @@ snippet ggetword
 snippet rand
     GRUtils::MathUtil::getRandom_0_1()
 
+snippet struct_to_struct
+    *((struct ${1} *) &${2});
+
 # Cocos2d-x
 
 snippet tmplayer
@@ -82,6 +95,15 @@ snippet getChildren
     {
         LOG("!!! child name: %s", child->getName().c_str());
     }
+
+snippet sprite_setTexture
+    auto afterSize = ${1:sprite}->getContentSize();
+    <|1|>->setTexture(${2:file});
+    auto beforeSize = <|1|>->getContentSize();
+    <|1|>->setScale(afterSize.width / beforeSize.width, afterSize.height / beforeSize.height);
+
+snippet deprecated_attribute
+    CC_DEPRECATED_ATTRIBUTE
 
 # snippet sceneh
 # #ifndef ${1:class name}Controller_hpp'

@@ -31,6 +31,7 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
 # go path(go get glide)
 export GOPATH=$HOME/.go:~/Documents/workspace/Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+export PATH=$PATH:$HOME/.go/bin
 # MacPorts command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
@@ -124,6 +125,7 @@ alias gsu="git submodule update"
 alias gsb="git submodule"
 alias gsv="git stash save"
 alias glist="git stash list"
+alias gdrop="git stash drop stash@\{0\}"
 alias gcp="git cherry-pick"
 alias grb="git rebase"
 alias grv="git revert"
@@ -131,7 +133,7 @@ alias grv="git revert"
 alias gcf="git diff --diff-filter=U"
 alias gtr="git tree"
 alias gclo="git clone"
-alias gth="git checkout --theirs ."
+alias gth="git checkout --theirs"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
@@ -262,6 +264,14 @@ gplu() {
     else
         echo "git pull upstream `git rev-parse --abbrev-ref HEAD`"
         git pull upstream `git rev-parse --abbrev-ref HEAD`
+    fi
+}
+
+gsww() {
+    if [ -n "$1" ]; then
+        git stash show stash@\{$1\} -p
+    else
+        git stash show stash@\{0\} -p
     fi
 }
 
