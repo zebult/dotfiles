@@ -1,5 +1,8 @@
 " View
-colorscheme nord
+if g:plugin_mode == 0
+  colorscheme nord
+else
+endif
 
 " 256に制限をかける
 set t_Co=256

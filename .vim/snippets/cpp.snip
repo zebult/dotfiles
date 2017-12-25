@@ -31,6 +31,15 @@ snippet foreach
         ${3}
     }
 
+snippet ac
+    [ = ] () {
+    }${0}
+
+snippet debug
+    #ifdef DEBUG
+        ${0}
+    #endif
+
 snippet cc_synthesize
     CC_SYNTHESIZE(${1:class}, _${2:name}, ${3}<|2|>);
 
@@ -63,6 +72,16 @@ snippet rand
 
 snippet struct_to_struct
     *((struct ${1} *) &${2});
+snippet int_to_str
+    std::to_string(${1:int});
+snippet str_to_int
+    std::atoi(${1:char});
+
+snippet str_contain
+    if (${0:str}.find("b") != std::string::npos)
+    {
+        CCLOG("文字列`b`が見つかりました");
+    }
 
 # Cocos2d-x
 
@@ -82,6 +101,9 @@ snippet tmplayer
     });
 
 snippet create
+    auto ${1:value} = ${2:class}::create();
+
+snippet create_scene
     Scene* ${1:class name}::create() {
         auto scene = Scene::create();
         auto layer = <|1|>::create();
@@ -104,6 +126,14 @@ snippet sprite_setTexture
 
 snippet deprecated_attribute
     CC_DEPRECATED_ATTRIBUTE
+
+snippet ios
+    #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    #endif
+
+snippet android
+    #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    #endif
 
 # snippet sceneh
 # #ifndef ${1:class name}Controller_hpp'

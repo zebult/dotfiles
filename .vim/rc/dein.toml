@@ -320,15 +320,15 @@ repo = 'kballard/vim-swift'
 on_ft = 'swift'
 
 # 辞書補完
-[[plugins]]
-repo = 'tokorom/swift-dict.vim'
-on_ft = 'swift'
+# [[plugins]]
+# repo = 'tokorom/swift-dict.vim'
+# on_ft = 'swift'
 
 # C++ ---------------------------
 
-[[plugins]]
-repo = 'lyuts/vim-rtags'
-hook_add = 'source ~/.vim/rc/plugins/rtags.rc.vim'
+# [[plugins]]
+# repo = 'lyuts/vim-rtags'
+# hook_add = 'source ~/.vim/rc/plugins/rtags.rc.vim'
 
 # [[plugins]]
 # repo = 'jsierant/deoplete-rtags'
@@ -344,6 +344,18 @@ repo = 'vim-jp/cpp-vim'
 repo = 'octol/vim-cpp-enhanced-highlight'
 on_ft = 'cpp'
 
+# [[plugins]]
+# repo = 'tweekmonster/deoplete-clang2'
+# depends = ['deoplete.nvim']
+# on_ft = ['c', 'cpp', 'cmake', 'mm', 'm']
+
+# ouch objc
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+# on_ft = ['c', 'cpp', 'cmake']
+# if = "has('nvim')"
+# depends = ['deoplete.nvim']
+
 # .vim/syntaxに記述
 # [[plugins]]
 # repo = 'osyo-manga/vim-cpp-syntax-reserved_identifiers'
@@ -357,20 +369,20 @@ on_ft = 'cpp'
 repo = 'Rubonnek/vim-cc2dx'
 
 # clang complete(need vimproc)
-[[plugins]]
-repo = 'osyo-manga/vim-marching'
-filetypes  =  ['c', 'cpp', 'm', 'mm']
-hook_add = '''
-    " clang コマンドの設定
-    let g:marching_clang_command = "/usr/bin/clang"
-    " インクルードディレクトリのパスを設定
-    let g:marching_include_paths = [
-    \   $COCOS_ROOT,
-    \   "/usr/local/Cellar/boost"
-    \]" neocomplete.vim と併用して使用する場合は以下の設定を行う
-    let g:marching_enable_neocomplete = 1
-    let g:marching_enable_deoplete = 1
-'''
+# [[plugins]]
+# repo = 'osyo-manga/vim-marching'
+# filetypes  =  ['c', 'cpp', 'm', 'mm']
+# hook_add = '''
+#     " clang コマンドの設定
+#     let g:marching_clang_command = "/usr/bin/clang"
+#     " インクルードディレクトリのパスを設定
+#     let g:marching_include_paths = [
+#     \   $COCOS_ROOT,
+#     \   "/usr/local/Cellar/boost"
+#     \]" neocomplete.vim と併用して使用する場合は以下の設定を行う
+#     let g:marching_enable_neocomplete = 1
+#     let g:marching_enable_deoplete = 1
+# '''
 
 # Vim ---------------------------
 

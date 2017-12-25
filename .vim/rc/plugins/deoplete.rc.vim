@@ -8,13 +8,21 @@ set completeopt+=noinsert
 
 " use zchee/deoplete-clang
 let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/clang'
+let g:deoplete#sources#clang#clang_header  = '/Library/Developer/CommandLineTools/usr/lib/clang'
+" let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclapack.dylib'
+" let g:deoplete#sources#clang#libclang_path = '/usr/lib'
+" let g:deoplete#sources#clang#clang_header = '/usr/lib'
+" let g:deoplete#sources#clang#clang_header = '/usr/bin/clang'
+" let g:deoplete#sources#clang#clang_header = '/usr/include'
+" let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+" let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+" let g:deoplete#sources#clang#clang_header = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
 
 " オムニ補完を対象にする
 " if !exists("g:deoplete#omni#input_patterns")
 "   let g:deoplete#omni#input_patterns = {}
 " endif
-" clang family omnicomplete
+" " clang family omnicomplete
 " let g:deoplete#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 " let g:deoplete#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 " let g:deoplete#omni#input_patterns.objc = '[^.[:digit:] *\t]\%(\.\|->\)\w*'

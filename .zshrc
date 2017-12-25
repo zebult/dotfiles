@@ -102,6 +102,7 @@ export ENHANCD_FILTER=peco
 alias ll='ls -alh'
 alias llp='ls -alh | peco'
 alias gcm="gst; git commit -v"
+alias gg="gst; git add .; git commit -m"
 alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
@@ -208,7 +209,6 @@ mkcd() {
 gacm() {
     gst
     git add .
-# alias gacm="gst; git add .; git commit -m"
     if [ -n "$1" ]; then
         git commit -m $1
     else
