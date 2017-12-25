@@ -49,14 +49,14 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 '''
 
 # include周りの補完, c, c++は必須
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_i = 1
-on_ft = ['c', 'cpp', 'm', 'mm']
-hook_add = '''
-let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
-let g:neoinclude#_paths = '/usr/local/Cellar/boost'
-'''
+# [[plugins]]
+# repo = 'Shougo/neoinclude.vim'
+# on_i = 1
+# on_ft = ['c', 'cpp', 'm', 'mm']
+# hook_add = '''
+# let g:neoinclude#_paths = '/Applications/Cocos/Cocos2d-x/cocos2d-x-3.6/cocos'
+# let g:neoinclude#_paths = '/usr/local/Cellar/boost'
+# '''
 
 # Base Tools: ---------------------------
 
@@ -117,12 +117,6 @@ hook_add = 'source ~/.vim/rc/plugins/gtags.rc.vim'
 # repo = 'ujihisa/neco-look'
 # on_i = 1
 # on_ft  =  ['*']
-
-# c, cpp complement
-# [[plugins]]
-# repo = 'justmao945/vim-clang'
-# on_i = 1
-# on_ft  =  ['c', 'cpp']
 
 # make plugin(create plugin) (:LayoutPlugin xxx.vim)
 [[plugins]]
@@ -294,11 +288,17 @@ nnoremap g/ :Migemo<CR>
 
 [[plugins]]
 repo = 'kana/vim-altr'
-hook_add = '''
-nmap <Leader>a <Plug>(altr-forward)
-"call altr#define('autoload/%.vim', 'doc/%.txt', 'plugin/%.vim')
+hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
+hook_post_source = '''
+call altr#define('%.vsh', '%.fsh')
+call altr#define('dein.toml', 'dein_lazy.toml')
+call altr#define('autoload/%.vim', 'doc/%.txt', 'plugin/%.vim')
 '''
 on_map = '<Plug>(altr-'
+# on_event = ['BufWrite']
+# on_event = 'BufWrite'
+# on_i = 1
+# on_event = 'BufWrite'
 
 [[plugins]]
 repo = 'vim-scripts/a.vim.git'
@@ -340,19 +340,12 @@ on_map = '<Plug>(Dash'
 
 # C++ ---------------------------
 
-# # ouch objc
+# c, cpp complement
 # [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# hook_add = '''
-# '''
-# on_ft = ['c', 'cpp', 'cmake']
-# if = "has('nvim')"
-# depends = ['deoplete.nvim']
-
-# [[plugins]]
-# repo = 'tweekmonster/deoplete-clang2'
-# depends = ['deoplete.nvim']
-# on_ft = ['c', 'cpp', 'cmake', 'mm', 'm']
+# repo = 'justmao945/vim-clang'
+# on_event = 'BufRead'
+# on_ft  =  ['c', 'cpp', 'h', 'hpp']
+# hook_add = 'source ~/.vim/rc/plugins/clang.rc.vim'
 
 # C# ---------------------------
 

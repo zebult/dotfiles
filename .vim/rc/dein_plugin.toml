@@ -7,3 +7,14 @@ hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
 
 [[plugins]]
 repo = 'zebult/helloworld-vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = "has('nvim')"
+hook_add = '''
+let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header  = '/Library/Developer/CommandLineTools/usr/lib/clang'
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
