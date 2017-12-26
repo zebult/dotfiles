@@ -291,6 +291,7 @@ repo = 'kana/vim-altr'
 hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
 hook_post_source = '''
 call altr#define('%.vsh', '%.fsh')
+call altr#define('%.vert', '%.flag')
 call altr#define('dein.toml', 'dein_lazy.toml')
 call altr#define('autoload/%.vim', 'doc/%.txt', 'plugin/%.vim')
 '''
