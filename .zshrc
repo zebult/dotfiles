@@ -37,7 +37,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
-COCOS_VERSION="3.11.1"
+# COCOS_VERSION="3.11.1"
+COCOS_VERSION="3.16"
 # N
 # NDK_VERSION="android-ndk-r10e"
 # A

@@ -1432,6 +1432,31 @@
               },
               {
                 "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  },
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
                   "key_code": "l",
                   "modifiers": {
                     "mandatory": [
