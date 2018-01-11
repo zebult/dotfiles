@@ -31,7 +31,8 @@ endfor
 nnoremap <silent> [denite]k :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
 
 " New
-nnoremap <silent> [denite]b :<C-u>Denite -default-action=open -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]b :<C-u>Denite -default-action=open -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 nnoremap <silent> [denite]t :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
@@ -49,7 +50,6 @@ nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately -highl
 
 nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
 nnoremap <silent> [denite]H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
-
 nnoremap <silent> [denite]f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
 nnoremap <silent> [denite]a  :<C-u>Denite -highlight-mode-insert=Search outline<CR>

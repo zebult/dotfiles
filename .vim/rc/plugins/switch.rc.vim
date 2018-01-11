@@ -18,4 +18,6 @@ let g:switch_custom_definitions =
     \   ['after', 'before'],
     \   ['on', 'off'],
     \   ['ON', 'OFF'],
+    \   ['hoge', 'fuga'],
+    \   ['HOGE', 'FUGA'],
     \ ]

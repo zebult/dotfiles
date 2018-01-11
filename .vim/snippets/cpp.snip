@@ -15,7 +15,9 @@ snippet void
     }
 
 snippet interval
+    #include "CCRxScheduler.h"
     CCRx::interval(this, ${1})
+    .first()
     .subscribe([=](int v) {
         ${2}
     });

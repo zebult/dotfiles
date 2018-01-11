@@ -105,6 +105,10 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'mattesgroeger/vim-bookmarks'
+hook_add = 'source ~/.vim/rc/plugins/bookmarks.rc.vim'
+
 # [[plugins]]
 # repo = 'rhysd/clever-f.vim'
 # on_event = 'BufRead'

@@ -37,7 +37,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # cocos2d-x
-COCOS_VERSION="3.11.1"
+# COCOS_VERSION="3.11.1"
+COCOS_VERSION="3.12"
 # N
 # NDK_VERSION="android-ndk-r10e"
 # A
@@ -45,7 +46,7 @@ NDK_VERSION="android-ndk-r10d"
 # S
 # NDK_VERSION="android-ndk-r12b"
 # NDK_VERSION="android-ndk-r14b"
-SDK_VERSION="22"
+# SDK_VERSION="22"
 ## Use vim
 export COCOS_LIBRARY=/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/cocos
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
@@ -61,9 +62,10 @@ export PATH=$COCOS_X_ROOT:$PATH
 export NDK_ROOT=/usr/local/Cellar/android-ndk/$NDK_VERSION
 export PATH=$NDK_ROOT:$PATH
 ## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/$SDK_VERSION
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+# export PATH=$ANDROID_SDK_ROOT/bin:$PATH
 ## ant
 # export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
 export ANT_ROOT=/usr/local/bin
@@ -71,7 +73,9 @@ export PATH=$ANT_ROOT:$PATH
 ## wip
 # export CPATH=$CPATH:/usr/local/include
 # export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
-export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1/cocos
+# export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.12
+# alias cocos=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.12/tools/cocos2d-console/bin/cocos
+# export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-$COCOS_VERSION/cocos
 # unset CPATH
 # unset LIBRARY_PATH
 # export CPATH=$CPATH:/Applications/Cocos/Cocos2d-x/wip
@@ -156,12 +160,16 @@ alias mf='mdfind'
 alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
 alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 
+alias libcocos='cd ~/Library/Developer/Xcode/DerivedData/'
+alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
+
 alias cp='cp -v'
 alias cdn='peco-tree-vim'
 
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
+alias noti='terminal-notifier -message "コマンド完了"'
 
 alias gen="mvim ~/Dropbox/Saichi/Document/work/goodroid/gen.md"
 
@@ -570,3 +578,5 @@ tm()
 
 ### Added by the Bluemix CLI
 # source /usr/local/Bluemix/bx/zsh_autocomplete
+
+PROMPT+='$(if [ $(date +"%k") -gt 17 ] ; then echo "!!! "; fi)'

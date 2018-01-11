@@ -1,7 +1,9 @@
 let g:calendar_views = ['year', 'month', 'week', 'day_4', 'day', 'clock']
 let g:show_calendar = 0
 
-nnoremap <Leader>c :call CTodo()<CR>
+" nnoremap <Leader>c :call CTodo()<CR>
+nnoremap <Leader>c :call CCalendarShowMine()<CR>
+nnoremap <Leader>C :call CCalendarShowEmpty()<CR>
 nnoremap <Leader>CC :call CCalendarShowMine()<CR>
 nnoremap <Leader>Cc :call CCalendarShowEmpty()<CR>
 
