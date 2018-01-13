@@ -287,7 +287,7 @@ nnoremap g/ :Migemo<CR>
 '''
 
 [[plugins]]
-repo = 'kana/vim-altr'
+repo = 'zebult/vim-altr'
 hook_add = 'nmap <Leader>a <Plug>(altr-forward)'
 hook_post_source = 'source ~/.vim/rc/plugins/altr.rc.vim'
 on_map = '<Plug>(altr-'

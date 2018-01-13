@@ -36,6 +36,13 @@ function! CppAutoFunc(class) range
 endfunction
 command! -range -nargs=? CppAutoFunc <line1>,<line2>call CppAutoFunc(<f-args>)
 
+function! CafConvert() range
+  for linenum in range(a:firstline, a:lastline)
+    norm 0y$iafconvert -f caff -d 0 lv$hS"$a pvT S"$T.ciwcafj
+  endfor
+endfunction
+command! -range -nargs=? CafConvert <line1>,<line2>call CafConvert(<f-args>)
+
 " Redmine
 function! RedmineDateIncrement() abort
   normal /due_date:$hGo w

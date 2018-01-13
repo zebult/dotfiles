@@ -120,7 +120,7 @@ alias glo="git log --oneline"
 alias glz="git log --author=zebult"
 alias glnm="git log --no-merges"
 alias grh="git reset --hard"
-alias grs="git reset --soft"
+alias grs="git reset --mixed"
 alias gcl="git clean -df"
 # alias gsw="ggsw"
 alias gsw='git show'
@@ -171,7 +171,7 @@ alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 alias noti='terminal-notifier -message "コマンド完了"'
 
-alias gen="mvim ~/Dropbox/Saichi/Document/work/goodroid/gen.md"
+alias sc="cd Assets/Scripts"
 
 set -o vi
 bindkey -M viins '^A'  beginning-of-line
@@ -579,4 +579,5 @@ tm()
 ### Added by the Bluemix CLI
 # source /usr/local/Bluemix/bx/zsh_autocomplete
 
-PROMPT+='$(if [ $(date +"%k") -gt 17 ] ; then echo "!!! "; fi)'
+PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 19 ]; then echo "! "; fi)'
+PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!! "; fi)'
