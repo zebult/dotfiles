@@ -326,11 +326,13 @@ snippet subscribe
     .Subscribe(_ => ${2});
 
 snippet timer_interval_rx
-    Observable.Interval(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
+    Observable.Interval(TimeSpan.FromSeconds(${1}))
+    .Subscribe(_ => {
             ${1}
     }).AddTo(this);
 snippet timer_once_rx
-    Observable.Timer(TimeSpan.FromSeconds(${1})).Subscribe(_ => {
+    Observable.Timer(TimeSpan.FromSeconds(${1}))
+    .Subscribe(_ => {
             ${1}
     }).AddTo(this);
 snippet timer_next_frame
@@ -465,6 +467,8 @@ snippet float_to_str
     ${1:float}.ToString("R");
 snippet float_to_int
     (int)${1:float}f
+snippet float_to_double
+    System.Convert.ToDouble(${1:float})
 snippet str_to_int
     int.Parse(${1:str});
 snippet str_to_long

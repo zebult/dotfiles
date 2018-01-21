@@ -139,6 +139,8 @@ alias gcf="git diff --diff-filter=U"
 alias gtr="git tree"
 alias gclo="git clone"
 alias gth="git checkout --theirs"
+alias gbd="git branch --merged|egrep -v '\\*|develop|master|design|design/design-mock'|xargs git branch -d"
+alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
@@ -296,29 +298,29 @@ ggsw() {
 }
 
 # git rebase origin
-gro() {
-    # gst
-    branch=`git rev-parse --abbrev-ref HEAD`
-    echo $branch
-    echo 'Clean "temporary" branch? y/n'
-    read answer
-    if [ $answer = "n" ]; then
-        echo 'see you🍣'
-    fi
-        if [ $answer = "y" ]; then
-        git branch -D temporary
-        git checkout -b temporary
-        git checkout $branch
-        git reset --hard @~
-        git pull origin $branch
-        git checkout temporary
-        git rebase $branch
-        git checkout $branch
-        git merge temporary
-        gst
-        echo 'success year🍣'
-    fi
-}
+# gro() {
+#     # gst
+#     branch=`git rev-parse --abbrev-ref HEAD`
+#     echo $branch
+#     echo 'Clean "temporary" branch? y/n'
+#     read answer
+#     if [ $answer = "n" ]; then
+#         echo 'see you🍣'
+#     fi
+#         if [ $answer = "y" ]; then
+#         git branch -D temporary
+#         git checkout -b temporary
+#         git checkout $branch
+#         git reset --hard @~
+#         git pull origin $branch
+#         git checkout temporary
+#         git rebase $branch
+#         git checkout $branch
+#         git merge temporary
+#         gst
+#         echo 'success year🍣'
+#     fi
+# }
 
 gamd() {
     gst
@@ -579,5 +581,5 @@ tm()
 ### Added by the Bluemix CLI
 # source /usr/local/Bluemix/bx/zsh_autocomplete
 
-PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 19 ]; then echo "! "; fi)'
-PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!! "; fi)'
+PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "! "; fi)'
+PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'

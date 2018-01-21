@@ -9,8 +9,8 @@ nnoremap gl yiwoDebug.Log("p:" + p);
 vnoremap gl yoDebug.Log("p:" + p);
 
 " null
-nnoremap gN yiwOif(p == null){Debug.Log("p is null");}
-vnoremap gN yOif(p == null){Debug.Log("p is null");}
+nnoremap gN yiwoif(p == null){Debug.Log("p is null");}
+vnoremap gN yoif(p == null){Debug.Log("p is null");}
 
 nnoremap <Leader>r :QuickRunCS<CR>
 function! QuickRunCS() abort
