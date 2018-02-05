@@ -313,18 +313,26 @@ snippet foreach_child
         ${3}
     }
 snippet conditional
-    [System.Diagnostics.Conditional("${1:DEBUG}")]
+    [System.Diagnostics.Conditional("${1:UNITY_EDITOR}")]
 snippet require
     [RequireComponent(typeof(${1}))]
+
 snippet update_rx
     Observable
         .EveryUpdate()
         .Subscribe(_ => ${1})
         .AddTo(this);
+snippet update_rx_distinctuntilchanged
+        Observable.EveryUpdate()
+        .Select(_ => ${1})
+        .DistinctUntilChanged()
+        .Subscribe(_ => {
+            ${2}
+        })
+        .AddTo(this);
 snippet subscribe
     ${1}
     .Subscribe(_ => ${2});
-
 snippet timer_interval_rx
     Observable.Interval(TimeSpan.FromSeconds(${1}))
     .Subscribe(_ => {
@@ -338,13 +346,19 @@ snippet timer_once_rx
 snippet timer_next_frame
     Observable.NextFrame()
         .Subscribe(_ => ${1});
-
 snippet thread_main
     Observable.Create <int>(observer => { observer.OnNext(0); return null; })
     .ObserveOnMainThread()
     .Subscribe(_ => {
         ${1}
     });
+snippet publish
+    var stream = HOGE
+                .Publish()
+                .RefCount();
+    stream
+    .Subscribe(_ => )
+    .AddTo(this);
 
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
@@ -475,6 +489,8 @@ snippet str_to_long
     long.Parse(${1:str});
 snippet str_to_enum
     (${1:type}) Enum.Parse(typeof(<|1|>), ${2:str});
+snippet str_to_float
+    Convert.ToSingle(${1:str})
 snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str

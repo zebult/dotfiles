@@ -128,6 +128,8 @@ alias gbl="git blame"
 alias glp="git log -p -1"
 alias gsu="git submodule update"
 alias gsb="git submodule"
+alias gsh="git stash"
+alias gpop="git stash pop"
 alias gsv="git stash save"
 alias glist="git stash list"
 alias gdrop="git stash drop stash@\{0\}"
@@ -161,6 +163,7 @@ alias fn='find . -name'
 alias mf='mdfind'
 alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
 alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
+alias omni='mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s beast.sln'
 
 alias libcocos='cd ~/Library/Developer/Xcode/DerivedData/'
 alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'

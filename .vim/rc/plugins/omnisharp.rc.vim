@@ -1,10 +1,16 @@
-let g:OmniSharp_stop_server = 0
+" vim終了する度サーバー終了するので手動にする
+let g:Omnisharp_start_server = 0
+let g:Omnisharp_stop_server  = 0
+" OmniSharpStartServer
 
 " 定義
 autocmd FileType cs nnoremap zj :OmniSharpGotoDefinition<cr>
 autocmd FileType cs nnoremap tzj :tab sp<CR>:OmniSharpGotoDefinition<CR>
 autocmd FileType cs nnoremap szj :sp<CR><C-w>j:OmniSharpGotoDefinition<CR>
 autocmd FileType cs vnoremap zj <Esc>:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
+
+nnoremap <Leader>L gg}j$:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
+
 " 参照(Caller)
 autocmd FileType cs nnoremap zk :OmniSharpFindUsages<cr>
 autocmd FileType cs nnoremap tzk :tab sp<CR>:OmniSharpFindUsages<CR>
