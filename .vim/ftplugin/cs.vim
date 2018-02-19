@@ -7,6 +7,8 @@ setlocal shiftwidth=4
 " Log
 nnoremap gl yiwoDebug.Log("p:" + p);
 vnoremap gl yoDebug.Log("p:" + p);
+nnoremap gL yiwoDebug.Log("call p");
+vnoremap gL yoDebug.Log("call p");
 
 " null
 nnoremap gN yiwoif(p == null){Debug.Log("p is null");}

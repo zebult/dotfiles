@@ -83,6 +83,9 @@ export PATH=$ANT_ROOT:$PATH
 # export LIBRARY_PATH=$LIBRARY_PATH:/Applications/Cocos/Cocos2d-x/cocos2d-x-3.11.1
 # export LIBRARY_PATH=$LIBRARY_PATH:/Users/a14198/Documents/workspace/Goodroid/alarm/proj.ios_mac
 
+## React-Native
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 # ccache
 export NDK_CCACHE=/usr/local/bin/ccache
 
@@ -163,7 +166,6 @@ alias fn='find . -name'
 alias mf='mdfind'
 alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
 alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
-alias omni='mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s beast.sln'
 
 alias libcocos='cd ~/Library/Developer/Xcode/DerivedData/'
 alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
@@ -190,6 +192,10 @@ function gifo() { git-foresta --style=10 "$@" | less -RSX }
 function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
 compdef _git gifo=git-log
 compdef _git gifa=git-log
+
+omni () {
+    mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1.sln
+}
 
 mc () {
     mkdir -p "$@" && eval cd "\"\$$#\"";
