@@ -219,6 +219,11 @@ snippet OnTriggerExit2D
 
 snippet SerializeField
     [SerializeField]
+snippet seri
+    [SerializeField]
+snippet serip
+    [SerializeField]
+    private ${1} ${2}
 snippet HideInInspector
     [HideInInspector]
 
@@ -229,7 +234,7 @@ snippet rotation_absolute
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 
-snippet load_scene
+snippet scene_load
     using UnityEngine.SceneManagement; 
     SceneManager.LoadScene ("${1}");
 snippet scene_name

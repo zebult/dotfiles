@@ -194,7 +194,7 @@ compdef _git gifo=git-log
 compdef _git gifa=git-log
 
 omni () {
-    mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1.sln
+    mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1
 }
 
 mc () {
@@ -592,3 +592,5 @@ tm()
 
 PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "! "; fi)'
 PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
+
+# export GIT_SSH_COMMAND="ssh -i ~/.ssh/hidaka/hidakkathon2018Native.key"
