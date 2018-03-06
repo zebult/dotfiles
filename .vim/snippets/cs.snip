@@ -52,8 +52,8 @@ snippet find
     GameObject.Find("${1}")${2}
 snippet gc
     .GetComponent<${1}>()
-snippet ac
-    AddComponent()
+snippet adc
+    AddComponent<${1}>()
 snippet sar
     SetActiveRecursively(${1:true})
 snippet ee
@@ -159,7 +159,11 @@ snippet init
     {
     }
 snippet bind
-    public void Bind()
+    private void Bind()
+    {
+    }
+snippet Bind
+    private void Bind()
     {
     }
 snippet fori
@@ -224,6 +228,10 @@ snippet seri
 snippet serip
     [SerializeField]
     private ${1} ${2}
+snippet event
+    using UnityEngine.Events;
+    [SerializeField]
+    private UnityEvent AfterEvent = new UnityEvent();
 snippet HideInInspector
     [HideInInspector]
 
@@ -333,9 +341,11 @@ snippet update_rx_distinctuntilchanged
             ${2}
         })
         .AddTo(this);
-snippet subscribe
-    ${1}
-    .Subscribe(_ => ${2});
+snippet Subscribe
+    .Subscribe(_ => {
+        ${1}
+    })
+    .AddTo(this);
 snippet timer_interval_rx
     Observable.Interval(TimeSpan.FromSeconds(${1}))
     .Subscribe(_ => {
@@ -387,7 +397,8 @@ snippet enum_string
     }
     <|1|>.Xxx.ObtainType()
 snippet ac
-    () => 
+    () => {
+    };
 snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
@@ -533,7 +544,9 @@ snippet popup_common
     string title = GM.I.GetWord("");
     string desc  = GM.I.GetWord("");
     popup.Init(title, desc, false);
-snippet change_scene
+snippet scene_load_multi_g
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
+snippet scene_load_prefab_g
+    OGM.I.ChangeScenePrefab(GRSceneManager.MainScene.${1});
 snippet Instantiate_g
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/${1}"));

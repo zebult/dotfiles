@@ -14,6 +14,10 @@ vnoremap gL yoDebug.Log("call p");
 nnoremap gN yiwoif(p == null){Debug.Log("p is null");}
 vnoremap gN yoif(p == null){Debug.Log("p is null");}
 
+" Assert
+nnoremap ga yiwoDebug.Assert(p != null, "" + p);
+vnoremap ga yoDebug.Assert(p != null, "" + p);
+
 nnoremap <Leader>r :QuickRunCS<CR>
 function! QuickRunCS() abort
   silent execute "!mcs %"

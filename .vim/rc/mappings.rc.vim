@@ -27,6 +27,7 @@ command -bar InitMapping call InitMapping()
 MinimumMapping
 
 nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
+nnoremap <silent> 111 :e!<CR>
 " nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
 nnoremap <silent> cy ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
@@ -104,8 +105,8 @@ nnoremap t<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " nnoremap t<C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>1<CR>
 " nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 nnoremap sw <C-w>w
-nnoremap so <C-w>o
-nnoremap sO <C-w>=
+" nnoremap so <C-w>o
+" nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>new<CR><C-w>J
@@ -116,8 +117,8 @@ vnoremap s% y:%s ///g<Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
-nnoremap Qj :QuickFixNext<CR>
-nnoremap Qk :QuickFixPrev<CR>
+nnoremap cn :QuickFixNext<CR>
+nnoremap cp :QuickFixPrev<CR>
 
 vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
@@ -160,7 +161,6 @@ cnoremap && .*
 nnoremap <Leader>u :Unite source<CR>
 " nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
-nnoremap ga :CLL<CR>:Ag<Space>''<Left>
 
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o
@@ -177,6 +177,10 @@ nnoremap t$ v$:TogglSelectStart<CR>
 set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
+
+let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
+execute 'nnoremap me :<C-u>tabe'.memo_path.'<CR>'
+nmap Q <ESC>i<C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR>
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>

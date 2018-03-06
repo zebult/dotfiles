@@ -297,6 +297,12 @@ hook_add = '''
 
 [[plugins]]
 repo = 'rking/ag.vim'
+hook_add = '''
+    ca ag Ag
+    nnoremap g* :Ag ''<CR>
+    nnoremap gr :Ag ''<CR>
+    vnoremap gr y:Ag '0'<CR>
+'''
 
 # [[plugins]]
 # repo = 'airblade/vim-rooter'

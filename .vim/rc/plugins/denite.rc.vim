@@ -28,31 +28,41 @@ for mapping in mapping_list
   endfor
 endfor
 
-nnoremap <silent> [denite]k :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
-
 " New
 " nnoremap <silent> [denite]b :<C-u>Denite -default-action=open -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
-nnoremap <silent> [denite]t :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> sb :<C-u>Denite buffer<CR>
+" nnoremap <silent> [denite]t :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
 
 " Show
 " nnoremap <silent> [denite]j :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> [denite]j :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> [denite]T :<C-u>Unite tab<CR>
+nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> sO :<C-u>DeniteBufferDir -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> sdo :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> sdO :<C-u>DeniteBufferDir -default-action=split -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> vso :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> vsO :<C-u>DeniteBufferDir -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
+" nnoremap sdo :Denite -default-action=split file_rec<CR>
+" nnoremap sdo :Denite -default-action=tabopen file_rec<CR>
+" nnoremap t<C-J> :Denite -default-action=tabopen file_rec<CR>
+" nnoremap <silent> sdO :<C-u>DeniteBufferDir -default-action=split -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]j :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]k :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
+" nnoremap <silent> dk :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
+" nnoremap <silent> [denite]T :<C-u>Unite tab<CR>
 
-nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> [denite]ct :<C-u>DeniteBufferDir -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
 
-nnoremap <silent> [denite]r  :<C-u>Denite -resume -highlight-mode-insert=Search<CR>
-nnoremap <silent> [denite]n  :<C-u>Denite -resume -select=+1 -immediately -highlight-mode-insert=Search<CR>
-nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately -highlight-mode-insert=Search<CR>
+" nnoremap <silent> [denite]r  :<C-u>Denite -resume -highlight-mode-insert=Search<CR>
+" nnoremap <silent> [denite]n  :<C-u>Denite -resume -select=+1 -immediately -highlight-mode-insert=Search<CR>
+" nnoremap <silent> [denite]p  :<C-u>Denite -resume -select=-1 -immediately -highlight-mode-insert=Search<CR>
 
 nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
 nnoremap <silent> [denite]H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
 nnoremap <silent> [denite]f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
-nnoremap <silent> [denite]a  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
+nnoremap <silent> [denite]t  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 
 function! DeniteFileRec() abort
   " CHL
@@ -75,27 +85,90 @@ command! DeniteFileOld call DeniteFileOld()
 " nnoremap <C-k> :Denite file_old<CR>
 " nnoremap t<C-k> :Denite -default-action=tabopen file_old<CR>
 
-" use ag
-call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
-" call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
-call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy','matcher_ignore_globs'])
-" call denite#custom#source('file_rec', 'sorters', ['sorter_selecta'])
-" call denite#custom#source('file_mru', 'converters', ['converter_relative_word'])
-
+" call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
+"
 " カーソルキー, cn, cpで移動
 call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
 call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+" call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+" call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+
+if executable('rg')
+  call denite#custom#var('file_rec', 'command',
+        \ ['rg', '--files', '--glob', '!.git'])
+  call denite#custom#var('grep', 'command', ['rg', '--threads', '1'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'final_opts', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'default_opts',
+        \ ['--vimgrep', '--no-heading'])
+else
+  call denite#custom#var('file_rec', 'command',
+        \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+endif
+
+call denite#custom#source('file_rec,file_old', 'matchers',
+      \ ['matcher_fuzzy', 'matcher_project_files', 'matcher_ignore_globs'])
+" call denite#custom#source('tag', 'matchers', ['matcher_substring'])
+" if has('nvim')
+  " call denite#custom#source('file_rec', 'matchers', ['matcher_substring'])
+  " call denite#custom#source('file_rec', 'matchers',
+  "       \ ['matcher_cpsm'])
+" endif
+call denite#custom#source('file_old', 'converters',
+      \ ['converter_relative_word'])
+
+call denite#custom#map('insert', '<C-r>',
+      \ '<denite:toggle_matchers:matcher_substring>', 'noremap')
+call denite#custom#map('insert', '<C-s>',
+      \ '<denite:toggle_sorters:sorter_reverse>', 'noremap')
+call denite#custom#map('insert', '<C-j>',
+      \ '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>',
+      \ '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', "'",
+      \ '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('normal', 'r',
+      \ '<denite:do_action:quickfix>', 'noremap')
+call denite#custom#map('insert', ';',
+      \ 'vimrc#sticky_func()', 'expr')
+
+call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#var('file_rec/git', 'command',
+      \ ['git', 'ls-files', '-co', '--exclude-standard'])
+
+" call denite#custom#option('default', 'prompt', '>')
+" call denite#custom#option('default', 'short_source_names', v:true)
+call denite#custom#option('default', {
+      \ 'auto_accel': v:true,
+      \ 'prompt': '>',
+      \ 'source_names': 'short',
+      \ })
+
+let s:menus = {}
+let s:menus.vim = {
+    \ 'description': 'Vim',
+    \ }
+let s:menus.vim.file_candidates = [
+    \ ['    > Edit configuation file (init.vim)', '~/.config/nvim/init.vim']
+    \ ]
+call denite#custom#var('menu', 'menus', s:menus)
 
 " ignore
+" call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+"       \ [ '.git/', '.ropeproject/', '__pycache__/',
+"       \   '*.png', '*.jpg',
+"       \   '*.caf', '*.mp3', '*.mp4',
+"       \   '*.csd', '*.csb', '*.bin', '*.jar', '*.cmake',
+"       \   '*.o', '*.d', '*.3', '*.a', '*.inl', '*.pch', '*.filters', '*.props', '*dll', '*.lib', '*.so', '*.cl', '*.vcxproj', '*.bat', '*.def', '*.vcxitems', '*.aidl', '*.xaml',
+"       \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln', '*.unity',
+"       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
+"       " \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
+
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ [ '.git/', '.ropeproject/', '__pycache__/',
-      \   '*.png', '*.jpg',
-      \   '*.caf', '*.mp3', '*.mp4',
-      \   '*.csd', '*.csb', '*.bin', '*.jar', '*.cmake',
-      \   '*.o', '*.d', '*.3', '*.a', '*.inl', '*.pch', '*.filters', '*.props', '*dll', '*.lib', '*.so', '*.cl', '*.vcxproj', '*.bat', '*.def', '*.vcxitems', '*.aidl', '*.xaml',
-      \   '*.meta', '*.vert', '*.frag', '*.hlsl', '*.sln', '*.unity',
+      \   '*.meta',
       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
-      " \   '*.cpp', '*.hpp', '*.h', '*.mm', '*.c', '*.txt', '*.java', '*.m', '*.mk', '*.xml',
 
+call denite#custom#action('file', 'buffer',
+      \ {context -> denite#do_action(context, 'open', context['targets'])})

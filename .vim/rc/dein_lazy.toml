@@ -3,11 +3,12 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 if = "has('nvim')"
-on_map = '<Bslash>'
-hook_add = 'nnoremap <Bslash><Bslash> :Denite<CR>'
+on_cmd = 'Denite'
+hook_add = '''
+nnoremap <Bslash><Bslash> :Denite<CR>
+nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
+''''
 hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
-# on_i = 1
-# on_cmd = 'Denite'
 # hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 
 # vimfier need
@@ -59,7 +60,6 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 # '''
 
 # Base Tools: ---------------------------
-
 # 非同期コンパイル(OmniSharpを自動で起動もしてくれる)
 # on_event = 'BufRead'
 [[plugins]]
@@ -358,6 +358,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 '''
+
+[[plugins]]
+repo = 'w0rp/ale'
+on_event = ['BufWrite']
+on_ft  =  ['cs', 'js', 'py']
+hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 
 # cs complement
 # 自動でserverセットアップしてくれる(mono起動する)(してくれない場合手動: plugin下のserverへ行き, xbuild)

@@ -233,6 +233,26 @@ function! Uniq() abort
 endfunction
 command! -bar Uniq call Uniq()
 
+function! UnityLog() abort
+  " Platform dependent. See https://docs.unity3d.com/Manual/LogFiles.html
+  let logfile = '~/Library/Logs/Unity/Editor.log'
+  " Project dependent.
+  let g:project_root = '~/Documents/workspace/hoge'
+
+  if !isdirectory(g:project_root .'/Assets')
+      echoerr "project_root should be the root of your Unity project"
+      return
+  endif
+  let logfile = fnamemodify(logfile, ":p")
+  " Unity logs can be massive (GBs) when you have spam, so only take the last chunk.
+  exec '!tail -n 5000 '. logfile .'> /tmp/shortened.log'
+  exec 'cd '. g:project_root
+  compiler cs
+  cgetfile /tmp/shortened.log
+  copen
+endfunction
+command! -bar UnityLog call UnityLog()
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

@@ -4,8 +4,11 @@
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 	ignorecase = false
+	editor = nvim
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+[difftool]
+    prompt = false
 [diff "image"]
 	# command = ~/.bin/sh/git-imgdiff
 [merge]
