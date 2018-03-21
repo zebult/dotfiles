@@ -108,8 +108,8 @@ export ENHANCD_FILTER=peco
 # alias
 alias ll='ls -alh'
 alias llp='ls -alh | peco'
-alias gcm="gst; git commit -v"
-alias gg="gst; git add .; git commit -m"
+alias gad="git add ."
+alias gcm="git commit -m"
 alias gst="git status -sb"
 alias gdf="git diff"
 alias gmg="git merge"
@@ -148,6 +148,7 @@ alias gbd="git branch --merged|egrep -v '\\*|develop|master|design|design/design
 alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
+alias v=vim
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 # alias vi=vim -u NONE --noplugin
@@ -177,6 +178,7 @@ alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 alias noti='terminal-notifier -message "コマンド完了"'
+alias mic='vim /Users/a14198/Dropbox/Saichi/Document/work/goodroid/micchiy.md'
 
 alias sc="cd Assets/Scripts"
 
@@ -223,6 +225,16 @@ tmp() {
 mkcd() {
     mkdir $1;
     cd $1
+}
+
+# prezto
+unalias gg
+gg() {
+    # alias gg="gst; git add .; git commit -m"
+    gst
+    git add .
+    COMMAND="git commit -m "\"$@\"
+    eval $COMMAND
 }
 
 gacm() {
@@ -347,11 +359,11 @@ gamd() {
     fi
 }
 
-gplb() {
-    git log --oneline -1
-    git push . origin/"$1":"$1"
-    git log --oneline -10
-}
+# gplb() {
+#     git log --oneline -1
+#     git push . origin/"$1":"$1"
+#     git log --oneline -10
+# }
 
 checkRecentLog() {
     echo "======="

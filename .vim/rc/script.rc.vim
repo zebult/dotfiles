@@ -237,7 +237,7 @@ function! UnityLog() abort
   " Platform dependent. See https://docs.unity3d.com/Manual/LogFiles.html
   let logfile = '~/Library/Logs/Unity/Editor.log'
   " Project dependent.
-  let g:project_root = '~/Documents/workspace/hoge'
+  let g:project_root = '/Users/a14198/Documents/workspace/Goodroid/beast'
 
   if !isdirectory(g:project_root .'/Assets')
       echoerr "project_root should be the root of your Unity project"

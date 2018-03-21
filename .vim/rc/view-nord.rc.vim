@@ -82,6 +82,9 @@ hi Type ctermfg=red
 " hi Type ctermfg=blue
 " hi CCClass ctermfg=blue
 
+hi Folded gui=bold term=standout ctermfg=DarkBlue guifg=Grey80
+hi FoldColumn gui=bold term=standout ctermfg=DarkBlue guifg=DarkBlue
+
 " color customise
 " lightblue
 hi GitGutterAddLine ctermbg=236 guibg=black

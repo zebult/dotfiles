@@ -34,4 +34,4 @@ function! Hoge(path_to_unity_project)
         \]
   let g:ale_cs_mcsc_assemblies += [ expand(a:path_to_unity_project .'/obj/Debug') ]
 endf
-" call Hoge("~/Documents/workspace/hoge")
+call Hoge("/Users/a14198/Documents/workspace/Goodroid/beast")

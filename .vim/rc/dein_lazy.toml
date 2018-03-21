@@ -1,16 +1,4 @@
 # Shougo: ---------------------------
-
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-if = "has('nvim')"
-on_cmd = 'Denite'
-hook_add = '''
-nnoremap <Bslash><Bslash> :Denite<CR>
-nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
-''''
-hook_post_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
-# hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
-
 # vimfier need
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -129,6 +117,23 @@ on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
+[[plugins]]
+repo = 'gregsexton/gitv'
+depends = ['vim-fugitive']
+hook_add = 'nnoremap <Leader>g :Gitv<CR>'
+
+[[plugins]]
+repo = 'haya14busa/incsearch.vim'
+on_event = 'BufRead'
+hook_add = '''
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+'''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_event = 'BufRead'
+
 [[plugins]]
 repo = 'osyo-manga/vim-over'
 on_event = 'BufRead'
@@ -299,7 +304,7 @@ on_map = '<Plug>(altr-'
 [[plugins]]
 repo = 'zebult/a.vim.git'
 hook_add = '''
-nnoremap s; :AV<CR>
+nnoremap S; :AV<CR>
 '''
 on_event = 'BufRead'
 

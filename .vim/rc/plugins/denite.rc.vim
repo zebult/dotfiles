@@ -30,7 +30,7 @@ endfor
 
 " New
 " nnoremap <silent> [denite]b :<C-u>Denite -default-action=open -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> sb :<C-u>Denite buffer<CR>
+nnoremap <silent> dl :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
 " nnoremap <silent> [denite]t :<C-u>Denite -default-action=tabopen -highlight-mode-insert=Search file_rec<CR>
 " nnoremap <silent> [denite]v :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
 " nnoremap <silent> [denite]s :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
@@ -39,6 +39,7 @@ nnoremap <silent> sb :<C-u>Denite buffer<CR>
 " nnoremap <silent> [denite]j :<C-u>Denite buffer -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> sO :<C-u>DeniteBufferDir -highlight-mode-insert=Search file_rec<CR>
+nnoremap <silent> s; :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
 " nnoremap <silent> sdo :<C-u>Denite -default-action=split -highlight-mode-insert=Search file_rec<CR>
 " nnoremap <silent> sdO :<C-u>DeniteBufferDir -default-action=split -highlight-mode-insert=Search file_rec<CR>
 " nnoremap <silent> vso :<C-u>Denite -default-action=vsplit -highlight-mode-insert=Search file_rec<CR>
@@ -62,7 +63,7 @@ nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><
 nnoremap <silent> [denite]H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
 nnoremap <silent> [denite]f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
 nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
-nnoremap <silent> [denite]t  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
+nnoremap <silent> [denite]o  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 
 function! DeniteFileRec() abort
   " CHL
@@ -88,10 +89,10 @@ command! DeniteFileOld call DeniteFileOld()
 " call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nogroup', '-g', ''])
 "
 " カーソルキー, cn, cpで移動
-call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-" call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-" call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+" call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
+" call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',

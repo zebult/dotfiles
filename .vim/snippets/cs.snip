@@ -295,6 +295,8 @@ snippet spine
     using Spine.Unity;
 snippet unirx
     using UniRx;
+snippet tpro
+    using TMPro;
 
 snippet prop
     public ${1:type} ${0:var} { get; set; }
@@ -409,6 +411,10 @@ snippet subject
     public Subject <${1}> ${2}Subject = new Subject <<|1|>>();
 snippet Random
     UnityEngine.Random.Range(0, ${1});
+snippet rand_percent
+        int percent = 50;
+        int rand = UnityEngine.Random.Range(0, 100);
+        bool isLottery rand <= percent;
 
 snippet /return
     /// <returns>${0}</returns>

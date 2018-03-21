@@ -5,7 +5,12 @@ let g:lightline = {
             \ 'active': {
             \   'left': [
             \      ['mode', 'paste'],
-            \      ['fugitive', 'gitgutter', 'readonly', 'filename', 'tagbar', 'modified', 'anzu', 'toggl_task']
+            \      ['fugitive', 'gitgutter', 'readonly'],
+            \      [],
+            \      ['filename'],
+            \      ['tagbar', 'modified', 'anzu'],
+            \      [],
+            \      ['toggl_task'],
             \    ],
             \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent']],
             \ },
@@ -35,7 +40,7 @@ let g:lightline = {
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
 
 function! MyToggleTask()
-    return "Toggle: ".toggl#task()." ".toggl#time()
+    return "Toggle:".toggl#task()." ".toggl#time()
 endfunction
 
 function! MyFugitive()

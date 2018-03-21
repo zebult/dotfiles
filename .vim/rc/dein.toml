@@ -104,6 +104,12 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
 
 # Convenience Tools: ---------------------------
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
+
+[[plugins]]
+repo = 'zebult/denite-git'
 
 [[plugins]]
 repo = 'mattesgroeger/vim-bookmarks'
@@ -133,14 +139,6 @@ hook_add = 'source ~/.vim/rc/plugins/CamelCaseMotion.rc.vim'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
-
-# [[plugins]]
-# repo = 'haya14busa/incsearch.vim'
-# hook_add = '''
-#     map /  <Plug>(incsearch-forward)
-#     map ?  <Plug>(incsearch-backward)
-#     map g/ <Plug>(incsearch-stay)
-# '''
 
 # no lazy
 [[plugins]]
@@ -261,7 +259,6 @@ hook_add = '''
 # gitコマンド
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = 'source ~/.vim/rc/plugins/fugitive.rc.vim'
 
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'

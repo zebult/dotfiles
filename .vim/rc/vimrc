@@ -46,6 +46,7 @@ call s:source_rc('filetype.rc.vim')
 call s:source_rc('path.rc.vim')
 call s:source_rc('dein.rc.vim')
 call s:source_rc('mappings.rc.vim')
+call s:source_rc('git.rc.vim')
 " call s:source_rc('view-tomorrow-night.rc.vim')
 
 if has('gui_running')
@@ -65,6 +66,7 @@ call s:source_rc('playground.rc.vim')
 " original function
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
+source ~/Dropbox/Saichi/Vim/Private/script.rc.vim
 
 let g:metarw_alias = {
   \ 'myhome' : '~',
