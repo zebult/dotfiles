@@ -1,4 +1,4 @@
-nnoremap <silent> <Leader>b :XcodeActionsBuild<CR>
+nnoremap <silent> <Leader>ib :XcodeActionsBuild<CR>
 nnoremap <silent> <Leader>ic :XcodeActionsClean<CR>
 nnoremap <silent> <Leader>it :XcodeActionsTest<CR>
-nnoremap <silent> <Leader>x :XcodeActionsOpenFile<CR>
+nnoremap <silent> <Leader>ix :XcodeActionsOpenFile<CR>

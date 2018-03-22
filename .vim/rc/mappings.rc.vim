@@ -75,6 +75,8 @@ nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register
 " filename to  clipboard
 nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
+nnoremap cc :lcd %:h<CR>
+
 " Screen split key mappings
 " nnoremap sN :<C-u>bn<CR>
 " nnoremap sP :<C-u>bp<CR>
@@ -90,8 +92,8 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap dn :<C-u>bn<CR>
-nnoremap dp :<C-u>bp<CR>
+nnoremap dl :<C-u>bn<CR>
+nnoremap dh :<C-u>bp<CR>
 nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
@@ -109,9 +111,9 @@ nnoremap sw <C-w>w
 " nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR>
+nnoremap ss :<C-u>sp<CR><C-w>J
 " nnoremap ss :<C-u>new<CR><C-w>J
-nnoremap sv :<C-u>vs<CR>
+nnoremap sv :<C-u>vs<CR><C-w>L
 " nnoremap sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>

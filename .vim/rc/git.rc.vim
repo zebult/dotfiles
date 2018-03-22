@@ -2,6 +2,7 @@
 ca gad Gina add .
 ca gcm Gina commit -v
 ca gst Gina status -s --opener=vsplit
+nnoremap <Leader>s :Gina status -s --opener=vsplit<CR>
 ca gfc Gina fetch
 ca glo Gina log --opener=vsplit
 ca gloo Gloo
@@ -23,6 +24,7 @@ ca glof Glog
 "denite-git
 ca gco Denite -highlight-mode-insert=Search gitbranch
 ca gdf Denite -highlight-mode-insert=Search gitstatus
+nnoremap <Leader>d :Denite -highlight-mode-insert=Search gitstatus<CR>
 
 "shell
 ca gbr Gbr
