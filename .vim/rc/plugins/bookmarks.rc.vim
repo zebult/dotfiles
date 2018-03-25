@@ -1,3 +1,4 @@
+"登録後既に起動してるvimにフォーカスしないよう注意したら消えなくなった。登録時は全vim終了しておく必要がある
 let g:bookmark_sign = '.'
 let g:bookmark_annotation_sign = '*'
 let g:bookmark_no_default_key_mappings = 1
