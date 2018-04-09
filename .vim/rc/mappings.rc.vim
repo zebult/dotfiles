@@ -75,6 +75,8 @@ nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register
 " filename to  clipboard
 nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
+nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$<C-]>:nohlsearch<CR>
+
 nnoremap cc :lcd %:h<CR>
 
 " Screen split key mappings
@@ -111,9 +113,9 @@ nnoremap sw <C-w>w
 " nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR><C-w>J
+nnoremap ss :<C-u>sp<CR><C-w>j
 " nnoremap ss :<C-u>new<CR><C-w>J
-nnoremap sv :<C-u>vs<CR><C-w>L
+nnoremap sv :<C-u>vs<CR><C-w>l
 " nnoremap sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
@@ -182,8 +184,6 @@ set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
-let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
-execute 'nnoremap me :<C-u>tabe'.memo_path.'<CR>'
 nmap Q <ESC>i<C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR>
 
 " <C-m>はEnterと同じ扱い

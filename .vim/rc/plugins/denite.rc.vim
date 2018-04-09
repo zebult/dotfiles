@@ -32,7 +32,8 @@ else
 endif
 
 call denite#custom#source('file_rec', 'matchers',
-      \ ['matcher_fuzzy', 'matcher_project_files', 'matcher_ignore_globs'])
+      \ ['matcher_regexp', 'matcher_project_files', 'matcher_ignore_globs'])
+      " \ ['matcher_fuzzy', 'matcher_project_files', 'matcher_ignore_globs'])
 
 call denite#custom#map('insert', '<C-r>',
       \ '<denite:toggle_matchers:matcher_substring>', 'noremap')

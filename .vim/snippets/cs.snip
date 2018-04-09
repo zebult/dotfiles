@@ -48,6 +48,10 @@ snippet update
     {
         ${1}
     }
+snippet key
+    if (Input.GetKeyDown(KeyCode.A))
+    {
+    }
 snippet find
     GameObject.Find("${1}")${2}
 snippet gc
@@ -99,6 +103,10 @@ snippet foreach_range
     {
         ${2}
     }
+snippet foreach_linq
+    ${1}
+    .ForEach(${2} => {
+    });
 snippet list
     List ${2:var} = new List();
 snippet sort_list
@@ -132,9 +140,11 @@ snippet ismaster
     }
 snippet yield
     yield return new WaitForSeconds(${1});
-snippet IEnumerator
+snippet Coroutine
     IEnumerator ${1}() {
-        yield return new WaitForSeconds(${2});
+        yield return new WaitForSeconds(1.0f);
+        yield return new WaitWhile (() => _isLoading);
+        yield return StartCoroutine (DoHoge());
     }
 snippet StartCoroutine
     StartCoroutine(${1});
@@ -152,6 +162,10 @@ snippet voids
     }
 snippet voidr
     protected void ${1}()
+    {
+    }
+snippet bool
+    private bool ${1}()
     {
     }
 snippet init
@@ -297,6 +311,11 @@ snippet unirx
     using UniRx;
 snippet pro
     using TMPro;
+snippet tween
+    using DG.Tweening;
+snippet prom
+    [SerializeField]
+    private TextMeshProUGUI Text;
 
 snippet prop
     public ${1:type} ${0:var} { get; set; }
@@ -309,7 +328,17 @@ snippet prope
         get { return _<|2|>; }
         set { _<|2|> = value; }
     }
+snippet propn
+    [SerializeField]
+    private ${1:type} _${2:value};
+    public <|1|> <|2|>
+    {
+        get { return _<|2|> ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
+    }
 snippet member_serialize
+    [SerializeField]
+    private ${1:type} ${2:value};
+snippet serim
     [SerializeField]
     private ${1:type} ${2:value};
 snippet member
@@ -325,6 +354,9 @@ snippet foreach_child
     {
         ${3}
     }
+snippet child_linq
+    ${1}.GetComponentsInChildren <${2}>()
+        .Any(_ => true);
 snippet conditional
     [System.Diagnostics.Conditional("${1:UNITY_EDITOR}")]
 snippet require
@@ -374,6 +406,13 @@ snippet publish
     stream
     .Subscribe(_ => )
     .AddTo(this);
+snippet tween_move
+    obj.transform.DOLocalMove(position, time)
+    .OnComplete(() => {
+    });
+snippet tween_int
+    DOTween.To(() => ${1:initialValue}, (n) => ${2:value} = n, ${3:finalValue}, ${4:duration});
+    .OnComplete(() => ${5});
 
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
@@ -412,9 +451,9 @@ snippet subject
 snippet Random
     UnityEngine.Random.Range(0, ${1});
 snippet rand_percent
-        int percent = 50;
-        int rand = UnityEngine.Random.Range(0, 100);
-        bool isLottery rand <= percent;
+        float percent = 50;
+        float rand = UnityEngine.Random.Range(0, 100.0f);
+        bool isLottery = rand <= percent;
 
 snippet /return
     /// <returns>${0}</returns>

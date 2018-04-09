@@ -11,8 +11,10 @@ nnoremap gL yiwoDebug.Log("call p");
 vnoremap gL yoDebug.Log("call p");
 
 " null
-nnoremap gN yiwoif(p == null){Debug.Log("p is null");}
-vnoremap gN yoif(p == null){Debug.Log("p is null");}
+nnoremap gN yiwOif(p == null){Debug.Log("p is null");}
+vnoremap gN yOif(p == null){Debug.Log("p is null");}
+" nnoremap gN yiwoif(p == null)\{\Debug.Log("p is null");\}
+" vnoremap gN yoif(p == null)\{\Debug.Log("p is null");\}
 
 " Assert
 nnoremap ga yiwoDebug.Assert(p != null, "" + p);

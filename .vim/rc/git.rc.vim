@@ -14,6 +14,7 @@ ca grh Gina reset --hard
 ca grb Gina rebase
 ca grbc Gina rebase --continue
 ca grba Gina rebase --abort
+ca gacm Gacm
 ca gg Gacm
 ca gamd Gamd
 ca gps Gps
@@ -32,6 +33,8 @@ ca glof Glog
 "denite-git
 ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
 ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
+ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
+ca glob Glog<CR>
 
 "shell
 ca gbr Gbr

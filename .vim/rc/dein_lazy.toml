@@ -118,6 +118,12 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
 [[plugins]]
+repo = 'agatan/vim-vlack'
+# on_event = 'BufRead'
+on_i = 1
+hook_add = 'source ~/Dropbox/Saichi/Vim/Private/slack.rc.vim'
+
+[[plugins]]
 repo = 'gregsexton/gitv'
 depends = ['vim-fugitive']
 hook_add = 'nnoremap <Leader>g :Gitv<CR>'
@@ -125,6 +131,7 @@ hook_add = 'nnoremap <Leader>g :Gitv<CR>'
 [[plugins]]
 repo = 'haya14busa/incsearch.vim'
 on_event = 'BufRead'
+if = "!has('gui_running')"
 hook_add = '''
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)

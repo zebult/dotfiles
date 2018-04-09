@@ -95,8 +95,7 @@ build = 'make'
 repo = 'tyru/open-browser.vim'
 hook_add = '''
 let g:netrw_nogx = 1
-" nmap <Leader>o <Plug>(openbrowser-smart-search)
-nmap bo <Plug>(openbrowser-smart-search)
+nmap <Leader>o <Plug>(openbrowser-smart-search)
 vmap <Leader>o <Plug>(openbrowser-smart-search)
 '''
 
@@ -297,6 +296,7 @@ hook_add = '''
 repo = 'rking/ag.vim'
 hook_add = '''
     ca ag Ag
+    nnoremap 88 :<C-u>tab sp<CR>:Ag ''<CR>
     nnoremap g* :Ag ''<CR>
     nnoremap gr :Ag ''<CR>
     vnoremap gr y:Ag '0'<CR>

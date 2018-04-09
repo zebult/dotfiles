@@ -181,6 +181,7 @@ alias noti='terminal-notifier -message "コマンド完了"'
 alias mic='vim /Users/a14198/Dropbox/Saichi/Document/work/goodroid/micchiy.md'
 
 alias sc="cd Assets/Scripts"
+alias slack="~/Dropbox/Saichi/sh/slack"
 
 set -o vi
 bindkey -M viins '^A'  beginning-of-line
