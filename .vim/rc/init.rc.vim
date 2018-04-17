@@ -100,6 +100,7 @@ augroup SaveGroup
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     autocmd BufWritePre * call lightline#update()
     autocmd BufWritePre *.cs call Uncrustify('cs')
+    " autocmd BufWritePre *.cs UnivimBuild
     autocmd BufWritePre *.cpp call Uncrustify('cpp')
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
@@ -111,6 +112,7 @@ augroup HoldCursorGroup
     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     " autocmd CursorHold * match TrailingSpaces /\s\+$/
+    " autocmd BufWritePre *.cs UnivimBuild
     if has('gui_running')
       autocmd CursorHold * call toggl#task_cache_update()
       autocmd CursorHold * call lightline#update()

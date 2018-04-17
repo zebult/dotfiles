@@ -503,12 +503,12 @@ zle -N git-remote-vim
 # zle -N fileRecVimOpen
 # bindkey '^f' fileRecVimOpen
 
-fileOldVimOpen() {
-    BUFFER='vim -c "DeniteFileOld"'
-    zle accept-line
-}
-zle -N fileOldVimOpen
-bindkey '^k' fileOldVimOpen
+# fileOldVimOpen() {
+#     BUFFER='vim -c "DeniteFileOld"'
+#     zle accept-line
+# }
+# zle -N fileOldVimOpen
+# bindkey '^k' fileOldVimOpen
 
 pwdcp() {
     pwd | pbcopy
@@ -555,12 +555,19 @@ memodiary() {
 zle -N memodiary
 bindkey '^y' memodiary
 
-todolist() {
-    BUFFER="vim ~/Dropbox/Saichi/Diary/todo.md"
+# todolist() {
+#     BUFFER="vim ~/Dropbox/Saichi/Diary/todo.md"
+#     zle accept-line
+# }
+# zle -N todolist
+# bindkey '^t' todolist
+
+memoGlobal() {
+    BUFFER='vim ~/Dropbox/Saichi/memo.md'
     zle accept-line
 }
-zle -N todolist
-bindkey '^t' todolist
+zle -N memoGlobal
+bindkey '^t' memoGlobal
 
 zshrcopen() {
     BUFFER="vim ~/.zshrc"

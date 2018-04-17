@@ -1,6 +1,7 @@
 " gina
 ca gad Gina add .
 ca gcm Gina commit -v
+nnoremap cc :Gina commit -v
 ca gst Gina status -s --opener=vsplit
 nnoremap <Leader>s :Gina status -s --opener=vsplit<CR>
 ca gfc Gina fetch
@@ -36,9 +37,24 @@ ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca glob Glog<CR>
 
+ca globb Gitv!<CR>
+
 "shell
 ca gbr Gbr
 ca gbd Gbd
+
+" gitv
+nnoremap gh :GTree<CR>
+
+function! GTree() abort
+  Gitv --all
+  QuickhlManualAdd r:origin/develop
+  QuickhlManualAdd HEAD
+  QuickhlManualAdd (develop)
+  QuickhlManualAdd (HEAD -> develop, r:origin/develop)
+  /develop
+endfunction
+command! -nargs=0 GTree call GTree()
 
 function! Gacm() abort
   Gina add .

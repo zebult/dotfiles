@@ -75,7 +75,7 @@ nnoremap & :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register
 " filename to  clipboard
 nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
-nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$<C-]>:nohlsearch<CR>
+" nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$<C-]>:nohlsearch<CR>
 
 nnoremap cc :lcd %:h<CR>
 
@@ -184,7 +184,7 @@ set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
-nmap Q <ESC>i<C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR>
+nmap Q <ESC>i## <C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR><CR>### Todo<CR><CR>### 朝<CR><CR>### 夕<CR><CR><ESC>
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>

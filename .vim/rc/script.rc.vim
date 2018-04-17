@@ -255,16 +255,19 @@ command! -bar UnityLog call UnityLog()
 
 function! MemoDiary() abort
   let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
-  " execute 'nnoremap me :<C-u>vs'.memo_path.'<CR>'
   execute 'vs'.memo_path
 endfunction
 command! -bar MemoDiary call MemoDiary()
 
 function! MemoGlobal() abort
-  " nnoremap gme :<C-u>vs ~/Dropbox/Saichi/memo.md<CR>'
   execute 'vs ~/Dropbox/Saichi/memo.md'
 endfunction
 command! -bar MemoGlobal call MemoGlobal()
+
+function! MemoDone() abort
+  execute 'vs ~/Dropbox/Saichi/done.md'
+endfunction
+command! -bar MemoDone call MemoDone()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

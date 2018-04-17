@@ -17,6 +17,7 @@ let g:switch_custom_definitions =
     \   ['right', 'left'],
     \   ['Right', 'Left'],
     \   ['after', 'before'],
+    \   ['After', 'Before'],
     \   ['on', 'off'],
     \   ['ON', 'OFF'],
     \   ['hoge', 'fuga'],

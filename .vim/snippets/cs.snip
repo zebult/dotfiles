@@ -70,6 +70,10 @@ snippet log_err
     Debug.LogError(${1});
 snippet log_c
     Console.WriteLine(${1});
+snippet string
+    string.Format("{0}", hoge)
+snippet contain_string
+    bool isContain = str.IndexOf("hoge") >= 0;
 snippet inst
     (${2:GameObject}) GameObject.Instantiate(${1:thing}, Vector3.zero, Quaternion.identity);
 snippet go

@@ -14,6 +14,7 @@ autocmd FileType cs vnoremap zj <Esc>:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
 autocmd FileType cs vnoremap <C-]> <Esc>:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
 
 " nnoremap <Leader>L gg}j$:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
+nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$:OmniSharpGotoDefinition<CR>:nohlsearch<CR>
 
 " 参照(Caller)
 autocmd FileType cs nnoremap zk :OmniSharpFindUsages<cr>

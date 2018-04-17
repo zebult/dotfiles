@@ -126,7 +126,9 @@ hook_add = 'source ~/Dropbox/Saichi/Vim/Private/slack.rc.vim'
 [[plugins]]
 repo = 'gregsexton/gitv'
 depends = ['vim-fugitive']
-hook_add = 'nnoremap <Leader>g :Gitv<CR>'
+hook_add = '''
+let g:Gitv_OpenPreviewOnLaunch = 0
+'''
 
 [[plugins]]
 repo = 'haya14busa/incsearch.vim'
@@ -393,11 +395,10 @@ hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 
 [[plugins]]
 repo = 'zebult/univim'
-on_map = 'U'
+on_event = ['BufWrite']
 hook_add = '''
-" nnoremap Up :<C-u>UnivimPlay<CR>
-" autocmd FileType cs nnoremap <Leader>r :<C-u>UnivimPlay<CR>
 autocmd FileType cs nnoremap rr :<C-u>UnivimPlay<CR>
+autocmd FileType cs nnoremap ff :<C-u>UnivimBuild<CR>
 nnoremap <Leader>ua :<C-u>UnivimMenu Build\ Project\ AllScene\ Android<CR>
 nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 "nnoremap <Leader>u/ :<C-u>UnivimFind<CR>

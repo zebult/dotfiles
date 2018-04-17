@@ -3,7 +3,7 @@ nmap <Bslash> [denite]
 
 nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> su :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
-nnoremap <silent> d; :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
+nnoremap <silent> s; :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
 nnoremap <silent> sf  :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 
 nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
