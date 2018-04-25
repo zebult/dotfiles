@@ -112,7 +112,7 @@ augroup HoldCursorGroup
     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     " autocmd CursorHold * match TrailingSpaces /\s\+$/
-    " autocmd BufWritePre *.cs UnivimBuild
+    " autocmd CursorHold *.cs UnivimBuild
     if has('gui_running')
       autocmd CursorHold * call toggl#task_cache_update()
       autocmd CursorHold * call lightline#update()

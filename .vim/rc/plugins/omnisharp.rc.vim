@@ -29,7 +29,7 @@ autocmd FileType cs nnoremap <leader>Fx :OmniSharpFixUsings<cr>
 " autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
 
 autocmd FileType cs nnoremap <Leader>R :OmniSharpReloadSolution<cr>
-autocmd FileType cs nnoremap <Leader>S :OmniSharpRename<cr>
+" autocmd FileType cs nnoremap <Leader>S :OmniSharpRename<cr>
 
 " autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
 " autocmd FileType cs nnoremap <leader>d  :OmniSharpDocumentation<cr>

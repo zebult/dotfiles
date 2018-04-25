@@ -1,13 +1,16 @@
 " gina
-ca gad Gina add .
+ca gadd Gina add .
+ca gad Gadc
 ca gcm Gina commit -v
-nnoremap cc :Gina commit -v
-ca gst Gina status -s --opener=vsplit
-nnoremap <Leader>s :Gina status -s --opener=vsplit<CR>
+nnoremap cc :Gina commit -v<CR>
+ca gst Gst
+nnoremap <Leader>S :Gst<CR>
+nnoremap <Leader>s :Gstc<CR>
 ca gfc Gina fetch
 ca gsh Gina stash
 ca gpop Gina stash pop
-ca gdf Gina diff
+ca gdf Gdf
+ca gdfa Gina diff
 ca glo Gina log --opener=vsplit
 ca gloo Gloo
 ca gcp Gina cherry-pick
@@ -20,6 +23,8 @@ ca gg Gacm
 ca gamd Gamd
 ca gps Gps
 ca gpl Gpl
+
+" let g:gina#command#status#use_default_mappings = 0
 
 " fugitive
 " http://wakame.hatenablog.jp/entry/2017/05/03/222511
@@ -67,6 +72,31 @@ function! Gamd() abort
   Gina commit --amend
 endfunction
 command! -nargs=0 Gamd call Gamd()
+
+function! Gst() abort
+  Gina status -s --opener=vsplit
+endfunction
+command! -nargs=0 Gst call Gst()
+
+function! Gstc() abort
+  vs
+  Gina diff --cached --opener=vsplit
+  Gst
+endfunction
+command! -nargs=0 Gstc call Gstc()
+
+function! Gadc() abort
+  Gina add .
+  Gstc
+endfunction
+command! -nargs=0 Gadc call Gadc()
+
+function! Gdf() abort
+  Gina compare --opener=vsplit --oneside
+  " norm! <C-w>L
+  silent! <C-w>L
+endfunction
+command! -nargs=0 Gdf call Gdf()
 
 function! Gps(...) abort
   let branch = system("git rev-parse --abbrev-ref HEAD")

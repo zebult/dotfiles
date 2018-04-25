@@ -41,6 +41,11 @@ snippet base_start
         base.Start();
         ${1}
     }
+snippet ondestroy
+    private void OnDestroy()
+    {
+        ${1}
+    }
 snippet op
     override protected
 snippet update
@@ -562,12 +567,18 @@ snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});
 snippet world_to_screen
     Camera.main.WorldToScreenPoint(${1:position});
-
-snippet json_to_dic_MINI
+snippet str_to_dic_MINI
     Dictionary<string, object> dic = Json.Deserialize(${1:json}) as Dictionary<string, object>;
-snippet dic_to_json_MINI
+snippet dic_to_str_MINI
     string json = Json.Serialize(${1:dic});
-snippet json_create_JSON_NODE
+snippet json_create_str
+    using MiniJSON;
+    var ${1:dic} = new Dictionary<string, object>()
+    {
+        { "hoge", "hoge" },
+    };
+    string json = Json.Serialize(<|1|>);
+snippet json_create_list
     using MiniJSON;
     var ${1:dic} = new Dictionary<string, object>()
     {
@@ -581,6 +592,8 @@ snippet json_get_array_JSON_NODE
     {
         int rank = (int) (ranking["rank"].Get <long>());
     }
+snippet json_str_sample
+    string jsonStr = "{ \"id\": 100, \"name\": \"テストアイテム\", \"description\": \"説明だよ\" }";
 
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});

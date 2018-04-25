@@ -1,27 +1,27 @@
 [include]
     path = ~/.gitconfig.local
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
-	ignorecase = false
-	editor = nvim
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes
+    ignorecase = false
+    editor = nvim
 [diff]
     tool = vimdiff
 [difftool]
     prompt = false
 [diff "image"]
-	# command = ~/.bin/sh/git-imgdiff
+    # command = ~/.bin/sh/git-imgdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [color]
-	ui = true
+    ui = true
 [alias]
     tree = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [http]
-	postBuffer = 524288000
+    postBuffer = 524288000
 [commit]
-	template = ~/.gitmessage
+    template = ~/.gitmessage

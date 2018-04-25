@@ -77,7 +77,7 @@ nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
 " nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$<C-]>:nohlsearch<CR>
 
-nnoremap cc :lcd %:h<CR>
+nnoremap cd :lcd %:h<CR>
 
 " Screen split key mappings
 " nnoremap sN :<C-u>bn<CR>
