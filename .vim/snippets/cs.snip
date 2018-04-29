@@ -415,6 +415,10 @@ snippet publish
     stream
     .Subscribe(_ => )
     .AddTo(this);
+snippet pair
+    var pair = new Pair <int> (1, 2);
+    pair.Previous = 3;
+    pair.Current = 4;
 snippet tween_move
     obj.transform.DOLocalMove(position, time)
     .OnComplete(() => {

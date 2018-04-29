@@ -145,7 +145,7 @@ alias gtr="git tree"
 alias gclo="git clone"
 alias gth="git checkout --theirs"
 alias gbd="git branch --merged|egrep -v '\\*|develop|master|design|design/design-mock'|xargs git branch -d"
-alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
+alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock -e planner-v2 | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias v=vim
