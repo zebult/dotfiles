@@ -134,7 +134,7 @@ let g:Gitv_OpenPreviewOnLaunch = 0
 repo = 'haya14busa/incsearch.vim'
 on_event = 'BufRead'
 if = "!has('gui_running')"
-hook_add = '''
+hook_source = '''
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 '''
@@ -295,7 +295,7 @@ hook_add = 'nnoremap zu :<C-u>GundoToggle<CR>'
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
-on_event = 'BufRead'
+on_map = 'g/'
 hook_add  = '''
 nnoremap g/ :Migemo<CR>
 '''
