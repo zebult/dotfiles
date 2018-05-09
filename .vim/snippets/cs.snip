@@ -342,7 +342,7 @@ snippet propn
     private ${1:type} _${2:value};
     public <|1|> <|2|>
     {
-        get { return _<|2|> ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
+        get { return _<|2|> != null ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
     }
 snippet member_serialize
     [SerializeField]

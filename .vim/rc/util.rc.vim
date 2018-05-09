@@ -1,6 +1,6 @@
 " spell
 set spelllang=en,cjk
-nnoremap # :call SpellToggle()<CR>
+" nnoremap # :call SpellToggle()<CR>
 function! SpellToggle()
     setlocal spell!
     if exists("g:syntax_on")

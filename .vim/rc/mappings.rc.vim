@@ -112,7 +112,7 @@ nnoremap sw <C-w>w
 " nnoremap so <C-w>o
 " nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
+" nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR><C-w>j
 " nnoremap ss :<C-u>new<CR><C-w>J
 nnoremap sv :<C-u>vs<CR><C-w>l

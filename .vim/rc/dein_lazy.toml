@@ -118,6 +118,13 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
 [[plugins]]
+repo = 'tyamoto/ZoomWin'
+on_event = 'BufRead'
+hook_source = '''
+nnoremap so :ZoomWin<CR>
+'''
+
+[[plugins]]
 repo = 'agatan/vim-vlack'
 # on_event = 'BufRead'
 on_i = 1

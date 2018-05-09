@@ -11,7 +11,10 @@ let g:lightline = {
             \      ['modified'],
             \      [],
             \    ],
-            \   'right': [ [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent']],
+            \   'right': [
+            \      [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
+            \      ['toggl_task'],
+            \    ],
             \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
@@ -39,7 +42,7 @@ let g:lightline = {
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
 
 function! MyToggleTask()
-    return "Toggle:".toggl#task()." ".toggl#time()
+    return "Doing:".toggl#task()." ".toggl#time()
 endfunction
 
 function! MyFugitive()
