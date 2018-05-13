@@ -15,6 +15,101 @@
         },
         "rules": [
           {
+            "description": "Common Util",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_or_backspace",
+                    "modifiers": [
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  },
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": [
+                      "left_control"
+                    ]
+                  },
+                  {
+                    "key_code": "c"
+                  },
+                  {
+                    "key_code": "l"
+                  },
+                  {
+                    "key_code": "e"
+                  },
+                  {
+                    "key_code": "a"
+                  },
+                  {
+                    "key_code": "r"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Simple Vi Mode v3 (rev 2) f+",
             "manipulators": [
               {
