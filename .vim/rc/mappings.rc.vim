@@ -112,7 +112,7 @@ nnoremap sw <C-w>w
 " nnoremap so <C-w>o
 " nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
+" nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR><C-w>j
 " nnoremap ss :<C-u>new<CR><C-w>J
 nnoremap sv :<C-u>vs<CR><C-w>l
@@ -184,7 +184,7 @@ set completeopt=menuone
 inoremap <silent> <expr> <Tab> pumvisible() ? "\<C-x>\<C-o>\<C-p>" : "\<Tab>"
 let MyAutoComplete_StartLength = 3
 
-nmap Q <ESC>i## <C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR><CR>### Todo<CR><CR>### 朝<CR><CR>### 夕<CR><CR><ESC>
+" nmap Q <ESC>i## <C-r>=strftime("%Y-%m-%d %H:%M:%S ==========")<CR><CR><CR>### Todo<CR><CR>### 朝<CR><CR>### 夕<CR><CR><ESC>
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>

@@ -342,7 +342,7 @@ snippet propn
     private ${1:type} _${2:value};
     public <|1|> <|2|>
     {
-        get { return _<|2|> ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
+        get { return _<|2|> != null ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
     }
 snippet member_serialize
     [SerializeField]
@@ -614,5 +614,15 @@ snippet scene_load_multi_g
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
 snippet scene_load_prefab_g
     OGM.I.ChangeScenePrefab(GRSceneManager.MainScene.${1});
+snippet scene_load_common_g
+    GRSceneManager.Instance.ChangeScene(GRSceneManager.MainScene.${1});
 snippet Instantiate_g
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/${1}"));
+snippet touch
+    Observable
+    .EveryUpdate()
+    .Where(_ => TouchManager.GetPhase() == TouchManager.ControlPhase.Ended)
+    .First()
+    .Subscribe(_ => {
+    })
+    .AddTo(this);
