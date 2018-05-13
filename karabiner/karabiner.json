@@ -183,6 +183,11 @@
                     "name": "simple_vi_mode_s",
                     "type": "variable_if",
                     "value": 0
+                  },
+                  {
+                    "name": "simple_vi_mode_a",
+                    "type": "variable_if",
+                    "value": 0
                   }
                 ],
                 "from": {
@@ -207,6 +212,40 @@
                     "name": "sticky_kana",
                     "type": "variable_if",
                     "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_kana",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_kana",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "name": "simple_vi_mode_f",
+                    "type": "variable_if",
+                    "value": 0
                   }
                 ],
                 "from": {
