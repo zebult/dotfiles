@@ -46,6 +46,36 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control",
+                      "left_command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "control",
+                      "shift",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
                 "from": {
                   "key_code": "h",
                   "modifiers": {
@@ -71,11 +101,18 @@
                 "type": "basic"
               },
               {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_f",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
                 "from": {
                   "key_code": "l",
                   "modifiers": {
                     "mandatory": [
-                      "left_command"
+                      "command"
                     ]
                   }
                 },
@@ -1336,6 +1373,188 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": "left_control"
+                  },
+                  {
+                    "key_code": "n"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "n"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_s",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_s",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "key_code": "l",
+                    "modifiers": "left_control"
+                  },
+                  {
+                    "key_code": "n"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 1
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": "left_control"
+                  },
+                  {
+                    "key_code": "p"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^org\\.pqrs\\.unknownapp\\.alacritty$"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "p"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_s",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_s",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "key_code": "l",
+                    "modifiers": "left_control"
+                  },
+                  {
+                    "key_code": "p"
+                  }
+                ],
+                "type": "basic"
               }
             ]
           },
@@ -1702,7 +1921,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "n",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1711,7 +1930,11 @@
                 },
                 "to": [
                   {
-                    "key_code": "return_or_enter"
+                    "key_code": "close_bracket",
+                    "modifiers": [
+                      "left_command",
+                      "left_shift"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -1728,7 +1951,7 @@
                       "key_code": "s"
                     },
                     {
-                      "key_code": "semicolon"
+                      "key_code": "n"
                     }
                   ],
                   "simultaneous_options": {
@@ -1755,7 +1978,86 @@
                     }
                   },
                   {
-                    "key_code": "semicolon"
+                    "key_code": "close_bracket",
+                    "modifiers": [
+                      "left_command",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": [
+                      "left_command",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "p"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_s",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_s",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": [
+                      "left_command",
+                      "left_shift"
+                    ]
                   }
                 ],
                 "type": "basic"
