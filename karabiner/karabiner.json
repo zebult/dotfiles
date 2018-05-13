@@ -2698,7 +2698,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": 1836
+                      "y": 1000
                     }
                   }
                 ],
@@ -2744,7 +2744,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": 1836
+                      "y": 1000
                     }
                   }
                 ],
@@ -2769,7 +2769,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": -1836
+                      "y": -1000
                     }
                   }
                 ],
@@ -2815,7 +2815,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": -1836
+                      "y": -1000
                     }
                   }
                 ],
@@ -2840,7 +2840,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": -1836
+                      "x": -1000
                     }
                   }
                 ],
@@ -2886,7 +2886,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": -1836
+                      "x": -1000
                     }
                   }
                 ],
@@ -2911,7 +2911,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": 1836
+                      "x": 1000
                     }
                   }
                 ],
@@ -2957,7 +2957,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": 1836
+                      "x": 1000
                     }
                   }
                 ],
@@ -2972,7 +2972,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "o",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2981,7 +2981,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "delete_or_backspace"
+                    "pointing_button": "button1"
                   }
                 ],
                 "type": "basic"
@@ -2998,7 +2998,7 @@
                       "key_code": "s"
                     },
                     {
-                      "key_code": "o"
+                      "key_code": "semicolon"
                     }
                   ],
                   "simultaneous_options": {
@@ -3025,7 +3025,7 @@
                     }
                   },
                   {
-                    "key_code": "delete_or_backspace"
+                    "pointing_button": "button1"
                   }
                 ],
                 "type": "basic"
