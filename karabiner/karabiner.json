@@ -147,6 +147,734 @@
             ]
           },
           {
+            "description": "[zebult] semicolon sticky",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": "left_control"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_kana",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_f",
+                    "type": "variable_if",
+                    "value": 0
+                  },
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "from": {
+                  "key_code": "l"
+                },
+                "to": [
+                  {
+                    "key_code": "l"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_kana",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_kana",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "semicolon"
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 1
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "a"
+                },
+                "to": [
+                  {
+                    "key_code": "a",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "b"
+                },
+                "to": [
+                  {
+                    "key_code": "b",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "c"
+                },
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "d"
+                },
+                "to": [
+                  {
+                    "key_code": "d",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "e"
+                },
+                "to": [
+                  {
+                    "key_code": "e",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "f"
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "g"
+                },
+                "to": [
+                  {
+                    "key_code": "g",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "h"
+                },
+                "to": [
+                  {
+                    "key_code": "h",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "i"
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "j"
+                },
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "k"
+                },
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l"
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "m"
+                },
+                "to": [
+                  {
+                    "key_code": "m",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "n"
+                },
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "o"
+                },
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "p"
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "q"
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "r"
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "s"
+                },
+                "to": [
+                  {
+                    "key_code": "s",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "t"
+                },
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "u"
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "v"
+                },
+                "to": [
+                  {
+                    "key_code": "v",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "w"
+                },
+                "to": [
+                  {
+                    "key_code": "w",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "x"
+                },
+                "to": [
+                  {
+                    "key_code": "x",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "y"
+                },
+                "to": [
+                  {
+                    "key_code": "y",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_mode",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "z"
+                },
+                "to": [
+                  {
+                    "key_code": "z",
+                    "modifiers": "shift"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "[zebult] Simple Vi Mode v3 (rev 2) f+",
             "manipulators": [
               {
