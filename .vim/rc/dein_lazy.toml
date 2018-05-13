@@ -302,7 +302,7 @@ hook_add = 'nnoremap zu :<C-u>GundoToggle<CR>'
 # Need 'brew install cmigemo' (gvim限定)
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
-on_map = 'g/'
+on_map = 'g'
 hook_add  = '''
 nnoremap g/ :Migemo<CR>
 '''
