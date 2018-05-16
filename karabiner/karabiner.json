@@ -143,6 +143,32 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      {
+                        "vendor_id": 1278
+                      }
+                    ]
+                  }
+                ],
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "backslash"
+                  }
+                ],
+                "type": "basic"
               }
             ]
           },
@@ -192,35 +218,6 @@
                 ],
                 "from": {
                   "key_code": "l"
-                },
-                "to": [
-                  {
-                    "key_code": "l"
-                  },
-                  {
-                    "set_variable": {
-                      "name": "sticky_kana",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "sticky_kana",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_shift"
-                    ]
-                  }
                 },
                 "to": [
                   {
@@ -905,6 +902,40 @@
                   {
                     "set_variable": {
                       "name": "sticky_mode",
+                      "value": 0
+                    }
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "[zebult] sticky util",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "sticky_kana",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l"
+                  },
+                  {
+                    "set_variable": {
+                      "name": "sticky_kana",
                       "value": 0
                     }
                   }
@@ -3237,7 +3268,12 @@
                 },
                 "to": [
                   {
-                    "key_code": "grave_accent_and_tilde"
+                    "key_code": "i",
+                    "modifiers": [
+                      "option",
+                      "shift",
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -3281,7 +3317,89 @@
                     }
                   },
                   {
-                    "key_code": "grave_accent_and_tilde"
+                    "key_code": "i",
+                    "modifiers": [
+                      "option",
+                      "shift",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": [
+                      "option",
+                      "shift",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "u"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_s",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_s",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "key_code": "u",
+                    "modifiers": [
+                      "option",
+                      "shift",
+                      "command"
+                    ]
                   }
                 ],
                 "type": "basic"
@@ -4546,7 +4664,7 @@
       },
       "devices": [
         {
-          "disable_built_in_keyboard_if_exists": true,
+          "disable_built_in_keyboard_if_exists": false,
           "fn_function_keys": [],
           "identifiers": {
             "is_keyboard": true,
