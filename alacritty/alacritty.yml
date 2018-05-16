@@ -40,7 +40,8 @@ font:
 
   # The bold font face
   bold:
-    family: Menlo
+    family: Ricty for Powerline
+    # family: Menlo
     # Style can be specified to pick a specific face.
     style: Bold
 
