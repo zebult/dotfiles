@@ -147,12 +147,12 @@
               {
                 "conditions": [
                   {
-                    "type": "device_if",
                     "identifiers": [
                       {
                         "vendor_id": 1278
                       }
-                    ]
+                    ],
+                    "type": "device_if"
                   }
                 ],
                 "from": {
@@ -4664,7 +4664,7 @@
       },
       "devices": [
         {
-          "disable_built_in_keyboard_if_exists": false,
+          "disable_built_in_keyboard_if_exists": true,
           "fn_function_keys": [],
           "identifiers": {
             "is_keyboard": true,

@@ -104,7 +104,7 @@ augroup SaveGroup
     autocmd BufWritePre *.cpp call Uncrustify('cpp')
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
-    autocmd BufWritePre *.mm call Uncrustify('mm')
+    " autocmd BufWritePre *.mm call Uncrustify('mm')
     autocmd BufWritePre *.json call JsonPretty()
 augroup END
 
