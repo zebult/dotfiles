@@ -221,13 +221,13 @@
                 },
                 "to": [
                   {
-                    "key_code": "l"
-                  },
-                  {
                     "set_variable": {
                       "name": "sticky_kana",
                       "value": 0
                     }
+                  },
+                  {
+                    "key_code": "l"
                   }
                 ],
                 "type": "basic"
