@@ -1,10 +1,15 @@
 {
-  "InitialFilter" : "IgnoreCase",
+  "InitialFilter": "Fuzzy",
   "Keymap": {
     "C-j": "peco.ToggleSelectionAndSelectNext"
   },
   "Style": {
-    "Selected": ["red"],
-    "Matched": ["blue", "on_black"]
+    "Selected": [
+      "red"
+    ],
+    "Matched": [
+      "blue",
+      "on_black"
+    ]
   }
 }

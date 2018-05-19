@@ -427,6 +427,11 @@ dush()
     du -sh * | grep G
 }
 
+gdfv()
+{
+    vim -p `git show --pretty="format:" --relative --name-only $1`
+}
+
 xp()
 {
     defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks $1

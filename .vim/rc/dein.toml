@@ -297,6 +297,7 @@ repo = 'rking/ag.vim'
 hook_add = '''
     ca ag Ag
     nnoremap 88 :<C-u>tab sp<CR>:Ag ''<CR>
+    vnoremap 88 y:<C-u>tab sp<CR>:Ag '0'<CR>
     nnoremap g* :Ag ''<CR>
     nnoremap gr :Ag ''<CR>
     vnoremap gr y:Ag '0'<CR>
