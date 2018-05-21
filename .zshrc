@@ -429,7 +429,11 @@ dush()
 
 gdfv()
 {
-    vim -p `git show --pretty="format:" --relative --name-only $1`
+    if [ -n "$1" ]; then
+        vim -p `git show --pretty="format:" --relative --name-only $1`
+    else
+        vim -p `git diff --pretty="format:" --relative --name-only`
+    fi
 }
 
 xp()
