@@ -121,7 +121,7 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 repo = 'tyamoto/ZoomWin'
 on_event = 'BufRead'
 hook_source = '''
-nnoremap So :ZoomWin<CR>
+nnoremap s; :ZoomWin<CR>
 '''
 
 [[plugins]]
