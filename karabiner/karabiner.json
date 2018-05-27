@@ -106,6 +106,13 @@
                     "name": "simple_vi_mode_f",
                     "type": "variable_if",
                     "value": 0
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "^com\\.googlecode\\.iterm2$",
+                      "^io.alacritty$"
+                    ],
+                    "type": "frontmost_application_if"
                   }
                 ],
                 "from": {
