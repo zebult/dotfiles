@@ -50,10 +50,10 @@ endfunction
 command -bar JsonLineEscape call JsonLineEscape()
 
 function! XmlPretty() abort
-  %s/></>\r</g | filetype indent on | setf xml | normal gg=G
+  " %s/></>\r</g | filetype indent on | setf xml | normal gg=G
+  %!xmllint --format -
 endfunction
 command -bar XmlPretty  call XmlPretty()
-
 
 function! LogcatD(...) abort
   if a:0 >= 1

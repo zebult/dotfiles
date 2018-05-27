@@ -1,5 +1,5 @@
 {
-  "InitialFilter": "Fuzzy",
+  "InitialFilter": "IgnoreCase",
   "Keymap": {
     "C-j": "peco.ToggleSelectionAndSelectNext"
   },
