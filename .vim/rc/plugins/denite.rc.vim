@@ -3,8 +3,8 @@ nmap <Bslash> [denite]
 
 nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
 vnoremap <silent> so <Esc>:vs<CR><C-w>l:Denite -highlight-mode-insert=Search file_rec<CR>
-nnoremap <silent> s; :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
-vnoremap <silent> s; <Esc>:vs<CR><C-w>l:Denite -highlight-mode-insert=Search file_rec<CR>
+" nnoremap <silent> s; :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
+" vnoremap <silent> s; <Esc>:vs<CR><C-w>l:Denite -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> s<Bslash> :<C-u>DeniteCursorWord -highlight-mode-insert=Search file_rec<CR>
 vnoremap <silent> s<Bslash> <Esc>:vs<CR><C-w>l:DeniteCursorWord -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> sT :<C-u>Denite -highlight-mode-insert=Search -default-action=tabopen file_rec<CR>
