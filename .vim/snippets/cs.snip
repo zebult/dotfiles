@@ -567,6 +567,8 @@ snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str
     ${1:type}.GetName(typeof(<|1|>), ${2:value});
+snippet enum_to_list
+    Enum.GetValues(typeof(${1:type})).OfType <<|1|>>().ToList();
 snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});
 snippet world_to_screen

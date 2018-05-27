@@ -223,10 +223,10 @@ hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 on_event = 'BufWrite'
 
 # メタ文字含むとlightline壊れるので注意
-[[plugins]]
-repo = 'zebult/toggl.vim'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
-on_event = 'BufRead'
+# [[plugins]]
+# repo = 'zebult/toggl.vim'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/toggl.rc.vim'
+# on_event = 'BufRead'
 
 [[plugins]]
 repo = 'vim-scripts/DoxygenToolkit.vim'

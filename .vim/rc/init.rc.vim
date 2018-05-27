@@ -15,9 +15,8 @@ map \ <Subleader>
 set ambiwidth=double
 rv! " 履歴共有
 set incsearch
-" 最後改行勝手にいれないはず
-" set nofixeol
-set noeol
+" 最後改行勝手にいれない
+set nofixeol
 " ブランチ名をステータスラインに表示する
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
@@ -114,7 +113,7 @@ augroup HoldCursorGroup
     " autocmd CursorHold * match TrailingSpaces /\s\+$/
     " autocmd CursorHold *.cs UnivimBuild
     if has('gui_running')
-      autocmd CursorHold * call toggl#task_cache_update()
+      " autocmd CursorHold * call toggl#task_cache_update()
       autocmd CursorHold * call lightline#update()
     endif
 augroup END

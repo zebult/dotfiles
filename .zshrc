@@ -151,7 +151,6 @@ alias gbd="git branch --merged|egrep -v '\\*|develop|master|design|design/design
 alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock -e planner-v2 | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
-alias v=vim
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 # alias vi=vim -u NONE --noplugin
@@ -215,6 +214,16 @@ macvim () {
     else
         im $1
     fi
+}
+
+v () {
+    COMMAND="vim <("$@")"
+    eval $COMMAND
+}
+
+vf () {
+    COMMAND="vim -p \`"$@"\`"
+    eval $COMMAND
 }
 
 zipr() {

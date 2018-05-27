@@ -13,14 +13,12 @@ let g:lightline = {
             \    ],
             \   'right': [
             \      [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
-            \      ['toggl_task'],
             \    ],
             \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
             \   'fugitive': 'MyFugitive',
             \   'gitgutter': 'MyGitGutter',
-            \   'toggl_task': 'MyToggleTask',
             \   'tagbar': 'MyCurrentTag',
             \   'syntastic': 'SyntasticStatuslineFlag',
             \ },
@@ -33,6 +31,8 @@ let g:lightline = {
             \   'ale': 'ALEGetStatusLine',
             \ },
             \ }
+            " \      ['toggl_task'],
+            " \   'toggl_task': 'MyToggleTask',
 "  , 'auto_gtags_is_making_gtags'
 " component_expand \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
 
