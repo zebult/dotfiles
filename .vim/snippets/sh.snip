@@ -26,3 +26,5 @@ snippet for_file
 snippet read
     read answer
     $answer
+snippet encode_url
+    TITLE=$(echo $TITLE | nkf -WwMQ | tr = % | tr -d '\n' | sed -e 's/%%/%/g')

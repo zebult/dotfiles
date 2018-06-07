@@ -52,7 +52,7 @@ noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tj gD
 " diffすぐ出す
-ca difff vertical diffsplit
+ca diff vertical diffsplit
 ca ccd lcd %:h
 
 ca al Align
@@ -116,9 +116,9 @@ nnoremap sw <C-w>w
 nnoremap st :<C-u>tabnew<CR>
 " nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR><C-w>j
-" nnoremap ss :<C-u>new<CR><C-w>J
+nnoremap Ss :<C-u>new<CR><C-w>J
 nnoremap sv :<C-u>vs<CR><C-w>l
-" nnoremap sv :<C-u>vert new<CR><C-w>L
+nnoremap Sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 vnoremap s% y:%s ///g<Left><Left><Left><C-r>0<Right><C-r>0
