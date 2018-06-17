@@ -124,7 +124,7 @@ alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
 alias glz="git log --author=zebult"
-alias glnm="git log --no-merges"
+alias glonm="git log --oneline --no-merges"
 alias grh="git reset --hard"
 alias grs="git reset --mixed"
 alias gcl="git clean -df"
@@ -584,7 +584,7 @@ bindkey '^y' memodiary
 # bindkey '^t' todolist
 
 memoGlobal() {
-    BUFFER='vim ~/Dropbox/Saichi/memo.md'
+    BUFFER='vim -c "Memo"'
     zle accept-line
 }
 zle -N memoGlobal

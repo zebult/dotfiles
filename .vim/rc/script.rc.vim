@@ -259,15 +259,34 @@ function! MemoDiary() abort
 endfunction
 command! -bar MemoDiary call MemoDiary()
 
-function! MemoGlobal() abort
-  execute 'vs ~/Dropbox/Saichi/memo.md'
-endfunction
-command! -bar MemoGlobal call MemoGlobal()
-
 function! MemoDone() abort
   execute 'vs ~/Dropbox/Saichi/done.md'
 endfunction
 command! -bar MemoDone call MemoDone()
+
+function! SplitPanel() abort
+  let file_name = expand("%")
+  if file_name == ""
+    new
+    norm J
+  else
+    sp
+    norm j
+  endif
+endfunction
+command! -bar SplitPanel call SplitPanel()
+
+function! VSplitPanel() abort
+  let file_name = expand("%")
+  if file_name == ""
+    vert new
+    norm L
+  else
+    vs
+    norm l
+  endif
+endfunction
+command! -bar VSplitPanel call VSplitPanel()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

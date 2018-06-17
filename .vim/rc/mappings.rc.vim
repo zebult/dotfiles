@@ -115,9 +115,11 @@ nnoremap sw <C-w>w
 " nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
 " nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR><C-w>j
+" nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap ss :SplitPanel<CR>
 nnoremap Ss :<C-u>new<CR><C-w>J
-nnoremap sv :<C-u>vs<CR><C-w>l
+" nnoremap sv :<C-u>vs<CR><C-w>l
+nnoremap sv :VSplitPanel<CR>
 nnoremap Sv :<C-u>vert new<CR><C-w>L
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
