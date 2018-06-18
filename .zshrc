@@ -180,7 +180,6 @@ alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'
 alias noti='terminal-notifier -message "コマンド完了"'
-alias mic='vim /Users/a14198/Dropbox/Saichi/Document/work/goodroid/micchiy.md'
 
 alias sc="cd Assets/Scripts"
 alias slack="~/Dropbox/Saichi/sh/slack"
@@ -570,7 +569,7 @@ zle -N currentopen
 bindkey '^o' currentopen
 
 memodiary() {
-    BUFFER="vim ~/Dropbox/Saichi/Diary/$(date "+%Y/%m/%d.md")"
+    BUFFER="vim ~/Dropbox/Saichi/Diary/$(date "+%Y/%m/%d.txt")"
     zle accept-line
 }
 zle -N memodiary
@@ -584,7 +583,8 @@ bindkey '^y' memodiary
 # bindkey '^t' todolist
 
 memoGlobal() {
-    BUFFER='vim -c "Memo"'
+    # BUFFER='vim -c "Memo"'
+    BUFFER="vim ~/Dropbox/Saichi/memo.txt"
     zle accept-line
 }
 zle -N memoGlobal
