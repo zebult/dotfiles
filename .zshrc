@@ -39,6 +39,9 @@ export PATH=$PATH:$HOME/.go/bin
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
+# Xamarin
+export PATH=$PATH:$HOME/tee
+
 # cocos2d-x
 # COCOS_VERSION="3.11.1"
 COCOS_VERSION="3.12"

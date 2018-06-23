@@ -5,5 +5,3 @@ GRTAGS
 GTAGS
 types*.taghl
 compile_commands.json
-uvimrc.cs
-uvimrc.cs.meta
