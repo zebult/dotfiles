@@ -74,6 +74,7 @@ let g:metarw_alias = {
 
 autocmd BufNewFile *.cs norm! /classea %2h"03x
 autocmd BufNewFile *.md norm! i# %"zx"zx"zxo
+autocmd BufNewFile *.txt norm! i# %"zx"zx"zx"zxo
 autocmd BufNewFile *.java norm! 2wi%5dh 
 autocmd BufNewFile *.h norm! i% bbb:%s/CLASS_NAME//gggveeelx
 autocmd BufNewFile *.hpp norm! i% bbb:%s/CLASS_NAME//gggveeelx

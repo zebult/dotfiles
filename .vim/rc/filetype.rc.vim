@@ -7,6 +7,7 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.java set filetype=java
     au BufRead,BufNewFile *.swift set filetype=swift
     au BufRead,BufNewFile *.md set filetype=markdown
+    au BufRead,BufNewFile *.txt set filetype=markdown
     au BufRead,BufNewFile *.py set filetype=python
     au BufRead,BufNewFile *.cs set filetype=cs
     au BufRead,BufNewFile *.go set filetype=go
