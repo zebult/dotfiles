@@ -28,3 +28,9 @@ snippet read
     $answer
 snippet encode_url
     TITLE=$(echo $TITLE | nkf -WwMQ | tr = % | tr -d '\n' | sed -e 's/%%/%/g')
+snippet exist_file
+    if [ -e ${PATH} ]; then
+        echo aru
+    elif [ ! -e ${PATH} ]; then
+        echo nai
+    fi
