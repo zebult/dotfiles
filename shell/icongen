@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# icon.pngという名前で1024を用意する
+# icongetn icon.png
+
+FILE_NAME=$1
+OUTPUT_NAME="icon_r.png"
+EXT=".png"
+
+SIZE_LIST=(16 32 64 128 256 512)
+
+for SIZE in ${SIZE_LIST[@]}; do
+    EXE="img -r $SIZE $FILE_NAME"
+    eval $EXE
+    mv $OUTPUT_NAME $SIZE$EXT
+done

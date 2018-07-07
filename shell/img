@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# img -r {width} [file file ...]
+# img -m [file file ...]
+
 PROGNAME=$(basename $0)
 VERSION="1.0"
 IS_BACKUP=true
@@ -41,7 +45,6 @@ do
             exit 1
             ;;
         '-r'|'--resize' )
-            # img -r {width} [file file ...]
             if [ -z "$3" ]; then
                 echo 'ERROR: not enough arg'
                 exit
@@ -56,11 +59,11 @@ do
                     break
                 fi
                 extension=`echo $1 | cut -d"." -f2`
-                is_img $extension
-                is_img_flag=$?
-                if [ $is_img_flag == '0' ]; then
-                    continue
-                fi
+                # is_img $extension
+                # is_img_flag=$?
+                # if [ $is_img_flag == '0' ]; then
+                #     continue
+                # fi
                 if [ ${IS_BACKUP} == true ]; then
                     file_name=`echo $1 | cut -d"." -f1`
                     extension=`echo $1 | cut -d"." -f2`
@@ -78,7 +81,6 @@ do
             exit 1
             ;;
         '-m'|'--merge' )
-            # img -m file file ...
             imageCount=0
             for i in `seq 1 ${#}`
             do
