@@ -59,11 +59,11 @@ do
                     break
                 fi
                 extension=`echo $1 | cut -d"." -f2`
-                is_img $extension
-                is_img_flag=$?
-                if [ $is_img_flag == '0' ]; then
-                    continue
-                fi
+                # is_img $extension
+                # is_img_flag=$?
+                # if [ $is_img_flag == '0' ]; then
+                #     continue
+                # fi
                 if [ ${IS_BACKUP} == true ]; then
                     file_name=`echo $1 | cut -d"." -f1`
                     extension=`echo $1 | cut -d"." -f2`
