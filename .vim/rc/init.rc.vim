@@ -92,18 +92,23 @@ autocmd FileType cvs,svn,gitcommit setlocal spell spelllang=en_us
 
 augroup SaveGroup
     autocmd!
-    " 保存時Git差分ハイライト
-    " autocmd BufWritePre * :GitGutterLineHighlightsEnable
     " 保存時空白ハイライト
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     autocmd BufWritePre * call lightline#update()
+
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs UnivimBuild
+
     autocmd BufWritePre *.cpp call Uncrustify('cpp')
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
+
     " autocmd BufWritePre *.mm call Uncrustify('mm')
+
+    autocmd BufWritePre *.swift call Uncrustify('swift')
+    autocmd BufWritePre *.swift call SubMark()
+
     autocmd BufWritePre *.json call JsonPretty()
 augroup END
 

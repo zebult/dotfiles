@@ -29,6 +29,20 @@ function! NoHighlightTrailingSpaces() abort
 endfunction
 command -bar NoHighlightTrailingSpaces  call NoHighlightTrailingSpaces()
 
+function! SubMark() abort
+  norm mz
+  silent %s/ ?/?/ge
+  silent %s/ !/!/ge
+  silent %s/ \././ge
+  silent %s/=\./= ./ge
+  silent %s/\*s/* s/ge
+  " silent %s/\*  /*/ge
+  " silent %s/\* $/*/ge
+  silent %s/\* \//*\//ge
+  norm 'z
+endfunction
+command -bar SubMark  call SubMark()
+
 function! JsonPretty() abort
   norm mz
   silent! %!jq '.'

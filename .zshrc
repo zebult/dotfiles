@@ -186,6 +186,8 @@ alias noti='terminal-notifier -message "コマンド完了"'
 
 alias sc="cd Assets/Scripts"
 alias slack="~/Dropbox/Saichi/sh/slack"
+alias gdu="gdu"
+alias dufile="tree -ifF --si --noreport | sed -e 's/\[//g' -e 's/\]//g' -e 's/\.\// \.\//g' | grep -v /$ | sort -h"
 
 set -o vi
 bindkey -M viins '^A'  beginning-of-line
