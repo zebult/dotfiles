@@ -36,8 +36,6 @@ function! SubMark() abort
   silent %s/ \././ge
   silent %s/=\./= ./ge
   silent %s/\*s/* s/ge
-  " silent %s/\*  /*/ge
-  " silent %s/\* $/*/ge
   silent %s/\* \//*\//ge
   norm 'z
 endfunction
