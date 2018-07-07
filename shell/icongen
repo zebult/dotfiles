@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 1024を用意する
+# icon.pngという名前で1024を用意する
 # icongetn icon.png
 
 FILE_NAME=$1
