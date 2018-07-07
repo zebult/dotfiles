@@ -71,7 +71,8 @@ let g:quickrun_config["watchdogs_checker/_"] = {
   \ 'hook/echo/output_success': '> No Errors Found.'
   \ }
 
-nnoremap <Leader>r :QuickRun<CR>
+nnoremap <silent> <Leader>r :QuickRun -mode n<CR>
+vnoremap <silent> <Leader>r :QuickRun -mode v<CR>
 " <C-c> で実行を強制終了させる
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"

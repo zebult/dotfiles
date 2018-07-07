@@ -13,12 +13,23 @@ vnoremap gL yoDebug.Log("call p");
 " null
 nnoremap gN yiwOif(p == null){Debug.Log("p is null");}
 vnoremap gN yOif(p == null){Debug.Log("p is null");}
-" nnoremap gN yiwoif(p == null)\{\Debug.Log("p is null");\}
-" vnoremap gN yoif(p == null)\{\Debug.Log("p is null");\}
 
 " Assert
 nnoremap ga yiwoDebug.Assert(p != null, "" + p);
 vnoremap ga yoDebug.Assert(p != null, "" + p);
+
+" Xamarin
+let file_name = expand("%")
+let split_list = split(file_name,'\.')
+if len(split_list) >= 3
+  let ext = split_list[-2].'.'.split_list[-1]
+  if ext == 'xaml.cs'
+    nnoremap gl yiwoDebug.WriteLine("p:" + p);
+    vnoremap gl yoDebug.WriteLine("p:" + p);
+    nnoremap gN yiwOif(p == null){Debug.WriteLine("p is null");}
+    vnoremap gN yOif(p == null){Debug.WriteLine("p is null");}
+  endif
+endif
 
 nnoremap <Leader>r :QuickRunCS<CR>
 function! QuickRunCS() abort
