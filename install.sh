@@ -101,6 +101,7 @@ case "${os}" in
         brew install uncrustify
         brew install mono
         brew install argon/mas/mas
+        brew install http://git.io/sshpass.rb
         curl -L git.io/enhancd | sh
         git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
         mkdir -p $HOME/.config

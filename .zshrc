@@ -440,13 +440,18 @@ dush()
     du -sh * | grep G
 }
 
-gdfv()
+gdfl()
 {
     if [ -n "$1" ]; then
         vim -p `git show --pretty="format:" --relative --name-only $1`
     else
         vim -p `git diff --pretty="format:" --relative --name-only`
     fi
+}
+
+gdfv()
+{
+    vim -c "Gdf"
 }
 
 xp()

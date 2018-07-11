@@ -118,6 +118,10 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
 [[plugins]]
+repo = 'vim-scripts/diffchar.vim'
+on_event = 'BufRead'
+
+[[plugins]]
 repo = 'tyamoto/ZoomWin'
 on_event = 'BufRead'
 hook_source = '''

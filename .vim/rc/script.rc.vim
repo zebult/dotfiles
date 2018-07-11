@@ -277,8 +277,7 @@ endfunction
 command! -bar MemoDone call MemoDone()
 
 function! SplitPanel() abort
-  let file_name = expand("%")
-  if file_name == ""
+  if IsNewBuffer()
     new
     norm J
   else
@@ -289,8 +288,7 @@ endfunction
 command! -bar SplitPanel call SplitPanel()
 
 function! VSplitPanel() abort
-  let file_name = expand("%")
-  if file_name == ""
+  if IsNewBuffer()
     vert new
     norm L
   else
@@ -299,6 +297,16 @@ function! VSplitPanel() abort
   endif
 endfunction
 command! -bar VSplitPanel call VSplitPanel()
+
+function! IsNewBuffer() abort
+  let file_name = expand("%")
+
+  if file_name == ""
+    return 1
+  endif
+
+  return 0
+endfunction
 
 " 文字出現数カウント
 " function! WordCount(word) abort

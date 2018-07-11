@@ -77,7 +77,9 @@ snippet log_c
     Console.WriteLine(${1});
 snippet string
     string.Format("{0}", hoge)
-snippet contain_string
+snippet contain
+    bool isContain = ${1:string}.Contains("${1:word}")
+snippet contain_string_index
     bool isContain = str.IndexOf("hoge") >= 0;
 snippet inst
     (${2:GameObject}) GameObject.Instantiate(${1:thing}, Vector3.zero, Quaternion.identity);
@@ -569,6 +571,8 @@ snippet str_to_enum
     (${1:type}) Enum.Parse(typeof(<|1|>), ${2:str});
 snippet str_to_float
     Convert.ToSingle(${1:str})
+snippet str_to_json
+    JsonNode json = JsonNode.Parse(text);
 snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str
@@ -579,33 +583,44 @@ snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});
 snippet world_to_screen
     Camera.main.WorldToScreenPoint(${1:position});
-snippet str_to_dic_MINI
-    Dictionary<string, object> dic = Json.Deserialize(${1:json}) as Dictionary<string, object>;
-snippet dic_to_str_MINI
-    string json = Json.Serialize(${1:dic});
-snippet json_create_str
-    using MiniJSON;
-    var ${1:dic} = new Dictionary<string, object>()
-    {
-        { "hoge", "hoge" },
-    };
-    string json = Json.Serialize(<|1|>);
-snippet json_create_list
-    using MiniJSON;
-    var ${1:dic} = new Dictionary<string, object>()
-    {
-        { "hoge", "hoge" },
-    };
-    string json = Json.Serialize(<|1|>);
-snippet json_get_value_JSON_NODE
+snippet str_to_dic
+    Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json}) as Dictionary<string, object>;
+snippet dic_to_str
+    string json = MiniJSON.Json.Serialize(${1:dic});
+snippet dic_to_key_array
+    var keysArray = dic.Keys.ToArray();
+snippet dic_to_key_list
+    var keysList = dic.Keys.ToList();
+snippet dic_to_value_array
+    var valsArray = dic.Values.ToArray();
+snippet dic_to_value_list
+    var valsList = dic.Values.ToList();
+
+snippet byte_to_str
+    string str = System.Text.Encoding.UTF8.GetString(${1:byte_array});
+snippet json_get_value
     string bgm = JsonNodeRoot["stage"]["0"]["bgm"].Get<string>();
-snippet json_get_array_JSON_NODE
+snippet json_get_array
     foreach (var ranking in JsonNodeApps["ranking"])
     {
         int rank = (int) (ranking["rank"].Get <long>());
     }
-snippet json_str_sample
+
+snippet create_json_str
+    using MiniJSON;
+    var ${1:dic} = new Dictionary<string, object>()
+    {
+        { "hoge", "hoge" },
+    };
+    string json = Json.Serialize(<|1|>);
+snippet create_json_str_raw
     string jsonStr = "{ \"id\": 100, \"name\": \"テストアイテム\", \"description\": \"説明だよ\" }";
+snippet create_json_list
+    var ${1:dic} = new Dictionary<string, object>()
+    {
+        { "hoge", "hoge" },
+    };
+    string json = MiniJSON.Json.Serialize(<|1|>);
 
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});

@@ -52,7 +52,6 @@ noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tj gD
 " diffすぐ出す
-ca diff vertical diffsplit
 ca ccd lcd %:h
 
 ca al Align

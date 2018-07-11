@@ -303,13 +303,12 @@ hook_add = '''
     vnoremap gr y:Ag '0'<CR>
 '''
 
-# [[plugins]]
-# repo = 'airblade/vim-rooter'
-# hook_add = '''
-#     " let g:rooter_use_lcd = 1 " not echo
-#     " let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
-#     let g:rooter_patterns = ['Classes/']
-# '''
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = '''
+    let g:rooter_manual_only = 1
+    let g:rooter_patterns = ['.git', '.git/', 'tags', '_darcs/', '.hg/', '.bzr/', 'Makefile', 'GNUMakefile', 'GNUmakefile', '.svn/']
+'''
 
 # Swift ---------------------------
 

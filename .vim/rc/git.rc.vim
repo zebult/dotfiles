@@ -4,12 +4,13 @@ ca gad Gadc
 ca gcm Gina commit -v
 nnoremap cc :Gina commit -v<CR>
 ca gst Gst
-nnoremap <Leader>s :Gstv<CR>
+nnoremap <Leader>s :Gst<CR>
+nnoremap <Leader>S :Gstv<CR>
 ca gfc Gina fetch
 ca gsh Gina stash
 ca gpop Gina stash pop
-ca gdf Gina diff
-ca gdfb Gdf
+ca gdf Gdf
+ca gdfb Gdiff
 " ca glo Gina log --opener=vsplit
 ca glo Gina log
 " ca gloo Gloo
@@ -40,6 +41,7 @@ ca gbl Gblame
 " ca glof Glog
 
 "denite-git
+nnoremap do :Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
 ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
@@ -94,9 +96,13 @@ endfunction
 command! -nargs=0 Gadc call Gadc()
 
 function! Gdf() abort
-  Gina compare --opener=vsplit --oneside
-  " norm! <C-w>L
-  silent! <C-w>L
+  Rooter
+  let diff_list = systemlist("git diff --name-only")
+  for file_name in diff_list
+    execute "e ".file_name
+  endfor
+  tab ba
+  tabdo Gdiff
 endfunction
 command! -nargs=0 Gdf call Gdf()
 
