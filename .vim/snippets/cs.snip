@@ -520,6 +520,13 @@ snippet www_rx_post
         GRAdvancedDebugLog.LogError(err.ToString());
     }).AddTo(this);
 
+snippet curl
+    string str = await Task.Run(() =>
+    {
+        var httpClient = new HttpClient();
+        return httpClient.GetStringAsync("http://maps.google.com/maps/api/geocode/json?address=渋谷駅");
+    });
+
 snippet write
     System.IO.StreamWriter sw = new System.IO.StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
     sw.Write("aaa\n");
@@ -573,6 +580,10 @@ snippet str_to_float
     Convert.ToSingle(${1:str})
 snippet str_to_json
     JsonNode json = JsonNode.Parse(text);
+snippet str_to_json_Newtonsoft
+    var   json     = (JObject) JsonConvert.DeserializeObject(text);
+    var   location = json["results"][0]["geometry"]["location"];
+    float lat      = Convert.ToSingle(location["lat"].ToString());
 snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str
