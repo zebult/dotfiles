@@ -9,8 +9,8 @@ nnoremap <Leader>S :Gstv<CR>
 ca gfc Gina fetch
 ca gsh Gina stash
 ca gpop Gina stash pop
-ca gdf Gdf
-ca gdfb Gdiff
+ca gdft GdfTool
+ca gdf Gina diff
 " ca glo Gina log --opener=vsplit
 ca glo Gina log
 " ca gloo Gloo
@@ -95,16 +95,17 @@ function! Gadc() abort
 endfunction
 command! -nargs=0 Gadc call Gadc()
 
-function! Gdf() abort
+function! GdfTool() abort
   Rooter
-  let diff_list = systemlist("git diff --name-only")
+  " let diff_list = systemlist("git diff --name-only")
+  let diff_list = systemlist("git status -sb | tail +2 | awk '{print $2}'")
   for file_name in diff_list
     execute "e ".file_name
   endfor
   tab ba
   tabdo Gdiff
 endfunction
-command! -nargs=0 Gdf call Gdf()
+command! -nargs=0 GdfTool call GdfTool()
 
 function! Gps(...) abort
   let branch = system("git rev-parse --abbrev-ref HEAD")

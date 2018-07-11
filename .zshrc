@@ -449,9 +449,9 @@ gdfl()
     fi
 }
 
-gdfv()
+gdft()
 {
-    vim -c "Gdf"
+    vim -c "GdfTool"
 }
 
 xp()
