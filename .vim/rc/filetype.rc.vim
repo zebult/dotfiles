@@ -13,6 +13,7 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.go set filetype=go
     au BufRead,BufNewFile *.js set filetype=javascript
     au BufRead,BufNewFile *.strace set filetype=strace
+    au BufRead,BufNewFile *.vim set filetype=vim
     " c++標準ライブラリへのパスを設定
     let $CPP_STDLIB = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
     " $CPP_STDLIB よりも下の階層のファイルが開かれて

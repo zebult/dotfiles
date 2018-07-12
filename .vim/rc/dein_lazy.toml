@@ -153,6 +153,7 @@ map ?  <Plug>(incsearch-backward)
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
 on_event = 'BufRead'
+hook_source = 'source ~/.vim/rc/plugins/gina.rc.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-over'

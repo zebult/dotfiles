@@ -2,7 +2,6 @@
 ca gadd Gina add .
 ca gad Gadc
 ca gcm Gina commit -v
-nnoremap cc :Gina commit -v<CR>
 ca gst Gst
 nnoremap <Leader>s :Gst<CR>
 nnoremap <Leader>S :Gstv<CR>
@@ -16,11 +15,12 @@ ca glo Gina log
 " ca gloo Gloo
 ca gcp Gina cherry-pick
 ca grh Gina reset --hard
+ca gcl Gina clean -df
 ca grb Gina rebase
 ca grbc Gina rebase --continue
 ca grba Gina rebase --abort
-ca gacm Gacm
-ca gg Gacm
+ca gacm Gacm "
+ca gg Gacm "
 ca gamd Gamd
 ca gps Gps
 ca gpl Gpl
@@ -41,7 +41,7 @@ ca gbl Gblame
 " ca glof Glog
 
 "denite-git
-nnoremap do :Denite -highlight-mode-insert=Search gitstatus<CR>
+nnoremap dO :Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
 ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
@@ -65,11 +65,17 @@ function! GTree() abort
 endfunction
 command! -nargs=0 GTree call GTree()
 
-function! Gacm() abort
+function! Gacm(...) abort
   Gina add .
-  Gina commit -v
+
+  if a:0 >= 1
+    execute "Gcommit -m".a:1
+  else
+    Gina commit -v
+  end
+
 endfunction
-command! -nargs=0 Gacm call Gacm()
+command! -nargs=? Gacm call Gacm(<f-args>)
 
 function! Gamd() abort
   Gina add .
@@ -78,7 +84,9 @@ endfunction
 command! -nargs=0 Gamd call Gamd()
 
 function! Gst() abort
+  Gina diff --cached --opener=split
   Gina status -s --opener=vsplit
+  " Gina diff --opener=vsplit
 endfunction
 command! -nargs=0 Gst call Gst()
 
