@@ -10,7 +10,8 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 set spelllang+=cjk
 let mapleader = "\<Space>"
-no <Subleader> <Nop>
+" can't use <<
+" no <Subleader> <Nop>
 map \ <Subleader>
 set ambiwidth=double
 rv! " 履歴共有
