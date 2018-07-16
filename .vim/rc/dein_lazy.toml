@@ -118,6 +118,13 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
 [[plugins]]
+repo = 'zebult/lgtm-vim'
+on_event = 'BufWrite'
+hook_add = '''
+nnoremap gl :LGTMRandomList<CR>:PrevimOpen<CR>
+'''
+
+[[plugins]]
 repo = 'vim-scripts/diffchar.vim'
 on_event = 'BufRead'
 
@@ -152,7 +159,7 @@ map ?  <Plug>(incsearch-backward)
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
-on_event = 'BufRead'
+on_event = 'BufWrite'
 hook_post_source = 'source ~/.vim/rc/plugins/gina.rc.vim'
 
 [[plugins]]

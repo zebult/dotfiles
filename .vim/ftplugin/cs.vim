@@ -31,14 +31,15 @@ if len(split_list) >= 3
   endif
 endif
 
-nnoremap <Leader>r :QuickRunCS<CR>
-function! QuickRunCS() abort
-  silent execute "!mcs %"
-  let exeFile = "%:r".".exe"
-  silent execute "!mono ".exeFile
-  silent execute "!rm ".exeFile
-endfunction
-command! -bar QuickRunCS call QuickRunCS()
+nnoremap <Leader>r :QuickRun cs/mcs<CR>
+" nnoremap <Leader>r :QuickRunCS<CR>
+" function! QuickRunCS() abort
+"   silent execute "!mcs %"
+"   let exeFile = "%:r".".exe"
+"   silent execute "!mono ".exeFile
+"   silent execute "!rm ".exeFile
+" endfunction
+" command! -bar QuickRunCS call QuickRunCS()
 
 augroup cs_groupe
     autocmd!

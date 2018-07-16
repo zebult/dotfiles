@@ -1,6 +1,6 @@
 " gina
-ca gadd Gina add .
-ca gad Gadc
+ca gad Gina add .
+ca gadp Gina!! add -p
 ca gcm Gina commit -v
 nnoremap cc :Gina commit -v<CR>
 ca gst Gst
@@ -15,6 +15,8 @@ ca glo Gina log --opener=vsplit
 " ca glo Gina log
 " ca gloo Gloo
 ca gcp Gina cherry-pick
+ca grs Gina reset
+ca grsp Gina!! reset -p
 ca grh Gina reset --hard
 ca gcl Gina clean -df
 ca grb Gina rebase
@@ -98,12 +100,6 @@ function! Gstv() abort
   Gst
 endfunction
 command! -nargs=0 Gstv call Gstv()
-
-function! Gadc() abort
-  Gina add .
-  Gstc
-endfunction
-command! -nargs=0 Gadc call Gadc()
 
 function! GdfTool() abort
   Rooter
