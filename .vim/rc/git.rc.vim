@@ -2,6 +2,7 @@
 ca gadd Gina add .
 ca gad Gadc
 ca gcm Gina commit -v
+nnoremap cc :Gina commit -v<CR>
 ca gst Gst
 nnoremap <Leader>s :Gst<CR>
 nnoremap <Leader>S :Gstv<CR>
@@ -10,8 +11,8 @@ ca gsh Gina stash
 ca gpop Gina stash pop
 ca gdft GdfTool
 ca gdf Gina diff
-" ca glo Gina log --opener=vsplit
-ca glo Gina log
+ca glo Gina log --opener=vsplit
+" ca glo Gina log
 " ca gloo Gloo
 ca gcp Gina cherry-pick
 ca grh Gina reset --hard
@@ -19,11 +20,12 @@ ca gcl Gina clean -df
 ca grb Gina rebase
 ca grbc Gina rebase --continue
 ca grba Gina rebase --abort
-ca gacm Gacm "
-ca gg Gacm "
+ca gacm Gacm
+ca gg Gacm
 ca gamd Gamd
 ca gps Gps
 ca gpl Gpl
+nnoremap <Leader>b :Gina branch<CR>
 ca gbr Gina branch 
 ca gcob Gina checkout -b
 " ca gco Gco

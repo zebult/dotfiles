@@ -440,7 +440,7 @@ dush()
     du -sh * | grep G
 }
 
-gdfl()
+gdfv()
 {
     if [ -n "$1" ]; then
         vim -p `git show --pretty="format:" --relative --name-only $1`
