@@ -117,11 +117,18 @@ on_map = {n = '<Plug>'}
 hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 
 # Convenience Tools: ---------------------------
+# [[plugins]]
+# repo = 'zebult/lgtm-vim'
+# on_event = 'BufWrite'
+# hook_add = '''
+# nnoremap gl :LGTMRandomList<CR>:PrevimOpen<CR>
+# '''
+
 [[plugins]]
-repo = 'zebult/lgtm-vim'
+repo = 'zebult/lgtm-rl-vim'
 on_event = 'BufWrite'
 hook_add = '''
-nnoremap gl :LGTMRandomList<CR>:PrevimOpen<CR>
+nnoremap gl :LGTMRL<CR>:PrevimOpen<CR>
 '''
 
 [[plugins]]

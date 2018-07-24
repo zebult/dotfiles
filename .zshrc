@@ -190,6 +190,7 @@ alias gdu="gdu"
 alias dufile="tree -ifF --si --noreport | sed -e 's/\[//g' -e 's/\]//g' -e 's/\.\// \.\//g' | grep -v /$ | sort -h"
 
 set -o vi
+bindkey "jj" vi-cmd-mode
 bindkey -M viins '^A'  beginning-of-line
 bindkey -M viins '^E'  end-of-line
 bindkey -M viins '^K'  kill-line

@@ -58,6 +58,7 @@ endif
 call s:source_rc('skeleton.rc.vim')
 call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
+call s:source_rc('todo.rc.vim')
 " call s:source_rc('tmp.vim')
 call s:source_rc('macro.rc.vim')
 call s:source_rc('util.rc.vim')

@@ -16,11 +16,12 @@ let g:quickrun_config = {
 \}
 
 let g:quickrun_config['cs'] = {
-			\ 'command'  : 'csc',
-			\ 'runmode'  : 'simple',
-			\ 'exec'     : ['%c /nologo %s:gs?/?\\? > /dev/null', '"%S:p:r:gs?/?\\?.exe" %a', ':call delete("%S:p:r.exe")'],
-			\ 'tempfile' : '{tempname()}.cs',
+			\ 'type'  : 'cs/mcs',
+            \ 'exec': ['%c /reference:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            \ 'command': 'mcs',
 			\ }
+            " \ 'exec': ['%c /reference:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            " \ 'exec': ['%c /reference:System.Net.Http.dll /reference:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
 
 " c++11
 let g:quickrun_config['cpp'] = {

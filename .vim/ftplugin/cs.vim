@@ -24,14 +24,28 @@ let split_list = split(file_name,'\.')
 if len(split_list) >= 3
   let ext = split_list[-2].'.'.split_list[-1]
   if ext == 'xaml.cs'
-    nnoremap gl yiwoDebug.WriteLine("p:" + p);
-    vnoremap gl yoDebug.WriteLine("p:" + p);
-    nnoremap gN yiwOif(p == null){Debug.WriteLine("p is null");}
-    vnoremap gN yOif(p == null){Debug.WriteLine("p is null");}
+    SettingXamarin
   endif
 endif
 
-nnoremap <Leader>r :QuickRun cs/mcs<CR>
+function! SettingRawCs() abort
+  nnoremap gl yiwoConsole.WriteLine("p:" + p);
+  vnoremap gl yoConsole.WriteLine("p:" + p);
+  nnoremap gL yiwoConsole.WriteLine("call p");
+  vnoremap gL yoConsole.WriteLine("call p");
+  inoremap log Console.WriteLine("");hh
+endfunction
+command! -bar SettingRawCs call SettingRawCs()
+
+function! SettingXamarin() abort
+  nnoremap gl yiwoDebug.WriteLine("p:" + p);
+  vnoremap gl yoDebug.WriteLine("p:" + p);
+  nnoremap gN yiwOif(p == null){Debug.WriteLine("p is null");}
+  vnoremap gN yOif(p == null){Debug.WriteLine("p is null");}
+endfunction
+command! -bar SettingXamarin call SettingXamarin()
+
+" nnoremap <Leader>r :QuickRun cs/mcs<CR>
 " nnoremap <Leader>r :QuickRunCS<CR>
 " function! QuickRunCS() abort
 "   silent execute "!mcs %"

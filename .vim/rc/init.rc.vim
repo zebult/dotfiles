@@ -96,7 +96,7 @@ augroup SaveGroup
     " 保存時空白ハイライト
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
-    autocmd BufWritePre * call lightline#update()
+    " autocmd BufWritePre * call lightline#update()
 
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs UnivimBuild
@@ -113,16 +113,16 @@ augroup SaveGroup
     autocmd BufWritePre *.json call JsonPretty()
 augroup END
 
-augroup HoldCursorGroup
-    autocmd!
+" augroup HoldCursorGroup
+"     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     " autocmd CursorHold * match TrailingSpaces /\s\+$/
     " autocmd CursorHold *.cs UnivimBuild
-    if has('gui_running')
+    " if has('gui_running')
       " autocmd CursorHold * call toggl#task_cache_update()
-      autocmd CursorHold * call lightline#update()
-    endif
-augroup END
+      " autocmd CursorHold * call lightline#update()
+    " endif
+" augroup END
 
 " augroup CursorMovedGroup
 "     autocmd!

@@ -343,15 +343,14 @@ command! L call s:lgtm()
 " function! zxcode#open_xcode(...) abort
 " let a:count = get(a:, 1)
 
-function! PlayGround() abort
-  " let ps = system('ps')
-  " if match(ps, 'gtags.*-v') != -1
-  "   echo 'exist'
-  " else
-  "   echo 'none'
-  " endif
-  " tagbar#TagbarShowTag()
-  " tagbar#
-endfunction
-command! -bar PlayGround call PlayGround()
-
+" function! PlayGround() abort
+"   " let ps = system('ps')
+"   " if match(ps, 'gtags.*-v') != -1
+"   "   echo 'exist'
+"   " else
+"   "   echo 'none'
+"   " endif
+"   " tagbar#TagbarShowTag()
+"   " tagbar#
+" endfunction
+" command! -bar PlayGround call PlayGround()

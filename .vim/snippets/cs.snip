@@ -100,7 +100,8 @@ snippet forl
         ${4}
     }
 snippet ford
-    foreach (KeyValuePair pair in ${3:dict}) {
+    foreach (KeyValuePair<string, string> pair in ${3:dict})
+    {
         ${4}
     }
 snippet foreach_index
@@ -125,6 +126,11 @@ snippet sort_list
     ${1:list}.Sort((a, b) => a.${2:value} - b.<|2|>);
 snippet dict
     Dictionary ${3:var} = new Dictionary();
+snippet dict_init
+    var dic = new Dictionary <string, string>()
+    {
+        { "", "" },
+    };
 snippet sort
     filtered.Sort(
         delegate(${1:int} a, $1 b) {
@@ -140,9 +146,9 @@ snippet main
     using System;
     class A
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Console.WriteLine("hello");
         }
     }
 snippet ismaster
@@ -584,6 +590,18 @@ snippet str_to_json_Newtonsoft
     var   json     = (JObject) JsonConvert.DeserializeObject(text);
     var   location = json["results"][0]["geometry"]["location"];
     float lat      = Convert.ToSingle(location["lat"].ToString());
+snippet str_to_stringreader
+        string result = "";
+        string text   = "hoge";
+        var rs = new System.IO.StringReader(text);
+        while (rs.Peek() > -1)
+        {
+            result += rs.ReadLine();
+            result += "\n";
+        }
+        return result;
+snippet str_to_dic
+    Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json}) as Dictionary<string, object>;
 snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str
@@ -594,8 +612,6 @@ snippet screen_to_world
     Camera.main.ScreenToWorldPoint(${1:position});
 snippet world_to_screen
     Camera.main.WorldToScreenPoint(${1:position});
-snippet str_to_dic
-    Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json}) as Dictionary<string, object>;
 snippet dic_to_str
     string json = MiniJSON.Json.Serialize(${1:dic});
 snippet dic_to_key_array
@@ -632,6 +648,33 @@ snippet create_json_list
         { "hoge", "hoge" },
     };
     string json = MiniJSON.Json.Serialize(<|1|>);
+
+snippet system
+    Process.Start("pwd");
+
+snippet bash
+    using System.Diagnostics;
+    public static string Bash(string cmd)
+    {
+        var escapedArgs = cmd.Replace("\"", "\\\"");
+
+        var process = new Process()
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName               = "/bin/bash",
+                Arguments              = $"-c \"{escapedArgs}\"",
+                RedirectStandardOutput = true,
+                UseShellExecute        = false,
+                CreateNoWindow         = true,
+            }
+        };
+        process.Start();
+        string result = process.StandardOutput.ReadToEnd();
+        process.WaitForExit();
+
+        return result;
+    }
 
 snippet play_bgm
     GRAudioManager.Instance.PlayBGM(ResourcesData.${1});
