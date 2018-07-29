@@ -104,6 +104,14 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # hook_add = 'source ~/.vim/rc/plugins/taghighlight.rc.vim'
 
 # Convenience Tools: ---------------------------
+
+# [[plugins]]
+# repo = 'rhysd/accelerated-jk'
+# hook_source = '''
+#     nmap j <Plug>(accelerated_jk_gj)
+#     nmap k <Plug>(accelerated_jk_gk)
+# '''
+
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'

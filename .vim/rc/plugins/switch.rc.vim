@@ -24,4 +24,5 @@ let g:switch_custom_definitions =
     \   ['HOGE', 'FUGA'],
     \   ['height', 'width'],
     \   ['relative', 'absolute'],
+    \   ['push', 'pusl'],
     \ ]

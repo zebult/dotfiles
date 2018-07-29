@@ -67,14 +67,20 @@
 " " let g:OmniSharp_want_snippet=1
 
 " let g:OmniSharp_selector_ui = 'unite'
-let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_server_path = '~/.build/omnisharp-osx/omnisharp/OmniSharp.exe'
+" let g:OmniSharp_server_path = '~/.omnisharp/omnisharp-roslyn/artifacts/publish/OmniSharp.Http.Driver/mono/OmniSharp.exe'
+" let g:OmniSharp_server_path = '~/.omnisharp/tmp/omnisharp-roslyn/artifacts/publish/OmniSharp.Http.Driver/mono/OmniSharp.exe'
+" let g:OmniSharp_server_path = '~/.omnisharp/omnisharp-roslyn/omnisharp/OmniSharp.exe'
+" let g:OmniSharp_server_use_mono = 1
+" set completeopt=longest,menuone,preview
+" set previewheight=5
 
 " vim終了する度サーバー終了するので手動にする
-let g:Omnisharp_start_server = 0
-let g:Omnisharp_stop_server  = 0
+" let g:Omnisharp_start_server = 0
+" let g:Omnisharp_stop_server  = 0
 " OmniSharpStartServer
 
-" 定義
 autocmd FileType cs nnoremap zj :OmniSharpGotoDefinition<cr>
 autocmd FileType cs nnoremap <C-]> :OmniSharpGotoDefinition<cr>
 autocmd FileType cs nnoremap tzj :tab sp<CR>:OmniSharpGotoDefinition<CR>
@@ -83,15 +89,16 @@ autocmd FileType cs nnoremap szj :sp<CR><C-w>j:OmniSharpGotoDefinition<CR>
 autocmd FileType cs nnoremap s<C-]> :sp<CR><C-w>j:OmniSharpGotoDefinition<CR>
 autocmd FileType cs vnoremap zj <Esc>:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
 autocmd FileType cs vnoremap <C-]> <Esc>:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
+autocmd FileType cs nnoremap 8( :OmniSharpGotoDefinition<CR>
 
 " nnoremap <Leader>L gg}j$:vsp<CR><C-w>l:OmniSharpGotoDefinition<CR>
 nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$:OmniSharpGotoDefinition<CR>:nohlsearch<CR>
 
 " 参照(Caller)
-autocmd FileType cs nnoremap zk :OmniSharpFindUsages<cr>
-autocmd FileType cs nnoremap tzk :tab sp<CR>:OmniSharpFindUsages<CR>
-autocmd FileType cs nnoremap szk :sp<CR><C-w>j:OmniSharpFindUsages<CR>
-autocmd FileType cs vnoremap zk <Esc>:vsp<CR><C-w>l:OmniSharpFindUsages<CR>
+" autocmd FileType cs nnoremap zk :OmniSharpFindUsages<cr>
+" autocmd FileType cs nnoremap tzk :tab sp<CR>:OmniSharpFindUsages<CR>
+" autocmd FileType cs nnoremap szk :sp<CR><C-w>j:OmniSharpFindUsages<CR>
+" autocmd FileType cs vnoremap zk <Esc>:vsp<CR><C-w>l:OmniSharpFindUsages<CR>
 
 autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
 autocmd FileType cs nnoremap <leader>Fx :OmniSharpFixUsings<cr>

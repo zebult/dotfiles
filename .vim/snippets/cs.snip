@@ -124,9 +124,9 @@ snippet list
 snippet sort_list
     // 昇順
     ${1:list}.Sort((a, b) => a.${2:value} - b.<|2|>);
-snippet dict
+snippet dic
     Dictionary ${3:var} = new Dictionary();
-snippet dict_init
+snippet dic_init
     var dic = new Dictionary <string, string>()
     {
         { "", "" },
@@ -534,9 +534,17 @@ snippet curl
     });
 
 snippet write
-    System.IO.StreamWriter sw = new System.IO.StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
+    using System.IO;
+    var sw = new StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
     sw.Write("aaa\n");
     sw.Close();
+snippet read
+    using System.IO;
+    using (var sr = new StreamReader(path))
+    {
+        string s = sr.ReadToEnd();
+        Debug.Log("s:" + s);
+    }
 
 snippet menu_item
     [UnityEditor.MenuItem("Tools/${1}")]
@@ -549,10 +557,12 @@ snippet application_openurl
 
 snippet str_isnullorempty
     if (string.IsNullOrEmpty(${1:str}))
-snippet str_find_index
+snippet find_index
     ${1:str}.IndexOf(${2:target});
-snippet str_split
+snippet split
     ${1:str}.Split('${2:target char}');
+snippet join
+    string str = string.Join(",", array);
 
 snippet object_to_int
     System.Convert.ToInt32(${1:object});

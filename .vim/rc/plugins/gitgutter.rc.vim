@@ -3,6 +3,8 @@ let g:gitgutter_highlight_lines = 1
 " nnoremap <Leader>s :GitGutterLineHighlightsToggle<CR>
 nmap dj <Plug>GitGutterNextHunk
 nmap dk <Plug>GitGutterPrevHunk
+nmap da <Plug>GitGutterStageHunk
+nmap du <Plug>GitGutterUndoHunk
 
 omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending

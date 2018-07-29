@@ -205,6 +205,14 @@ compdef _git gifa=git-log
 
 omni () {
     mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1
+    # mono ~/.build/omnisharp-osx/omnisharp/OmniSharp.exe -s $1
+}
+
+cs () {
+    params_2nd_later=${@:2:($#-1)}
+    mcs $1.cs
+    mono $1.exe $params_2nd_later
+    rm -rf $1.exe
 }
 
 mc () {

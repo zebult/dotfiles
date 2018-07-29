@@ -128,7 +128,8 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 repo = 'zebult/lgtm-rl-vim'
 on_event = 'BufWrite'
 hook_add = '''
-nnoremap gl :LGTMRL<CR>:PrevimOpen<CR>
+let g:lgtm_random_list_count = 10
+nnoremap gL :LGTMRL<CR>:PrevimOpen<CR>
 '''
 
 [[plugins]]

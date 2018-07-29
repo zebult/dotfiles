@@ -34,3 +34,19 @@ snippet exist_file
     elif [ ! -e ${PATH} ]; then
         echo nai
     fi
+snippet split
+    TEXT='BBB,データ,3456'
+    arr=( `echo $TEXT | tr -s ',' ' '`)
+    echo ${arr[0]}
+    echo ${arr[1]}
+    echo ${arr[2]}
+snippet contain
+    if echo hogehuga | grep -q fuga; then
+        echo 'ok'
+    fi
+snippet array_cmd_result
+    array=`ls -al`
+    for v in "${array[@]}"
+    do
+        echo "$v"
+    done
