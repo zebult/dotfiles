@@ -308,22 +308,14 @@ function! IsNewBuffer() abort
   return 0
 endfunction
 
-function! s:lgtm()
-  for i in range(1,5,1)
-    let res = webapi#http#get("http://www.lgtm.in/g", {}, {"Accept": "application/json"})
-    let content = webapi#json#decode(res.content)['markdown']
-    let content = '![LGTM](' . webapi#json#decode(res.content)['imageUrl'] . ')'
-    let line = getline('.')
-    let indent = matchstr(line, '^\s\+')
-    let content = join(map(split(content, "\n"), 'indent . v:val'))
-    let content_text = "`".content."`\n\n"
-    put =content_text
-    put =content
-  endfor
-  return ''
+function! s:SnippetOpen()
+  let ft = &filetype
+  echo ft
+  let file =  "$HOME/.vim/snippets/".ft.".snip"
+  execute "vs ".file
 endfunction
 
-command! L call s:lgtm()
+command! SnippetOpen call s:SnippetOpen()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

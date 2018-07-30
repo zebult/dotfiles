@@ -19,6 +19,18 @@ snippet if_null_check
     else
         # no
     fi
+snippet if_compare
+    -eq ： equal
+    -ne ： not equal
+    -gt ： greater than (xより大きい)
+    -ge ： greater than or equal (x以上)
+    -lt ： less than (xより小さい)
+    -le ： less than or equal (x以下)
+     == ： 文字列 equal
+     != ： 文字列 not equal
+    -n	： 文字列の長さが1以上か
+    -z	： 文字列の長さが0か
+
 snippet for_file
     for fname in *.png; do
         echo $fname
@@ -36,17 +48,26 @@ snippet exist_file
     fi
 snippet split
     TEXT='BBB,データ,3456'
-    arr=( `echo $TEXT | tr -s ',' ' '`)
+    arr=( \`echo $TEXT | tr -s ',' ' '\`)
     echo ${arr[0]}
     echo ${arr[1]}
-    echo ${arr[2]}
+    echo "length:"${#arr[@]}
 snippet contain
     if echo hogehuga | grep -q fuga; then
         echo 'ok'
     fi
 snippet array_cmd_result
-    array=`ls -al`
+    array=\`ls -al\`
     for v in "${array[@]}"
     do
         echo "$v"
     done
+snippet exe
+    eval $cmd
+
+snippet curl_jenkins
+    curl -X POST --user ${1:user}:${2:pass} -d "TARGET_MASTER=dev" http://localhost:8080/job/${3:job_name}/buildWithParameters
+snippet curl_chatwork
+    TEXT="hoge%0Dfuga"
+    ROOM_ID=111113
+    curl -X POST -H "X-ChatWorkToken: abcdefg" -d "body=$TEXT" "https://api.chatwork.com/v2/rooms/$ROOM_ID/messages"

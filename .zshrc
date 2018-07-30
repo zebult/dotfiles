@@ -529,6 +529,16 @@ peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+peco-cheatsheet () {
+    local SELECTED_FILE=$(tree /0CheatSheet --charset=o -i -f | peco | xargs echo)
+    if [ ! -z $SELECTED_FILE ] ; then
+        BUFFER="vim -p $SELECTED_FILE"
+    fi
+    zle accept-line
+}
+zle -N peco-cheatsheet
+bindkey '^x' peco-cheatsheet
+
 git-remote-vim(){
     BUFFER="vim <(git remote -v)"
   zle accept-line

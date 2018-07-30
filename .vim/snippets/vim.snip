@@ -1,7 +1,19 @@
 snippet split
     let list = split('foo,bar,hoge',',')
-snippet file_name
-    let file_name = expand("%")
 snippet range
     range(1,3,1)
     [1, 2, 3]
+snippet contain
+    let isContain = stridx("ABCDEFGABCDEFG", "CDE") != -1
+snippet list_add
+    call add(list, item)
+snippet exe
+    execute "vs ".file
+snippet curl_get
+    let res = webapi#http#get('URL')
+snippet curl_post
+    let res= webapi#http#post('URL', {'p1': 'hoge'}, {'p2': 'fuga'})
+snippet str_to_json
+    let content = webapi#json#decode(res.content)
+snippet file_name
+    let file_name = expand("%")
