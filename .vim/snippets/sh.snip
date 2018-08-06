@@ -1,4 +1,5 @@
 snippet random_num
+    # RAND=$((RANDOM % 10)) 0~10
     RAND=$((RANDOM % ${1}))
 snippet random_str
     RAND=\`cat /dev/urandom | base64 | fold -w ${1} | head -n 1\`
@@ -57,8 +58,9 @@ snippet contain
         echo 'ok'
     fi
 snippet array_cmd_result
-    array=\`ls -al\`
-    for v in "${array[@]}"
+    # array=\`ls -al\`
+    array=\`git branch -a | tr -d ' ' | tr -d '*'\`
+    for v in ${array}
     do
         echo "$v"
     done

@@ -219,6 +219,10 @@ mc () {
     mkdir -p "$@" && eval cd "\"\$$#\"";
 }
 
+vimt () {
+    vim -p `ag $1 -l`
+}
+
 macvim () {
     if [ -d /Applications/MacVim.app ]
     then
