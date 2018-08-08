@@ -396,10 +396,16 @@ gamd() {
 # }
 
 checkRecentLog() {
-    echo "======="
     glo -2
-    echo "======="
 }
+
+gbu()  {
+   checkRecentLog
+   git branch -D $1
+   git checkout -b $1 origin/$1
+   checkRecentLog
+}
+   checkRecentLog
 
 gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
