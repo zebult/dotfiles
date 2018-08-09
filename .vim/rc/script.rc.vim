@@ -267,9 +267,23 @@ command! -bar UnityLog call UnityLog()
 
 function! MemoDiary() abort
   let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
-  execute 'vs'.memo_path
+  execute 'vs '.memo_path
 endfunction
 command! -bar MemoDiary call MemoDiary()
+
+function! Hoge() abort
+  " TODO Dl, Dh で日付前後してメモ開く
+  let file_name = expand("%")
+  let today = localtime()
+  " let now = localtime()
+  " "# => 1203574847
+  " let day = (60 * 60 * 24)
+  " echo strftime("%Y/%m/%d %H:%M:%S (%A)", now - day)
+  " "# => 2008/02/20 15:20:47 (水曜日)
+  " let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", ).".md"
+  " execute 'e '.memo_path
+endfunction
+command! -bar Hoge call Hoge()
 
 function! MemoDone() abort
   execute 'vs ~/Dropbox/Saichi/done.md'

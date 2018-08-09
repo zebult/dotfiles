@@ -525,6 +525,14 @@ peco-branch () {
 zle -N peco-branch
 bindkey '^b' peco-branch
 
+# peco-branch-copy () {
+br () {
+    local branch=$(git branch -a | peco | tr -d ' ' | tr -d '*')
+    if [ -n "$branch" ]; then
+        echo -n $branch | pbcopy
+    fi
+}
+
 peco-select-history() {
     BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
     CURSOR=${#BUFFER}
