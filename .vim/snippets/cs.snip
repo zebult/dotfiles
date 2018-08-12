@@ -104,6 +104,12 @@ snippet ford
     {
         ${4}
     }
+snippet forenum
+    foreach (${1:enum} value in Enum.GetValues(typeof(<|1|>)))
+    {
+        int intValue = (int)value;
+        string strValue = value.ToString();
+    }
 snippet foreach_index
     foreach (var ${1} in ${2:list}.Select((Content, Index) => new { Content, Index }))
     {
@@ -277,12 +283,6 @@ snippet rotation_absolute
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 
-snippet scene_load
-    using UnityEngine.SceneManagement; 
-    SceneManager.LoadScene ("${1}");
-snippet scene_name
-    string sceneName = SceneManager.GetActiveScene ().name;
-
 snippet preprocessor_macro
     #if ${1}
     #elif
@@ -312,14 +312,25 @@ snippet ggetparam
 snippet ggetword
     GM.I.GetWord("${1}");
 
-snippet Instantiate
-    Instantiate(Resources.Load ("Prefabs/${1}"));
-snippet Instantiate_full
-    Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
 snippet load_prefab
+    Instantiate(Resources.Load ("Prefabs/${1}"));
+snippet load_prefab_full
+    Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
+snippet load_prefab_gr
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/Scene/${1}"));
-snippet load_sprite
+snippet load_sprite_gr
     Instantiate(GRResourceCommon.LoadSprite("Prefabs/Scene/${1}"));
+snippet load_scene
+    using UnityEngine.SceneManagement; 
+    SceneManager.LoadScene ("${1}");
+snippet scene_name
+    string sceneName = SceneManager.GetActiveScene ().name;
+snippet load_scene_prefab_gr
+    OGM.I.ChangeScenePrefab(GRSceneManager.MainScene.${1});
+snippet load_scene_gr
+    GRSceneManager.Instance.ChangeScene(GRSceneManager.MainScene.${1});
+snippet load_scene_multi_gr
+    GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
 
 snippet linq
     using System.Linq;
@@ -697,14 +708,6 @@ snippet popup_common
     string title = GM.I.GetWord("");
     string desc  = GM.I.GetWord("");
     popup.Init(title, desc, false);
-snippet scene_load_multi_g
-    GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
-snippet scene_load_prefab_g
-    OGM.I.ChangeScenePrefab(GRSceneManager.MainScene.${1});
-snippet scene_load_common_g
-    GRSceneManager.Instance.ChangeScene(GRSceneManager.MainScene.${1});
-snippet Instantiate_g
-    Instantiate(GRResourceCommon.LoadPrefab("Prefabs/${1}"));
 snippet touch
     Observable
     .EveryUpdate()

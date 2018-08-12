@@ -10,6 +10,8 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.strace set filetype=strace
     au BufRead,BufNewFile *.sh set filetype=sh
     au BufRead,BufNewFile *.zshrc set filetype=sh
+    au BufRead,BufNewFile *.meta set filetype=yaml
+    au BufRead,BufNewFile *.asset set filetype=yaml
     " au BufRead,BufNewFile *.cpp set filetype=cpp
     " au BufRead,BufNewFile *.java set filetype=java
     " au BufRead,BufNewFile *.swift set filetype=swift
