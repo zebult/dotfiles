@@ -73,7 +73,7 @@ function! Gacm(...) abort
   Gina add .
 
   if a:0 >= 1
-    execute "Gcommit -m".a:1
+    execute "Gcommit -m ".a:1
   else
     Gina commit -v
   end
