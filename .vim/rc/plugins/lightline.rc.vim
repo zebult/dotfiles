@@ -12,6 +12,10 @@ let g:lightline = {
             \      ['syntastic', 'qfstatusline'],
             \    ],
             \ },
+            \ 'inactive': {
+            \   'right': [
+            \    ],
+            \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
             \   'fugitive': 'MyFugitive',
