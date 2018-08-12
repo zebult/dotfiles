@@ -1,26 +1,24 @@
 let g:lightline = {
             \ 'colorscheme': 'nord',
-            \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-            \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
             \ 'active': {
             \   'left': [
-            \      ['mode', 'paste'],
-            \      ['fugitive', 'gitgutter', 'readonly'],
-            \      [],
-            \      ['filename'],
-            \      ['modified'],
-            \      [],
+            \      ['mode', 'paste', 'readonly'],
+            \      ['fugitive'],
+            \      ['my_filename'],
             \    ],
             \   'right': [
-            \      [ 'syntastic', 'qfstatusline', 'lineinfo', 'percent'],
+            \      ['filetype'],
+            \      ['line'],
+            \      ['syntastic', 'qfstatusline'],
             \    ],
             \ },
             \ 'component_expand': {
             \   'qfstatusline': 'qfstatusline#Update',
             \   'fugitive': 'MyFugitive',
             \   'gitgutter': 'MyGitGutter',
-            \   'tagbar': 'MyCurrentTag',
+            \   'my_filename': 'MyFileName',
             \   'syntastic': 'SyntasticStatuslineFlag',
+            \   'line_percent': 'LinePercent',
             \ },
             \ 'component_type': {
             \   'qfstatusline': 'error',
@@ -31,12 +29,17 @@ let g:lightline = {
             \   'ale': 'ALEGetStatusLine',
             \ },
             \ }
-            " \      ['toggl_task'],
-            " \   'toggl_task': 'MyToggleTask',
-"  , 'auto_gtags_is_making_gtags'
-" component_expand \   'auto_gtags_is_making_gtags': 'auto_gtags#is_making_gtags_str',
 
-" component_expand   : 一定時間後に呼ばれる call lightline#update()
+let g:lightline.component = {}
+let g:lightline.component.line = '[%l/%L]'
+
+" 端末によって文字がズレる事があるので使用しない
+" \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+" \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+
+" \      ['toggl_task'],
+" \   'toggl_task': 'MyToggleTask',
+" component_expand   : 文字列展開される 一定時間後に呼ばれる call lightline#update()
 " component_function : カーソル動く度呼ばれる cursor move
 
 let g:Qfstatusline#UpdateCmd = function('lightline#update')
@@ -49,7 +52,8 @@ function! MyFugitive()
     try
         if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
             let _ = fugitive#head()
-            return strlen(_) ? '⭠ '._ : ''
+            return strlen(_) ? _.' '.GetGitCleanStatus() : ''
+            " return strlen(_) ? '⭠ '._ : ''
         endif
     catch
     endtry
@@ -82,8 +86,24 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
-function! MyCurrentTag()
-  return tagbar#currenttag('%s', '')
+function! MyFileName()
+  return "%t"." ".GetGitCleanStatusForCurrentFile()
+endfunction
+
+function! GetGitCleanStatus()
+  let status = system('git status --porcelain')
+  if strlen(status) > 0
+    return "✱"
+  endif
+  return ""
+endfunction
+
+function! GetGitCleanStatusForCurrentFile()
+  let status = system('git status --porcelain')
+  if stridx(status, expand("%:t")) != -1
+    return "✱"
+  endif
+  return ""
 endfunction
 
 " " 保存時Error時自動で更新し、表示する 同期処理で重いので不採用
@@ -96,5 +116,4 @@ endfunction
 " function! s:syntastic()
 "     SyntasticCheck
 "     call lightline#update()
-" endfunction
-"
+" endfunction"
