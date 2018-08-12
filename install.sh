@@ -151,6 +151,8 @@ case "${os}" in
         brew cask install android-studio
         brew cask install accessmenubarapps
         brew cask install appcleaner
+        brew cask install aquaskk
+        brew cask install alfred2
         brew cask install bettertouchtool
         brew cask install caffeine
         brew cask install cheatsheet
@@ -160,13 +162,12 @@ case "${os}" in
         brew cask install hyperswitch
         brew cask install genymotion
         brew cask install google-chrome
-        brew cask install google-japanese-ime
         brew cask install iterm2
         brew cask install macvim
         brew cask install mamp
         brew cask install nosleep
         brew cask install shady
-        brew cask install karabiner
+        brew cask install karabiner-elements
         brew cask install unity
         brew cask install xtrafinder
         brew cask install java
@@ -250,6 +251,10 @@ case "${os}" in
             cd websearch
             ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
         fi
+
+        # AquaSKK
+        cd $HOME/Library/Application\ Support/AquaSKK
+        ln -snfv $HOME/Dropbox/Saichi/AquaSKK AquaSKK
 
         # cocos2d-x
         mkdir -p /Applications/Cocos/Cocos2d-x
