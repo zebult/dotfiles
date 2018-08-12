@@ -252,7 +252,7 @@ case "${os}" in
             ln -snfv $HOME/Dropbox/Saichi/Alfred/prefs.plist prefs.plist
         fi
 
-        # AquaSKK
+        # AquaSKK 補完10、インライン表示1
         cd $HOME/Library/Application\ Support/AquaSKK
         ln -snfv $HOME/Dropbox/Saichi/AquaSKK AquaSKK
 
