@@ -219,7 +219,7 @@ mc () {
     mkdir -p "$@" && eval cd "\"\$$#\"";
 }
 
-vimt () {
+vag () {
     vim -p `ag $1 -l`
 }
 
