@@ -253,7 +253,7 @@ case "${os}" in
         fi
 
         # AquaSKK
-        cd $HOME/Library/Application\ Support/AquaSKK
+        cd $HOME/Library/Application\ Support
         ln -snfv $HOME/Dropbox/Saichi/AquaSKK AquaSKK
 
         # cocos2d-x
