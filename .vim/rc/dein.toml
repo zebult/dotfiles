@@ -54,11 +54,11 @@ build = 'env PY3=ON ./install.sh'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
-[[plugins]]
-repo = 'thinca/vim-splash'
-hook_add = '''
-    let g:splash#path = $HOME . '/.vim/rc/splash.txt'
-'''
+# [[plugins]]
+# repo = 'thinca/vim-splash'
+# hook_add = '''
+#     let g:splash#path = $HOME . '/.vim/rc/splash.txt'
+# '''
 
 # no lazy
 # dependency vim-watchdogs

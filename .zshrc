@@ -203,8 +203,8 @@ compdef _git gifo=git-log
 compdef _git gifa=git-log
 
 omni () {
-    mono ~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1
-    # mono ~/.build/omnisharp-osx/omnisharp/OmniSharp.exe -s $1
+    mono ~/.cache/dein/repos/github.com/yucchiy/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1
+    # mono ~/.omnisharp/omnisharp-roslyn/artifacts/publish/OmniSharp.Http.Driver/mono/OmniSharp.exe -s $1
 }
 
 cs () {
@@ -413,7 +413,6 @@ gbu()  {
    git checkout -b $1 origin/$1
    checkRecentLog
 }
-   checkRecentLog
 
 gbo()  {
     git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'

@@ -6,4 +6,3 @@ let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git', '.svn']
 " タグファイルの場所
 set tags+=.git/tags
-

@@ -43,11 +43,11 @@ if dein#check_install()
     call dein#install()
 endif
 
-" if dein#check_update()
-"   call dein#update()
-" endif
 " if dein#clear_state()
 "     call dein#clear_state()
+" endif
+" if dein#check_update()
+"   call dein#update()
 " endif
 " if dein#recache_runtimepath()
 "     call dein#recache_runtimepath()

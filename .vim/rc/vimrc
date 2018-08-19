@@ -81,7 +81,9 @@ autocmd BufNewFile *.h norm! i% bbb:%s/CLASS_NAME//gggveeelx
 autocmd BufNewFile *.hpp norm! i% bbb:%s/CLASS_NAME//gggveeelx
 
 " このタイミングで呼ばないと補完が選択状態で開始されない
-call s:source_rc('plugins/deoplete.rc.vim')
+if has('nvim')
+  call s:source_rc('plugins/deoplete.rc.vim')
+endif
 
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く

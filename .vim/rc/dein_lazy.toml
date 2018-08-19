@@ -31,7 +31,8 @@ repo = 'Shougo/neosnippet'
 on_i = 1
 hook_add = '''
 " <C-k>でsnippetの展開
-let g:neosnippet#snippets_directory='~/.vim/snippets/'
+let g:neosnippet#snippets_directory='~/.vim/snippets/,~/Dropbox/Saichi/Vim/Private/snippets'
+
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
@@ -404,13 +405,13 @@ hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 # xbuildで379 Error(s)等で失敗する場合は、vimの再読込すると直った(monoの再インストールは意味なかった)
 # [deoplete]大量エラー発生時: monoの準備終わってない(Solution has finished loadingが呼ばれたらok)
 [[plugins]]
-repo = 'OmniSharp/omnisharp-vim'
+repo = 'yucchiy/omnisharp-vim'
 on_ft =  ['cs', 'csi', 'csx']
-depends = ['vim-dispatch']
-windows = 'msbuild server/OmniSharp.sln'
-mac     = 'xbuild server/OmniSharp.sln'
-unix    = 'xbuild server/OmniSharp.sln'
 hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
+# depends = ['vim-dispatch']
+# windows = 'msbuild server/OmniSharp.sln'
+# mac     = 'xbuild server/OmniSharp.sln'
+# unix    = 'xbuild server/OmniSharp.sln'
 
 [[plugins]]
 repo = 'zebult/univim'
