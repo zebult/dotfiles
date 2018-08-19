@@ -328,8 +328,16 @@ function! s:SnippetOpen()
   let file =  "$HOME/.vim/snippets/".ft.".snip"
   execute "vs ".file
 endfunction
-
 command! SnippetOpen call s:SnippetOpen()
+
+function! ByteToKiloByte()
+  norm "zdiw
+  let byte = @z
+  let kiloByte = byte / 1024
+  let @z=kiloByte
+  norm "zPaKB
+endfunction
+command! ByteToKiloByte call ByteToKiloByte()
 
 " 文字出現数カウント
 " function! WordCount(word) abort

@@ -123,7 +123,6 @@ alias gdt="git difftool"
 alias gmt="git mergetool"
 alias gbr="git branch"
 alias gbrd="git push origin --delete"
-alias gco="git checkout"
 alias gfc="git fetch"
 alias glo="git log --oneline"
 alias glz="git log --author=zebult"
@@ -397,6 +396,15 @@ gamd() {
 
 checkRecentLog() {
     glo -2
+}
+
+unalias gco
+gco()  {
+   git checkout $@
+
+   if echo $@ | grep -q '\-b\ release'; then
+       echo 'You should update version😸'
+   fi
 }
 
 gbu()  {
