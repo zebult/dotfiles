@@ -56,7 +56,8 @@ function! MyFugitive()
     try
         if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
             let _ = fugitive#head()
-            return strlen(_) ? _.' '.GetGitCleanStatus() : ''
+            return strlen(_) ? _ : ''
+            " return strlen(_) ? _.' '.GetGitCleanStatus() : ''
             " return strlen(_) ? '⭠ '._ : ''
         endif
     catch
@@ -91,7 +92,8 @@ function! MyGitGutter()
 endfunction
 
 function! MyFileName()
-  return "%t"." ".GetGitCleanStatusForCurrentFile()
+  " return "%t"." ".GetGitCleanStatusForCurrentFile()
+  return "%t"
 endfunction
 
 function! GetGitCleanStatus()
