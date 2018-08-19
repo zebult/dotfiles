@@ -7,6 +7,7 @@ let g:eskk#large_dictionary = {'path' : '~/Dropbox/Saichi/AquaSKK/SKK-JISYO.L', 
 " Enterによる確定で改行しない
 let g:eskk#egg_like_newline = 0
 let g:eskk#enable_completion = 1
+let g:eskk#start_completion_length = 1
 let g:eskk#egg_like_newline_completion = 1
 let g:eskk#map_normal_keys = 0
 let g:eskk#select_cand_keys = ";"
