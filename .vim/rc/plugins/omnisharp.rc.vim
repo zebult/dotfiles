@@ -1,3 +1,5 @@
+let g:OmniSharp_selector_ui = 'unite'
+
 " vim終了する度サーバー終了するので手動にする
 let g:Omnisharp_start_server = 0
 let g:Omnisharp_stop_server  = 0

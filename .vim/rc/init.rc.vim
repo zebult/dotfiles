@@ -8,6 +8,11 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 " set autochdir
 
+set updatetime=250
+
+" GitGutterマーク分を予め空けておく
+set signcolumn=yes
+
 set spelllang+=cjk
 let mapleader = "\<Space>"
 " can't use <<
@@ -97,6 +102,11 @@ augroup SaveGroup
     autocmd BufWritePre * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     " autocmd BufWritePre * call lightline#update()
+
+    " git差分マーク
+    if !has('gui_running')
+      autocmd BufWritePost * GitGutter
+    endif
 
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs UnivimBuild
