@@ -23,6 +23,12 @@ function! ClearZenkakuSpace() abort
 endfunction
 command -bar ClearZenkakuSpace  call ClearZenkakuSpace()
 
+" 空行削除
+function! ClearEmptyLine() abort
+  silent v/./d
+endfunction
+command -bar ClearEmptyLine  call ClearEmptyLine()
+
 " 行末空白ハイライト消去
 function! NoHighlightTrailingSpaces() abort
   highlight clear TrailingSpaces

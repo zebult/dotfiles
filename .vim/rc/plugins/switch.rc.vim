@@ -25,4 +25,5 @@ let g:switch_custom_definitions =
     \   ['height', 'width'],
     \   ['relative', 'absolute'],
     \   ['push', 'pusl'],
+    \   ['async', 'await'],
     \ ]

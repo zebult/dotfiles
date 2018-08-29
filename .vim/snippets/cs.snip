@@ -480,6 +480,8 @@ snippet button
     ${1}.OnClickAsObservable()
     .Subscribe(_ => GRUtil.SafeCall(${2}))
     .AddTo(this);
+snippet button_change_image
+    buttonObject.GetComponent<Image> ().sprite = Resources.Load ("Textures/item5", typeof(Sprite)) as Sprite;
 snippet safacall
     GRUtil.SafeCall(${1})
 snippet subject
@@ -538,11 +540,20 @@ snippet www_rx_post
     }).AddTo(this);
 
 snippet curl
-    string str = await Task.Run(() =>
+    using System.Threading.Tasks;
+    using System.Net.Http;
+
+    string text = GetText().Result;
+
+    private static async Task <string> GetText()
     {
-        var httpClient = new HttpClient();
-        return httpClient.GetStringAsync("http://maps.google.com/maps/api/geocode/json?address=渋谷駅");
-    });
+        string result = await Task.Run(() =>
+        {
+            return new HttpClient().GetStringAsync("http://maps.google.com/maps/api/geocode/json?address=渋谷駅");
+        });
+
+        return result;
+    }
 
 snippet write
     using System.IO;
@@ -574,6 +585,10 @@ snippet split
     ${1:str}.Split('${2:target char}');
 snippet join
     string str = string.Join(",", array);
+snippet substitute
+    string result = str.Replace("a", "b");
+snippet substitute
+    string result = str.Replace("a", "b");
 
 snippet object_to_int
     System.Convert.ToInt32(${1:object});

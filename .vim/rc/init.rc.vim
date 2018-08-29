@@ -123,6 +123,12 @@ augroup SaveGroup
     autocmd BufWritePre *.json call JsonPretty()
 augroup END
 
+augroup ReadGroup
+    autocmd!
+    au BufRead * nnoremap <silent> <Leader>r :QuickRun -mode n<CR>
+    au BufRead * vnoremap <silent> <Leader>r :QuickRun -mode v<CR>
+augroup END
+
 " augroup HoldCursorGroup
 "     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue

@@ -196,7 +196,7 @@ autocmd FileType c vnoremap <buffer> <c-f> :call RangeUncrustify('c')<CR>
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-on_map = '<F12>'
+on_event = 'BufRead'
 hook_post_source = '''
 call tcomment#DefineType('objc', '// %s')
 '''
