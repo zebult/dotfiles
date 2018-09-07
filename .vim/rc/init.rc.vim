@@ -54,8 +54,11 @@ set shiftround
 set matchpairs+=<:>
 set matchpairs+=｛:｝
 set matchpairs+=「:」
+set matchpairs+=『:』
 set matchpairs+=【:】
 set matchpairs+=（:）
+
+let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 
 set list
 " set listchars=tab:\ \ ,eol:\ ,extends:»,precedes:« " 列折り返す際はこちらを使うとよいかも

@@ -12,6 +12,13 @@ snippet fori
     do
     echo "i = $i";
     done
+snippet while_result_line
+    while read line
+    do
+        echo $line
+    done << END
+    $result
+    END
 snippet if_null_check
     if [ -n "$HOGE" ]; then
         # has HOEG

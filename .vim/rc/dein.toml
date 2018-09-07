@@ -429,6 +429,9 @@ repo = 'thinca/vim-logcat'
 
 # C# ---------------------------
 
+# [[plugins]]
+# repo = 'LucHermitte/VimFold4C'
+
 # syntax
 [[plugins]]
 repo = 'OrangeT/vim-csharp'

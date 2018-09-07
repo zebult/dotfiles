@@ -21,7 +21,7 @@ autocmd FileType cs vnoremap zk <Esc>:vsp<CR><C-w>l:OmniSharpFindUsages<CR>
 autocmd FileType cs nnoremap zi :OmniSharpFindImplementations<cr>
 
 " using整理
-autocmd FileType cs nnoremap za :OmniSharpGetCodeActions<cr>
+autocmd FileType cs nnoremap zA :OmniSharpGetCodeActions<cr>
 
 autocmd FileType cs nnoremap [[ :OmniSharpNavigateUp<cr>
 autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
