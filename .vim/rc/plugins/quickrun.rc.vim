@@ -15,9 +15,10 @@ let g:quickrun_config = {
 \   }
 \}
 
+" you need $HOME/nuget nuget install Newtonsoft.Json
 let g:quickrun_config['cs'] = {
 			\ 'type'  : 'cs/mcs',
-            \ 'exec': ['%c /reference:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            \ 'exec': ['%c /reference:System.Net.Http.dll /reference:$HOME/nuget/Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             \ 'command': 'mcs',
 			\ }
             " \ 'exec': ['%c /reference:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],

@@ -564,7 +564,7 @@ checkout-branch() {
     zle accept-line
 }
 zle -N checkout-branch
-bindkey '^u' checkout-branch
+bindkey '^g' checkout-branch
 
 peco-select-history() {
     BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
@@ -671,12 +671,12 @@ zshrcopen() {
 zle -N zshrcopen
 bindkey '^z' zshrcopen
 
-# ulog() {
-#     BUFFER="vim <(tail -n +2 ~/Library/Logs/Unity/Editor.log)"
-#     zle accept-line
-# }
-# zle -N ulog
-# bindkey '^u' ulog
+ulog() {
+    BUFFER="vim <(tail -n +2 ~/Library/Logs/Unity/Editor.log) -c 'setfiletype log'"
+    zle accept-line
+}
+zle -N ulog
+bindkey '^u' ulog
 
 # tmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
