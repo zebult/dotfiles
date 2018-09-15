@@ -151,6 +151,9 @@ alias gclo="git clone"
 alias gth="git checkout --theirs"
 alias gbd="git branch --merged|egrep -v '\\*|develop|master|design|design/design-mock'|xargs git branch -d"
 alias gbdr="git branch -r --merged develop | grep -v -e master -e develop -e design/design-mock -e planner-v2 | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %"
+alias rdev="git rebase develop"
+alias dev="git checkout develop"
+alias master="git checkout master"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"

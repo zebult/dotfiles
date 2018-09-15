@@ -717,12 +717,8 @@ snippet play_bgm
 snippet play_se
     GRAudioManager.Instance.PlayOneShotSE(ResourcesData.${1});
 snippet popup
-    var popup = Instantiate(GRResourceCommon.LoadPrefab(Popup.${1}.ObtainPath())).GetComponent <${2}>();
-snippet popup_common
-    var    popup = Instantiate(GRResourceCommon.LoadPrefab(Popup.Common.ObtainPath())).GetComponent <PopupCommon>();
-    string title = GM.I.GetWord("");
-    string desc  = GM.I.GetWord("");
-    popup.Init(title, desc, false);
+    var popup = GRUIUtil.InstantiatePopup <PopupCommon>(Popup.Common);
+    popup.Init(Title, Desc, false);
 snippet touch
     Observable
     .EveryUpdate()

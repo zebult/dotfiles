@@ -417,8 +417,8 @@ hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 repo = 'zebult/univim'
 on_event = ['BufWrite']
 hook_add = '''
-autocmd FileType cs nnoremap rr :<C-u>UnivimPlay<CR>
-autocmd FileType cs nnoremap ff :<C-u>UnivimBuild<CR>
+autocmd FileType * nnoremap rr :<C-u>UnivimPlay<CR>
+autocmd FileType * nnoremap ff :<C-u>UnivimBuild<CR>
 nnoremap <Leader>ua :<C-u>UnivimMenu Build\ Project\ AllScene\ Android<CR>
 nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 "nnoremap <Leader>u/ :<C-u>UnivimFind<CR>
