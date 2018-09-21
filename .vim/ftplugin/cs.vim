@@ -34,6 +34,7 @@ function! SettingRawCs() abort
   nnoremap gL yiwoConsole.WriteLine("call p");
   vnoremap gL yoConsole.WriteLine("call p");
   inoremap log Console.WriteLine("");hh
+  call LoadNugetLibrary()
 endfunction
 command! -bar SettingRawCs call SettingRawCs()
 

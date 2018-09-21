@@ -38,7 +38,7 @@ nnoremap <Leader>& /\(A.*B\)
 " or検索
 nnoremap <Leader>\| /\(A\\|B\)
 " ペースト直後に選択
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+" nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " 行数切り替え
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
@@ -191,8 +191,6 @@ let MyAutoComplete_StartLength = 3
 
 " <C-m>はEnterと同じ扱い
 " nnoremap <C-m> gd:nohlsearch<CR>
-nmap gp Riw
-" nmap cp Riw
 
 " nnoremap gh ,
 " nnoremap gl ;

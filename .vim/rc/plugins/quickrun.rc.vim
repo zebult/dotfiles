@@ -15,13 +15,49 @@ let g:quickrun_config = {
 \   }
 \}
 
-" you need $HOME/nuget nuget install Newtonsoft.Json
 let g:quickrun_config['cs'] = {
 			\ 'type'  : 'cs/mcs',
-            \ 'exec': ['%c -r:System.Net.Http.dll -r:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            \ 'exec': ['%c %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             \ 'command': 'mcs',
 			\ }
+            " \ 'exec': ['%c -r:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             " \ 'exec': ['%c -r:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            " \ 'exec': ['%c -r:System.Net.Http.dll -r:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+
+function! LoadNugetLibrary() abort
+  let $MONO_PATH=""
+
+  if !filereadable("packages.config")
+    echo "packages.configが存在しません"
+    return
+  endif
+
+  let cmd = '%c '
+  let inputfile = "packages.config"
+  for line in readfile(inputfile)
+    if stridx(line, "package id") == -1
+      continue
+    endif
+
+    let list = split(line,'"')
+    let libId = list[1]
+    let libVersion = list[3]
+    let libTarget = list[5]
+
+    let libPath = libId.'.'.libVersion.'/lib/'.libTarget
+    let cmd = cmd.'-r:'.libPath.'/'.libId.'.dll '
+    " TODO: many library support
+    let $MONO_PATH=libPath
+  endfor
+
+  let cmd = cmd.'%o -out:%s:p:r.exe %s'
+
+  let g:quickrun_config['cs'] = {
+        \ 'type'  : 'cs/mcs',
+        \ 'exec': [cmd, 'mono %s:p:r.exe %a'],
+        \ 'command': 'mcs',
+        \ }
+endfunction
 
 " c++11
 let g:quickrun_config['cpp'] = {

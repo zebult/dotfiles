@@ -29,6 +29,7 @@ if = "has('nvim')"
 # need neosnippet
 # no lazy
 [[plugins]]
+depends = ['neosnippet']
 repo   = 'Shougo/neosnippet-snippets'
 
 # no lazy
@@ -262,6 +263,7 @@ hook_add = '''
 repo = 'kana/vim-operator-replace.git'
 hook_add = '''
     map R <Plug>(operator-replace)
+    nmap gp Riw
 '''
 
 # gitコマンド
