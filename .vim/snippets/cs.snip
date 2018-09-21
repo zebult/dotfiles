@@ -555,12 +555,12 @@ snippet curl
         return result;
     }
 
-snippet write
+snippet file_write
     using System.IO;
     var sw = new StreamWriter(@"ouch.log", true, System.Text.Encoding.GetEncoding("utf-8"));
     sw.Write("aaa\n");
     sw.Close();
-snippet read
+snippet file_read
     using System.IO;
     using (var sr = new StreamReader(path))
     {

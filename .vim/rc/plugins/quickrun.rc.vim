@@ -33,8 +33,7 @@ function! LoadNugetLibrary() abort
   endif
 
   let cmd = '%c '
-  let inputfile = "packages.config"
-  for line in readfile(inputfile)
+  for line in readfile("packages.config")
     if stridx(line, "package id") == -1
       continue
     endif

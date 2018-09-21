@@ -21,3 +21,11 @@ snippet str_to_json
     let content = webapi#json#decode(res.content)
 snippet file_name
     let file_name = expand("%")
+snippet file_read
+  for line in readfile("packages.config")
+  endfor
+snippet file_exist
+  if !filereadable("packages.config")
+    echo "packages.configが存在しません"
+    return
+  endif
