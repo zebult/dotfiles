@@ -111,6 +111,7 @@ augroup SaveGroup
       autocmd BufWritePost * GitGutter
     endif
 
+    autocmd BufWritePre *.cs silent! call OmniSharp#FixUsings()
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs UnivimBuild
 

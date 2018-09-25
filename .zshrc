@@ -173,6 +173,7 @@ alias ag='ag -u'
 alias fn='find . -name'
 alias mf='mdfind'
 alias uncs='uncrustify -l cs -c ~/.uncrustify.cfg --replace --no-backup **/*.cs'
+alias using='vim -c "silent call UsingClean()" **/*.cs >&/dev/null'
 alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 
 alias libcocos='cd ~/Library/Developer/Xcode/DerivedData/'

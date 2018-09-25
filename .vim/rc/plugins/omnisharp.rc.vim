@@ -34,3 +34,15 @@ autocmd FileType cs nnoremap <leader>d  :OmniSharpDocumentation<cr>
 " autocmd FileType cs nnoremap <leader>Fx :OmniSharpFixUsings<cr>
 
 " autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+
+function! UsingClean() abort
+  for i in  range(1, bufnr("$"))
+    if buflisted(i)
+      execute "buffer" i
+      silent! call OmniSharp#FixUsings()
+      update
+      bdelete
+    endif
+  endfor
+  quit
+endfunction

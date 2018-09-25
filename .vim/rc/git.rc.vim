@@ -57,7 +57,7 @@ ca glob Glog<CR>
 ca gbd Gbd
 
 " gitv
-nnoremap gh :GTree<CR>
+" nnoremap gh :GTree<CR>
 
 function! GTree() abort
   Gitv --all
