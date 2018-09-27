@@ -345,6 +345,10 @@ function! ByteToKiloByte()
 endfunction
 command! ByteToKiloByte call ByteToKiloByte()
 
+" function! IsXamarin()
+"   return stridx(expand("%:p"), "Xamarin") != -1
+" endfunction
+
 " 文字出現数カウント
 " function! WordCount(word) abort
 "     %s/a:word//gn

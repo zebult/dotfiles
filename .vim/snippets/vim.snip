@@ -21,6 +21,8 @@ snippet str_to_json
     let content = webapi#json#decode(res.content)
 snippet file_name
     let file_name = expand("%")
+snippet file_path
+    let file_path = expand("%:p")
 snippet file_read
   for line in readfile("packages.config")
   endfor

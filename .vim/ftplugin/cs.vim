@@ -18,15 +18,33 @@ vnoremap gN yOif(p == null){Debug.Log("p is null");}
 nnoremap ga yiwoDebug.Assert(p != null, "" + p);
 vnoremap ga yoDebug.Assert(p != null, "" + p);
 
-" Xamarin
-let file_name = expand("%")
-let split_list = split(file_name,'\.')
-if len(split_list) >= 3
-  let ext = split_list[-2].'.'.split_list[-1]
-  if ext == 'xaml.cs'
-    SettingXamarin
-  endif
+function! IsXamarin()
+  return stridx(expand("%:p"), "Xamarin") != -1
+endfunction
+
+function! SettingXamarin() abort
+  nnoremap gl yiwoConsole.WriteLine("p:" + p);
+  vnoremap gl yoConsole.WriteLine("p:" + p);
+  nnoremap gN yiwOif(p == null){Console.WriteLine("p is null");}
+  vnoremap gN yOif(p == null){Console.WriteLine("p is null");}
+endfunction
+command! -bar SettingXamarin call SettingXamarin()
+
+if IsXamarin()
+  call SettingXamarin()
+else
+  autocmd BufWritePre *.cs silent! call OmniSharp#FixUsings()
 endif
+
+" Xamarin
+" let file_name = expand("%")
+" let split_list = split(file_name,'\.')
+" if len(split_list) >= 3
+"   let ext = split_list[-2].'.'.split_list[-1]
+"   if ext == 'xaml.cs'
+"     SettingXamarin
+"   endif
+" endif
 
 function! SettingRawCs() abort
   nnoremap gl yiwoConsole.WriteLine("p:" + p);
@@ -37,14 +55,6 @@ function! SettingRawCs() abort
   call LoadNugetLibrary()
 endfunction
 command! -bar SettingRawCs call SettingRawCs()
-
-function! SettingXamarin() abort
-  nnoremap gl yiwoDebug.WriteLine("p:" + p);
-  vnoremap gl yoDebug.WriteLine("p:" + p);
-  nnoremap gN yiwOif(p == null){Debug.WriteLine("p is null");}
-  vnoremap gN yOif(p == null){Debug.WriteLine("p is null");}
-endfunction
-command! -bar SettingXamarin call SettingXamarin()
 
 " nnoremap <Leader>r :QuickRun cs/mcs<CR>
 " nnoremap <Leader>r :QuickRunCS<CR>

@@ -75,8 +75,6 @@ snippet log_err
     Debug.LogError(${1});
 snippet log_c
     Console.WriteLine(${1});
-snippet string
-    string.Format("{0}", hoge)
 snippet contain
     bool isContain = ${1:string}.Contains("${1:word}")
 snippet contain_string_index
@@ -350,11 +348,12 @@ snippet prom
     private TextMeshProUGUI Text;
 
 snippet prop
-    public ${1:type} ${0:var} { get; set; }
-
+    public ${1:object} ${0:PropertyName} { get; set; }
+snippet propg
+    public ${1:object} ${0:PropertyName} { get; private set; }
 snippet prope
     [SerializeField]
-    private ${1:type} _${2:value} = ${3};
+    private ${1:object} _${2:PropertyName} = ${3};
     public <|1|> <|2|>
     {
         get { return _<|2|>; }
@@ -362,19 +361,26 @@ snippet prope
     }
 snippet propn
     [SerializeField]
-    private ${1:type} _${2:value};
+    private ${1:object} _${2:PropertyName};
     public <|1|> <|2|>
     {
         get { return _<|2|> != null ? _<|2|> : _<|2|> = GetComponent<<|1|>>(); }
     }
+snippet propp
+    private ${1:object} _${2:PropertyName};
+    public <|1|> <|2|>
+    {
+        get { return _<|2|>; }
+        set { SetProperty(ref _<|2|>, value); }
+    }
 snippet member_serialize
     [SerializeField]
-    private ${1:type} ${2:value};
+    private ${1:object} ${2:value};
 snippet serim
     [SerializeField]
-    private ${1:type} ${2:value};
+    private ${1:object} ${2:value};
 snippet member
-    private ${1:type} ${2:value};
+    private ${1:object} ${2:value};
 
 snippet reactive
     ReactiveProperty <${1}>
@@ -577,6 +583,8 @@ snippet menu_item
 snippet application_openurl
     Application.OpenURL(${0});
 
+snippet str_format
+    string.Format("{0}", hoge)
 snippet str_isnullorempty
     if (string.IsNullOrEmpty(${1:str}))
 snippet find_index
