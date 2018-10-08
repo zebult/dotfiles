@@ -741,3 +741,14 @@ snippet x_button_event
     }
 snippet x_log
     System.Diagnostics.Debug.WriteLine("Button Clicked");
+
+snippet x_ios
+    switch (Device.RuntimePlatform)
+    {
+        case Device.iOS:
+            break;
+        case Device.Android:
+            break;
+        default:
+            break;
+    }
