@@ -21,8 +21,8 @@ nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<
 " カーソルキー, cn, cpで移動
 call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
 call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-" call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-" call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',

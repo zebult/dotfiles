@@ -4,7 +4,7 @@ function! MinimumMapping() abort
   nnoremap <Leader>w :w<Cr>
   nnoremap <Leader>q :bd<Cr>
   nnoremap <Leader>Q :qa<Cr>
-  nnoremap <Leader>e :bd<Cr>
+  nnoremap <Leader>e :q<Cr>
   nnoremap <Leader>2 :wq<Cr>
   nnoremap <Leader>! :q!<Cr>
   nnoremap <Leader># :qa!<Cr>
@@ -26,7 +26,7 @@ command -bar InitMapping call InitMapping()
 
 MinimumMapping
 
-nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
+nnoremap <silent> <ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:cex ""<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> 111 :e!<CR>
 " nnoremap <silent> <ESC><ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:set nocursorline<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 " 単語をヤンクレジスタで置換 ???
@@ -51,8 +51,6 @@ noremap <C-e> 2<C-e>
 noremap <C-y> 2<C-y>
 " タグジャンプやりやすく
 nnoremap tj gD
-" diffすぐ出す
-ca ccd lcd %:h
 
 ca al Align
 " 指定範囲インデント調節の連続化
@@ -78,7 +76,8 @@ nnoremap <Leader>N mfi<C-r>%<ESC>v'fyu
 
 " nnoremap <Leader>L :vsp<CR><C-w>lgg/:<CR>$<C-]>:nohlsearch<CR>
 
-nnoremap cd :lcd %:h<CR>
+nnoremap <silent> cd :lcd %:h<CR>
+ca <silent> cd lcd %:h
 
 " Screen split key mappings
 " nnoremap sN :<C-u>bn<CR>
@@ -125,6 +124,7 @@ nnoremap s% :%s ///g<Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap S% :%s ///g<Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
 nnoremap cn :QuickFixNext<CR>
+nnoremap cp :QuickFixPrev<CR>
 nnoremap cp :QuickFixPrev<CR>
 
 vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r>0<Right><C-r>0
@@ -223,8 +223,8 @@ nnoremap <expr> 0
 " nnoremap <expr> 0
 " \  match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
 
-nnoremap <silent> <C-n> :cn<CR>:CML<CR>*Nzz
-nnoremap <silent> <C-p> :cp<CR>:CML<CR>*Nzz
+nnoremap <silent> <C-n> :NextStep<CR>
+nnoremap <silent> <C-p> :PrevStep<CR>
 
 " マーク周りの改善
 noremap ' `

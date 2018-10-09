@@ -345,6 +345,52 @@ function! ByteToKiloByte()
 endfunction
 command! ByteToKiloByte call ByteToKiloByte()
 
+function! NextStep()
+  if len(getqflist()) == 0
+    bn
+    Lsh
+  else
+    cn
+    CML
+    norm *Nzz
+  endif
+endfunction
+command! NextStep call NextStep()
+
+function! PrevStep()
+  if len(getqflist()) == 0
+    bp
+    Lsh
+  else
+    cp
+    CML
+    norm *Nzz
+  endif
+endfunction
+command! PrevStep call PrevStep()
+
+function! Lsh()
+  let ls = execute(":ls")
+  let isFirst = 1
+
+  for line in split(ls,'\n')
+    if isFirst
+      let isFirst = 0
+      echo "\n"
+    endif
+
+    let isMainBuffer = stridx(line, "%") != -1
+    if isMainBuffer
+      echohl WarningMsg | echo line | echohl None
+    else
+      echo line
+    endif
+  endfor
+endfunction
+command! Lsh call Lsh()
+
+ca <silent> ls Ls
+
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
 " endfunction
