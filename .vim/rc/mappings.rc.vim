@@ -2,7 +2,7 @@
 
 function! MinimumMapping() abort
   nnoremap <Leader>w :w<Cr>
-  nnoremap <Leader>q :q<Cr>
+  nnoremap <Leader>q :bd<Cr>
   nnoremap <Leader>Q :qa<Cr>
   nnoremap <Leader>e :bd<Cr>
   nnoremap <Leader>2 :wq<Cr>
@@ -95,8 +95,6 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap dl :<C-u>bn<CR>
-nnoremap dh :<C-u>bp<CR>
 nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
@@ -132,6 +130,9 @@ nnoremap cp :QuickFixPrev<CR>
 vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r>0<Right><C-r>0
 nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
+
+nnoremap <silent> dn :<C-u>bnext<CR>
+nnoremap <silent> dp :<C-u>bprev<CR>
 
 for n in range(1, 9)
   execute 'nnoremap <silent> '.n.'t :<C-u>tabnext'.n.'<CR>'

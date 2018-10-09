@@ -99,6 +99,11 @@ set backspace=indent,eol,start
 
 autocmd FileType cvs,svn,gitcommit setlocal spell spelllang=en_us
 
+augroup fix_using
+  autocmd!
+  autocmd BufWritePre *.cs silent! call OmniSharp#FixUsings()
+augroup END
+
 augroup SaveGroup
     autocmd!
     " 保存時空白ハイライト
@@ -111,7 +116,6 @@ augroup SaveGroup
       autocmd BufWritePost * GitGutter
     endif
 
-    autocmd BufWritePre *.cs silent! call OmniSharp#FixUsings()
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs UnivimBuild
 

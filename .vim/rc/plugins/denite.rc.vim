@@ -9,6 +9,7 @@ nnoremap <silent> s<Bslash> :<C-u>DeniteCursorWord -highlight-mode-insert=Search
 vnoremap <silent> s<Bslash> <Esc>:vs<CR><C-w>l:DeniteCursorWord -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> sT :<C-u>Denite -highlight-mode-insert=Search -default-action=tabopen file_rec<CR>
 nnoremap <silent> sO :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
+" nnoremap <silent> do :<C-u>Denite -highlight-mode-insert=Search -auto-preview buffer<CR>
 nnoremap <silent> do :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
 nnoremap <silent> sf :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 

@@ -716,7 +716,9 @@ snippet play_se
     GRAudioManager.Instance.PlayOneShotSE(ResourcesData.${1});
 snippet popup
     var popup = GRUIUtil.InstantiatePopup <PopupCommon>(Popup.Common);
-    popup.Init(Title, Desc, false);
+    string title = GM.I.GetWord("_title");
+    string desc  = GM.I.GetWord("_desc");
+    popup.Init(title, desc, false);
 snippet touch
     Observable
     .EveryUpdate()

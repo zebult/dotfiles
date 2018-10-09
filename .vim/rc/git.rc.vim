@@ -1,5 +1,6 @@
 " gina
 ca gad Gina add .
+ca gadc Gina add %:p
 ca gadp Gina!! add -p
 ca gcm Gina commit -v
 nnoremap cc :Gina commit -v<CR>
@@ -45,9 +46,9 @@ ca gbl Gblame
 " ca glof Glog
 
 "denite-git
-nnoremap dO :Denite -highlight-mode-insert=Search gitstatus<CR>
+" nnoremap go :Denite -highlight-mode-insert=Search -auto-preview gitstatus<CR>
+nnoremap go :Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
-ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
 ca glob Glog<CR>
 
