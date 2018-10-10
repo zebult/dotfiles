@@ -350,7 +350,7 @@ function! NextStep()
     bn
     Lsh
   else
-    cn
+    silent cn
     CML
     norm *Nzz
   endif
@@ -362,7 +362,7 @@ function! PrevStep()
     bp
     Lsh
   else
-    cp
+    silent cp
     CML
     norm *Nzz
   endif
