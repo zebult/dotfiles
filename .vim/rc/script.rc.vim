@@ -389,7 +389,7 @@ function! Lsh()
 endfunction
 command! Lsh call Lsh()
 
-ca <silent> ls Ls
+ca <silent> ls Lsh
 
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1

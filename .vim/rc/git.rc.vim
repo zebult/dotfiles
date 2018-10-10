@@ -49,11 +49,11 @@ ca gbl Gblame
 
 "denite-git
 " nnoremap go :Denite -highlight-mode-insert=Search -auto-preview gitstatus<CR>
-nnoremap go :Denite -highlight-mode-insert=Search gitstatus<CR>
-ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
-ca gbrd Denite -highlight-mode-insert=Search -default-action=delete gitbranch<CR>
-ca gmg Denite -highlight-mode-insert=Search -default-action=merge gitbranch<CR>
-ca glob Glog<CR>
+nnoremap <silent> go :Denite -highlight-mode-insert=Search gitstatus<CR>
+ca <silent> gco Denite -highlight-mode-insert=Search gitbranch<CR>
+ca <silent> gbrd Denite -highlight-mode-insert=Search -default-action=delete gitbranch<CR>
+ca <silent> gmg Denite -highlight-mode-insert=Search -default-action=merge gitbranch<CR>
+ca <silent> glob Glog<CR>
 
 " ca globb Gitv!<CR>
 
