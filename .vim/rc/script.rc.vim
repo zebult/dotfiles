@@ -391,6 +391,16 @@ command! Lsh call Lsh()
 
 ca <silent> ls Lsh
 
+function! LogSearch()
+  " norm /\c.*\<\(FATAL\|ERROR\|ERRORS\|FAIL\|FAILED\|FAILURE\).*
+endfunction
+command! LogSearch call LogSearch()
+
+function! LogOnly()
+  v/\c.*\<\(FATAL\|ERROR\|ERRORS\|FAIL\|FAILED\|FAILURE\).*/d
+endfunction
+command! LogOnly call LogOnly()
+
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
 " endfunction

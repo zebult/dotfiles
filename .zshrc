@@ -245,7 +245,7 @@ vf () {
     eval $COMMAND
 }
 
-zipr() {
+zip() {
     zip -r $1 $1;
 }
 
@@ -716,6 +716,4 @@ tm()
 PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "! "; fi)'
 PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
 
-# export GIT_SSH_COMMAND="ssh -i ~/.ssh/hidaka/hidakkathon2018Native.key"
-
-export LC_ALL="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
