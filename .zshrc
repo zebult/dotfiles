@@ -1,6 +1,3 @@
-export LANG=ja_JP.UTF-8
-export LC_ALL=ja_JP.UTF-8
-
 # Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -191,6 +188,8 @@ alias sc="cd Assets/Scripts"
 alias slack="~/Dropbox/Saichi/sh/slack"
 alias gdu="gdu"
 alias dufile="tree -ifF --si --noreport | sed -e 's/\[//g' -e 's/\]//g' -e 's/\.\// \.\//g' | grep -v /$ | sort -h"
+
+alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7777 --wallet-url http://127.0.0.1:5555'
 
 set -o vi
 bindkey "jj" vi-cmd-mode
@@ -713,3 +712,5 @@ PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "!
 PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
 
 # export GIT_SSH_COMMAND="ssh -i ~/.ssh/hidaka/hidakkathon2018Native.key"
+
+export LC_ALL="en_US.UTF-8"
