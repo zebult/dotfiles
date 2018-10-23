@@ -1,3 +1,6 @@
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
+
 # Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
