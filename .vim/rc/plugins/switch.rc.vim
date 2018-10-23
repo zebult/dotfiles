@@ -26,4 +26,6 @@ let g:switch_custom_definitions =
     \   ['relative', 'absolute'],
     \   ['push', 'pusl'],
     \   ['async', 'await'],
+    \   ['土', '日', '月', '火', '水', '木', '金'],
+    \   ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     \ ]

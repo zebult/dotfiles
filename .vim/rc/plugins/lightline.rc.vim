@@ -27,6 +27,7 @@ let g:lightline = {
             \ 'component_type': {
             \   'qfstatusline': 'error',
             \   'syntastic': 'error',
+            \   'my_filename': 'warning',
             \ },
             \ 'component_function': {
             \   'anzu': 'anzu#search_status',

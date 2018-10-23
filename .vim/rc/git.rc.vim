@@ -1,5 +1,6 @@
 " gina
 ca gad Gina add .
+ca gadc Gina add %:p
 ca gadp Gina!! add -p
 ca gcm Gina commit -v
 nnoremap cc :Gina commit -v<CR>
@@ -26,8 +27,10 @@ ca gacm Gacm
 ca gg Gacm
 ca gamd Gamd
 ca gps Gps
+nnoremap <Leader>p :Gps<CR>
 ca gpl Gpl
-nnoremap <Leader>b :Gina branch<CR>
+" nnoremap <Leader>b :Gina branch<CR>
+nnoremap <silent> <Leader>b :Denite -highlight-mode-insert=Search gitbranch<CR>
 ca gbr Gina branch 
 ca gcob Gina checkout -b
 " ca gco Gco
@@ -45,11 +48,12 @@ ca gbl Gblame
 " ca glof Glog
 
 "denite-git
-nnoremap dO :Denite -highlight-mode-insert=Search gitstatus<CR>
-ca gco Denite -highlight-mode-insert=Search gitbranch<CR>
-ca gstl Denite -highlight-mode-insert=Search gitstatus<CR>
-ca gdfl Denite -highlight-mode-insert=Search gitstatus<CR>
-ca glob Glog<CR>
+" nnoremap go :Denite -highlight-mode-insert=Search -auto-preview gitstatus<CR>
+nnoremap <silent> go :Denite -highlight-mode-insert=Search gitstatus<CR>
+ca <silent> gco Denite -highlight-mode-insert=Search gitbranch<CR>
+ca <silent> gbrd Denite -highlight-mode-insert=Search -default-action=delete gitbranch<CR>
+ca <silent> gmg Denite -highlight-mode-insert=Search -default-action=merge gitbranch<CR>
+ca <silent> glob Glog<CR>
 
 " ca globb Gitv!<CR>
 

@@ -478,6 +478,11 @@ gdfv()
     fi
 }
 
+gcfv()
+{
+    vim -p `git diff --diff-filter=U --relative --name-only`
+}
+
 gdft()
 {
     vim -c "GdfTool"
@@ -501,7 +506,7 @@ battery()
 peco-tree-vim(){
   local SELECTED_FILE=$(tree --charset=o -i -f | peco | xargs echo)
   if [ ! -z $SELECTED_FILE ] ; then
-      BUFFER="vim -p $SELECTED_FILE"
+      BUFFER="vim $SELECTED_FILE"
   fi
   zle accept-line
 }

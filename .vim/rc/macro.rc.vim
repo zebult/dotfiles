@@ -112,7 +112,7 @@ command! -range EntityIntoKey <line1>,<line2>call EntityIntoKey()
 
 " エンティティのコンバーターを適当に作成
 function! EntityToConverter()
-    normal $b"zyiwOEntity."zpa = j^wyiwk$a(pla Row[""zp$a;
+    normal $b"zyiwOEntity."zpa = j^wyiwk$a(pla row[""zp$a;
     call EntityIntoKey()
     normal dd
 endfunction

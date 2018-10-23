@@ -52,9 +52,19 @@ function! SettingRawCs() abort
   nnoremap gL yiwoConsole.WriteLine("call p");
   vnoremap gL yoConsole.WriteLine("call p");
   inoremap log Console.WriteLine("");hh
+
+  call UsingDelete()
+
   call LoadNugetLibrary()
 endfunction
 command! -bar SettingRawCs call SettingRawCs()
+
+function! UsingDelete() abort
+  augroup fix_using
+    autocmd!
+  augroup END
+endfunction
+command! -bar UsingDelete call UsingDelete()
 
 " nnoremap <Leader>r :QuickRun cs/mcs<CR>
 " nnoremap <Leader>r :QuickRunCS<CR>
@@ -66,7 +76,7 @@ command! -bar SettingRawCs call SettingRawCs()
 " endfunction
 " command! -bar QuickRunCS call QuickRunCS()
 
-augroup cs_groupe
+augroup cs_group
     autocmd!
     autocmd FileType cs set omnifunc=OmniSharp#Complete
 augroup END

@@ -9,6 +9,7 @@ nnoremap <silent> s<Bslash> :<C-u>DeniteCursorWord -highlight-mode-insert=Search
 vnoremap <silent> s<Bslash> <Esc>:vs<CR><C-w>l:DeniteCursorWord -highlight-mode-insert=Search file_rec<CR>
 nnoremap <silent> sT :<C-u>Denite -highlight-mode-insert=Search -default-action=tabopen file_rec<CR>
 nnoremap <silent> sO :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
+" nnoremap <silent> do :<C-u>Denite -highlight-mode-insert=Search -auto-preview buffer<CR>
 nnoremap <silent> do :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
 nnoremap <silent> sf :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 
@@ -20,8 +21,8 @@ nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<
 " カーソルキー, cn, cpで移動
 call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
 call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-" call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-" call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',
