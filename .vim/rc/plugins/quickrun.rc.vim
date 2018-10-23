@@ -17,9 +17,10 @@ let g:quickrun_config = {
 
 let g:quickrun_config['cs'] = {
 			\ 'type'  : 'cs/mcs',
-            \ 'exec': ['%c %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
+            \ 'exec': ['%c *.cs -out:%s:p:r.exe', 'mono %s:p:r.exe %a'],
             \ 'command': 'mcs',
 			\ }
+            " \ 'exec': ['%c %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             " \ 'exec': ['%c -r:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             " \ 'exec': ['%c -r:System.Net.Http.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],
             " \ 'exec': ['%c -r:System.Net.Http.dll -r:Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll %o -out:%s:p:r.exe %s', 'mono %s:p:r.exe %a'],

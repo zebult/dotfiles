@@ -134,10 +134,20 @@ snippet sort_list
     ${1:list}.Sort((a, b) => a.${2:value} - b.<|2|>);
 snippet dic
     Dictionary ${3:var} = new Dictionary();
-snippet dic_init
+snippet init_dic
     var dic = new Dictionary <string, string>()
     {
         { "", "" },
+    };
+snippet init_list
+    var list = new List<int>
+    {
+        0, 1, 2,
+    };
+snippet init_struct
+    var list = new MasterEvent
+    {
+        SheatName = "event", TitleColumnName = "name", StartTimeColumnName = "start_date"
     };
 snippet sort
     filtered.Sort(
@@ -165,8 +175,14 @@ snippet ismaster
     }
 snippet yield
     yield return new WaitForSeconds(${1});
-snippet Coroutine
-    IEnumerator ${1}() {
+snippet coroutine
+    IEnumerator ${1}()
+    {
+        bool isWait = true;
+        {
+            isWait = false;
+        }
+        yield return new WaitWhile(() => isWait);
         yield return new WaitForSeconds(1.0f);
         yield return new WaitWhile (() => _isLoading);
         yield return StartCoroutine (DoHoge());
@@ -633,6 +649,7 @@ snippet str_to_float
 snippet str_to_json
     JsonNode json = JsonNode.Parse(text);
 snippet str_to_json_Newtonsoft
+    using Newtonsoft.Json;
     var   json     = (JObject) JsonConvert.DeserializeObject(text);
     var   location = json["results"][0]["geometry"]["location"];
     float lat      = Convert.ToSingle(location["lat"].ToString());
