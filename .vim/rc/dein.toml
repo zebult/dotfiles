@@ -500,3 +500,8 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
+
+# Solidity ---------------------------
+[[plugins]]
+repo = 'tomlion/vim-solidity'
+on_ft = 'tex'
