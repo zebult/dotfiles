@@ -646,13 +646,15 @@ snippet str_to_enum
     (${1:type}) Enum.Parse(typeof(<|1|>), ${2:str});
 snippet str_to_float
     Convert.ToSingle(${1:str})
-snippet str_to_json
+snippet json_lib_JsonNode
     JsonNode json = JsonNode.Parse(text);
-snippet str_to_json_Newtonsoft
+snippet json_lib_Newtonsoft
     using Newtonsoft.Json;
-    var   json     = (JObject) JsonConvert.DeserializeObject(text);
-    var   location = json["results"][0]["geometry"]["location"];
-    float lat      = Convert.ToSingle(location["lat"].ToString());
+    using Newtonsoft.Json.Linq;
+    string text = Bash("curl 'http://express.heartrails.com/api/json?method=getStations&line=JR山手線'");
+    var    json = (JObject) JsonConvert.DeserializeObject(text);
+    string name =  json["response"]["station"][0]["name"].ToString();
+    Console.WriteLine("name:" + name);
 snippet str_to_stringreader
         string result = "";
         string text   = "hoge";
