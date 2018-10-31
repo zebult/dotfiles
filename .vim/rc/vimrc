@@ -67,7 +67,7 @@ call s:source_rc('playground.rc.vim')
 " original function
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
-source ~/Dropbox/Saichi/Vim/Private/script.rc.vim
+source ~/Dropbox/Saichi/Vim/Private/kemo.rc.vim
 
 let g:metarw_alias = {
   \ 'myhome' : '~',

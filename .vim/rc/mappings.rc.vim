@@ -45,6 +45,9 @@ nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 nnoremap <Down> 5j
 nnoremap <Up> 5k
 
+nnoremap <C-g> Vg?
+vnoremap <C-g> g?
+
 noremap 8* *N
 
 noremap <C-e> 2<C-e>
