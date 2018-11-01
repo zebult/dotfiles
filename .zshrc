@@ -110,6 +110,7 @@ export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
 export PATH=$PATH:$ELASTICPATH
 
 export ENHANCD_FILTER=peco
+export MANPAGER="/bin/sh -c \"col -b -x|nvim -R -c 'set ft=man nolist nonu noma' -\""
 
 # alias
 alias ll='ls -alh'
