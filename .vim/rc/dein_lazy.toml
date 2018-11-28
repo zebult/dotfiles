@@ -126,6 +126,10 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # '''
 
 [[plugins]]
+repo = 'jceb/vim-orgmode'
+on_event = 'BufWrite'
+
+[[plugins]]
 repo = 'zebult/lgtm-rl-vim'
 on_event = 'BufWrite'
 hook_add = '''

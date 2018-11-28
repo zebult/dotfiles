@@ -201,6 +201,9 @@ hook_add = 'source ~/.vim/rc/plugins/gdrive.rc.vim'
 [[plugins]]
 repo = 'mattn/vim-metarw-simplenote'
 
+[[plugins]]
+repo = 'mattn/vimplenote-vim'
+
 # [[plugins]]
 # repo = 'simeji/vim-chatworker.git'
 # rev  = 'get-messages'
