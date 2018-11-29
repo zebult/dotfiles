@@ -114,6 +114,9 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # '''
 
 [[plugins]]
+repo = 'jceb/vim-orgmode'
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = 'source ~/.vim/rc/plugins/denite.rc.vim'
 

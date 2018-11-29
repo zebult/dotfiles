@@ -126,10 +126,6 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # '''
 
 [[plugins]]
-repo = 'jceb/vim-orgmode'
-on_event = 'BufWrite'
-
-[[plugins]]
 repo = 'zebult/lgtm-rl-vim'
 on_event = 'BufWrite'
 hook_add = '''
@@ -489,6 +485,12 @@ on_event = ['BufWrite']
 repo = 'mattn/emmet-vim'
 on_ft = 'html'
 on_event = ['BufWrite']
+
+# Org ---------------------------
+
+[[plugins]]
+repo = 'mattn/calendar-vim'
+on_ft = 'org'
 
 # Game ---------------------------
 # [[plugins]]

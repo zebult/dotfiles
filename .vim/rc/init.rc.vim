@@ -15,6 +15,7 @@ set signcolumn=yes
 
 set spelllang+=cjk
 let mapleader = "\<Space>"
+let maplocalleader = ','
 " can't use <<
 " no <Subleader> <Nop>
 map \ <Subleader>
