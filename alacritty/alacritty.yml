@@ -344,7 +344,7 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-hide_cursor_when_typing: true
+hide_cursor_when_typing: false
 
 # Shell
 #

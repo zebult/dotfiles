@@ -241,6 +241,10 @@ macvim () {
     fi
 }
 
+memo () {
+    vim ~/Dropbox/Saichi/memo.txt
+}
+
 v () {
     COMMAND="vim <("$@")"
     eval $COMMAND
@@ -671,8 +675,8 @@ bindkey '^y' memodiary
 # bindkey '^t' todolist
 
 memoGlobal() {
-    # BUFFER='vim -c "Memo"'
-    BUFFER="vim ~/Dropbox/Saichi/memo.txt"
+    BUFFER='vim -c "Org"'
+    # BUFFER="vim ~/Dropbox/Saichi/memo.txt"
     zle accept-line
 }
 zle -N memoGlobal

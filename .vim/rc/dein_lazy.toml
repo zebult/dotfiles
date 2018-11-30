@@ -126,6 +126,10 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # '''
 
 [[plugins]]
+repo = 'tpope/vim-speeddating'
+on_map = '<C-a>'
+
+[[plugins]]
 repo = 'zebult/lgtm-rl-vim'
 on_event = 'BufWrite'
 hook_add = '''
@@ -229,11 +233,6 @@ hook_add = '''
 map <C-j> <Plug>(edgemotion-j)
 map <C-k> <Plug>(edgemotion-k)
 '''
-
-[[plugins]]
-repo = 'mrtazz/simplenote.vim'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
-on_event = 'BufWrite'
 
 # メタ文字含むとlightline壊れるので注意
 # [[plugins]]
