@@ -255,8 +255,8 @@ on_i = 1
 repo = 'tyru/eskk.vim'
 on_i = 1
 hook_post_source = '''
-# imap <C-j> <Plug>(eskk:toggle)
-# cmap <C-j> <Plug>(eskk:toggle)
+imap <C-j> <Plug>(eskk:toggle)
+cmap <C-j> <Plug>(eskk:toggle)
 
 if dein#is_sourced('eskk')
   augroup vimrc-plugin-eskk
