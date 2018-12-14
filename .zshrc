@@ -180,7 +180,7 @@ alias cdp='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 alias libcocos='cd ~/Library/Developer/Xcode/DerivedData/'
 alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 
-alias cp='cp -v'
+alias cp='cp -rc'
 alias cdn='peco-tree-vim'
 
 alias vtr='vim <(tree)'

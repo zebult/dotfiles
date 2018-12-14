@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class: MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
     }
 }

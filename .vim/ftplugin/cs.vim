@@ -32,8 +32,6 @@ command! -bar SettingXamarin call SettingXamarin()
 
 if IsXamarin()
   call SettingXamarin()
-else
-  autocmd BufWritePre *.cs silent! call OmniSharp#FixUsings()
 endif
 
 " Xamarin

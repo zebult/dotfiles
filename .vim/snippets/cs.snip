@@ -1,3 +1,9 @@
+snippet summary
+    /// <summary>
+    /// ${1}
+    /// </summary>
+    /// <param name="Id">${2}</param>
+    /// <returns>${3}</returns>
 snippet if
     if(${1})
     {
@@ -518,8 +524,8 @@ snippet random
     UnityEngine.Random.Range(0, ${1});
 snippet rand_percent
         float percent = 50;
-        float rand = UnityEngine.Random.Range(0, 100.0f);
-        bool isLottery = rand <= percent;
+        float rand = UnityEngine.Random.Range(0, 100.0f); // 0~99
+        bool isLottery = rand < percent;
 
 snippet /return
     /// <returns>${0}</returns>

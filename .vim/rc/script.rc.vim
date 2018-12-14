@@ -393,6 +393,7 @@ ca <silent> ls Lsh
 
 function! LogSearch()
   " norm /\c.*\<\(FATAL\|ERROR\|ERRORS\|FAIL\|FAILED\|FAILURE\).*
+   " \c.*\<\(FATAL\|ERROR\|ERRORS\|FAIL\|FAILED\|FAILURE\).*
 endfunction
 command! LogSearch call LogSearch()
 
