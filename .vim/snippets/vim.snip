@@ -31,3 +31,7 @@ snippet file_exist
     echo "packages.configが存在しません"
     return
   endif
+snippet if_null
+  if exists('foo')
+    echo "fooある"
+  endif

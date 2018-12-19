@@ -64,13 +64,6 @@ function! UsingDelete() abort
 endfunction
 command! -bar UsingDelete call UsingDelete()
 
-function! UncrustifyDelete() abort
-  augroup SaveGroup
-    autocmd!
-  augroup END
-endfunction
-command! -bar UncrustifyDelete call UncrustifyDelete()
-
 " nnoremap <Leader>r :QuickRun cs/mcs<CR>
 " nnoremap <Leader>r :QuickRunCS<CR>
 " function! QuickRunCS() abort

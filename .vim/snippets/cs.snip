@@ -37,7 +37,7 @@ snippet base_awake
         ${1}
     }
 snippet start
-    void Start()
+    private void Start()
     {
         ${1}
     }
@@ -55,7 +55,7 @@ snippet ondestroy
 snippet op
     override protected
 snippet update
-    void Update()
+    private void Update()
     {
         ${1}
     }
@@ -427,7 +427,8 @@ snippet conditional
     [System.Diagnostics.Conditional("${1:UNITY_EDITOR}")]
 snippet require
     [RequireComponent(typeof(${1}))]
-
+snippet time
+    Time.deltaTime
 snippet update_rx
     Observable
         .EveryUpdate()

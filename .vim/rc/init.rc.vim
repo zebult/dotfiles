@@ -138,6 +138,13 @@ augroup ReadGroup
     au BufRead * vnoremap <silent> <Leader>r :QuickRun -mode v<CR>
 augroup END
 
+function! SaveGroupDelete() abort
+  augroup SaveGroup
+    autocmd!
+  augroup END
+endfunction
+command! -bar SaveGroupDelete call SaveGroupDelete()
+
 " augroup HoldCursorGroup
 "     autocmd!
     " autocmd CursorHold * highlight TrailingSpaces term=underline guibg=darkblue ctermbg=darkblue
