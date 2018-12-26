@@ -242,7 +242,7 @@ macvim () {
 }
 
 memo () {
-    vim ~/Dropbox/Saichi/memo.txt
+    mvim ~/Dropbox/Saichi/memo.txt
 }
 
 v () {

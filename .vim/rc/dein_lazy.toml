@@ -230,8 +230,8 @@ hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 repo = 'haya14busa/vim-edgemotion'
 on_event = 'BufRead'
 hook_add = '''
-map gJ <Plug>(edgemotion-j)
-map gK <Plug>(edgemotion-k)
+map J <Plug>(edgemotion-j)
+map K <Plug>(edgemotion-k)
 '''
 
 # メタ文字含むとlightline壊れるので注意

@@ -303,11 +303,19 @@ snippet HideInInspector
     [HideInInspector]
 
 snippet position_relative
-    transform.position += new Vector3(0, ${1}, 0);
+    tlkansform.position += new Vector3(0, ${1}, 0);
+snippet position_absolute
+    transform.position = new Vector3(0, 10, 0);
+snippet rotation_relative
+    transform.Rotate(45, 90, 180);
 snippet rotation_absolute
     transform.rotation = Quaternion.Euler(0, {0}, 0);
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
+snippet move_position
+    float h = Input.GetAxis("Horizontal");
+    float v = Input.GetAxis("Vertical");
+    transform.position += new Vector3(h * Time.deltaTime, 0, v * Time.deltaTime);
 
 snippet preprocessor_macro
     #if ${1}
@@ -341,7 +349,7 @@ snippet ggetword
 snippet load_prefab
     Instantiate(Resources.Load ("Prefabs/${1}"));
 snippet load_prefab_full
-    Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.identity) as GameObject;
+    Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.Euler(0,0,0)) as GameObject;
 snippet load_prefab_gr
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/Scene/${1}"));
 snippet load_sprite_gr
