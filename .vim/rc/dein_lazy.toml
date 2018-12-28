@@ -5,9 +5,24 @@ repo = 'Shougo/unite.vim'
 on_cmd = 'Unite'
 hook_post_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
 
+# [[plugins]]
+# repo = 'Shougo/vimfiler.vim'
+# hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+# on_map = '<Leader>f'
+
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-hook_add = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+repo = 'Shougo/defx.nvim'
+if = "has('nvim')"
+on_map = '<Leader>f'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = "!has('nvim')"
+on_map = '<Leader>f'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = "!has('nvim')"
 on_map = '<Leader>f'
 
 # [[plugins]]

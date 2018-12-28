@@ -236,12 +236,12 @@ noremap <Bar> =
 vnoremap <silent> p "0p
 
 " neovim terminal mapping
-if has('nvim')
-  " 新しいタブでターミナルを起動
-  nnoremap @t :tabe<CR>:terminal<CR>
-  " Ctrl + q でターミナルを終了
-  tnoremap <C-q> <C-\><C-n>:q<CR>
-  " ESCでターミナルモードからノーマルモードへ
-  tnoremap <ESC> <C-\><C-n>
-  tnoremap jj <C-\><C-n>
-endif
+" if has('nvim')
+" 新しいタブでターミナルを起動
+nnoremap @t :tabe<CR>:terminal<CR>
+" Ctrl + q でターミナルを終了
+tnoremap <C-q> <C-\><C-n>:q<CR>
+" ESCでターミナルモードからノーマルモードへ
+tnoremap <ESC> <C-\><C-n>
+" tnoremap jj <C-\><C-n>
+" endif

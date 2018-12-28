@@ -134,6 +134,7 @@ snippet foreach_linq
 snippet array
     var array = new string[] {"いち", "に", "さん"};
     var array = new string[3];
+    array[0] = "hoge";
 snippet list
     var list = new List<T>();
     var list = Enumerable.Repeat("a", 20).ToList();
@@ -211,10 +212,6 @@ snippet voids
     }
 snippet voidr
     protected void ${1}()
-    {
-    }
-snippet bool
-    private bool ${1}()
     {
     }
 snippet init
@@ -450,6 +447,10 @@ snippet update_rx_distinctuntilchanged
             ${2}
         })
         .AddTo(this);
+snippet update_keycode
+        this.UpdateAsObservable()
+        .Where(_ => Input.GetKey(KeyCode.Z))
+        .Subscribe(_ => ${1});
 snippet Subscribe
     .Subscribe(_ => {
         ${1}
