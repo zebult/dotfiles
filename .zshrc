@@ -182,6 +182,7 @@ alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 
 alias cp='cp -rc'
 alias cdn='peco-tree-vim'
+alias rm='rm -rf'
 
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'

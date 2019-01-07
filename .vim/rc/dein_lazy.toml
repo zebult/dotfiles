@@ -141,6 +141,10 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # '''
 
 [[plugins]]
+repo = 'mattn/benchvimrc-vim'
+on_map = '<C-a>'
+
+[[plugins]]
 repo = 'tpope/vim-speeddating'
 on_map = '<C-a>'
 
