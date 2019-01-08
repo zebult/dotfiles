@@ -81,6 +81,9 @@ snippet log_err
     Debug.LogError(${1});
 snippet log_c
     Console.WriteLine(${1});
+snippet debug_vector
+    var f = transform.forward;
+    Instantiate(Resources.Load("Prefabs/3D_Model/00_Mock/boat_T/boatdummy"), transform.position, Quaternion.Euler(f.x, f.y, f.z));
 snippet contain
     bool isContain = ${1:string}.Contains("${1:word}")
 snippet contain_string_index
@@ -540,6 +543,8 @@ snippet rand_percent
 snippet /return
     /// <returns>${0}</returns>
 
+snippet encode
+    string str = Uri.EscapeDataString("テスト");
 snippet www
     StartCoroutine(DownloadStart(url));
     IEnumerator DownloadStart(string Url)
@@ -685,6 +690,11 @@ snippet str_to_stringreader
         return result;
 snippet str_to_dic
     Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json}) as Dictionary<string, object>;
+snippet str_for
+    for (int i = 0; i < str.Length; i++)
+    {
+        Console.WriteLine(str[i]);
+    }
 snippet enum_to_int
     (int)${1:enum};
 snippet enum_to_str

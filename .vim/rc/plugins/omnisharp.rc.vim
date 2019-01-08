@@ -1,5 +1,13 @@
 let g:OmniSharp_selector_ui = 'unite'
 
+" サーバー設定
+" let g:OmniSharp_server_type='roslyn'
+" let g:OmniSharp_server_path = '~/workspace/cs/omnisharp-roslyn/artifacts/publish/OmniSharp.Http.Driver/mono/OmniSharp.exe'
+" let g:OmniSharp_server_path = '~/.cache/dein/repos/github.com/yucchiy/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_type='v1'
+" let g:OmniSharp_server_path = '~/.cache/dein/repos/github.com/OmniSharp/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe'
+" let g:OmniSharp_server_use_mono = 1
+
 " vim終了する度サーバー終了するので手動にする
 let g:Omnisharp_start_server = 0
 let g:Omnisharp_stop_server  = 0

@@ -159,7 +159,7 @@ alias master="git checkout master"
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
-# alias vi=vim -u NONE --noplugin
+alias vi=vim -u NONE --noplugin
 alias mvim='macvim'
 alias vimm='vim **/*'
 alias cal='vim -c "Cal"'
@@ -183,6 +183,8 @@ alias prov='cd ~/Library/MobileDevice/Provisioning\ Profiles/'
 alias cp='cp -rc'
 alias cdn='peco-tree-vim'
 alias rm='rm -rf'
+
+# alias python=python2
 
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
