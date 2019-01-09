@@ -184,8 +184,6 @@ alias cp='cp -rc'
 alias cdn='peco-tree-vim'
 alias rm='rm -rf'
 
-# alias python=python2
-
 alias vtr='vim <(tree)'
 alias ouch='say -v Alex "ouch"'
 alias tokyo='curl wttr.in/Tokyo'

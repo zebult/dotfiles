@@ -14,6 +14,7 @@ hook_post_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
 repo = 'Shougo/defx.nvim'
 if = "has('nvim')"
 on_map = '<Leader>f'
+hook_add = 'source ~/.vim/rc/plugins/defx.rc.vim'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'

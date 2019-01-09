@@ -355,7 +355,7 @@ snippet load_prefab_gr
 snippet load_sprite_gr
     Instantiate(GRResourceCommon.LoadSprite("Prefabs/Scene/${1}"));
 snippet load_scene
-    using UnityEngine.SceneManagement; 
+    using UnityEngine.SceneManagement;
     SceneManager.LoadScene ("${1}");
 snippet scene_name
     string sceneName = SceneManager.GetActiveScene ().name;
@@ -366,6 +366,8 @@ snippet load_scene_gr
 snippet load_scene_multi_gr
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
 
+snippet system
+    using System;
 snippet linq
     using System.Linq;
 snippet ui
@@ -496,7 +498,12 @@ snippet tween_move
 snippet tween_int
     DOTween.To(() => ${1:initialValue}, (n) => ${2:value} = n, ${3:finalValue}, ${4:duration});
     .OnComplete(() => ${5});
-
+snippet tween_member
+    private Tween HogeTween;
+    HogeTween.Kill();
+snippet observable_member
+    private IDisposable HogeObservable;
+    HogeObservable.Dispose();
 snippet color
     var color = new Color(.0f, .0f, .0f, .0f);
 snippet readonly
@@ -742,7 +749,7 @@ snippet create_json_list
     };
     string json = MiniJSON.Json.Serialize(<|1|>);
 
-snippet system
+snippet shell
     Process.Start("pwd");
 
 snippet bash
