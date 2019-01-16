@@ -1,7 +1,7 @@
 nnoremap [denite] <Nop>
 nmap " [denite]
 
-nnoremap <Bslash> :Denite 
+" nnoremap <Bslash> :Denite 
 
 nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
 vnoremap <silent> so <Esc>:vs<CR><C-w>l:Denite -highlight-mode-insert=Search file_rec<CR>

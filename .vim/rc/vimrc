@@ -60,6 +60,7 @@ call s:source_rc('dict.rc.vim')
 call s:source_rc('script.rc.vim')
 " call s:source_rc('tmp.vim')
 call s:source_rc('util.rc.vim')
+call s:source_rc('todo.rc.vim')
 call s:source_rc('playground.rc.vim')
 
 let s:InsertGroupFlag = 0
@@ -73,7 +74,6 @@ function! InitInsertGroup() abort
   if s:InsertGroupFlag == 0
     let s:InsertGroupFlag = 1
 
-    call s:source_rc('todo.rc.vim')
     call s:source_rc('macro.rc.vim')
   endif
 endfunction

@@ -318,13 +318,16 @@ hook_add = 'source ~/.vim/rc/plugins/eskk.rc.vim'
 # repo = 'thinca/vim-ref'
 # hook_add = 'source ~/.vim/rc/plugins/ref.rc.vim'
 
+# <Return> input
+# f hint
+# <Tab> move link
 [[plugins]]
 repo = 'yuratomo/w3m.vim'
 hook_add = '''
 let g:w3m#external_browser = 'google-chrome'
-nnoremap <Leader>B :W3mTab google<CR>
+nnoremap <Leader>g :W3m google 
 '''
-on_map = '<Leader>B'
+on_map = '<Leader>g'
 
 # TODO: can not use python3
 [[plugins]]
@@ -359,7 +362,8 @@ on_event = 'BufRead'
 [[plugins]]
 repo = 'itchyny/calendar.vim'
 hook_add = 'source ~/.vim/rc/plugins/calendar.rc.vim'
-on_i = 1
+on_cmd = ['Calendar']
+# on_i = 1
 
 # file shaping(:Align =)
 [[plugins]]
@@ -462,6 +466,16 @@ hook_add = '''
 let g:previm_open_cmd = 'open -a Safari'
 autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 '''
+
+# Nodejs ---------------------------
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = 'js'
+
+[[plugins]]
+repo = 'moll/vim-node'
+on_ft = 'js'
 
 # Swift ---------------------------
 

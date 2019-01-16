@@ -25,5 +25,6 @@ endif
 let g:ale_sh_shellcheck_options = '-e SC1090,SC2059,SC2155,SC2164'
 
 let g:ale_linters = {
-\ 'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp'],
+\ 'javascript': ['eslint'],
 \}
