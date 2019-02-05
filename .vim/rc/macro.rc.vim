@@ -87,7 +87,7 @@ function! s:PrivateFieldToEntity() abort
     let repl = substitute(getline('.'),'public','','g')
     call setline(line("."), repl)
 
-    normal w"zyiw"0ciwEntity.l"0x$i = ("zp$iRow["^f.lyiwf"pviwC
+    normal w"zyiw"0ciwEntity.l"0x$i = ("zp$irow["^f.lyiwf"pviwC
 
     let repl = substitute(getline('.'),'(float)','System.Convert.ToSingle(','g')
     call setline(line("."), repl)

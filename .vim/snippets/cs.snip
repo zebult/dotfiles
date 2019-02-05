@@ -303,13 +303,13 @@ snippet HideInInspector
     [HideInInspector]
 
 snippet position_relative
-    tlkansform.position += new Vector3(0, ${1}, 0);
+    tlkansform.position += new Vector3(0, ${0}, 0);
 snippet position_absolute
     transform.position = new Vector3(0, 10, 0);
 snippet rotation_relative
     transform.Rotate(45, 90, 180);
 snippet rotation_absolute
-    transform.rotation = Quaternion.Euler(0, {0}, 0);
+    transform.rotation = Quaternion.Euler(0, ${0}, 0);
 snippet scale_absolute
     transform.localScale = new Vector3 (${1:value}, <|1|>, <|1|>);
 snippet move_position
@@ -352,6 +352,8 @@ snippet load_prefab_full
     Instantiate(Resources.Load("Prefabs/${1}"), new Vector3(0,0,0), Quaternion.Euler(0,0,0)) as GameObject;
 snippet load_prefab_gr
     Instantiate(GRResourceCommon.LoadPrefab("Prefabs/Scene/${1}"));
+snippet load_texture_gr
+    GRResourceCommon.LoadTexture("Prefabs/Scene/${1}");
 snippet load_sprite_gr
     Instantiate(GRResourceCommon.LoadSprite("Prefabs/Scene/${1}"));
 snippet load_scene
@@ -493,6 +495,12 @@ snippet pair
     var pair = new Pair <int> (1, 2);
     pair.Previous = 3;
     pair.Current = 4;
+    // pair使いたいときはstruct使おう
+snippet messagebroker
+    MessageBroker.Default.Publish <Unit>(Unit.Default);
+    MessageBroker.Default.Receive <Unit>().Subscribe(_ => {
+        Destroy(gameObject);
+    }).AddTo(this);
 snippet tween_move
     obj.transform.DOLocalMove(position, time)
     .OnComplete(() => {
@@ -542,6 +550,10 @@ snippet safacall
     GRUtil.SafeCall(${1})
 snippet subject
     public Subject <${1}> ${2}Subject = new Subject <<|1|>>();
+    <|2|>Subject.onNext(Unit.Default)
+    <|2|>Subject
+    .Subscribe(_ => )
+    .AddTo(this);
 snippet random
     UnityEngine.Random.Range(0, ${1});
 snippet rand_percent
@@ -639,6 +651,10 @@ snippet str_format
     string.Format("{0}", hoge)
 snippet str_isnullorempty
     if (string.IsNullOrEmpty(${1:str}))
+snippet str_builder
+        var stringBuilder = new StringBuilder();
+        stringBuilder.Append("hoge");
+        stringBuilder.ToString();
 snippet find_index
     ${1:str}.IndexOf(${2:target});
 snippet split

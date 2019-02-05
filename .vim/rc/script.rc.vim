@@ -402,6 +402,11 @@ function! LogOnly()
 endfunction
 command! LogOnly call LogOnly()
 
+function! Google()
+  W3m google 
+endfunction
+command! Google call Google()
+
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
 " endfunction

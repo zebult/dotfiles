@@ -1,5 +1,5 @@
 nnoremap [denite] <Nop>
-nmap " [denite]
+" nmap " [denite]
 
 " nnoremap <Bslash> :Denite 
 
