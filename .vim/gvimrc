@@ -17,7 +17,8 @@ set guioptions-=b
 if has('mac')
    set guifont=Ricty\ Regular\ for\ Powerline:h12
    " フォーカス時以外透明度上げる
-   " autocmd FocusGained * set transparency=10
+   " autocmd FocusGained * set transparency=15
+   " autocmd FocusLost * set transparency=15
    autocmd FocusLost * set transparency=0
    autocmd FocusGained * set transparency=0
    " 暗い背景色用の配色を使う?

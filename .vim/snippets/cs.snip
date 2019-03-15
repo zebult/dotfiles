@@ -368,6 +368,9 @@ snippet load_scene_gr
 snippet load_scene_multi_gr
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
 
+snippet save
+    GD.M.SavePlayerData();
+
 snippet system
     using System;
 snippet generic
@@ -497,9 +500,11 @@ snippet pair
     pair.Current = 4;
     // pair使いたいときはstruct使おう
 snippet messagebroker
-    MessageBroker.Default.Publish <Unit>(Unit.Default);
-    MessageBroker.Default.Receive <Unit>().Subscribe(_ => {
-        Destroy(gameObject);
+    MessageBroker.Default.Publish <string>("Hoge");
+    MessageBroker.Default.Receive <string>()
+    .Where(x == "Hoge")
+    .Subscribe(x => {
+        Debug.Log("hoge");
     }).AddTo(this);
 snippet tween_move
     obj.transform.DOLocalMove(position, time)
@@ -546,6 +551,11 @@ snippet button
     .AddTo(this);
 snippet button_change_image
     buttonObject.GetComponent<Image> ().sprite = Resources.Load ("Textures/item5", typeof(Sprite)) as Sprite;
+snippet texture_change
+    GetComponent <Renderer>().material.mainTexture = GRResourceCommon.LoadTexture("Prefabs/Scene/");
+snippet object_size
+    var bounds = GetComponent <MeshFilter>().mesh.bounds;
+    float size = bounds.size.z * transform.localScale.z;
 snippet safacall
     GRUtil.SafeCall(${1})
 snippet subject
@@ -829,4 +839,23 @@ snippet x_ios
             break;
         default:
             break;
+    }
+
+snippet generic
+    public List <T> Build <T>() where T : AbstractFactoryModel, new()
+    {
+        var factoryModelList  = new List <T>();
+        var type              = typeof(T) == typeof(SameFactoryModel) ? ObjectType.Same : ObjectType.Food;
+        var factoryEntityList = SVC.Entity.GetObjectFactoryList(this.Key, type);
+
+        for (int i = 0; i < factoryEntityList.Count; i++)
+        {
+            var model = new T();
+            model.Init(factoryEntityList[i], FactoryObject, PlayerSame, InitCount);
+
+            factoryModelList.Add(model);
+        }
+
+
+        return factoryModelList;
     }
