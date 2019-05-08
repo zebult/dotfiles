@@ -1,6 +1,7 @@
 nnoremap [denite] <Nop>
+" nmap \ [denite]
+" nmap <Bslash> [denite]
 " nmap " [denite]
-
 " nnoremap <Bslash> :Denite 
 
 nnoremap <silent> so :<C-u>Denite -highlight-mode-insert=Search file_rec<CR>
@@ -15,10 +16,10 @@ nnoremap <silent> sO :<C-u>Denite -highlight-mode-insert=Search file_old<CR>
 nnoremap <silent> do :<C-u>Denite -highlight-mode-insert=Search buffer<CR>
 nnoremap <silent> sf :<C-u>Denite -highlight-mode-insert=Search outline<CR>
 
-nnoremap <silent> [denite]h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
-nnoremap <silent> [denite]H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
-nnoremap <silent> [denite]f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
-nnoremap <silent> [denite]y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
+nnoremap <silent> \h :<C-u>Denite -highlight-mode-insert=Search help<CR><C-w>o
+nnoremap <silent> \H :<C-u>DeniteCursorWord -highlight-mode-insert=Search help<CR><C-w>o
+nnoremap <silent> \f  :<C-u>Denite -highlight-mode-insert=Search filetype<CR>
+nnoremap <silent> \y  :<C-u>Denite -highlight-mode-insert=Search neoyank<CR>
 
 " カーソルキー, cn, cpで移動
 call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')

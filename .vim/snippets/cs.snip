@@ -364,7 +364,7 @@ snippet scene_name
 snippet load_scene_prefab_gr
     OGM.I.ChangeScenePrefab(GRSceneManager.MainScene.${1});
 snippet load_scene_gr
-    GRSceneManager.Instance.ChangeScene(GRSceneManager.MainScene.${1});
+    GRSceneManager.Instance.LoadScene(GRSceneManager.SceneName.InGame);
 snippet load_scene_multi_gr
     GRSceneManager.Instance.ChangeMultiScene(GRSceneManager.MainScene.${1}, GM.I.GetParam("transition_speed"));
 
@@ -706,6 +706,7 @@ snippet str_to_float
     Convert.ToSingle(${1:str})
 snippet json_lib_JsonNode
     JsonNode json = JsonNode.Parse(text);
+    string val = json["stage"]["0"]["bgm"].Get<string>();
 snippet json_lib_Newtonsoft
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
@@ -724,7 +725,9 @@ snippet str_to_stringreader
         }
         return result;
 snippet str_to_dic
-    Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json}) as Dictionary<string, object>;
+    Dictionary<string, object> dic = MiniJSON.Json.Deserialize(${1:json_str}) as Dictionary<string, object>;
+snippet str_to_byte
+    System.Text.Encoding.UTF8.GetBytes(${1:str});
 snippet str_for
     for (int i = 0; i < str.Length; i++)
     {
@@ -761,21 +764,15 @@ snippet json_get_array
         int rank = (int) (ranking["rank"].Get <long>());
     }
 
-snippet create_json_str
+snippet json_create_from_dic
     using MiniJSON;
     var ${1:dic} = new Dictionary<string, object>()
     {
         { "hoge", "hoge" },
     };
     string json = Json.Serialize(<|1|>);
-snippet create_json_str_raw
+snippet json_create_from_str
     string jsonStr = "{ \"id\": 100, \"name\": \"テストアイテム\", \"description\": \"説明だよ\" }";
-snippet create_json_list
-    var ${1:dic} = new Dictionary<string, object>()
-    {
-        { "hoge", "hoge" },
-    };
-    string json = MiniJSON.Json.Serialize(<|1|>);
 
 snippet shell
     Process.Start("pwd");
