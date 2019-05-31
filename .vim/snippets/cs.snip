@@ -502,7 +502,7 @@ snippet pair
 snippet messagebroker
     MessageBroker.Default.Publish <string>("Hoge");
     MessageBroker.Default.Receive <string>()
-    .Where(x == "Hoge")
+    .Where(x => x == "Hoge")
     .Subscribe(x => {
         Debug.Log("hoge");
     }).AddTo(this);
