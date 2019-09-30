@@ -113,7 +113,7 @@ augroup SaveGroup
     endif
 
     autocmd BufWritePre *.cs call Uncrustify('cs')
-    autocmd BufWritePre *.cs call OmniSharp#FixUsings()
+    " autocmd BufWritePre *.cs call OmniSharp#FixUsings()
 
     autocmd BufWritePre *.cpp call Uncrustify('cpp')
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
