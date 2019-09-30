@@ -479,6 +479,19 @@ on_ft = ['cs', 'csi', 'csx']
 repo = 'udalov/kotlin-vim'
 on_ft = 'kotlin'
 
+# HTML ---------------------------
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = 'html'
+
+[[plugins]]
+repo = 'tell-k/vim-browsereload-mac'
+on_ft = 'html'
+hook_add = '''
+    let g:returnApp = "Alacritty"
+'''
+
 # Markdown ---------------------------
 
 # syntax hilight
