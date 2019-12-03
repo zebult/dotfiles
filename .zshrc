@@ -38,9 +38,10 @@ export PATH=$PATH:$HOME/.go/bin
 # MacPorts command
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
-
 # Xamarin
 export PATH=$PATH:$HOME/tee
+# node js
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # cocos2d-x
 # COCOS_VERSION="3.11.1"
@@ -158,7 +159,7 @@ alias master="git checkout master"
 
 alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
-alias vim=nvim
+# alias vim=nvim
 alias vi="vim -u NONE --noplugin"
 alias mvim='macvim'
 alias vimm='vim **/*'
@@ -271,7 +272,7 @@ mkcd() {
 }
 
 # prezto
-unalias gg
+# unalias gg
 gg() {
     # alias gg="gst; git add .; git commit -m"
     gst
@@ -412,7 +413,7 @@ checkRecentLog() {
     glo -2
 }
 
-unalias gco
+# unalias gco
 gco()  {
    git checkout $@
 
@@ -523,6 +524,16 @@ peco-tree-vim(){
 }
 zle -N peco-tree-vim
 bindkey '^n' peco-tree-vim
+
+peco-tree-vim-cs(){
+  local SELECTED_FILE=$(tree --charset=o -i -f | grep \.cs$ | peco | xargs echo)
+  if [ ! -z $SELECTED_FILE ] ; then
+      BUFFER="vim $SELECTED_FILE"
+  fi
+  zle accept-line
+}
+zle -N peco-tree-vim-cs
+bindkey '^t' peco-tree-vim-cs
 
 agv(){
   local SELECTED_FILE=$(ag -l $1 | peco | xargs echo)
@@ -675,13 +686,13 @@ bindkey '^y' memodiary
 # zle -N todolist
 # bindkey '^t' todolist
 
-memoGlobal() {
-    BUFFER='vim -c "Org"'
-    # BUFFER="vim ~/Dropbox/Saichi/memo.txt"
-    zle accept-line
-}
-zle -N memoGlobal
-bindkey '^t' memoGlobal
+# memoGlobal() {
+#     BUFFER='vim -c "Org"'
+#     # BUFFER="vim ~/Dropbox/Saichi/memo.txt"
+#     zle accept-line
+# }
+# zle -N memoGlobal
+# bindkey '^t' memoGlobal
 
 zshrcopen() {
     BUFFER="vim ~/.zshrc"
@@ -728,3 +739,4 @@ PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "!
 PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
 
 # export LC_ALL="en_US.UTF-8"
+export PATH="/usr/local/opt/gettext/bin:$PATH"

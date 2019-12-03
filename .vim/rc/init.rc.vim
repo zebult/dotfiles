@@ -112,7 +112,7 @@ augroup SaveGroup
       autocmd BufWritePost * GitGutter
     endif
 
-    autocmd BufWritePre *.cs call Uncrustify('cs')
+    " autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs call OmniSharp#FixUsings()
 
     autocmd BufWritePre *.cpp call Uncrustify('cpp')
@@ -125,6 +125,8 @@ augroup SaveGroup
     autocmd BufWritePre *.swift call SubMark()
 
     autocmd BufWritePre *.json call JsonPretty()
+
+    autocmd BufWritePre *.py CocCommand python.runLinting
 augroup END
 
 augroup ReadGroup

@@ -271,11 +271,11 @@ function! UnityLog() abort
 endfunction
 command! -bar UnityLog call UnityLog()
 
-function! MemoDiary() abort
-  let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
-  execute 'vs '.memo_path
-endfunction
-command! -bar MemoDiary call MemoDiary()
+" function! MemoDiary() abort
+"   let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
+"   execute 'vs '.memo_path
+" endfunction
+" command! -bar MemoDiary call MemoDiary()
 
 function! Hoge() abort
   " TODO Dl, Dh で日付前後してメモ開く
@@ -291,10 +291,10 @@ function! Hoge() abort
 endfunction
 command! -bar Hoge call Hoge()
 
-function! MemoDone() abort
-  execute 'vs ~/Dropbox/Saichi/done.md'
-endfunction
-command! -bar MemoDone call MemoDone()
+" function! MemoDone() abort
+"   execute 'vs ~/Dropbox/Saichi/done.md'
+" endfunction
+" command! -bar MemoDone call MemoDone()
 
 function! SplitPanel() abort
   if IsNewBuffer()
