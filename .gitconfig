@@ -6,16 +6,19 @@
     ignorecase = false
     editor = nvim
 [diff]
-    tool = vimdiff
+	tool = vimdiff
     editor = nvim
 [difftool]
-    prompt = false
+	prompt = false
+	trustExitCode = true
 [diff "image"]
     # command = ~/.bin/sh/git-imgdiff
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [mergetool]
     keepBackup = false
+	prompt = false
+	trustExitCode = true
 [color]
     ui = true
 [alias]

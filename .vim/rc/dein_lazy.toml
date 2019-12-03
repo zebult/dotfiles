@@ -2,8 +2,14 @@
 # vimfier need
 [[plugins]]
 repo = 'Shougo/unite.vim'
-on_cmd = 'Unite'
+# on_map = 'so'
+on_map = ['so','sO']
+# on_cmd = 'Unite'
 hook_post_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_map = 'sO'
 
 # [[plugins]]
 # repo = 'Shougo/vimfiler.vim'
@@ -16,15 +22,15 @@ if = "has('nvim')"
 on_map = '<Leader>f'
 hook_add = 'source ~/.vim/rc/plugins/defx.rc.vim'
 
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-if = "!has('nvim')"
-on_map = '<Leader>f'
+# [[plugins]]
+# repo = 'roxma/nvim-yarp'
+# if = "!has('nvim')"
+# on_map = '<Leader>f'
 
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if = "!has('nvim')"
-on_map = '<Leader>f'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
+# if = "!has('nvim')"
+# on_map = '<Leader>f'
 
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
@@ -47,7 +53,6 @@ repo = 'Shougo/neosnippet'
 on_i = 1
 hook_add = '''
 " <C-k>でsnippetの展開
-let g:neosnippet#snippets_directory='~/.vim/snippets/,~/Dropbox/Saichi/Vim/Private/snippets'
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -172,7 +177,7 @@ nnoremap s; :ZoomWin<CR>
 repo = 'agatan/vim-vlack'
 # on_event = 'BufRead'
 on_i = 1
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/slack.rc.vim'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/slack.rc.vim'
 
 [[plugins]]
 repo = 'gregsexton/gitv'
@@ -225,10 +230,11 @@ hook_post_source = '''
 call tcomment#DefineType('objc', '// %s')
 '''
 hook_add = '''
-"let g:tcommentMapLeader1 = '<F12>'
-let g:tcommentMapLeader1 = '<C-b>'
-let g:tcommentMapLeaderOp1 = 'gc'
-let g:tcommentMapLeaderOp2 = 'gC'
+let g:tcomment_opleader1 = '<F12>'
+" let g:tcomment_opleader1 = '<C-b>'
+let g:tcomment_mapleader1 = 'gc'
+let g:tcomment_mapleader2 = 'gC'
+noremap mm :TComment<CR>
 '''
 
 # Need to `brew install global`
@@ -430,14 +436,14 @@ hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 # [deoplete]大量エラー発生時: monoの準備終わってない(Solution has finished loadingが呼ばれたらok)
 # repo = 'OmniSharp/omnisharp-vim'
 
-[[plugins]]
-repo = 'yucchiy/omnisharp-vim'
-on_ft =  ['cs', 'csi', 'csx']
-hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
-# depends = ['vim-dispatch']
-# windows = 'msbuild server/OmniSharp.sln'
-# mac     = 'xbuild server/OmniSharp.sln'
-# unix    = 'xbuild server/OmniSharp.sln'
+# [[plugins]]
+# repo = 'yucchiy/omnisharp-vim'
+# on_ft =  ['cs', 'csi', 'csx']
+# hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
+# # depends = ['vim-dispatch']
+# # windows = 'msbuild server/OmniSharp.sln'
+# # mac     = 'xbuild server/OmniSharp.sln'
+# # unix    = 'xbuild server/OmniSharp.sln'
 
 [[plugins]]
 repo = 'zebult/univim'

@@ -43,10 +43,10 @@ endif
 " set cursorcolumn
 " hi CursorColumn term=bold cterm=NONE ctermfg=NONE ctermbg=236
 " サーチ色変更
-" hi Search ctermbg=darkgreen guibg=darkgreen
-" hi IncSearch ctermfg=darkgreen guifg=darkgreen
+hi Search ctermbg=darkgreen guibg=darkgreen
+hi IncSearch ctermfg=darkgreen guifg=darkgreen
 " 検索をハイライトする
-" set hlsearch
+set hlsearch
 " 選択した範囲文字色
 hi Visual ctermfg=red guifg=red
 " 行番号
@@ -65,7 +65,7 @@ hi SpecialKey ctermfg=blue
 hi SpellBad ctermbg=NONE cterm=undercurl ctermfg=darkred
 " Qf sign
 " hi Error ctermfg=darkgray guifg=darkgray ctermbg=darkred guibg=darkred
-hi Error ctermfg=darkred guifg=darkred ctermbg=none guibg=none
+hi Error ctermfg=darkred guifg=darkred ctermbg=NONE guibg=NONE
 " sytastic
 hi ErrorMsg ctermfg=darkgray guifg=darkgray
 " lightblue

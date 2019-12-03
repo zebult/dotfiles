@@ -106,12 +106,37 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+if = "!has('gui_running')"
+build = './install.sh nightly'
+hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
+
+[[plugins]]
+repo = 'coc-extensions/coc-omnisharp'
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-roslyn'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+hook_add = 'source ~/.vim/rc/plugins/deol.rc.vim'
+
+[[plugins]]
+repo = 'zxqfl/tabnine-vim'
+
 # [[plugins]]
 # repo = 'rhysd/accelerated-jk'
 # hook_source = '''
 #     nmap j <Plug>(accelerated_jk_gj)
 #     nmap k <Plug>(accelerated_jk_gk)
 # '''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+    let g:ctrlp_map = '<c-\>'
+'''
 
 [[plugins]]
 repo = 'mattn/benchvimrc-vim'
@@ -162,13 +187,13 @@ repo = 'mattn/googlesuggest-complete-vim'
 [[plugins]]
 repo = 'kana/vim-metarw'
 
-[[plugins]]
-repo = 'zebult/vim-metarw-redmine'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
-
-[[plugins]]
-repo = 'zebult/vim-metarw-trello'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
+# [[plugins]]
+# repo = 'zebult/vim-metarw-redmine'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-redmine.rc.vim'
+#
+# [[plugins]]
+# repo = 'zebult/vim-metarw-trello'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
 
 # [[plugins]]
 # repo = 'basyura/unite-yarm'
@@ -189,9 +214,9 @@ hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-trello.rc.vim'
 #     let g:redmine_auth_key  = ''
 # '''
 
-[[plugins]]
-repo = 'emonkak/vim-metarw-gist'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-gist.rc.vim'
+# [[plugins]]
+# repo = 'emonkak/vim-metarw-gist'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/vim-metarw-gist.rc.vim'
 
 [[plugins]]
 repo = 'joker1007/vim-metarw-qiita'
@@ -204,9 +229,9 @@ let g:qiita_token='xxxxxx'
 repo = 'mattn/vim-metarw-gdrive'
 hook_add = 'source ~/.vim/rc/plugins/gdrive.rc.vim'
 
-[[plugins]]
-repo = 'mattn/vim-metarw-simplenote'
-hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
+# [[plugins]]
+# repo = 'mattn/vim-metarw-simplenote'
+# hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 
 [[plugins]]
 repo = 'mattn/vimplenote-vim'
@@ -468,10 +493,10 @@ on_ft = ['cs', 'csi', 'csx']
 # unix    = 'xbuild server/OmniSharp.sln'
 # hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 
-[[plugins]]
-repo = 'dimixar/deoplete-omnisharp'
-depends = ['deoplete.nvim']
-on_ft = ['cs', 'csi', 'csx']
+# [[plugins]]
+# repo = 'dimixar/deoplete-omnisharp'
+# depends = ['deoplete.nvim']
+# on_ft = ['cs', 'csi', 'csx']
 
 # Kotlin ---------------------------
 

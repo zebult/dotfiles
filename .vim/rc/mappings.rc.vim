@@ -11,6 +11,7 @@ function! MinimumMapping() abort
   noremap ;  :
   noremap :  ;
   inoremap jj <ESC><ESC><ESC>
+  inoremap jf <ESC><ESC><ESC>
   nnoremap <Tab> %
   vnoremap <Tab> %
   nnoremap <F11> <C-i>
@@ -26,10 +27,11 @@ command -bar InitMapping call InitMapping()
 
 MinimumMapping
 
-nnoremap <Backspace> <C-o>
+" nnoremap <Backspace> <C-o>
+nnoremap <Backspace> <C-i>
 nnoremap <Bslash> <C-i>
 nnoremap <C-k> <C-i>
-nnoremap <C-]> <C-i>
+" nnoremap <C-]> <C-i>
 
 nnoremap <silent> <ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:cex ""<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> 11 :e!<CR>
