@@ -25,3 +25,9 @@ call lexima#add_rule({'char': '[', 'input_after': ']'})
 call lexima#add_rule({'char': '[', 'input': '[', 'at': '\%#]'})
 " - |[ ] の場合は補完しない
 call lexima#add_rule({'char': '[', 'input': '[', 'at': '- \%#'})
+
+" lexma内部で<CR>上書きしているのでここで上書きする
+" inoremap <expr><CR>  pumvisible() ? "<C-n><C-y>" : "<CR>"
+" inoremap <expr><CR>  pumvisible() ? "\<C-y>"  : "\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
