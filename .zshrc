@@ -195,6 +195,7 @@ alias gdu="gdu"
 alias dufile="tree -ifF --si --noreport | sed -e 's/\[//g' -e 's/\]//g' -e 's/\.\// \.\//g' | grep -v /$ | sort -h"
 
 alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7777 --wallet-url http://127.0.0.1:5555'
+alias p='python3'
 # alias cleos="cleos -u http://nodeos:8888"
 # alias cleos="cleos -u https://api-kylin.eosasia.one"
 
