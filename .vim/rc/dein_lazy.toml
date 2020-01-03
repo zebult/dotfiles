@@ -1,5 +1,4 @@
-# Shougo: ---------------------------
-# vimfier need
+# Shougo: --------------------------- vimfier need
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = 'Unite'
@@ -225,8 +224,9 @@ hook_post_source = '''
 call tcomment#DefineType('objc', '// %s')
 '''
 hook_add = '''
-"let g:tcommentMapLeader1 = '<F12>'
-let g:tcommentMapLeader1 = '<C-b>'
+" ダッシュボード表示されたらmacのショートカット見直し
+let g:tcommentMapLeader1 = '<F12>'
+" let g:tcommentMapLeader1 = '<C-b>'
 let g:tcommentMapLeaderOp1 = 'gc'
 let g:tcommentMapLeaderOp2 = 'gC'
 '''

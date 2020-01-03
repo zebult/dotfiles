@@ -11,6 +11,7 @@ function! MinimumMapping() abort
   noremap ;  :
   noremap :  ;
   inoremap jj <ESC><ESC><ESC>
+  inoremap jk <ESC><ESC><ESC>
   nnoremap <Tab> %
   vnoremap <Tab> %
   nnoremap <F11> <C-i>

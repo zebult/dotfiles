@@ -112,8 +112,8 @@ if = "!has('gui_running')"
 build = './install.sh nightly'
 hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
 
-[[plugins]]
-repo = 'coc-extensions/coc-omnisharp'
+# [[plugins]]
+# repo = 'coc-extensions/coc-omnisharp'
 
 [[plugins]]
 repo = 'OmniSharp/omnisharp-roslyn'
@@ -123,6 +123,7 @@ repo = 'Shougo/deol.nvim'
 # hook_add = 'source ~/.vim/rc/plugins/deol.rc.vim'
 
 [[plugins]]
+if = "!has('gui_running')"
 repo = 'zxqfl/tabnine-vim'
 
 [[plugins]]

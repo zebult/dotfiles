@@ -52,7 +52,6 @@ endif
 " if dein#recache_runtimepath()
 "     call dein#recache_runtimepath()
 " endif
-
 " lazyにしても意味ないプラギン洗い出し
 function! s:check_lazy_plugins() abort
     let check_lazy_plugins = dein#check_lazy_plugins()
