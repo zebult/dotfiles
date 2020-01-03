@@ -510,6 +510,7 @@ on_ft = 'kotlin'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = 'html'
+hook_add = 'source ~/.vim/rc/plugins/emmet.rc.vim'
 
 [[plugins]]
 repo = 'tell-k/vim-browsereload-mac'

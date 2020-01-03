@@ -236,7 +236,7 @@ mc () {
 }
 
 vag () {
-    vim -p `ag $1 -l`
+    vim -p `ag $1 -l` -c /$1 -c "norm n"
 }
 
 macvim () {
