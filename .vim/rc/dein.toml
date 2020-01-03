@@ -106,6 +106,31 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 
 # Convenience Tools: ---------------------------
 
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+if = "!has('gui_running')"
+build = './install.sh nightly'
+hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
+
+[[plugins]]
+repo = 'coc-extensions/coc-omnisharp'
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-roslyn'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+# hook_add = 'source ~/.vim/rc/plugins/deol.rc.vim'
+
+[[plugins]]
+repo = 'zxqfl/tabnine-vim'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+    let g:ctrlp_map = '<c-\>'
+'''
+
 # [[plugins]]
 # repo = 'rhysd/accelerated-jk'
 # hook_source = '''

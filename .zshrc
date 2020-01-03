@@ -41,6 +41,8 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
 # Xamarin
 export PATH=$PATH:$HOME/tee
+# node js
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # cocos2d-x
 # COCOS_VERSION="3.11.1"
@@ -195,9 +197,13 @@ alias gdu="gdu"
 alias dufile="tree -ifF --si --noreport | sed -e 's/\[//g' -e 's/\]//g' -e 's/\.\// \.\//g' | grep -v /$ | sort -h"
 
 alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7777 --wallet-url http://127.0.0.1:5555'
-alias p='python3'
 # alias cleos="cleos -u http://nodeos:8888"
 # alias cleos="cleos -u https://api-kylin.eosasia.one"
+
+alias python="python3"
+alias p="python3"
+alias psh="python3 manage.py shell"
+alias prun="python3 manage.py runserver"
 
 set -o vi
 bindkey "jj" vi-cmd-mode
@@ -729,3 +735,4 @@ PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "!
 PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
 
 # export LC_ALL="en_US.UTF-8"
+export PATH="/usr/local/opt/gettext/bin:$PATH"

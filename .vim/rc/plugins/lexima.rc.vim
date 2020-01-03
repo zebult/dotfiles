@@ -1,5 +1,7 @@
 let g:lexima_enable_space_rules = 0
 
+inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " 記号のケツ側文字の背後をtabで取れるようにする
 " http://karubabu.hateblo.jp/entry/2017/05/24/190010
 call lexima#add_rule({'char': '<TAB>', 'at': '\%#)', 'leave': 1})

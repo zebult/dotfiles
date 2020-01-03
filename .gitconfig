@@ -10,12 +10,14 @@
     editor = nvim
 [difftool]
     prompt = false
+    trustExitCode = true
 [diff "image"]
     # command = ~/.bin/sh/git-imgdiff
 [merge]
     tool = vimdiff
 [mergetool]
     keepBackup = false
+    trustExitCode = true
 [color]
     ui = true
 [alias]

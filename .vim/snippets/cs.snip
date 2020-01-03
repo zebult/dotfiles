@@ -111,7 +111,7 @@ snippet forl
 snippet ford
     foreach (KeyValuePair<string, string> pair in ${3:dict})
     {
-        ${4}
+        Debug.Log("key:" + pair.Key + ", value:" + pair.Value);
     }
 snippet forenum
     foreach (${1:enum} value in Enum.GetValues(typeof(<|1|>)))
@@ -188,6 +188,7 @@ snippet ismaster
 snippet yield
     yield return new WaitForSeconds(${1});
 snippet coroutine
+    StartCoroutine(${0});
     IEnumerator ${1}()
     {
         bool isWait = true;
@@ -573,6 +574,16 @@ snippet rand_percent
 
 snippet /return
     /// <returns>${0}</returns>
+
+snippet watch
+    System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+    sw.Start();
+    for(int i = 0; i < 60000; i ++){
+        for(int j = 0; j < 60000; j++){
+        }
+    }
+    sw.Stop();
+    Debug.Log(sw.ElapsedMilliseconds + "ms");
 
 snippet encode
     string str = Uri.EscapeDataString("テスト");
