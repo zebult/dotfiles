@@ -54,6 +54,8 @@ nnoremap <Up> 5k
 nnoremap <C-g> Vg?
 vnoremap <C-g> g?
 
+nnoremap <C-[> <C-i>
+
 noremap 8* *N
 
 noremap <C-e> 2<C-e>
@@ -140,6 +142,11 @@ nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Le
 
 nnoremap <silent> dn :<C-u>bnext<CR>
 nnoremap <silent> dp :<C-u>bprev<CR>
+
+nnoremap <silent> <C-n> :<C-u>bnext<CR>
+nnoremap <silent> <C-p> :<C-u>bprev<CR>
+" nnoremap <silent> <C-n> :NextStep<CR>
+" nnoremap <silent> <C-p> :PrevStep<CR>
 
 for n in range(1, 9)
   execute 'nnoremap <silent> '.n.'t :<C-u>tabnext'.n.'<CR>'
@@ -229,9 +236,6 @@ nnoremap <expr> 0
 
 " nnoremap <expr> 0
 " \  match(strpart(getline('.'), 0, col('.') - 1), '^\s\+$') >= 0 ? '0' : '^'
-
-nnoremap <silent> <C-n> :NextStep<CR>
-nnoremap <silent> <C-p> :PrevStep<CR>
 
 " マーク周りの改善
 noremap ' `

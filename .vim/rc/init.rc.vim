@@ -119,6 +119,8 @@ augroup SaveGroup
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
 
+    autocmd BufWritePre *.py call Autopep8()
+
     " autocmd BufWritePre *.mm call Uncrustify('mm')
 
     autocmd BufWritePre *.swift call Uncrustify('swift')

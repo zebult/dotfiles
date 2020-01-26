@@ -9,7 +9,7 @@ let g:lightline = {
             \   'right': [
             \      ['filetype'],
             \      ['line'],
-            \      ['syntastic', 'qfstatusline'],
+            \      ['my_task', 'syntastic', 'qfstatusline'],
             \    ],
             \ },
             \ 'inactive': {
@@ -22,6 +22,7 @@ let g:lightline = {
             \   'gitgutter': 'MyGitGutter',
             \   'my_filename': 'MyFileName',
             \   'syntastic': 'SyntasticStatuslineFlag',
+            \   'my_task': 'GetMyTask',
             \   'line_percent': 'LinePercent',
             \ },
             \ 'component_type': {
@@ -111,6 +112,16 @@ function! GetGitCleanStatusForCurrentFile()
     return "✱"
   endif
   return ""
+endfunction
+
+function! DoingSet(task) abort
+  let @t = a:task
+  e!
+endfunction
+command! -nargs=* -complete=customlist,CompleteBranch DoingSet call DoingSet(<f-args>)
+
+function! GetMyTask()
+  return "doing[".@t."]"
 endfunction
 
 " " 保存時Error時自動で更新し、表示する 同期処理で重いので不採用

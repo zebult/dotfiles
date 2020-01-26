@@ -443,8 +443,8 @@ hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 repo = 'zebult/univim'
 on_event = ['BufWrite']
 hook_add = '''
-autocmd FileType * nnoremap rr :<C-u>UnivimPlay<CR>
-autocmd FileType * nnoremap ff :<C-u>UnivimBuild<CR>
+autocmd FileType *.cs nnoremap rr :<C-u>UnivimPlay<CR>
+autocmd FileType *.cs nnoremap ff :<C-u>UnivimBuild<CR>
 nnoremap <Leader>ua :<C-u>UnivimMenu Build\ Project\ AllScene\ Android<CR>
 nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 "nnoremap <Leader>u/ :<C-u>UnivimFind<CR>
@@ -513,6 +513,17 @@ hook_add = 'source ~/.vim/rc/plugins/xcode-actions.rc.vim'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+on_event = ['BufWrite']
+
+# Python ---------------------------
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
+on_ft = 'python'
+hook_add = '''
+    let g:autopep8_on_save = 1
+    let g:autopep8_disable_show_diff=0
+    let g:autopep8_aggressive=1
+'''
 on_event = ['BufWrite']
 
 # Html ---------------------------

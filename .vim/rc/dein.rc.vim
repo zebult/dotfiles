@@ -24,6 +24,8 @@ if dein#load_state(s:dein_dir)
     let s:lazy_toml   = g:rc_dir . '/dein_lazy.toml'
     let s:plugin_toml = g:rc_dir . '/dein_plugin.toml'
 
+    let g:plugin_mode = 0
+
     " TOML を読み込み、キャッシュしておく
     if g:plugin_mode == 0
       echo "load plugin..."
@@ -44,14 +46,15 @@ if dein#check_install()
 endif
 
 " if dein#clear_state()
-"     call dein#clear_state()
+"   call dein#clear_state()
 " endif
 " if dein#check_update()
 "   call dein#update()
 " endif
 " if dein#recache_runtimepath()
-"     call dein#recache_runtimepath()
+"   call dein#recache_runtimepath()
 " endif
+
 " lazyにしても意味ないプラギン洗い出し
 function! s:check_lazy_plugins() abort
     let check_lazy_plugins = dein#check_lazy_plugins()

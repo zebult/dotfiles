@@ -438,6 +438,21 @@ function! Google()
 endfunction
 command! Google call Google()
 
+function! Kosu()
+  norm g0ysvPsvP
+  g/d/d
+  norm sh
+  g/h/d
+endfunction
+command! Kosu call Kosu()
+
+function! SumRegi()
+    echo sumit#count_selected_text()
+    " let result = sumit#count_selected_text()
+    " execute ":normal a " . result
+endfunction
+command! SumRegi call SumRegi()
+
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
 " endfunction

@@ -203,7 +203,10 @@ alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7
 alias python="python3"
 alias p="python3"
 alias psh="python3 manage.py shell"
-alias prun="python3 manage.py runserver"
+alias prun="python3 manage.py runserver 8000"
+alias pep="autopep8 -i **/*.py"
+alias pip2="~/.pyenv/shims/pip"
+alias pip="~/.pyenv/shims/pip3"
 
 set -o vi
 bindkey "jj" vi-cmd-mode
