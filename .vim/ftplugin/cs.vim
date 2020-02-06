@@ -77,4 +77,6 @@ command! -bar UsingDelete call UsingDelete()
 augroup cs_group
     autocmd!
     autocmd FileType cs set omnifunc=OmniSharp#Complete
+    autocmd FileType cs call BufferList()
+    autocmd FileType cs TagbarOpen
 augroup END

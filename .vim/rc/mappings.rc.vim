@@ -30,7 +30,7 @@ MinimumMapping
 nnoremap <Backspace> <C-o>
 nnoremap <Bslash> <C-i>
 nnoremap <C-k> <C-i>
-nnoremap <C-]> <C-i>
+nnoremap <C-m> <C-i>
 
 nnoremap <silent> <ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:cex ""<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> 11 :e!<CR>
@@ -53,8 +53,6 @@ nnoremap <Up> 5k
 
 nnoremap <C-g> Vg?
 vnoremap <C-g> g?
-
-nnoremap <C-[> <C-i>
 
 noremap 8* *N
 

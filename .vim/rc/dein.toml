@@ -110,10 +110,11 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 repo = 'zebult/vim-bufferlist'
 hook_add = '''
 nnoremap <silent> 22 :call BufferList()<CR>
+nnoremap <silent> 33 :call BufferList()<CR>:TagbarToggle<CR>
 '''
-hook_post_source = '''
-call BufferList()
-'''
+# hook_post_source = '''
+# call BufferList()
+# '''
 
 [[plugins]]
 repo = 'TKNGUE/sum-it.vim'
