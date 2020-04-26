@@ -83,6 +83,7 @@ endfunction
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
 source ~/Dropbox/Saichi/Vim/Private/gdr.rc.vim
+source ~/Dropbox/Saichi/Vim/Private/util.rc.vim
 
 let g:metarw_alias = {
   \ 'myhome' : '~',

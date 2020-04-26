@@ -6,9 +6,10 @@ let g:show_calendar = 0
 "t today move
 "> change view
 
-nnoremap <Leader>c :call CalendarGoogle()<CR>
+" nnoremap <Leader>c :call CalendarGoogle()<CR>
+nnoremap <Leader>c :call CalendarEmpty()<CR>
 nnoremap <Leader>C :call CalendarEmpty()<CR>
-nnoremap <Leader>W :call CalenderWeek()<CR>
+" nnoremap <Leader>W :call CalenderWeek()<CR>
 
 function! CalendarEmpty() abort
   let g:calendar_google_calendar = 0

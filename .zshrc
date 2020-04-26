@@ -655,13 +655,13 @@ bindkey '^p' pwdcp
 # zle -N vimfiler
 # bindkey '^f' vimfiler
 
-sourcezshrc() {
-    echo 'source ~/.zshrc'
-    source ~/.zshrc
-    zle accept-line
-}
-zle -N sourcezshrc
-bindkey '^s' sourcezshrc
+# sourcezshrc() {
+#     echo 'source ~/.zshrc'
+#     source ~/.zshrc
+#     zle accept-line
+# }
+# zle -N sourcezshrc
+# bindkey '^s' sourcezshrc
 
 currentopen() {
     echo "open "`pwd`
@@ -686,8 +686,8 @@ bindkey '^y' memodiary
 # bindkey '^t' todolist
 
 memoGlobal() {
-    BUFFER='vim -c "Org"'
-    # BUFFER="vim ~/Dropbox/Saichi/memo.txt"
+    # BUFFER='vim -c "Org"'
+    BUFFER="vim ~/Dropbox/Saichi/memo.txt"
     zle accept-line
 }
 zle -N memoGlobal

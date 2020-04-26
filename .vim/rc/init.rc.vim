@@ -64,7 +64,7 @@ let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 set list
 " set listchars=tab:\ \ ,eol:\ ,extends:»,precedes:« " 列折り返す際はこちらを使うとよいかも
 set listchars=tab:\ \ ,eol:\ 
-set guifont=Ricty-Regular-for-Powerline:h16
+" set guifont=Ricty-Regular-for-Powerline:h16
 " 列折り返す(nowrapで折り返さず列スクロールする)
 set wrap
 
@@ -157,6 +157,13 @@ command! -bar SaveGroupDelete call SaveGroupDelete()
 "     autocmd!
 "     autocmd CursorMoved * call tagbar#highlighttag(1, 1)
 " augroup END
+
+function! s:NoneFileTypeSetMarkdown()
+  if len(&filetype) == 0
+    set filetype=markdown
+  endif
+endfunction
+autocmd BufEnter * call s:NoneFileTypeSetMarkdown()
 
 augroup InsertLeaveGroup
   autocmd!
