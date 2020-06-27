@@ -687,7 +687,7 @@ bindkey '^y' memodiary
 
 memoGlobal() {
     # BUFFER='vim -c "Org"'
-    BUFFER="vim ~/Dropbox/Saichi/memo.txt"
+    BUFFER="vim ~/Dropbox/Saichi/memo/memo.txt"
     zle accept-line
 }
 zle -N memoGlobal
@@ -739,3 +739,6 @@ PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!
 
 # export LC_ALL="en_US.UTF-8"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+setopt prompt_cr
+setopt prompt_sp
