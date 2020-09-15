@@ -1,7 +1,8 @@
 " Mappings
 
 function! MinimumMapping() abort
-  nnoremap <Leader>w :w<Cr>
+  " nnoremap <Leader>w :w<Cr>
+  nnoremap <Leader>w :SuperWrite<Cr>
   nnoremap <Leader>q :bd<Cr>
   nnoremap <Leader>Q :qa<Cr>
   nnoremap <Leader>e :q<Cr>
@@ -48,8 +49,10 @@ nnoremap <Leader>\| /\(A\\|B\)
 " 行数切り替え
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
-nnoremap <Down> 5j
-nnoremap <Up> 5k
+" nnoremap <Down> 5j
+" nnoremap <Up> 5k
+nnoremap <silent> <Down> :NextFileOpen<CR>
+nnoremap <silent> <Up> :PrevFileOpen<CR>
 
 nnoremap <C-g> Vg?
 vnoremap <C-g> g?

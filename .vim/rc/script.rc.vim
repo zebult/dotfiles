@@ -453,6 +453,52 @@ function! SumRegi()
 endfunction
 command! SumRegi call SumRegi()
 
+function! SuperWrite()
+    let bufname = expand("%:p")
+
+    if bufname != ""
+      execute ":w"
+      return
+    endif
+
+    let filename = strftime("%Y_%m%d_%H%M_%S")
+    execute ":w ~/Dropbox/Saichi/memo/".filename.".md"
+    execute ":lcd ~/Dropbox/Saichi/memo/"
+endfunction
+command! SuperWrite call SuperWrite()
+
+function! NextFileOpen()
+    let filename = expand("%:t")
+    let filelist = systemlist("ls")
+    let matchnum = match(filelist, filename)
+    let nextnum = matchnum + 1
+
+    if nextnum >= len(filelist)
+      let nextnum = 0
+      echo "ファイル末尾に到達しました"
+    endif
+
+    let nextfile = filelist[nextnum]
+    execute ":e ".nextfile
+endfunction
+command! NextFileOpen call NextFileOpen()
+
+function! PrevFileOpen()
+    let filename = expand("%:t")
+    let filelist = systemlist("ls")
+    let matchnum = match(filelist, filename)
+    let nextnum = matchnum - 1
+
+    if nextnum == -1
+      let nextnum = len(filelist) - 1
+      echo "ファイル先頭に到達しました"
+    endif
+
+    let nextfile = filelist[nextnum]
+    execute ":e ".nextfile
+endfunction
+command! PrevFileOpen call PrevFileOpen()
+
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
 " endfunction
@@ -471,7 +517,7 @@ command! SumRegi call SumRegi()
 " command -bar EchoPath  call EchoPath()
 
 " 可変長引数
-" command! -nargs=* ZXcodeProjectOpen call zxcode#open_xcode(<f-args>)
+  " command! -nargs=* ZXcodeProjectOpen call zxcode#open_xcode(<f-args>)
 " function! zxcode#open_xcode(...) abort
 " let a:count = get(a:, 1)
 

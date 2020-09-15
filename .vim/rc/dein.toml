@@ -248,6 +248,9 @@ repo = 'mattn/vim-metarw-simplenote'
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/simplenote.rc.vim'
 
 [[plugins]]
+repo = 'simplenote-vim/simplenote.vim'
+
+[[plugins]]
 repo = 'mattn/vimplenote-vim'
 
 # [[plugins]]
