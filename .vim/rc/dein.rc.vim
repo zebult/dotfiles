@@ -28,7 +28,7 @@ if dein#load_state(s:dein_dir)
 
     " TOML を読み込み、キャッシュしておく
     if g:plugin_mode == 0
-      echo "load plugin..."
+      " echo "load plugin..."
       call dein#load_toml(s:toml,      {'lazy': 0})
       call dein#load_toml(s:lazy_toml, {'lazy': 1})
     else

@@ -1,9 +1,13 @@
 " deopleteを有効化
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 0
+" let g:deoplete#enable_yarp = 1
+" call deoplete#custom#option('deoplete-options-yarp', v:true)
+" let g:deoplete#auto_complete_delay = 0
 
 " 補完候補提示の際に先頭を選択状態へ
 set completeopt+=noinsert
+
+set rtp+=$HOME/.cache/dein/repos/github.com/Shougo/deoplete.nvim
 
 " use zchee/deoplete-clang
 let g:deoplete#sources#clang#libclang_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'

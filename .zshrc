@@ -207,6 +207,10 @@ alias prun="python3 manage.py runserver 8000"
 alias pep="autopep8 -i **/*.py"
 alias pip2="~/.pyenv/shims/pip"
 alias pip="~/.pyenv/shims/pip3"
+# alias pip2="/usr/local/bin/pip"
+# alias pip3="/usr/local/bin/pip3.8"
+# alias pip2="$HOME/.pyenv/versions/2.7.18/bin/pip"
+# alias pip3="$HOME/.pyenv/versions/3.8.5/bin/pip3"
 
 set -o vi
 bindkey "jj" vi-cmd-mode
@@ -281,7 +285,7 @@ mkcd() {
 }
 
 # prezto
-unalias gg
+# unalias gg
 gg() {
     # alias gg="gst; git add .; git commit -m"
     gst
@@ -422,7 +426,7 @@ checkRecentLog() {
     glo -2
 }
 
-unalias gco
+# unalias gco
 gco()  {
    git checkout $@
 
@@ -733,9 +737,8 @@ tm()
 
 ### Added by the Bluemix CLI
 # source /usr/local/Bluemix/bx/zsh_autocomplete
-
-PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "! "; fi)'
-PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
+# PROMPT+='$(if [ $(date +"%k") -gt 15 ] && [ $(date +"%k") -lt 17 ]; then echo "! "; fi)'
+# PROMPT+='$(if [ $(date +"%k") -gt 16 ] && [ $(date +"%k") -lt 19 ]; then echo "!!! "; fi)'
 
 # export LC_ALL="en_US.UTF-8"
 export PATH="/usr/local/opt/gettext/bin:$PATH"

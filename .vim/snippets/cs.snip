@@ -429,7 +429,9 @@ snippet member
     private ${1:object} ${2:value};
 
 snippet reactive
-    ReactiveProperty <${1}>
+    private ReactiveProperty <int> hoge;
+    hoge = new ReactiveProperty <int>(0);
+    hoge.Subscribe(x => fuga());
 
 snippet assert
     Debug.Assert(${1}, ${2});

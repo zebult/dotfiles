@@ -26,7 +26,7 @@ set incsearch
 set nofixeol
 " ブランチ名をステータスラインに表示する
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
 set history=200
 set whichwrap=h,l
 " インデントをスペース(4つ)だけにする "

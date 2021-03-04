@@ -24,7 +24,7 @@ dpi:
   y: 96.0
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+# tabspaces: 8
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
@@ -58,9 +58,9 @@ font:
   # size: 12.0 # mac
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
-  offset:
-    x: 0.0
-    y: 0.0
+  # offset:
+  #   x: 0.0
+  #   y: 0.0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -237,9 +237,9 @@ colors:
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
+# visual_bell:
+#   animation: EaseOutExpo
+#   duration: 0
 
 # Key bindings
 #

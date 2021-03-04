@@ -1,4 +1,4 @@
-if !has('gui_running')
+" if !has('gui_running')
   augroup SmartChr
     autocmd!
     autocmd FileType *          inoremap <buffer> <expr> = smartchr#loop('=', ' = ', ' == ', ' != ', ' += ', ' -= ')
@@ -34,4 +34,4 @@ if !has('gui_running')
     " autocmd FileType cs  inoremap <buffer> <expr> / smartchr#loop('/', '//', '/// <summary><CR>/// <`0`><CR>/// </summary>')
     autocmd FileType cpp  inoremap <buffer> <expr> / smartchr#loop('/', '//', '/**<CR>*  @brief <`0`><CR>*  @param <`1`> <`2`><CR>*  @return <`3`><CR>*/')
   augroup END
-endif
+" endif

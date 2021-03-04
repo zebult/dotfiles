@@ -308,6 +308,13 @@ function! MemoDiary() abort
 endfunction
 command! -bar MemoDiary call MemoDiary()
 
+function! Memo() abort
+  let memo_path     = "~/Dropbox/Saichi/memo/memo.txt"
+  execute 'e '.memo_path
+endfunction
+command! -bar Memo call Memo()
+nnoremap <C-m> :Memo<CR>
+
 function! Hoge() abort
   " TODO Dl, Dh で日付前後してメモ開く
   let file_name = expand("%")

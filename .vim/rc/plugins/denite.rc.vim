@@ -1,3 +1,5 @@
+let g:denite#_python_version_check = 1
+
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>

@@ -21,6 +21,14 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 if = "has('nvim')"
 
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = "has('nvim')"
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = "has('nvim')"
+
 # [[plugins]]
 # repo = 'Shougo/neocomplete.vim'
 # if = "has('lua')"
@@ -107,6 +115,13 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'gregsexton/gitv'
+depends = ['vim-fugitive']
+hook_add = '''
+let g:Gitv_OpenPreviewOnLaunch = 0
+'''
+
+[[plugins]]
 repo = 'zebult/vim-bufferlist'
 hook_add = '''
 nnoremap <silent> 22 :call BufferList()<CR>
@@ -121,7 +136,6 @@ repo = 'TKNGUE/sum-it.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-if = "!has('gui_running')"
 build = './install.sh nightly'
 hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
 
@@ -435,8 +449,8 @@ on_ft = 'cpp'
 # on_ft = 'cpp'
 
 # cocos2d-x syntax color
-[[plugins]]
-repo = 'Rubonnek/vim-cc2dx'
+# [[plugins]]
+# repo = 'Rubonnek/vim-cc2dx'
 
 # clang complete(need vimproc)
 # [[plugins]]
@@ -569,9 +583,9 @@ on_ft = 'toml'
 # Tex ---------------------------
 
 # Vim上でtexの部分コンパイルをする
-[[plugins]]
-repo = 'lervag/vimtex'
-on_ft = 'tex'
+# [[plugins]]
+# repo = 'lervag/vimtex'
+# on_ft = 'tex'
 
 # Solidity ---------------------------
 [[plugins]]

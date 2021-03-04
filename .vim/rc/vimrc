@@ -3,7 +3,9 @@
 " deoplete must setting
 " let g:python2_host_prog = expand('~/.pyenv/shims/python2')
 let g:python_host_prog = expand('~/.pyenv/shims/python')
-let g:python3_host_prog = expand('~/.pyenv/shims/python3')
+let g:pyenable_at_startupthon3_host_prog = expand('~/.pyenv/shims/python3')
+" let g:python_host_prog = expand('/usr/bin/python2')
+" let g:python3_host_prog = expand('/usr/bin/python3')
 " let g:python_host_prog  = '/usr/local/bin/python'
 " let g:python3_host_prog = '/usr/local/bin/python3'
 
@@ -40,6 +42,13 @@ endfunction"}}}
 if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
+
+" original function
+source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
+source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
+source ~/Dropbox/Saichi/Vim/Private/gdr.rc.vim
+source ~/Dropbox/Saichi/Vim/Private/util.rc.vim
+source ~/Dropbox/Saichi/Vim/Private/dein.rc.vim
 
 call s:source_rc('term_color.nvim')
 call s:source_rc('filetype.rc.vim')
@@ -78,13 +87,6 @@ function! InitInsertGroup() abort
   endif
 endfunction
 
-
-" original function
-source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
-source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
-source ~/Dropbox/Saichi/Vim/Private/gdr.rc.vim
-source ~/Dropbox/Saichi/Vim/Private/util.rc.vim
-
 let g:metarw_alias = {
   \ 'myhome' : '~',
   \ }
@@ -97,9 +99,11 @@ autocmd BufNewFile *.h norm! i% bbb:%s/CLASS_NAME//gggveeelx
 autocmd BufNewFile *.hpp norm! i% bbb:%s/CLASS_NAME//gggveeelx
 
 " このタイミングで呼ばないと補完が選択状態で開始されない
-if has('nvim')
-  call s:source_rc('plugins/deoplete.rc.vim')
-endif
+" if has('nvim')
+"   call dein#add('roxma/nvim-yarp')
+"   call dein#add('roxma/vim-hug-neovim-rpc')
+"   call s:source_rc('plugins/deoplete.rc.vim')
+" endif
 
 """"""""""""""""""""""""""""""
 " grepをQuickFixで開く
