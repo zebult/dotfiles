@@ -11,6 +11,15 @@ snippet h4
 snippet h5
     <h5>${0}</h5>
 
+snippet a
+    <a href="${1}">${2}</a>
+
+snippet input
+    <input type="text" name="test">
+snippet button
+    <input type="button" value="ボタン" onclick="b()"/>
+
+
 snippet ul
     <ul>
         ${0}
@@ -18,8 +27,12 @@ snippet ul
 snippet li
     <li>${0}</li>
 
-snippet a
-    <a href="${1}">${2}</a>
+snippet tr
+    <tr>
+        ${0}
+    </tr>
+snippet td
+    <td>${0}</td>
 
 snippet if
     {% if ${1} %}

@@ -1,13 +1,8 @@
 " zebult vimrc
 
 " deoplete must setting
-" let g:python2_host_prog = expand('~/.pyenv/shims/python2')
 let g:python_host_prog = expand('~/.pyenv/shims/python')
-let g:pyenable_at_startupthon3_host_prog = expand('~/.pyenv/shims/python3')
-" let g:python_host_prog = expand('/usr/bin/python2')
-" let g:python3_host_prog = expand('/usr/bin/python3')
-" let g:python_host_prog  = '/usr/local/bin/python'
-" let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
 set runtimepath^=~/.cache/dein/repos/github.com/Shougo/deoplete.nvim
 

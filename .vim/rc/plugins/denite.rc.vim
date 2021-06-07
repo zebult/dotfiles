@@ -35,12 +35,6 @@ nnoremap <silent> \H :<C-u>DeniteCursorWord help<CR><C-w>o
 nnoremap <silent> \f  :<C-u>Denite filetype<CR>
 nnoremap <silent> \y  :<C-u>Denite neoyank<CR>
 
-" カーソルキー, cn, cpで移動
-call denite#custom#map('insert' , '<Down>' , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>')
-call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
-call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
-
 if executable('rg')
   call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git'])
@@ -59,20 +53,20 @@ call denite#custom#source('file/rec', 'matchers',
       \ ['matcher_regexp', 'matcher_project_files', 'matcher_ignore_globs'])
       " \ ['matcher_fuzzy', 'matcher_project_files', 'matcher_ignore_globs'])
 
-call denite#custom#map('insert', '<C-r>',
-      \ '<denite:toggle_matchers:matcher_substring>', 'noremap')
-call denite#custom#map('insert', '<C-s>',
-      \ '<denite:toggle_sorters:sorter_reverse>', 'noremap')
-call denite#custom#map('insert', '<C-j>',
-      \ '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>',
-      \ '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', "'",
-      \ '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('normal', 'r',
-      \ '<denite:do_action:quickfix>', 'noremap')
-call denite#custom#map('insert', ';',
-      \ 'vimrc#sticky_func()', 'expr')
+" call denite#custom#map('insert', '<C-r>',
+"       \ '<denite:toggle_matchers:matcher_substring>', 'noremap')
+" call denite#custom#map('insert', '<C-s>',
+"       \ '<denite:toggle_sorters:sorter_reverse>', 'noremap')
+" call denite#custom#map('insert', '<C-j>',
+"       \ '<denite:move_to_next_line>', 'noremap')
+" call denite#custom#map('insert', '<C-k>',
+"       \ '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('insert', "'",
+"       \ '<denite:move_to_next_line>', 'noremap')
+" call denite#custom#map('normal', 'r',
+"       \ '<denite:do_action:quickfix>', 'noremap')
+" call denite#custom#map('insert', ';',
+"       \ 'vimrc#sticky_func()', 'expr')
 
 call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
@@ -100,3 +94,15 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 
 call denite#custom#action('file', 'buffer',
       \ {context -> denite#do_action(context, 'open', context['targets'])})
+
+" カーソルキー, cn, cpで移動
+" call denite#custom#map('insert', '<Down>', '<denite:move_to_next_line>', 'noremap')
+" call denite#custom#map('insert' , '<Up>'   , '<denite:move_to_previous_line>', 'noremap')
+" call denite#custom#map('insert' , '<C-n>'  , '<denite:move_to_next_line>')
+" call denite#custom#map('insert' , '<C-p>'  , '<denite:move_to_previous_line>')
+
+autocmd FileType denite-filter call s:denite_filter_my_setting()
+function! s:denite_filter_my_setting() abort
+  inoremap <silent><buffer><expr> <Down>   denite#do_map('move_to_next_line')
+  inoremap <silent><buffer><expr> <Up>   denite#do_map('move_to_previous_line')
+endfunction

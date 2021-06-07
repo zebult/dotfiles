@@ -119,7 +119,8 @@ augroup SaveGroup
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
 
-    autocmd BufWritePre *.py call Autopep8()
+    " autocmd BufWritePre *.py call Autopep8()
+    autocmd BufWritePre *.py :LspDocumentFormat
 
     " autocmd BufWritePre *.mm call Uncrustify('mm')
 
@@ -127,6 +128,9 @@ augroup SaveGroup
     autocmd BufWritePre *.swift call SubMark()
 
     autocmd BufWritePre *.json call JsonPretty()
+
+    autocmd BufWritePre *.js :Prettier<CR>
+    " autocmd BufWritePre *.html :normal gg=G<CR>
 augroup END
 
 augroup ReadGroup

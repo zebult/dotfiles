@@ -158,7 +158,7 @@ alias rdev="git rebase develop"
 alias dev="git checkout develop"
 alias master="git checkout master"
 
-alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
+# alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags' # TODO: シンボリックリンク指したほうが良さそう
 alias vim8="/usr/local/bin/vim"
 alias vim=nvim
 alias vi="vim -u NONE --noplugin"
@@ -202,6 +202,7 @@ alias cleos='docker exec -it eosio /opt/eosio/bin/cleos --url http://127.0.0.1:7
 
 alias python="python3"
 alias p="python3"
+alias http="python -m http.server 8000"
 alias psh="python3 manage.py shell"
 alias prun="python3 manage.py runserver 8000"
 alias pep="autopep8 -i **/*.py"
@@ -211,6 +212,9 @@ alias pip="~/.pyenv/shims/pip3"
 # alias pip3="/usr/local/bin/pip3.8"
 # alias pip2="$HOME/.pyenv/versions/2.7.18/bin/pip"
 # alias pip3="$HOME/.pyenv/versions/3.8.5/bin/pip3"
+
+alias sche="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/schecon.py"
+alias mm="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/line_memo.py"
 
 set -o vi
 bindkey "jj" vi-cmd-mode
@@ -712,7 +716,7 @@ zle -N ulog
 bindkey '^u' ulog
 
 # tmux起動
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 tm()
 {

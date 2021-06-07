@@ -1,4 +1,6 @@
 " Mappings
+"
+let g:BASH_Ctrl_j = 'off'
 
 function! MinimumMapping() abort
   " nnoremap <Leader>w :w<Cr>
@@ -144,8 +146,10 @@ nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Le
 nnoremap <silent> dn :<C-u>bnext<CR>
 nnoremap <silent> dp :<C-u>bprev<CR>
 
-nnoremap <silent> <C-n> :<C-u>bnext<CR>
-nnoremap <silent> <C-p> :<C-u>bprev<CR>
+" nnoremap <silent> <C-n> :<C-u>bnext<CR>
+" nnoremap <silent> <C-p> :<C-u>bprev<CR>
+nnoremap <silent> <C-n> :<C-u>cnext<CR>
+nnoremap <silent> <C-p> :<C-u>cprev<CR>
 " nnoremap <silent> <C-n> :NextStep<CR>
 " nnoremap <silent> <C-p> :PrevStep<CR>
 
@@ -186,6 +190,8 @@ cnoremap && .*
 nnoremap <Leader>u :Unite source<CR>
 " nnoremap <Leader>R :!cocos run -s . -p ios<Cr>" TODO: . want git path
 nnoremap <Leader>v :VimShell<CR>
+
+nnoremap <Leader>f :CHADopen<CR>
 
 " includeへ移動
 " nnoremap <buffer><silent> <Space>k :execute "?".&include<CR> :noh<CR> o

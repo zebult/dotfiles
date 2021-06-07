@@ -29,6 +29,44 @@ if = "has('nvim')"
 repo = 'roxma/vim-hug-neovim-rpc'
 if = "has('nvim')"
 
+[[plugins]]
+repo = 'ms-jpq/chadtree'
+if = "has('nvim')"
+hook_add = '''
+    " "let g:chadtree_settings = {
+    " "\    "theme.icon_glyph_set": "ascii",
+    " "\ }
+    let g:chadtree_settings={"keymap":{
+                                \"select":["S"],
+                                \"clear_selection": ["1"],
+                                \"v_split": ["v"],
+                                \"h_split": ["V"],
+                                \"open_sys": ["o"],
+                                \"new": ["i"],
+                                \"filter": ["f"],
+                                \"secondary": ["l"],
+                                \"collapse": ["za"],
+                            \},
+                            \"view":{
+                                \"sort_by":["file_name"],
+                            \}}
+   "" let g:chadtree_settings = {"theme":{
+   "" \"icon_glyph_set":"ascii,
+   "" \}}
+"",{"theme.icon_glyph_set": ["ascii"],}
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+if = "has('nvim')"
+hook_add = '''
+    set encoding=UTF-8
+'''
+
+# [[plugins]]
+# repo = 'adelarsq/vim-emoji-icon-theme'
+# if = "has('nvim')"
+
 # [[plugins]]
 # repo = 'Shougo/neocomplete.vim'
 # if = "has('lua')"
@@ -134,10 +172,11 @@ nnoremap <silent> 33 :call BufferList()<CR>:TagbarToggle<CR>
 [[plugins]]
 repo = 'TKNGUE/sum-it.vim'
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
+# pyenvのパスがおかしいのかpip installの認識されない為使わない
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# build = './install.sh nightly'
+# hook_add = 'source ~/.vim/rc/plugins/coc.rc.vim'
 
 # [[plugins]]
 # repo = 'coc-extensions/coc-omnisharp'
@@ -398,10 +437,10 @@ on_ft = 'swift'
 repo = 'toyamarinyon/vim-swift'
 on_ft = 'swift'
 
-# syntax
-[[plugins]]
-repo = 'kballard/vim-swift'
-on_ft = 'swift'
+# # syntax
+# [[plugins]]
+# repo = 'kballard/vim-swift'
+# on_ft = 'swift'
 
 # 辞書補完
 # [[plugins]]

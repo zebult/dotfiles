@@ -42,6 +42,7 @@ if = "has('nvim')"
 on_i = 1
 
 [[plugins]]
+if = "!has('gui_running')"
 repo = 'Shougo/neosnippet'
 on_i = 1
 hook_add = '''
@@ -141,10 +142,6 @@ hook_add = 'source ~/.vim/rc/plugins/anzu.rc.vim'
 # '''
 
 [[plugins]]
-repo = 'mattn/benchvimrc-vim'
-on_map = '<C-a>'
-
-[[plugins]]
 repo = 'tpope/vim-speeddating'
 on_map = '<C-a>'
 
@@ -172,13 +169,6 @@ repo = 'agatan/vim-vlack'
 # on_event = 'BufRead'
 on_i = 1
 hook_add = 'source ~/Dropbox/Saichi/Vim/Private/slack.rc.vim'
-
-[[plugins]]
-repo = 'gregsexton/gitv'
-depends = ['vim-fugitive']
-hook_add = '''
-let g:Gitv_OpenPreviewOnLaunch = 0
-'''
 
 [[plugins]]
 repo = 'haya14busa/incsearch.vim'
@@ -212,10 +202,10 @@ on_i = 1
 [[plugins]]
 repo = 'cofyc/vim-uncrustify'
 on_event = 'BufRead'
-hook_add = '''
-autocmd FileType c noremap <buffer> <c-f> :call Uncrustify('c')<CR>
-autocmd FileType c vnoremap <buffer> <c-f> :call RangeUncrustify('c')<CR>
-'''
+
+[[plugins]]
+repo = 'prettier/vim-prettier'
+on_event = 'BufRead'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -271,7 +261,7 @@ if = "!has('gui_running')"
 hook_post_source = 'source ~/.vim/rc/plugins/lexima.rc.vim'
 on_i = 1
 
-# on_map = '<Plug>(eskk:toggle)'
+on_map = '<Plug>(eskk:toggle)'
 [[plugins]]
 repo = 'tyru/eskk.vim'
 on_i = 1
@@ -420,7 +410,8 @@ let g:syntastic_check_on_wq = 0
 [[plugins]]
 repo = 'w0rp/ale'
 on_event = ['BufWrite']
-on_ft  =  ['cs', 'js', 'py']
+# on_ft  =  ['cs', 'js', 'py']
+on_ft  =  ['cs', 'js']
 hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 
 # cs complement
@@ -517,17 +508,38 @@ on_ft = 'go'
 on_event = ['BufWrite']
 
 # Python ---------------------------
+# [[plugins]]
+# repo = 'tell-k/vim-autopep8'
+# on_ft = 'python'
+# hook_add = '''
+#     let g:autopep8_on_save = 1
+#     let g:autopep8_disable_show_diff=0
+#     let g:autopep8_aggressive=1
+# '''
+# on_event = ['BufWrite']
+
+# https://qiita.com/hnishi/items/6cf051f709beccf43db4
 [[plugins]]
-repo = 'tell-k/vim-autopep8'
+repo = 'prabirshrestha/vim-lsp'
+on_ft = 'python'
+on_event = ['BufWrite']
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
 on_ft = 'python'
 hook_add = '''
-    let g:autopep8_on_save = 1
-    let g:autopep8_disable_show_diff=0
-    let g:autopep8_aggressive=1
+    let g:lsp_diagnostics_echo_cursor = 1
 '''
 on_event = ['BufWrite']
 
 # Html ---------------------------
+
+# JavaScript ---------------------------
+
+[[plugins]]
+repo = 'hushicai/tagbar-javascript.vim'
+on_ft = 'js'
+on_event = ['BufWrite']
 
 # Org ---------------------------
 

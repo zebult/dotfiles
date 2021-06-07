@@ -1,0 +1,9 @@
+.dataup {
+  transform: rotate(-45deg);
+  color: deeppink;
+}
+
+@keyframes marquee {
+  from   { transform: translate(0%);}
+  99%,to { transform: translate(-100%);}
+}

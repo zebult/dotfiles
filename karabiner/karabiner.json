@@ -196,8 +196,11 @@
                 },
                 "to": [
                   {
-                    "key_code": "j",
-                    "modifiers": "option"
+                    "key_code": "x",
+                    "modifiers": [
+                      "option",
+                      "control"
+                    ]
                   },
                   {
                     "set_variable": {

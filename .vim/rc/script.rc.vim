@@ -302,18 +302,18 @@ function! UnityLog() abort
 endfunction
 command! -bar UnityLog call UnityLog()
 
-function! MemoDiary() abort
-  let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", localtime()).".md"
-  execute 'vs '.memo_path
-endfunction
-command! -bar MemoDiary call MemoDiary()
+" function! MemoDiary() abort
+"   execute 'lcd ~/Dropbox/Saichi/Diary'
+"   execute 'CHADopen'
+" endfunction
+" command! -bar MemoDiary call MemoDiary()
 
 function! Memo() abort
-  let memo_path     = "~/Dropbox/Saichi/memo/memo.txt"
-  execute 'e '.memo_path
+  execute 'lcd ~/Dropbox/Saichi/memo'
+  execute 'CHADopen'
 endfunction
 command! -bar Memo call Memo()
-nnoremap <C-m> :Memo<CR>
+nnoremap mm :Memo<CR>
 
 function! Hoge() abort
   " TODO Dl, Dh で日付前後してメモ開く
@@ -469,10 +469,12 @@ function! SuperWrite()
     endif
 
     let filename = strftime("%Y_%m%d_%H%M_%S")
-    execute ":w ~/Dropbox/Saichi/memo/".filename.".md"
-    execute ":lcd ~/Dropbox/Saichi/memo/"
+    execute ":w ~/Dropbox/Saichi/memo/daily/".filename.".md"
+    execute ":lcd ~/Dropbox/Saichi/memo/daily"
 endfunction
 command! SuperWrite call SuperWrite()
+
+set autochdir
 
 function! NextFileOpen()
     let filename = expand("%:t")
