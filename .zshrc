@@ -114,6 +114,8 @@ export PATH=$PATH:$ELASTICPATH
 export ENHANCD_FILTER=peco
 export MANPAGER="/bin/sh -c \"col -b -x|nvim -R -c 'set ft=man nolist nonu noma' -\""
 
+# export WINEARCH=win64 WINEPREFIX=~/.wine wine explorer
+
 # alias
 alias ll='ls -alh'
 alias llp='ls -alh | peco'
@@ -215,6 +217,8 @@ alias pip="~/.pyenv/shims/pip3"
 
 alias sche="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/schecon.py"
 alias mm="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/line_memo.py"
+
+# alias wine="/Applications/wine-5.9/wine"
 
 set -o vi
 bindkey "jj" vi-cmd-mode
