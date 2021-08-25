@@ -519,6 +519,11 @@ repo = 'Shougo/neco-vim'
 [[plugins]]
 repo = 'othree/yajs.vim'
 
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = 'javascript'
+on_event = ['BufRead']
+
 # Shell ---------------------------
 
 [[plugins]]

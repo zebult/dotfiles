@@ -308,12 +308,37 @@ command! -bar UnityLog call UnityLog()
 " endfunction
 " command! -bar MemoDiary call MemoDiary()
 
+" function! Memo() abort
+"   execute 'lcd ~/Dropbox/Saichi/memo'
+"   execute 'CHADopen'
+" endfunction
+" command! -bar Memo call Memo()
+" nnoremap mm :Memo<CR>
+
+function! Integrate () abort
+  execute 'lcd ~/Dropbox/Saichi/memo'
+  execute 'tabe memo.md'
+  execute 'tabe chat.md'
+endfunction
+command! -bar Integrate call Integrate()
+
+function! Schedule() abort
+  execute 'lcd ~/Dropbox/Saichi/memo'
+  execute 'e schedule.md'
+endfunction
+command! -bar Schedule call Schedule()
+
 function! Memo() abort
   execute 'lcd ~/Dropbox/Saichi/memo'
-  execute 'CHADopen'
+  execute 'e memo.md'
 endfunction
 command! -bar Memo call Memo()
-nnoremap mm :Memo<CR>
+
+function! Chat() abort
+  execute 'lcd ~/Dropbox/Saichi/memo'
+  execute 'e chat.md'
+endfunction
+command! -bar Chat call Chat()
 
 function! Hoge() abort
   " TODO Dl, Dh で日付前後してメモ開く

@@ -354,7 +354,14 @@ on_event = 'BufRead'
 repo = 'itchyny/calendar.vim'
 hook_add = 'source ~/.vim/rc/plugins/calendar.rc.vim'
 on_cmd = ['Calendar']
-# on_i = 1
+
+# [[plugins]]
+# repo = 'mattn/calendar-vim'
+# on_cmd = ['Calendar']
+# hook_add = '''
+# let g:calendar_google_calendar = 1
+# '''
+
 
 # file shaping(:Align =)
 [[plugins]]
@@ -538,14 +545,15 @@ on_event = ['BufWrite']
 
 [[plugins]]
 repo = 'hushicai/tagbar-javascript.vim'
-on_ft = 'js'
+on_ft = 'javascript'
 on_event = ['BufWrite']
 
-# Org ---------------------------
-
 [[plugins]]
-repo = 'mattn/calendar-vim'
-on_ft = 'org'
+repo = 'geoffharcourt/vim-matchit'
+on_ft = 'javascript'
+on_event = ['BufRead']
+
+# Org ---------------------------
 
 # Game ---------------------------
 # [[plugins]]

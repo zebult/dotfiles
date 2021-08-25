@@ -216,6 +216,7 @@ alias pip="~/.pyenv/shims/pip3"
 # alias pip3="$HOME/.pyenv/versions/3.8.5/bin/pip3"
 
 alias sche="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/schecon.py"
+alias scheai="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/schecon.py ai"
 alias mm="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/line_memo.py"
 
 # alias wine="/Applications/wine-5.9/wine"

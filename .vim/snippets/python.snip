@@ -6,7 +6,13 @@ snippet contain
 
 snippet while
   num = 0
-  while num < 2:
+  while num == 0:
       print("num = " + str(num))
-
   print("End")
+
+snippet fori
+    for i, x in enumerate(xlist):
+        print i, x
+
+snippet itos
+  str(num)

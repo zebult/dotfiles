@@ -12,15 +12,22 @@ function! ToggleCheckbox() abort
 endfunction
 
 function! IsBullet() abort
-  let l:firstWord = getline('.')[0]
-  let l:secondWord = getline('.')[2]
-  let l:thirdWord = getline('.')[4]
+  let l:line = getline('.')
+  let l:firstWord = line[0]
+  let l:secondWord = line[2]
+  let l:thirdWord = line[4]
   let l:isFirstBullet = CheckBullet(firstWord)
   let l:isSecondBullet = CheckBullet(secondWord)
   let l:isThirdBullet = CheckBullet(thirdWord)
+
+  if l:isSecondBullet == 1 && l:isThirdBullet == 1
+    return 0
+  end
+
   if l:isFirstBullet == 1 || l:isSecondBullet == 1 || l:isThirdBullet == 1
     return 1
   end
+
   return 0
 endfunction
 
@@ -49,7 +56,7 @@ function! Action_o() abort
       execute "normal! $aa\"ox"
       execute "normal! i- [ ] "
     else
-      execute "normal! $aa\"ox"
+      execute "normal! 0\"oylo\"opa "
     end
   else
     execute "normal! o"

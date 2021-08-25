@@ -7,6 +7,7 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.txt set filetype=markdown
     au BufRead,BufNewFile *.py set filetype=python
     au BufRead,BufNewFile *.js set filetype=javascript
+    au BufRead,BufNewFile *.vue set filetype=javascript
     au BufRead,BufNewFile *.strace set filetype=strace
     au BufRead,BufNewFile *.sh set filetype=sh
     au BufRead,BufNewFile *.zshrc set filetype=sh

@@ -58,6 +58,8 @@ set matchpairs+=「:」
 set matchpairs+=『:』
 set matchpairs+=【:】
 set matchpairs+=（:）
+set matchpairs+=≪:≫
+
 
 let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 
@@ -99,6 +101,10 @@ set backspace=indent,eol,start
 " nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 
 autocmd FileType cvs,svn,gitcommit setlocal spell spelllang=en_us
+
+let g:matchup_matchpref = {}
+let g:matchup_matchpref.vue = {'tagnameonly': 1}
+let g:matchup_matchpref.html = {'tagnameonly': 1}
 
 augroup SaveGroup
     autocmd!

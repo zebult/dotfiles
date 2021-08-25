@@ -143,13 +143,21 @@ vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><L
 nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
-nnoremap <silent> dn :<C-u>bnext<CR>
-nnoremap <silent> dp :<C-u>bprev<CR>
+let g:TTFlag = 1
+function! CModeChange() abort
+  if g:TTFlag == 1
+    nnoremap <silent> <C-n> :<C-u>bnext<CR>
+    nnoremap <silent> <C-p> :<C-u>bprev<CR>
+    let g:TTFlag = 0
+  else
+    nnoremap <silent> <C-n> :cn<CR>
+    nnoremap <silent> <C-p> :cp<CR>
+    let g:TTFlag = 1
+  endif
+endfunction
+command -bar CModeChange  call CModeChange()
+call CModeChange()
 
-" nnoremap <silent> <C-n> :<C-u>bnext<CR>
-" nnoremap <silent> <C-p> :<C-u>bprev<CR>
-nnoremap <silent> <C-n> :<C-u>cnext<CR>
-nnoremap <silent> <C-p> :<C-u>cprev<CR>
 " nnoremap <silent> <C-n> :NextStep<CR>
 " nnoremap <silent> <C-p> :PrevStep<CR>
 
@@ -262,3 +270,5 @@ tnoremap <C-q> <C-\><C-n>:q<CR>
 tnoremap <ESC> <C-\><C-n>
 " tnoremap jj <C-\><C-n>
 " endif
+"
+imap <silent> <C-D><C-D> <C-R>=strftime("%Y-%m-%d-%a")<CR>

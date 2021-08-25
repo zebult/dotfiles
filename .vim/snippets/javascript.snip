@@ -7,7 +7,7 @@ snippet func
     ${1}: function() {
         ${2}
     },
-snippet msg
+snippet box
     Browser.msgBox();
 
 snippet timer
@@ -17,3 +17,15 @@ snippet timer
 
     setTimeout(timer, 3000); // 3秒後
     setInterval(timer, 3000); // 3秒毎
+
+snippet range_for
+    function column_range_for(column, action) {
+        sheet = project_sheet;
+        var last_row = sheet.getLastRow();
+        var range = sheet.getRange(1, column, last_row, column).getValues();
+        var range_size = range[0].length;
+
+        for (var row = 0; row < range_size; row++) {
+            action(range[row][0]);
+        }
+    }
