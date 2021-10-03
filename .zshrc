@@ -219,6 +219,8 @@ alias sche="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/sc
 alias scheai="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/schecon.py ai"
 alias mm="python /Users/saichisuzuki/Documents/workspace/python/connor/tool/line_memo.py"
 
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome -remote-debugging-port=9222 --user-data-dir ~/Documents/chrome/"
+
 # alias wine="/Applications/wine-5.9/wine"
 
 set -o vi
@@ -234,6 +236,12 @@ function gifo() { git-foresta --style=10 "$@" | less -RSX }
 function gifa() { git-foresta --all --style=10 "$@" | less -RSX }
 compdef _git gifo=git-log
 compdef _git gifa=git-log
+
+oo () {
+    cd
+    o .
+    cd -
+}
 
 omni () {
     mono ~/.cache/dein/repos/github.com/yucchiy/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe -s $1
