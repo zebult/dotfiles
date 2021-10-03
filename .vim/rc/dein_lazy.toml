@@ -215,10 +215,10 @@ call tcomment#DefineType('objc', '// %s')
 '''
 hook_add = '''
 " ダッシュボード表示されたらmacのショートカット見直し
-let g:tcommentMapLeader1 = '<F12>'
+let g:tcomment_mapleader1 = '<F12>'
 " let g:tcommentMapLeader1 = '<C-b>'
-let g:tcommentMapLeaderOp1 = 'gc'
-let g:tcommentMapLeaderOp2 = 'gC'
+let g:tcomment_opleader1 = 'gc'
+let g:tcomment_opleader2 = 'gC'
 '''
 
 # Need to `brew install global`
@@ -368,6 +368,8 @@ on_cmd = ['Calendar']
 repo = 'vim-scripts/Align'
 hook_add = '''
 let g:loaded_AlignMapsPlugin = 0
+let g:Align_xstrlen = 3
+vnoremap al :Align \|<CR>
 '''
 on_i = 1
 

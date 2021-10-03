@@ -5,7 +5,6 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.m set filetype=objc
     au BufRead,BufNewFile *.md set filetype=markdown
     au BufRead,BufNewFile *.txt set filetype=markdown
-    au BufRead,BufNewFile *.py set filetype=python
     au BufRead,BufNewFile *.js set filetype=javascript
     au BufRead,BufNewFile *.vue set filetype=javascript
     au BufRead,BufNewFile *.strace set filetype=strace
@@ -13,6 +12,7 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.zshrc set filetype=sh
     au BufRead,BufNewFile *.meta set filetype=yaml
     au BufRead,BufNewFile *.asset set filetype=yaml
+    au BufRead,BufNewFile *.py set filetype=python
     " au BufRead,BufNewFile *.cpp set filetype=cpp
     " au BufRead,BufNewFile *.java set filetype=java
     " au BufRead,BufNewFile *.swift set filetype=swift

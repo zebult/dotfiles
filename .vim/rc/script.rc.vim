@@ -79,9 +79,9 @@ endfunction
 command -bar SubMark  call SubMark()
 
 function! JsonPretty() abort
-  norm mz
+  norm <silent> mz
   silent! %!jq '.'
-  norm 'z
+  norm <silent> 'z
 endfunction
 command -bar JsonPretty  call JsonPretty()
 
@@ -364,8 +364,9 @@ function! SplitPanel() abort
     new
     norm J
   else
-    sp
-    norm j
+    new
+    " sp
+    " norm j
   endif
 endfunction
 command! -bar SplitPanel call SplitPanel()
@@ -375,8 +376,10 @@ function! VSplitPanel() abort
     vert new
     norm L
   else
-    vs
-    norm l
+    " vs
+    " norm l
+    vert new
+    norm L
   endif
 endfunction
 command! -bar VSplitPanel call VSplitPanel()

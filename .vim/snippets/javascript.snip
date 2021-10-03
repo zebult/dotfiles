@@ -19,13 +19,51 @@ snippet timer
     setInterval(timer, 3000); // 3秒毎
 
 snippet range_for
+    column_range_for(imitsu_id_column, (sheet_imitsu_id) => {
+        if (csv_imitsu_id == sheet_imitsu_id) {
+            is_exist = true;
+            return true;
+        }
+        return false;
+    });
+
     function column_range_for(column, action) {
-        sheet = project_sheet;
+        var sheet = project_sheet;
         var last_row = sheet.getLastRow();
-        var range = sheet.getRange(1, column, last_row, column).getValues();
-        var range_size = range[0].length;
+
+        var startRow = 1,
+            startColumn = column,
+            numOfRow = last_row,
+            numOfColumn = column;
+
+        var range = sheet
+            .getRange(startRow, startColumn, numOfRow, numOfColumn)
+            .getValues();
+        var range_size = range.length;
 
         for (var row = 0; row < range_size; row++) {
-            action(range[row][0]);
+            var is_finish = action(range[row][0]);
+            if (is_finish) {
+                return;
+            }
         }
     }
+
+snippet ford
+    for (let key in hash) {
+      alert('key:' + key + ' value:' + hash[key]);
+    }
+
+snippet doget
+    function doGet(e) {
+        if (e.parameter.route == "update_project") {
+            update_project();
+        } else if (e.parameter.route == "update_title") {
+            update_title(e.parameter.id, e.parameter.title);
+        }
+
+        return HtmlService.createHtmlOutputFromFile("index");
+    }
+
+snippet replace
+    str = str.replace(/dog/g, 'monkey');

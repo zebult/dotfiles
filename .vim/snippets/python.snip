@@ -11,8 +11,62 @@ snippet while
   print("End")
 
 snippet fori
+    for i in range(5):
     for i, x in enumerate(xlist):
         print i, x
 
 snippet itos
   str(num)
+
+snippet estoc
+  import glob
+  import pandas
+  xlsx = glob.glob("/Users/zebra/Downloads/*.xlsx")
+  if len(xls) > 0:
+      df = pandas.read_excel(xlsx[0])
+
+snippet etoc
+  import pandas
+  df = pandas.read_excel('a.xlsx', dtype=object)
+  df.to_csv('a.csv', index=None, header=True)
+
+snippet csv
+  import pandas
+  csv = pandas.read_csv(filepath_or_buffer='a.csv', encoding="utf-8", sep=",", header=2, dtype=object)
+
+  for column_name, item in csv.iterrows():
+      title = item["プロジェクト名"]
+      item['hoge'] = 'b'
+  csv.to_csv('out.csv')
+
+snippet selenium_firefox
+  from selenium import webdriver
+  options = webdriver.FirefoxOptions()
+  driver = webdriver.Firefox(options=options)
+  driver.get('https://www.google.com/')
+  driver.find_element(By.NAME, "q").click()
+  driver.find_element(By.NAME, "q").send_keys("aaa")
+  driver.find_element(By.CSS_SELECTOR, "form > div:nth-child(1)").click()
+  driver.find_element(By.CSS_SELECTOR, "center:nth-child(1) > .gNO89b").click()
+
+snippet selenium_chrome
+  import time
+  from selenium import webdriver
+
+  driver = webdriver.Chrome()
+  driver.get('https://www.google.com/')
+  time.sleep(5)
+  search_box = driver.find_element_by_name("q")
+  search_box.send_keys('test')
+  search_box.submit()
+  time.sleep(5)
+  driver.quit()
+
+snippet try
+  try:
+      print(1 / 0)
+  except:
+      print('Error')
+
+snippet replace
+  str = str.replace('hoge_ga', 'fuga_ni')

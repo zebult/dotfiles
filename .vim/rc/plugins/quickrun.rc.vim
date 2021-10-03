@@ -15,6 +15,16 @@ let g:quickrun_config = {
 \   }
 \}
 
+set splitbelow
+
+" if has('nvim')
+"   " Use 'neovim_job' in Neovim
+"   let g:quickrun_config._.runner = 'neovim_job'
+" elseif exists('*ch_close_in')
+"   " Use 'job' in Vim which support job feature
+"   let g:quickrun_config._.runner = 'job'
+" endif
+
 let g:quickrun_config['cs'] = {
 			\ 'type'  : 'cs/mcs',
             \ 'exec': ['%c *.cs -out:%s:p:r.exe', 'mono %s:p:r.exe %a'],

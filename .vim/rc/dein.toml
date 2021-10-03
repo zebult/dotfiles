@@ -96,6 +96,9 @@ build = 'env PY3=ON ./install.sh'
 # repo = 'wesleyche/SrcExpl'
 # hook_add = 'source ~/.vim/rc/plugins/srcexpl.rc.vim'
 
+[[plugins]]
+repo = 'lambdalisue/vim-quickrun-neovim-job'
+
 # Base Tools: ---------------------------
 
 [[plugins]]

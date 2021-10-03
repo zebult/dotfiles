@@ -11,8 +11,8 @@ function! MinimumMapping() abort
   nnoremap <Leader>2 :wq<Cr>
   nnoremap <Leader>! :q!<Cr>
   nnoremap <Leader># :qa!<Cr>
-  noremap ;  :
-  noremap :  ;
+  " noremap ;  :
+  " noremap :  ;
   inoremap jj <ESC><ESC><ESC>
   inoremap jk <ESC><ESC><ESC>
   nnoremap <Tab> %
@@ -34,6 +34,8 @@ nnoremap <Backspace> <C-o>
 nnoremap <Bslash> <C-i>
 nnoremap <C-k> <C-i>
 nnoremap <C-m> <C-i>
+
+nnoremap gP ma'bp'ai🍣<ESC>
 
 nnoremap <silent> <ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:cex ""<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> 11 :e!<CR>
