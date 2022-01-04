@@ -41,9 +41,9 @@ endif
 " original function
 source ~/Dropbox/Saichi/Vim/Macros/sedItem.vim
 source ~/Dropbox/Saichi/Vim/Macros/cleanSpace.vim
-source ~/Dropbox/Saichi/Vim/Private/gdr.rc.vim
 source ~/Dropbox/Saichi/Vim/Private/util.rc.vim
 source ~/Dropbox/Saichi/Vim/Private/dein.rc.vim
+" source ~/Dropbox/Saichi/Vim/Private/gdr.rc.vim
 
 call s:source_rc('term_color.nvim')
 call s:source_rc('filetype.rc.vim')

@@ -317,8 +317,11 @@ command! -bar UnityLog call UnityLog()
 
 function! Integrate () abort
   execute 'lcd ~/Dropbox/Saichi/memo'
-  execute 'tabe memo.md'
+  execute 'e memo.md'
+  execute 'tabe comp.md'
+  execute 'tabe book.md'
   execute 'tabe chat.md'
+  norm sn
 endfunction
 command! -bar Integrate call Integrate()
 
@@ -535,6 +538,18 @@ function! PrevFileOpen()
     execute ":e ".nextfile
 endfunction
 command! PrevFileOpen call PrevFileOpen()
+
+function! Week () abort
+  execute 'lcd ~/Dropbox/Saichi/memo/weekly'
+  execute 'e sun.md'
+  execute 'vsplit sat.md'
+  execute 'vsplit fri.md'
+  execute 'vsplit thu.md'
+  execute 'vsplit wed.md'
+  execute 'vsplit tue.md'
+  execute 'vsplit mon.md'
+endfunction
+command! -bar Week call Week()
 
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1

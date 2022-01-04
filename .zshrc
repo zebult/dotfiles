@@ -39,6 +39,8 @@ export PATH=$PATH:$HOME/.go/bin
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 
+export PATH=$PATH:$HOME/.local/bin
+
 # Xamarin
 export PATH=$PATH:$HOME/tee
 # node js
@@ -209,7 +211,12 @@ alias psh="python3 manage.py shell"
 alias prun="python3 manage.py runserver 8000"
 alias pep="autopep8 -i **/*.py"
 alias pip2="~/.pyenv/shims/pip"
+# alias pip="~/.pyenv/shims/pip"
+# alias pip="/usr/local/lib/python3.9/site-packages/pip"
 alias pip="~/.pyenv/shims/pip3"
+alias pip3="~/.pyenv/shims/pip3"
+# alias pip="/usr/local/bin/pip3"
+# alias pip="/usr/local/bin/pip"
 # alias pip2="/usr/local/bin/pip"
 # alias pip3="/usr/local/bin/pip3.8"
 # alias pip2="$HOME/.pyenv/versions/2.7.18/bin/pip"
@@ -762,3 +769,9 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 
 setopt prompt_cr
 setopt prompt_sp
+
+if [ -d $HOME/.anyenv ]
+then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+fi

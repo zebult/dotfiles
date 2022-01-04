@@ -130,8 +130,8 @@ augroup SaveGroup
 
     " autocmd BufWritePre *.mm call Uncrustify('mm')
 
-    autocmd BufWritePre *.swift call Uncrustify('swift')
-    autocmd BufWritePre *.swift call SubMark()
+    " autocmd BufWritePre *.swift call Uncrustify('swift')
+    " autocmd BufWritePre *.swift call SubMark()
 
     autocmd BufWritePre *.json call JsonPretty()
 
