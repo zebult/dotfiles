@@ -108,7 +108,7 @@ export VISUAL=nvim
 export XDG_CONFIG_HOME=~/.config
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 export ELASTICPATH=/usr/local/Cellar/elasticsearch/2.3.2/libexec/bin
 export PATH=$PATH:$ELASTICPATH

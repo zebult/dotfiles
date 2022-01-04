@@ -44,10 +44,13 @@ echo "OS:"$os
 case "${os}" in
     'mac' )
         export PATH=$PATH:/usr/local/bin/
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
         brew install zplug
-        brew tap sanemat/font
-        brew install --powerline --vim-powerline ricty
-        cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+        # brew tap sanemat/font
+        # brew install --powerline --vim-powerline ricty
+        # cp -f /usr/local/Cellar/ricty/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
         brew install tmux
         brew install reattach-to-user-namespace
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -57,23 +60,23 @@ case "${os}" in
         brew install tree
         brew install ag
         brew install uncrustify
-        brew install mono
-        brew install argon/mas/mas
+        # brew install mono
+        # brew install argon/mas/mas
         curl -L git.io/enhancd | sh
         git clone https://github.com/b4b4r07/enhancd $HOME/.enhancd
         mkdir -p $HOME/.config
         ln -snfv $DOTFILES/peco $HOME/.config/peco
-        ln -snfv $DOTFILES/Karabiner $HOME/.config/Karabiner
+        ln -snfv $DOTFILES/karabiner $HOME/.config/karabiner
         ln -snfv $HOME/.vim $HOME/.config/nvim
         ln -snfv $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
         chmod 755 $DOTFILES/setupPrezto.sh
         $DOTFILES/setupPrezto.sh
         source ${HOME}/.zshrc
-        brew cask install dash
-        brew cask install hyperswitch
-        brew cask install mamp
-        brew cask install nosleep
-        brew cask install shady
+        # brew cask install dash
+        # brew cask install hyperswitch
+        # brew cask install mamp
+        # brew cask install nosleep
+        # brew cask install shady
 
         # 3. Cheat sheet clone(URLが動的に変わりそうなので注意)
         cd $HOME/Documents
@@ -93,10 +96,9 @@ case "${os}" in
         git clone https://github.com/zebult/Karabiner.git
 
         # 5. keygen
-        cd $HOME
-        mkdir .ssh
-        cd .ssh
-        ssh-keygen
+        # cd $HOME mkdir .ssh
+        # cd .ssh
+        # ssh-keygen
 
         # util shell link
         cd $HOME
@@ -114,7 +116,7 @@ case "${os}" in
         cd $HOME
 
         # Mac Settings
-        defaults write com.apple.dashboard mcx-disabled -boolean true; killall Dock # DashBoard消去
+        # defaults write com.apple.dashboard mcx-disabled -boolean true; killall Dock # DashBoard消去
         defaults write com.apple.dock autohide-delay -float 0; killall Dock # Dock表示時間0
         defaults write com.apple.desktopservices DSDontWriteNetworkStores true # ネットワークドライブで.DS_Storeファイルを作成しないようにする
         defaults write -g QLPanelAnimationDuration -float 0 # クイックルックアニメーション無し

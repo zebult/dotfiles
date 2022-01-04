@@ -29,32 +29,32 @@ if = "has('nvim')"
 repo = 'roxma/vim-hug-neovim-rpc'
 if = "has('nvim')"
 
-[[plugins]]
-repo = 'ms-jpq/chadtree'
-if = "has('nvim')"
-hook_add = '''
-    " "let g:chadtree_settings = {
-    " "\    "theme.icon_glyph_set": "ascii",
-    " "\ }
-    let g:chadtree_settings={"keymap":{
-                                \"select":["S"],
-                                \"clear_selection": ["1"],
-                                \"v_split": ["v"],
-                                \"h_split": ["V"],
-                                \"open_sys": ["o"],
-                                \"new": ["i"],
-                                \"filter": ["f"],
-                                \"secondary": ["l"],
-                                \"collapse": ["za"],
-                            \},
-                            \"view":{
-                                \"sort_by":["file_name"],
-                            \}}
-   "" let g:chadtree_settings = {"theme":{
-   "" \"icon_glyph_set":"ascii,
-   "" \}}
-"",{"theme.icon_glyph_set": ["ascii"],}
-'''
+# [[plugins]]
+# repo = 'ms-jpq/chadtree'
+# if = "has('nvim')"
+# hook_add = '''
+#     " "let g:chadtree_settings = {
+#     " "\    "theme.icon_glyph_set": "ascii",
+#     " "\ }
+#     let g:chadtree_settings={"keymap":{
+#                                 \"select":["S"],
+#                                 \"clear_selection": ["1"],
+#                                 \"v_split": ["v"],
+#                                 \"h_split": ["V"],
+#                                 \"open_sys": ["o"],
+#                                 \"new": ["i"],
+#                                 \"filter": ["f"],
+#                                 \"secondary": ["l"],
+#                                 \"collapse": ["za"],
+#                             \},
+#                             \"view":{
+#                                 \"sort_by":["file_name"],
+#                             \}}
+#    "" let g:chadtree_settings = {"theme":{
+#    "" \"icon_glyph_set":"ascii,
+#    "" \}}
+# "",{"theme.icon_glyph_set": ["ascii"],}
+# '''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
