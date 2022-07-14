@@ -15,15 +15,15 @@ if = "has('nvim')"
 on_map = '<Leader>f'
 hook_add = 'source ~/.vim/rc/plugins/defx.rc.vim'
 
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-if = "!has('nvim')"
-on_map = '<Leader>f'
+# [[plugins]]
+# repo = 'roxma/nvim-yarp'
+# if = "!has('nvim')"
+# on_map = '<Leader>f'
 
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if = "!has('nvim')"
-on_map = '<Leader>f'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
+# if = "!has('nvim')"
+# on_map = '<Leader>f'
 
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
@@ -430,10 +430,10 @@ hook_add = 'source ~/.vim/rc/plugins/ale.rc.vim'
 # [deoplete]大量エラー発生時: monoの準備終わってない(Solution has finished loadingが呼ばれたらok)
 # repo = 'OmniSharp/omnisharp-vim'
 
-[[plugins]]
-repo = 'yucchiy/omnisharp-vim'
-on_ft =  ['cs', 'csi', 'csx']
-hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
+# [[plugins]]
+# repo = 'yucchiy/omnisharp-vim'
+# on_ft =  ['cs', 'csi', 'csx']
+# hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 # depends = ['vim-dispatch']
 # windows = 'msbuild server/OmniSharp.sln'
 # mac     = 'xbuild server/OmniSharp.sln'

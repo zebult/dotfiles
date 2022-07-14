@@ -184,8 +184,8 @@ repo = 'TKNGUE/sum-it.vim'
 # [[plugins]]
 # repo = 'coc-extensions/coc-omnisharp'
 
-[[plugins]]
-repo = 'OmniSharp/omnisharp-roslyn'
+# [[plugins]]
+# repo = 'OmniSharp/omnisharp-roslyn'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
@@ -571,10 +571,10 @@ on_ft = ['cs', 'csi', 'csx']
 # unix    = 'xbuild server/OmniSharp.sln'
 # hook_add = 'source ~/.vim/rc/plugins/omnisharp.rc.vim'
 
-[[plugins]]
-repo = 'dimixar/deoplete-omnisharp'
-depends = ['deoplete.nvim']
-on_ft = ['cs', 'csi', 'csx']
+# [[plugins]]
+# repo = 'dimixar/deoplete-omnisharp'
+# depends = ['deoplete.nvim']
+# on_ft = ['cs', 'csi', 'csx']
 
 # Kotlin ---------------------------
 

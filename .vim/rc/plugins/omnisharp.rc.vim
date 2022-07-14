@@ -9,8 +9,8 @@ let g:OmniSharp_selector_ui = 'unite'
 " let g:OmniSharp_server_use_mono = 1
 
 " vim終了する度サーバー終了するので手動にする
-let g:Omnisharp_start_server = 1
-let g:Omnisharp_stop_server  = 1
+" let g:Omnisharp_start_server = 1
+" let g:Omnisharp_stop_server  = 1
 
 " autocmd FileType cs nnoremap <C-]> :OmniSharpGotoDefinition<cr>
 " autocmd FileType cs nnoremap t<C-]> :tab sp<CR>:OmniSharpGotoDefinition<CR>

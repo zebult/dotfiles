@@ -18,8 +18,8 @@ endfunction
 
 nnoremap [denite] <Nop>
 
-nnoremap <silent> so :<C-u>Denite file/rec<CR>/
-vnoremap <silent> so <Esc>:vs<CR><C-w>l:Denite file/rec<CR>/
+" nnoremap <silent> so :<C-u>Denite file/rec<CR>/
+" vnoremap <silent> so <Esc>:vs<CR><C-w>l:Denite file/rec<CR>/
 " nnoremap <silent> s; :<C-u>Denite file/rec<CR>
 " vnoremap <silent> s; <Esc>:vs<CR><C-w>l:Denite file/rec<CR>
 nnoremap <silent> s<Bslash> :<C-u>DeniteCursorWord file/rec<CR>

@@ -107,6 +107,10 @@ nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
+" nnoremap I <C-w>l
+" nnoremap U <C-w>h
+" nnoremap J <C-w>l
+" nnoremap K <C-w>h
 nnoremap sh <C-w>h
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
@@ -125,8 +129,9 @@ nnoremap t<C-]> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " nnoremap t<C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>1<CR>
 " nnoremap S<C-]> :<C-u>sp<CR><C-w>j<C-]>
 nnoremap sw <C-w>w
-" nnoremap so <C-w>o
-" nnoremap sO <C-w>=
+nnoremap so <C-w>o
+nnoremap <silent> so :ZoomWin<CR>
+nnoremap sO <C-w>=
 nnoremap st :<C-u>tabnew<CR>
 " nnoremap sT :<C-u>Unite tab<CR>
 " nnoremap ss :<C-u>sp<CR><C-w>j

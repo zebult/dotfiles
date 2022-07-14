@@ -125,7 +125,12 @@ augroup SaveGroup
     autocmd BufWritePre *.hpp call Uncrustify('cpp')
     autocmd BufWritePre *.h call Uncrustify('cpp')
 
-    " autocmd BufWritePre *.py call Autopep8()
+    " autocmd BufWritePre *.java call Uncrustify('java')
+    " autocmd BufWritePre *.java :%!/usr/local/bin/google-java-format -
+    " nnoremap <Space>e :%!/usr/local/bin/google-java-format -
+    " nnoremap aa :%!/usr/local/bin/google-java-format -
+    au BufRead *.java nnoremap <silent> <Leader>e :%!/usr/local/bin/google-java-format -<CR>
+
     autocmd BufWritePre *.py :LspDocumentFormat
 
     " autocmd BufWritePre *.mm call Uncrustify('mm')

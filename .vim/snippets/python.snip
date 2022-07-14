@@ -55,11 +55,11 @@ snippet selenium_chrome
 
   driver = webdriver.Chrome()
   driver.get('https://www.google.com/')
-  time.sleep(5)
+  time.sleep(1)
   search_box = driver.find_element_by_name("q")
   search_box.send_keys('test')
   search_box.submit()
-  time.sleep(5)
+  time.sleep(1)
   driver.quit()
 
 snippet try
@@ -70,3 +70,11 @@ snippet try
 
 snippet replace
   str = str.replace('hoge_ga', 'fuga_ni')
+
+snippet time
+  import datetime
+  now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).timestamp()
+  print(now);
+  minute = 60
+  past = now - (minute * 60)
+  print(past);

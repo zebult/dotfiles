@@ -542,14 +542,52 @@ command! PrevFileOpen call PrevFileOpen()
 function! Week () abort
   execute 'lcd ~/Dropbox/Saichi/memo/weekly'
   execute 'e sun.md'
+  syntax match warningword /^\.$/
   execute 'vsplit sat.md'
+  syntax match warningword /^\.$/
   execute 'vsplit fri.md'
+  syntax match warningword /^\.$/
   execute 'vsplit thu.md'
+  syntax match warningword /^\.$/
   execute 'vsplit wed.md'
+  syntax match warningword /^\.$/
   execute 'vsplit tue.md'
+  syntax match warningword /^\.$/
   execute 'vsplit mon.md'
+  syntax match warningword /^\.$/
+
+  " move column
+  let week = strftime("%w")
+  if week == 0
+    let week = 7
+  endi
+  if week != 1
+    execute "normal " . (week - 1) . "sl"
+  endif
+
+  " move line
+  let hour = strftime("%H")
+  execute "normal gg" . hour . "jk"
+
+  execute "HighLightWord"
+  syntax match highlightword /^\.$/
+
 endfunction
 command! -bar Week call Week()
+
+function! HighLightWord () abort
+  let lineword = getline('.')
+  execute "syntax keyword highlightword " . lineword
+  highlight link highlightword Error
+  highlight Ignore guibg=#ffff00
+  highlight link warningword Ignore
+
+endfunction
+command! -bar HighLightWord call HighLightWord()
+
+if has("gui_running")
+  nnoremap mm :HighLightWord<CR>
+end
 
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1
