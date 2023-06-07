@@ -241,9 +241,9 @@ hook_add = 'source ~/.vim/rc/plugins/easymotion.rc.vim'
 repo = 'haya14busa/vim-edgemotion'
 on_event = 'BufRead'
 hook_add = '''
-map J <Plug>(edgemotion-j)
 map K <Plug>(edgemotion-k)
 '''
+# map J <Plug>(edgemotion-j)
 
 # メタ文字含むとlightline壊れるので注意
 # [[plugins]]
@@ -457,6 +457,10 @@ nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 
 [[plugins]]
 repo = 'joker1007/vim-markdown-quote-syntax'
+on_ft = 'md'
+
+[[plugins]]
+repo = 'preservim/vim-markdown'
 on_ft = 'md'
 
 # preview

@@ -343,6 +343,12 @@ function! Chat() abort
 endfunction
 command! -bar Chat call Chat()
 
+function! Crm() abort
+  execute 'lcd ~/Dropbox/Saichi/memo/code'
+  execute 'e mCrm.md'
+endfunction
+command! -bar Crm call Crm()
+
 function! Hoge() abort
   " TODO Dl, Dh で日付前後してメモ開く
   let file_name = expand("%")
@@ -588,6 +594,23 @@ command! -bar HighLightWord call HighLightWord()
 if has("gui_running")
   nnoremap mm :HighLightWord<CR>
 end
+
+set foldtext=FoldText()
+
+function! FoldText()
+  let l:fs = match(getline(v:foldstart, v:foldend), '"label":')
+  if l:fs < 0
+    let list = split(foldtext(),' ')
+    " return list[0].list[1].list[2].list[3].list[4].list[5].list[-1]
+    " return list[4].list[-1]
+    " return list[4].list[-1]
+    return foldtext()
+  endif
+  let l:label = matchstr(getline(v:foldstart + l:fs),
+        \ '"label":\s\+"\zs[^"]\+\ze"')
+  let l:ft = substitute(foldtext(), ': \zs.\+', l:label, '')
+  return l:ft
+endfunction
 
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1

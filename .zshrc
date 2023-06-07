@@ -46,6 +46,10 @@ export PATH=$PATH:$HOME/tee
 # node js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# php
+export PATH=/usr/local/opt/php@7.4/bin:$PATH
+export PATH="$PATH:/Users/saichi/.config/composer/vendor/bin"
+
 # cocos2d-x
 # COCOS_VERSION="3.11.1"
 COCOS_VERSION="3.12"
@@ -75,6 +79,7 @@ export PATH=$NDK_ROOT:$PATH
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH="$PATH:/Applications/platform-tools"
 # export PATH=$ANDROID_SDK_ROOT/bin:$PATH
 ## ant
 # export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin

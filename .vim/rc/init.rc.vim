@@ -60,6 +60,7 @@ set matchpairs+=【:】
 set matchpairs+=（:）
 set matchpairs+=≪:≫
 
+set hlsearch
 
 let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 
@@ -113,11 +114,20 @@ augroup SaveGroup
     autocmd BufWritePre * match TrailingSpaces /\s\+$/
     " autocmd BufWritePre * call lightline#update()
 
+    if has('gui_running')
+      " 折り畳みテキストがしんだので
+      autocmd BufWritePre *.md set foldtext=FoldText()
+      " 括弧移動がしんだので
+      autocmd BufWritePre *.md nnoremap % %
+    endif
+
     " git差分マーク
     if !has('gui_running')
       autocmd BufWritePost * GitGutter
     endif
 
+    " 設定ファイルが上手く読み込みされない為、このタイミングで読み込みさせている
+    autocmd BufWritePre *.cs call UncsCFG()
     autocmd BufWritePre *.cs call Uncrustify('cs')
     " autocmd BufWritePre *.cs call OmniSharp#FixUsings()
 
@@ -143,6 +153,21 @@ augroup SaveGroup
     autocmd BufWritePre *.js :Prettier<CR>
     " autocmd BufWritePre *.html :normal gg=G<CR>
 augroup END
+
+function! FoldText()
+  let l:fs = match(getline(v:foldstart, v:foldend), '"label":')
+  if l:fs < 0
+    return foldtext()
+  endif
+  let l:label = matchstr(getline(v:foldstart + l:fs),
+        \ '"label":\s\+"\zs[^"]\+\ze"')
+  let l:ft = substitute(foldtext(), ': \zs.\+', l:label, '')
+  return l:ft
+endfunction
+
+function! UncsCFG() abort
+  let g:uncrustify_cfg_file_path = "$HOME/.uncrustify.cfg"
+endfunction
 
 augroup ReadGroup
     autocmd!

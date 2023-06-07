@@ -15,7 +15,7 @@ function! MinimumMapping() abort
   " noremap :  ;
   inoremap jj <ESC><ESC><ESC>
   inoremap jk <ESC><ESC><ESC>
-  nnoremap <Tab> %
+  nmap <Tab> %
   vnoremap <Tab> %
   nnoremap <F11> <C-i>
 
@@ -35,7 +35,8 @@ nnoremap <Bslash> <C-i>
 nnoremap <C-k> <C-i>
 nnoremap <C-m> <C-i>
 
-nnoremap gP ma'bp'ai🍣<ESC>
+" nnoremap gP ma'bp'ai🍣<ESC>
+nnoremap gP Gp''i🍣<ESC>
 
 nnoremap <silent> <ESC> :cclose<CR>:nohlsearch<CR>:NoHighlightTrailingSpaces<CR>:TagbarClose<CR>:cex ""<CR>:set nocursorline<CR>:HierClear<CR>:set nocursorcolumn<CR>:args<CR>:redraw!<CR>
 nnoremap <silent> 11 :e!<CR>
@@ -151,7 +152,7 @@ vnoremap c% y:cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><L
 nnoremap c% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><C-r><C-w><Right><C-r><C-w>
 nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>\<<C-r><C-w>\><Right><C-r><C-w>
 
-let g:TTFlag = 1
+let g:TTFlag = 0
 function! CModeChange() abort
   if g:TTFlag == 1
     nnoremap <silent> <C-n> :<C-u>bnext<CR>

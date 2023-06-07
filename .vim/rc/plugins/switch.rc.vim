@@ -29,4 +29,8 @@ let g:switch_custom_definitions =
     \   ['土', '日', '月', '火', '水', '木', '金'],
     \   ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     \   ['TODO', 'DONE'],
+    \   ['high', 'low'],
+    \   ['High', 'Low'],
+    \   ['close', 'open'],
+    \   ['Close', 'Open'],
     \ ]

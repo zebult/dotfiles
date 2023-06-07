@@ -13,6 +13,8 @@ augroup vimrc-set_filetype
     au BufRead,BufNewFile *.meta set filetype=yaml
     au BufRead,BufNewFile *.asset set filetype=yaml
     au BufRead,BufNewFile *.py set filetype=python
+    au BufRead,BufNewFile *.mq4 set filetype=cpp
+    au BufRead,BufNewFile *.mqh set filetype=cpp
     " au BufRead,BufNewFile *.cpp set filetype=cpp
     " au BufRead,BufNewFile *.java set filetype=java
     " au BufRead,BufNewFile *.swift set filetype=swift
