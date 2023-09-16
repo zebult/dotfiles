@@ -31,6 +31,9 @@ setlocal shiftwidth=4
 nnoremap gl yiwoPrint("p: ", p);
 vnoremap gl yoPrint("p: ", p);
 
+nnoremap gL yiwoCommon::ViewLog(p);
+vnoremap gL yoCommon::ViewLog(p);
+
 " null
 nnoremap gN yiwOif(p == nullptr){CCLOG("p is null");}
 vnoremap gN yOif(p == nullptr){CCLOG("p is null");}

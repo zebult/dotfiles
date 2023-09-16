@@ -33,4 +33,12 @@ let g:switch_custom_definitions =
     \   ['High', 'Low'],
     \   ['close', 'open'],
     \   ['Close', 'Open'],
+    \   ['Ask', 'Bid'],
+    \   ['up', 'down'],
+    \   ['Up', 'Down'],
+    \   ['past', 'future'],
+    \   ['Past', 'Future'],
+    \   ['win', 'lose'],
+    \   ['Win', 'Lose'],
+    \   ['上', '下'],
     \ ]

@@ -35,6 +35,9 @@ nnoremap <Bslash> <C-i>
 nnoremap <C-k> <C-i>
 nnoremap <C-m> <C-i>
 
+" nnoremap ; :
+" nnoremap : ;
+
 " nnoremap gP ma'bp'ai🍣<ESC>
 nnoremap gP Gp''i🍣<ESC>
 

@@ -349,19 +349,19 @@ function! Crm() abort
 endfunction
 command! -bar Crm call Crm()
 
-function! Hoge() abort
+function! MemoToday() abort
   " TODO Dl, Dh で日付前後してメモ開く
   let file_name = expand("%")
   let today = localtime()
-  " let now = localtime()
-  " "# => 1203574847
-  " let day = (60 * 60 * 24)
-  " echo strftime("%Y/%m/%d %H:%M:%S (%A)", now - day)
-  " "# => 2008/02/20 15:20:47 (水曜日)
-  " let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", ).".md"
-  " execute 'e '.memo_path
+  let now = localtime()
+  "# => 1203574847
+  let day = (60 * 60 * 24)
+  echo strftime("%Y/%m/%d %H:%M:%S (%A)", now - day)
+  "# => 2008/02/20 15:20:47 (水曜日)
+  let memo_path     = "~/Dropbox/Saichi/Diary/".strftime("%Y/%m/%d", ).".md"
+  execute 'e '.memo_path
 endfunction
-command! -bar Hoge call Hoge()
+command! -bar MemoToday call MemoToday()
 
 function! MemoDone() abort
   execute 'vs ~/Dropbox/Saichi/done.md'

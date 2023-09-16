@@ -1,3 +1,4 @@
+# c +
 snippet if
     if(${1})
     {
@@ -167,3 +168,35 @@ snippet android
 # };
 #
 # #endif /* <|1|>Controller_hpp */
+
+# mq4
+
+snippet itos
+    IntegerToString(${1})
+
+snippet icustom
+    iCustom(Symbol(), Period(), "HBB", 0, 1);
+
+snippet ind
+    Comment("0,1:"+iCustom(Symbol(),Period(),"HBB",0,1)+"\n"+
+            "1,1:"+iCustom(Symbol(),Period(),"HBB",1,1)+"\n"+
+            "2,1:"+iCustom(Symbol(),Period(),"HBB",2,1)+"\n"+
+            "3,1:"+iCustom(Symbol(),Period(),"HBB",3,1)+"\n"+
+            "4,1:"+iCustom(Symbol(),Period(),"HBB",4,1)+"\n"+
+            "5,1:"+iCustom(Symbol(),Period(),"HBB",5,1)+"\n"+
+            "6,1:"+iCustom(Symbol(),Period(),"HBB",6,1)+"\n");
+
+snippet buffer
+    double MABuffer[];
+    SetIndexBuffer(0, MABuffer);
+    ArrayResize(MABuffer, Bars);
+    MABuffer[i] = iMA(Symbol(), PERIOD_CURRENT, 3, 3, MODE_SMA, PRICE_CLOSE, i);
+
+snippet objectfind
+    if(ObjectFind("SellArrow" + Time[1]) >= 0)
+    {
+        Print("ある");
+    }
+
+snippet log
+    Common::ViewLog(${1});

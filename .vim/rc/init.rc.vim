@@ -59,6 +59,7 @@ set matchpairs+=『:』
 set matchpairs+=【:】
 set matchpairs+=（:）
 set matchpairs+=≪:≫
+set matchpairs+=＜:＞
 
 set hlsearch
 
