@@ -20,6 +20,180 @@
             "description": "[zebult] Common Util",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "file_paths": [
+                      "/Applications/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "down_arrow"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "file_paths": [
+                      "/Applications/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "right_arrow"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  },
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "right_arrow"
+                  },
+                  {
+                    "key_code": "up_arrow"
+                  },
+                  {
+                    "key_code": "right_arrow"
+                  },
+                  {
+                    "key_code": "up_arrow"
+                  },
+                  {
+                    "key_code": "up_arrow"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  },
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "file_paths": [
+                      "/Applications/Wine Crossover.app/Contents/Resources/wine/bin/wine64-preloader"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "r",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
                 "from": {
                   "key_code": "e",
                   "modifiers": {
