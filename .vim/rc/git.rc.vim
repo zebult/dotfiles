@@ -44,7 +44,8 @@ ca gcob Gina checkout -b
 " diff     : D
 " checkout : U
 let g:netrw_browsex_viewer = 'open'
-ca gbl Gblame
+ca gbl Git blame
+" ca gbl Gblame
 " ca glof Glog
 
 "denite-git
