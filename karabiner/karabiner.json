@@ -3392,6 +3392,290 @@
                   }
                 ],
                 "from": {
+                  "key_code": "down_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "y": 200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "d"
+                    },
+                    {
+                      "key_code": "down_arrow"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_d",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_d",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "mouse_key": {
+                      "y": 200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_d",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "up_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "y": -200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "d"
+                    },
+                    {
+                      "key_code": "up_arrow"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_d",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_d",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "mouse_key": {
+                      "y": -200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_d",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "x": -200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "d"
+                    },
+                    {
+                      "key_code": "left_arrow"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_d",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_d",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "mouse_key": {
+                      "x": -200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_d",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "mouse_key": {
+                      "x": 200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "d"
+                    },
+                    {
+                      "key_code": "right_arrow"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_d",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_d",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "mouse_key": {
+                      "x": 200
+                    }
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_d",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
                   "key_code": "semicolon",
                   "modifiers": {
                     "optional": [
@@ -6208,6 +6492,73 @@
                     },
                     {
                       "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse",
+                    "to_after_key_up": [
+                      {
+                        "set_variable": {
+                          "name": "simple_vi_mode_s",
+                          "value": 0
+                        }
+                      }
+                    ]
+                  }
+                },
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "simple_vi_mode_s",
+                      "value": 1
+                    }
+                  },
+                  {
+                    "pointing_button": "button1"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "simple_vi_mode_s",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "pointing_button": "button1"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "return_or_enter"
                     }
                   ],
                   "simultaneous_options": {
