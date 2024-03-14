@@ -174,6 +174,9 @@ snippet android
 snippet itos
     IntegerToString(${1})
 
+snippet stoi
+    StringToInteger(${1})
+
 snippet icustom
     iCustom(Symbol(), Period(), "HBB", 0, 1);
 
@@ -200,3 +203,158 @@ snippet objectfind
 
 snippet log
     Common::ViewLog(${1});
+
+snippet forin
+    for (int i = 0; i < ArraySize(Time); i++)
+    {
+    }
+
+snippet ordersend
+    double lot = 0.01;
+    double orderPrice = Ask;
+    double slippage = 5;
+    double stopLoss = 0;
+    double takeProfit = 0;
+    string comment = "abc";
+    string magicNumber = 777;
+
+    int tradeTicketNumber = OrderSend(Symbol(), OP_BUY, lot, orderPrice, slippage, stopLoss, takeProfit, comment, magicNumber, 0, Green);
+
+snippet orderclose
+    OrderClose(ticket_id, lot, Bid, slippage, Red);
+
+snippet array
+    int hogeList[];
+    ArrayResize(hogeList, ArraySize(hogeList) + 1);
+    hogeList[ArraySize(hogeList) - 1] = hoge;
+
+snippet arrayin
+    bool isFind = ArrayFind(array, "a")
+    bool ArrayFind(string &array[], string target)
+    {
+        for (int i = 0; i < ArraySize(array); i++)
+        {
+            if(array[i] == target)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+snippet timer
+    int OnInit()
+    {
+        EventSetTimer(1);
+
+        return(INIT_SUCCEEDED);
+    }
+
+    void OnDeinit(const int reason)
+    {
+        EventKillTimer();
+    }
+
+    void OnTimer()
+    {
+    }
+
+snippet button
+    bool IsServerAccessButton = false;
+    CreateButton();
+    UpdateButtonEnable(false);
+
+    //+------------------------------------------------------------------+
+    //| 稼動オンオフボタン
+    //+------------------------------------------------------------------+
+    long chart_id = ChartID();
+    string objname = "Button";
+
+    void CreateButton()
+    {
+        //ボタン作成
+        ObjectCreate(chart_id,                                                  // チャートID
+                objname,                                                   // オブジェクト名
+                OBJ_BUTTON,                                                // オブジェクトタイプにボタンを選択
+                0,                                                         // サブウインドウ番号
+                0,                                                         // 1番目の時間のアンカーポイント
+                0                                                          // 1番目の価格のアンカーポイント
+                );
+        //ボタンの位置とサイズ設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_CORNER, CORNER_LEFT_UPPER); // コーナー位置を左上に
+        ObjectSetInteger(chart_id, objname, OBJPROP_ANCHOR, ANCHOR_LEFT_UPPER); // アンカー位置を左上に
+        ObjectSetInteger(chart_id, objname, OBJPROP_XDISTANCE, 15);             // X座標の位置設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_YDISTANCE, 30);             // Y座標の位置設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_XSIZE, 150);                // ボタンサイズの幅設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_YSIZE, 50);                 // ボタンサイズの高さ設定
+        //ボタンの色設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_BGCOLOR, clrDarkSlateGray);           // ボタン色
+        ObjectSetInteger(chart_id, objname, OBJPROP_BORDER_COLOR, clrWhite);    // ボタンの枠の色設定
+        //ボタンのフォント設定
+        ObjectSetString(chart_id, objname, OBJPROP_FONT, "Arial");              // フォントの種別設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_COLOR, clrLightGray);                 // フォント色
+        ObjectSetString(chart_id, objname, OBJPROP_TEXT, "Server Access OFF");       // 表示するテキストの設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_FONTSIZE, 13);              // フォントサイズ設定
+        //オブジェクトを選択できないようにする
+        ObjectSetInteger(chart_id, objname, OBJPROP_SELECTABLE, false);         // ダブルクリックでオブジェクトの選択可否設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_SELECTED, false);           // オブジェクトの選択状態
+        //その他設定
+        ObjectSetInteger(chart_id, objname, OBJPROP_BACK, false);               // オブジェクトをローソク足などの前側に設置する
+        ObjectSetInteger(chart_id, objname, OBJPROP_STATE, false);              // ボタン押下状態
+    }
+
+    void OnChartEvent(const int id, const long &lparam, const double &dparam, const string &sparam)
+    {
+        if(id == CHARTEVENT_OBJECT_CLICK) {
+            if(sparam == objname ) {//sparamという変数の中に、どのオブジェクトがクリックされたかが入っている
+                if(ObjectGetInteger(chart_id, objname, OBJPROP_STATE)) {
+                    UpdateButtonEnable(false);
+                } else {
+                    UpdateButtonEnable(true);
+                }
+            }
+        }
+    }
+
+    void UpdateButtonEnable(bool enable)
+    {
+        if(enable)
+        {
+            ObjectSetString(chart_id, objname, OBJPROP_TEXT, "Server Access ON");                 // 表示するテキスト
+            ObjectSetInteger(chart_id, objname, OBJPROP_COLOR, clrBlack);                     // フォント色
+            ObjectSetInteger(chart_id, objname, OBJPROP_BGCOLOR, clrSkyBlue);                 // ボタン色
+            SetIndexStyle(0, DRAW_LINE, EMPTY, EMPTY, clrRed);
+            IsServerAccessButton = true;
+        }
+        else
+        {
+            ObjectSetString(chart_id, objname, OBJPROP_TEXT, "Server Access OFF");                // 表示するテキスト
+            ObjectSetInteger(chart_id, objname, OBJPROP_COLOR, clrLightGray);                 // フォント色
+            ObjectSetInteger(chart_id, objname, OBJPROP_BGCOLOR, clrDarkSlateGray);           // ボタン色
+            IsServerAccessButton = false;
+        }
+    }
+
+snippet etos
+    EnumToString()
+
+snippet onnewbar
+    datetime BarTime;
+
+    void OnTick()
+    {
+        // バーイベント
+        {
+            datetime currentTime = Time[0];
+            if (currentTime != BarTime)
+            {
+                BarTime = currentTime;
+                OnNewBar();
+            }
+        }
+    }
+
+    void OnNewBar()
+    {
+    }

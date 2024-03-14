@@ -41,4 +41,7 @@ let g:switch_custom_definitions =
     \   ['win', 'lose'],
     \   ['Win', 'Lose'],
     \   ['上', '下'],
+    \   ['buy', 'sell'],
+    \   ['Buy', 'Sell'],
+    \   ['BUY', 'SELL'],
     \ ]

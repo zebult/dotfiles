@@ -506,7 +506,12 @@ function! SuperWrite()
     endif
 
     let filename = strftime("%Y_%m%d_%H%M_%S")
-    execute ":w ~/Dropbox/Saichi/memo/daily/".filename.".md"
+    let title = getline(1)
+    let title = substitute(title, '#', '', 'g')
+    let title = substitute(title, ' ', '_', 'g')
+    let title = substitute(title, '/', '_', 'g')
+
+    execute ":w ~/Dropbox/Saichi/memo/daily/".filename."_".title.".md"
     execute ":lcd ~/Dropbox/Saichi/memo/daily"
 endfunction
 command! SuperWrite call SuperWrite()

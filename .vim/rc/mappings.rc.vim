@@ -158,12 +158,12 @@ nnoremap C% :cdo s///g <Bar> update<Left><Left><Left><Left><Left><Left><Left><Le
 let g:TTFlag = 0
 function! CModeChange() abort
   if g:TTFlag == 1
-    nnoremap <silent> <C-n> :<C-u>bnext<CR>
-    nnoremap <silent> <C-p> :<C-u>bprev<CR>
-    let g:TTFlag = 0
-  else
     nnoremap <silent> <C-n> :cn<CR>
     nnoremap <silent> <C-p> :cp<CR>
+    let g:TTFlag = 0
+  else
+    nnoremap <silent> <C-n> :<C-u>bnext<CR>
+    nnoremap <silent> <C-p> :<C-u>bprev<CR>
     let g:TTFlag = 1
   endif
 endfunction

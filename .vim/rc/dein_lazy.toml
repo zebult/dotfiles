@@ -459,10 +459,6 @@ nnoremap <Leader>ui :<C-u>UnivimMenu Build\ Project\ AllScene\ iOS<CR>
 repo = 'joker1007/vim-markdown-quote-syntax'
 on_ft = 'md'
 
-[[plugins]]
-repo = 'preservim/vim-markdown'
-on_ft = 'md'
-
 # preview
 [[plugins]]
 repo = 'kannokanno/previm'

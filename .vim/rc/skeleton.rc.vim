@@ -15,4 +15,5 @@ augroup template
   autocmd BufNewFile *.json 0r $HOME/.vim/template/skeleton.json
   autocmd BufNewFile *.css 0r $HOME/.vim/template/skeleton.css
   autocmd BufNewFile *.mq4 0r $HOME/.vim/template/skeleton.mq4
+  autocmd BufNewFile *.mq5 0r $HOME/.vim/template/skeleton.mq5
 augroup END

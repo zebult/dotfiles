@@ -598,6 +598,10 @@ hook_add = '''
 
 # Markdown ---------------------------
 
+[[plugins]]
+repo = 'preservim/vim-markdown'
+on_ft = 'md'
+
 # syntax hilight
 # [[plugins]]
 # repo = 'gabrielelana/vim-markdown'
