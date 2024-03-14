@@ -1,6 +1,5 @@
 {
   "global": {
-    "ask_for_confirmation_before_quitting": true,
     "check_for_updates_on_startup": true,
     "show_in_menu_bar": false,
     "show_profile_name_in_menu_bar": false,
@@ -3119,7 +3118,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": 600
+                      "y": 200
                     }
                   }
                 ],
@@ -3165,7 +3164,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": 600
+                      "y": 200
                     }
                   }
                 ],
@@ -3190,7 +3189,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": -600
+                      "y": -200
                     }
                   }
                 ],
@@ -3236,7 +3235,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": -600
+                      "y": -200
                     }
                   }
                 ],
@@ -3261,7 +3260,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": -600
+                      "x": -200
                     }
                   }
                 ],
@@ -3307,7 +3306,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": -600
+                      "x": -200
                     }
                   }
                 ],
@@ -3332,7 +3331,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": 600
+                      "x": 200
                     }
                   }
                 ],
@@ -3378,7 +3377,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": 600
+                      "x": 200
                     }
                   }
                 ],
@@ -3403,7 +3402,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": 600
+                      "y": 200
                     }
                   }
                 ],
@@ -3449,7 +3448,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": 600
+                      "y": 200
                     }
                   }
                 ],
@@ -3474,7 +3473,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "y": -600
+                      "y": -200
                     }
                   }
                 ],
@@ -3520,7 +3519,7 @@
                   },
                   {
                     "mouse_key": {
-                      "y": -600
+                      "y": -200
                     }
                   }
                 ],
@@ -3545,7 +3544,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": -600
+                      "x": -200
                     }
                   }
                 ],
@@ -3591,7 +3590,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": -600
+                      "x": -200
                     }
                   }
                 ],
@@ -3616,7 +3615,7 @@
                 "to": [
                   {
                     "mouse_key": {
-                      "x": 600
+                      "x": 200
                     }
                   }
                 ],
@@ -3662,7 +3661,7 @@
                   },
                   {
                     "mouse_key": {
-                      "x": 600
+                      "x": 200
                     }
                   }
                 ],
@@ -5514,9 +5513,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "50%",
-                        "y": "50%"
+                        "y": "50%",
+                        "screen": 0
                       }
                     }
                   }
@@ -5564,9 +5563,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "50%",
-                        "y": "50%"
+                        "y": "50%",
+                        "screen": 0
                       }
                     }
                   }
@@ -5593,9 +5592,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": 25,
-                        "y": 45
+                        "y": 45,
+                        "screen": 0
                       }
                     }
                   }
@@ -5643,9 +5642,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": 25,
-                        "y": 45
+                        "y": 45,
+                        "screen": 0
                       }
                     }
                   }
@@ -5672,9 +5671,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "10%",
-                        "y": "15%"
+                        "y": "15%",
+                        "screen": 0
                       }
                     }
                   }
@@ -5722,9 +5721,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "10%",
-                        "y": "15%"
+                        "y": "15%",
+                        "screen": 0
                       }
                     }
                   }
@@ -5751,9 +5750,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "90%",
-                        "y": 0
+                        "y": 0,
+                        "screen": 0
                       }
                     }
                   }
@@ -5801,9 +5800,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "90%",
-                        "y": 0
+                        "y": 0,
+                        "screen": 0
                       }
                     }
                   }
@@ -5830,9 +5829,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "50%",
-                        "y": "100%"
+                        "y": "100%",
+                        "screen": 0
                       }
                     }
                   }
@@ -5880,9 +5879,9 @@
                   {
                     "software_function": {
                       "set_mouse_cursor_position": {
-                        "screen": 0,
                         "x": "50%",
-                        "y": "100%"
+                        "y": "100%",
+                        "screen": 0
                       }
                     }
                   }
@@ -6466,7 +6465,7 @@
                   }
                 ],
                 "from": {
-                  "key_code": "right_option",
+                  "key_code": "option",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -6492,7 +6491,7 @@
                       "key_code": "s"
                     },
                     {
-                      "key_code": "right_option"
+                      "key_code": "option"
                     }
                   ],
                   "simultaneous_options": {
@@ -9972,34 +9971,6 @@
           "manipulate_caps_lock_led": false,
           "simple_modifications": [],
           "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 102,
-            "vendor_id": 7847
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 102,
-            "vendor_id": 7847
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
         }
       ],
       "fn_function_keys": [
@@ -10137,6 +10108,16 @@
           "to": [
             {
               "key_code": "left_control"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "right_option"
+          },
+          "to": [
+            {
+              "key_code": "japanese_kana"
             }
           ]
         }
