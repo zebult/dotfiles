@@ -44,4 +44,5 @@ let g:switch_custom_definitions =
     \   ['buy', 'sell'],
     \   ['Buy', 'Sell'],
     \   ['BUY', 'SELL'],
+    \   ['Blue', 'Red'],
     \ ]

@@ -19,8 +19,8 @@ let g:deoplete#sources#clang#clang_header  = '/Library/Developer/CommandLineTool
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 
-[[plugins]]
-repo = 'zebult/vim-bufferlist'
-hook_add = '''
-nnoremap <silent> 22 :call BufferList()<CR>
-'''
+# [[plugins]]
+# repo = 'zebult/vim-bufferlist'
+# hook_add = '''
+# # nnoremap <silent> 22 :call BufferList()<CR>
+# '''

@@ -156,21 +156,45 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 # Convenience Tools: ---------------------------
 
 [[plugins]]
+repo = 'lambdalisue/vim-fern'
+hook_add = '''
+nnoremap <silent> 22 :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <silent> 33 :lcd /Users/saichi/Dropbox/Saichi/memo/daily<CR>:Fern . -reveal=% -drawer -toggle -width=40<CR>
+'''
+# # キー一覧
+# R: リネーム
+# -: 選択
+# K: 新規ディレクトリ作成
+#
+# バックキー: 一つ上の階層
+#
+# N: 新規ファイル作成
+# D: ゴミ箱
+# y: パスをコピー
+# x: アプリで開く
+#
+# c: 複製
+# m: リネーム
+# E: 横で開く
+# t: タブで開く
+# ?: ヘルプ
+
+[[plugins]]
 repo = 'gregsexton/gitv'
 depends = ['vim-fugitive']
 hook_add = '''
 let g:Gitv_OpenPreviewOnLaunch = 0
 '''
 
-[[plugins]]
-repo = 'zebult/vim-bufferlist'
-hook_add = '''
-nnoremap <silent> 22 :call BufferList()<CR>
-nnoremap <silent> 33 :call BufferList()<CR>:TagbarToggle<CR>
-'''
-# hook_post_source = '''
-# call BufferList()
+# [[plugins]]
+# repo = 'zebult/vim-bufferlist'
+# hook_add = '''
+# # nnoremap <silent> 22 :call BufferList()<CR>
+# nnoremap <silent> 33 :call BufferList()<CR>:TagbarToggle<CR>
 # '''
+# # hook_post_source = '''
+# # call BufferList()
+# # '''
 
 [[plugins]]
 repo = 'TKNGUE/sum-it.vim'
