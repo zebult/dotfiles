@@ -21,6 +21,28 @@
             "description": "[zebult] Common Util",
             "manipulators": [
               {
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "spacebar"
+                  },
+                  {
+                    "key_code": "spacebar"
+                  },
+                  {
+                    "key_code": "spacebar"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
                 "conditions": [
                   {
                     "file_paths": [
