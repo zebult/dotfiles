@@ -10,6 +10,10 @@
 int TradeTicketNumber = -1;
 datetime BarTime;
 
+double PrevAccountBalance = 0;
+int WinCount = 0;
+int LoseCount = 0;
+
 // TradeTicketNumber = OrderSend(Symbol(), OP_BUY, 1, Ask, 1, 0, 0, "order", 777, 0, Green);
 // OrderClose(TradeTicketNumber, 1, Bid, 1, Green);
 // TradeTicketNumber = OrderSend(Symbol(), OP_SELL, 1, Bid, 1, 0, 0, "order", 777, 0, Green);
@@ -17,6 +21,8 @@ datetime BarTime;
 
 int OnInit()
 {
+    PrevAccountBalance = AccountBalance();
+
     return(INIT_SUCCEEDED);
 }
 
@@ -31,10 +37,36 @@ void OnTick()
             OnNewBar();
         }
     }
+
+    UpdateWinLog();
 }
 
 void OnNewBar()
 {
+}
+
+void UpdateWinLog()
+{
+    double rate = 0;
+    if(WinCount != 0 && LoseCount != 0)
+    {
+        rate = NormalizeDouble((double)WinCount / (double)(WinCount + LoseCount), 2);
+    }
+
+    double currentAccountBalance = AccountBalance();
+
+    if(PrevAccountBalance < currentAccountBalance)
+    {
+        WinCount += 1;
+    }
+    else if(PrevAccountBalance > currentAccountBalance)
+    {
+        LoseCount += 1;
+    }
+
+    PrevAccountBalance = currentAccountBalance;
+
+    Comment(AccountBalance() + "| win " + WinCount + " | lose " + LoseCount + " | rate " + rate + " | lot " + Lot);
 }
 
 void ViewLog(string log)

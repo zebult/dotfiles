@@ -1,6 +1,10 @@
 set expandtab
 " タブをスペース2にする
 set ts=2 sw=2 sts=0
+
+" 改行した時、空白なくす https://heavymoon.org/2021/05/13/disable-vim-auto-indent/
+set indentexpr=
+
 " メモ取りやすくする
 inoremap <S-Tab> <Left><Left><backspace><Right><Right>
 inoremap g<Tab> <Left><Left><tab><Right><Right>

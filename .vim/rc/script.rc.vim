@@ -505,13 +505,15 @@ function! SuperWrite()
       return
     endif
 
-    let filename = strftime("%Y_%m%d_%H%M_%S")
+    " let filename = strftime("%Y_%m%d_%H%M_%S")
+    let filename = strftime("%Y%m%d%H%M%S")
     let title = getline(1)
+    let title = substitute(title, '# ', '', 'g')
     let title = substitute(title, '#', '', 'g')
     let title = substitute(title, ' ', '_', 'g')
     let title = substitute(title, '/', '_', 'g')
 
-    execute ":w ~/Dropbox/Saichi/memo/daily/".filename."_".title.".md"
+    execute ":w ~/Dropbox/Saichi/memo/daily/old/2024/".filename."_".title.".md"
     execute ":lcd ~/Dropbox/Saichi/memo/daily"
 endfunction
 command! SuperWrite call SuperWrite()
@@ -616,6 +618,20 @@ function! FoldText()
   let l:ft = substitute(foldtext(), ': \zs.\+', l:label, '')
   return l:ft
 endfunction
+
+" カーソル下のhighlight情報を表示する {{{
+function! s:get_syn_id(transparent)
+    let synid = synID(line('.'), 5, 1)
+    return a:transparent ? synIDtrans(synid) : synid
+endfunction
+function! s:get_syn_name(synid)
+    return synIDattr(a:synid, 'name')
+endfunction
+function! s:get_highlight_info()
+    execute "highlight " . s:get_syn_name(s:get_syn_id(0))
+    execute "highlight " . s:get_syn_name(s:get_syn_id(1))
+endfunction
+command! HighlightInfo call s:get_highlight_info()
 
 " function! IsXamarin()
 "   return stridx(expand("%:p"), "Xamarin") != -1

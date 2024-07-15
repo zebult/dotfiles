@@ -158,8 +158,9 @@ vmap <Leader>o <Plug>(openbrowser-smart-search)
 [[plugins]]
 repo = 'lambdalisue/vim-fern'
 hook_add = '''
-nnoremap <silent> 22 :Fern . -reveal=% -drawer -toggle -width=40<CR>
-nnoremap <silent> 33 :lcd /Users/saichi/Dropbox/Saichi/memo/daily<CR>:Fern . -reveal=% -drawer -toggle -width=40<CR>
+" nnoremap <silent> 22 :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <silent> 22 :Fern .<CR>
+nnoremap <silent> 33 :lcd /Users/saichi/Dropbox/Saichi/memo/daily<CR>:Fern .<CR>
 '''
 # # キー一覧
 # R: リネーム
@@ -178,6 +179,14 @@ nnoremap <silent> 33 :lcd /Users/saichi/Dropbox/Saichi/memo/daily<CR>:Fern . -re
 # E: 横で開く
 # t: タブで開く
 # ?: ヘルプ
+
+# [[plugins]]
+# repo = 'fholgado/minibufexpl.vim'
+# hook_add = '''
+# let g:miniBufExplMapWindowNavVim = 1
+# let g:miniBufExplMapWindowNavArrows = 1
+# let g:miniBufExplMapCTabSwitchBuffs = 1
+# '''
 
 [[plugins]]
 repo = 'gregsexton/gitv'

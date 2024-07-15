@@ -466,7 +466,7 @@ on_ft = 'md'
 hook_add = '''
 let g:previm_open_cmd = 'open -a Google\ Chrome'
 "let g:previm_open_cmd = 'open -a Safari'
-autocmd FileType markdown nnoremap <Leader>R :PrevimOpen<CR>
+autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 '''
 
 # Nodejs ---------------------------

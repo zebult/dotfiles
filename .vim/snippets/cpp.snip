@@ -16,7 +16,7 @@ snippet forci
     }
 
 snippet void
-    void ${2}::${1}()
+    void ${1}()
     {
     }
 
@@ -75,7 +75,7 @@ snippet ggetparam
     GMI->getParam("${1}");
 snippet ggetword
     GMI->getWord("${1}");
-snippet rand
+snippet grand
     GRUtils::MathUtil::getRandom_0_1()
 
 snippet struct_to_struct
@@ -171,6 +171,9 @@ snippet android
 
 # mq4
 
+snippet len
+    StringLen(${1})
+
 snippet itos
     IntegerToString(${1})
 
@@ -181,7 +184,14 @@ snippet stod
     StrToDouble(${1})
 
 snippet dtos
-    DoubleToStr(${1})
+    DoubleToString(${1})
+    StringToTime(${2})
+
+snippet dtoi
+    (int)(${1})
+
+snippet double
+    NormalizeDouble(${1}, 2)
 
 snippet icustom
     iCustom(Symbol(), Period(), "HBB", 0, 1);
@@ -364,3 +374,21 @@ snippet onnewbar
     void OnNewBar()
     {
     }
+
+snippet rand
+    int rand = MathRand() % 2;  // 0 から 1
+
+snippet ma
+    double maValue = iMA(Symbol(), PERIOD_CURRENT, 3, 3, MODE_SMA, PRICE_CLOSE, i);
+
+snippet total
+    int total=OrdersTotal();
+
+snippet abs
+    MathAbs(-1);
+
+snippet time
+    datetime timeLocal = TimeLocal();
+    int currentMonth = TimeMonth(timeLocal);
+    int currentDay = TimeDay(timeLocal);
+    int currentHour = TimeHour(timeLocal);

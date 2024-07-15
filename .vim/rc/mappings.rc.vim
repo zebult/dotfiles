@@ -218,6 +218,7 @@ nnoremap <Leader>f :CHADopen<CR>
 " nnoremap gt :Calendar -view=clock<CR>
 autocmd FileType html nnoremap <Leader>r :!open %<CR>
 autocmd FileType tex nnoremap <Leader>r :QuickRun<CR>:!latexmk -c<CR>
+autocmd FileType markdown nnoremap <Leader>r :PrevimOpen<CR>
 nnoremap <Leader>O :!open .<CR><CR>
 " nnoremap <Leader>A :VimFiler -split -simple -winwidth=25 -no-quit<CR>:SrcExplToggle<CR>:TagbarToggle<CR><C-w>l
 nnoremap <Leader>A :VimFilerBufferDir -split -simple -winwidth=40 -no-quit<CR><C-w>l:TagbarClose<CR>:TagbarOpen<CR>
