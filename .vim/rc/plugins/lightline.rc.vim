@@ -8,8 +8,7 @@ let g:lightline = {
             \    ],
             \   'right': [
             \      ['filetype'],
-            \      ['line'],
-            \      ['my_task', 'syntastic', 'qfstatusline'],
+            \      ['syntastic', 'qfstatusline'],
             \    ],
             \ },
             \ 'inactive': {
@@ -35,6 +34,9 @@ let g:lightline = {
             \   'ale': 'ALEGetStatusLine',
             \ },
             \ }
+
+            " \      ['line'],
+            " \      ['my_task', 'syntastic', 'qfstatusline'],
 
 let g:lightline.component = {}
 let g:lightline.component.line = '[%l/%L]'

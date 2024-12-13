@@ -7,85 +7,61 @@
 #property version   "1.00"
 #property strict
 
-int TradeTicketNumber = -1;
-datetime BarTime;
+#include <Common/Common.mqh>
 
-double PrevAccountBalance = 0;
-int WinCount = 0;
-int LoseCount = 0;
+double MaxLotParam = 0;
+double LotFactorParam = 0.6;
 
 // TradeTicketNumber = OrderSend(Symbol(), OP_BUY, 1, Ask, 1, 0, 0, "order", 777, 0, Green);
 // OrderClose(TradeTicketNumber, 1, Bid, 1, Green);
 // TradeTicketNumber = OrderSend(Symbol(), OP_SELL, 1, Bid, 1, 0, 0, "order", 777, 0, Green);
 // OrderClose(TradeTicketNumber, 1, Ask, 1, Green);
 
+// Common::UpdateLot();
+// Common::OrderSend(OP_BUY, Ask, 0, 0);
+// Common::OrderClose(Bid);
+
 int OnInit()
 {
-    PrevAccountBalance = AccountBalance();
+    // IsPRD = true;
+    // IsAuthSkip = false;
+
+    Common::Init();
+    Common::SetMaxLot(MaxLotParam);
+    Common::SetLotFactor(LotFactorParam);
 
     return(INIT_SUCCEEDED);
 }
 
+void OnDeinit(const int reason)
+{
+    Common::DeInit();
+}
+
 void OnTick()
 {
-    // バーイベント
+    if(IsPRD && !IsAllowAuth)
     {
-        datetime currentTime = Time[0];
-        if (currentTime != BarTime)
-        {
-            BarTime = currentTime;
-            OnNewBar();
-        }
+        return;
     }
 
-    UpdateWinLog();
+    Common::UpdateWinLog();
+
+    if(Common::IsNewBar())
+    {
+        OnNewBar();
+    }
+
+    Exe();
+
+    Common::Tick();
 }
 
 void OnNewBar()
 {
+    Common::NewBar();
 }
 
-void UpdateWinLog()
+void Exe()
 {
-    double rate = 0;
-    if(WinCount != 0 && LoseCount != 0)
-    {
-        rate = NormalizeDouble((double)WinCount / (double)(WinCount + LoseCount), 2);
-    }
-
-    double currentAccountBalance = AccountBalance();
-
-    if(PrevAccountBalance < currentAccountBalance)
-    {
-        WinCount += 1;
-    }
-    else if(PrevAccountBalance > currentAccountBalance)
-    {
-        LoseCount += 1;
-    }
-
-    PrevAccountBalance = currentAccountBalance;
-
-    Comment(AccountBalance() + "| win " + WinCount + " | lose " + LoseCount + " | rate " + rate + " | lot " + Lot);
-}
-
-void ViewLog(string log)
-{
-    int count = 0;
-    while (true)
-    {
-        string objectName = "LOG_" + TimeToStr(Time[0]) + "_" + count;
-        Print("objectName: ", objectName);
-        Print("ObjectFind(objectName): ", ObjectFind(objectName));
-        if(ObjectFind(objectName) != -1)
-        {
-            count += 1;
-            continue;
-        }
-
-        ObjectCreate(objectName, OBJ_TEXT, 0, Time[0], (Close[0] + (0.0003 * count)));
-        ObjectSetText(objectName, log, 10, "Verdana", Magenta);
-
-        break;
-    }
 }

@@ -55,6 +55,7 @@ function! Action_o() abort
     if IsTodo()
       execute "normal! $aa\"ox"
       execute "normal! i- [ ] "
+      execute "normal! 0diw$xa"
     else
       execute "normal! 0\"oylo\"opa "
     end

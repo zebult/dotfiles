@@ -392,3 +392,21 @@ snippet time
     int currentMonth = TimeMonth(timeLocal);
     int currentDay = TimeDay(timeLocal);
     int currentHour = TimeHour(timeLocal);
+
+snippet total
+    OrdersTotal()
+
+snippet key
+    void OnChartEvent(const int id, const long &lparam, const double &dparam, const string &sparam)
+    {
+        if( id == CHARTEVENT_KEYDOWN) {
+            switch(int(lparam)) {
+                case 37:
+                    Print("左キーが押された");
+                    break;
+                default:
+                    Print("キーコード" + (string)lparam +"が押された");
+            }
+            ChartRedraw();
+        }
+    }

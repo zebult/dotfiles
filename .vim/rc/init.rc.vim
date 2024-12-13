@@ -151,7 +151,7 @@ augroup SaveGroup
 
     autocmd BufWritePre *.json call JsonPretty()
 
-    autocmd BufWritePre *.js :Prettier<CR>
+    " autocmd BufWritePre *.js :Prettier<CR>
     " autocmd BufWritePre *.html :normal gg=G<CR>
 augroup END
 
