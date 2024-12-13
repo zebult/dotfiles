@@ -21,6 +21,33 @@
             "description": "[zebult] Common Util",
             "manipulators": [
               {
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "^com.vivaldi.Vivaldi"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "open_bracket",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                },
+                "to": {
+                  "key_code": "p",
+                  "modifiers": [
+                    "command",
+                    "shift"
+                  ]
+                },
+                "type": "basic"
+              },
+              {
                 "from": {
                   "key_code": "spacebar",
                   "modifiers": {
