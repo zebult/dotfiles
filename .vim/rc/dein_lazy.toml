@@ -27,6 +27,36 @@ hook_add = 'source ~/.vim/rc/plugins/defx.rc.vim'
 
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
+# hook_add = '''
+# nnoremap 22 :VafToggle<CR>
+# '''
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern'
+on_event = ['BufWrite']
+hook_add = '''
+let g:fern_disable_startup_warnings = 1
+nnoremap <silent> 22 :Fern . -reveal=% -drawer -toggle -width=40<CR>
+" nnoremap <silent> 22 :Fern .<CR>
+" nnoremap <silent> 33 :lcd /Users/saichi/Dropbox/Saichi/memo/daily<CR>:Fern .<CR>
+'''
+# # キー一覧
+# R: リネーム
+# -: 選択
+# K: 新規ディレクトリ作成
+#
+# バックキー: 一つ上の階層
+#
+# N: 新規ファイル作成
+# D: ゴミ箱
+# y: パスをコピー
+# x: アプリで開く
+#
+# c: 複製
+# m: リネーム
+# E: 横で開く
+# t: タブで開く
+# ?: ヘルプ
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'

@@ -518,6 +518,26 @@ function! SuperWrite()
 endfunction
 command! SuperWrite call SuperWrite()
 
+function! UltraWrite()
+    call SuperWrite()
+    let file_name = expand("%:t")
+    echo file_name
+    echo ":e /Users/saichi/Dropbox/Saichi/memo/daily/".file_name
+    execute ":!mv %:p /Users/saichi/Dropbox/Saichi/memo/daily/"
+    execute ":e /Users/saichi/Dropbox/Saichi/memo/daily/".file_name
+endfunction
+command! UltraWrite call UltraWrite()
+
+" function! VafToggle()
+"     let is_vaffle = stridx(expand('%s'), "vaffle") == 0
+"     if is_vaffle == 1
+"       normal q
+"     else
+"       execute ":Vaffle"
+"     endif
+" endfunction
+" command! VafToggle call VafToggle()
+
 set autochdir
 
 function! NextFileOpen()

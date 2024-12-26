@@ -55,6 +55,7 @@ call s:source_rc('git.rc.vim')
 
 if has('gui_running')
   call s:source_rc('view-nefertiti.rc.vim')
+  " call s:source_rc('view-nord.rc.vim')
 else
   call s:source_rc('view-nord.rc.vim')
 endif

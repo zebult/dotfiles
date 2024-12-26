@@ -5,12 +5,14 @@ let g:BASH_Ctrl_j = 'off'
 function! MinimumMapping() abort
   " nnoremap <Leader>w :w<Cr>
   nnoremap <Leader>w :SuperWrite<Cr>
+  nnoremap <Leader>W :UltraWrite<CR>
   nnoremap <Leader>q :bd<Cr>
   nnoremap <Leader>Q :qa<Cr>
   nnoremap <Leader>e :q<Cr>
   nnoremap <Leader>2 :wq<Cr>
   nnoremap <Leader>! :q!<Cr>
   nnoremap <Leader># :qa!<Cr>
+  nnoremap <Leader>o :!open .<CR>
   " noremap ;  :
   " noremap :  ;
   inoremap jj <ESC><ESC><ESC>
